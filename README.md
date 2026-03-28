@@ -3,7 +3,7 @@ icon: simple/materialformkdocs
 ---
 
 <H2 style="text-align: center;" markdown="1">
-© Afridyne Systems™ ➠ [MkDocs](https://www.mkdocs.org/) ➻ [Material](https://squidfunk.github.io/mkdocs-material/)
+© Afridyne Systems™ ➠ https://www.mkdocs.org/ ➻ https://squidfunk.github.io/mkdocs-material
 </H2>
 
 <img width="600" height="315" alt="image" src="https://github.com/user-attachments/assets/735cb9e4-dc5f-42e8-947c-81fa35382ec8" />
