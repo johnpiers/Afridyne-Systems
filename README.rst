@@ -1,221 +1,445 @@
-.. |Cirrus CI| image:: https://api.cirrus-ci.com/github/fish-shell/fish-shell.svg?branch=master
-      :target: https://cirrus-ci.com/github/fish-shell/fish-shell
-      :alt: Cirrus CI Build Status
+---
+icon: simple/materialformkdocs
+---
 
-`fish <https://fishshell.com/>`__ - the friendly interactive shell |Build Status| |Cirrus CI|
-=============================================================================================
+![](imgs/20260224-124153.png){: style="display: block; margin: 0 auto"}
 
-fish is a smart and user-friendly command line shell for macOS, Linux,
-and the rest of the family. fish includes features like syntax
-highlighting, autosuggest-as-you-type, and fancy tab completions that
-just work, with no configuration required.
+<H2 style="text-align: center;" markdown="1">
+© Afridyne Systems™ ➠ [MkDocs](https://www.mkdocs.org/) ➻ [Material](https://squidfunk.github.io/mkdocs-material/)
+</H2>
 
-For downloads, screenshots and more, go to https://fishshell.com/.
+---
 
-Quick Start
------------
+For full Documentation visit: [mkdocs.org](https://www.mkdocs.org).
 
-fish generally works like other shells, like bash or zsh. A few
-important differences can be found at
-https://fishshell.com/docs/current/tutorial.html by searching for the
-magic phrase “unlike other shells”.
+---
 
-Detailed user documentation is available by running ``help`` within
-fish, and also at https://fishshell.com/docs/current/index.html
+### Advanced Configuration
 
-Getting fish
-------------
+!!! bug ""
+    - Material for MkDocs comes with many configuration options.
+    
+    - The setup section explains in great detail how to configure and customize colors, fonts, icons and much more:
+    
 
-macOS
-~~~~~
+<div class="grid cards cols-3" markdown>
 
-fish can be installed:
+-   <span style="color: #2094f3">:material-palette:</span> **Changing the Colors**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/changing-the-colors.md){ .md-button }
+    
+    Customise primary and accent colors to match your brand identity.
 
--  using `Homebrew <http://brew.sh/>`__: ``brew install fish``
--  using `MacPorts <https://www.macports.org/>`__:
-   ``sudo port install fish``
--  using the `installer from fishshell.com <https://fishshell.com/>`__
--  as a `standalone app from fishshell.com <https://fishshell.com/>`__
+-   <span style="color: #2094f3">:material-format-font:</span> **Changing the Fonts**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/changing-the-fonts.md){ .md-button }
+    
+    Configure Google Fonts or custom web fonts for typography.
 
-Note: The minimum supported macOS version is 10.10 "Yosemite".
+-   <span style="color: #2094f3">:material-translate:</span> **Changing the Language**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/changing-the-language.md){ .md-button }
+    
+    Localize your site interface and search into 50+ languages.
 
-Packages for Linux
-~~~~~~~~~~~~~~~~~~
+-   <span style="color: #2094f3">:material-emoticon-happy-outline:</span> **Changing the Logo**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/changing-the-logo-and-icons.md){ .md-button }
+    
+    Set a custom logo and choose from thousands of integrated icons.
 
-Packages for Debian, Fedora, openSUSE, and Red Hat Enterprise
-Linux/CentOS are available from the `openSUSE Build
-Service <https://software.opensuse.org/download.html?project=shells%3Afish&package=fish>`__.
+-   <span style="color: #4caf50">:material-shield-check:</span> **Data Privacy**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/ensuring-data-privacy.md){ .md-button }
+    
+    Enable GDPR-compliant features and cookie consent management.
 
-Packages for Ubuntu are available from the `fish
-PPA <https://launchpad.net/~fish-shell/+archive/ubuntu/release-4>`__,
-and can be installed using the following commands:
+-   <span style="color: #4caf50">:material-compass:</span> **Site Navigation**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-navigation.md){ .md-button }
+    
+    Define your site structure, tabs, and table of contents behavior.
 
-::
+-   <span style="color: #4caf50">:material-magnify:</span> **Site Search**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-site-search.md){ .md-button }
+    
+    Configure the built-in search engine with highlighting and indexing.
 
-   sudo apt-add-repository ppa:fish-shell/release-4
-   sudo apt update
-   sudo apt install fish
+-   <span style="color: #4caf50">:material-chart-bar:</span> **Site Analytics**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-site-analytics.md){ .md-button }
+    
+    Integrate Google Analytics or other privacy-focused tracking tools.
 
-Instructions for other distributions may be found at
-`fishshell.com <https://fishshell.com>`__.
+-   <span style="color: #4caf50">:material-page-layout-header:</span> **The Header**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-the-header.md){ .md-button }
+    
+    Customize the sticky header, search bar, and repository links.
 
-Windows
-~~~~~~~
+-   <span style="color: #4caf50">:material-page-layout-footer:</span> **The Footer**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-the-footer.md){ .md-button }
+    
+    Manage "Previous/Next" buttons and the copyright notice area.
 
--  On Windows 10/11, fish can be installed under the WSL Windows Subsystem
-   for Linux with the instructions for the appropriate distribution
-   listed above under “Packages for Linux”, or from source with the
-   instructions below.
--  Fish can also be installed on all versions of Windows using
-   `Cygwin <https://cygwin.com/>`__ or `MSYS2 <https://github.com/Berrysoft/fish-msys2>`__.
+-   <span style="color: #ff9800">:material-card-account-details:</span> **Social Cards**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-social-cards.md){ .md-button }
+    
+    Generate automatic preview images for Twitter and LinkedIn shares.
 
-Building from source
-~~~~~~~~~~~~~~~~~~~~
+-   <span style="color: #ff9800">:material-post:</span> **Setting up a Blog**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-a-blog.md){ .md-button }
+    
+    Transform your documentation into a fully-featured technical blog.
 
-If packages are not available for your platform, GPG-signed tarballs are
-available from `fishshell.com <https://fishshell.com/>`__ and
-`fish-shell on
-GitHub <https://github.com/fish-shell/fish-shell/releases>`__. See the
-`Building <#building>`_ section for instructions.
+-   <span style="color: #ff9800">:material-tag:</span> **Setting up Tags**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-tags.md){ .md-button }
+    
+    Organize content with categories and tags for easier discovery.
 
-Running fish
-------------
+-   <span style="color: #ff9800">:material-source-branch:</span> **Versioning**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/setting-up-versioning.md){ .md-button }
+    
+    Host multiple versions of your documentation simultaneously.
 
-Once installed, run ``fish`` from your current shell to try fish out!
+-   <span style="color: #ff9800">:material-git:</span> **Git Repository**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/adding-a-git-repository.md){ .md-button }
+    
+    Link your source code to enable "Edit this page" functionality.
 
-Dependencies
-~~~~~~~~~~~~
+-   <span style="color: #ff9800">:material-comment-text-outline:</span> **Comment System**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/adding-a-comment-system.md){ .md-button }
+    
+    Integrate Giscus or Disqus to build community engagement.
 
-Running fish requires:
+-   <span style="color: #ff9800">:material-lightning-bolt:</span> **Optimization**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/building-an-optimized-site.md){ .md-button }
+    
+    Minify CSS/JS and optimize images for lightning-fast loading.
 
--  some common \*nix system utilities (currently ``mktemp``), in
-   addition to the basic POSIX utilities (``cat``, ``cut``, ``dirname``,
-   ``ls``, ``mkdir``, ``mkfifo``, ``rm``, ``sh``, ``sort``, ``tee``, ``tr``,
-   ``uname`` and ``sed`` at least, but the full coreutils plus ``find`` and
-   ``awk`` is preferred)
+-   <span style="color: #ff9800">:material-wifi-off:</span> **Offline Usage**
+    [:octicons-arrow-right-24: View Guide](./MkDocs-Material/building-for-offline-usage.md){ .md-button }
+    
+    Package your documentation for use without an internet connection.
 
-The following optional features also have specific requirements:
+</div>
 
--  builtin commands that have the ``--help`` option or print usage
-   messages require ``man`` for display
--  automated completion generation from manual pages requires Python 3.5+
--  the ``fish_config`` web configuration tool requires Python 3.5+ and a web browser
--  the :ref:`alt-o <shared-binds-alt-o>` binding requires the ``file`` program.
--  system clipboard integration (with the default Ctrl-V and Ctrl-X
-   bindings) require either the ``xsel``, ``xclip``,
-   ``wl-copy``/``wl-paste`` or ``pbcopy``/``pbpaste`` utilities
--  full completions for ``yarn`` and ``npm`` require the
-   ``all-the-package-names`` NPM module
--  ``colorls`` is used, if installed, to add color when running ``ls`` on platforms
-   that do not have color support (such as OpenBSD)
 
-Building
---------
+!!! info "Supported Markdown Extensions"
+    Furthermore, see the list of supported [Markdown extensions] that are natively integrated with Material for MkDocs.
+    
+[Markdown extensions]: https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
 
-Dependencies
-~~~~~~~~~~~~
 
-Compiling fish requires:
 
--  Rust (version 1.85 or later)
--  CMake (version 3.15 or later)
--  a C compiler (for system feature detection and the test helper binary)
--  PCRE2 (headers and libraries) - optional, this will be downloaded if missing
--  gettext (only the msgfmt tool) - optional, for translation support
--  an Internet connection, as other dependencies will be downloaded automatically
+## Commands
 
-Sphinx is also optionally required to build the documentation from a
-cloned git repository.
+!!! abstract "The Basic Commands"
 
-Additionally, running the full test suite requires diff, git, Python 3.5+, pexpect, less, tmux and wget.
+    * `mkdocs new [dir-name]` - Create a new project.
+    * `mkdocs serve` - Start the live-reloading docs server.
+    * `mkdocs build` - Build the documentation site.
+    * `mkdocs -h` - Print help message and exit.
+    
+## Project Layout
 
-Building from source with CMake
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== "Visual Reference"
+    !!! info "Project Layout"
+        :material-folder:{ style="color: #2196f3;" } `docs/`
+        &emsp; :material-file-outline:{ style="color: #9e9e9e;" } `index.md  # The documentation homepage.`
+        &emsp; :material-file-outline:{ style="color: #9e9e9e;" } `...       # Other markdown pages.`
+        :material-file-code-outline:{ style="color: #9e9e9e;" } `mkdocs.yml   # The configuration file.`
 
-Rather than building from source, consider using a packaged build for your platform. Using the
-steps below makes fish difficult to uninstall or upgrade. Release packages are available from the
-links above, and up-to-date `development builds of fish are available for many platforms
-<https://github.com/fish-shell/fish-shell/wiki/Development-builds>`__
+=== "Annotated (Side-by-Side)"
 
-To install into ``/usr/local``, run:
+    <div style="display: flex; gap: 20px;">
+    <div style="flex: 1;">
 
-.. code:: shell
+    ```yaml
+    mkdocs.yml    # (1)
+    docs/
+        index.md  # (2)
+        ...       # (3)
+    ```
 
-   mkdir build; cd build
-   cmake ..
-   cmake --build .
-   sudo cmake --install .
+    </div>
+    <div style="flex: 1; font-size: 0.9em; padding-top: 10px;">
 
-The install directory can be changed using the
-``-DCMAKE_INSTALL_PREFIX`` parameter for ``cmake``.
+    1. **Configuration:** Where you enable all those cool extensions.
+    2. **Homepage:** The main entry point for your site.
+    3. **Other Pages:** Any additional markdown files.
 
-CMake Build options
-~~~~~~~~~~~~~~~~~~~
+    </div>
+    </div>
 
-In addition to the normal CMake build options (like ``CMAKE_INSTALL_PREFIX``), fish's CMake build has some other options available to customize it.
 
-- Rust_COMPILER=path - the path to rustc. If not set, cmake will check $PATH and ~/.cargo/bin
-- Rust_CARGO=path - the path to cargo. If not set, cmake will check $PATH and ~/.cargo/bin
-- Rust_CARGO_TARGET=target - the target to pass to cargo. Set this for cross-compilation.
-- BUILD_DOCS=ON|OFF - whether to build the documentation. This is automatically set to OFF when Sphinx isn't installed.
-- INSTALL_DOCS=ON|OFF - whether to install the docs. This is automatically set to on when BUILD_DOCS is or prebuilt documentation is available (like when building in-tree from a tarball).
-- FISH_USE_SYSTEM_PCRE2=ON|OFF - whether to use an installed pcre2. This is normally autodetected.
-- MAC_CODESIGN_ID=String|OFF - the codesign ID to use on Mac, or "OFF" to disable codesigning.
-- WITH_GETTEXT=ON|OFF - whether to include translations.
-- extra_functionsdir, extra_completionsdir and extra_confdir - to compile in an additional directory to be searched for functions, completions and configuration snippets
+## Getting Started with MkDocs
 
-Building fish with Cargo
-~~~~~~~~~~~~~~~~~~~~~~~~
+##### An introductory tutorial!
 
-You can also build fish with Cargo.
-This example uses `uv <https://github.com/astral-sh/uv>`__ to install Sphinx (which is used for man-pages and ``--help`` options).
-You can also install Sphinx another way and drop the ``uv run --no-managed-python`` prefix.
+---
 
-.. code:: shell
+##### Installation
 
-    git clone https://github.com/fish-shell/fish-shell
-    cd fish-shell
+!!! quote "Installation"
 
-    # Optional: check out a specific version rather than building the latest
-    # development version.
-    git checkout "$(git for-each-ref refs/tags/ | awk '$2 == "tag" { print $3 }' | tail -1)"
+    To install MkDocs, run the following command from the command line:
+    
+    ```bash
+    pip install mkdocs
+    ```
+    
+For more details, see the [Installation Guide](https://www.mkdocs.org/user-guide/installation/).
 
-    uv run --no-managed-python \
-        cargo install --path .
+## Creating a New Project
 
-This will place standalone binaries in ``~/.cargo/bin/``, but you can move them wherever you want.
+!!! pied-piper "Creating a New Project"
 
-To disable translations, disable the ``localize-messages`` feature by passing ``--no-default-features --features=embed-data`` to cargo.
+    Getting started is super easy. To create a new project, run the following command from the command line:
+    
+    ```bash
+    $ mkdocs new my-project
+    cd my-project
+    ```
+    
+    ---
+    
+    
+    <H4 style="text-align: center;">Take a moment to review the initial project that has been created for you.</H4>
+    
+    
+    ![The initial MkDocs layout](imgs/20260224-085639.png){ .center-image }
+    
 
-You can also link this build statically (but not against glibc) and move it to other computers.
+- There's a single configuration file named `mkdocs.yml`, and a folder named `docs` that will contain your documentation source files (`docs` is the default value for the [docs_dir](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/configuration.md#docs_dir) configuration setting).
 
-Here are the remaining advantages of a full installation, as currently done by CMake:
+- Right now the `docs` folder just contains a single documentation page, named `index.md`.
 
-- Man pages like ``fish(1)`` installed in standard locations, easily accessible from outside fish.
-- A local copy of the HTML documentation, typically accessed via the ``help`` fish function.
-  In Cargo builds, ``help`` will redirect to `<https://fishshell.com/docs/current/>`__
-- Ability to use our CMake options extra_functionsdir, extra_completionsdir and extra_confdir,
-  (also recorded in ``$PREFIX/share/pkgconfig/fish.pc``)
-  which are used by some package managers to house third-party completions.
-  Regardless of build system, fish uses ``$XDG_DATA_DIRS/{vendor_completion.d,vendor_conf.d,vendor_functions.d}``.
+!!! info "MkDocs built-in dev-server"
 
-Contributing Changes to the Code
---------------------------------
+    - MkDocs comes with a built-in dev-server that lets you preview your documentation as you work on it.
+    
+    - Make sure you're in the same directory as the `mkdocs.yml` configuration file, and then start the server by running the `mkdocs serve` command:
+    
+    ```console
+    $ mkdocs serve
+    INFO    -  Building documentation...
+    INFO    -  Cleaning site directory
+    INFO    -  Documentation built in 0.22 seconds
+    INFO    -  [15:50:43] Watching paths for changes: 'docs', 'mkdocs.yml'
+    INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/
+    ```
+    
+    Open up <http://127.0.0.1:8000/> in your browser, and you'll see the default home page being displayed:
+    
 
-See the `Guide for Developers <CONTRIBUTING.rst>`__.
+![The MkDocs live server](imgs/20260224-085814.png){ .center-image }
 
-Contact Us
-----------
+- The dev-server also supports auto-reloading, and will rebuild your documentation whenever anything in the configuration file, documentation directory, or theme directory changes.
 
-Questions, comments, rants and raves can be posted to the official fish
-mailing list at https://lists.sourceforge.net/lists/listinfo/fish-users
-or join us on our `matrix
-channel <https://matrix.to/#/#fish-shell:matrix.org>`__. Or use the `fish tag
-on Unix & Linux Stackexchange <https://unix.stackexchange.com/questions/tagged/fish>`__.
-There is also a fish tag on Stackoverflow, but it is typically a poor fit.
+- Open the `docs/index.md` document in your text editor of choice, change the initial heading to `MkLorum`, and save your changes. Your browser will auto-reload and you should see your updated documentation immediately.
 
-Found a bug? Have an awesome idea? Please `open an
-issue <https://github.com/fish-shell/fish-shell/issues/new>`__.
+!!! info "mkdocs.yml"
 
-.. |Build Status| image:: https://github.com/fish-shell/fish-shell/workflows/make%20test/badge.svg
-   :target: https://github.com/fish-shell/fish-shell/actions
+    Now try editing the configuration file: `mkdocs.yml`. Change the [`site_name`](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/configuration.md#site_name) setting to `MkLorum` and save the file.
+    
+    ```yaml
+    site_name: MkLorum
+    ```
+    
+    ---
+    
+    <H4 style="text-align: center;">Your browser should immediately reload, and you'll see your new site name take effect.</H4>
+    
+    ![The site_name setting](imgs/20260224-091757.png){ .center-image }
+    
+
+!!! warning "NOTE!"
+
+    The [`site_name`](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/configuration.md#site_name) configuration option is the only required option in your configuration file.
+    
+##### Adding Pages
+
+!!! info "AddingPages"
+
+    Now add a second page to your documentation:
+    
+    ```bash
+    curl 'https://jaspervdj.be/lorem-markdownum/markdown.txt' > docs/about.md
+    ```
+    
+!!! pied-piper "Edit Config"
+
+    As our documentation site will include some navigation headers, you may want to edit the configuration file and add some information about the order, title, and nesting of each page in the navigation header by adding a [`nav`](https://www.mkdocs.org/user-guide/configuration/#nav) setting:
+    
+    ```yaml
+    site_name: MkLorum
+    nav:
+      - Home: index.md
+      - About: about.md
+    ```
+    
+!!! pied-piper ""
+
+    Save your changes and you'll now see a navigation bar with `Home` and `About` items on the left as well as `Search`, `Previous`, and `Next` items on the right.
+    ⬇️⬇️⬇️
+    
+![Screenshot](imgs/20260224-092213.png)
+!!! quote ""
+    - Try the menu items and navigate back and forth between pages. Then click on `Search`. A search dialog will appear, allowing you to search for any text on any
+    page.
+    
+    - Notice that the search results include every occurrence of the search term on the site and links directly to the section of the page in which the search term appears. You get all of that with no effort or configuration on your part!
+    ⬇️⬇️⬇️
+
+![Screenshot](imgs/20260224-092503.png)
+
+##### Theming our Documentation
+
+!!! info "Theming"
+
+    Now change the configuration file to alter how the documentation is displayed by changing the theme. Edit the `mkdocs.yml` file and add a [`theme`](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/configuration.md#theme) setting:
+    
+    ```yaml
+    site_name: MkLorum
+    nav:
+      - Home: index.md
+      - About: about.md
+    theme: readthedocs
+    ```
+    
+    Save your changes, and you'll see the ReadTheDocs theme being used.
+    
+
+![Screenshot](imgs/20260224-084351.png)
+
+##### Changing the Favicon Icon
+
+By default, MkDocs uses the [MkDocs favicon](https://www.mkdocs.org/getting-started/#changing-the-favicon-icon) icon. To use a different icon, create an `img` subdirectory in the `docs` directory and copy your custom `favicon.ico` file to that directory. MkDocs will automatically detect and use that file as your favicon icon.
+
+![](imgs/20260224-190712.png)
+
+##### Building the Site
+
+!!! info "Building the Site"
+
+    That's looking good. You're ready to deploy the first pass of your `MkLorum` documentation.
+    
+    First build the documentation:
+    
+    ```bash
+    mkdocs build
+    ```
+    
+    ---
+    
+    This will create a new directory, named `site`. Take a look inside the directory:
+    
+    ```console
+    $ ls site
+    $ about fonts index.html license search.html css img js mkdocs sitemap.xml
+    ```
+    
+- Notice that your source documentation has been output as two HTML files named `index.html` and `about/index.html`. 
+
+- You also have various other media that's been copied into the `site` directory as part of the documentation theme.
+
+- You even have a `sitemap.xml` file and `mkdocs/search_index.json`.
+
+!!! pied-piper ""
+
+    If you're using source code control such as `git` you probably don't want to check your documentation builds into the repository. Add a line containing `site/` to your `.gitignore` file.
+    
+    ```bash
+    echo "site/" >> .gitignore
+    ```
+    
+    ---
+    
+    - If you're using another source code control tool you'll want to check its documentation on how to ignore specific directories.
+    
+##### Other Commands and Options
+
+!!! pied-piper "Other Commands and Options"
+
+    There are various other commands and options available. For a complete list of commands, use the `--help` flag:
+    
+    ```bash
+    mkdocs --help
+    ```
+    
+!!! info "Options"
+
+    To view a list of options available on a given command, use the `--help` flag with that command. For example, to get a list of all options available for the `build` command run the following:
+    
+    ```bash
+    mkdocs build --help
+    ```
+    
+##### Deploying
+
+!!! quote "Deploying"
+
+    The documentation site that you just built only uses static files so you'll be able to host it from pretty much anywhere. Simply upload the contents of the entire `site` directory to wherever you're hosting your website from and you're done. For specific instructions on a number of common hosts, see the [Deploying your Docs](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/deploying-your-docs.md) deploy page.
+    
+
+##### Getting Help
+
+!!! pied-piper ""
+    See the [User Guide](https://www.mkdocs.org/user-guide/) for more complete documentation of all of MkDocs' features.
+    
+
+---
+
+!!! pied-piper ""
+    To get help with MkDocs, please use the [GitHub Discussions](https://github.com/mkdocs/mkdocs/discussions) or [GitHub Issues](https://github.com/mkdocs/mkdocs/issues).
+    
+
+---
+
+##### Useful Links
+
+<div class="grid cards cols-3" markdown>
+
+-   <span style="color: #2094f3">:material-download:</span> **Installation Guide**
+    [:octicons-arrow-right-24: View Guide](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/installation.md){ .md-button style="border-color: #2094f3; color: #2094f3" }
+
+    Step-by-step instructions to get MkDocs up and running.
+
+-   <span style="color: #2094f3">:material-cog:</span> **Configuration (docs_dir)**
+    [:octicons-arrow-right-24: View Config](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/configuration.md#docs_dir){ .md-button style="border-color: #2094f3; color: #2094f3" }
+
+    Learn how to set up your source directory structure.
+
+-   <span style="color: #2094f3">:material-rocket-launch:</span> **Deploying Your Docs**
+    [:octicons-arrow-right-24: View Guide](https://www.mkdocs.org/user-guide/deploying-your-docs/){ .md-button style="border-color: #2094f3; color: #2094f3" }
+
+    How to publish your documentation to the web.
+
+-   <span style="color: #4caf50">:material-map-legend:</span> **Documentation Layout**
+    [:octicons-arrow-right-24: View Layout](https://www.mkdocs.org/user-guide/configuration/#nav){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    Configure the navigation and global site structure.
+
+-   <span style="color: #4caf50">:material-forum:</span> **GitHub Discussions**
+    [:octicons-arrow-right-24: Join Discussions](https://github.com/mkdocs/mkdocs/discussions){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    Ask questions and engage with the community.
+
+-   <span style="color: #4caf50">:material-alert-circle:</span> **GitHub Issues**
+    [:octicons-arrow-right-24: View Issues](https://github.com/mkdocs/mkdocs/issues){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    Report bugs or request new features.
+
+-   <span style="color: #ff9800">:material-card-text:</span> **Site Name**
+    [:octicons-arrow-right-24: View Settings](https://www.mkdocs.org/user-guide/configuration/#site_name){ .md-button style="border-color: #ff9800; color: #ff9800" }
+
+    Define the title of your project and browser tab.
+
+-   <span style="color: #ff9800">:material-brush:</span> **Theme**
+    [:octicons-arrow-right-24: View Theme](https://www.mkdocs.org/user-guide/configuration/#theme){ .md-button style="border-color: #ff9800; color: #ff9800" }
+
+    Customise the look and feel of your documentation.
+
+-   <span style="color: #ff9800">:material-book-open-variant:</span> **User Guide**
+    [:octicons-arrow-right-24: Open Guide](https://www.mkdocs.org/user-guide/){ .md-button style="border-color: #ff9800; color: #ff9800" }
+
+    The complete manual for all MkDocs features.
+
+</div>
+
+---
+
+
