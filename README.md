@@ -13,7 +13,11 @@ For full Documentation visit: [mkdocs.org](https://www.mkdocs.org).
 ### Advanced Configuration
 
 !!! info ""
+
     - Material for MkDocs comes with many configuration options.
-    
+
     - The setup section explains in great detail how to configure and customize colors, fonts, icons and much more:
+
+
+
     
