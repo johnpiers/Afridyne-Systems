@@ -1,0 +1,528 @@
+---
+# This tells MkDocs to ignore the 'caption' features for this page
+caption:
+  figure:
+    enable: false
+  table:
+    enable: false
+  custom:
+    enable: false
+    
+icon: material/tag-text
+---
+
+<div style="display: none;">
+  <h1>Header</h1>
+</div>
+
+![](imgs/20251228-160646.png){: style="display: block; margin: 0 auto"}
+
+[<img src="https://avatars.githubusercontent.com/u/115962839?s=48&amp;v=4" width="24" height="24" align="center"> **uv**](https://github.com/astral-sh/uv)
+
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)[![image](https://img.shields.io/pypi/v/uv.svg)](https://pypi.python.org/pypi/uv)[![image](https://img.shields.io/pypi/l/uv.svg)](https://pypi.python.org/pypi/uv)[![image](https://img.shields.io/pypi/pyversions/uv.svg)](https://pypi.python.org/pypi/uv)[![Actions status](https://github.com/astral-sh/uv/actions/workflows/ci.yml/badge.svg)](https://github.com/astral-sh/uv/actions)[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?logo=discord&logoColor=white)](https://discord.gg/astral-sh)
+
+
+<p align="center">
+An extremely fast Python package and project manager, written in Rust.
+</p>
+
+<p align="center">
+  <picture align="center">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/astral-sh/uv/assets/1309177/629e59c0-9c6e-4013-9ad4-adb2bcf5080d">
+    <img alt="Shows a bar chart with benchmark results." src="https://github.com/astral-sh/uv/assets/1309177/629e59c0-9c6e-4013-9ad4-adb2bcf5080d" style="max-width: 100%;">
+  </picture>
+</p>
+
+<style>
+  @media (prefers-color-scheme: dark) {
+    picture img {
+      filter: invert(1) hue-rotate(180deg);
+    }
+  }
+</style>
+
+<p align="center">
+  <i>Installing <a href="https://trio.readthedocs.io/">Trio</a>'s dependencies with a warm cache.</i>
+</p>
+
+## Highlights
+
+- 🚀 A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`,
+  and more.
+- ⚡️ [10-100x faster](https://github.com/astral-sh/uv/blob/main/BENCHMARKS.md) than `pip`.
+- 🗂️ Provides [comprehensive project management](#projects), with a
+  [universal lockfile](https://docs.astral.sh/uv/concepts/projects/layout#the-lockfile).
+- ❇️ [Runs scripts](#scripts), with support for
+  [inline dependency metadata](https://docs.astral.sh/uv/guides/scripts#declaring-script-dependencies).
+- 🐍 [Installs and manages](#python-versions) Python versions.
+- 🛠️ [Runs and installs](#tools) tools published as Python packages.
+- 🔩 Includes a [pip-compatible interface](#the-pip-interface) for a performance boost with a
+  familiar CLI.
+- 🏢 Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces) for
+  scalable projects.
+- 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache) for
+  dependency deduplication.
+- ⏬ Installable without Rust or Python via `curl` or `pip`.
+- 🖥️ Supports macOS, Linux, and Windows.
+---
+uv is backed by [Astral](https://astral.sh), the creators of [Ruff](https://github.com/astral-sh/ruff).
+
+##  Installation
+
+Install uv with our standalone installers:
+
+!!! abstract "On macOS and Linux."
+
+    ```
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+    
+!!! abstract "On Windows."
+
+    ```
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    ```
+    
+!!! abstract " With pip."
+
+    ```
+    pip install uv
+    ```
+    
+    - or pipx
+    
+    ```
+    pipx install uv
+    ```
+    
+!!! danger "Standalone Installer"
+
+    If installed via the standalone installer, uv can update itself to the latest version:
+    
+    ```
+    uv self update
+    ```
+    
+    ---
+    
+    - See the [installation documentation ](https://docs.astral.sh/uv/getting-started/installation/) for details and alternative installation methods.
+    
+
+#### Documentation
+!!! tip ""
+    uv's documentation is available at [uv Docs](https://docs.astral.sh/uv)
+    
+!!! tip "Tip"
+
+    - uv may also be installed with pip, Homebrew, and more. See all of the methods on the [installation page](https://docs.astral.sh/uv/getting-started/)
+    
+
+??? tip "uv manages Project Dependencies and Environments"
+
+    - uv manages project dependencies and environments, with support for lockfiles, workspaces, and more, similar to <code><b>rye</b></code><i> or </i><code><b>poetry</b></code>
+    
+        
+    ```bash
+    $ uv init example
+    Initialized project `example` at `/home/user/example`
+    
+    $ cd example
+    
+    $ uv add ruff
+    Creating virtual environment at: .venv
+    Resolved 2 packages in 170ms
+       Built example @ file:///home/user/example
+    Prepared 2 packages in 627ms
+    Installed 2 packages in 1ms
+     + example==0.1.0 (from file:///home/user/example)
+     + ruff==0.5.4
+     
+    $ uv run ruff check
+    All checks passed!
+     
+    $ uv lock
+    Resolved 2 packages in 0.33ms
+    $ uv sync
+    Resolved 2 packages in 0.70ms
+    Audited 1 package in 0.02ms
+    ```
+    
+
+---
+## Features
+
+### Projects
+
+??? pied-piper "uv manages Project Dependencies and Environments(Projects)"
+
+    - uv manages project dependencies and environments, with support for lockfiles, workspaces, and more, similar to <code><b>rye</b></code><i> or </i><code><b>poetry:</b></code>
+    
+    ```console
+    $ uv init example
+    Initialized project `example` at `/home/user/example`
+    
+    $ cd example
+    
+    $ uv add ruff
+    Creating virtual environment at: .venv
+    Resolved 2 packages in 170ms
+       Built example @ file:///home/user/example
+    Prepared 2 packages in 627ms
+    Installed 2 packages in 1ms
+     + example==0.1.0 (from file:///home/user/example)
+     + ruff==0.5.0
+    
+    $ uv run ruff check
+    All checks passed!
+    
+    $ uv lock
+    Resolved 2 packages in 0.33ms
+    
+    $ uv sync
+    Resolved 2 packages in 0.70ms
+    Audited 1 package in 0.02ms
+    ```
+    
+!!! info ""
+    - See the [project documentation](https://docs.astral.sh/uv/guides/projects/) to get started.
+    
+!!! info ""
+    - uv also supports building and publishing projects, even if they're not managed with uv. See the [publish guide](https://docs.astral.sh/uv/guides/publish/) to learn more.
+    
+
+### Scripts
+
+!!! quote "Manages deps & envs for Single-file Scripts."
+
+    - uv manages dependencies and environments for single-file scripts.
+    
+    ---
+    
+    - Create a new script and add inline metadata declaring its dependencies:
+    
+    ```console
+    $ echo 'import requests; print(requests.get("https://astral.sh"))' > example.py
+    
+    $ uv add --script example.py requests
+    Updated `example.py`
+    ```
+    
+    ---
+    
+    
+    - Then, run the script in an isolated virtual environment:
+    
+    ```console
+    $ uv run example.py
+    Reading inline script metadata from: example.py
+    Installed 5 packages in 12ms
+    <Response [200]>
+    ```
+    
+    ---
+    
+    - See the [scripts documentation](https://docs.astral.sh/uv/guides/scripts/) to get started.
+    
+
+### Tools
+
+!!! info "uv similar to pipx"
+
+    uv executes and installs command-line tools provided by Python packages, similar to `pipx`.
+    
+    Run a tool in an ephemeral environment using `uvx` (an alias for `uv tool run`):
+    
+    ```bash
+    $ uvx pycowsay 'hello world!'
+    Resolved 1 package in 167ms
+    Installed 1 package in 9ms
+     + pycowsay==0.0.0.2
+    ```
+    
+    ```
+        ------------
+      < What the hell! >
+        ------------
+          \   ^__^
+           \  (oo)\_______
+              (__)\       )\/\
+               ||   ----w |
+               ||        ||
+    ```
+          
+     Install a tool with `uv tool install`:
+    
+    ```bash
+    $ uv tool install ruff
+    Resolved 1 package in 6ms
+    Installed 1 package in 2ms
+     + ruff==0.5.0
+    Installed 1 executable: ruff
+    
+    
+    $ ruff --version
+    ruff 0.5.0
+    ```
+    
+    See the [tools documentation](https://docs.astral.sh/uv/guides/tools/) to get started.
+    
+
+### Python versions
+
+!!! info "uv installs Python Allows Switching Between Versions."
+
+    - uv installs Python and allows quickly switching between versions.
+    
+    - Install multiple Python versions:
+    
+    ```bash
+    $ uv python install 3.10 3.11 3.12
+    Searching for Python versions matching: Python 3.10
+    Searching for Python versions matching: Python 3.11
+    Searching for Python versions matching: Python 3.12
+    Installed 3 versions in 3.42s
+     + cpython-3.10.14-macos-aarch64-none
+     + cpython-3.11.9-macos-aarch64-none
+     + cpython-3.12.4-macos-aarch64-none
+    ```
+    
+    ---
+    
+    - Download Python versions as needed:
+    
+    ```bash
+    $ uv venv --python 3.12.0
+    Using Python 3.12.0
+    Creating virtual environment at: .venv
+    Activate with: source .venv/bin/activate
+    ```
+    
+    ---
+    
+    ```
+    $ uv run --python pypy@3.8 -- python --version
+    ```
+    
+    - Python 3.8.16 (a9dbdca6fc3286b0addd2240f11d97d8e8de187a, Dec 29 2022, 11:45:30) [PyPy 7.3.11 with GCC Apple LLVM 13.1.6 (clang-1316.0.21.2.5)] on darwin Type "help", "copyright", "credits" or "license" for more information.
+
+
+    ---
+    
+    - Use a specific Python version in the current directory:
+    
+    ```Bash
+    $ uv python pin 3.11
+    Pinned `.python-version` to `3.11`
+    ```
+    
+    ---
+    
+    - See the [Python installation documentation](https://docs.astral.sh/uv/guides/install-python/) to get started.
+    
+### The pip Interface
+
+- uv provides a drop-in replacement for common `pip`, `pip-tools`, and `virtualenv` commands.
+
+- uv extends their interfaces with advanced features, such as dependency version overrides, platform-independent resolutions, reproducible resolutions, alternative resolution strategies, and more.
+
+- Migrate to uv without changing your existing workflows — and experience a 10-100x speedup — with the `uv pip` interface.
+
+
+!!! info "Platform-independent requirements."
+
+    - Compile requirements into a platform-independent requirements file:
+    
+    ```console
+    $ uv pip compile docs/requirements.in \
+       --universal \
+       --output-file docs/requirements.txt
+    Resolved 43 packages in 12ms
+    ```
+    
+    ---
+    
+    - Create a virtual environment:
+    
+    ```console
+    $ uv venv
+    Using Python 3.12.3
+    Creating virtual environment at: .venv
+    Activate with: source .venv/bin/activate
+    ```
+    
+    ---
+    
+    
+    - Install the locked requirements:
+    
+    ```console
+    $ uv pip sync docs/requirements.txt
+    Resolved 43 packages in 11ms
+    Installed 43 packages in 208ms
+    + babel==2.15.0
+    + black==24.4.2
+    + certifi==2024.7.4
+    ```
+    
+    ---
+    
+    See the [pip interface documentation](https://docs.astral.sh/uv/pip/index/) to get started.
+    
+
+## Platform Support
+!!! quote ""
+    See uv's [platform support](https://docs.astral.sh/uv/reference/platforms/) document.
+    
+##Scripts
+
+!!! tip "Scripts"
+
+    Create a new script and add inline metadata declaring its dependencies:
+    
+    ```bash
+    $ echo 'import requests; print(requests.get("https://astral.sh"))' > example.py
+    
+    $ uv add --script example.py requests
+    Updated `example.py`
+    ```
+    
+## Versioning Policy
+!!! quote ""
+    See uv's [versioning policy](https://docs.astral.sh/uv/reference/versioning/) document.
+    
+## Contributing
+!!! quote ""
+    We are passionate about supporting contributors of all levels of experience and would love to see you get involved in the project. See the [contributing guide](https://github.com/astral-sh/uv/blob/main/CONTRIBUTING.md) to get started.
+    
+## FAQ
+
+#### How do you pronounce uv?
+
+It's pronounced as "you - vee" ([`/juː viː/`](https://en.wikipedia.org/wiki/Help:IPA/English#Key))
+
+#### How should I stylize uv?
+
+Just "uv", please. See the [style guide](UV_Style/STYLE.md) for details.
+
+## Acknowledgements
+
+uv's dependency resolver uses [PubGrub](https://github.com/pubgrub-rs/pubgrub) under the hood. We're grateful to the PubGrub maintainers, especially [Jacob Finkelman](https://github.com/Eh2406), for their support.
+
+uv's Git implementation is based on [Cargo](https://github.com/rust-lang/cargo).
+
+Some of uv's optimizations are inspired by the great work we've seen in [pnpm](https://pnpm.io/),
+[Orogene](https://github.com/orogene/orogene), and [Bun](https://github.com/oven-sh/bun).  We've also learned a lot from Nathaniel J. Smith's [Posy](https://github.com/njsmith/posy) and adapted its [trampoline](https://github.com/njsmith/posy/tree/main/src/trampolines/windows-trampolines/posy-trampoline) for Windows support.
+
+## License
+
+uv is licensed under either of - Apache License, Version 2.0, ([LICENSE-APACHE](https://www.apache.org/licenses/LICENSE-2.0) or <https://www.apache.org/licenses/LICENSE-2.0>)
+- MIT license ([LICENSE-MIT](https://opensource.org/license/MIT) or <https://opensource.org/licenses/MIT>) at your option.
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in uv by you, as defined in the Apache-2.0 license, shall be dually licensed as above, without any additional terms or conditions.
+
+
+<div align="center">
+  <a target="_blank" href="https://astral.sh" style="background:none">
+    <img src="https://raw.githubusercontent.com/astral-sh/uv/main/assets/svg/Astral.svg" alt="Made by Astral">
+  </a>
+</div>
+---
+
+<!-- Remove all custom HTML and the <style> block from your page -->
+
+<!-- Mercurial Block using Markdown Content Tabs -->
+##### Mercurial
+
+!!! pied-piper "Install Mercurial"
+    === "Debian/Ubuntu"
+        ```bash
+        apt install mercurial
+        ```
+
+    === "Fedora"
+        ```bash
+        dnf install mercurial
+        ```
+
+    === "Arch Linux"
+        ```bash
+        pacman -S mercurial
+        ```
+
+    === "Gentoo"
+        ```bash
+        emerge mercurial
+        ```
+
+    === "macOS (Homebrew)"
+        ```bash
+        brew install mercurial
+        ```
+
+    === "FreeBSD"
+        Binary packages can be installed using `pkg`:
+
+        ```bash
+        pkg install mercurial
+        ```
+
+        Alternatively, you can install from source via the ports collection:
+
+        ```bash
+        cd /usr/ports/devel/mercurial
+        make install
+        ```
+
+    === "Windows (Mercurial)"
+        Using the `winget` package manager:
+
+        ```bash
+        winget install Mercurial.Mercurial -e
+        ```
+
+        Or download from the list of [binary releases](https://www.mercurial-scm.org).
+
+    === "Windows (TortoiseHg)"
+        Using the `winget` package manager:
+
+        ```bash
+        winget install TortoiseHg.TortoiseHg -e
+        ```
+
+        Or download from the list of [binary releases](https://mercurial-book.readthedocs.io/en/latest/working-together/collab.html?highlight=windows+tortoisehg).
+        
+
+
+<!-- Add a blank line to separate independent tab blocks -->
+
+<!-- Git Block using Markdown Content Tabs -->
+##### Git
+
+!!! installation "Git"
+    === "Debian/Ubuntu"
+        ```
+        $ apt install git
+        ```
+
+    === "Fedora"
+        ```
+        $ dnf install git
+        ```
+<!-- ... (add remaining tabs here using the same === "Tab Name" syntax) ... -->
+
+</div>
+
+##### Install uv
+
+!!! installation "Install uv"
+    === "macOS and Linux"
+        ```shell
+        $ curl -LsSf astral.sh | sh
+        ```
+    === "Windows" 
+        ```powershell
+        PS> powershell -ExecutionPolicy ByPass -c "irm astral.sh | iex"
+        ```
+
+

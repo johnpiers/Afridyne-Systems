@@ -1,0 +1,551 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: simpleweather\n"
+"Report-Msgid-Bugs-To: simpleweather-gnome@proton.me\n"
+"POT-Creation-Date: 2025-07-23 16:59-0500\n"
+"PO-Revision-Date: 2025-07-23 22:06\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: simpleweather\n"
+"X-Crowdin-Project-ID: 798380\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: simple-weather@romanlefler.com.pot\n"
+"X-Crowdin-File-ID: 2\n"
+
+#: src/autoConfig.ts:49 src/location.ts:53 src/location.ts:63
+#: src/preferences/generalPage.ts:179
+msgid "My Location"
+msgstr "Моє місцезнаходження"
+
+#: src/details.ts:59 src/preferences/generalPage.ts:64
+msgid "Temperature"
+msgstr "Температура"
+
+#: src/details.ts:60
+msgid "Condition"
+msgstr "Стан"
+
+#: src/details.ts:61
+msgid "Feels Like"
+msgstr "Відчувається як"
+
+#: src/details.ts:62
+msgid "Wind"
+msgstr "Вітер"
+
+#: src/details.ts:63
+msgid "Humidity"
+msgstr "Вологість"
+
+#: src/details.ts:64
+msgid "Gusts"
+msgstr "Гюстс"
+
+#: src/details.ts:65
+msgid "UV High"
+msgstr "УФ-фах"
+
+#: src/details.ts:66 src/preferences/generalPage.ts:92
+msgid "Pressure"
+msgstr "Тиск"
+
+#: src/details.ts:67
+msgid "Precipitation"
+msgstr "Атмосферні опади"
+
+#: src/details.ts:68
+msgid "Sunrise"
+msgstr "Схід сонця"
+
+#: src/details.ts:69
+msgid "Sunset"
+msgstr "Захід Сонця"
+
+#: src/details.ts:70
+msgid "Cloud Cover"
+msgstr "Хмарна обкладинка"
+
+#: src/details.ts:75 src/popup.ts:409
+msgid "Invalid"
+msgstr "Недійсний"
+
+#: src/lang.ts:108 src/popup.ts:57
+msgid "Today"
+msgstr "Сьогодні"
+
+#: src/lang.ts:111
+msgid "Monday"
+msgstr "Понеділок"
+
+#: src/lang.ts:111
+msgid "Sunday"
+msgstr "Неділя"
+
+#: src/lang.ts:111
+msgid "Tuesday"
+msgstr "Вівторок"
+
+#: src/lang.ts:111
+msgid "Wednesday"
+msgstr "Середа"
+
+#: src/lang.ts:112
+msgid "Friday"
+msgstr "П'ятниця"
+
+#: src/lang.ts:112
+msgid "Saturday"
+msgstr "Субота"
+
+#: src/lang.ts:112
+msgid "Thursday"
+msgstr "Четвер"
+
+#: src/location.ts:82
+#, javascript-format
+msgid "%f°N"
+msgstr ""
+
+#: src/location.ts:82
+#, javascript-format
+msgid "%f°S"
+msgstr "%f°S"
+
+#: src/location.ts:83
+#, javascript-format
+msgid "%f°E"
+msgstr "%f°E"
+
+#: src/location.ts:83
+#, javascript-format
+msgid "%f°W"
+msgstr "%f°W"
+
+#: src/popup.ts:143
+msgid "Weather Data"
+msgstr "Дані погоди"
+
+#: src/popup.ts:297 src/preferences/aboutPage.ts:76
+msgid "Settings"
+msgstr "Налаштування"
+
+#: src/popup.ts:383
+#, javascript-format
+msgid "H: %s"
+msgstr "H: %s"
+
+#: src/popup.ts:384
+#, javascript-format
+msgid "L: %s"
+msgstr ""
+
+#: src/preferences/aboutPage.ts:48
+msgid "About"
+msgstr "Про програму"
+
+#: src/preferences/aboutPage.ts:59
+msgid "GitHub Repository"
+msgstr "GitHub Repository"
+
+#: src/preferences/aboutPage.ts:61
+msgid "Support Me"
+msgstr "Підтримати мене"
+
+#: src/preferences/aboutPage.ts:68
+msgid "SimpleWeather Version"
+msgstr "SimpleWeather Версія"
+
+#: src/preferences/aboutPage.ts:71
+msgid "Unknown"
+msgstr "Не вказано"
+
+#: src/preferences/aboutPage.ts:79
+msgid "Copy"
+msgstr "Копія"
+
+#: src/preferences/aboutPage.ts:102
+msgid "Copied settings JSON to clipboard."
+msgstr "Налаштування JSON в буфер обміну."
+
+#: src/preferences/aboutPage.ts:116
+#, javascript-format
+msgid "Contributions and translations are welcome! Read how on %s."
+msgstr "Запрошуємо внески та переклади! Прочитайте, як працює %s."
+
+#: src/preferences/aboutPage.ts:119
+#, javascript-format
+msgid "If you like this extension, consider starring it on %s."
+msgstr "Якщо вам подобається це розширення, спробуйте поставити за руку разом з %s."
+
+#: src/preferences/aboutPage.ts:122
+msgid "here"
+msgstr "сюди"
+
+#: src/preferences/aboutPage.ts:124
+#, javascript-format
+msgid "Report bugs or request new features %s."
+msgstr "Повідомити про помилку або попросити нові функції %s."
+
+#: src/preferences/aboutPage.ts:138
+msgid "Credits"
+msgstr "Автори"
+
+#: src/preferences/detailsPage.ts:68
+msgid "Details"
+msgstr "Подробиці"
+
+#: src/preferences/detailsPage.ts:74
+msgid "Pop-Up"
+msgstr "Спливаюче вікно"
+
+#: src/preferences/detailsPage.ts:75
+msgid "Drag-and-drop from bottom to configure the pop-up"
+msgstr "Перетягніть знизу для налаштування спливаючого вікна"
+
+#: src/preferences/detailsPage.ts:173 src/preferences/generalPage.ts:235
+msgid "Panel"
+msgstr "Панель"
+
+#: src/preferences/detailsPage.ts:176
+msgid "None"
+msgstr "Без ефекту"
+
+#: src/preferences/detailsPage.ts:188
+msgid "Panel Detail"
+msgstr "Деталі панелі"
+
+#: src/preferences/detailsPage.ts:206
+msgid "Secondary Panel Detail"
+msgstr "Деталі другої панелі"
+
+#: src/preferences/detailsPage.ts:218
+msgid "Show Condition Icon"
+msgstr "Показати піктограму стану"
+
+#: src/preferences/detailsPage.ts:228
+msgid "Show Sunrise/Sunset"
+msgstr "Показати захід сонця/захід"
+
+#: src/preferences/editLocation.ts:33
+#, javascript-format
+msgid "Edit %s"
+msgstr "Редагувати %s"
+
+#: src/preferences/editLocation.ts:33
+msgid "New Location"
+msgstr "Нове розташування"
+
+#: src/preferences/editLocation.ts:41
+msgid "Name"
+msgstr "Ім'я"
+
+#: src/preferences/editLocation.ts:56
+msgid "Coordinates"
+msgstr "Координати"
+
+#: src/preferences/editLocation.ts:66
+msgid "Save"
+msgstr "Зберегти"
+
+#: src/preferences/editLocation.ts:94
+msgid "Name is required."
+msgstr "Потрібне ім'я."
+
+#: src/preferences/editLocation.ts:99
+msgid "Invalid coordinates entry."
+msgstr "Неприпустимий запис координат."
+
+#: src/preferences/generalPage.ts:38
+msgid "General"
+msgstr "Загальні налаштування"
+
+#: src/preferences/generalPage.ts:43 src/preferences/generalPage.ts:53
+msgid "Units"
+msgstr "Одиниці виміру"
+
+#: src/preferences/generalPage.ts:44
+msgid "Configure units of measurement"
+msgstr "Налаштування одиниць вимірювання"
+
+#: src/preferences/generalPage.ts:48
+msgid "Custom"
+msgstr "Користувацька"
+
+#: src/preferences/generalPage.ts:48
+msgid "Metric"
+msgstr "Метрична система"
+
+#: src/preferences/generalPage.ts:48
+msgid "UK"
+msgstr "Великобританія"
+
+#: src/preferences/generalPage.ts:48
+msgid "US"
+msgstr "США"
+
+#: src/preferences/generalPage.ts:61
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: src/preferences/generalPage.ts:62
+msgid "Celsius"
+msgstr "Цельсій"
+
+#: src/preferences/generalPage.ts:78
+msgid "Speed"
+msgstr "Швидкість"
+
+#: src/preferences/generalPage.ts:106
+msgid "Rain Measurement"
+msgstr "Вимірювання дощу"
+
+#: src/preferences/generalPage.ts:120
+msgid "Distance"
+msgstr "Відстань"
+
+#: src/preferences/generalPage.ts:144
+msgid "Degrees"
+msgstr "Градуси"
+
+#: src/preferences/generalPage.ts:144
+msgid "Eight-Point Compass"
+msgstr "Компас восьми точок"
+
+#: src/preferences/generalPage.ts:147
+msgid "Direction"
+msgstr "Напрямок"
+
+#: src/preferences/generalPage.ts:159
+msgid "Weather Service"
+msgstr "Служба погоди"
+
+#: src/preferences/generalPage.ts:160
+msgid "Configure how the weather is attained"
+msgstr "Налаштувати досягнення прогнозу погоди"
+
+#: src/preferences/generalPage.ts:167
+msgid "Weather Provider"
+msgstr "Провайдер погоди"
+
+#: src/preferences/generalPage.ts:180
+msgid "Configure how your location is found"
+msgstr "Налаштуйте розташування"
+
+#: src/preferences/generalPage.ts:184 src/preferences/generalPage.ts:185
+msgid "Online"
+msgstr "Онлайн"
+
+#: src/preferences/generalPage.ts:186 src/preferences/generalPage.ts:245
+msgid "System"
+msgstr "Система"
+
+#: src/preferences/generalPage.ts:187
+msgid "Disable"
+msgstr "Вимкнено"
+
+#: src/preferences/generalPage.ts:190
+msgid "Provider"
+msgstr "Постачальник"
+
+#: src/preferences/generalPage.ts:202
+msgid "Refresh Interval (Minutes)"
+msgstr "Інтервал оновлення (хвилини)"
+
+#: src/preferences/generalPage.ts:220
+msgid "Accessibility"
+msgstr "Доступність"
+
+#: src/preferences/generalPage.ts:221
+msgid "Configure accessibility features"
+msgstr "Налаштувати спеціальні можливості"
+
+#: src/preferences/generalPage.ts:224
+msgid "High Contrast"
+msgstr "Висока контрастність"
+
+#: src/preferences/generalPage.ts:236
+msgid "Configure the panel and pop-up"
+msgstr "Налаштування панелі та спливаючого вікна"
+
+#: src/preferences/generalPage.ts:246
+msgid "Light"
+msgstr "Світла"
+
+#: src/preferences/generalPage.ts:247
+msgid "Afterdark"
+msgstr "Афтертемний"
+
+#: src/preferences/generalPage.ts:248
+msgid "Immersive"
+msgstr "Повноекранний"
+
+#: src/preferences/generalPage.ts:251
+msgid "Theme"
+msgstr "Тема"
+
+#: src/preferences/generalPage.ts:261
+msgid "Center"
+msgstr "Центр"
+
+#: src/preferences/generalPage.ts:261
+msgid "Left"
+msgstr "Ліворуч"
+
+#: src/preferences/generalPage.ts:261
+msgid "Right"
+msgstr "Праворуч"
+
+#: src/preferences/generalPage.ts:264
+msgid "Side of Panel"
+msgstr "Біля панелі"
+
+#: src/preferences/generalPage.ts:274
+msgid "Order in Panel"
+msgstr "Замовлення на панелі"
+
+#: src/preferences/locationsPage.ts:57 src/preferences/locationsPage.ts:80
+msgid "Locations"
+msgstr "Місцезнаходження"
+
+#: src/preferences/locationsPage.ts:70 src/preferences/search.ts:75
+msgid "Add"
+msgstr "Додати"
+
+#: src/preferences/locationsPage.ts:97
+msgid "Move Up"
+msgstr "Підняти вгору"
+
+#: src/preferences/locationsPage.ts:112
+msgid "Move Down"
+msgstr "Донизу"
+
+#: src/preferences/locationsPage.ts:128
+msgid "Add Here"
+msgstr "Додати тут"
+
+#: src/preferences/locationsPage.ts:193
+#, javascript-format
+msgid "Are you sure you want delete %s?"
+msgstr ""
+
+#: src/preferences/locationsPage.ts:194
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/preferences/locationsPage.ts:194
+msgid "Delete"
+msgstr "Видалити"
+
+#: src/preferences/locationsPage.ts:235
+#, javascript-format
+msgid "Internal Error: %s"
+msgstr "Внутрішня помилка: %s"
+
+#: src/preferences/locationsPage.ts:236
+msgid "Internal Error"
+msgstr "Внутрішня помилка"
+
+#: src/preferences/locationsPage.ts:261
+msgid "Something else edited the locations."
+msgstr "Щось інше відредагувало місце."
+
+#: src/preferences/search.ts:45
+msgid "Search Location"
+msgstr "Пошук розташування"
+
+#: src/preferences/search.ts:54
+msgid "City, Neighborhood, etc."
+msgstr "Місто, район, і так далі."
+
+#: src/preferences/search.ts:59
+msgid "Search"
+msgstr "Пошук"
+
+#: src/preferences/search.ts:158
+msgid "No Internet"
+msgstr "Немає Інтернету"
+
+#: src/preferences/search.ts:206
+msgid "No results."
+msgstr "Нічого не знайдено."
+
+#: src/preferences/search.ts:211
+msgid "No copyright information available."
+msgstr "Немає інформації про авторські права."
+
+#: src/prefs.ts:74
+#, javascript-format
+msgid "SimpleWeather doesn't know how to handle your locale.\n"
+"\tError - %s\n"
+"Please consider submitting a bug report on GitHub."
+msgstr "SimpleWeather не знає, як впоратися з вашою локальністю.\n"
+"\tПомилка - %s\n"
+"Будь ласка, розгляньте можливість надсилання звіту про помилку на GitHub."
+
+#: src/prefs.ts:77
+msgid "Don't Show Again"
+msgstr "Більше не показувати"
+
+#: src/prefs.ts:77
+msgid "Ignore"
+msgstr "Ігнорувати"
+
+#: src/prefs.ts:77
+msgid "Open GitHub"
+msgstr "Open GitHub"
+
+#: src/weather.ts:103
+msgid "Clear"
+msgstr "Очистити"
+
+#: src/weather.ts:103
+msgid "Sunny"
+msgstr "Sunny"
+
+#: src/weather.ts:105
+msgid "Cloudy"
+msgstr "Хмарно"
+
+#: src/weather.ts:107
+msgid "Rainy"
+msgstr "Rainy"
+
+#: src/weather.ts:109
+msgid "Snowy"
+msgstr "Snowy"
+
+#: src/weather.ts:111
+msgid "Stormy"
+msgstr "Stormy"
+
+#: src/weather.ts:113
+msgid "Windy"
+msgstr "Вітряно"
+
+#: src/welcome.ts:53
+#, javascript-format
+msgid "Welcome to %s"
+msgstr "Ласкаво просимо до %s"
+
+#: src/welcome.ts:74
+#, javascript-format
+msgid "%s occasionally connects to the selected weather service. By default, it will use the Internet to connect to:\n"
+"  •  %s, an %s service for weather\n"
+"  •  %s, optional for resolving the current location\n"
+"  •  %s, for searching locations by name\n\n"
+msgstr ""
+
+#: src/welcome.ts:83
+#, javascript-format
+msgid "Thank you for installing %s!"
+msgstr "Дякуємо Вам за встановлення %s!"
+
+#: src/welcome.ts:99
+msgid "Abort"
+msgstr "Відміна"
+

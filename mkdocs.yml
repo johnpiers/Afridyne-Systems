@@ -1,0 +1,403 @@
+site_name: Afridyne Systems (PTY) LTD
+site_url: https://example.com
+theme:
+  name: material  
+  custom_dir: overrides
+  favicon: assets/favicon.png  # Path relative to your 'docs' folder
+  mermaid:
+    javascript:
+      - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+    options:
+      theme: default
+      startOnLoad: true  
+  include_search_page: true
+  color_mode: auto
+  user_color_mode_toggle: true
+  locale: en
+  analytics: {gtag: 'G-274394082'}
+  features:
+    - search.highlight
+    - search.share
+    - navigation.sections        # Keeps sections grouped together
+    - navigation.path            # Shows breadcrumbs
+    - navigation.top             # Adds a "Back to top" button
+    - navigation.footer          # Enables prev/next links
+    - navigation.indexes         # Allows section titles to be links
+    - content.tooltips
+    - navigation.tracking       
+    - navigation.instant  # Fast SPA-like loading
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    #- navigation.tabs
+    #- content.tabs.link
+    - content.footnote.tooltips
+    - content.action.edit
+    - content.action.view
+    - toc.follow
+    - header.autohide
+    # - navigation.expand        # Keep this commented out to allow collapsing
+
+  palette:
+    - media: '(prefers-color-scheme)'
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-auto
+        name: 'Switch to light mode'
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: 'Switch to dark mode'
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: 'Switch to system preference'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: logo      
+
+validation:
+  anchors: ignore
+
+plugins:
+  - blog:
+      blog_dir: blog
+      post_url_format: "{date}/{slug}"
+      authors_file: "{blog}/.authors.yml"  # <--- Add this line
+      archive: false  # This hides the archive description box
+  - rss:
+      use_git: false        
+      match_path: blog/posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+  - group:
+      enabled: true
+      plugins:
+        - minify:
+            minify_html: !ENV [DEPLOY, false]
+  - search
+  - table-reader
+  - glightbox
+  - mkdocstrings
+  - autorefs
+  - markdown-exec
+  - section-index
+  - open-in-new-tab
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+  - social:
+      enabled: !ENV [CI, true]
+  - optimize:
+      enabled: !ENV [CI, true]
+      cache: false
+  - schema_reader
+  - typeset
+  - caption:
+      figure:
+        enable: false
+      table:
+        enable: false
+      custom:
+        enable: false
+
+nav:
+  - MkDocs-Material:
+      - MkDocs Start Page: MkDocs-Material-Start.md
+      - Admonitions: admonitions.md
+      - MkDocs Home: index.md  
+      - MkDocsCaption: Caption.md
+      - MkDocstrings: MkDocstrings.md
+      - Text Colour: MathJax.md
+      - Creating Your Site: rl.md
+      - Get Started-MkDocs: about.md
+      - Afridyne: afridyne.md
+      - Blog Config: MkDocs-Material/blog.md
+      - Social Config: MkDocs-Material/social.md
+  - Blog: blog/index.md
+  - Markdown:
+      - Markdown: Markdown.md
+      - CommonMarkSpec: CommonMarkSpec.md      
+      - MD Cheat Sheet: Ultimate Markdown Cheat Sheet.md
+      - Markdown Guide: Markdown Guide.md
+      - Awesome Markdown: marktext.md
+      - VariousMarkdown: Various_HTML_Markdown.md
+      - TestBasicSyntax: TestBasicSyntax.md
+  - Weather:
+      - Stormy: Stormy.md
+      - SimpleWeather: SimpleWeather.md
+  - Media:
+      - MPD Configure: mpd-configure.md
+      - ALSA & Pulse: ALSA & Pulse.md
+      - Pipewire: Pipewire.md
+      - Pulse Code Modulation: PCM.md
+      - Music Player Daemon: Music-Player-Daemon.md
+      - ncmpcpp: ncmpcpp.md
+      - ncmpcpp++: Mpd-Mpc.md
+      - Keys Nav ncmpcpp: Keys_Movement_ncmpcpp.md
+  - Arch Linux:
+      - Overview: DOCS.md
+      - OS Guide: Arch OS.md
+      - Pacman: ArchLinux-Pacman.md
+      - Installation Guide: ArchInstallationGuide.md
+      - ArchInstall Script: ArchInstall.md
+      - BBCode: Arch-BBCode.md
+      - Archive: Arch Linux Archive.md
+      - ALPM: ALPM.md
+  - Microsoft:
+      - OFGB: OFGB.md
+      - MS Account Bypass: Bypass.md
+  - uv Pip:
+      - UV: UV.md
+      - uv Main: uv_Main.md
+  - Various Misc:
+      - Aurdex: Aurdex.md
+      - Bash-Git: BashGit.md
+      - Curl: EverythingCurl.md
+      - GElectrical: GElectrical.md
+      - Chmod & Chown: chmod&chown.md
+      - Fish-Shell: Fish-Shell.md
+      - GPU Top: AMDgpu-Top.md
+      - Badblocks: badblocks.md
+      - Systemd: systemd.md
+
+# --------------------------------------------------
+# MARKDOWN EXTENSIONS MOVED TO CORRECT LOCATION HERE
+# --------------------------------------------------
+
+markdown_extensions:
+  # Base Extensions
+  - admonition
+  - attr_list
+  - def_list
+  - abbr
+  - pymdownx.blocks.html
+  - nl2br
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+      
+
+  
+  # --- Pymdownx Suite (Optimized order) ---
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          # Change 'fence_code_format' to 'mermaid_format' below:
+          #format: !!python/name:pymdownx.superfences.mermaid_format
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.details
+  - pymdownx.snippets
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true    
+  - mkdocs-click
+  
+  
+         
+# Use not_in_nav to hide these pages from the sidebar, 
+# but still build them into accessible HTML files:
+not_in_nav: |
+  SimpleWeather-development/Changelog.md
+  MkDocs-Material/custom.md
+  MkDocsCaption/index.md
+  man.amdgpu_top.md
+  SimpleWeather-development/docs/building.md
+  SimpleWeather-development/docs/setup.md
+  SimpleWeather-development/docs/source.md
+  SimpleWeather-development/docs/themes.md
+  SimpleWeather-development/Authors.md
+  SimpleWeather-development/License.md
+  S62.md
+  MermaidCheat.md
+  Mkdocstrings/handlers.md
+  Mkdocstrings/theming.md
+  Mkdocstrings/usage.md
+  UV_Style/STYLE.md
+  CONTRIBUTING.md
+  contributing.md
+  auto-sync.md
+  MkDocs-Material/coverage.md
+  MkDocs-Material/engage.md
+  MkDocsCaption: MkDocsCaption/index.md
+  MkDocsCaption/config.md
+  MkDocsCaption/custom.md
+  MkDocsCaption/image.md
+  MkDocsCaption/Quick-Start.md
+  MkDocsCaption/Readme.md
+  MkDocsCaption/references.md
+  MkDocsCaption/table.md
+  amdgpu_top-main/CHANGELOG.md
+  amdgpu_top-main/LICENSE.md
+  amdgpu_top-main/docs/man-amdgpu-top.md
+  amdgpu_top-main/crates/libamdgpu_top/src/xdna/README.md
+  amdgpu_top-main/crates/README.md
+  MkDocs-Material/setting-up-tags.md
+  MkDocs-Material/tags.md
+  MkDocs-Material/meta.md
+  MkDocs-Material/basic.md
+  MkDocs-Material/navigation.md
+  MkDocs-Material/blog.md
+  MkDocs-Material/tags.md 
+  MkDocs-Material/python-markdown.md
+  MkDocs-Material/python-markdown-extensions.md
+  MkDocs-Material/changing-the-logo-and-icons.md
+  MkDocs-Material/icons-emojis.md
+  MkDocs-Material/customization.md        
+  MkDocs-Material/code-blocks.md
+  MkDocs-Material/formatting.md
+  MkDocs-Material/tooltips.md
+  MkDocs-Material/annotations.md
+  MkDocs-Material/typeset.md
+  MkDocs-Material/content-tabs.md
+  MkDocs-Material/setting-up-navigation.md
+  MkDocs-Material/math.md
+  MkDocs-Material/data-tables.md
+  MkDocs-Material/diagrams.md
+  MkDocs-Material/changing-the-colors.md
+  MkDocs-Material/image-processing.md
+  MkDocs-Material/grids.md
+  MkDocs-Material/buttons.md
+  MkDocs-Material/lists.md
+  MkDocs-Material/image-processing.md
+  MkDocs-Material/license.md  
+  sunsetting-gitter.md
+  upgrade.md
+  MkDocs-Material/setup.md
+  MkDocs-Material/footnotes.md
+  MkDocs-Material/changing-the-language.md
+  MkDocs-Material/images.md
+  MkDocs-Material/setting-up-social-cards.md    
+  MkDocs-Material/building-an-optimized-site.md
+  MkDocs-Material/optimize.md
+  MkDocs-Material/projects.md
+  MkDocs-Material/ensuring-data-privacy.md
+  MkDocs-Material/setting-up-site-analytics.md
+  MkDocs-Material/privacy.md
+  MkDocs-Material/setting-up-the-footer.md
+  MkDocs-Material/changing-the-fonts.md
+  MkDocs-Material/tags.md
+  MkDocs-Material/requesting-a-change.md
+  MkDocs-Material/excluding-content-from-search.md
+  MkDocs-Material/search-better-faster-smaller.md
+  MkDocs-Material/setting-up-site-search.md
+  MkDocs-Material/publishing-your-site.md    
+  MkDocs-Material/creating-your-site.md
+  MkDocs-Material/search.md
+  MkDocs-Material/social.md
+  MkDocs-Material/offline.md
+  MkDocs-Material/setting-up-a-blog.md
+  MkDocs-Material/info.md
+  MkDocs-Material/meta.md
+  MkDocs-Material/group.md
+  MkDocs-Material/caching.md
+  MkDocs-Material/setting-up-versioning.md
+  MkDocs-Material/setting-up-the-header.md
+  MkDocs-Material/adding-a-git-repository.md
+  MkDocs-Material/adding-a-comment-system.md
+  MkDocs-Material/building-for-offline-usage.md
+  MkDocs-Material/creating-a-reproduction.md
+  MkDocs-Material/reporting-a-bug.md
+  MkDocs-Material/zensical.md
+  MkDocs-Material/philosophy.md
+  MkDocs-Material/conventions.md
+  MkDocs-Material/transforming-material-for-mkdocs.md
+  MkDocs-Material/goodbye-github-discussions.md
+  MkDocs-Material/insiders-now-free-for-everyone.md
+  MkDocs-Material/Material-Getting-Started.md
+  terminal-images.md
+    
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  - https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-mermaid.css
+  - styles/extra.css
+  - styles/custom.css
+
+
+
+extra_javascript:
+  - javascripts/mathjax.js  # Adjust this path to where your file actually is
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/theme_extra.js
+  - assets/scripts/extra.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - https://unpkg.com/tablesort@5.3.0/dist/sorts/tablesort.number.min.js
+  - javascripts/tablesort.js
+  #- javascripts/mathjax.js  
+  #- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # Add a link to the official mermaid CDN
+  #- https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.13.8/mermaid.min.js
+  # For mkdocs integration: Add a link to 'massilia-mermaid.js' cdn by rod2ik
+  #- https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-mermaid.js
+
+
+# Adding css/js customization files
+#extra_css:
+#    - assets/stylesheets/extra.css
+#extra_javascript:
+#    - assets/scripts/extra.js
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com
+  history_buttons: true
+  article_nav_top: true
+  article_nav_bottom: true
+  version: v1.0.5
+  analytics: 
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.

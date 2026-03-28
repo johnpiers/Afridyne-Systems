@@ -1,0 +1,26 @@
+[package]
+name = "amdgpu_top_gui"
+license = "MIT AND OFL-1.1"
+description = "GUI Library for amdgpu_top"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["libamdgpu_top/libdrm_link"]
+
+[dependencies]
+libamdgpu_top = { workspace = true }
+eframe = { version = "0.32", default-features = false, features = [ "default_fonts", "wgpu", "persistence", "wayland", "x11" ] }
+wgpu = { version = "25", default-features = false, features = ["gles", "vulkan"] }
+egui_plot = { version = "0.33" }
+i18n-embed = { version = "0", features = ["fluent-system", "desktop-requester"] }
+i18n-embed-fl = "0"
+rust-embed = { version = "8", features = ["debug-embed"] }
+
+[lints.clippy]
+upper_case_acronyms = "allow"
+single_match = "allow"

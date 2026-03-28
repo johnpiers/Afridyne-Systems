@@ -1,0 +1,362 @@
+/* ==================================================================== */
+/* 0. MKDOCS TAB/THEME COLOR OVERRIDES                                  */
+/* ==================================================================== */
+
+/* Force the inactive tab labels to use the primary color defined in mkdocs.yml (cyan in slate mode) */
+.tabbed-set.tabbed-alternate .tabbed-labels label a {
+	color: var(--md-primary-fg-color, cyan) !important;
+}
+
+/* Force the active/hovered tab label links to use the theme accent color */
+.tabbed-set.tabbed-alternate .tabbed-labels label a:hover, 
+.tabbed-set.tabbed-alternate .tabbed-labels input:checked+label a {
+	color: var(--md-accent-fg-color, inherit) !important;
+}
+
+
+/* ==================================================================== */
+/* 1. IMAGE & MEDIA STYLES                                              */
+/* ==================================================================== */
+
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reduced-image {
+    width: 70%;
+    height: auto;
+}
+
+.badge-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+
+/* ==================================================================== */
+/* 2. GENERAL DATA TABLE STYLES (THEME OVERRIDES)                       */
+/* ==================================================================== */
+
+.md-typeset table:not([class]) {
+	border-collapse: collapse;
+	width: 100%;
+	display: table;
+}
+.md-typeset table:not([class]) th, .md-typeset table:not([class]) td {
+	border: 1px solid var(--md-default-fg-color--lightest);
+	padding: 0.9375em 1.25em;
+	vertical-align: top;
+}
+.md-typeset table:not([class]) th {
+	background-color: var(--md-code-bg-color);
+	font-weight: 700;
+}
+.md-typeset table:not([class]) tr:hover {
+	background-color: var(--md-code-bg-color);
+}
+
+/* Dark mode specific adjustments for general tables */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th,
+[data-md-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-color: var(--md-default-fg-color--lighter);
+}
+
+
+/* Force header colors (OliveGreen example) */
+.md-typeset table th {
+    background-color: OliveGreen !important; 
+    color: white !important;               
+}
+
+/* Optional: Dark mode specific override for headers */
+@media (prefers-color-scheme: dark) {
+  .md-typeset table th {
+    background-color: #006644 !important;
+  }
+}
+
+
+/* ==================================================================== */
+/* 3. SPECIFIC TABLE CENTERING (The working solution)                   */
+/* ==================================================================== */
+
+.center-container {
+  display: flex;
+  justify-content: center; 
+  /* Ensures the div container itself spans the full content width */
+  width: 100%; 
+}
+
+/* Target the table INSIDE the container and force it to be block-level and auto-width */
+.center-container table {
+  display: block; /* Ensures margin auto works */
+  width: auto;    /* Allows the table to only be as wide as its content */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Resets cell text alignment to default if needed */
+.md-typeset .center-container :is(td, th):not([align]) {
+  text-align: initial;
+}
+
+
+/* ==================================================================== */
+/* 4. TYPOGRAPHY/HEADING STYLES                                         */
+/* ==================================================================== */
+
+/* Ensure only headings inside 'markdown-specific-area' are targeted */
+.markdown-specific-area h1 {
+    text-align: center;      
+    font-size: 2.5rem;       
+    color: #00B5BE;
+}
+
+.markdown-specific-area h2 {
+    text-align: left;        
+    font-size: 1.8rem;       
+    color: #00B5BE;
+}
+
+
+/* ==================================================================== */
+/* 5. CUSTOM ADMONITION DEFINITIONS (Pied Piper)                        */
+/* ==================================================================== */
+
+:root {
+  --md-admonition-icon--pied-piper: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M244 246c-3.2-2-6.3-2.9-10.1-2.9-6.6 0-12.6 3.2-19.3 3.7l1.7 4.9zm135.9 197.9c-19 0-64.1 9.5-79.9 19.8l6.9 45.1c35.7 6.1 70.1 3.6 106-9.8-4.8-10-23.5-55.1-33-55.1zM340.8 177c6.6 2.8 11.5 9.2 22.7 22.1 2-1.4 7.5-5.2 7.5-8.6 0-4.9-11.8-13.2-13.2-23 11.2-5.7 25.2-6 37.6-8.9 68.1-16.4 116.3-52.9 146.8-116.7C548.3 29.3 554 16.1 554.6 2l-2 2.6c-28.4 50-33 63.2-81.3 100-31.9 24.4-69.2 40.2-106.6 54.6l-6.3-.3v-21.8c-19.6 1.6-19.7-14.6-31.6-23-18.7 20.6-31.6 40.8-58.9 51.1-12.7 4.8-19.6 10-25.9 21.8 34.9-16.4 91.2-13.5 98.8-10zM555.5 0l-.6 1.1-.3.9.6-.6zm-59.2 382.1c-33.9-56.9-75.3-118.4-150-115.5l-.3-6c-1.1-13.5 32.8 3.2 35.1-31l-14.4 7.2c-19.8-45.7-8.6-54.3-65.5-54.3-14.7 0-26.7 1.7-41.4 4.6 2.9 18.6 2.2 36.7-10.9 50.3l19.5 5.5c-1.7 3.2-2.9 6.3-2.9 9.8 0 21 42.8 2.9 42.8 33.6 0 18.4-36.8 60.1-54.9 60.1-8 0-53.7-50-53.4-60.1l.3-4.6 52.3-11.5c13-2.6 12.3-22.7-2.9-22.7-3.7 0-43.1 9.2-49.4 10.6-2-5.2-7.5-14.1-13.8-14.1-3.2 0-6.3 3.2-9.5 4-9.2 2.6-31 2.9-21.5 20.1L15.9 298.5c-5.5 1.1-8.9 6.3-8.9 11.8 0 6 5.5 10.9 11.5 10.9 8 0 131.3-28.4 147.4-32.2 2.6 3.2 4.6 6.3 7.8 8.6 20.1 14.4 59.8 85.9 76.4 85.9 24.1 0 58-22.4 71.3-41.9 3.2-4.3 6.9-7.5 12.4-6.9.6 13.8-31.6 34.2-33 43.7-1.4 10.2-1 35.2-.3 41.1 26.7 8.1 52-3.6 77.9-2.9 4.3-21 10.6-41.9 9.8-63.5l-.3-9.5c-1.4-34.2-10.9-38.5-34.8-58.6-1.1-1.1-2.6-2.6-3.7-4 2.2-1.4 1.1-1 4.6-1.7 88.5 0 56.3 183.6 111.5 229.9 33.1-15 72.5-27.9 103.5-47.2-29-25.6-52.6-45.7-72.7-79.9zm-196.2 46.1v27.2l11.8-3.4-2.9-23.8zm-68.7-150.4l24.1 61.2 21-13.8-31.3-50.9zm84.4 154.9l2 12.4c9-1.5 58.4-6.6 58.4-14.1 0-1.4-.6-3.2-.9-4.6-26.8 0-36.9 3.8-59.5 6.3z"/></svg>');
+}
+.md-typeset .admonition.pied-piper,
+.md-typeset details.pied-piper {
+  border-color: rgb(43, 155, 70);
+}
+.md-typeset .pied-piper > .admonition-title,
+.md-typeset .pied-piper > summary {
+  background-color: rgba(43, 155, 70, 0.1);
+}
+.md-typeset .pied-piper > .admonition-title::before,
+.md-typeset .pied-piper > summary::before {
+  background-color: rgb(43, 155, 70);
+  -webkit-mask-image: var(--md-admonition-icon--pied-piper);
+          mask-image: var(--md-admonition-icon--pied-piper);
+}
+
+
+/* ==================================================================== */
+/* 6. HR STYLES INSIDE ADMONITIONS                                      */
+/* ==================================================================== */
+
+/* Base styles for all admonition HRs */
+.md-typeset .admonition hr {
+    border: none;
+    margin: 1.5em 0;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.md-typeset .admonition:not(.pied-piper) hr {
+    border-top-color: inherit; 
+}
+
+/* The pied-piper box uses its specific green color */
+.md-typeset .admonition.pied-piper hr {
+    border-top-color: rgb(43, 155, 70) !important; 
+}
+
+
+/* ==================================================================== */
+/* 7. CODE BLOCK UTILITY STYLES                                         */
+/* ==================================================================== */
+
+/* Hides the copy button */
+.highlight.no-copy .md-clipboard {
+  display: none;
+}
+
+/* Removes the background color, padding, and border from specific blocks */
+.highlight.no-style {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  margin: 0; 
+}
+
+/* Ensures the text inside the code block is also styled correctly */
+.highlight.no-style pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+
+/* ==================================================================== */
+/* 8. JAVASCRIPT TABLE SORTING ADDITIONS                                */
+/* ==================================================================== */
+
+th[role=columnheader]:not(.no-sort) {
+	cursor: pointer;
+}
+
+th[role=columnheader]:not(.no-sort):after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: #404040 transparent;
+	visibility: hidden;
+	opacity: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+th[aria-sort=ascending]:not(.no-sort):after {
+	border-bottom: none;
+	border-width: 4px 4px 0;
+}
+
+th[aria-sort]:not(.no-sort):after {
+	visibility: visible;
+	opacity: 0.4;
+}
+
+th[role=columnheader]:not(.no-sort):hover:after {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+
+/* Forces code blocks to wrap text visually and hides horizontal scrollbar */
+.md-typeset pre code {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Hides the horizontal scrollbar explicitly if it still appears */
+.md-typeset pre {
+  overflow-x: hidden;
+}
+
+
+.no-copy .md-code__nav {
+    display: none;
+}
+
+
+
+/* 1. Scoped Table Layout: Only affects tables inside your container */
+.isolated-table-container table {
+    table-layout: fixed !important; /* Re-enabled but scoped */
+    width: 100% !important;
+    border-collapse: collapse !important; 
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 2. Scoped Column Widths: Ensures alignment only for these specific tables */
+.isolated-table-container th:nth-child(1), 
+.isolated-table-container td:nth-child(1) { width: 30% !important; }
+
+.isolated-table-container th:nth-child(2), 
+.isolated-table-container td:nth-child(2) { width: 40% !important; }
+
+.isolated-table-container th:nth-child(3), 
+.isolated-table-container td:nth-child(3) { width: 30% !important; }
+
+/* 3. The Joiner: Pulls adjacent containers together */
+/* This targets the containers themselves to avoid global scrollwrap conflicts */
+.isolated-table-container + .isolated-table-container {
+    margin-top: -1.1em !important; 
+}
+
+/* Optional: Removes the header from the second/third tables if you want a seamless look */
+.isolated-table-container + .isolated-table-container thead {
+    display: none;
+}
+
+
+/* Force the grid into 3 columns regardless of container width */
+.md-typeset .grid.cards.cols-3 > ul {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.6rem !important; 
+}
+
+/* Compact padding for the cards */
+.md-typeset .grid.cards.cols-3 > ul > li {
+    padding: 0.8rem !important;
+}
+
+
+/* --- Ultra-Compact Grid Styles --- */
+
+/* 1. Shrink the card body text and padding */
+.md-typeset .grid.cards.cols-3 > ul > li {
+    font-size: 0.7rem !important; 
+    line-height: 1.4 !important;
+    padding: 0.6rem !important; 
+}
+
+/* 2. Shrink the card title (the bold text) */
+.md-typeset .grid.cards.cols-3 > ul > li strong {
+    font-size: 0.75rem !important;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+/* 3. Make the buttons much smaller and sleek */
+.md-typeset .grid.cards.cols-3 .md-button {
+    font-size: 0.65rem !important;
+    padding: 2px 10px !important; 
+    margin-bottom: 10px !important;
+    min-height: 0 !important; 
+    line-height: 1.2 !important;
+    display: inline-flex;
+}
+
+/* 4. Shrink the icons for a cleaner look */
+.md-typeset .grid.cards.cols-3 .twemoji,
+.md-typeset .grid.cards.cols-3 .ot-icon {
+    width: 0.85rem !important;
+    height: 0.85rem !important;
+}
+
+
+/* Color Coding for Icons */
+.blue .twemoji { fill: #2094f3 !important; color: #2094f3 !important; }
+.green .twemoji { fill: #4caf50 !important; color: #4caf50 !important; }
+.orange .twemoji { fill: #ff9800 !important; color: #ff9800 !important; }
+
+/* Subtle Icon Glow (Optional but looks great on dark mode) */
+.md-typeset .grid.cards.cols-3 .twemoji {
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.1));
+}
+
+
+/* 1. Allow the annotation bubble to 'break out' of the tab container */
+.md-typeset .tabbed-content, 
+.md-typeset .tabbed-block {
+  overflow: visible !important;
+}
+
+/* 2. Allow the bubble to pop out of the code block itself */
+.md-typeset .highlight, 
+.md-typeset .highlight > pre {
+  overflow: visible !important;
+}
+
+/* 3. Ensure the bubble sits on top of everything else */
+.md-annotation__inner {
+  z-index: 100;
+}
+

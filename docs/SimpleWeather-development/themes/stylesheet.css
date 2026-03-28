@@ -1,0 +1,34 @@
+
+.simpleweather-popup-icon {
+    icon-size: 128px;
+}
+
+.simpleweather-popup-temp {
+    font-size: 64px;
+    text-align: center;
+}
+
+.simpleweather-current {
+    margin-right: 24px;
+}
+
+.simpleweather-current-item {
+    text-align: center;
+}
+
+.simpleweather-card-icon {
+    icon-size: 64px;
+}
+
+.simpleweather-card-row {
+    spacing: 12px;
+    font-weight: normal;
+}
+
+.simpleweather-settings-icon {
+    icon-size: 16px;
+}
+
+.simpleweather-second-panel-label {
+    margin-left: 8px;
+}

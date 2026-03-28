@@ -1,0 +1,219 @@
+# Contributing
+
+These are the contributing guidelines for the alpm project.
+
+Development takes place at <https://gitlab.archlinux.org/archlinux/alpm/alpm>.
+
+## Writing code
+
+This project is written in [Rust] and formatted using the nightly [`rustfmt`] version.
+
+All contributions are linted using [`clippy`] and spell checked using [`codespell`].
+The dependencies are linted with [`cargo-deny`] and unused dependencies are detected using [`cargo-machete`].
+License identifiers and copyright statements are checked using [`reuse`].
+Toml files are formatted via [`taplo-cli`].
+
+Various [`just`] targets are used to run checks and tests.
+[`shellcheck`] is used to check the just targets for correctness.
+In order to review the snapshot changes in tests, you can use [`cargo-insta`].
+
+Code examples in READMEs is tested via [`tangler`].
+Links in markdown files or doc blocks are tested via [`lychee`].
+
+To get all of the necessary tools installed on Arch Linux, run `just install-pacman-dev-packages`.
+To setup Rust for this project run `just install-rust-dev-tools`.
+Both can also be done in one fell swoop via `just dev-install`.
+
+To aide in development, it is encouraged to configure git to follow this project's guidelines:
+
+```shell
+just configure-git
+```
+
+This `just` command takes care of a few things:
+
+- Configure `git` to sign commits for this repository using OpenPGP.
+- Install the relevant [git pre-commit] and [git pre-push] hooks.
+- Install the [git prepare-commit-msg] hook to automatically add a signoff section to the commit message.
+
+## Localization and translations
+
+This project supports localization and translations of its user-facing strings.
+
+### Translation key structure
+
+Translation keys use a hierarchical kebab-case naming scheme that maps the code base structure:
+
+```text
+{module}-{group}-{key}
+```
+
+- `module` typically mirrors the Rust file that contains the translation usage.
+- `group` is optional and highlights that a subset of keys inside a module refers to the same feature.
+- `key` pinpoints the specific translation.
+
+### Adding translations
+
+Join our translation efforts at [Weblate](https://hosted.weblate.org/projects/alpm/)!
+
+When adding new translation keys or changing existing ones, follow these rules:
+
+1. Add or change keys only in the English `.ftl` files in `locales/` and commit them here. Weblate will automatically
+   pick up new keys after a push.
+1. Do not edit non-English translations directly in the repository. Instead, update them via Weblate and a respective
+   translation merge request will be created in GitLab.
+
+Also, follow these conventions when adding or updating translation keys:
+
+1. Use lowercase ASCII letters with hyphens as separators. Avoid other punctuation.
+1. Keep related keys under a shared `{module}-{group}` prefix to make their relationship obvious.
+1. Pick descriptive names that clarify what the text is used for and where it sits within the hierarchy.
+
+Some examples are `error-io-write-archive` and `cli-format-pretty-help`.
+
+## Testing
+
+We run [`nextest`] for fast execution of unit and integration tests.
+`just test` calls `cargo nextest` as well as `just test-docs`, which runs the doc tests as `nextest` isn't capable of doing that [yet](https://github.com/nextest-rs/nextest/issues/16).
+
+The `just containerized-integration-tests` recipe executes all tests that are made available by a `_containerized-integration-test` feature and are located in an integration test module named `containerized`.
+With the help of a [custom target runner], these tests are executed in a containerized environment using [`podman`].
+
+The `just virtualized-integration-tests` recipe executes all tests that are made available by a `_virtualized-integration-test` feature and are located in an integration test module named `virtualized`.
+Different from the `containerized-integration-tests` recipe, this test target concerns itself with tests that are _not_ run in a container, but must be run on bare metal or in a virtual machine.
+
+For parameterized tests, we utilize `rstest`. This is encouraged, but don't go overboard when writing your own tests.
+As a rough guideline, if your parameterization results in `if` checks inside the test, consider creating a dedicated test function for that case.
+
+### Code coverage reports
+
+Code coverage for unit tests, doc tests and integration tests is calculated using [`cargo-llvm-cov`].
+Each test recipe (e.g. `just test`, `just test-docs`, `just containerized-integration-tests`) can be instructed to generate coverage data.
+The payloads (e.g. examples and tests) are compiled while exposing the environment variables set by `cargo-llvm-cov show-env` which results in them including coverage instrumentation.
+
+In a second step, the `just create-coverage-report` command creates a cobertura code coverage report from all existing coverage data in `$CARGO_TARGET_DIR/llvm-cov/`, utilizing the [`llvm-tools-preview`] component.
+When calling `just create-coverage-report with-docs`, doc tests are considered as well.
+However, this is still an [unstable nightly-only feature](https://github.com/rust-lang/rust/issues/85658) and it always requires to generate coverage data for unit tests (`just test`) and doc tests (`just test-docs`) first.
+
+## Continuous integration
+
+This project's checks and tests are executed in a continuous integration environment based on Arch Linux.
+
+If the `CI` environment variable is set (this is usually the case e.g. in GitLab CI pipelines), our [custom target runner] script will automatically select the Arch Linux GitLab container registry instead of the default container registry to circumvent running into rate limiting.
+
+## Writing specifications
+
+Specifications for technology of this project are written in markdown documents in the context of a [component], that serves as its reference implementation.
+The specifications are located in the [component]'s `resources/specification/` directory and must end on `.5.md` or `.7.md`, so that they can be used as [section 5] or [section 7] man pages, respectively.
+
+### Specification versioning
+
+A new specification version must be created, if fields of an existing specification are altered (e.g. a field is removed, added or otherwise changed semantically).
+
+By default, given an example specification named `topic` and given only one version of `topic` exists, there would only be a document named `topic.7.md`.
+If the need for version two of `topic` arises, the document is renamed to `topicv1.7.md`, a new file named `topicv2.7.md` is used for the new version and a symlink from the generic specification name to the most recent version (here `topic.7.md -> topicv2.7.md`) is created.
+Versioned specifications additionally must clearly state the specification version number they are addressing in the `NAME` and `DESCRIPTION` section of the document.
+
+New (versions of) specifications must be accompanied by examples and code testing those examples.
+
+The examples and code testing those examples must be kept around for legacy and deprecated specifications to guarantee backwards compatibility.
+
+## Writing commit messages
+
+To ensure compatibility and automatic creation of [semantic versioning] compatible releases the commit message style follows [conventional commits].
+
+The commit messages are checked by `just run-pre-push-hook` via the following tools: [`cocogitto`] & [`committed`].
+
+Follow these rules when writing commit messages:
+
+1. The subject line should be capitalized and should not end with a period.
+
+1. The total length of the line should not exceed **72** characters.
+
+1. The commit body should be in the imperative mood.
+
+1. Avoid using the crate name as the commit scope. (e.g. `feat(alpm-types)`)
+   The changelog entries will be generated for the associated crate accordingly using [`release-plz`] and [`git-cliff`].
+
+Here is an example of a good commit message:
+
+```text
+feat(parser): Enhance error handling in parser
+
+Improve error handling by adding specific error codes and messages
+to make debugging easier and more informative. This update enhances
+parsing accuracy and provides more context for handling parsing errors.
+
+Signed-off-by: John Doe <john@archlinux.org>
+```
+
+## Merging changes
+
+Changes to the project are proposed and reviewed using merge requests and merged by the developers of this project using [fast-forward merges].
+
+## Creating releases
+
+Releases are created by the developers of this project using [`release-plz`] by running (per package in the workspace):
+
+```shell
+just prepare-release <package>
+```
+
+Changed files are added in a pull request towards the default branch.
+
+Once the changes are merged to the default branch a tag is created and pushed for the respective package:
+
+```shell
+just release <package>
+```
+
+The crate is afterwards automatically published on <https://crates.io> using a pipeline job.
+
+## License
+
+All code contributions fall under the terms of the [Apache-2.0] and [MIT].
+
+Configuration file contributions fall under the terms of the [CC0-1.0].
+
+Documentation contributions fall under the terms of the [CC-BY-SA-4.0].
+
+Specific license assignments and attribution are handled using [`REUSE.toml`].
+Individual contributors are all summarized as _"ALPM Contributors"_.
+For a full list of individual contributors, refer to `git log --format="%an <%aE>" | sort -u`.
+
+[Rust]: https://www.rust-lang.org/
+[`rustfmt`]: https://github.com/rust-lang/rustfmt
+[`clippy`]: https://github.com/rust-lang/rust-clippy
+[`codespell`]: https://github.com/codespell-project/codespell
+[`cargo-deny`]: https://github.com/EmbarkStudios/cargo-deny
+[`cargo-insta`]: https://github.com/mitsuhiko/insta
+[`cargo-llvm-cov`]: https://github.com/taiki-e/cargo-llvm-cov
+[`git-cliff`]: https://git-cliff.org
+[`shellcheck`]: https://www.shellcheck.net/
+[`cocogitto`]: https://docs.cocogitto.io/
+[`committed`]: https://github.com/crate-ci/committed
+[`release-plz`]: https://release-plz.ieni.dev
+[`reuse`]: https://git.fsfe.org/reuse/tool
+[`lychee`]: https://github.com/lycheeverse/lychee
+[`nextest`]: https://nexte.st/
+[`just`]: https://github.com/casey/just
+[`podman`]: https://podman.io/
+[`tangler`]: https://github.com/wiktor-k/tangler
+[`taplo`]: https://github.com/tamasfe/taplo
+[`cargo-machete`]: https://github.com/bnjbvr/cargo-machete
+[`llvm-tools-preview`]: https://github.com/rust-lang/rust/issues/85658
+[custom target runner]: https://github.com/archlinux/alpm/blob/main/.cargo/runner.sh
+[git pre-commit]: https://man.archlinux.org/man/githooks.5#pre-commit
+[git pre-push]: https://man.archlinux.org/man/githooks.5#pre-push
+[git prepare-commit-msg]: https://man.archlinux.org/man/githooks.5#prepare-commit-msg
+[semantic versioning]: https://semver.org/
+[conventional commits]: https://www.conventionalcommits.org/en/v1.0.0/
+[Apache-2.0]: https://github.com/archlinux/alpm/blob/main/LICENSES/Apache-2.0.txt
+[MIT]: https://github.com/archlinux/alpm/blob/main/LICENSES/MIT.txt
+[CC0-1.0]: https://github.com/archlinux/alpm/blob/main/LICENSES/CC0-1.0.txt
+[CC-BY-SA-4.0]: https://github.com/archlinux/alpm/blob/main/LICENSES/CC-BY-SA-4.0.txt
+[`REUSE.toml`]: https://github.com/archlinux/alpm/blob/main/REUSE.toml
+[component]: https://github.com/archlinux/alpm/blob/main/alpm-lint/README.md#components
+[fast-forward merges]: https://man.archlinux.org/man/git-merge.1#FAST-FORWARD_MERGE
+[section 5]: https://en.wikipedia.org/wiki/Man_page#Manual_sections
+[section 7]: https://en.wikipedia.org/wiki/Man_page#Manual_sections
