@@ -1259,20 +1259,38 @@ th[role=columnheader]:not(.no-sort):hover:after {
    ========================================================================== */
 
 /* ==================================================================== */
-/* ☀️🌙 ICON SEARCH ENVIRONMENT COMPATIBILITY OVERRIDES */
+/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-.md-typeset .ot-icon {
-  display: inline-block !important;
-  width: 1.25rem !important;
-  height: 1.25rem !important;
-  background-color: #ffffff !important;
-  color: #ffffff !important;
-  fill: #ffffff !important;
+[data-md-color-scheme="default"] .md-iconsearch-wrapper,
+[data-md-color-scheme="default"] .md-iconsearch-container,
+[data-md-color-scheme="default"] .md-iconsearch-box,
+[data-md-color-scheme="default"] .md-iconsearch-list,
+[data-md-color-scheme="default"] .md-iconsearch-item {
+  background-color: var(--md-default-bg-color) !important;
+  color: var(--md-default-fg-color) !important;
+  border-color: var(--md-default-fg-color--lightest) !important;
 }
-.md-typeset .ot-icon * {
+[data-md-color-scheme="default"] .md-iconsearch-item svg {
+  fill: var(--md-default-fg-color) !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+/* ==================================================================== */
+/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
+/* ==================================================================== */
+[data-md-color-scheme="slate"] .md-iconsearch-wrapper,
+[data-md-color-scheme="slate"] .md-iconsearch-container,
+[data-md-color-scheme="slate"] .md-iconsearch-box,
+[data-md-color-scheme="slate"] .md-iconsearch-list,
+[data-md-color-scheme="slate"] .md-iconsearch-item {
+  background-color: #1e262e !important;
+  color: #ffffff !important;
+}
+[data-md-color-scheme="slate"] .md-iconsearch-item svg {
   fill: #ffffff !important;
   color: #ffffff !important;
 }
+
 
 
 /* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
