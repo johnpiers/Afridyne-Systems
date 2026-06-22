@@ -1261,25 +1261,22 @@ th[role=columnheader]:not(.no-sort):hover:after {
 /* ==================================================================== */
 /* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="default"] .md-iconsearch-result__icon,
-[data-md-color-scheme="default"] .twemoji,
+[data-md-color-scheme="default"] .md-typeset .ot-icon,
+[data-md-color-scheme="default"] .md-iconsearch-item svg,
 [data-md-color-scheme="default"] .md-search-result__icon svg {
   fill: #1e262e !important;
   color: #1e262e !important;
-  filter: none !important;
 }
 
 /* ==================================================================== */
 /* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="slate"] .md-iconsearch-result__icon,
-[data-md-color-scheme="slate"] .twemoji,
+[data-md-color-scheme="slate"] .md-typeset .ot-icon,
+[data-md-color-scheme="slate"] .md-iconsearch-item svg,
 [data-md-color-scheme="slate"] .md-search-result__icon svg {
   fill: #ffffff !important;
   color: #ffffff !important;
-  filter: drop-shadow(0 0 1px rgba(255,255,255,0.2)) !important;
 }
-
 
 /* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
    ========================================================================== */
