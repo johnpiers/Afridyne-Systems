@@ -1,0 +1,12 @@
+# Virtual Environment
+.venv/
+
+# Build directory (MkDocs output)
+site/
+
+# Python caches
+__pycache__/
+.pytest_cache/
+
+# Local configuration
+.DS_Store

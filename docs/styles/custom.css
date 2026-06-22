@@ -1,0 +1,1437 @@
+/* ==================================================================== */
+/* CUSTOM CSS TABLE OF CONTENTS                                         */
+/* -------------------------------------------------------------------- */
+/*  0. MKDOCS TAB/THEME COLOR OVERRIDES                                 */
+/*  1. IMAGE & MEDIA STYLES                                             */
+/*  2. GENERAL DATA TABLE STYLES (THEME OVERRIDES)                      */
+/*  3. SPECIFIC TABLE CENTERING                                         */
+/*  4. TYPOGRAPHY/HEADING STYLES                                        */
+/*  5. CUSTOM ADMONITION DEFINITIONS (Pied Piper)                       */
+/*  6. FINAL STABLE ADMONITION ICONS (Local Assets)                     */
+/*  7. HR STYLES INSIDE ADMONITIONS                                     */
+/*  8. CODE BLOCK UTILITY STYLES                                        */
+/*  9. JAVASCRIPT TABLE SORTING ADDITIONS                               */
+/* 10. ADMONITION REPAIR BLOCK                                          */
+/* 11. ICONS                                                            */
+/* 12. TLDR (STABLE PURPLE) - Supports !!! and ???                      */
+/* 13. Grid layout for TLDR content                                     */
+/* 14. DEEP DIVE (STABLE SLATE) - Supports !!! and ???                  */
+/* 15. DARK MODE FIXES (Slate Only)                                     */
+/*15a. TLDR Dark Mode                                                   */
+/*15b. Deep Dive Dark Mode                                              */
+/* 16. Customised Admonition - Important                                */
+/* 17. Customised Admonition - Recommendation                           */
+/* 18. Customised Admonition - Instruction                              */
+/* 19. Customised Admonition - Decision                                 */
+/* 20. Customised Admonition - Assumption                               */
+/* 21. Customised Admonition - Grey                                     */
+/* 22. Customised Admonition - Education                                */
+/* 23. Customised Admonition - Cost Analysis                            */
+/* 24. Customised Admonition - Version/Added/Changed/Removed            */
+/* 25. UNIVERSAL ADMONITION DIVIDER FIX                                 */
+/* 26. RESET ARROWS FOR ALL STANDARD AND CUSTOM ADMONITIONS: FIX        */
+
+/* ==================================================================== */
+
+
+/* ==================================================================== */
+/* 0. MKDOCS TAB/THEME COLOR OVERRIDES                                  */
+/* ==================================================================== */
+
+/* Force the inactive tab labels to use the primary color defined in mkdocs.yml (cyan in slate mode) */
+.tabbed-set.tabbed-alternate .tabbed-labels label a {
+	color: var(--md-primary-fg-color, cyan) !important;
+}
+
+/* Force the active/hovered tab label links to use the theme accent color */
+.tabbed-set.tabbed-alternate .tabbed-labels label a:hover, 
+.tabbed-set.tabbed-alternate .tabbed-labels input:checked+label a {
+	color: var(--md-accent-fg-color, inherit) !important;
+}
+
+
+/* ==================================================================== */
+/* 1. IMAGE & MEDIA STYLES                                              */
+/* ==================================================================== */
+
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reduced-image {
+    width: 70%;
+    height: auto;
+}
+
+.badge-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+
+/* ==================================================================== */
+/* 2. GENERAL DATA TABLE STYLES (THEME OVERRIDES)                       */
+/* ==================================================================== */
+
+.md-typeset table:not([class]) {
+	border-collapse: collapse;
+	width: 100%;
+	display: table;
+}
+.md-typeset table:not([class]) th, .md-typeset table:not([class]) td {
+	border: 1px solid var(--md-default-fg-color--lightest);
+	padding: 0.9375em 1.25em;
+	vertical-align: top;
+}
+.md-typeset table:not([class]) th {
+	background-color: var(--md-code-bg-color);
+	font-weight: 700;
+}
+.md-typeset table:not([class]) tr:hover {
+	background-color: var(--md-code-bg-color);
+}
+
+/* Dark mode specific adjustments for general tables */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th,
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-color: var(--md-default-fg-color--lighter);
+}
+
+
+/* ☀️ Light mode explicit header colors (Olive green default state) */
+[data-md-color-scheme="default"] .md-typeset table th {
+  background-color: #006644 !important; 
+  color: white !important;               
+}
+
+/* 🌙 Dark mode specific adjustments and header overrides for general tables */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th,
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-color: var(--md-default-fg-color--lighter);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table th {
+  background-color: #006644 !important;
+  color: white !important;
+}
+
+
+
+/* ==================================================================== */
+/* 3. SPECIFIC TABLE CENTERING                                          */
+/* ==================================================================== */
+
+.center-container {
+  display: flex;
+  justify-content: center; 
+  /* Ensures the div container itself spans the full content width */
+  width: 100%; 
+}
+
+/* Target the table INSIDE the container and force it to be block-level and auto-width */
+.center-container table {
+  display: block; /* Ensures margin auto works */
+  width: auto;    /* Allows the table to only be as wide as its content */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Resets cell text alignment to default if needed */
+.md-typeset .center-container :is(td, th):not([align]) {
+  text-align: initial;
+}
+
+
+/* ==================================================================== */
+/* 4. TYPOGRAPHY/HEADING STYLES                                         */
+/* ==================================================================== */
+
+/* Ensure only headings inside 'markdown-specific-area' are targeted */
+.markdown-specific-area h1 {
+    text-align: center;      
+    font-size: 2.5rem;       
+    color: #00B5BE;
+}
+
+.markdown-specific-area h2 {
+    text-align: left;        
+    font-size: 1.8rem;       
+    color: #00B5BE;
+}
+
+
+/* ==================================================================== */
+/* 5. CUSTOM ADMONITION DEFINITIONS (Pied Piper)                        */
+/* ==================================================================== */
+
+:root {
+  --md-admonition-icon--pied-piper: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M244 246c-3.2-2-6.3-2.9-10.1-2.9-6.6 0-12.6 3.2-19.3 3.7l1.7 4.9zm135.9 197.9c-19 0-64.1 9.5-79.9 19.8l6.9 45.1c35.7 6.1 70.1 3.6 106-9.8-4.8-10-23.5-55.1-33-55.1zM340.8 177c6.6 2.8 11.5 9.2 22.7 22.1 2-1.4 7.5-5.2 7.5-8.6 0-4.9-11.8-13.2-13.2-23 11.2-5.7 25.2-6 37.6-8.9 68.1-16.4 116.3-52.9 146.8-116.7C548.3 29.3 554 16.1 554.6 2l-2 2.6c-28.4 50-33 63.2-81.3 100-31.9 24.4-69.2 40.2-106.6 54.6l-6.3-.3v-21.8c-19.6 1.6-19.7-14.6-31.6-23-18.7 20.6-31.6 40.8-58.9 51.1-12.7 4.8-19.6 10-25.9 21.8 34.9-16.4 91.2-13.5 98.8-10zM555.5 0l-.6 1.1-.3.9.6-.6zm-59.2 382.1c-33.9-56.9-75.3-118.4-150-115.5l-.3-6c-1.1-13.5 32.8 3.2 35.1-31l-14.4 7.2c-19.8-45.7-8.6-54.3-65.5-54.3-14.7 0-26.7 1.7-41.4 4.6 2.9 18.6 2.2 36.7-10.9 50.3l19.5 5.5c-1.7 3.2-2.9 6.3-2.9 9.8 0 21 42.8 2.9 42.8 33.6 0 18.4-36.8 60.1-54.9 60.1-8 0-53.7-50-53.4-60.1l.3-4.6 52.3-11.5c13-2.6 12.3-22.7-2.9-22.7-3.7 0-43.1 9.2-49.4 10.6-2-5.2-7.5-14.1-13.8-14.1-3.2 0-6.3 3.2-9.5 4-9.2 2.6-31 2.9-21.5 20.1L15.9 298.5c-5.5 1.1-8.9 6.3-8.9 11.8 0 6 5.5 10.9 11.5 10.9 8 0 131.3-28.4 147.4-32.2 2.6 3.2 4.6 6.3 7.8 8.6 20.1 14.4 59.8 85.9 76.4 85.9 24.1 0 58-22.4 71.3-41.9 3.2-4.3 6.9-7.5 12.4-6.9.6 13.8-31.6 34.2-33 43.7-1.4 10.2-1 35.2-.3 41.1 26.7 8.1 52-3.6 77.9-2.9 4.3-21 10.6-41.9 9.8-63.5l-.3-9.5c-1.4-34.2-10.9-38.5-34.8-58.6-1.1-1.1-2.6-2.6-3.7-4 2.2-1.4 1.1-1 4.6-1.7 88.5 0 56.3 183.6 111.5 229.9 33.1-15 72.5-27.9 103.5-47.2-29-25.6-52.6-45.7-72.7-79.9zm-196.2 46.1v27.2l11.8-3.4-2.9-23.8zm-68.7-150.4l24.1 61.2 21-13.8-31.3-50.9zm84.4 154.9l2 12.4c9-1.5 58.4-6.6 58.4-14.1 0-1.4-.6-3.2-.9-4.6-26.8 0-36.9 3.8-59.5 6.3z"/></svg>')
+}
+.md-typeset .admonition.pied-piper,
+.md-typeset details.pied-piper {
+  border-color: rgb(43, 155, 70);
+}
+.md-typeset .pied-piper > .admonition-title,
+.md-typeset .pied-piper > summary {
+  background-color: rgba(43, 155, 70, 0.1);
+}
+.md-typeset .pied-piper > .admonition-title::before,
+.md-typeset .pied-piper > summary::before {
+  background-color: rgb(43, 155, 70);
+  -webkit-mask-image: var(--md-admonition-icon--pied-piper);
+          mask-image: var(--md-admonition-icon--pied-piper);
+}
+
+/* This fixes collapsible ??? pied-piper arrow */
+.md-typeset details.pied-piper > summary::after {
+  background-color: rgb(43, 155, 70);
+}
+
+/* ==================================================================== */
+/* 6. FINAL STABLE ADMONITION ICONS (Local Assets)                      */
+/* ==================================================================== */
+
+/* 1. Git Styling */
+.md-typeset .admonition.git, 
+.md-typeset details.git { 
+  border-color: #f34f29; 
+}
+.md-typeset .git > .admonition-title, 
+.md-typeset .git > summary { 
+  background-color: rgba(243, 79, 41, 0.1); 
+}
+.md-typeset .git > .admonition-title::before, 
+.md-typeset .git > summary::before {
+  background-color: #f34f29;
+  -webkit-mask-image: url('../assets/git.svg');
+  mask-image: url('../assets/git.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* 2. Desc Styling */
+.md-typeset .admonition.desc, 
+.md-typeset details.desc { 
+  border-color: rgba(158, 158, 158, 0.7); 
+}
+.md-typeset .desc > .admonition-title, 
+.md-typeset .desc > summary { 
+  background-color: rgba(158, 158, 158, 0.1); 
+}
+.md-typeset .desc > .admonition-title::before, 
+.md-typeset .desc > summary::before {
+  background-color: rgba(158, 158, 158, 0.7);
+  -webkit-mask-image: url('../assets/desc.svg');
+  mask-image: url('../assets/desc.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* 3. Custom 'Ex' Styling                                              */
+.md-typeset .admonition.ex, 
+.md-typeset details.ex { 
+  border-color: #7e57c2; /* A nice Deep Purple                         */
+}
+.md-typeset .ex > .admonition-title, 
+.md-typeset .ex > summary { 
+  background-color: rgba(126, 87, 194, 0.1); 
+}
+.md-typeset .ex > .admonition-title::before, 
+.md-typeset .ex > summary::before {
+  background-color: #7e57c2;
+  -webkit-mask-image: url('../assets/list.svg');
+  mask-image: url('../assets/list.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* Arrow Fix: Git */
+.md-typeset details.git > summary::after { 
+  background-color: #f34f29 !important; 
+}
+
+/* Arrow Fix: Desc */
+.md-typeset details.desc > summary::after { 
+  background-color: rgba(158, 158, 158, 0.7) !important; 
+}
+
+/* Arrow Fix: Ex */
+.md-typeset details.ex > summary::after { 
+  background-color: #7e57c2 !important; 
+}
+
+
+/* ==================================================================== */
+/* 7. HR STYLES INSIDE ADMONITIONS                                      */
+/* ==================================================================== */
+
+/* Base styles for all admonition HRs */
+.md-typeset .admonition hr {
+    border: none;
+    margin: 1.5em 0;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.md-typeset .admonition:not(.pied-piper) hr {
+    border-top-color: inherit; 
+}
+
+/* The pied-piper box uses its specific green color */
+.md-typeset .admonition.pied-piper hr {
+    border-top-color: rgb(43, 155, 70) !important; 
+}
+
+
+/* ==================================================================== */
+/* 8. CODE BLOCK UTILITY STYLES                                         */
+/* ==================================================================== */
+
+/* Hides the copy button */
+.highlight.no-copy .md-clipboard {
+  display: none;
+}
+
+/* Removes the background color, padding, and border from specific blocks */
+.highlight.no-style {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  margin: 0; 
+}
+
+/* Ensures the text inside the code block is also styled correctly */
+.highlight.no-style pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+
+/* ==================================================================== */
+/* 9. JAVASCRIPT TABLE SORTING ADDITIONS                                */
+/* ==================================================================== */
+
+th[role=columnheader]:not(.no-sort) {
+	cursor: pointer;
+}
+
+th[role=columnheader]:not(.no-sort):after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: #404040 transparent;
+	visibility: hidden;
+	opacity: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+th[aria-sort=ascending]:not(.no-sort):after {
+	border-bottom: none;
+	border-width: 4px 4px 0;
+}
+
+th[aria-sort]:not(.no-sort):after {
+	visibility: visible;
+	opacity: 0.4;
+}
+
+th[role=columnheader]:not(.no-sort):hover:after {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+
+/* Forces code blocks to wrap text visually and hides horizontal scrollbar */
+.md-typeset pre code {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Hides the horizontal scrollbar explicitly if it still appears */
+.md-typeset pre {
+  overflow-x: hidden;
+}
+
+
+.no-copy .md-code__nav {
+    display: none;
+}
+
+
+
+/* 1. Scoped Table Layout: Only affects tables inside your container */
+.isolated-table-container table {
+    table-layout: fixed !important; /* Re-enabled but scoped */
+    width: 100% !important;
+    border-collapse: collapse !important; 
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 2. Scoped Column Widths: Ensures alignment only for these specific tables */
+.isolated-table-container th:nth-child(1), 
+.isolated-table-container td:nth-child(1) { width: 30% !important; }
+
+.isolated-table-container th:nth-child(2), 
+.isolated-table-container td:nth-child(2) { width: 40% !important; }
+
+.isolated-table-container th:nth-child(3), 
+.isolated-table-container td:nth-child(3) { width: 30% !important; }
+
+/* 3. The Joiner: Pulls adjacent containers together */
+/* This targets the containers themselves to avoid global scrollwrap conflicts */
+.isolated-table-container + .isolated-table-container {
+    margin-top: -1.1em !important; 
+}
+
+/* Optional: Removes the header from the second/third tables if you want a seamless look */
+.isolated-table-container + .isolated-table-container thead {
+    display: none;
+}
+
+
+/* Force the grid into 3 columns regardless of container width */
+.md-typeset .grid.cards.cols-3 > ul {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.6rem !important; 
+}
+
+/* Compact padding for the cards */
+.md-typeset .grid.cards.cols-3 > ul > li {
+    padding: 0.8rem !important;
+}
+
+
+/* --- Ultra-Compact Grid Styles --- */
+
+/* 1. Shrink the card body text and padding */
+.md-typeset .grid.cards.cols-3 > ul > li {
+    font-size: 0.7rem !important; 
+    line-height: 1.4 !important;
+    padding: 0.6rem !important; 
+}
+
+/* 2. Shrink the card title (the bold text) */
+.md-typeset .grid.cards.cols-3 > ul > li strong {
+    font-size: 0.75rem !important;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+/* 3. Make the buttons much smaller and sleek */
+.md-typeset .grid.cards.cols-3 .md-button {
+    font-size: 0.65rem !important;
+    padding: 2px 10px !important; 
+    margin-bottom: 10px !important;
+    min-height: 0 !important; 
+    line-height: 1.2 !important;
+    display: inline-flex;
+}
+
+/* 4. Shrink the icons for a cleaner look */
+.md-typeset .grid.cards.cols-3 .twemoji,
+.md-typeset .grid.cards.cols-3 .ot-icon {
+    width: 0.85rem !important;
+    height: 0.85rem !important;
+}
+
+
+/* Color Coding for Icons */
+.blue .twemoji { fill: #2094f3 !important; color: #2094f3 !important; }
+.green .twemoji { fill: #4caf50 !important; color: #4caf50 !important; }
+.orange .twemoji { fill: #ff9800 !important; color: #ff9800 !important; }
+
+/* Subtle Icon Glow (Optional but looks great on dark mode) */
+.md-typeset .grid.cards.cols-3 .twemoji {
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.1));
+}
+
+
+/* 1. NEW: Allow the bubble to break out of the Admonition box itself */
+.md-typeset .admonition,
+.md-typeset details.admonition,
+.md-typeset .admonition-content {
+  overflow: visible !important;
+}
+
+/* 2. Your original: Allow breakout of tab containers */
+.md-typeset .tabbed-content, 
+.md-typeset .tabbed-block {
+  overflow: visible !important;
+}
+
+/* 3. Your original: Allow breakout of code blocks */
+.md-typeset .highlight, 
+.md-typeset .highlight > pre {
+  overflow: visible !important;
+}
+
+/* 4. Your original: Ensure it sits on top (with a higher z-index for safety) */
+.md-annotation__inner {
+  z-index: 1000 !important;
+}
+
+
+
+/* BRUTE FORCE: Shrink ONLY the text in the Right Sidebar (TOC) */
+.md-sidebar--secondary nav.md-nav a {
+    font-size: 0.6rem !important; /* Smaller than your current 0.7rem */
+    letter-spacing: -0.01em !important; /* Tighter letter spacing to save horizontal room */
+    line-height: 1.1 !important;
+}
+
+/* Specifically target the 'nested' items (General, Images, Caching) */
+.md-sidebar--secondary nav.md-nav li li a {
+    font-size: 0.55rem !important; /* Even smaller for sub-items */
+    opacity: 0.85 !important;
+}
+
+
+
+/* 10. ADMONITION REPAIR BLOCK                                        */
+
+/* 1. The "Cookie Cutter" - This physically clips the jagged corners  */
+.md-typeset .admonition, 
+.md-typeset details {
+    overflow: hidden !important;
+    border-radius: 0.4rem !important;
+}
+
+/* 2. Rounding the title bars and the 'paint' layer inside them */
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary,
+.md-typeset .admonition > .admonition-title::before,
+.md-typeset details > summary::before {
+    border-top-left-radius: 0.4rem !important;
+    border-top-right-radius: 0.4rem !important;
+    border-bottom: none !important;
+}
+
+/* 3. Ensure the title background fills the space correctly */
+.md-typeset .admonition > .admonition-title {
+    -webkit-background-clip: padding-box; 
+    background-clip: padding-box;
+}
+
+/* Target only standard grid cards, excluding your custom 3-column grid */
+.md-typeset .grid.cards:not(.cols-3) .md-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1em;
+    
+    /* Colors pull from your palette variables */
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color) !important; 
+    border-color: var(--md-primary-fg-color);
+    transition: background-color 250ms, border-color 250ms;
+}
+
+/* Hover state for standard grids only */
+.md-typeset .grid.cards:not(.cols-3) .md-button:hover {
+    background-color: var(--md-accent-fg-color);
+    border-color: var(--md-accent-fg-color);
+    color: var(--md-primary-bg-color) !important;
+}
+
+/* Ensure icons inside standard buttons flip color correctly */
+.md-typeset .grid.cards:not(.cols-3) .md-button .twemoji,
+.md-typeset .grid.cards:not(.cols-3) .md-button svg {
+    fill: currentColor !important;
+}
+
+
+/* Force the wrapper to allow full width */
+.md-typeset__table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Force the actual markdown table to fill that wrapper */
+.md-typeset__table table:not([class]) {
+    width: 100% !important;
+    display: table !important;
+    margin: 0;
+}
+
+
+/* 1. Force all nesting layers to show overflow content (like annotations) */
+.md-typeset .admonition,
+.md-typeset .admonition > .admonition__content,
+.md-typeset .tabbed-set,
+.md-typeset .tabbed-content {
+    overflow: visible !important;
+}
+
+/* 2. Ensure specific code block containers within tabs don't clip */
+.md-typeset .tabbed-block,
+.md-typeset .tabbed-block > :first-child {
+    overflow: visible !important;
+}
+
+/* 3. Maintain scrollability only where absolutely necessary */
+/* This prevents long code lines from breaking your layout while allowing popups */
+.md-typeset pre > code {
+    overflow-x: auto !important;
+}
+
+
+/* 11. ICONS                                                               */
+
+:root {
+  --md-admonition-icon--tldr: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>');
+  --md-admonition-icon--deep-dive: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18h8 M3 22h18 M12 6l3 10 M9 6c0-1.7 1.3-3 3-3s3 1.3 3 3v10 M12 13h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+
+
+/* 12. TLDR (STABLE PURPLE) - Supports !!! and ???                         */
+.md-typeset .admonition.tldr,
+.md-typeset details.tldr {
+  border-left: 4px solid #7e57c2;
+  background-color: #f8f9ff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset .tldr > .admonition-title,
+.md-typeset .tldr > summary {
+  background-color: rgba(126, 87, 194, 0.1);
+  color: #7e57c2;
+  font-weight: 700;
+  padding-left: 2.5rem !important;
+  position: relative;
+}
+
+.md-typeset .tldr > .admonition-title::before,
+.md-typeset .tldr > summary::before {
+  content: "";
+  position: absolute; left: 0.8rem; top: 0.6rem;
+  width: 1.1rem; height: 1.1rem;
+  background-color: #7e57c2;
+  -webkit-mask-image: var(--md-admonition-icon--tldr);
+  mask-image: var(--md-admonition-icon--tldr);
+  mask-repeat: no-repeat; mask-size: contain;
+}
+
+/* This fixes collapsable ??? tldr arrow */
+.md-typeset details.tldr > summary::after {
+  background-color: #7e57c2;
+}
+
+
+/* 13. Grid layout for TLDR content */
+.md-typeset .tldr .admonition-content { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; padding: 15px; }
+.md-typeset .tldr .admonition-content > p:first-child { font-weight: 600; border-right: 2px solid rgba(126, 87, 194, 0.1); padding-right: 15px; }
+
+/* 14. DEEP DIVE (STABLE SLATE) - Supports !!! and ???                    */
+.md-typeset .admonition.deep-dive,
+.md-typeset details.deep-dive {
+  border-left: 4px solid #455a64;
+  background-color: #f1f3f4;
+  border-radius: 8px;
+}
+
+.md-typeset .deep-dive > .admonition-title,
+.md-typeset .deep-dive > summary {
+  background-color: #cfd8dc;
+  color: #263238;
+  font-weight: 700;
+  padding-left: 2.5rem !important;
+  position: relative;
+}
+
+.md-typeset .deep-dive > .admonition-title::before,
+.md-typeset .deep-dive > summary::before {
+  content: "";
+  position: absolute; left: 0.8rem; top: 0.6rem;
+  width: 1.1rem; height: 1.1rem;
+  background-color: #263238;
+  -webkit-mask-image: var(--md-admonition-icon--deep-dive);
+  mask-image: var(--md-admonition-icon--deep-dive);
+  mask-repeat: no-repeat; mask-size: contain;
+}
+
+/* ADDED: Custom Arrow Color Definition for Grey blocks */
+.md-typeset details.deep-dive > summary::after { 
+  background-color: rgb(30, 38, 46) !important; 
+}
+
+
+/* 15. DARK MODE FIXES (Slate Only)                                  */
+/* 15a. TLDR Dark Mode */
+[data-md-color-scheme="slate"] .md-typeset .admonition.tldr,
+[data-md-color-scheme="slate"] .md-typeset details.tldr { background-color: rgba(126, 87, 194, 0.05); }
+
+[data-md-color-scheme="slate"] .md-typeset .tldr > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .tldr > summary { color: #b39ddb; }
+
+[data-md-color-scheme="slate"] .md-typeset .tldr > .admonition-title::before,
+[data-md-color-scheme="slate"] .md-typeset .tldr > summary::before { background-color: #b39ddb; }
+
+/*15b. Deep Dive Dark Mode */
+[data-md-color-scheme="slate"] .md-typeset .admonition.deep-dive,
+[data-md-color-scheme="slate"] .md-typeset details.deep-dive { background-color: rgba(69, 90, 100, 0.2); }
+
+[data-md-color-scheme="slate"] .md-typeset .deep-dive > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .deep-dive > summary { background-color: rgba(144, 164, 174, 0.2); color: #cfd8dc; }
+
+[data-md-color-scheme="slate"] .md-typeset .deep-dive > .admonition-title::before,
+[data-md-color-scheme="slate"] .md-typeset .deep-dive > summary::before { background-color: #cfd8dc; }
+
+
+
+/* ******************************************************** */
+/*16 Customised Admonition - Important */
+/* ******************************************************** */
+:root {
+  --md-admonition-icon--important: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2m-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2m9.75-17.81-1.42 1.42A8.982 8.982 0 0 1 21 11h2c0-2.93-1.16-5.75-3.25-7.81M1 11h2c0-2.4.96-4.7 2.67-6.39L4.25 3.19A10.96 10.96 0 0 0 1 11Z"/></svg>');
+}
+.md-typeset .admonition.important,
+.md-typeset details.important {
+  border-color: rgb(255,94,123);
+}
+.md-typeset .important > .admonition-title,
+.md-typeset .important > summary {
+  background-color: rgba(255,94,123, 0.1);
+}
+.md-typeset .important > .admonition-title::before,
+.md-typeset .important > summary::before {
+  background-color: rgb(255,94,123);
+  -webkit-mask-image: var(--md-admonition-icon--important);
+          mask-image: var(--md-admonition-icon--important);
+}
+
+/* ADDED: Custom Arrow Color Definition for Important blocks */
+.md-typeset details.important > summary::after { 
+  background-color: rgb(255,94,123) !important; 
+}
+
+/* ******************************************************** */
+/* 17. Customised Admonition - Recommendation */
+/* ******************************************************** */
+:root {
+  --md-admonition-icon--recommendation: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.23 18 12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>');
+}
+.md-typeset .admonition.recommendation,
+.md-typeset details.recommendation {
+  border-color: rgb(103,218,255);
+}
+.md-typeset .recommendation > .admonition-title,
+.md-typeset .recommendation > summary {
+  background-color: rgba(103,218,255, 0.1);
+}
+.md-typeset .recommendation > .admonition-title::before,
+.md-typeset .recommendation > summary::before {
+  background-color: rgb(103,218,255);
+  -webkit-mask-image: var(--md-admonition-icon--recommendation);
+          mask-image: var(--md-admonition-icon--recommendation);
+}
+
+/* ADDED: Custom Arrow Color Definition for Recommendation blocks */
+.md-typeset details.recommendation > summary::after { 
+  background-color: rgb(103,218,255) !important; 
+}
+
+
+/* ******************************************************** */
+/* 18. Customised Admonition - Instruction */
+/* ******************************************************** */
+:root {
+  --md-admonition-icon--instruction: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M7 8h2v4H8V9H7V8m3 9v1H7v-.92L9 15H7v-1h2.25c.41 0 .75.34.75.75 0 .2-.08.39-.21.52L8.12 17H10m1-13c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1m6 13h-5v-2h5v2m0-6h-5V9h5v2Z"/></svg>');
+}
+.md-typeset .admonition.instruction,
+.md-typeset details.instruction {
+  border-color: rgb(246,191,0);
+}
+.md-typeset .instruction > .admonition-title,
+.md-typeset .instruction > summary {
+  background-color: rgba(246,191,0, 0.1);
+}
+.md-typeset .instruction > .admonition-title::before,
+.md-typeset .instruction > summary::before {
+  background-color: rgb(246,191,0);
+  -webkit-mask-image: var(--md-admonition-icon--instruction);
+          mask-image: var(--md-admonition-icon--instruction);
+}
+
+/* ADDED: Custom Arrow Color Definition for Instruction blocks */
+.md-typeset details.instruction > summary::after { 
+  background-color: rgb(246,191,0) !important; 
+}
+
+/* ******************************************************** */
+/* 19. Customised Admonition - Decision */
+/* ******************************************************** */
+:root {
+  --md-admonition-icon--decision: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12m-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8Z"/></svg>');
+}
+.md-typeset .admonition.decision,
+.md-typeset details.decision {
+  border-color: rgb(36,167,73);
+}
+.md-typeset .decision > .admonition-title,
+.md-typeset .decision > summary {
+  background-color: rgba(36,167,73, 0.1);
+}
+.md-typeset .decision > .admonition-title::before,
+.md-typeset .decision > summary::before {
+  background-color: rgb(36,167,73);
+  -webkit-mask-image: var(--md-admonition-icon--decision);
+          mask-image: var(--md-admonition-icon--decision);
+}
+
+/* ADDED: Custom Arrow Color Definition for Decision blocks */
+.md-typeset details.decision > summary::after { 
+  background-color: rgb(36,167,73) !important; 
+}
+
+/* ******************************************************** */
+/* 20. Customised Admonition - Assumption */
+/* ******************************************************** */
+:root {
+  --md-admonition-icon--assumption: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.5 19A1.5 1.5 0 0 1 5 20.5 1.5 1.5 0 0 1 3.5 22 1.5 1.5 0 0 1 2 20.5 1.5 1.5 0 0 1 3.5 19m5-3a2.5 2.5 0 0 1 2.5 2.5A2.5 2.5 0 0 1 8.5 21 2.5 2.5 0 0 1 6 18.5 2.5 2.5 0 0 1 8.5 16m6-1c-1.19 0-2.27-.5-3-1.35-.73.85-1.81 1.35-3 1.35-1.96 0-3.59-1.41-3.93-3.26A4.02 4.02 0 0 1 2 8a4 4 0 0 1 4-4c.26 0 .5.03.77.07C7.5 3.41 8.45 3 9.5 3c1.19 0 2.27.5 3 1.35.73-.85 1.81-1.35 3-1.35 1.96 0 3.59 1.41 3.93 3.26A4.02 4.02 0 0 1 22 10a4 4 0 0 1-4 4l-.77-.07c-.73.66-1.68 1.07-2.73 1.07Z"/></svg>');
+}
+.md-typeset .admonition.assumption,
+.md-typeset details.assumption {
+  border-color: rgb(97, 94, 255);
+}
+.md-typeset .assumption > .admonition-title,
+.md-typeset .assumption > summary {
+  background-color: rgba(97, 94, 255, 0.1);
+}
+.md-typeset .assumption > .admonition-title::before,
+.md-typeset .assumption > summary::before {
+  background-color: rgb(97, 94, 255);
+  -webkit-mask-image: var(--md-admonition-icon--assumption);
+          mask-image: var(--md-admonition-icon--assumption);
+}
+
+/* ADDED: Custom Arrow Color Definition for Assumption blocks */
+.md-typeset details.assumption > summary::after { 
+  background-color: rgb(97, 94, 255) !important; 
+}
+
+/* ******************************************************** */
+/* 21. Customised Admonition - Grey */
+/* ******************************************************** */
+:root {
+  --md-admonition-icon--grey: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.5 19A1.5 1.5 0 0 1 5 20.5 1.5 1.5 0 0 1 3.5 22 1.5 1.5 0 0 1 2 20.5 1.5 1.5 0 0 1 3.5 19m5-3a2.5 2.5 0 0 1 2.5 2.5A2.5 2.5 0 0 1 8.5 21 2.5 2.5 0 0 1 6 18.5 2.5 2.5 0 0 1 8.5 16m6-1c-1.19 0-2.27-.5-3-1.35-.73.85-1.81 1.35-3 1.35-1.96 0-3.59-1.41-3.93-3.26A4.02 4.02 0 0 1 2 8a4 4 0 0 1 4-4c.26 0 .5.03.77.07C7.5 3.41 8.45 3 9.5 3c1.19 0 2.27.5 3 1.35.73-.85 1.81-1.35 3-1.35 1.96 0 3.59 1.41 3.93 3.26A4.02 4.02 0 0 1 22 10a4 4 0 0 1-4 4l-.77-.07c-.73.66-1.68 1.07-2.73 1.07Z"/></svg>');
+}
+.md-typeset .admonition.grey,
+.md-typeset details.grey {
+  border-color: rgb(64, 81, 98);
+}
+.md-typeset .grey > .admonition-title,
+.md-typeset .grey > summary {
+  background-color: rgba(64, 81, 98, 0.1);
+}
+.md-typeset .grey > .admonition-title::before,
+.md-typeset .grey > summary::before {
+  background-color: rgb(64, 81, 98);
+  -webkit-mask-image: var(--md-admonition-icon--grey);
+  mask-image: var(--md-admonition-icon--grey);
+}
+
+/* ADDED: Custom Arrow Color Definition for Grey blocks */
+.md-typeset details.grey > summary::after { 
+  background-color: rgb(64, 81, 98) !important; 
+}
+
+/* ******************************************************** */
+/* 22. Customised Admonition - Education */
+/* ******************************************************** */
+:root {
+  --md-admonition-icon--education: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9V320c0 28.4-10.8 57.7-22.3 80.8-6.5 13-13.9 25.8-22.5 37.6-3.2 4.3-4.1 9.9-2.3 15s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7.3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7-3.2-14.2-7.5-28.7-13.5-42v-24.6c0-30.2 10.2-58.7 27.9-81.5 12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5.8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1l280.6-101c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1c-7.6-2.7-15.6-4.1-23.7-4.1zM128 408c0 35.3 86 72 192 72s192-36.7 192-72l-15.3-145.4L354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6l-142.2-51.4L128 408z"/></svg>');
+}
+.md-typeset .admonition.education,
+.md-typeset details.education {
+  border-color: rgb(235, 138, 3);
+}
+.md-typeset .education > .admonition-title,
+.md-typeset .education > summary {
+  background-color: rgba(235, 138, 3, 0.1);
+}
+.md-typeset .education > .admonition-title::before,
+.md-typeset .education > summary::before {
+  background-color: rgb(235, 138, 3);
+  -webkit-mask-image: var(--md-admonition-icon--education);
+  mask-image: var(--md-admonition-icon--education);
+}
+
+/* ADDED: Custom Arrow Color Definition for Education blocks */
+.md-typeset details.education > summary::after { 
+  background-color: rgb(235, 138, 3) !important; 
+}
+
+/* ******************************************************** */
+/* 23. Customised Admonition - Cost Analysis */
+/* ******************************************************** */
+:root {
+  --md-admonition-icon--dollar: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM228 104c0-11-9-20-20-20s-20 9-20 20v14c-7.6 1.7-15.2 4.4-22.2 8.5-13.9 8.3-25.9 22.8-25.8 43.9.1 20.3 12 33.1 24.7 40.7 11 6.6 24.7 10.8 35.6 14l1.7.5c12.6 3.8 21.8 6.8 28 10.7 5.1 3.2 5.8 5.4 5.9 8.2.1 5-1.8 8-5.9 10.5-5 3.1-12.9 5-21.4 4.7-11.1-.4-21.5-3.9-35.1-8.5-2.3-.8-4.7-1.6-7.2-2.4-10.5-3.5-21.8 2.2-25.3 12.6s2.2 21.8 12.6 25.3c1.9.6 4 1.3 6.1 2.1 8.3 2.9 17.9 6.2 28.2 8.4V312c0 11 9 20 20 20s20-9 20-20v-13.8c8-1.7 16-4.5 23.2-9 14.3-8.9 25.1-24.1 24.8-45-.3-20.3-11.7-33.4-24.6-41.6-11.5-7.2-25.9-11.6-37.1-15l-.7-.2c-12.8-3.9-21.9-6.7-28.3-10.5-5.2-3.1-5.3-4.9-5.3-6.7 0-3.7 1.4-6.5 6.2-9.3 5.4-3.2 13.6-5.1 21.5-5 9.6.1 20.2 2.2 31.2 5.2 10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-6.5-1.7-13.7-3.4-21.1-4.7V104z"/></svg>');
+}
+.md-typeset .admonition.dollar,
+.md-typeset details.dollar {
+  border-color: rgb(63, 136, 65);
+}
+.md-typeset .dollar > .admonition-title,
+.md-typeset .dollar > summary {
+  background-color: rgba(63, 136, 65, 0.1);
+}
+.md-typeset .dollar > .admonition-title::before,
+.md-typeset .dollar > summary::before {
+  background-color: rgb(63, 136, 65);
+  -webkit-mask-image: var(--md-admonition-icon--dollar);
+  mask-image: var(--md-admonition-icon--dollar);
+}
+
+/* ADDED: Custom Arrow Color Definition for Cost Analysis (dollar) blocks */
+.md-typeset details.dollar > summary::after { 
+  background-color: rgb(63, 136, 65) !important; 
+}
+
+
+/* ******************************************************** */
+/* 24. Customised Admonition - Version/Added/Changed/Removed */
+/* ******************************************************** */
+
+:root {     
+    /* Icon for "version-added" admonition: Material Design Icons "plus-box-outline" */
+    --md-admonition-icon--version-added: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19V5H5v14h14m0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-8 4h2v4h4v2h-4v4h-2v-4H7v-2h4V7Z"/></svg>');
+    /* Icon for "version-changed" admonition: Material Design Icons "delta" */
+    --md-admonition-icon--version-changed: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7.77 18.39 18H5.61L12 7.77M12 4 2 20h20"/></svg>');
+    /* Icon for "version-removed" admonition: Material Design Icons "minus-circle-outline" */
+    --md-admonition-icon--version-removed: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2M7 13h10v-2H7"/></svg>');
+}
+
+/* "version-added" admonition in green */
+.md-typeset .admonition.version-added,
+.md-typeset details.version-added {
+    border-color: rgb(0, 200, 83);
+}
+.md-typeset .version-added > .admonition-title,
+.md-typeset .version-added > summary {
+    background-color: rgba(0, 200, 83, .1);
+}
+.md-typeset .version-added > .admonition-title::before,
+.md-typeset .version-added > summary::before {
+    background-color: rgb(0, 200, 83);
+    -webkit-mask-image: var(--md-admonition-icon--version-added);
+    mask-image: var(--md-admonition-icon--version-added);
+}
+
+/* ADDED: Custom Arrow Color Definition for version-added blocks */
+.md-typeset details.version-added > summary::after { 
+  background-color: rgb(0, 200, 83) !important; 
+}
+
+/* "version-changed" admonition in orange */
+.md-typeset .admonition.version-changed,
+.md-typeset details.version-changed {
+    border-color: rgb(255, 145, 0);
+}
+.md-typeset .version-changed > .admonition-title,
+.md-typeset .version-changed > summary {
+    background-color: rgba(255, 145, 0, .1);
+}
+.md-typeset .version-changed > .admonition-title::before,
+.md-typeset .version-changed > summary::before {
+    background-color: rgb(255, 145, 0);
+    -webkit-mask-image: var(--md-admonition-icon--version-changed);
+    mask-image: var(--md-admonition-icon--version-changed);
+}
+
+/* ADDED: Custom Arrow Color Definition for version-changed blocks */
+.md-typeset details.version-changed > summary::after { 
+  background-color: rgb(255, 145, 0) !important; 
+}
+
+/* "version-removed" admonition in red */
+.md-typeset .admonition.version-removed,
+.md-typeset details.version-removed {
+    border-color: rgb(255, 82, 82);
+}
+.md-typeset .version-removed > .admonition-title,
+.md-typeset .version-removed > summary {
+    background-color: rgba(255, 82, 82, .1);
+}
+.md-typeset .version-removed > .admonition-title::before,
+.md-typeset .version-removed > summary::before {
+    background-color: rgb(255, 82, 82);
+    -webkit-mask-image: var(--md-admonition-icon--version-removed);
+    mask-image: var(--md-admonition-icon--version-removed);
+}
+
+/* ADDED: Custom Arrow Color Definition for version-removed blocks */
+.md-typeset details.version-removed > summary::after { 
+  background-color: rgb(255, 82, 82) !important; 
+}
+
+
+/* ==================================================================== */
+/* 25. UNIVERSAL ADMONITION DIVIDER FIX                                  */
+/* -------------------------------------------------------------------- */
+/* Matches dividers to the box's border color.                          */
+/* ==================================================================== */
+
+/* Base settings for all dividers */
+.admonition hr, 
+.remark-admonition hr {
+    border-top: 1.5px solid !important;
+    border-top-color: inherit !important; /* Works for standard boxes */
+    opacity: 0.8 !important;
+    margin: 1.2em 0 !important;
+}
+
+/* Specific Fix for Custom TLDR (and others that only use border-left) */
+.admonition.tldr hr, 
+.admonition-tldr hr {
+    border-top-color: #7e57c2 !important; /* Force Purple */
+}
+
+
+/* ==================================================================== */
+/* 26. RESET ARROWS FOR ALL STANDARD AND CUSTOM ADMONITIONS: FIX */
+/* -------------------------------------------------------------------- */
+
+/* Arrow Fixes for YAML-defined Admonitions */
+.md-typeset details.copyright > summary::after { background-color: #2b9b9b !important; }
+.md-typeset details.heart > summary::after     { background-color: #a83e81 !important; }
+.md-typeset details.lyrics > summary::after    { background-color: #5353af !important; }
+.md-typeset details.soundcloud > summary::after{ background-color: #ff8e1a !important; }
+
+/* Example usually uses the theme's default 'info' or 'list' color, 
+   but you can force it here if it's currently gray: */
+.md-typeset details.example > summary::after { background-color: #448aff !important; } 
+
+
+/* ==========================================================================
+   ZONE 1: OFFICIAL INTEGRATED MKDOCS LAYOUT SYSTEM (ICON SEARCH)
+   ========================================================================== */
+
+/* Main outer configuration */
+.mdx-iconsearch {
+  margin: 1.5rem auto !important;
+  max-width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Flex layout row pairing input elements and selectors inline */
+.mdx-iconsearch__bar {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  background-color: #1e222b !important;
+  border-bottom: 2px solid #3f51b5 !important; 
+  padding: 4px 16px !important;
+  gap: 16px !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Borderless input element string matching */
+.mdx-iconsearch__input {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 6px 0 !important;
+  font-size: 0.85rem !important;
+  color: #e6edf3 !important;
+  flex-grow: 1 !important;
+  margin: 0 !important;
+}
+
+/* Meta status match counters styling rules */
+.mdx-iconsearch-result__meta {
+  font-size: 0.75rem !important;
+  color: #64748b !important;
+  white-space: nowrap !important;
+  margin-left: auto !important; 
+}
+
+/* Minimal integrated dropdown menu selector element */
+.mdx-iconsearch-result__select {
+  background: transparent !important;
+  color: #94a3b8 !important;
+  border: none !important;
+  padding: 2px 18px 2px 4px !important;
+  font-size: 0.75rem !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+}
+
+/* Flat Results List box container */
+.mdx-iconsearch-result__list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-height: 380px !important;
+  overflow-y: auto !important;
+  background-color: #1e222b !important;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* Ultra thin custom scroll track */
+.mdx-iconsearch-result__list::-webkit-scrollbar { width: 4px; }
+.mdx-iconsearch-result__list::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.1); }
+
+/* High density items rows matching image formatting layout rules */
+.mdx-iconsearch-result__item {
+  margin: 0 !important;
+  padding: 8px 16px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.mdx-iconsearch-result__item:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Copy utilities formatting button elements */
+.mdx-iconsearch-result__item .md-button--primary {
+  background: transparent !important;
+  color: #5c6370 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+  font-size: 0.6rem !important;
+  font-weight: 600 !important;
+  padding: 2px 6px !important;
+  margin-left: auto !important; 
+  min-height: auto !important;
+}
+
+.mdx-iconsearch-result__item .md-button--primary:hover {
+  color: #00bee6 !important;
+  border-color: #00bee6 !important;
+}
+
+/* Styled shortcode element blocks restored to high-contrast cyan */
+.mdx-iconsearch-result__item span.shortcode-text {
+  font-size: 0.8rem !important;
+  font-family: monospace !important;
+  color: #00bee6 !important;
+  font-weight: 500;
+}
+
+/* Base positioning rules for all search asset thumbnails */
+.mdx-iconsearch-result__item img.icon-preview {
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain !important;
+}
+
+/* 🌙 Adaptive Dark Mode inversion for custom icons vs default color emojis */
+.mdx-iconsearch-result__item img.icon-preview {
+  filter: invert(1) brightness(1.5) !important;
+}
+
+/* Prevent multi-colored emojis from getting turned into weird negative color blocks */
+.mdx-iconsearch-result__item img[src*="twemoji"].icon-preview,
+.mdx-iconsearch-result__item img[src*="emoji"].icon-preview {
+  filter: none !important;
+}
+
+
+/* ==========================================================================
+   ZONE 2: BOOTSTRAP README CLICKABLE IMAGE & TOOLTIP SYSTEM
+   ========================================================================== */
+
+/* Custom Isolated Tooltip Container Configuration */
+.hover-tooltip-wrapper {
+  position: relative !important;
+  display: block !important;
+  width: fit-content !important;
+  margin: 1.5rem auto !important; /* Centers the block with proper spacing */
+}
+
+/* Ensure the center-image class behaves perfectly without breaking layout anchors */
+.hover-tooltip-wrapper .center-image {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  cursor: pointer; /* Confirms visually that the element is clickable */
+}
+
+/* Hidden state setup for clean tooltips */
+.hover-tooltip-text {
+  visibility: hidden !important;
+  position: absolute !important;
+  bottom: -40px !important; /* Moves safely clear of image bounds */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background-color: #1e222b !important;
+  color: #00bee6 !important;
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  border: 1px solid rgba(0, 190, 230, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out !important;
+  pointer-events: none !important; 
+  z-index: 999 !important; /* Forces layout depth superiority over underlying rows */
+}
+
+/* Display rules triggered strictly on active hover states */
+.hover-tooltip-wrapper:hover .hover-tooltip-text {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(-2px) !important;
+}
+
+/* The isolated container created dynamically by JS */
+.js-code-fade-wrapper {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    max-height: 400px !important;
+    overflow-y: hidden !important; /* Blocks vertical scroll track */
+    overflow-x: auto !important;   /* Retains native horizontal scrolling */
+    transition: max-height 0.25s ease-in-out;
+}
+
+/* Linear gradient overlay pinned strictly inside our wrapper box */
+.js-code-fade-wrapper::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 70px !important; /* Height profile of the fade */
+    /* Dynamic theme variable fix for light mode */
+    background: linear-gradient(to bottom, transparent 0%, var(--md-code-bg-color) 100%) !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    transition: opacity 0.2s ease !important;
+    z-index: 10 !important;
+}
+
+/* Remove fade and restrictions when expanded */
+.js-code-fade-wrapper.is-expanded {
+    max-height: none !important;
+    overflow-y: visible !important;
+}
+.js-code-fade-wrapper.is-expanded::after {
+    opacity: 0 !important;
+}
+
+/* ==========================================================================
+   💎 UNIFIED MASTER SEARCH SYSTEM (ALL VARIATIONS LOCK)
+   Perfectly manages page blocks, popups, and headerless containers.
+   ========================================================================== */
+
+/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
+
+[data-md-color-scheme="default"] .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .mdx-iconsearch-result,
+[data-md-color-scheme="default"] .mdx-iconsearch-result__list,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__list,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__list {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* Accent Cyan line treatment for light layout bars */
+[data-md-color-scheme="default"] .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch__bar {
+  border-bottom: 2px solid #00bee6 !important;
+}
+
+/* Light theme readable text for search input bars */
+[data-md-color-scheme="default"] .mdx-iconsearch__input,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch__input,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch__input {
+  color: #24292e !important;
+}
+
+/* Dropdown selections text and arrow vector paths */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__select,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__select,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__select {
+  color: #5c6370 !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c6370' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
+}
+
+/* Neutralize filters on standard icon paths */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__item img.icon-preview {
+  filter: none !important;
+}
+
+/* Force custom local mask assets to stay charcoal dark instead of white */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__list [style*="/assets/local_icons/"] {
+  background-color: #373b44 !important;
+  color: #373b44 !important;
+}
+
+/* Clean up light grid row row dividers */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__item,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
+
+[data-md-color-scheme="slate"] .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .mdx-iconsearch-result,
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__list,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__list,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__list {
+  background-color: #1e222b !important;
+  background: #1e222b !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch__bar {
+  border-bottom: 2px solid #00bee6 !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch__input,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch__input,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch__input {
+  color: #e6edf3 !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__select,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__select,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__select {
+  color: #94a3b8 !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e2e8f0' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__item img.icon-preview {
+  filter: invert(1) brightness(1.5) !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__list [style*="/assets/local_icons/"] {
+  background-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__item,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+
+/* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
+   ========================================================================== */
+.mdx-iconsearch-result__item button,
+.mdx-iconsearch-result__item .md-button,
+.annotate .mdx-iconsearch-result__item button,
+.md-annotation__content .mdx-iconsearch-result__item button {
+  background-color: transparent !important;
+  background: transparent !important;
+  color: var(--md-typeset-color, #5c6370) !important;
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.15)) !important;
+}
+
+.mdx-iconsearch-result__item button:hover,
+.annotate .mdx-iconsearch-result__item button:hover,
+.md-annotation__content .mdx-iconsearch-result__item button:hover {
+  color: #00bee6 !important;
+  border-color: #00bee6 !important;
+  background-color: rgba(0, 190, 230, 0.05) !important;
+}
+
+
+/* ==========================================================================
+   🚀 ISOLATED FIX FOR NAV BUTTONS (Ghost Style Normal State)
+   ========================================================================== */
+a.md-button.md-button--custom,
+.md-typeset a.md-button.md-button--custom {
+  background-color: rgba(0, 190, 230, 0.05) !important; /* Subtle tint */
+  color: #00bee6 !important;                           /* Cyan text and icon */
+  border: 1px solid rgba(0, 190, 230, 0.15) !important;/* Soft border */
+  text-decoration: underline !important;               /* Restores underline */
+  display: inline-block;
+}
+
+/* Hover state: Default behavior (Dark Mode / Fallback) */
+a.md-button.md-button--custom:hover,
+.md-typeset a.md-button.md-button--custom:hover {
+  background-color: #00bee6 !important;                /* Solid cyan fill */
+  color: #ffffff !important;                           /* White text */
+  border-color: #00bee6 !important;
+  text-decoration: none !important;                    /* Removes underline */
+}
+
+/* 🌓 LIGHT MODE HOVER OVERRIDE 
+   Changes the text and icon color to black/deep charcoal strictly in light mode */
+[data-md-color-scheme="default"] a.md-button.md-button--custom:hover,
+[data-md-color-scheme="default"] .md-typeset a.md-button.md-button--custom:hover {
+  color: #1a1a1a !important;                           /* High-contrast dark text/icon */
+}
+
+
+/* ==========================================================================
+   🙈 INVISIBLE TOC HEADER TRICK (Hides repeating headers inside boxes)
+   ========================================================================== */
+.toc-hidden-header {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+

@@ -1,0 +1,345 @@
+site_name: Afridyne Systems (PTY) LTD
+site_url: https://example.com
+site_author: John Piers Cilliers
+site_description: >-
+  Born for documents, yet beyond documents. 
+  Accessible to everyone, extremely easy to use. 
+  Modern, lightweight, customizable, responsive.
+
+copyright: Copyright &copy; 2016 - 2026 JP Cillliers
+
+theme:
+  admonition:
+    example:
+      icon: material/format-list-group
+    git:
+      icon: simple/git
+      color: '#f34f29'
+    copyright:
+      icon: material/copyright
+      color: '#2b9b9b'
+    heart:
+      icon: octicons/heart-24
+      color: '#a83e81'
+    lyrics:
+      icon: material/microphone
+      color: '#5353af'
+    soundcloud:
+      icon: simple/soundcloud
+      color: '#ff8e1a'  
+  name: materialx
+  custom_dir: overrides
+  icon:
+    annotation: material/arrow-right-circle
+  topbar_style: glass
+  favicon: assets/favicon.png  # Path relative to your 'docs' folder
+  #mermaid:
+  #  javascript:
+  #    - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  #  options:
+  #    theme: default
+  #    startOnLoad: true
+  #    securityLevel: loose
+  #    er:
+  #      useMaxWidth: true
+  include_search_page: true
+  color_mode: auto
+  user_color_mode_toggle: true
+  locale: en
+  analytics: {gtag: 'G-274394082'}
+  features:
+    - search.highlight
+    - search.share
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - content.tooltips
+    - navigation.tracking
+    - navigation.prune
+    - search.suggest
+    - content.code.collapse
+    - content.code.copy
+    - content.code.annotate
+    - content.footnote.tooltips
+    - content.action.edit
+    - content.action.view
+    - toc.follow
+    - header.autohide
+
+
+  palette: 
+    - scheme: default
+      primary: cyan
+      accent: cyan
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Dark mode: Cyan primary
+    - scheme: slate
+      primary: cyan
+      accent: cyan 
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: logo      
+
+validation:
+  anchors: ignore
+
+plugins:
+  - material/blog:         # Added 'material/'
+      blog_dir: blog
+      post_url_format: "{date}/{slug}"
+      authors_file: "{blog}/.authors.yml"
+      archive: false
+  - rss:
+      use_git: false        
+      match_path: blog/posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+  - group:
+      enabled: true
+      plugins:
+        - minify:
+            minify_html: !ENV [DEPLOY, false]
+  - search
+  #- mermaid2
+  #- mermaid2:
+  #    arguments:
+  #      theme: base
+  #      themeVariables:
+  #        edgeLabelBackground: '#1e293b'  # Forces text boxes to match slate's background hex
+  #        tertiaryColor: 'transparent'    # Strips away the faint box borders completely
+  - table-reader
+  - glightbox
+  - mkdocstrings
+  - autorefs
+  - markdown-exec
+  - section-index
+  - open-in-new-tab
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+  - material/social:       # Added 'material/'
+      enabled: !ENV [CI, true]
+  - material/optimize:     # Added 'material/'
+      enabled: !ENV [CI, false]
+      cache: true
+  - schema_reader
+  - material/typeset       # Added 'material/'
+  - caption:
+      figure:
+        enable: false
+      table:
+        enable: false
+      custom:
+        enable: false
+
+
+nav:
+  - MaterialX-MkDocs:
+      - MaterialX-MkDocs: index.md
+      - Get Started-MkDocs: about.md      
+      - MkDocs Start Page: MkDocs-Material-Start.md
+      - Creating Your Site: rl.md
+      - Admonitions: admonitions.md
+      - MkDocsCaption: Caption.md
+      - MkDocstrings: MkDocstrings.md
+      - Text Colour/MathJax: MathJax.md      
+      - Icon & Emoji Database: database.md
+      - Afridyne: afridyne.md
+      - Blog Config: MkDocs-Material/blog.md
+      - Social Config: MkDocs-Material/social.md
+  - Blog: blog/index.md
+  - Markdown:
+      - Markdown: Markdown.md
+      - CommonMarkSpec: CommonMarkSpec.md
+      - MD Cheat Sheet: Ultimate Markdown Cheat Sheet.md
+      - Markdown Guide: Markdown Guide.md
+      - Awesome Markdown: marktext.md
+      - VariousMarkdown: Various_HTML_Markdown.md
+      - TestBasicSyntax: TestBasicSyntax.md
+  - Weather:
+      - Stormy: Stormy.md
+      - SimpleWeather: SimpleWeather.md
+  - Media:
+      - MPD Configure: mpd-configure.md
+      - ALSA & Pulse: ALSA & Pulse.md
+      - Pipewire: Pipewire.md
+      - Pulse Code Modulation: PCM.md
+      - Music Player Daemon: Music-Player-Daemon.md
+  - ncmpcpp:
+      - ncmpcpp: ncmpcpp.md
+      - ncmpcpp++: Mpd-Mpc.md
+      - Keys Nav ncmpcpp: Keys_Movement_ncmpcpp.md
+  - Arch Linux:
+      - Overview: DOCS.md
+      - OS Guide: Arch OS.md
+      - Pacman: ArchLinux-Pacman.md
+      - Installation Guide: ArchInstallationGuide.md
+      - ArchInstall Script: ArchInstall.md
+      - BBCode: Arch-BBCode.md
+      - Archive: Arch Linux Archive.md
+      - ALPM: ALPM.md
+  - Microsoft:
+      - OFGB: OFGB.md
+      - MS Account Bypass: Bypass.md
+  - uv Pip:
+      - UV: UV.md
+      - uv Main: uv_Main.md
+  - Various Misc:
+      - Aurdex: Aurdex.md
+      - Bash-Git: BashGit.md
+      - Curl: EverythingCurl.md
+      - GElectrical: GElectrical.md
+      - Chmod & Chown: chmod&chown.md
+      - Fish-Shell: Fish-Shell.md
+      - GPU Top: AMDgpu-Top.md
+      - Badblocks: badblocks.md
+      - Systemd: systemd.md
+      - AMD Checklist: checklist.md
+
+# --------------------------------------------------
+# MARKDOWN EXTENSIONS MOVED TO CORRECT LOCATION HERE
+# --------------------------------------------------
+
+markdown_extensions:
+  # Base Extensions
+  - admonition
+  - attr_list
+  - def_list
+  - abbr
+  - pymdownx.blocks.html
+  - nl2br
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+
+  # --- Pymdownx Suite (Optimized & Cleaned) ---
+  - pymdown_multimd_table:
+      rowspan: true
+      multiline: true
+      headerless: true
+      multibody: true
+      autolabel: true
+      attr_list: true
+  - pymdownx.keys:
+      separator: " ＋ "
+  - pymdownx.superfences:
+      #preserve_tabs: true
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format # NATIVE INSTANT PARSER
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.details
+  - pymdownx.snippets
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - mkdocs-click
+
+  
+  
+         
+# Use not_in_nav to hide these pages from the sidebar, 
+# but still build them into accessible HTML files:
+not_in_nav: |
+  MkDocs-Material/**
+  SimpleWeather-development/**
+  MkDocsCaption/**
+  Mkdocstrings/**
+  amdgpu_top-main/**
+  man.amdgpu_top.md
+  SearchBetterFasterSmallerBlogPost.md
+  S62.md
+  MermaidCheat.md
+  UV_Style/STYLE.md
+  CONTRIBUTING.md
+  contributing.md
+  auto-sync.md
+  sunsetting-gitter.md
+  upgrade.md
+  terminal-images.md
+
+
+    
+extra_css:
+  # Future Reference (KaTeX Toggle):
+  # https://unpkg.com/katex@0/dist/katex.min.css
+  - styles/custom.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/expand-code.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  # Future Reference (MathJax Toggles):
+  # https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/theme_extra.js
+  # Future Reference (KaTeX Toggles):
+  # javascripts/katex.js
+  # https://unpkg.com/katex@0/dist/katex.min.js
+  # https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  # https://unpkg.com/tablesort@5.3.0/dist/sorts/tablesort.number.min.js
+  - javascripts/tablesort.js
+  - javascripts/iconsearch.js
+
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com
+  history_buttons: true
+  article_nav_top: true
+  article_nav_bottom: true
+  version: v1.0.5
+  analytics: 
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
