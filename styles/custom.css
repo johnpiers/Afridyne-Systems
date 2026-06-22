@@ -1254,13 +1254,11 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 /* ==================================================================== */
-/* ☀️🌙 UNIVERSAL INLINE MASK ICON COMPATIBILITY OVERRIDES */
+/* ☀️🌙 INLINE MASK ICON FIX */
 /* ==================================================================== */
-.md-typeset div[style*="mask"],
-.md-typeset div[style*="-webkit-mask"] {
+.md-typeset div[style*="width: 24px"][style*="height: 24px"] {
   background-color: #ffffff !important;
 }
-
 
 
 /* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
