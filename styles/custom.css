@@ -1260,7 +1260,9 @@ th[role=columnheader]:not(.no-sort):hover:after {
 [data-md-color-scheme="default"] .mdx-iconsearch__bar,
 [data-md-color-scheme="default"] .mdx-iconsearch-container,
 [data-md-color-scheme="default"] .mdx-iconsearch-list,
-[data-md-color-scheme="default"] .mdx-iconsearch-item {
+[data-md-color-scheme="default"] .mdx-iconsearch-item,
+[data-md-color-scheme="default"] .mdx-iconsearch-results,
+[data-md-color-scheme="default"] .mdx-iconsearch__results {
   background-color: #ffffff !important;
   color: #1e262e !important;
   border-color: #e2e8f0 !important;
@@ -1273,6 +1275,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
 [data-md-color-scheme="default"] .mdx-iconsearch-item div[style*="mask"] {
   background-color: #1e262e !important;
 }
+
 
 /* ==================================================================== */
 /* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
