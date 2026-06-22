@@ -1253,10 +1253,44 @@ th[role=columnheader]:not(.no-sort):hover:after {
     opacity: 0 !important;
 }
 
+
 /* ==================================================================== */
-/* ☀️🌙 INLINE MASK ICON FIX */
+/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-.md-typeset div[style*="width: 24px"][style*="height: 24px"] {
+[data-md-color-scheme="default"] .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .mdx-iconsearch-container,
+[data-md-color-scheme="default"] .mdx-iconsearch-list,
+[data-md-color-scheme="default"] .mdx-iconsearch-item {
+  background-color: #ffffff !important;
+  color: #1e262e !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-md-color-scheme="default"] .mdx-iconsearch__input {
+  color: #1e262e !important;
+}
+
+[data-md-color-scheme="default"] .mdx-iconsearch-item div[style*="mask"] {
+  background-color: #1e262e !important;
+}
+
+/* ==================================================================== */
+/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
+/* ==================================================================== */
+[data-md-color-scheme="slate"] .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .mdx-iconsearch-container,
+[data-md-color-scheme="slate"] .mdx-iconsearch-list,
+[data-md-color-scheme="slate"] .mdx-iconsearch-item {
+  background-color: #1e222b !important;
+  color: #e6edf3 !important;
+  border-color: #3f51b5 !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch__input {
+  color: #e6edf3 !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-item div[style*="mask"] {
   background-color: #ffffff !important;
 }
 
