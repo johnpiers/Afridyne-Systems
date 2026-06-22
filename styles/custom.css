@@ -1436,3 +1436,14 @@ a.md-button.md-button--custom:hover,
   border: 0 !important;
 }
 
+/* ==================================================================== */
+/* ☀️🌙 INLINE MASK ICON PALETTE SYNCHRONIZATION */
+/* ==================================================================== */
+[data-md-color-scheme="default"] div[style*="width: 24px"] {
+  background-color: #1e262e !important;
+}
+
+[data-md-color-scheme="slate"] div[style*="width: 24px"] {
+  background-color: #ffffff !important;
+}
+
