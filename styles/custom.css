@@ -1254,18 +1254,13 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 /* ==================================================================== */
-/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
+/* ☀️🌙 UNIVERSAL INLINE MASK ICON COMPATIBILITY OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="default"] div[style*="mask:"][style*="background-color:"] {
+.md-typeset div[style*="mask"],
+.md-typeset div[style*="-webkit-mask"] {
   background-color: #ffffff !important;
 }
 
-/* ==================================================================== */
-/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
-/* ==================================================================== */
-[data-md-color-scheme="slate"] div[style*="mask:"][style*="background-color:"] {
-  background-color: #ffffff !important;
-}
 
 
 /* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
