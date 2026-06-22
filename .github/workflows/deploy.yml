@@ -21,4 +21,4 @@ jobs:
       - name: Install pngquant system package
         run: sudo apt-get update && sudo apt-get install -y pngquant
       - run: pip install "mkdocs-materialx[imaging]" pymdown-extensions pymdown-multimd-table mkdocstrings mkdocstrings-python mkdocs-click mkdocs-rss-plugin mkdocs-table-reader-plugin mkdocs-glightbox markdown-exec mkdocs-section-index mkdocs-open-in-new-tab mkdocs-schema-reader mkdocs-caption mkdocs-minify-plugin
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force --clean
