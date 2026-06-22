@@ -1,0 +1,554 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: simpleweather\n"
+"Report-Msgid-Bugs-To: simpleweather-gnome@proton.me\n"
+"POT-Creation-Date: 2025-07-23 16:59-0500\n"
+"PO-Revision-Date: 2025-07-23 22:06\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: simpleweather\n"
+"X-Crowdin-Project-ID: 798380\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: simple-weather@romanlefler.com.pot\n"
+"X-Crowdin-File-ID: 2\n"
+
+#: src/autoConfig.ts:49 src/location.ts:53 src/location.ts:63
+#: src/preferences/generalPage.ts:179
+msgid "My Location"
+msgstr "Текущее местоположение"
+
+#: src/details.ts:59 src/preferences/generalPage.ts:64
+msgid "Temperature"
+msgstr "Температура"
+
+#: src/details.ts:60
+msgid "Condition"
+msgstr "Погода"
+
+#: src/details.ts:61
+msgid "Feels Like"
+msgstr "Ощущается как"
+
+#: src/details.ts:62
+msgid "Wind"
+msgstr "Ветер"
+
+#: src/details.ts:63
+msgid "Humidity"
+msgstr "Влажность"
+
+#: src/details.ts:64
+msgid "Gusts"
+msgstr "Порывы ветра"
+
+#: src/details.ts:65
+msgid "UV High"
+msgstr "УФ-индекс"
+
+#: src/details.ts:66 src/preferences/generalPage.ts:92
+msgid "Pressure"
+msgstr "Давление"
+
+#: src/details.ts:67
+msgid "Precipitation"
+msgstr "Осадки"
+
+#: src/details.ts:68
+msgid "Sunrise"
+msgstr "Восход"
+
+#: src/details.ts:69
+msgid "Sunset"
+msgstr "Закат"
+
+#: src/details.ts:70
+msgid "Cloud Cover"
+msgstr "Облачность"
+
+#: src/details.ts:75 src/popup.ts:409
+msgid "Invalid"
+msgstr "Недействительно"
+
+#: src/lang.ts:108 src/popup.ts:57
+msgid "Today"
+msgstr "Сегодня"
+
+#: src/lang.ts:111
+msgid "Monday"
+msgstr "Понедельник"
+
+#: src/lang.ts:111
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: src/lang.ts:111
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: src/lang.ts:111
+msgid "Wednesday"
+msgstr "Среда"
+
+#: src/lang.ts:112
+msgid "Friday"
+msgstr "Пятница"
+
+#: src/lang.ts:112
+msgid "Saturday"
+msgstr "Суббота"
+
+#: src/lang.ts:112
+msgid "Thursday"
+msgstr "Четверг"
+
+#: src/location.ts:82
+#, javascript-format
+msgid "%f°N"
+msgstr "%f°С"
+
+#: src/location.ts:82
+#, javascript-format
+msgid "%f°S"
+msgstr "%f°Ю"
+
+#: src/location.ts:83
+#, javascript-format
+msgid "%f°E"
+msgstr "%f°В"
+
+#: src/location.ts:83
+#, javascript-format
+msgid "%f°W"
+msgstr "%f°З"
+
+#: src/popup.ts:143
+msgid "Weather Data"
+msgstr "Погодные данные"
+
+#: src/popup.ts:297 src/preferences/aboutPage.ts:76
+msgid "Settings"
+msgstr "Настройки"
+
+#: src/popup.ts:383
+#, javascript-format
+msgid "H: %s"
+msgstr "Макс: %s"
+
+#: src/popup.ts:384
+#, javascript-format
+msgid "L: %s"
+msgstr "Мин: %s"
+
+#: src/preferences/aboutPage.ts:48
+msgid "About"
+msgstr "О проекте"
+
+#: src/preferences/aboutPage.ts:59
+msgid "GitHub Repository"
+msgstr "Репозиторий GitHub"
+
+#: src/preferences/aboutPage.ts:61
+msgid "Support Me"
+msgstr "Поддержать меня"
+
+#: src/preferences/aboutPage.ts:68
+msgid "SimpleWeather Version"
+msgstr "Версия SimpleWeather"
+
+#: src/preferences/aboutPage.ts:71
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: src/preferences/aboutPage.ts:79
+msgid "Copy"
+msgstr "Скопировать"
+
+#: src/preferences/aboutPage.ts:102
+msgid "Copied settings JSON to clipboard."
+msgstr "Настройки в формате JSON скопированы в буфер обмена."
+
+#: src/preferences/aboutPage.ts:116
+#, javascript-format
+msgid "Contributions and translations are welcome! Read how on %s."
+msgstr "Пожертвования и помощь в переводе приветствуются! Подробнее на %s."
+
+#: src/preferences/aboutPage.ts:119
+#, javascript-format
+msgid "If you like this extension, consider starring it on %s."
+msgstr "Если вам понравилось это расширение, пожалуйста, поставьте ему звездочку на %s."
+
+#: src/preferences/aboutPage.ts:122
+msgid "here"
+msgstr "здесь"
+
+#: src/preferences/aboutPage.ts:124
+#, javascript-format
+msgid "Report bugs or request new features %s."
+msgstr "Сообщить об ошибках или предложить новые функции можно %s."
+
+#: src/preferences/aboutPage.ts:138
+msgid "Credits"
+msgstr "Благодарности"
+
+#: src/preferences/detailsPage.ts:68
+msgid "Details"
+msgstr "Вид"
+
+#: src/preferences/detailsPage.ts:74
+msgid "Pop-Up"
+msgstr "Всплывающее окно"
+
+#: src/preferences/detailsPage.ts:75
+msgid "Drag-and-drop from bottom to configure the pop-up"
+msgstr "Перетащите из нижней части, чтобы настроить всплывающее окно"
+
+#: src/preferences/detailsPage.ts:173 src/preferences/generalPage.ts:235
+msgid "Panel"
+msgstr "Панель"
+
+#: src/preferences/detailsPage.ts:176
+msgid "None"
+msgstr "Нет"
+
+#: src/preferences/detailsPage.ts:188
+msgid "Panel Detail"
+msgstr "Информация в панели"
+
+#: src/preferences/detailsPage.ts:206
+msgid "Secondary Panel Detail"
+msgstr "Дополнительная информация в панели"
+
+#: src/preferences/detailsPage.ts:218
+msgid "Show Condition Icon"
+msgstr "Показывать значок погоды"
+
+#: src/preferences/detailsPage.ts:228
+msgid "Show Sunrise/Sunset"
+msgstr "Показывать восход/закат"
+
+#: src/preferences/editLocation.ts:33
+#, javascript-format
+msgid "Edit %s"
+msgstr "Изменить %s"
+
+#: src/preferences/editLocation.ts:33
+msgid "New Location"
+msgstr "Новое местоположение"
+
+#: src/preferences/editLocation.ts:41
+msgid "Name"
+msgstr "Название"
+
+#: src/preferences/editLocation.ts:56
+msgid "Coordinates"
+msgstr "Координаты"
+
+#: src/preferences/editLocation.ts:66
+msgid "Save"
+msgstr "Сохранить"
+
+#: src/preferences/editLocation.ts:94
+msgid "Name is required."
+msgstr "Требуется указать название."
+
+#: src/preferences/editLocation.ts:99
+msgid "Invalid coordinates entry."
+msgstr "Недопустимые координаты."
+
+#: src/preferences/generalPage.ts:38
+msgid "General"
+msgstr "Основные"
+
+#: src/preferences/generalPage.ts:43 src/preferences/generalPage.ts:53
+msgid "Units"
+msgstr "Единицы измерения"
+
+#: src/preferences/generalPage.ts:44
+msgid "Configure units of measurement"
+msgstr "Настроить единицы измерения"
+
+#: src/preferences/generalPage.ts:48
+msgid "Custom"
+msgstr "Пользовательские"
+
+#: src/preferences/generalPage.ts:48
+msgid "Metric"
+msgstr "Метрические"
+
+#: src/preferences/generalPage.ts:48
+msgid "UK"
+msgstr "Британские"
+
+#: src/preferences/generalPage.ts:48
+msgid "US"
+msgstr "Американские"
+
+#: src/preferences/generalPage.ts:61
+msgid "Fahrenheit"
+msgstr "Фаренгейт"
+
+#: src/preferences/generalPage.ts:62
+msgid "Celsius"
+msgstr "Цельсий"
+
+#: src/preferences/generalPage.ts:78
+msgid "Speed"
+msgstr "Скорость"
+
+#: src/preferences/generalPage.ts:106
+msgid "Rain Measurement"
+msgstr "Осадки"
+
+#: src/preferences/generalPage.ts:120
+msgid "Distance"
+msgstr "Расстояние"
+
+#: src/preferences/generalPage.ts:144
+msgid "Degrees"
+msgstr "Градусы"
+
+#: src/preferences/generalPage.ts:144
+msgid "Eight-Point Compass"
+msgstr "8-румбовый компас"
+
+#: src/preferences/generalPage.ts:147
+msgid "Direction"
+msgstr "Направление"
+
+#: src/preferences/generalPage.ts:159
+msgid "Weather Service"
+msgstr "Служба погоды"
+
+#: src/preferences/generalPage.ts:160
+msgid "Configure how the weather is attained"
+msgstr "Настроить способ получения данных о погоде"
+
+#: src/preferences/generalPage.ts:167
+msgid "Weather Provider"
+msgstr "Источник погодных данных"
+
+#: src/preferences/generalPage.ts:180
+msgid "Configure how your location is found"
+msgstr "Настроить способ определения вашего местоположения"
+
+#: src/preferences/generalPage.ts:184 src/preferences/generalPage.ts:185
+msgid "Online"
+msgstr "Онлайн"
+
+#: src/preferences/generalPage.ts:186 src/preferences/generalPage.ts:245
+msgid "System"
+msgstr "Система"
+
+#: src/preferences/generalPage.ts:187
+msgid "Disable"
+msgstr "Отключено"
+
+#: src/preferences/generalPage.ts:190
+msgid "Provider"
+msgstr "Источник"
+
+#: src/preferences/generalPage.ts:202
+msgid "Refresh Interval (Minutes)"
+msgstr "Частота обновления (минуты)"
+
+#: src/preferences/generalPage.ts:220
+msgid "Accessibility"
+msgstr "Специальные возможности"
+
+#: src/preferences/generalPage.ts:221
+msgid "Configure accessibility features"
+msgstr "Настроить функции специальных возможностей"
+
+#: src/preferences/generalPage.ts:224
+msgid "High Contrast"
+msgstr "Высокая контрастность"
+
+#: src/preferences/generalPage.ts:236
+msgid "Configure the panel and pop-up"
+msgstr "Настроить верхнюю панель и всплывающее окно"
+
+#: src/preferences/generalPage.ts:246
+msgid "Light"
+msgstr "Светлая"
+
+#: src/preferences/generalPage.ts:247
+msgid "Afterdark"
+msgstr "Темная"
+
+#: src/preferences/generalPage.ts:248
+msgid "Immersive"
+msgstr "Иммерсивная"
+
+#: src/preferences/generalPage.ts:251
+msgid "Theme"
+msgstr "Тема"
+
+#: src/preferences/generalPage.ts:261
+msgid "Center"
+msgstr "По центру"
+
+#: src/preferences/generalPage.ts:261
+msgid "Left"
+msgstr "Слева"
+
+#: src/preferences/generalPage.ts:261
+msgid "Right"
+msgstr "Справа"
+
+#: src/preferences/generalPage.ts:264
+msgid "Side of Panel"
+msgstr "Расположение на панели"
+
+#: src/preferences/generalPage.ts:274
+msgid "Order in Panel"
+msgstr "Порядок на панели"
+
+#: src/preferences/locationsPage.ts:57 src/preferences/locationsPage.ts:80
+msgid "Locations"
+msgstr "Местоположения"
+
+#: src/preferences/locationsPage.ts:70 src/preferences/search.ts:75
+msgid "Add"
+msgstr "Добавить"
+
+#: src/preferences/locationsPage.ts:97
+msgid "Move Up"
+msgstr "Переместить выше"
+
+#: src/preferences/locationsPage.ts:112
+msgid "Move Down"
+msgstr "Переместить ниже"
+
+#: src/preferences/locationsPage.ts:128
+msgid "Add Here"
+msgstr "Добавить текущее"
+
+#: src/preferences/locationsPage.ts:193
+#, javascript-format
+msgid "Are you sure you want delete %s?"
+msgstr "Вы уверены, что хотите удалить %s?"
+
+#: src/preferences/locationsPage.ts:194
+msgid "Cancel"
+msgstr "Отмена"
+
+#: src/preferences/locationsPage.ts:194
+msgid "Delete"
+msgstr "Удалить"
+
+#: src/preferences/locationsPage.ts:235
+#, javascript-format
+msgid "Internal Error: %s"
+msgstr "Внутренняя ошибка: %s"
+
+#: src/preferences/locationsPage.ts:236
+msgid "Internal Error"
+msgstr "Внутренняя ошибка"
+
+#: src/preferences/locationsPage.ts:261
+msgid "Something else edited the locations."
+msgstr "Местоположения были изменены другой программой."
+
+#: src/preferences/search.ts:45
+msgid "Search Location"
+msgstr "Поиск местоположения"
+
+#: src/preferences/search.ts:54
+msgid "City, Neighborhood, etc."
+msgstr "Город, район и т.д."
+
+#: src/preferences/search.ts:59
+msgid "Search"
+msgstr "Найти"
+
+#: src/preferences/search.ts:158
+msgid "No Internet"
+msgstr "Нет подключения"
+
+#: src/preferences/search.ts:206
+msgid "No results."
+msgstr "Ничего не найдено."
+
+#: src/preferences/search.ts:211
+msgid "No copyright information available."
+msgstr "Информация об авторских правах отсутствует."
+
+#: src/prefs.ts:74
+#, javascript-format
+msgid "SimpleWeather doesn't know how to handle your locale.\n"
+"\tError - %s\n"
+"Please consider submitting a bug report on GitHub."
+msgstr "SimpleWeather не может обработать ваши региональные настройки.\n"
+"\tОшибка: %s\n"
+"Пожалуйста, сообщите об этой ошибке на GitHub."
+
+#: src/prefs.ts:77
+msgid "Don't Show Again"
+msgstr "Больше не показывать"
+
+#: src/prefs.ts:77
+msgid "Ignore"
+msgstr "Пропустить"
+
+#: src/prefs.ts:77
+msgid "Open GitHub"
+msgstr "Открыть GitHub"
+
+#: src/weather.ts:103
+msgid "Clear"
+msgstr "Ясно"
+
+#: src/weather.ts:103
+msgid "Sunny"
+msgstr "Солнечно"
+
+#: src/weather.ts:105
+msgid "Cloudy"
+msgstr "Облачно"
+
+#: src/weather.ts:107
+msgid "Rainy"
+msgstr "Дождь"
+
+#: src/weather.ts:109
+msgid "Snowy"
+msgstr "Снег"
+
+#: src/weather.ts:111
+msgid "Stormy"
+msgstr "Гроза"
+
+#: src/weather.ts:113
+msgid "Windy"
+msgstr "Ветрено"
+
+#: src/welcome.ts:53
+#, javascript-format
+msgid "Welcome to %s"
+msgstr "Добро пожаловать в %s"
+
+#: src/welcome.ts:74
+#, javascript-format
+msgid "%s occasionally connects to the selected weather service. By default, it will use the Internet to connect to:\n"
+"  •  %s, an %s service for weather\n"
+"  •  %s, optional for resolving the current location\n"
+"  •  %s, for searching locations by name\n\n"
+msgstr "%s периодически соединяется с выбранной службой погоды. По умолчанию для подключения к интернету используются:\n"
+"  •  %s — %s служба для получения погодных данных\n"
+"  •  %s — для определения текущего местоположения (опционально)\n"
+"  •  %s — для поиска местоположений по названию\n\n"
+
+#: src/welcome.ts:83
+#, javascript-format
+msgid "Thank you for installing %s!"
+msgstr "Спасибо за установку %s!"
+
+#: src/welcome.ts:99
+msgid "Abort"
+msgstr "Прервать"
+

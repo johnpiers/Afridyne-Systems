@@ -1,0 +1,3309 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Born for documents, yet beyond documents.  Accessible to everyone, extremely easy to use.  Modern, lightweight, customizable, responsive.">
+      
+      
+        <meta name="author" content="John Piers Cilliers">
+      
+      
+        <link rel="canonical" href="https://example.com/Markdown/">
+      
+      
+        <link rel="prev" href="../blog/">
+      
+      
+        <link rel="next" href="../CommonMarkSpec/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="../assets/favicon.png">
+        
+      
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
+    
+    
+      
+        <title>Markdown - Afridyne Systems (PTY) LTD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
+      
+    
+    
+
+  
+  
+    
+    
+      
+      
+    
+    
+    
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+          
+        
+      
+      
+        
+      
+      
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+      
+      
+        
+      
+      
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+          
+        
+      
+      
+        
+      
+      
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+      
+      
+        
+      
+      
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+          
+        
+      
+      
+        
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M5%205v14h2v2H3V3h4v2zm15%202H7v2h13zm0%204H7v2h13zm0%204H7v2h13z%22/%3E%3C/svg%3E');--md-admonition-icon--git:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M23.546%2010.93%2013.067.452a1.55%201.55%200%200%200-2.188%200L8.708%202.627l2.76%202.76a1.838%201.838%200%200%201%202.327%202.341l2.658%202.66a1.838%201.838%200%200%201%201.9%203.039%201.837%201.837%200%200%201-2.6%200%201.85%201.85%200%200%201-.404-1.996L12.86%208.955v6.525c.176.086.342.203.488.348a1.85%201.85%200%200%201%200%202.6%201.844%201.844%200%200%201-2.609%200%201.834%201.834%200%200%201%200-2.598c.182-.18.387-.316.605-.406V8.835a1.834%201.834%200%200%201-.996-2.41L7.636%203.7.45%2010.881c-.6.605-.6%201.584%200%202.189l10.48%2010.477a1.545%201.545%200%200%200%202.186%200l10.43-10.43a1.544%201.544%200%200%200%200-2.187%22/%3E%3C/svg%3E');--md-admonition-color--git:#f34f29;--md-admonition-icon--copyright:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M10.08%2010.86c.05-.33.16-.62.3-.86.3-.56.81-.85%201.5-.86.45%200%20.86.2%201.15.49.28.31.47.74.47%201.17h1.8c-.02-.47-.11-.9-.3-1.3-.15-.38-.38-.72-.68-1-1.45-1.34-4.14-1.15-5.37.37-1.29%201.67-1.32%204.59-.01%206.26%201.21%201.49%203.86%201.7%205.3.37.31-.25.56-.56.76-.92.16-.36.27-.74.28-1.15H13.5c0%20.21-.07.4-.16.57-.09.19-.21.34-.34.47-.33.26-.72.4-1.14.4-.36-.01-.66-.08-.89-.23a1.4%201.4%200%200%201-.59-.64c-.5-.9-.42-2.15-.3-3.14M12%202C6.5%202%202%206.5%202%2012c.53%2013.27%2019.5%2013.26%2020%200%200-5.5-4.5-10-10-10m0%2018c-4.41%200-8-3.59-8-8%20.44-10.61%2015.56-10.61%2016%200%200%204.41-3.59%208-8%208%22/%3E%3C/svg%3E');--md-admonition-color--copyright:#2b9b9b;--md-admonition-icon--heart:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m12%2020.703.343.667a.75.75%200%200%201-.686%200l-.003-.002-.007-.003-.025-.013a31%2031%200%200%201-5.233-3.576C3.8%2015.573%201%2012.332%201%208.514v-.001C1%205.053%203.829%202.5%206.736%202.5%209.03%202.5%2010.881%203.726%2012%205.605%2013.12%203.726%2014.97%202.5%2017.264%202.5%2020.17%202.5%2023%205.052%2023%208.514c0%203.818-2.801%207.06-5.389%209.262a31%2031%200%200%201-5.233%203.576l-.025.013-.007.003-.002.001ZM6.736%204C4.657%204%202.5%205.88%202.5%208.514c0%203.107%202.324%205.96%204.861%208.12a29.7%2029.7%200%200%200%204.566%203.175l.073.041.073-.04c.271-.153.661-.38%201.13-.674.94-.588%202.19-1.441%203.436-2.502%202.537-2.16%204.861-5.013%204.861-8.12C21.5%205.88%2019.343%204%2017.264%204c-2.106%200-3.801%201.389-4.553%203.643a.751.751%200%200%201-1.422%200C10.537%205.389%208.841%204%206.736%204%22/%3E%3C/svg%3E');--md-admonition-color--heart:#a83e81;--md-admonition-icon--lyrics:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202a3%203%200%200%201%203%203v6a3%203%200%200%201-3%203%203%203%200%200%201-3-3V5a3%203%200%200%201%203-3m7%209c0%203.53-2.61%206.44-6%206.93V21h-2v-3.07c-3.39-.49-6-3.4-6-6.93h2a5%205%200%200%200%205%205%205%205%200%200%200%205-5z%22/%3E%3C/svg%3E');--md-admonition-color--lyrics:#5353af;--md-admonition-icon--soundcloud:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M23.999%2014.165c-.052%201.796-1.612%203.169-3.4%203.169h-8.18a.68.68%200%200%201-.675-.683V7.862a.75.75%200%200%201%20.452-.724s.75-.513%202.333-.513a5.36%205.36%200%200%201%202.763.755%205.43%205.43%200%200%201%202.57%203.54c.282-.08.574-.121.868-.12.884%200%201.73.358%202.347.992s.948%201.49.922%202.373M10.721%208.421c.247%202.98.427%205.697%200%208.672a.264.264%200%200%201-.53%200c-.395-2.946-.22-5.718%200-8.672a.264.264%200%200%201%20.53%200M9.072%209.448c.285%202.659.37%204.986-.006%207.655a.277.277%200%200%201-.55%200c-.331-2.63-.256-5.02%200-7.655a.277.277%200%200%201%20.556%200m-1.663-.257c.27%202.726.39%205.171%200%207.904a.266.266%200%200%201-.532%200c-.38-2.69-.257-5.21%200-7.904a.266.266%200%200%201%20.532%200m-1.647.77a26.1%2026.1%200%200%201-.008%207.147.272.272%200%200%201-.542%200%2028%2028%200%200%201%200-7.147.275.275%200%200%201%20.55%200m-1.67%201.769c.421%201.865.228%203.5-.029%205.388a.257.257%200%200%201-.514%200c-.21-1.858-.398-3.549%200-5.389a.272.272%200%200%201%20.543%200Zm-1.655-.273c.388%201.897.26%203.508-.01%205.412-.026.28-.514.283-.54%200-.244-1.878-.347-3.54-.01-5.412a.283.283%200%200%201%20.56%200m-1.668.911c.4%201.268.257%202.292-.026%203.572a.257.257%200%200%201-.514%200c-.241-1.262-.354-2.312-.023-3.572a.283.283%200%200%201%20.563%200%22/%3E%3C/svg%3E');--md-admonition-color--soundcloud:#ff8e1a;}.md-typeset .admonition.git,.md-typeset details.git{--md-admonition-icon:var(--md-admonition-icon--git);--md-admonition-icon-mask-size:88%;--md-admonition-color:var(--md-admonition-color--git);}.md-typeset .admonition.copyright,.md-typeset details.copyright{--md-admonition-icon:var(--md-admonition-icon--copyright);--md-admonition-color:var(--md-admonition-color--copyright);}.md-typeset .admonition.heart,.md-typeset details.heart{--md-admonition-icon:var(--md-admonition-icon--heart);--md-admonition-icon-mask-size:80%;--md-admonition-color:var(--md-admonition-color--heart);}.md-typeset .admonition.lyrics,.md-typeset details.lyrics{--md-admonition-icon:var(--md-admonition-icon--lyrics);--md-admonition-color:var(--md-admonition-color--lyrics);}.md-typeset .admonition.soundcloud,.md-typeset details.soundcloud{--md-admonition-icon:var(--md-admonition-icon--soundcloud);--md-admonition-icon-mask-size:88%;--md-admonition-color:var(--md-admonition-color--soundcloud);}</style>
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../styles/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="Markdown - Afridyne Systems (PTY) LTD">
+<meta property="og:description" content="Born for documents, yet beyond documents.  Accessible to everyone, extremely easy to use.  Modern, lightweight, customizable, responsive.">
+<meta property="og:image" content="https://example.com/assets/images/social/Markdown.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://example.com/Markdown/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Markdown - Afridyne Systems (PTY) LTD">
+<meta property="twitter:description" content="Born for documents, yet beyond documents.  Accessible to everyone, extremely easy to use.  Modern, lightweight, customizable, responsive.">
+<meta property="twitter:image" content="https://example.com/assets/images/social/Markdown.png">
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+        </style></head>
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#download" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Afridyne Systems (PTY) LTD" class="md-header__button md-logo" aria-label="Afridyne Systems (PTY) LTD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z"></path>
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path>
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z"></path>
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path>
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Afridyne Systems (PTY) LTD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Markdown
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="cyan" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.5 3.5 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.5 3.5 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5m-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001m0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5M5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Afridyne Systems (PTY) LTD" class="md-nav__button md-logo" aria-label="Afridyne Systems (PTY) LTD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z"></path>
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path>
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z"></path>
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path>
+</svg>
+
+    </a>
+    Afridyne Systems (PTY) LTD
+  </label>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href=".." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MaterialX-MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.029 18.772.777 1.166-5.417 2.709L0 16.451V4.063l5.417-2.709 5.298 7.948 7.867-5.24L24 1.354V16.84l-5.417 2.709zm2.023-13.827v13.253l3.949-1.975V2.97zM5.076 2.642 1.458 4.45 12.73 21.358l3.618-1.809z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Markdown
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation and Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation and Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movable-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movable Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blosxom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blosxom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bbedit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BBEdit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movable-type_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movable Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command-Line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-the-gist-of-markdowns-formatting-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting the Gist of Markdown’s Formatting Syntax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paragraphs-headers-blockquotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paragraphs, Headers, Blockquotes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paragraphs, Headers, Blockquotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phrase-emphasis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phrase Emphasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-escaping-for-special-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Escaping for Special Characters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block Elements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paragraphs-and-line-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paragraphs and Line Breaks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockquotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blockquotes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#horizontal-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Horizontal Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#span-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Span Elements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Span Elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#links_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emphasis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emphasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miscellaneous">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backslash-escapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backslash Escapes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CommonMarkSpec/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    CommonMarkSpec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ultimate%20Markdown%20Cheat%20Sheet/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    MD Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Markdown%20Guide/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marktext/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Awesome Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Various_HTML_Markdown/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    VariousMarkdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TestBasicSyntax/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    TestBasicSyntax
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../Stormy/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mpd-configure/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Media
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../ncmpcpp/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ncmpcpp
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../DOCS/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../OFGB/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microsoft
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../UV/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uv Pip
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../Aurdex/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Various Misc
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation and Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation and Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movable-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movable Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blosxom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blosxom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bbedit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BBEdit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movable-type_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movable Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command-Line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-the-gist-of-markdowns-formatting-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting the Gist of Markdown’s Formatting Syntax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paragraphs-headers-blockquotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paragraphs, Headers, Blockquotes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paragraphs, Headers, Blockquotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phrase-emphasis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phrase Emphasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-escaping-for-special-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Escaping for Special Characters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block Elements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paragraphs-and-line-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paragraphs and Line Breaks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockquotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blockquotes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#horizontal-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Horizontal Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#span-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Span Elements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Span Elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#links_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emphasis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emphasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miscellaneous">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backslash-escapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backslash Escapes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  <div class="custom-nav-return" style="margin-bottom: 20px;">
+    
+    
+    
+
+  </div>
+  
+                  
+
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20251231-144531.png#only-light" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20251231-144531.png#only-light"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://daringfireball.net/graphics/logos/#only-dark" data-desc-position="bottom"><img alt="Alt text" class="center-image" src="https://daringfireball.net/graphics/logos/#only-dark"></a></p>
+<h1 style="text-align: center;">Markdown</h1>
+
+<div class="grid cards cols-3">
+<ul>
+<li>
+<p><span style="color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 10.96a.985.985 0 0 1-.37-1.37L3.13 7c.11-.2.28-.34.47-.42l7.83-4.4c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.19.1.35.26.44.46l1.45 2.52c.28.48.11 1.09-.36 1.36l-1 .58v4.96c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-5.54c-.3.17-.68.18-1 0m10-6.81v6.7l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-3.22l-5 2.9c-.33.18-.7.17-1 .01v3.69zm-5.15-2.55 6.28-3.63-.58-1.01-6.28 3.63z"></path></svg></span></span> <strong>Mardown Main</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/" style="border-color: #bfa05a; color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown is a text-to-HTML conversion tool for web writers.</p>
+</li>
+<li>
+<p><span style="color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 4v2h3v12h-3v2h5V4M4 4v16h5v-2H6V6h3V4z"></path></svg></span></span> <strong>Projects</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/" style="border-color: #bfa05a; color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown, plugins, command-line tools and services.</p>
+</li>
+<li>
+<p><span style="color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v4H3zm1 5h16v13H4zm5.5 3a.5.5 0 0 0-.5.5V13h6v-1.5a.5.5 0 0 0-.5-.5z"></path></svg></span></span> <strong>Basics</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/basics" style="border-color: #bfa05a; color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Page offers a brief overview of what it’s like to use Markdown.</p>
+</li>
+<li>
+<p><span style="color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path></svg></span></span> <strong>Syntax</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax" style="border-color: #6d8c6d; color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown is <code>intended</code> to be as easy-to-read and easy-to-write as is feasible.</p>
+</li>
+<li>
+<p><span style="color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"></path></svg></span></span> <strong>License</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/license" style="border-color: #6d8c6d; color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown is free software, available under the terms of a BSD-style open source license.</p>
+</li>
+<li>
+<p><span style="color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"></path></svg></span></span> <strong>Dingus</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/dingus" style="border-color: #6d8c6d; color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>MD 1.0.2b7 / SmartyPants 1.6.1b9: © 2004–2026 John Gruber</p>
+</li>
+</ul>
+</div>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">¶</a></h2>
+<div class="admonition ex">
+<p class="admonition-title">Download</p>
+<p><a href="http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip">Markdown 1.0.1</a>&nbsp;(18 KB) — 17 Dec 2004</p>
+</div>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<div class="admonition desc">
+<p class="admonition-title">Introduction</p>
+<p>Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid HTML.</p>
+<p>Thus, “Markdown” is two things: (1) a plain text formatting syntax; and (2) a software tool, written in Perl, that converts the plain text formatting to HTML.</p>
+<hr>
+<p>See the&nbsp;<a href="https://daringfireball.net/projects/markdown/syntax">Syntax</a>&nbsp;page for details pertaining to Markdown’s formatting syntax. You can try it out, right now, using the online&nbsp;<a href="https://daringfireball.net/projects/markdown/dingus">Dingus</a>.</p>
+<hr>
+<p>The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-to-HTML filters, the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.</p>
+<p>The best way to get a feel for Markdown’s formatting syntax is simply to look at a Markdown-formatted document. For example, you can view the Markdown source for the article text on this page here:&nbsp;http://daringfireball.net/projects/markdown/index.text</p>
+<hr>
+<p>(You can use this ‘.text’ suffix trick to view the Markdown source for the content of each of the pages in this section, e.g. the&nbsp;<a href="https://daringfireball.net/projects/markdown/syntax.text">Syntax</a>&nbsp;and&nbsp;<a href="https://daringfireball.net/projects/markdown/license.text">License</a>&nbsp;pages.)</p>
+<p>Markdown is free software, available under a BSD-style open source license.</p>
+<p>See the&nbsp;<a href="https://daringfireball.net/projects/markdown/license">License</a>&nbsp;page for more information.</p>
+</div>
+<h2 id="discussion-list">Discussion List<a class="headerlink" href="#discussion-list" title="Permanent link">¶</a></h2>
+<div class="admonition git">
+<p class="admonition-title">Discussion List</p>
+<p>I’ve set up a public&nbsp;<a href="http://six.pairlist.net/mailman/listinfo/markdown-discuss">mailing list for discussion about Markdown</a>. Any topic related to Markdown — both its formatting syntax and its software — is fair game for discussion. Anyone who is interested is welcome to join.</p>
+<p>It’s my hope that the mailing list will lead to good ideas for future improvements to Markdown.</p>
+</div>
+<h2 id="installation-and-requirements">Installation and Requirements<a class="headerlink" href="#installation-and-requirements" title="Permanent link">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Installation and Requirements</p>
+<p>Markdown requires Perl 5.6.0 or later. Welcome to the 21<sup>st</sup> Century.</p>
+<p>Markdown also requires the standard Perl library module&nbsp;<a href="http://search.cpan.org/dist/Digest-MD5/MD5.pm">Digest::MD5</a>, which is probably already installed on your server.</p>
+</div>
+<h3 id="movable-type">Movable Type<a class="headerlink" href="#movable-type" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Movable Type</p>
+<p>Markdown works with Movable Type version 2.6 or later (including Movable Type 3.0).</p>
+<p>1 ] Copy the “Markdown.pl” file into your Movable Type “plugins” directory. The “plugins” directory should be in the same directory as “mt.cgi”; if the “plugins” directory doesn’t already exist, use your FTP program to create it. Your installation should look like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>(mt home)/plugins/Markdown.pl
+</span></code></pre></div>
+<p>2 ] Once installed, Markdown will appear as an option in Movable Type’s Text Formatting pop-up menu. This is selectable on a per-post basis:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://daringfireball.net/graphics/markdown/mt_textformat_menu.png" data-desc-position="bottom"><img alt="Screenshot of Movable Type 'Text Formatting' Menu" src="https://daringfireball.net/graphics/markdown/mt_textformat_menu.png"></a></p>
+<p>Markdown translates your posts to HTML when you publish; the posts themselves are stored in your MT database in Markdown format.</p>
+<p>3 ] If you also install SmartyPants 1.5 (or later), Markdown will offer a second text formatting option: “Markdown With SmartyPants”. This option is the same as the regular “Markdown” formatter, except that it automatically uses SmartyPants to create typographically correct curly quotes, em-dashes, and ellipses. See the&nbsp;<a href="http://daringfireball.net/projects/smartypants/">SmartyPants web page</a>&nbsp;for more information.</p>
+<p>4 ] To make Markdown (or “Markdown With SmartyPants”) your default text formatting option for new posts, go to Weblog Config: Preferences.</p>
+<p>Note that by default, Markdown produces XHTML output. To configure Markdown to produce HTML 4 output, see “Configuration”, below.</p>
+</div>
+<h3 id="blosxom">Blosxom<a class="headerlink" href="#blosxom" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Blosxom</p>
+<p>Markdown works with Blosxom version 2.0 or later.</p>
+<ol>
+<li>
+<p>Rename the “Markdown.pl” plug-in to “Markdown” (case is important). Movable Type requires plug-ins to have a “.pl” extension; Blosxom forbids it.</p>
+</li>
+<li>
+<p>Copy the “Markdown” plug-in file to your Blosxom plug-ins folder. If you’re not sure where your Blosxom plug-ins folder is, see the Blosxom documentation for information.</p>
+</li>
+<li>
+<p>That’s it. The entries in your weblog will now automatically be processed by Markdown.</p>
+</li>
+<li>
+<p>If you’d like to apply Markdown formatting only to certain posts, rather than all of them, Markdown can optionally be used in conjunction with Blosxom’s&nbsp;<a href="http://www.blosxom.com/plugins/meta/meta.htm">Meta</a>&nbsp;plug-in. First, install the Meta plug-in. Next, open the Markdown plug-in file in a text editor, and set the configuration variable&nbsp;<code>$g_blosxom_use_meta</code>&nbsp;to 1. Then, simply include a “<code>meta-markup: Markdown</code>” header line at the top of each post you compose using Markdown.</p>
+</li>
+</ol>
+</div>
+<h3 id="bbedit">BBEdit<a class="headerlink" href="#bbedit" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">BBEdit</p>
+<p>Markdown works with BBEdit 6.1 or later on Mac OS X. It also works with BBEdit 5.1 or later and MacPerl 5.6.1 on Mac OS 8.6 or later. If you’re running Mac OS X 10.2 (Jaguar), you may need to install the Perl module&nbsp;<a href="http://search.cpan.org/dist/Digest-MD5/MD5.pm">Digest::MD5</a>&nbsp;from CPAN; Digest::MD5 comes pre-installed on Mac OS X 10.3 (Panther).</p>
+<p>1 ] Copy the “Markdown.pl” file to appropriate filters folder in your “BBEdit Support” folder. On Mac OS X, this should be:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>BBEdit Support/Unix Support/Unix Filters/
+</span></code></pre></div>
+<p>See the BBEdit documentation for more details on the location of these folders.</p>
+<p>You can rename “Markdown.pl” to whatever you wish.</p>
+<p>2 ] That’s it. To use Markdown, select some text in a BBEdit document, then choose Markdown from the Filters sub-menu in the “#!” menu, or the Filters floating palette</p>
+</div>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
+<div class="admonition git">
+<p class="admonition-title">Configuration</p>
+<p>By default, Markdown produces XHTML-style output for tags with empty elements. E.g.:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;br /&gt;
+</span></code></pre></div>
+<p>Markdown can be configured to produce HTML-style tags; e.g.:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;br&gt;
+</span></code></pre></div>
+</div>
+<h3 id="movable-type_1">Movable Type<a class="headerlink" href="#movable-type_1" title="Permanent link">¶</a></h3>
+<div class="admonition git">
+<p class="admonition-title">Movable Type</p>
+<p>You need to use a special&nbsp;<code>MTMarkdownOptions</code>&nbsp;container tag in each Movable Type template where you want HTML 4-style output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;MTMarkdownOptions output='html4'&gt;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   ... put your entry content here ...
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> &lt;/MTMarkdownOptions&gt;
+</span></code></pre></div>
+<p>The easiest way to use MTMarkdownOptions is probably to put the opening tag right after your&nbsp;<code>&lt;body&gt;</code>&nbsp;tag, and the closing tag right before&nbsp;<code>&lt;/body&gt;</code>.</p>
+<p>To suppress Markdown processing in a particular template, i.e. to publish the raw Markdown-formatted text without translation into (X)HTML, set the&nbsp;<code>output</code>&nbsp;attribute to ‘raw’:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&lt;MTMarkdownOptions output='raw'&gt;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   ... put your entry content here ...
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&lt;/MTMarkdownOptions&gt;
+</span></code></pre></div>
+</div>
+<h3 id="command-line">Command-Line<a class="headerlink" href="#command-line" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Command-Line</p>
+<p>Use the&nbsp;<code>--html4tags</code>&nbsp;command-line switch to produce HTML output from a Unix-style command line. E.g.:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>% perl Markdown.pl --html4tags foo.text
+</span></code></pre></div>
+<p>Type&nbsp;<code>perldoc Markdown.pl</code>, or read the POD documentation within the Markdown.pl source code for more information.</p>
+</div>
+<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">¶</a></h2>
+<div class="admonition ex">
+<p class="admonition-title">Acknowledgements</p>
+<p><a href="http://www.aaronsw.com/">Aaron Swartz</a>&nbsp;deserves a tremendous amount of credit for his feedback on the design of Markdown’s formatting syntax. Markdown is&nbsp;<em>much</em>&nbsp;better thanks to Aaron’s ideas, feedback, and testing. Also, Aaron’s&nbsp;<a href="http://www.aaronsw.com/2002/html2text/">html2text</a>&nbsp;is a very handy (and free) utility for turning HTML into Markdown-formatted plain text.</p>
+<p><a href="http://bumppo.net/">Nathaniel Irons</a>,&nbsp;<a href="http://hivelogic.com/">Dan Benjamin</a>,&nbsp;<a href="http://waferbaby.com/">Daniel Bogan</a>, and&nbsp;<a href="http://pressedpants.com/">Jason Perkins</a>&nbsp;also deserve thanks for their feedback.</p>
+<p><a href="http://www.michelf.com/projects/php-markdown/">Michel Fortin</a>&nbsp;has ported Markdown to PHP; it’s a splendid port, and highly recommended for anyone looking for a PHP implementation of Markdown.</p>
+</div>
+<h2 id="getting-the-gist-of-markdowns-formatting-syntax">Getting the Gist of Markdown’s Formatting Syntax<a class="headerlink" href="#getting-the-gist-of-markdowns-formatting-syntax" title="Permanent link">¶</a></h2>
+<div class="admonition pied-piper">
+<p class="admonition-title">Getting the Gist of Markdown’s Formatting Syntax</p>
+<p>This page offers a brief overview of what it’s like to use Markdown. The&nbsp;<a href="https://daringfireball.net/projects/markdown/syntax" title="Markdown Syntax">syntax page</a>&nbsp;provides complete, detailed documentation for every feature, but Markdown should be very easy to pick up simply by looking at a few examples of it in action. The examples on this page are written in a before/after style, showing example syntax and the HTML output produced by Markdown.</p>
+<p>It’s also helpful to simply try Markdown out; the&nbsp;<a href="https://daringfireball.net/projects/markdown/dingus" title="Markdown Dingus">Dingus</a>&nbsp;is a web application that allows you type your own Markdown-formatted text and translate it to XHTML.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Note!</p>
+<p>This document is itself written using Markdown; you can&nbsp;<a href="https://daringfireball.net/projects/markdown/basics.text">see the source for it by adding ‘.text’ to the URL</a>.</p>
+</div>
+</div>
+<h2 id="paragraphs-headers-blockquotes">Paragraphs, Headers, Blockquotes<a class="headerlink" href="#paragraphs-headers-blockquotes" title="Permanent link">¶</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Paragraphs, Headers, Blockquotes</p>
+<p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line — a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
+<p>Markdown offers two styles of headers:&nbsp;<em>Setext</em>&nbsp;and&nbsp;<em>atx</em>. Setext-style headers for&nbsp;<code>&lt;h1&gt;</code>&nbsp;and&nbsp;<code>&lt;h2&gt;</code>&nbsp;are created by “underlining” with equal signs (<code>=</code>) and hyphens (<code>-</code>), respectively. To create an atx-style header, you put 1-6 hash marks (<code>#</code>) at the beginning of the line — the number of hashes equals the resulting HTML header level.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Markdown / Output</p>
+<p>Blockquotes are indicated using email-style ‘<code>&gt;</code>’ angle brackets.</p>
+<p>Markdown:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>A First Level Header
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>====================
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>A Second Level Header
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>---------------------
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Now is the time for all good men to come to
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>the aid of their country. This is just a
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>regular paragraph.
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>The quick brown fox jumped over the lazy
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>dog's back.
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>### Header 3
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>&gt; This is a blockquote.
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>&gt; 
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>&gt; This is the second paragraph in the blockquote.
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>&gt;
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>&gt; ## This is an H2 in a blockquote
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;h1&gt;A First Level Header&lt;/h1&gt;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>&lt;h2&gt;A Second Level Header&lt;/h2&gt;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>&lt;p&gt;Now is the time for all good men to come to
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>the aid of their country. This is just a
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>regular paragraph.&lt;/p&gt;
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>&lt;p&gt;The quick brown fox jumped over the lazy
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>dog's back.&lt;/p&gt;
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>&lt;h3&gt;Header 3&lt;/h3&gt;
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>&lt;blockquote&gt;
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    &lt;p&gt;This is a blockquote.&lt;/p&gt;
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>    &lt;p&gt;This is the second paragraph in the blockquote.&lt;/p&gt;
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>    &lt;h2&gt;This is an H2 in a blockquote&lt;/h2&gt;
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>&lt;/blockquote&gt;
+</span></code></pre></div>
+</div>
+<h3 id="phrase-emphasis">Phrase Emphasis<a class="headerlink" href="#phrase-emphasis" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Phrase Emphasis</p>
+<p>Markdown uses asterisks and underscores to indicate spans of emphasis.</p>
+<p>Markdown:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Some of these words *are emphasized*.
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Some of these words _are emphasized also_.
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Use two asterisks for **strong emphasis**.
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Or, if you prefer, __use two underscores instead__.
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;p&gt;Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.&lt;/p&gt;
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>&lt;p&gt;Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/p&gt;
+</span></code></pre></div>
+</div>
+<h2 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Lists</p>
+<p>Unordered (bulleted) lists use asterisks, pluses, and hyphens (<code>*</code>, <code>+</code>, and <code>-</code>) as list markers. These three markers are interchangable; this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>*   Candy.
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>*   Gum.
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>*   Booze.
+</span></code></pre></div>
+<p>this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>+   Candy.
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>+   Gum.
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>+   Booze.
+</span></code></pre></div>
+<p>and this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>-   Candy.
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>-   Gum.
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>-   Booze.
+</span></code></pre></div>
+<p>all produce the same output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&lt;ul&gt;
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>&lt;li&gt;Candy.&lt;/li&gt;
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&lt;li&gt;Gum.&lt;/li&gt;
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>&lt;li&gt;Booze.&lt;/li&gt;
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>&lt;/ul&gt;
+</span></code></pre></div>
+<p>Ordered (numbered) lists use regular numbers, followed by periods, as list markers:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>1.  Red
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>2.  Green
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>3.  Blue
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>&lt;ol&gt;
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>&lt;li&gt;Red&lt;/li&gt;
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>&lt;li&gt;Green&lt;/li&gt;
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>&lt;li&gt;Blue&lt;/li&gt;
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>&lt;/ol&gt;
+</span></code></pre></div>
+<p>If you put blank lines between items, you’ll get <code>&lt;p&gt;</code> tags for the list item text. You can create multi-paragraph list items by indenting the paragraphs by 4 spaces or 1 tab:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>*   A list item.
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    With multiple paragraphs.
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>*   Another item in the list.
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>&lt;ul&gt;
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>&lt;li&gt;&lt;p&gt;A list item.&lt;/p&gt;
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>&lt;p&gt;With multiple paragraphs.&lt;/p&gt;&lt;/li&gt;
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>&lt;li&gt;&lt;p&gt;Another item in the list.&lt;/p&gt;&lt;/li&gt;
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>&lt;/ul&gt;
+</span></code></pre></div>
+</div>
+<h3 id="links">Links<a class="headerlink" href="#links" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Links</p>
+<p>Markdown supports two styles for creating links: <em>inline</em> and <em>reference</em>. With both styles, you use square brackets to delimit the text you want to turn into a link.</p>
+<p>Inline-style links use parentheses immediately after the link text. For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>This is an [example link](http://example.com).
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>&lt;p&gt;This is an &lt;a href="http://example.com"&gt;
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>example link&lt;/a&gt;.&lt;/p&gt;
+</span></code></pre></div>
+<p>Optionally, you may include a title attribute in the parentheses:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>This is an [example link](http://example.com "With a Title").
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>&lt;p&gt;This is an &lt;a href="http://example.com" title="With a Title"&gt;
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>example link&lt;/a&gt;.&lt;/p&gt;
+</span></code></pre></div>
+<p>Reference-style links allow you to refer to your links by names, which you define elsewhere in your document:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>I get 10 times more traffic from [Google][1] than from
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>[Yahoo][2] or [MSN][3].
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>[1]: http://google.com        "Google"
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>[2]: http://yahoo.com  "Yahoo Search"
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>[3]: http://msn.com    "MSN Search"
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com"
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>title="Google"&gt;Google&lt;/a&gt; than from &lt;a href="http://yahoo.com"
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://msn.com"
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+</span></code></pre></div>
+<p>The title attribute is optional. Link names may contain letters, numbers and spaces, but are <em>not</em> case sensitive:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>I start my morning with a cup of coffee and
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>[The New York Times][NY Times].
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>[ny times]: http://nytimes.com
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>&lt;p&gt;I start my morning with a cup of coffee and
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>&lt;a href="http://nytimes.com"&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;
+</span></code></pre></div>
+</div>
+<h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Images</p>
+<p>Image syntax is very much like link syntax.</p>
+<p>Inline (titles are optional):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>![alt text](/path/to/img.jpg "Title")
+</span></code></pre></div>
+<p>Reference-style:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>![alt text][id]
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>[id]: /path/to/img.jpg "Title"
+</span></code></pre></div>
+<p>Both of the above examples produce the same output:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"/path/to/img.jpg"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"alt text"</span> <span class="na">title</span><span class="o">=</span><span class="s">"Title"</span> <span class="p">/&gt;</span>
+</span></code></pre></div>
+</div>
+<h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Code</p>
+<p>In a regular paragraph, you can create code span by wrapping text in backtick quotes. Any ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> or <code>&gt;</code>) will automatically be translated into HTML entities. This makes it easy to use Markdown to write about HTML example code:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>I strongly recommend against using any `&lt;blink&gt;` tags.
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>I wish SmartyPants used named entities like `—`
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>instead of decimal-encoded entities like `—`.
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I strongly recommend against using any
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;&lt;</span><span class="nt">blink</span><span class="p">&gt;&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> tags.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I wish SmartyPants used named entities like
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span><span class="ni">&amp;mdash;</span><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> instead of decimal-encoded
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>entities like <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>—<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>To specify an entire block of pre-formatted code, indent every line of the block by 4 spaces or 1 tab. Just like with code spans, <code>&amp;</code>, <code>&lt;</code>, and <code>&gt;</code> characters will be escaped automatically.</p>
+<p>Markdown:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>If you want your page to validate under XHTML 1.0 Strict,
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>you've got to put paragraph tags in your blockquotes:
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    &lt;blockquote&gt;
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>        &lt;p&gt;For example.&lt;/p&gt;
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>    &lt;/blockquote&gt;
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>If you want your page to validate under XHTML 1.0 Strict,
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>you've got to put paragraph tags in your blockquotes:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>For example.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="grid cards cols-3">
+<ul>
+<li>
+<p><span style="color: #4a90e2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75"></path><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1M2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12"></path></svg></span></span> <strong>Overview</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#overview" style="border-color: #4a90e2; color: #4a90e2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown is intended to be as easy-to-read and easy-to-write is feasible.</p>
+</li>
+<li>
+<p><span style="color: #4a90e2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 8.807V3.5h-.563a.75.75 0 0 1 0-1.5h9.125a.75.75 0 0 1 0 1.5H16v5.307l5.125 9.301c.964 1.75-.302 3.892-2.299 3.892H5.174c-1.998 0-3.263-2.142-2.3-3.892ZM4.189 18.832a1.123 1.123 0 0 0 .985 1.668h13.652a1.123 1.123 0 0 0 .985-1.668L17.7 15H6.3ZM14.5 3.5h-5V9a.75.75 0 0 1-.093.362L7.127 13.5h9.746l-2.28-4.138A.75.75 0 0 1 14.5 9Z"></path></svg></span></span> <strong>Philosophy</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#philosophy" style="border-color: #4a90e2; color: #4a90e2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Readability, however, is emphasized above all else, should be publishable as-is.</p>
+</li>
+<li>
+<p><span style="color: #4a90e2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06m-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0"></path></svg></span></span> <strong>Inline HTML</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#html" style="border-color: #4a90e2; color: #4a90e2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown is not a replacement for HTML, or even close to it. Syntax is very small.</p>
+</li>
+<li>
+<p><span style="color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.53 9.78a.75.75 0 0 0-1.06-1.06L11 13.19l-1.97-1.97a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0z"></path><path d="m12.54.637 8.25 2.675A1.75 1.75 0 0 1 22 4.976V10c0 6.19-3.771 10.704-9.401 12.83a1.7 1.7 0 0 1-1.198 0C5.77 20.705 2 16.19 2 10V4.976c0-.758.489-1.43 1.21-1.664L11.46.637a1.75 1.75 0 0 1 1.08 0m-.617 1.426-8.25 2.676a.25.25 0 0 0-.173.237V10c0 5.46 3.28 9.483 8.43 11.426a.2.2 0 0 0 .14 0C17.22 19.483 20.5 15.461 20.5 10V4.976a.25.25 0 0 0-.173-.237l-8.25-2.676a.25.25 0 0 0-.154 0"></path></svg></span></span> <strong>Auto Esc SPC</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#autoescape" style="border-color: #6d8c6d; color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>In HTML, there are two chars that demand special treatment: &lt; and &amp;.</p>
+</li>
+<li>
+<p><span style="color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 3.75v5.5A1.75 1.75 0 0 1 20.25 11H3.75A1.75 1.75 0 0 1 2 9.25v-5.5C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75m0 11v5.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25v-5.5c0-.966.784-1.75 1.75-1.75h16.5c.966 0 1.75.784 1.75 1.75M20.25 3.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25m0 11H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25"></path></svg></span></span> <strong>Block Elements</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#block" style="border-color: #6d8c6d; color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>A para is simply one or more consec lines of text, separated by one or more blank lines.</p>
+</li>
+<li>
+<p><span style="color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.414 15H3.586l-1.631 4.505a.75.75 0 1 1-1.41-.51l5.08-14.03a1.463 1.463 0 0 1 2.75 0l5.08 14.03a.75.75 0 1 1-1.411.51Zm4.532-5.098c.913-1.683 2.703-2.205 4.284-2.205 1.047 0 2.084.312 2.878.885.801.577 1.392 1.455 1.392 2.548v8.12a.75.75 0 0 1-1.5 0v-.06l-.044.025c-.893.52-2.096.785-3.451.785-1.051 0-2.048-.315-2.795-.948-.76-.643-1.217-1.578-1.217-2.702 0-.919.349-1.861 1.168-2.563.81-.694 2-1.087 3.569-1.087H22v-1.57c0-.503-.263-.967-.769-1.332-.513-.37-1.235-.6-2.001-.6-1.319 0-2.429.43-2.966 1.42a.75.75 0 0 1-1.318-.716M9.87 13.5 7 5.572 4.13 13.5Zm12.13.7h-2.77c-1.331 0-2.134.333-2.593.726a1.82 1.82 0 0 0-.644 1.424c0 .689.267 1.203.686 1.557.43.365 1.065.593 1.826.593 1.183 0 2.102-.235 2.697-.581.582-.34.798-.74.798-1.134Z"></path></svg></span></span> <strong>Paras and Line Breaks</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#p" style="border-color: #6d8c6d; color: #6d8c6d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>A paragraph is simply one or more consecutive lines of text.</p>
+</li>
+<li>
+<p><span style="color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.25 4a.75.75 0 0 1 .75.75V11h10V4.75a.75.75 0 0 1 1.5 0v14.5a.75.75 0 0 1-1.5 0V12.5H7v6.75a.75.75 0 0 1-1.5 0V4.75A.75.75 0 0 1 6.25 4"></path></svg></span></span> <strong>Headers</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#header" style="border-color: #bfa05a; color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown supports two styles of headers, Setext and atx.</p>
+</li>
+<li>
+<p><span style="color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6.25a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.25m5 6.063a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1-.75-.75m0 5.937a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1-.75-.75M3.75 11a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-1.5 0v-7a.75.75 0 0 1 .75-.75"></path></svg></span></span> <strong>Blockquotes</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#blockquote" style="border-color: #bfa05a; color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown uses email-style &gt; characters for blockquoting.</p>
+</li>
+<li>
+<p><span style="color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.75 5.5h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5m0 6h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5m0 6h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5M5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0M4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2m0 12a1 1 0 1 1 0-2 1 1 0 0 1 0 2"></path></svg></span></span> <strong>Lists</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#list" style="border-color: #bfa05a; color: #bfa05a"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
+</li>
+<li>
+<p><span style="color: #009688"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.25 12a.75.75 0 0 1-.22.53l-2.75 2.75a.75.75 0 0 1-1.06-1.06L7.44 12 5.22 9.78a.75.75 0 1 1 1.06-1.06l2.75 2.75c.141.14.22.331.22.53m2 2a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5z"></path><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"></path></svg></span></span> <strong>Code Blocks</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#precode" style="border-color: #009688; color: #009688"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Pre-formatted code blocks are used for writing about prog. or markup source code.</p>
+</li>
+<li>
+<p><span style="color: #009688"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 12.75a.75.75 0 0 1 .75-.75h18.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75"></path></svg></span></span> <strong>Horizontal Rules</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#hr" style="border-color: #009688; color: #009688"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Prod horiz rule tag<code>(&lt;hr /&gt;)</code>by placing three or more hyphens, asterisks., or <code>_'s</code> on a line.</p>
+</li>
+<li>
+<p><span style="color: #009688"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.414 15H3.586l-1.631 4.505a.75.75 0 1 1-1.41-.51l5.08-14.03a1.463 1.463 0 0 1 2.75 0l5.08 14.03a.75.75 0 1 1-1.411.51Zm4.532-5.098c.913-1.683 2.703-2.205 4.284-2.205 1.047 0 2.084.312 2.878.885.801.577 1.392 1.455 1.392 2.548v8.12a.75.75 0 0 1-1.5 0v-.06l-.044.025c-.893.52-2.096.785-3.451.785-1.051 0-2.048-.315-2.795-.948-.76-.643-1.217-1.578-1.217-2.702 0-.919.349-1.861 1.168-2.563.81-.694 2-1.087 3.569-1.087H22v-1.57c0-.503-.263-.967-.769-1.332-.513-.37-1.235-.6-2.001-.6-1.319 0-2.429.43-2.966 1.42a.75.75 0 0 1-1.318-.716M9.87 13.5 7 5.572 4.13 13.5Zm12.13.7h-2.77c-1.331 0-2.134.333-2.593.726a1.82 1.82 0 0 0-.644 1.424c0 .689.267 1.203.686 1.557.43.365 1.065.593 1.826.593 1.183 0 2.102-.235 2.697-.581.582-.34.798-.74.798-1.134Z"></path></svg></span></span> <strong>Span Elements</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#span" style="border-color: #009688; color: #009688"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>MD supports two styles of links: inline and ref, link text is delimited by [square brackets].</p>
+</li>
+<li>
+<p><span style="color: #0097a7"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.78 3.653a3.936 3.936 0 1 1 5.567 5.567l-3.627 3.627a3.936 3.936 0 0 1-5.88-.353.75.75 0 0 0-1.18.928 5.436 5.436 0 0 0 8.12.486l3.628-3.628a5.436 5.436 0 1 0-7.688-7.688l-3 3a.75.75 0 0 0 1.06 1.061z"></path><path d="M7.28 11.153a3.936 3.936 0 0 1 5.88.353.75.75 0 0 0 1.18-.928 5.436 5.436 0 0 0-8.12-.486L2.592 13.72a5.436 5.436 0 1 0 7.688 7.688l3-3a.75.75 0 1 0-1.06-1.06l-3 3a3.936 3.936 0 0 1-5.567-5.568z"></path></svg></span></span> <strong>Links</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#link" style="border-color: #0097a7; color: #0097a7"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>MD supports two styles of links: inline and ref, link text is delimited by [square brackets].</p>
+</li>
+<li>
+<p><span style="color: #0097a7"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4.75c0-.69.56-1.25 1.25-1.25h5a4.752 4.752 0 0 1 3.888 7.479A5 5 0 0 1 14 20.5H7.25c-.69 0-1.25-.56-1.25-1.25ZM8.5 13v5H14a2.5 2.5 0 1 0 0-5Zm0-2.5h3.751A2.25 2.25 0 0 0 12.25 6H8.5Z"></path></svg></span></span> <strong>Emphasis</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#em" style="border-color: #0097a7; color: #0097a7"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown treats asterisks (*) and underscores (_) as indicators of emphasis.</p>
+</li>
+<li>
+<p><span style="color: #0097a7"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.3 8.24a.75.75 0 0 1-.04 1.06L7.352 12l2.908 2.7a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 0 1 1.06.04m3.44 1.06a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.908-2.7z"></path><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"></path></svg></span></span> <strong>Code</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#code" style="border-color: #0097a7; color: #0097a7"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>To indicate a span of code, wrap it with backtick quotes (`). </p>
+</li>
+<li>
+<p><span style="color: #388e3c"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.75 3h14.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 19.25 21H4.75A1.75 1.75 0 0 1 3 19.25V4.75C3 3.784 3.784 3 4.75 3m14.5 1.5H4.75a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h.19l9.823-9.823a1.75 1.75 0 0 1 2.475 0l2.262 2.262V4.75a.25.25 0 0 0-.25-.25m.25 9.56-3.323-3.323a.25.25 0 0 0-.354 0L7.061 19.5H19.25a.25.25 0 0 0 .25-.25ZM8.5 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0-1.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path></svg></span></span> <strong>Images</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#img" style="border-color: #388e3c; color: #388e3c"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>It’s difficult to devise a “natural” syntax for placing images into a plain text doc format.</p>
+</li>
+<li>
+<p><span style="color: #388e3c"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.876.64V.639l8.25 4.763c.541.313.875.89.875 1.515v9.525a1.75 1.75 0 0 1-.875 1.516l-8.25 4.762a1.75 1.75 0 0 1-1.75 0l-8.25-4.763a1.75 1.75 0 0 1-.875-1.515V6.917c0-.625.334-1.202.875-1.515L11.126.64a1.75 1.75 0 0 1 1.75 0m-1 1.298L4.251 6.34l7.75 4.474 7.75-4.474-7.625-4.402a.25.25 0 0 0-.25 0m.875 19.123 7.625-4.402a.25.25 0 0 0 .125-.216V7.639l-7.75 4.474ZM3.501 7.64v8.803c0 .09.048.172.125.216l7.625 4.402v-8.947Z"></path></svg></span></span> <strong>Miscellaneous</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#misc" style="border-color: #388e3c; color: #388e3c"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>MD supports a shortcut style for creating “auto” links for URLs and email addresses</p>
+</li>
+<li>
+<p><span style="color: #388e3c"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 14a2 2 0 1 1-.001-3.999A2 2 0 0 1 20 14M6 12a2 2 0 1 1-3.999.001A2 2 0 0 1 6 12m8 0a2 2 0 1 1-3.999.001A2 2 0 0 1 14 12"></path></svg></span></span> <strong>Backslash Escapes</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#backslash" style="border-color: #388e3c; color: #388e3c"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Markdown allows you to use backslash escapes to generate literal characters</p>
+</li>
+<li>
+<p><span style="color: #afb42b"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"></path><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"></path></svg></span></span> <strong>Automatic Links</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/markdown/syntax#autolink" style="border-color: #afb42b; color: #afb42b"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>MD supports a shortcut style for creating “auto” links for URLs and email addresses.</p>
+</li>
+<li>
+<p><span style="color: #afb42b"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"></path><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"></path></svg></span></span> <strong>BBColors (v1.0.1)</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/bbcolors/" style="border-color: #afb42b; color: #afb42b"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>Free cmd-line tool: Save/load txt colour pref schs. for BBEdit and TextWrangler.</p>
+</li>
+<li>
+<p><span style="color: #afb42b"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"></path><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"></path></svg></span></span> <strong>SmartyPants (v1.5.1)</strong><br>
+<a class="md-button" href="https://daringfireball.net/projects/smartypants/" style="border-color: #afb42b; color: #afb42b"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Go to</a></p>
+<p>SmartyPants is a free web publishing plug-in for Movable Type, Blosxom, and BBEdit.</p>
+</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Note!</p>
+<p>This document is itself written using Markdown; you can&nbsp;<a href="https://daringfireball.net/projects/markdown/syntax.text">see the source for it by adding ‘.text’ to the URL</a>.</p>
+</div>
+<hr>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<h3 id="philosophy">Philosophy<a class="headerlink" href="#philosophy" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Philosophy</p>
+<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.</p>
+<p>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-to-HTML filters — including <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>, <a href="http://www.aaronsw.com/2002/atx/">atx</a>, <a href="https://web.archive.org/web/20021226035527/http://textism.com/tools/textile/">Textile</a>, <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>, <a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a>, and <a href="http://ettext.taint.org/doc/">EtText</a> — the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.</p>
+<p>To this end, Markdown’s syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like <em>emphasis</em>. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you’ve ever used email.</p>
+</div>
+<h3 id="inline-html">Inline HTML<a class="headerlink" href="#inline-html" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Inline HTML</p>
+<p>Markdown’s syntax is intended for one purpose: to be used as a format for <em>writing</em> for the web.</p>
+<p>Markdown is not a replacement for HTML, or even close to it. Its syntax is very small, corresponding only to a very small subset of HTML tags. The idea is <em>not</em> to create a syntax that makes it easier to insert HTML tags. In my opinion, HTML tags are already easy to insert. The idea for Markdown is to make it easy to read, write, and edit prose. HTML is a <em>publishing</em> format; Markdown is a <em>writing</em> format. Thus, Markdown’s formatting syntax only addresses issues that can be conveyed in plain text.</p>
+<p>For any markup that is not covered by Markdown’s syntax, you simply use HTML itself. There’s no need to preface it or delimit it to indicate that you’re switching from Markdown to HTML; you just use the tags.</p>
+<p>The only restrictions are that block-level HTML elements — e.g. <code>&lt;div&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;p&gt;</code>, etc. — must be separated from surrounding content by blank lines, and the start and end tags of the block should not be indented with tabs or spaces. Markdown is smart enough not to add extra (unwanted) <code>&lt;p&gt;</code> tags around HTML block-level tags.</p>
+<p>For example, to add an HTML table to a Markdown article:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>This is a regular paragraph.
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>&lt;table&gt;
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>    &lt;tr&gt;
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>        &lt;td&gt;Foo&lt;/td&gt;
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>    &lt;/tr&gt;
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>&lt;/table&gt;
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>This is another regular paragraph.
+</span></code></pre></div>
+<p>Note that Markdown formatting syntax is not processed within block-level HTML tags. E.g., you can’t use Markdown-style <code>*emphasis*</code> inside an HTML block.</p>
+<p>Span-level HTML tags — e.g. <code>&lt;span&gt;</code>, <code>&lt;cite&gt;</code>, or <code>&lt;del&gt;</code> — can be used anywhere in a Markdown paragraph, list item, or header. If you want, you can even use HTML tags instead of Markdown formatting; e.g. if you’d prefer to use HTML <code>&lt;a&gt;</code> or <code>&lt;img&gt;</code> tags instead of Markdown’s link or image syntax, go right ahead.</p>
+<p>Unlike block-level HTML tags, Markdown syntax <em>is</em> processed within span-level tags.</p>
+</div>
+<h3 id="automatic-escaping-for-special-characters">Automatic Escaping for Special Characters<a class="headerlink" href="#automatic-escaping-for-special-characters" title="Permanent link">¶</a></h3>
+<div class="admonition git">
+<p class="admonition-title">Automatic Escaping for Special Characters</p>
+<p>In HTML, there are two characters that demand special treatment: <code>&lt;</code> and <code>&amp;</code>. Left angle brackets are used to start tags; ampersands are used to denote HTML entities. If you want to use them as literal characters, you must escape them as entities, e.g. <code>&amp;lt;</code>, and <code>&amp;amp;</code>.</p>
+<p>Ampersands in particular are bedeviling for web writers. If you want to write about ‘AT&amp;T’, you need to write ‘<code>AT&amp;amp;T</code>’. You even need to escape ampersands within URLs. Thus, if you want to link to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>http://images.google.com/images?num=30&amp;q=larry+bird
+</span></code></pre></div>
+<p>you need to encode the URL as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>http://images.google.com/images?num=30&amp;q=larry+bird
+</span></code></pre></div>
+<p>in your anchor tag <code>href</code> attribute. Needless to say, this is easy to forget, and is probably the single most common source of HTML validation errors in otherwise well-marked-up web sites.</p>
+<p>Markdown allows you to use these characters naturally, taking care of all the necessary escaping for you. If you use an ampersand as part of an HTML entity, it remains unchanged; otherwise it will be translated into <code>&amp;amp;</code>.</p>
+<p>So, if you want to include a copyright symbol in your article, you can write:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>©
+</span></code></pre></div>
+<p>and Markdown will leave it alone. But if you write:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>AT&amp;T
+</span></code></pre></div>
+<p>Markdown will translate it to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>AT&amp;T
+</span></code></pre></div>
+<p>Similarly, because Markdown supports <a href="https://daringfireball.net/projects/markdown/syntax#html">inline HTML</a>, if you use angle brackets as delimiters for HTML tags, Markdown will treat them as such. But if you write:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>4 &lt; 5
+</span></code></pre></div>
+<p>Markdown will translate it to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>4 &lt; 5
+</span></code></pre></div>
+<p>However, inside Markdown code spans and blocks, angle brackets and ampersands are <em>always</em> encoded automatically. This makes it easy to use Markdown to write about HTML code. (As opposed to raw HTML, which is a terrible format for writing about HTML syntax, because every single <code>&lt;</code> and <code>&amp;</code> in your example code needs to be escaped.)</p>
+</div>
+<hr>
+<h2 id="block-elements">Block Elements<a class="headerlink" href="#block-elements" title="Permanent link">¶</a></h2>
+<h3 id="paragraphs-and-line-breaks">Paragraphs and Line Breaks<a class="headerlink" href="#paragraphs-and-line-breaks" title="Permanent link">¶</a></h3>
+<div class="admonition pied-piper">
+<p class="admonition-title">Paragraphs and Line Breaks</p>
+<p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line — a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
+<p>The implication of the “one or more consecutive lines of text” rule is that Markdown supports “hard-wrapped” text paragraphs. This differs significantly from most other text-to-HTML formatters (including Movable Type’s “Convert Line Breaks” option) which translate every line break character in a paragraph into a&nbsp;<code>&lt;br /&gt;</code>&nbsp;tag.</p>
+<p>When you&nbsp;<em>do</em>&nbsp;want to insert a&nbsp;<code>&lt;br /&gt;</code>&nbsp;break tag using Markdown, you end a line with two or more spaces, then type return.</p>
+<p>Yes, this takes a tad more effort to create a&nbsp;<code>&lt;br /&gt;</code>, but a simplistic “every line break is a&nbsp;<code>&lt;br /&gt;</code>” rule wouldn’t work for Markdown. Markdown’s email-style&nbsp;<a href="https://daringfireball.net/projects/markdown/syntax#blockquote">blockquoting</a>&nbsp;and multi-paragraph&nbsp;<a href="https://daringfireball.net/projects/markdown/syntax#list">list items</a>&nbsp;work best — and look better — when you format them with hard breaks.</p>
+</div>
+<h3 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Headers</p>
+<p>Markdown supports two styles of headers, <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> and <a href="http://www.aaronsw.com/2002/atx/">atx</a>.</p>
+<p>Setext-style headers are “underlined” using equal signs (for first-level headers) and dashes (for second-level headers). For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>This is an H1
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>=============
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>This is an H2
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>-------------
+</span></code></pre></div>
+<p>Any number of underlining <code>=</code>’s or <code>-</code>’s will work.</p>
+<p>Atx-style headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6. For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a># This is an H1
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>## This is an H2
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>###### This is an H6
+</span></code></pre></div>
+<p>Optionally, you may “close” atx-style headers. This is purely cosmetic — you can use this if you think it looks better. The closing hashes don’t even need to match the number of hashes used to open the header. (The number of opening hashes determines the header level.) :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a># This is an H1 #
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>## This is an H2 ##
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>### This is an H3 ######
+</span></code></pre></div>
+</div>
+<h3 id="blockquotes">Blockquotes<a class="headerlink" href="#blockquotes" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Blockquotes</p>
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you’re familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>&gt;</code> before every line:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>&gt; 
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>&gt; id sem consectetuer libero luctus adipiscing.
+</span></code></pre></div>
+<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first line of a hard-wrapped paragraph:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>id sem consectetuer libero luctus adipiscing.
+</span></code></pre></div>
+<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>&gt;</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>&gt; This is the first level of quoting.
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>&gt;
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>&gt; &gt; This is nested blockquote.
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>&gt;
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>&gt; Back to the first level.
+</span></code></pre></div>
+<p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>&gt; ## This is a header.
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>&gt; 
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>&gt; 1.   This is the first list item.
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>&gt; 2.   This is the second list item.
+</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>&gt; 
+</span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>&gt; Here's some example code:
+</span><span id="__span-48-7"><a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>&gt; 
+</span><span id="__span-48-8"><a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a>&gt;     return shell_exec("echo $input | $markdown_script");
+</span></code></pre></div>
+<p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
+</div>
+<h3 id="lists_1">Lists<a class="headerlink" href="#lists_1" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Lists</p>
+<p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
+<p>Unordered lists use asterisks, pluses, and hyphens — interchangably — as list markers:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>*   Red
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>*   Green
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>*   Blue
+</span></code></pre></div>
+<p>is equivalent to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>+   Red
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>+   Green
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>+   Blue
+</span></code></pre></div>
+<p>and:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>-   Red
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>-   Green
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>-   Blue
+</span></code></pre></div>
+<p>Ordered lists use numbers followed by periods:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>1.  Bird
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>2.  McHale
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>3.  Parish
+</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>4.  The output is a standard HTML &lt;ol&gt; list.
+</span></code></pre></div>
+<p>It’s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. If you instead wrote the list in Markdown like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>1.  Bird
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>1.  McHale
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>1.  Parish
+</span></code></pre></div>
+<p>you’d get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don’t have to.</p>
+<p>List markers typically start at the left margin, but may be indented by up to three spaces. List markers must be followed by one or more spaces or a tab.</p>
+<p>To make lists look nice, you can wrap items with hanging indents:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>    viverra nec, fringilla in, laoreet vitae, risus.
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>    Suspendisse id sem consectetuer libero luctus adipiscing.
+</span></code></pre></div>
+<p>If list items are separated by blank lines, Markdown will wrap the items in <code>&lt;p&gt;</code> tags in the HTML output.</p>
+<p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>1.  This is a list item with two paragraphs. Lorem ipsum dolor
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>    mi posuere lectus.
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>    sit amet velit.
+</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>
+</span><span id="__span-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+</span></code></pre></div>
+<p>To put a blockquote within a list item, the blockquote’s <code>&gt;</code> delimiters need to be indented:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>*   A list item with a blockquote:
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>
+</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>    &gt; This is a blockquote
+</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>    &gt; inside a list item.
+</span></code></pre></div>
+<p>To put a code block within a list item, the code block needs to be indented <em>twice</em> — 8 spaces or two tabs:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>*   A list item with a code block:
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>        &lt;code goes here&gt;
+</span></code></pre></div>
+<p>It’s worth noting that it’s possible to trigger an ordered list by accident. To avoid this, you can backslash-escape the period:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>1986\. What a great season.
+</span></code></pre></div>
+</div>
+<h3 id="code-blocks">Code Blocks<a class="headerlink" href="#code-blocks" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Code Blocks</p>
+<p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
+<p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab. For example, given this input:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>This is a normal paragraph:
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>    This is a code block.
+</span></code></pre></div>
+<p>Markdown will generate:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a normal paragraph:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>This is a code block.
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>One level of indentation — 4 spaces or 1 tab — is removed from each line of the code block. For example, this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>Here is an example of AppleScript:
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a>    tell application "Foo"
+</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>        beep
+</span><span id="__span-61-5"><a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a>    end tell
+</span></code></pre></div>
+<p>will turn into:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Here is an example of AppleScript:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>tell application "Foo"
+</span><span id="__span-62-4"><a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>    beep
+</span><span id="__span-62-5"><a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a>end tell
+</span><span id="__span-62-6"><a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
+<p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown — just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>    &lt;div class="footer"&gt;
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>        &amp;copy; 2004 Foo Corporation
+</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>    &lt;/div&gt;
+</span></code></pre></div>
+<p>will turn into:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"footer"</span><span class="p">&gt;</span>
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>    <span class="ni">&amp;copy;</span> 2004 Foo Corporation
+</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-64-4"><a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it’s also easy to use Markdown to write about Markdown’s own syntax.</p>
+</div>
+<h3 id="horizontal-rules">Horizontal Rules<a class="headerlink" href="#horizontal-rules" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Horizontal Rules</p>
+<p>You can produce a horizontal rule tag (<code>&lt;hr /&gt;</code>) by placing three or more hyphens, asterisks, or underscores on a line by themselves. If you wish, you may use spaces between the hyphens or asterisks. Each of the following lines will produce a horizontal rule:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>* * *
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>***
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>
+</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>*****
+</span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a>
+</span><span id="__span-65-7"><a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a>- - -
+</span><span id="__span-65-8"><a id="__codelineno-65-8" name="__codelineno-65-8" href="#__codelineno-65-8"></a>
+</span><span id="__span-65-9"><a id="__codelineno-65-9" name="__codelineno-65-9" href="#__codelineno-65-9"></a>---------------------------------------
+</span></code></pre></div>
+</div>
+<h2 id="span-elements">Span Elements<a class="headerlink" href="#span-elements" title="Permanent link">¶</a></h2>
+<h3 id="links_1">Links<a class="headerlink" href="#links_1" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Links</p>
+<p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
+<p>In both styles, the link text is delimited by [square brackets].</p>
+<p>To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the URL where you want the link to point, along with an <em>optional</em> title for the link, surrounded in quotes. For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>This is [an example](http://example.com/ "Title") inline link.
+</span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>
+</span><span id="__span-66-3"><a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>[This link](http://example.net/) has no title attribute.
+</span></code></pre></div>
+<p>Will produce:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://example.com/"</span> <span class="na">title</span><span class="o">=</span><span class="s">"Title"</span><span class="p">&gt;</span>
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>an example<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> inline link.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>
+</span><span id="__span-67-4"><a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://example.net/"</span><span class="p">&gt;</span>This link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> has no
+</span><span id="__span-67-5"><a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>title attribute.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>If you’re referring to a local resource on the same server, you can use relative paths:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>See my [About](/about/) page for details.
+</span></code></pre></div>
+<p>Reference-style links use a second set of square brackets, inside which you place a label of your choosing to identify the link:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>This is [an example][id] reference-style link.
+</span></code></pre></div>
+<p>You can optionally use a space to separate the sets of brackets:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>This is [an example] [id] reference-style link.
+</span></code></pre></div>
+<p>Then, anywhere in the document, you define your link label like this, on a line by itself:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>[id]: http://example.com/  "Optional Title Here"
+</span></code></pre></div>
+<p>That is:</p>
+<ul>
+<li>Square brackets containing the link identifier (optionally indented from the left margin using up to three spaces);</li>
+<li>followed by a colon;</li>
+<li>followed by one or more spaces (or tabs);</li>
+<li>followed by the URL for the link;</li>
+<li>optionally followed by a title attribute for the link, enclosed in double or single quotes, or enclosed in parentheses.</li>
+</ul>
+<p>The following three link definitions are equivalent:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>[foo]: http://example.com/  "Optional Title Here"
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>[foo]: http://example.com/  'Optional Title Here'
+</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a>[foo]: http://example.com/  (Optional Title Here)
+</span></code></pre></div>
+<p><strong>Note:</strong> There is a known bug in Markdown.pl 1.0.1 which prevents single quotes from being used to delimit link titles.</p>
+<p>The link URL may, optionally, be surrounded by angle brackets:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>[id]: &lt;http://example.com/&gt;  "Optional Title Here"
+</span></code></pre></div>
+<p>You can put the title attribute on the next line and use extra spaces or tabs for padding, which tends to look better with longer URLs:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>[id]: http://example.com/longish/path/to/resource/here
+</span><span id="__span-74-2"><a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>    "Optional Title Here"
+</span></code></pre></div>
+<p>Link definitions are only used for creating links during Markdown processing, and are stripped from your document in the HTML output.</p>
+<p>Link definition names may consist of letters, numbers, spaces, and punctuation — but they are <em>not</em> case sensitive. E.g. these two links:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>[link text][a]
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>[link text][A]
+</span></code></pre></div>
+<p>are equivalent.</p>
+<p>The <em>implicit link name</em> shortcut allows you to omit the name of the link, in which case the link text itself is used as the name. Just use an empty set of square brackets — e.g., to link the word “Google” to the google.com web site, you could simply write:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>[Google][]
+</span></code></pre></div>
+<p>And then define the link:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>[Google]: http://google.com/
+</span></code></pre></div>
+<p>Because link names may contain spaces, this shortcut even works for multiple words in the link text:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>Visit [Daring Fireball][] for more information.
+</span></code></pre></div>
+<p>And then define the link:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>[Daring Fireball]: http://daringfireball.net/
+</span></code></pre></div>
+<p>Link definitions can be placed anywhere in your Markdown document. I tend to put them immediately after each paragraph in which they’re used, but if you want, you can put them all at the end of your document, sort of like footnotes.</p>
+<p>Here’s an example of reference links in action:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>I get 10 times more traffic from [Google] [1] than from
+</span><span id="__span-80-2"><a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a>[Yahoo] [2] or [MSN] [3].
+</span><span id="__span-80-3"><a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>
+</span><span id="__span-80-4"><a id="__codelineno-80-4" name="__codelineno-80-4" href="#__codelineno-80-4"></a>  [1]: http://google.com/        "Google"
+</span><span id="__span-80-5"><a id="__codelineno-80-5" name="__codelineno-80-5" href="#__codelineno-80-5"></a>  [2]: http://search.yahoo.com/  "Yahoo Search"
+</span><span id="__span-80-6"><a id="__codelineno-80-6" name="__codelineno-80-6" href="#__codelineno-80-6"></a>  [3]: http://search.msn.com/    "MSN Search"
+</span></code></pre></div>
+<p>Using the implicit link name shortcut, you could instead write:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>I get 10 times more traffic from [Google][] than from
+</span><span id="__span-81-2"><a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>[Yahoo][] or [MSN][].
+</span><span id="__span-81-3"><a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>
+</span><span id="__span-81-4"><a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a>  [google]: http://google.com/        "Google"
+</span><span id="__span-81-5"><a id="__codelineno-81-5" name="__codelineno-81-5" href="#__codelineno-81-5"></a>  [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
+</span><span id="__span-81-6"><a id="__codelineno-81-6" name="__codelineno-81-6" href="#__codelineno-81-6"></a>  [msn]:    http://search.msn.com/    "MSN Search"
+</span></code></pre></div>
+<p>Both of the above examples will produce the following HTML output:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I get 10 times more traffic from <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://google.com/"</span>
+</span><span id="__span-82-2"><a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a><span class="na">title</span><span class="o">=</span><span class="s">"Google"</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> than from
+</span><span id="__span-82-3"><a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://search.yahoo.com/"</span> <span class="na">title</span><span class="o">=</span><span class="s">"Yahoo Search"</span><span class="p">&gt;</span>Yahoo<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span><span id="__span-82-4"><a id="__codelineno-82-4" name="__codelineno-82-4" href="#__codelineno-82-4"></a>or <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://search.msn.com/"</span> <span class="na">title</span><span class="o">=</span><span class="s">"MSN Search"</span><span class="p">&gt;</span>MSN<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>For comparison, here is the same paragraph written using Markdown’s inline link style:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>I get 10 times more traffic from [Google](http://google.com/ "Google")
+</span><span id="__span-83-2"><a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a>than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
+</span><span id="__span-83-3"><a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a>[MSN](http://search.msn.com/ "MSN Search").
+</span></code></pre></div>
+<p>The point of reference-style links is not that they’re easier to write. The point is that with reference-style links, your document source is vastly more readable. Compare the above examples: using reference-style links, the paragraph itself is only 81 characters long; with inline-style links, it’s 176 characters; and as raw HTML, it’s 234 characters. In the raw HTML, there’s more markup than there is text.</p>
+<p>With Markdown’s reference-style links, a source document much more closely resembles the final output, as rendered in a browser. By allowing you to move the markup-related metadata out of the paragraph, you can add links without interrupting the narrative flow of your prose.</p>
+</div>
+<h3 id="emphasis">Emphasis<a class="headerlink" href="#emphasis" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Emphasis</p>
+<p>Markdown treats asterisks (<code>*</code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code>*</code> or <code>_</code> will be wrapped with an HTML <code>&lt;em&gt;</code> tag; double <code>*</code>’s or <code>_</code>’s will be wrapped with an HTML <code>&lt;strong&gt;</code> tag. E.g., this input:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>*single asterisks*
+</span><span id="__span-84-2"><a id="__codelineno-84-2" name="__codelineno-84-2" href="#__codelineno-84-2"></a>
+</span><span id="__span-84-3"><a id="__codelineno-84-3" name="__codelineno-84-3" href="#__codelineno-84-3"></a>_single underscores_
+</span><span id="__span-84-4"><a id="__codelineno-84-4" name="__codelineno-84-4" href="#__codelineno-84-4"></a>
+</span><span id="__span-84-5"><a id="__codelineno-84-5" name="__codelineno-84-5" href="#__codelineno-84-5"></a>**double asterisks**
+</span><span id="__span-84-6"><a id="__codelineno-84-6" name="__codelineno-84-6" href="#__codelineno-84-6"></a>
+</span><span id="__span-84-7"><a id="__codelineno-84-7" name="__codelineno-84-7" href="#__codelineno-84-7"></a>__double underscores__
+</span></code></pre></div>
+<p>will produce:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>single asterisks<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
+</span><span id="__span-85-2"><a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a>
+</span><span id="__span-85-3"><a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a><span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>single underscores<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
+</span><span id="__span-85-4"><a id="__codelineno-85-4" name="__codelineno-85-4" href="#__codelineno-85-4"></a>
+</span><span id="__span-85-5"><a id="__codelineno-85-5" name="__codelineno-85-5" href="#__codelineno-85-5"></a><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>double asterisks<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span><span id="__span-85-6"><a id="__codelineno-85-6" name="__codelineno-85-6" href="#__codelineno-85-6"></a>
+</span><span id="__span-85-7"><a id="__codelineno-85-7" name="__codelineno-85-7" href="#__codelineno-85-7"></a><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>double underscores<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>You can use whichever style you prefer; the lone restriction is that the same character must be used to open and close an emphasis span.</p>
+<p>Emphasis can be used in the middle of a word:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>un*frigging*believable
+</span></code></pre></div>
+<p>But if you surround an <code>*</code> or <code>_</code> with spaces, it’ll be treated as a literal asterisk or underscore.</p>
+<p>To produce a literal asterisk or underscore at a position where it would otherwise be used as an emphasis delimiter, you can backslash escape it:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>\*this text is surrounded by literal asterisks\*
+</span></code></pre></div>
+</div>
+<h3 id="images_1">Images<a class="headerlink" href="#images_1" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Images</p>
+<p>Admittedly, it’s fairly difficult to devise a “natural” syntax for placing images into a plain text document format.</p>
+<p>Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: <em>inline</em> and <em>reference</em>.</p>
+<p>Inline image syntax looks like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>![Alt text](/path/to/img.jpg)
+</span><span id="__span-88-2"><a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a>
+</span><span id="__span-88-3"><a id="__codelineno-88-3" name="__codelineno-88-3" href="#__codelineno-88-3"></a>![Alt text](/path/to/img.jpg "Optional title")
+</span></code></pre></div>
+<p>That is:</p>
+<ul>
+<li>An exclamation mark: <code>!</code>;</li>
+<li>followed by a set of square brackets, containing the <code>alt</code> attribute text for the image;</li>
+<li>followed by a set of parentheses, containing the URL or path to the image, and an optional <code>title</code> attribute enclosed in double or single quotes.</li>
+</ul>
+<p>Reference-style image syntax looks like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>![Alt text][id]
+</span></code></pre></div>
+<p>Where “id” is the name of a defined image reference. Image references are defined using syntax identical to link references:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>[id]: url/to/image  "Optional title attribute"
+</span></code></pre></div>
+<p>As of this writing, Markdown has no syntax for specifying the dimensions of an image; if this is important to you, you can simply use regular HTML <code>&lt;img&gt;</code> tags.</p>
+</div>
+<hr>
+<h2 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">¶</a></h2>
+<h3 id="automatic-links">Automatic Links<a class="headerlink" href="#automatic-links" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Automatic Links</p>
+<p>Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the URL or email address with angle brackets. What this means is that if you want to show the actual text of a URL or email address, and also have it be a clickable link, you can do this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>&lt;http://example.com/&gt;
+</span></code></pre></div>
+<p>Markdown will turn this into:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://example.com/"</span><span class="p">&gt;</span>http://example.com/<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Automatic links for email addresses work similarly, except that Markdown will also perform a bit of randomized decimal and hex entity-encoding to help obscure your address from address-harvesting spambots. For example, Markdown will turn this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>&lt;address@example.com&gt;
+</span></code></pre></div>
+<p>into something like this:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;</span>
+</span><span id="__span-94-2"><a id="__codelineno-94-2" name="__codelineno-94-2" href="#__codelineno-94-2"></a><span class="s">ss@ex&amp;#x61;m&amp;#x70;&amp;#x6C;e&amp;#x2E;co</span>
+</span><span id="__span-94-3"><a id="__codelineno-94-3" name="__codelineno-94-3" href="#__codelineno-94-3"></a><span class="s">m"</span><span class="p">&gt;</span><span class="ni">&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;</span>ss@ex<span class="ni">&amp;#x61;</span>
+</span><span id="__span-94-4"><a id="__codelineno-94-4" name="__codelineno-94-4" href="#__codelineno-94-4"></a>m<span class="ni">&amp;#x70;&amp;#x6C;</span>e<span class="ni">&amp;#x2E;</span>com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>which will render in a browser as a clickable link to “address@example.com”.</p>
+<p>(This sort of entity-encoding trick will indeed fool many, if not most, address-harvesting bots, but it definitely won’t fool all of them. It’s better than nothing, but an address published in this way will probably eventually start receiving spam.)</p>
+</div>
+<h3 id="backslash-escapes">Backslash Escapes<a class="headerlink" href="#backslash-escapes" title="Permanent link">¶</a></h3>
+<div class="admonition ex">
+<p class="admonition-title">Backslash Escapes</p>
+<p>Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special meaning in Markdown’s formatting syntax. For example, if you wanted to surround a word with literal asterisks (instead of an HTML <code>&lt;em&gt;</code> tag), you can use backslashes before the asterisks, like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>\*literal asterisks\*
+</span></code></pre></div>
+<p>Markdown provides backslash escapes for the following characters:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>\   backslash
+</span><span id="__span-96-2"><a id="__codelineno-96-2" name="__codelineno-96-2" href="#__codelineno-96-2"></a>`   backtick
+</span><span id="__span-96-3"><a id="__codelineno-96-3" name="__codelineno-96-3" href="#__codelineno-96-3"></a>*   asterisk
+</span><span id="__span-96-4"><a id="__codelineno-96-4" name="__codelineno-96-4" href="#__codelineno-96-4"></a>_   underscore
+</span><span id="__span-96-5"><a id="__codelineno-96-5" name="__codelineno-96-5" href="#__codelineno-96-5"></a>{}  curly braces
+</span><span id="__span-96-6"><a id="__codelineno-96-6" name="__codelineno-96-6" href="#__codelineno-96-6"></a>[]  square brackets
+</span><span id="__span-96-7"><a id="__codelineno-96-7" name="__codelineno-96-7" href="#__codelineno-96-7"></a>()  parentheses
+</span><span id="__span-96-8"><a id="__codelineno-96-8" name="__codelineno-96-8" href="#__codelineno-96-8"></a>#   hash mark
+</span><span id="__span-96-9"><a id="__codelineno-96-9" name="__codelineno-96-9" href="#__codelineno-96-9"></a>+   plus sign
+</span><span id="__span-96-10"><a id="__codelineno-96-10" name="__codelineno-96-10" href="#__codelineno-96-10"></a>-   minus sign (hyphen)
+</span><span id="__span-96-11"><a id="__codelineno-96-11" name="__codelineno-96-11" href="#__codelineno-96-11"></a>.   dot
+</span><span id="__span-96-12"><a id="__codelineno-96-12" name="__codelineno-96-12" href="#__codelineno-96-12"></a>!   exclamation mark
+</span></code></pre></div>
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden="">
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"></path></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"></path></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden="">
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden="">
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden="">
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M15 3v18"></path></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../blog/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Index
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../CommonMarkSpec/" class="md-footer__link md-footer__link--next" aria-label="Next: CommonMarkSpec">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                CommonMarkSpec
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2016 - 2026 JP Cillliers
+    </div>
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
+      
+        <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="../javascripts/expand-code.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/theme_extra.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+        <script src="../javascripts/iconsearch.js"></script>
+      
+        <script src="../js/open_in_new_tab.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body></html>

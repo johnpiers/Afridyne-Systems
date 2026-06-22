@@ -1,0 +1,2283 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A 2-minute diagnostic and troubleshooting tree for WebKitWebProcess crashes and Mesa/AMD rendering issues on Arch Linux.">
+      
+      
+        <meta name="author" content="John Piers Cilliers">
+      
+      
+        <link rel="canonical" href="https://example.com/checklist/">
+      
+      
+        <link rel="prev" href="../systemd/">
+      
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="../assets/favicon.png">
+        
+      
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
+    
+    
+      
+        <title>Linux GTK/WebKit Nothing Renders Checklist - Afridyne Systems (PTY) LTD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
+      
+    
+    
+
+  
+  
+    
+    
+      
+      
+    
+    
+    
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+          
+        
+      
+      
+        
+      
+      
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+      
+      
+        
+      
+      
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+          
+        
+      
+      
+        
+      
+      
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+      
+      
+        
+      
+      
+    
+  
+    
+    
+      
+      
+    
+    
+      
+    
+    
+    
+      
+      
+        
+      
+      
+      
+        
+        
+          
+        
+      
+      
+        
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M5%205v14h2v2H3V3h4v2zm15%202H7v2h13zm0%204H7v2h13zm0%204H7v2h13z%22/%3E%3C/svg%3E');--md-admonition-icon--git:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M23.546%2010.93%2013.067.452a1.55%201.55%200%200%200-2.188%200L8.708%202.627l2.76%202.76a1.838%201.838%200%200%201%202.327%202.341l2.658%202.66a1.838%201.838%200%200%201%201.9%203.039%201.837%201.837%200%200%201-2.6%200%201.85%201.85%200%200%201-.404-1.996L12.86%208.955v6.525c.176.086.342.203.488.348a1.85%201.85%200%200%201%200%202.6%201.844%201.844%200%200%201-2.609%200%201.834%201.834%200%200%201%200-2.598c.182-.18.387-.316.605-.406V8.835a1.834%201.834%200%200%201-.996-2.41L7.636%203.7.45%2010.881c-.6.605-.6%201.584%200%202.189l10.48%2010.477a1.545%201.545%200%200%200%202.186%200l10.43-10.43a1.544%201.544%200%200%200%200-2.187%22/%3E%3C/svg%3E');--md-admonition-color--git:#f34f29;--md-admonition-icon--copyright:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M10.08%2010.86c.05-.33.16-.62.3-.86.3-.56.81-.85%201.5-.86.45%200%20.86.2%201.15.49.28.31.47.74.47%201.17h1.8c-.02-.47-.11-.9-.3-1.3-.15-.38-.38-.72-.68-1-1.45-1.34-4.14-1.15-5.37.37-1.29%201.67-1.32%204.59-.01%206.26%201.21%201.49%203.86%201.7%205.3.37.31-.25.56-.56.76-.92.16-.36.27-.74.28-1.15H13.5c0%20.21-.07.4-.16.57-.09.19-.21.34-.34.47-.33.26-.72.4-1.14.4-.36-.01-.66-.08-.89-.23a1.4%201.4%200%200%201-.59-.64c-.5-.9-.42-2.15-.3-3.14M12%202C6.5%202%202%206.5%202%2012c.53%2013.27%2019.5%2013.26%2020%200%200-5.5-4.5-10-10-10m0%2018c-4.41%200-8-3.59-8-8%20.44-10.61%2015.56-10.61%2016%200%200%204.41-3.59%208-8%208%22/%3E%3C/svg%3E');--md-admonition-color--copyright:#2b9b9b;--md-admonition-icon--heart:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m12%2020.703.343.667a.75.75%200%200%201-.686%200l-.003-.002-.007-.003-.025-.013a31%2031%200%200%201-5.233-3.576C3.8%2015.573%201%2012.332%201%208.514v-.001C1%205.053%203.829%202.5%206.736%202.5%209.03%202.5%2010.881%203.726%2012%205.605%2013.12%203.726%2014.97%202.5%2017.264%202.5%2020.17%202.5%2023%205.052%2023%208.514c0%203.818-2.801%207.06-5.389%209.262a31%2031%200%200%201-5.233%203.576l-.025.013-.007.003-.002.001ZM6.736%204C4.657%204%202.5%205.88%202.5%208.514c0%203.107%202.324%205.96%204.861%208.12a29.7%2029.7%200%200%200%204.566%203.175l.073.041.073-.04c.271-.153.661-.38%201.13-.674.94-.588%202.19-1.441%203.436-2.502%202.537-2.16%204.861-5.013%204.861-8.12C21.5%205.88%2019.343%204%2017.264%204c-2.106%200-3.801%201.389-4.553%203.643a.751.751%200%200%201-1.422%200C10.537%205.389%208.841%204%206.736%204%22/%3E%3C/svg%3E');--md-admonition-color--heart:#a83e81;--md-admonition-icon--lyrics:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202a3%203%200%200%201%203%203v6a3%203%200%200%201-3%203%203%203%200%200%201-3-3V5a3%203%200%200%201%203-3m7%209c0%203.53-2.61%206.44-6%206.93V21h-2v-3.07c-3.39-.49-6-3.4-6-6.93h2a5%205%200%200%200%205%205%205%205%200%200%200%205-5z%22/%3E%3C/svg%3E');--md-admonition-color--lyrics:#5353af;--md-admonition-icon--soundcloud:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M23.999%2014.165c-.052%201.796-1.612%203.169-3.4%203.169h-8.18a.68.68%200%200%201-.675-.683V7.862a.75.75%200%200%201%20.452-.724s.75-.513%202.333-.513a5.36%205.36%200%200%201%202.763.755%205.43%205.43%200%200%201%202.57%203.54c.282-.08.574-.121.868-.12.884%200%201.73.358%202.347.992s.948%201.49.922%202.373M10.721%208.421c.247%202.98.427%205.697%200%208.672a.264.264%200%200%201-.53%200c-.395-2.946-.22-5.718%200-8.672a.264.264%200%200%201%20.53%200M9.072%209.448c.285%202.659.37%204.986-.006%207.655a.277.277%200%200%201-.55%200c-.331-2.63-.256-5.02%200-7.655a.277.277%200%200%201%20.556%200m-1.663-.257c.27%202.726.39%205.171%200%207.904a.266.266%200%200%201-.532%200c-.38-2.69-.257-5.21%200-7.904a.266.266%200%200%201%20.532%200m-1.647.77a26.1%2026.1%200%200%201-.008%207.147.272.272%200%200%201-.542%200%2028%2028%200%200%201%200-7.147.275.275%200%200%201%20.55%200m-1.67%201.769c.421%201.865.228%203.5-.029%205.388a.257.257%200%200%201-.514%200c-.21-1.858-.398-3.549%200-5.389a.272.272%200%200%201%20.543%200Zm-1.655-.273c.388%201.897.26%203.508-.01%205.412-.026.28-.514.283-.54%200-.244-1.878-.347-3.54-.01-5.412a.283.283%200%200%201%20.56%200m-1.668.911c.4%201.268.257%202.292-.026%203.572a.257.257%200%200%201-.514%200c-.241-1.262-.354-2.312-.023-3.572a.283.283%200%200%201%20.563%200%22/%3E%3C/svg%3E');--md-admonition-color--soundcloud:#ff8e1a;}.md-typeset .admonition.git,.md-typeset details.git{--md-admonition-icon:var(--md-admonition-icon--git);--md-admonition-icon-mask-size:88%;--md-admonition-color:var(--md-admonition-color--git);}.md-typeset .admonition.copyright,.md-typeset details.copyright{--md-admonition-icon:var(--md-admonition-icon--copyright);--md-admonition-color:var(--md-admonition-color--copyright);}.md-typeset .admonition.heart,.md-typeset details.heart{--md-admonition-icon:var(--md-admonition-icon--heart);--md-admonition-icon-mask-size:80%;--md-admonition-color:var(--md-admonition-color--heart);}.md-typeset .admonition.lyrics,.md-typeset details.lyrics{--md-admonition-icon:var(--md-admonition-icon--lyrics);--md-admonition-color:var(--md-admonition-color--lyrics);}.md-typeset .admonition.soundcloud,.md-typeset details.soundcloud{--md-admonition-icon:var(--md-admonition-icon--soundcloud);--md-admonition-icon-mask-size:88%;--md-admonition-color:var(--md-admonition-color--soundcloud);}</style>
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../styles/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="Linux GTK/WebKit Nothing Renders Checklist - Afridyne Systems (PTY) LTD">
+<meta property="og:description" content="A 2-minute diagnostic and troubleshooting tree for WebKitWebProcess crashes and Mesa/AMD rendering issues on Arch Linux.">
+<meta property="og:image" content="https://example.com/assets/images/social/checklist.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://example.com/checklist/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Linux GTK/WebKit Nothing Renders Checklist - Afridyne Systems (PTY) LTD">
+<meta property="twitter:description" content="A 2-minute diagnostic and troubleshooting tree for WebKitWebProcess crashes and Mesa/AMD rendering issues on Arch Linux.">
+<meta property="twitter:image" content="https://example.com/assets/images/social/checklist.png">
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+        </style></head>
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operational-diag-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Afridyne Systems (PTY) LTD" class="md-header__button md-logo" aria-label="Afridyne Systems (PTY) LTD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z"></path>
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path>
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z"></path>
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path>
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Afridyne Systems (PTY) LTD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux GTK/WebKit Nothing Renders Checklist
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="cyan" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.5 3.5 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.5 3.5 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5m-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001m0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5M5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Afridyne Systems (PTY) LTD" class="md-nav__button md-logo" aria-label="Afridyne Systems (PTY) LTD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z"></path>
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path>
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z"></path>
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path>
+</svg>
+
+    </a>
+    Afridyne Systems (PTY) LTD
+  </label>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href=".." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MaterialX-MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.029 18.772.777 1.166-5.417 2.709L0 16.451V4.063l5.417-2.709 5.298 7.948 7.867-5.24L24 1.354V16.84l-5.417 2.709zm2.023-13.827v13.253l3.949-1.975V2.97zM5.076 2.642 1.458 4.45 12.73 21.358l3.618-1.809z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../Markdown/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../Stormy/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mpd-configure/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Media
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../ncmpcpp/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ncmpcpp
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../DOCS/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../OFGB/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microsoft
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../UV/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uv Pip
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Various Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Various Misc
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aurdex/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2 1 21h22M12 6l7.53 13H4.47M11 10v4h2v-4m-2 6v2h2v-2"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Aurdex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BashGit/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.002 2.5a.75.75 0 0 1 .691.464l6.302 15.305 2.56-6.301a.75.75 0 0 1 .695-.468h4a.75.75 0 0 1 0 1.5h-3.495l-3.06 7.532a.75.75 0 0 1-1.389.004L8.997 5.21l-3.054 7.329A.75.75 0 0 1 5.25 13H.75a.75.75 0 0 1 0-1.5h4l3.558-8.538a.75.75 0 0 1 .694-.462"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Bash-Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EverythingCurl/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.803 14.817a.966.966 0 1 1 1.933 0 .966.966 0 0 1-1.933 0m2.736 0c0-.196-.053-.376-.112-.553-.234-.702-.876-1.216-1.657-1.216-.125 0-.235.046-.353.07C.615 13.286 0 13.965 0 14.817a1.77 1.77 0 0 0 3.539 0m-1.77-7.149a.967.967 0 1 1 0 1.934.967.967 0 0 1 0-1.934m0 2.736a1.77 1.77 0 0 0 1.77-1.77c0-.195-.053-.376-.112-.552-.234-.702-.877-1.217-1.657-1.217-.125 0-.235.047-.353.072C.615 7.104 0 7.782 0 8.634c0 .977.792 1.77 1.77 1.77M14.99 4.71a.966.966 0 0 1-.966-.967.966.966 0 0 1 .967-.966.966.966 0 1 1 0 1.933m-9.6 16.513a.967.967 0 0 1 0-1.933.966.966 0 0 1 .966.967.966.966 0 0 1-.966.966m9.6-19.249c-.978 0-1.77.792-1.77 1.77 0 .208.053.402.119.588L5.039 18.558c-.803.168-1.418.846-1.418 1.699a1.77 1.77 0 0 0 3.539 0 1.7 1.7 0 0 0-.111-.553l8.343-14.273c.778-.186 1.368-.853 1.368-1.688a1.77 1.77 0 0 0-1.77-1.769m7.24 2.736a.966.966 0 0 1-.966-.967.966.966 0 0 1 .967-.966.966.966 0 1 1 0 1.933m-9.6 16.513a.966.966 0 0 1-.966-.966.966.966 0 0 1 .966-.967.966.966 0 0 1 0 1.933m9.6-19.249a1.77 1.77 0 0 0-1.77 1.77c0 .208.053.402.119.588l-8.301 14.226c-.802.168-1.417.846-1.417 1.699a1.77 1.77 0 0 0 3.538 0c0-.197-.053-.376-.111-.553l8.343-14.273C23.409 5.245 24 4.578 24 3.743a1.77 1.77 0 0 0-1.77-1.769"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Curl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GElectrical/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 0-18 0c0 3.92 2.5 7.24 6 8.5V22h2v-2.06c.33.06.66.06 1 .06s.67 0 1-.06V22h2v-2.5c3.5-1.26 6-4.58 6-8.5m-9 7c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7M8 7h8v2H8zm4.75 3-3 3L11 14.25 9.75 15.5l1.5 1.5 3-3L13 12.75l1.25-1.25z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    GElectrical
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chmod%26chown/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.367 2.453a.82.82 0 0 0-.576.238L.241 14.213a.82.82 0 0 0-.241.584v.066c0-.323.209-.608.516-.709l7.275-2.318a2.44 2.44 0 0 0 1.584-1.592l2.318-7.267a.76.76 0 0 1 .719-.524zM0 14.863v5.047c0 .904.733 1.637 1.637 1.637h20.726c.904 0 1.637-.733 1.637-1.637V4.09c0-.904-.733-1.637-1.637-1.637h-9.951v.5l.088 9.861c.01 1.175-.962 2.14-2.137 2.14zM12 3.66l-2.148 6.735v.001a2.94 2.94 0 0 1-1.909 1.916l-6.716 2.141h9.136c.905 0 1.638-.734 1.637-1.639zm-10.363.975c-.905 0-1.638.734-1.637 1.638v7.473l9.135-9.111Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Chmod &amp; Chown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fish-Shell/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 20 .76-3c-3.26-.21-6.17-1.6-7.01-3.42-.09.48-.22.92-.42 1.25C4.67 16 3.33 16 2 16c1.1 0 1.5-1.57 1.5-3.5S3.1 9 2 9c1.33 0 2.67 0 3.33 1.17.2.33.33.77.42 1.25.65-1.42 2.57-2.57 4.91-3.1L9 5c2 0 4 0 5.33.67 1.13.56 1.78 1.6 2.36 2.71 2.92.7 5.31 2.28 5.31 4.12 0 1.88-2.5 3.5-5.5 4.16-.83 1.1-1.64 2.12-2.33 2.67-.84.67-1.5.67-2.17.67m5-9a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Fish-Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMDgpu-Top/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.324 9.137 1.559 1.56h2.556v2.557L24 14.814V9.137zM2 9.52l-2 4.96h1.309l.37-.982H3.9l.408.982h1.338L3.432 9.52zm4.209 0v4.955h1.238v-3.092l1.338 1.562h.188l1.338-1.556v3.091h1.238V9.52H10.47l-1.592 1.845L7.287 9.52zm6.283 0v4.96h2.057c1.979 0 2.88-1.046 2.88-2.472 0-1.36-.937-2.488-2.747-2.488zm1.237.91h.792c1.17 0 1.63.711 1.63 1.57 0 .728-.372 1.572-1.616 1.572h-.806zm-10.985.273.791 1.932H2.008zm17.137.307-1.604 1.603v2.25h2.246l1.604-1.607h-2.246z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU Top
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../badblocks/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.41l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8m5.09 7.41-4-4L9 10l4 4m2.59.41-5.5-5.5L11.5 7.5 17 13Z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Badblocks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.002 2.5a.75.75 0 0 1 .691.464l6.302 15.305 2.56-6.301a.75.75 0 0 1 .695-.468h4a.75.75 0 0 1 0 1.5h-3.495l-3.06 7.532a.75.75 0 0 1-1.389.004L8.997 5.21l-3.054 7.329A.75.75 0 0 1 5.25 13H.75a.75.75 0 0 1 0-1.5h4l3.558-8.538a.75.75 0 0 1 .694-.462"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Systemd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.324 9.137 1.559 1.56h2.556v2.557L24 14.814V9.137zM2 9.52l-2 4.96h1.309l.37-.982H3.9l.408.982h1.338L3.432 9.52zm4.209 0v4.955h1.238v-3.092l1.338 1.562h.188l1.338-1.556v3.091h1.238V9.52H10.47l-1.592 1.845L7.287 9.52zm6.283 0v4.96h2.057c1.979 0 2.88-1.046 2.88-2.472 0-1.36-.937-2.488-2.747-2.488zm1.237.91h.792c1.17 0 1.63.711 1.63 1.57 0 .728-.372 1.572-1.616 1.572h-.806zm-10.985.273.791 1.932H2.008zm17.137.307-1.604 1.603v2.25h2.246l1.604-1.607h-2.246z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD Checklist
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.324 9.137 1.559 1.56h2.556v2.557L24 14.814V9.137zM2 9.52l-2 4.96h1.309l.37-.982H3.9l.408.982h1.338L3.432 9.52zm4.209 0v4.955h1.238v-3.092l1.338 1.562h.188l1.338-1.556v3.091h1.238V9.52H10.47l-1.592 1.845L7.287 9.52zm6.283 0v4.96h2.057c1.979 0 2.88-1.046 2.88-2.472 0-1.36-.937-2.488-2.747-2.488zm1.237.91h.792c1.17 0 1.63.711 1.63 1.57 0 .728-.372 1.572-1.616 1.572h-.806zm-10.985.273.791 1.932H2.008zm17.137.307-1.604 1.603v2.25h2.246l1.604-1.607h-2.246z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#operational-diag-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Diag Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-triage-the-2-minute-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Quick Triage (The 2-Minute Version)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#immediate-indicator-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Immediate Indicator Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-hardware-graphics-triage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎮 Cross-Hardware Graphics Triage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprehensive-diagnostic-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Comprehensive Diagnostic Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Comprehensive Diagnostic Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0-isolate-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 0 — Isolate Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-check-for-webkit-crashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Check for WebKit Crashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-trace-terminal-standard-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Trace Terminal Standard Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-terminate-stale-webkit-renderers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Terminate Stale WebKit Renderers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-verify-font-subsystem-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Verify Font Subsystem Integrity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-rebuild-font-subsystem-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Rebuild Font Subsystem Caches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-isolate-gpu-and-mesa-driver-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Isolate GPU and Mesa Driver Conflicts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-validate-package-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Validate Package Integrity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-query-system-logs-for-component-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Query System Logs for Component Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-isolate-local-user-profile-corruption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Isolate Local User Profile Corruption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-nuclear-user-cache-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10 — Nuclear User Cache Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incident-data-collection-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Incident Data Collection Protocol
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#operational-diag-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Diag Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-triage-the-2-minute-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Quick Triage (The 2-Minute Version)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#immediate-indicator-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Immediate Indicator Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-hardware-graphics-triage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎮 Cross-Hardware Graphics Triage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprehensive-diagnostic-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Comprehensive Diagnostic Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Comprehensive Diagnostic Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0-isolate-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 0 — Isolate Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-check-for-webkit-crashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Check for WebKit Crashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-trace-terminal-standard-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Trace Terminal Standard Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-terminate-stale-webkit-renderers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Terminate Stale WebKit Renderers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-verify-font-subsystem-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Verify Font Subsystem Integrity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-rebuild-font-subsystem-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Rebuild Font Subsystem Caches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-isolate-gpu-and-mesa-driver-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Isolate GPU and Mesa Driver Conflicts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-validate-package-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Validate Package Integrity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-query-system-logs-for-component-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Query System Logs for Component Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-isolate-local-user-profile-corruption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Isolate Local User Profile Corruption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-nuclear-user-cache-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10 — Nuclear User Cache Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incident-data-collection-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Incident Data Collection Protocol
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  <div class="custom-nav-return" style="margin-bottom: 20px;">
+    
+    
+    
+
+  </div>
+  
+                  
+
+<div style="display: none;"><h1>Header</h1></div>
+
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260607-114046.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20260607-114046.png"></a></p>
+<h2 style="text-align: center;"> Linux GTK/WebKit "Nothing Renders" Checklist</h2>
+
+<div class="admonition info">
+<p class="admonition-title">Operational Diagnostic Guide</p>
+<h4 class="toc-hidden-header" id="operational-diag-guide"><code>Operational Diag Guide</code><a class="headerlink" href="#operational-diag-guide" title="Permanent link">¶</a></h4>
+<ul>
+<li>An <b><code>Operational Diagnostic Guide</code></b> for troubleshooting instances where GTK/WebKit-based applications (e.g., <em>Remarkable</em>, <em>Devhelp</em>, <em>Yelp</em>, <em>GNOME Help</em>) launch successfully but render a completely blank content pane.</li>
+</ul>
+</div>
+<hr>
+<h3 id="quick-triage-the-2-minute-version">⚡ Quick Triage (The 2-Minute Version)<a class="headerlink" href="#quick-triage-the-2-minute-version" title="Permanent link">¶</a></h3>
+<div class="admonition deep-dive">
+<p class="admonition-title">Quick Triage</p>
+<ul>
+<li>Before executing the full diagnostic tree, run these four commands to immediately isolate the root cause.</li>
+</ul>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pkill<span class="w"> </span>WebKitWebProcess
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>fc-match<span class="w"> </span>monospace
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>coredumpctl<span class="w"> </span>list<span class="w"> </span>WebKitWebProcess<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span></code></pre></div>
+</div>
+<h3 id="immediate-indicator-matrix">🔍 Immediate Indicator Matrix<a class="headerlink" href="#immediate-indicator-matrix" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Diagnostic Signal</th>
+<th style="text-align:left">Identified Subsystem</th>
+<th style="text-align:left">Immediate Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>pkill</code> resolves issue</strong></td>
+<td style="text-align:left">Stale Render Process</td>
+<td style="text-align:left">Document incident; restart application.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>fc-match</code> fails/hangs</strong></td>
+<td style="text-align:left">Font Config Subsystem</td>
+<td style="text-align:left">Proceed directly to <strong>Step 5 (Cache Reset)</strong>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>coredumpctl</code> shows fresh logs</strong></td>
+<td style="text-align:left">WebKit Core Crash</td>
+<td style="text-align:left">Proceed to <strong>Step 2 (Crash Analysis)</strong>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>LIBGL</code> variable resolves issue</strong></td>
+<td style="text-align:left">GPU / Mesa Driver</td>
+<td style="text-align:left">Proceed to <strong>Step 6 (Hardware Isolation)</strong>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition success">
+<p class="admonition-title">Core Diagnostic Rule</p>
+<p>If multiple WebKitGTK applications suddenly render blank content simultaneously, suspect the <strong>shared WebKit rendering stack</strong> before troubleshooting the individual applications.</p>
+</div>
+<hr>
+<h2 id="cross-hardware-graphics-triage">🎮 Cross-Hardware Graphics Triage<a class="headerlink" href="#cross-hardware-graphics-triage" title="Permanent link">¶</a></h2>
+<div class="admonition grey">
+<p class="admonition-title">Cross-Hardware Graphics Triage</p>
+<p>When an application works under <code>LIBGL_ALWAYS_SOFTWARE=1</code>, the issue lies within your hardware acceleration pipeline. Select your active GPU architecture below to run targeted environment overrides before resorting to full software fallback.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">AMD Radeon (My Setup)</label><label for="__tabbed_1_2">Nvidia GeForce</label><label for="__tabbed_1_3">Intel Iris / Arc</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Because you are running an <strong>AMD Radeon RX 580</strong> via the open-source Mesa drivers, rendering issues are often caused by WebKit fighting with hardware acceleration, WebGL, or driver compilation layers. </p>
+<ul>
+<li><strong>Disable GPU Sandboxing (WebKit Flag)</strong><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>devhelp<span class="w"> </span>--disable-gpu-sandbox
+</span></code></pre></div><br>
+<em>Use Case:</em> WebKit's security sandbox often clashes with AMD driver memory allocation. If this works, the issue is sandboxing, not your GPU.</li>
+<li><strong>Bypass Driver Shaders (Mesa Toggles)</strong><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">R600_DEBUG</span><span class="o">=</span>nocall<span class="w"> </span>devhelp
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># OR (For newer Vulkan-based WebKit paths)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">RADV_DEBUG</span><span class="o">=</span>nocache<span class="w"> </span>devhelp
+</span></code></pre></div><br>
+<em>Use Case:</em> Disables specific hardware-level optimization steps in the AMD driver to see if a driver bug is misdrawing the app window.</li>
+<li><strong>Disable Compositing Mode</strong><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">WEBKIT_DISABLE_COMPOSITING_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span></code></pre></div><br>
+<em>Use Case:</em> Forces WebKit to draw the window layout using standard rendering instead of hardware acceleration, bypassing deep driver layers entirely.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>The proprietary Nvidia driver stack utilizes a completely different rendering path than Mesa. WebKit failures here usually relate to GLX contexts, thread management, or power-saving states.</p>
+<ul>
+<li><strong>Force Legacy GLX Indirect Rendering</strong><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">__GLX_FORCE_VENDOR_LIBRARY_0</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span></code></pre></div><br>
+<em>Use Case:</em> Bypasses Nvidia's direct rendering infrastructure if there is a context mismatch between GTK and the display server.</li>
+<li><strong>Disable Threaded Optimizations</strong><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">__GL_THREADED_OPTIMUS</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>devhelp
+</span></code></pre></div><br>
+<em>Use Case:</em> Resolves timing-related race conditions where WebKit threads collapse while communicating with the Nvidia binary driver.</li>
+<li><strong>Force WebKit WebGL Disabling</strong><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">WEBKIT_DISABLE_DMABUF_RENDERER</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span></code></pre></div><br>
+<em>Use Case:</em> Fixes blank screens on Nvidia setups caused by broken DMA-BUF memory sharing protocols between the GPU and WebKit processes.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Intel graphics rely heavily on the modern <code>iris</code> driver within Mesa. Under production stress, it can experience severe rendering sync drops or memory caching faults.</p>
+<ul>
+<li><strong>Force Older Intel Driver Generation</strong><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">MESA_LOADER_DRIVER_OVERRIDE</span><span class="o">=</span>i965<span class="w"> </span>devhelp
+</span></code></pre></div><br>
+<em>Use Case:</em> Forces the system to fall back from the modern Iris driver to the mature, stable legacy i965 driver path.</li>
+<li><strong>Disable Performance Cache Compilations</strong><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">INTEL_DEBUG</span><span class="o">=</span>nocache<span class="w"> </span>devhelp
+</span></code></pre></div><br>
+<em>Use Case:</em> Instructs the Intel driver to bypass the internal shader cache, clearing up pipeline errors caused by corrupted system shader trees.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<h2 id="comprehensive-diagnostic-steps">📋 Comprehensive Diagnostic Steps<a class="headerlink" href="#comprehensive-diagnostic-steps" title="Permanent link">¶</a></h2>
+<h3 id="step-0-isolate-scope">Step 0 — Isolate Scope<a class="headerlink" href="#step-0-isolate-scope" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Isolate Scope</p>
+<p>Determine if the rendering failure is isolated or system-wide by testing at least two independent WebKit applications (e.g., <code>remarkable</code> and <code>devhelp</code>).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Step 0 Execution</label><label for="__tabbed_2_2">Scope Analysis</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Run the following test suite in your terminal:<br>
+</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>remarkable<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>devhelp<span class="w"> </span><span class="p">&amp;</span>
+</span></code></pre></div><p></p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Observation</th>
+<th style="text-align:left">Diagnostic Deductible</th>
+<th style="text-align:left">Operational Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>One application broken</strong></td>
+<td style="text-align:left">App-Specific Configuration Error</td>
+<td style="text-align:left">Check local app configs, dotfiles, or extensions.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Both applications broken</strong></td>
+<td style="text-align:left">Shared Stack Corruption</td>
+<td style="text-align:left">Target shared libraries (WebKit, GTK, Fonts, GPU).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260607-112326.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20260607-112326.png"></a></p>
+<h3 id="step-1-check-for-webkit-crashes">Step 1 — Check for WebKit Crashes<a class="headerlink" href="#step-1-check-for-webkit-crashes" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Check for Webkit Crashes</p>
+<p>Inspect the system core dump manager to verify if the underlying WebKit process is actively terminating.</p>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>coredumpctl<span class="w"> </span>list<span class="w"> </span>WebKitWebProcess
+</span></code></pre></div>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">Analysis of Outputs</p>
+<p>If fresh entries are populated in the list, extract the specific crash metadata using the Process ID (<code>PID</code>):<br>
+</p><div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>coredumpctl<span class="w"> </span>info<span class="w"> </span>&lt;PID&gt;
+</span></code></pre></div><br>
+*   <strong>Critical Signal to Look For:</strong> <code>Signal: 6 (ABRT)</code> or any explicit <code>WebKitWebProcess</code> failure tracking.<br>
+*   <strong>Verdict:</strong> If present, the WebKit engine itself is unstable. Proceed to package integrity validation.<p></p>
+</div>
+<hr>
+<h3 id="step-2-trace-terminal-standard-outputs">Step 2 — Trace Terminal Standard Outputs<a class="headerlink" href="#step-2-trace-terminal-standard-outputs" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Trace Terminal Standard Outputs</p>
+<p>Launch the affected application directly from an active terminal session to capture real-time stdout and stderr diagnostic streams.</p>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>devhelp
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># OR</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>remarkable
+</span></code></pre></div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Error Signature Branching</p>
+<ul>
+<li><strong>Signature:</strong> <code>Segmentation fault</code><br>
+    👉 <strong>Verdict:</strong> Memory corruption or binary incompatibility. Skip rendering checks; review system memory or package versions.</li>
+<li><strong>Signature:</strong> References to <code>GLib</code>, <code>WebKit</code>, or <code>JavaScriptCore</code><br>
+    👉 <strong>Verdict:</strong> Broken rendering stack. Proceed with the checklist sequentially.</li>
+</ul>
+</div>
+<hr>
+<h3 id="step-3-terminate-stale-webkit-renderers">Step 3 — Terminate Stale WebKit Renderers<a class="headerlink" href="#step-3-terminate-stale-webkit-renderers" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Terminate Stale WebKit Renderers</p>
+<p>Stale background rendering processes can lock shared resources and prevent new instances from drawing GUI surfaces.</p>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pkill<span class="w"> </span>WebKitWebProcess
+</span></code></pre></div>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Validation</p>
+<p>Relaunch the target application. If the interface renders correctly, a stale or orphaned renderer state was blocking execution. </p>
+</div>
+<hr>
+<h3 id="step-4-verify-font-subsystem-integrity">Step 4 — Verify Font Subsystem Integrity<a class="headerlink" href="#step-4-verify-font-subsystem-integrity" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Verify Font Subsystem Integrity</p>
+<p>A corrupted, missing, or hanging system font configuration can completely block text-heavy WebKit canvas initialization.</p>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>fc-match<span class="w"> </span>monospace
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>fc-list<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</span></code></pre></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Output Evaluation</p>
+<ul>
+<li><strong>Positive Indicators:</strong> Clean, instant stdout mapping to local fonts (e.g., <code>Noto Sans</code>, <code>DejaVu</code>).</li>
+<li><strong>Negative Indicators:</strong> Missing output, explicitly logged errors, or a terminal hang. Proceed immediately to Step 5.</li>
+</ul>
+</div>
+<hr>
+<h3 id="step-5-rebuild-font-subsystem-caches">Step 5 — Rebuild Font Subsystem Caches<a class="headerlink" href="#step-5-rebuild-font-subsystem-caches" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Rebuild Font Subsystem Caches</p>
+<p>Force a complete purge and regeneration of the font configuration binaries. Execute this if Step 4 yielded any anomalies.</p>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/.cache/fontconfig
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>fc-cache<span class="w"> </span>-rv
+</span></code></pre></div>
+</div>
+<div class="admonition recommendation">
+<p class="admonition-title">Post-Execution Action</p>
+<p>Relaunch your WebKit applications to verify if the fresh font map resolves the rendering block.</p>
+</div>
+<hr>
+<h3 id="step-6-isolate-gpu-and-mesa-driver-conflicts">Step 6 — Isolate GPU and Mesa Driver Conflicts<a class="headerlink" href="#step-6-isolate-gpu-and-mesa-driver-conflicts" title="Permanent link">¶</a></h3>
+<div class="admonition recommendation">
+<p class="admonition-title">Isolate GPU and Mesa Driver Conflicts</p>
+<p>Determine if hardware acceleration or the graphics driver stack is causing rendering failures by forcing a pure software rendering fallback.</p>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># OR</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>remarkable
+</span></code></pre></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Deductible Outcomes</p>
+<ul>
+<li><strong>Resolved:</strong> A direct incompatibility exists between the user-space driver, kernel GPU module, and WebKit's hardware pipeline. Move to the <strong>Cross-Hardware Graphics Triage</strong> section to find an architectural workaround.</li>
+<li><strong>Unchanged:</strong> The hardware acceleration pipeline is highly unlikely to be the root cause.</li>
+</ul>
+</div>
+<hr>
+<h3 id="step-7-validate-package-integrity">Step 7 — Validate Package Integrity<a class="headerlink" href="#step-7-validate-package-integrity" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Validate Package Integrity</p>
+<p>Verify that the shared WebKit libraries and components are complete, uncorrupted, and synchronized via <code>pacman</code>.</p>
+<p><strong>Verify versions</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>pacman<span class="w"> </span>-Q<span class="w"> </span>webkit2gtk-4.1<span class="w"> </span>javascriptcoregtk-4.1
+</span></code></pre></div>
+<p><strong>Verify file hashes and permissions</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pacman<span class="w"> </span>-Qkk<span class="w"> </span>webkit2gtk-4.1
+</span></code></pre></div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Package Discrepancies</p>
+<p>Look closely for warnings concerning <strong>Missing files</strong>, <strong>Modified files</strong>, or <strong>Partial upgrades</strong>. If any are found, force-reinstall the packages:<br>
+</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>webkit2gtk-4.1<span class="w"> </span>javascriptcoregtk-4.1
+</span></code></pre></div><p></p>
+</div>
+<hr>
+<h3 id="step-8-query-system-logs-for-component-failures">Step 8 — Query System Logs for Component Failures<a class="headerlink" href="#step-8-query-system-logs-for-component-failures" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Query System Logs for Component Failures</p>
+<p>Filter user and system journals specifically for WebKit engine events generated during the current boot cycle.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>journalctl<span class="w"> </span>-b<span class="w"> </span>--user<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>webkit
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>journalctl<span class="w"> </span>-b<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>webkit
+</span></code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Log Analysis</p>
+<p>This step regularly surfaces hidden segmentation faults, pointer errors, or system library linkage omissions not printed to the application's standard terminal output.</p>
+</div>
+<hr>
+<h3 id="step-9-isolate-local-user-profile-corruption">Step 9 — Isolate Local User Profile Corruption<a class="headerlink" href="#step-9-isolate-local-user-profile-corruption" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Isolate Local User Profile Corruption</p>
+<p>Determine if the root cause resides within user configuration directories (<code>~/.config</code>, <code>~/.local</code>) or is a persistent system-wide fault.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>testwebkit
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>testwebkit
+</span></code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Test Protocol</p>
+<ol>
+<li>Log out of your desktop environment.</li>
+<li>Log in as the newly created <code>testwebkit</code> user profile.</li>
+<li>Execute <code>devhelp</code> from a terminal window.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Result Profile</th>
+<th style="text-align:left">Root Cause Domain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Interface Renders Successfully</strong></td>
+<td style="text-align:left">Dotfile/Cache corruption within your primary home directory.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Interface Remains Blank</strong></td>
+<td style="text-align:left">System-wide package, library, or hardware driver failure.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="step-10-nuclear-user-cache-reset">Step 10 — Nuclear User Cache Reset<a class="headerlink" href="#step-10-nuclear-user-cache-reset" title="Permanent link">¶</a></h3>
+<div class="admonition grey">
+<p class="admonition-title">Nuclear User Cache Reset</p>
+<p>If Step 9 proved the issue is isolated to your primary user profile, execute a complete clearance of local transient caches.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/.cache/*
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Precautionary Step</p>
+<p>Ensure all work is saved. Log completely out of your desktop session, then log back in to force all background user processes to re-initialize clean caches.</p>
+</div>
+<hr>
+<h2 id="incident-data-collection-protocol">📝 Incident Data Collection Protocol<a class="headerlink" href="#incident-data-collection-protocol" title="Permanent link">¶</a></h2>
+<div class="admonition grey">
+<p class="admonition-title">Incident Data Collection Protocol</p>
+<p>When anomalous rendering behaviors occur, immediately dump the system state metrics. Preserving this timeline context prevents trial-and-error debugging later.</p>
+<p><b><code>Capture operational snapshot</code></b></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>date<span class="w"> </span>&gt;<span class="w"> </span>issue.log
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>uname<span class="w"> </span>-a<span class="w"> </span>&gt;&gt;<span class="w"> </span>issue.log
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>pacman<span class="w"> </span>-Q<span class="w"> </span>webkit2gtk-4.1<span class="w"> </span>javascriptcoregtk-4.1<span class="w"> </span>mesa<span class="w"> </span>&gt;&gt;<span class="w"> </span>issue.log
+</span></code></pre></div>
+<p><b><code>Extract the recent delta of the system log</code></b></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>journalctl<span class="w"> </span>-b<span class="w"> </span>--since<span class="w"> </span><span class="s2">"10 minutes ago"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>issue.log
+</span></code></pre></div>
+</div>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">Lessons Learned Notebook</p>
+<p><em>Always record the exact packages updated in the transaction preceding a WebKit crash event. Correlating package rollouts to application behavior reduces diagnostic mazes into predictable, 2-minute resolutions.</em></p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260607-111917.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20260607-111917.png"></a></p>
+<p><a class="md-button md-button--custom" href="../MkDocs-Material-Start/#advanced-configuration">👉 Advanced-Configuration  <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"></path></svg></span></a></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden="">
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"></path></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"></path></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden="">
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden="">
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden="">
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M15 3v18"></path></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../systemd/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Systemd">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Systemd
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2016 - 2026 JP Cillliers
+    </div>
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
+      
+        <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="../javascripts/expand-code.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/theme_extra.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+        <script src="../javascripts/iconsearch.js"></script>
+      
+        <script src="../js/open_in_new_tab.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body></html>
