@@ -1253,61 +1253,34 @@ th[role=columnheader]:not(.no-sort):hover:after {
     opacity: 0 !important;
 }
 
-/* ==========================================================================
-   💎 UNIFIED MASTER SEARCH SYSTEM (ALL VARIATIONS LOCK)
-   Perfectly manages page blocks, popups, and headerless containers.
-   ========================================================================== */
-
 /* ==================================================================== */
 /* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="default"] .md-iconsearch-wrapper,
 [data-md-color-scheme="default"] .md-iconsearch-container,
 [data-md-color-scheme="default"] .md-iconsearch-box,
 [data-md-color-scheme="default"] .md-iconsearch-list,
-[data-md-color-scheme="default"] .md-iconsearch-item,
-[data-md-color-scheme="default"] .md-typeset .md-iconsearch-container {
+[data-md-color-scheme="default"] .md-iconsearch-item {
   background-color: #ffffff !important;
   color: #1e262e !important;
-  border-color: #e2e8f0 !important;
 }
 
-[data-md-color-scheme="default"] .md-iconsearch-item a,
-[data-md-color-scheme="default"] .md-iconsearch-item span,
-[data-md-color-scheme="default"] .md-iconsearch-item .ot-icon {
-  color: #1e262e !important;
-}
-
-[data-md-color-scheme="default"] .md-iconsearch-item svg,
-[data-md-color-scheme="default"] .md-iconsearch-item .ot-icon svg {
-  fill: #1e262e !important;
-  color: #1e262e !important;
+[data-md-color-scheme="default"] .md-iconsearch-item::before {
+  background-color: #1e262e !important;
 }
 
 /* ==================================================================== */
 /* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="slate"] .md-iconsearch-wrapper,
 [data-md-color-scheme="slate"] .md-iconsearch-container,
 [data-md-color-scheme="slate"] .md-iconsearch-box,
 [data-md-color-scheme="slate"] .md-iconsearch-list,
-[data-md-color-scheme="slate"] .md-iconsearch-item,
-[data-md-color-scheme="slate"] .md-typeset .md-iconsearch-container {
+[data-md-color-scheme="slate"] .md-iconsearch-item {
   background-color: #1e262e !important;
   color: #ffffff !important;
-  border-color: #2e3842 !important;
 }
 
-[data-md-color-scheme="slate"] .md-iconsearch-item a,
-[data-md-color-scheme="slate"] .md-iconsearch-item span,
-[data-md-color-scheme="slate"] .md-iconsearch-item .ot-icon {
-  color: #ffffff !important;
-}
-
-[data-md-color-scheme="slate"] .md-iconsearch-item svg,
-[data-md-color-scheme="slate"] .md-iconsearch-item .ot-icon svg {
-  fill: #ffffff !important;
-  color: #ffffff !important;
+[data-md-color-scheme="slate"] .md-iconsearch-item::before {
+  background-color: #ffffff !important;
 }
 
 
