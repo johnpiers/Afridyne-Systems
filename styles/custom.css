@@ -1257,43 +1257,30 @@ th[role=columnheader]:not(.no-sort):hover:after {
 /* ==================================================================== */
 /* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="default"] .mdx-iconsearch__bar,
-[data-md-color-scheme="default"] .mdx-iconsearch-container,
-[data-md-color-scheme="default"] .mdx-iconsearch-list,
-[data-md-color-scheme="default"] .mdx-iconsearch-item,
-[data-md-color-scheme="default"] .mdx-iconsearch-results,
-[data-md-color-scheme="default"] .mdx-iconsearch__results {
+[data-md-color-scheme="default"] div[class*="iconsearch"] {
   background-color: #ffffff !important;
   color: #1e262e !important;
-  border-color: #e2e8f0 !important;
 }
-
-[data-md-color-scheme="default"] .mdx-iconsearch__input {
+[data-md-color-scheme="default"] div[class*="iconsearch"] span,
+[data-md-color-scheme="default"] div[class*="iconsearch"] a {
   color: #1e262e !important;
 }
-
-[data-md-color-scheme="default"] .mdx-iconsearch-item div[style*="mask"] {
+[data-md-color-scheme="default"] div[style*="mask"] {
   background-color: #1e262e !important;
 }
-
 
 /* ==================================================================== */
 /* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="slate"] .mdx-iconsearch__bar,
-[data-md-color-scheme="slate"] .mdx-iconsearch-container,
-[data-md-color-scheme="slate"] .mdx-iconsearch-list,
-[data-md-color-scheme="slate"] .mdx-iconsearch-item {
+[data-md-color-scheme="slate"] div[class*="iconsearch"] {
   background-color: #1e222b !important;
-  color: #e6edf3 !important;
-  border-color: #3f51b5 !important;
+  color: #ffffff !important;
 }
-
-[data-md-color-scheme="slate"] .mdx-iconsearch__input {
-  color: #e6edf3 !important;
+[data-md-color-scheme="slate"] div[class*="iconsearch"] span,
+[data-md-color-scheme="slate"] div[class*="iconsearch"] a {
+  color: #ffffff !important;
 }
-
-[data-md-color-scheme="slate"] .mdx-iconsearch-item div[style*="mask"] {
+[data-md-color-scheme="slate"] div[style*="mask"] {
   background-color: #ffffff !important;
 }
 
