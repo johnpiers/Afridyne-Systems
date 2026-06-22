@@ -1255,35 +1255,19 @@ th[role=columnheader]:not(.no-sort):hover:after {
 
 
 /* ==================================================================== */
-/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
+/* ☀️🌙 UNIVERSAL ICON SEARCH LIST COLOR ALIGNMENT */
 /* ==================================================================== */
-[data-md-color-scheme="default"] div[class*="iconsearch"] {
-  background-color: #ffffff !important;
-  color: #1e262e !important;
-}
-[data-md-color-scheme="default"] div[class*="iconsearch"] span,
-[data-md-color-scheme="default"] div[class*="iconsearch"] a {
-  color: #1e262e !important;
-}
-[data-md-color-scheme="default"] div[style*="mask"] {
-  background-color: #1e262e !important;
-}
-
-/* ==================================================================== */
-/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
-/* ==================================================================== */
-[data-md-color-scheme="slate"] div[class*="iconsearch"] {
-  background-color: #1e222b !important;
+.md-typeset .mdx-iconsearch-item,
+.md-typeset .mdx-iconsearch-results,
+.md-typeset .mdx-iconsearch-list,
+.md-typeset div[class*="iconsearch"] a,
+.md-typeset div[class*="iconsearch"] span {
   color: #ffffff !important;
 }
-[data-md-color-scheme="slate"] div[class*="iconsearch"] span,
-[data-md-color-scheme="slate"] div[class*="iconsearch"] a {
-  color: #ffffff !important;
-}
-[data-md-color-scheme="slate"] div[style*="mask"] {
+
+.md-typeset div[style*="width: 24px"][style*="height: 24px"] {
   background-color: #ffffff !important;
 }
-
 
 /* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
    ========================================================================== */
