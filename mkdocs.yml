@@ -127,9 +127,9 @@ plugins:
   - open-in-new-tab
   - offline:
       enabled: !ENV [OFFLINE, false]
-  - material/social:       # Added 'material/'
+  - materialx/social:       # Added 'material/'
       enabled: !ENV [CI, true]
-  - material/optimize:     # Added 'material/'
+  - materialx/optimize:     # Added 'material/'
       enabled: !ENV [CI, false]
       cache: true
   - schema_reader
