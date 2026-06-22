@@ -1255,49 +1255,27 @@ th[role=columnheader]:not(.no-sort):hover:after {
 
 
 /* ==================================================================== */
-/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
+/* ☀️🌙 UNIVERSAL ICON SEARCH LIST TEXT AND VECTOR OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="default"] .md-iconsearch,
-[data-md-color-scheme="default"] .md-iconsearch-results,
-[data-md-color-scheme="default"] .md-iconsearch__results,
-[data-md-color-scheme="default"] .md-iconsearch-list,
-[data-md-color-scheme="default"] .md-iconsearch-item,
-[data-md-color-scheme="default"] .md-typeset .md-iconsearch-container {
+.md-dialog .md-iconsearch,
+.md-dialog .md-iconsearch-container,
+.md-dialog .md-iconsearch-box,
+.md-dialog .md-iconsearch-list,
+.md-dialog .md-iconsearch-item,
+.md-dialog .md-iconsearch__results {
   background-color: #ffffff !important;
   color: #1e262e !important;
   border-color: #e2e8f0 !important;
 }
 
-[data-md-color-scheme="default"] .md-iconsearch-item a,
-[data-md-color-scheme="default"] .md-iconsearch-item span {
+.md-dialog .md-iconsearch-item a,
+.md-dialog .md-iconsearch-item span,
+.md-dialog .md-iconsearch__input {
   color: #1e262e !important;
 }
 
-[data-md-color-scheme="default"] .md-iconsearch-item div[style*="width: 24px"] {
+.md-dialog .md-iconsearch-item div[style*="width: 24px"] {
   background-color: #1e262e !important;
-}
-
-/* ==================================================================== */
-/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
-/* ==================================================================== */
-[data-md-color-scheme="slate"] .md-iconsearch,
-[data-md-color-scheme="slate"] .md-iconsearch-results,
-[data-md-color-scheme="slate"] .md-iconsearch__results,
-[data-md-color-scheme="slate"] .md-iconsearch-list,
-[data-md-color-scheme="slate"] .md-iconsearch-item,
-[data-md-color-scheme="slate"] .md-typeset .md-iconsearch-container {
-  background-color: #1e222b !important;
-  color: #ffffff !important;
-  border-color: #3f51b5 !important;
-}
-
-[data-md-color-scheme="slate"] .md-iconsearch-item a,
-[data-md-color-scheme="slate"] .md-iconsearch-item span {
-  color: #ffffff !important;
-}
-
-[data-md-color-scheme="slate"] .md-iconsearch-item div[style*="width: 24px"] {
-  background-color: #ffffff !important;
 }
 
 
