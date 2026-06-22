@@ -1259,24 +1259,16 @@ th[role=columnheader]:not(.no-sort):hover:after {
    ========================================================================== */
 
 /* ==================================================================== */
-/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
+/* ☀️🌙 ICON SEARCH ENVIRONMENT COMPATIBILITY OVERRIDES */
 /* ==================================================================== */
-[data-md-color-scheme="default"] .md-typeset .ot-icon,
-[data-md-color-scheme="default"] .md-iconsearch-item svg,
-[data-md-color-scheme="default"] .md-search-result__icon svg {
-  fill: #1e262e !important;
-  color: #1e262e !important;
-}
-
-/* ==================================================================== */
-/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
-/* ==================================================================== */
-[data-md-color-scheme="slate"] .md-typeset .ot-icon,
-[data-md-color-scheme="slate"] .md-iconsearch-item svg,
-[data-md-color-scheme="slate"] .md-search-result__icon svg {
+.md-typeset .ot-icon svg,
+.md-typeset span[class*="icon"] svg,
+.md-iconsearch-item svg,
+.md-typeset div[class*="icon"] svg {
   fill: #ffffff !important;
   color: #ffffff !important;
 }
+
 
 /* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
    ========================================================================== */
