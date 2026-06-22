@@ -1255,19 +1255,47 @@ th[role=columnheader]:not(.no-sort):hover:after {
 
 
 /* ==================================================================== */
-/* ☀️🌙 UNIVERSAL ICON SEARCH LIST COLOR ALIGNMENT */
+/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
 /* ==================================================================== */
-.md-typeset .mdx-iconsearch-item,
-.md-typeset .mdx-iconsearch-results,
-.md-typeset .mdx-iconsearch-list,
-.md-typeset div[class*="iconsearch"] a,
-.md-typeset div[class*="iconsearch"] span {
+[data-md-color-scheme="default"] .mdx-iconsearch,
+[data-md-color-scheme="default"] .mdx-iconsearch-results,
+[data-md-color-scheme="default"] .mdx-iconsearch__results,
+[data-md-color-scheme="default"] .mdx-iconsearch-list,
+[data-md-color-scheme="default"] .mdx-iconsearch-item {
+  background-color: #ffffff !important;
+  color: #1e262e !important;
+}
+
+[data-md-color-scheme="default"] .mdx-iconsearch-item a,
+[data-md-color-scheme="default"] .mdx-iconsearch-item span {
+  color: #1e262e !important;
+}
+
+[data-md-color-scheme="default"] .mdx-iconsearch-item div[style*="width: 24px"] {
+  background-color: #1e262e !important;
+}
+
+/* ==================================================================== */
+/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
+/* ==================================================================== */
+[data-md-color-scheme="slate"] .mdx-iconsearch,
+[data-md-color-scheme="slate"] .mdx-iconsearch-results,
+[data-md-color-scheme="slate"] .mdx-iconsearch__results,
+[data-md-color-scheme="slate"] .mdx-iconsearch-list,
+[data-md-color-scheme="slate"] .mdx-iconsearch-item {
+  background-color: #1e222b !important;
   color: #ffffff !important;
 }
 
-.md-typeset div[style*="width: 24px"][style*="height: 24px"] {
+[data-md-color-scheme="slate"] .mdx-iconsearch-item a,
+[data-md-color-scheme="slate"] .mdx-iconsearch-item span {
+  color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-item div[style*="width: 24px"] {
   background-color: #ffffff !important;
 }
+
 
 /* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
    ========================================================================== */
