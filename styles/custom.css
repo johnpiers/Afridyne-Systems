@@ -1261,10 +1261,15 @@ th[role=columnheader]:not(.no-sort):hover:after {
 /* ==================================================================== */
 /* ☀️🌙 ICON SEARCH ENVIRONMENT COMPATIBILITY OVERRIDES */
 /* ==================================================================== */
-.md-typeset .ot-icon svg,
-.md-typeset span[class*="icon"] svg,
-.md-iconsearch-item svg,
-.md-typeset div[class*="icon"] svg {
+.md-typeset .ot-icon {
+  display: inline-block !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  background-color: #ffffff !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+.md-typeset .ot-icon * {
   fill: #ffffff !important;
   color: #ffffff !important;
 }
