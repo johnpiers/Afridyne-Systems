@@ -157,7 +157,8 @@ nav:
       - Afridyne: afridyne.md
       - Blog Config: MkDocs-Material/blog.md
       - Social Config: MkDocs-Material/social.md
-  - Blog: blog/index.md
+  - Blog:
+      - Afridyne Blog: blog/index.md
   - Markdown:
       - Markdown: Markdown.md
       - CommonMarkSpec: CommonMarkSpec.md
