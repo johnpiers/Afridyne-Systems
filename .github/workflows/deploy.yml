@@ -16,12 +16,13 @@ jobs:
       - run: echo "cache_id=$(date +%Y%m%d)" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
+          key: mkdocs-material-{{ env.cache_id }}
           path: .cache
       - name: Install pngquant system package
         run: sudo apt-get update && sudo apt-get install -y pngquant
       - run: pip install "mkdocs-materialx[imaging]" pymdown-extensions pymdown-multimd-table mkdocstrings mkdocstrings-python mkdocs-click mkdocs-rss-plugin mkdocs-table-reader-plugin mkdocs-glightbox markdown-exec mkdocs-section-index mkdocs-open-in-new-tab mkdocs-schema-reader mkdocs-caption mkdocs-minify-plugin
       - run: mkdocs build
+      - run: sed -i 's|/assets/local_icons/|/Afridyne-Systems/assets/local_icons/|g' site/search/search_index.json site/assets/javascripts/*.js 2>/dev/null || true
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
