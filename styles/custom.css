@@ -1253,7 +1253,6 @@ th[role=columnheader]:not(.no-sort):hover:after {
     opacity: 0 !important;
 }
 
-
 /* ==========================================================================
    💎 UNIFIED MASTER SEARCH SYSTEM (ALL VARIATIONS LOCK)
    Perfectly manages page blocks, popups, and headerless containers.
@@ -1436,14 +1435,3 @@ a.md-button.md-button--custom:hover,
   border: 0 !important;
 }
 
-
-/* ==================================================================== */
-/* ☀️🌙 LIVE ACCESSIBILITY VECTOR MASK COLOR CORRECTION */
-/* ==================================================================== */
-div[style*="local_icons"] {
-  background-color: #ffffff !important;
-}
-
-[data-md-color-scheme="default"] div[style*="local_icons"] {
-  background-color: #1e262e !important;
-}
