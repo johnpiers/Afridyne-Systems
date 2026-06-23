@@ -1,5 +1,5 @@
 site_name: Afridyne Systems (PTY) LTD
-site_url: https://example.com
+site_url: https://johnpiers.github.io/Afridyne-Systems/
 site_author: John Piers Cilliers
 site_description: >-
   Born for documents, yet beyond documents. 
@@ -30,6 +30,7 @@ theme:
   name: materialx
   custom_dir: overrides
   icon:
+    repo: overrides/.icons
     annotation: material/arrow-right-circle
   topbar_style: glass
   favicon: assets/favicon.png  # Path relative to your 'docs' folder
