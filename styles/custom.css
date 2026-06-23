@@ -1438,13 +1438,12 @@ a.md-button.md-button--custom:hover,
 
 
 /* ==================================================================== */
-/* ☀️🌙 INLINE MASK ICON PALETTE SYNCHRONIZATION */
+/* ☀️🌙 LIVE ACCESSIBILITY VECTOR MASK COLOR CORRECTION */
 /* ==================================================================== */
-[data-md-color-scheme="default"] div[style*="width: 24px"] {
-  background-color: #1e262e !important;
-}
-
-[data-md-color-scheme="slate"] div[style*="width: 24px"] {
+div[style*="local_icons"] {
   background-color: #ffffff !important;
 }
 
+[data-md-color-scheme="default"] div[style*="local_icons"] {
+  background-color: #1e262e !important;
+}
