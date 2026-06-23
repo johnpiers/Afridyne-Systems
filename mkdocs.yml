@@ -131,9 +131,8 @@ plugins:
   - materialx/social:       # Added 'material/'
       enabled: !ENV [CI, true]
   - materialx/optimize:
-      cache: false     # Added 'material/'
-      enabled: !ENV [CI, false]
-      cache: true
+      cache: false     # Added 'materialx/'
+      enabled: !ENV [CI, true]
   - schema_reader
   - caption:
       figure:
