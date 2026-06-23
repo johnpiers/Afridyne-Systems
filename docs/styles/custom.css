@@ -1258,15 +1258,115 @@ th[role=columnheader]:not(.no-sort):hover:after {
    Perfectly manages page blocks, popups, and headerless containers.
    ========================================================================== */
 
-/* ==================================================================== */
-/* ☀️🌙 ICON SEARCH ENVIRONMENT COMPATIBILITY OVERRIDES */
-/* ==================================================================== */
-.md-typeset .ot-icon svg,
-.md-typeset span[class*="icon"] svg,
-.md-iconsearch-item svg,
-.md-typeset div[class*="icon"] svg {
-  fill: #ffffff !important;
+/* ☀️ SECTION 1: GLOBAL LIGHT PALETTE ENVIRONMENT OVERRIDES */
+
+[data-md-color-scheme="default"] .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .mdx-iconsearch-result,
+[data-md-color-scheme="default"] .mdx-iconsearch-result__list,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__list,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__list {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* Accent Cyan line treatment for light layout bars */
+[data-md-color-scheme="default"] .mdx-iconsearch__bar,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch__bar {
+  border-bottom: 2px solid #00bee6 !important;
+}
+
+/* Light theme readable text for search input bars */
+[data-md-color-scheme="default"] .mdx-iconsearch__input,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch__input,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch__input {
+  color: #24292e !important;
+}
+
+/* Dropdown selections text and arrow vector paths */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__select,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__select,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__select {
+  color: #5c6370 !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c6370' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
+}
+
+/* Neutralize filters on standard icon paths */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__item img.icon-preview {
+  filter: none !important;
+}
+
+/* Force custom local mask assets to stay charcoal dark instead of white */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__list [style*="/assets/local_icons/"] {
+  background-color: #373b44 !important;
+  color: #373b44 !important;
+}
+
+/* Clean up light grid row row dividers */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__item,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
+
+[data-md-color-scheme="slate"] .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .mdx-iconsearch-result,
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__list,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__list,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__list {
+  background-color: #1e222b !important;
+  background: #1e222b !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch__bar,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch__bar {
+  border-bottom: 2px solid #00bee6 !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch__input,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch__input,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch__input {
+  color: #e6edf3 !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__select,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__select,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__select {
+  color: #94a3b8 !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e2e8f0' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__item img.icon-preview {
+  filter: invert(1) brightness(1.5) !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__list [style*="/assets/local_icons/"] {
+  background-color: #ffffff !important;
   color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__item,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
 }
 
 
