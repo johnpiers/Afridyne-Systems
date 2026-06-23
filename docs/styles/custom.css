@@ -1435,3 +1435,13 @@ a.md-button.md-button--custom:hover,
   border: 0 !important;
 }
 
+/* ==================================================================== */
+/* ☀️🌙 LIVE ACCESSIBILITY VECTOR MASK COLOR CORRECTION */
+/* ==================================================================== */
+div[style*="material"] {
+  background-color: #ffffff !important;
+}
+
+[data-md-color-scheme="default"] div[style*="material"] {
+  background-color: #1e262e !important;
+}
