@@ -1436,10 +1436,20 @@ a.md-button.md-button--custom:hover,
 }
 
 /* ==================================================================== */
-/* ☀️🌙 LIVE ACCESSIBILITY VECTOR MASK COLOR CORRECTION */
+/* ☀️🌙 UNIVERSAL INLINE MASK ICON FIX */
 /* ==================================================================== */
-div[style*="material"] {
+.mdx-iconsearch-item div,
+.md-iconsearch-item div,
+div[style*="-webkit-mask"],
+div[style*="mask"] {
   background-color: #ffffff !important;
+}
+
+[data-md-color-scheme="default"] .mdx-iconsearch-item div,
+[data-md-color-scheme="default"] .md-iconsearch-item div,
+[data-md-color-scheme="default"] div[style*="-webkit-mask"],
+[data-md-color-scheme="default"] div[style*="mask"] {
+  background-color: #1e262e !important;
 }
 
 [data-md-color-scheme="default"] div[style*="material"] {
