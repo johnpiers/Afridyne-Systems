@@ -130,7 +130,8 @@ plugins:
       enabled: !ENV [OFFLINE, false]
   - materialx/social:       # Added 'material/'
       enabled: !ENV [CI, true]
-  - materialx/optimize:     # Added 'material/'
+  - materialx/optimize:
+      cache: false     # Added 'material/'
       enabled: !ENV [CI, false]
       cache: true
   - schema_reader
