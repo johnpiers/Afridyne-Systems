@@ -153764,7 +153764,7 @@ document.addEventListener("DOMContentLoaded", function() {
           const cleanUrl = urlParts.join("/") + item.iconName + ".svg";
           visualHtml = `<img src="${cleanUrl}" style="width: 24px; height: 24px;" />`;
         } else {
-          const maskParts = ["", "assets", "local_icons", item.path];
+          const maskParts = ["", "Afridyne-Systems", "assets", "local_icons", item.path];
           const localUrl = maskParts.join("/");
           visualHtml = `<div style="width: 24px; height: 24px; background-color: currentColor; display: inline-block; vertical-align: middle; -webkit-mask: url('${localUrl}') no-repeat center / contain; mask: url('${localUrl}') no-repeat center / contain;"></div>`;
         }
