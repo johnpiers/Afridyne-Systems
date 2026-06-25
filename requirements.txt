@@ -9,3 +9,4 @@ mkdocs-autorefs
 mkdocstrings
 pymdown-multimd-table
 mkdocs-click
+mkdocs-rss-plugin
