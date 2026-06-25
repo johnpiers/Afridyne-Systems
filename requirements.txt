@@ -7,3 +7,4 @@ mkdocs-document-dates
 mkdocs-include-markdown-plugin
 mkdocs-autorefs
 mkdocstrings
+pymdown-multimd-table
