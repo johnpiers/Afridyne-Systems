@@ -10,7 +10,6 @@ appdirs==1.4.4
 argcomplete==3.6.3
 asgiref==3.11.1
 ast-serialize==0.3.0
-astroid==4.2.0
 asttokens==3.0.1
 attrs==26.1.0
 aurdex==0.1.4
