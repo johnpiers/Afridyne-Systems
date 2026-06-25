@@ -254,7 +254,6 @@ stevedore==5.7.0
 strawberry-graphql==0.318.1
 systemd-python==235
 tabulate==0.10.0
-tbb @ file:///build/onetbb/src/build/python/python_build
 termcolor==3.3.0
 textual==8.2.7
 tinycss2==1.5.1
