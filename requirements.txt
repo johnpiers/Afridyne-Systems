@@ -12,7 +12,6 @@ asgiref==3.11.1
 ast-serialize==0.3.0
 asttokens==3.0.1
 attrs==26.1.0
-aurdex==0.1.4
 autocommand==2.2.2
 automat==25.4.16
 babel==2.17.0
