@@ -16,4 +16,8 @@ markdown-exec
 mkdocs-section-index
 mkdocs-open-in-new-tab
 mkdocs-schema-reader
+mkdocs-minify-plugin
+mkdocs-offline-plugin
+pillow
+cairosvg
 mkdocs-caption
