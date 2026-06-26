@@ -239,6 +239,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format # NATIVE INSTANT PARSER
+        - name: '*'
+          class: lang-annotation
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true
