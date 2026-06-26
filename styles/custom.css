@@ -1531,13 +1531,12 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 /* ==========================================================================
-   🎨 MATERIALX VECTOR ENGINE DRAW FORCE (FINALIZE COLOR CHANNELS)
+   🔗 ABSOLUTE CATCH-ALL ROUTE REDIRECT FOR MATERIALX CUSTOM ICONS
    ========================================================================== */
 
 /* Light Mode: Force custom vectors to render as deep charcoal black */
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item .twemoji,
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="assets/local_icons/"] {
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #373b44 !important;
   color: #373b44 !important;
   display: inline-block !important;
@@ -1546,12 +1545,12 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 /* Dark Mode: Force custom vectors to invert completely to high-contrast white */
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item .twemoji,
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="assets/local_icons/"] {
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #ffffff !important;
   color: #ffffff !important;
   display: inline-block !important;
   min-width: 18px !important;
   min-height: 18px !important;
 }
+
