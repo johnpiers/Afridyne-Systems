@@ -1070,14 +1070,15 @@
 <div class="admonition info">
 <p class="admonition-title">Cookie Consent</p>
 <p>Material for MkDocs ships a native and extensible cookie consent form which asks the user for consent prior to sending requests to third parties. Add the following to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>extra:
-  consent:
-    title: Cookie consent
-    description: &gt;- # (1)!
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">consent</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cookie consent</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="no">We use cookies to recognize your repeated visits and preferences, as well</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="no">as to measure the effectiveness of our documentation and whether users</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="no">find what they're searching for. With your consent, you're helping us to</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="no">make our documentation better.</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p>🙋‍♂️ You can add arbitrary HTML tags in the <code>description</code>, e.g. to<br>
@@ -1099,25 +1100,28 @@ link to your terms of service or other parts of the site.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Custom cookie name</label><label for="__tabbed_1_2">Custom initial state</label><label for="__tabbed_1_3">Custom cookie</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>extra:
-  consent:
-    cookies:
-      analytics: Custom name</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">consent</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">cookies</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">analytics</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Custom name</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>extra:
-  consent:
-    cookies:
-      analytics:
-        name: Google Analytics
-        checked: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">consent</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">cookies</span><span class="p">:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">analytics</span><span class="p">:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Google Analytics</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">checked</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>extra:
-  consent:
-    cookies:
-      analytics: Google Analytics # (1)!
-      custom: Custom cookie</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">consent</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">cookies</span><span class="p">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">analytics</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Google Analytics</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">custom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Custom cookie</span>
+</span></code></pre></div>
 <ol>
 <li>🙋‍♂️ If you define a custom cookie as part of the <code>cookies</code><br>
             property, the <code>analytics</code> cookie must be added back<br>
@@ -1132,11 +1136,12 @@ link to your terms of service or other parts of the site.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Analytics</p>
 <p>This property defines which buttons are shown and in which order, e.g. to allow the user to accept cookies and manage settings:</p>
-<pre class="lang-annotation"><code>extra:
-  consent:
-    actions:
-      - accept
-      - manage # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">consent</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">actions</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accept</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">manage</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>🙋‍♂️ If the <code>manage</code> settings button is omitted from the<br>
 <code>actions</code> property, the settings are always shown.</li>
@@ -1154,16 +1159,18 @@ link to your terms of service or other parts of the site.</p>
 <div class="admonition tip">
 <p class="admonition-title">Change Cookie Settings</p>
 <p>In order to comply with GDPR, users must be able to change their cookie settings at any time. This can be done by adding a simple link to your <a href="../setting-up-the-footer/#copyright-notice">copyright notice</a> In <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>copyright: &gt;
-  Copyright &amp;copy; 2016 - 2024 Martin Donath –
-  &lt;a href="#__consent"&gt;Change cookie settings&lt;/a&gt;</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">copyright</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="no">Copyright &amp;copy; 2016 - 2024 Martin Donath –</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="no">&lt;a href="#__consent"&gt;Change cookie settings&lt;/a&gt;</span>
+</span></code></pre></div>
 </div>
 <h3 id="built-in-privacy-plugin">Built-in Privacy Plugin<a class="headerlink" href="#built-in-privacy-plugin" title="Permanent link">¶</a></h3>
 <div class="admonition pied-piper">
 <p class="admonition-title">Built-in Privacy Plugin</p>
 <p>The built-in privacy plugin automatically identifies external assets as part of the build process and downloads all assets for very simple self-hosting. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">privacy</span>
+</span></code></pre></div>
 <p>For a list of all settings, please consult the <a href="../privacy/">plugin documentation</a>.</p>
 </div>
 <div class="admonition tip">
@@ -1192,67 +1199,68 @@ link to your terms of service or other parts of the site.</p>
 <summary>Expand to inspect example</summary>
 <p>For the official documentation, the <a href="../privacy/">built-in privacy plugin</a> downloads the<br>
 following resources:</p>
-<pre id="example" class="lang-annotation no-copy"><code>.
-└─ assets/external/
-   ├─ unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
-   ├─ fonts.googleapis.com/css
-   └─ fonts.gstatic.com/s/
-      ├─ roboto/v29/
-      │  ├─ KFOjCnqEu92Fr1Mu51TjASc-CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TjASc0CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TjASc1CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TjASc2CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TjASc3CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TjASc5CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TjASc6CsQ.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TzBic-CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TzBic0CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TzBic1CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TzBic2CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TzBic3CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TzBic5CsTKlA.woff2
-      │  ├─ KFOjCnqEu92Fr1Mu51TzBic6CsQ.woff2
-      │  ├─ KFOkCnqEu92Fr1Mu51xEIzIFKw.woff2
-      │  ├─ KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2
-      │  ├─ KFOkCnqEu92Fr1Mu51xGIzIFKw.woff2
-      │  ├─ KFOkCnqEu92Fr1Mu51xHIzIFKw.woff2
-      │  ├─ KFOkCnqEu92Fr1Mu51xIIzI.woff2
-      │  ├─ KFOkCnqEu92Fr1Mu51xLIzIFKw.woff2
-      │  ├─ KFOkCnqEu92Fr1Mu51xMIzIFKw.woff2
-      │  ├─ KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmSU5fBBc4.woff2
-      │  ├─ KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmWUlfBBc4.woff2
-      │  ├─ KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2
-      │  ├─ KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2
-      │  ├─ KFOmCnqEu92Fr1Mu4WxKOzY.woff2
-      │  ├─ KFOmCnqEu92Fr1Mu4mxK.woff2
-      │  ├─ KFOmCnqEu92Fr1Mu5mxKOzY.woff2
-      │  ├─ KFOmCnqEu92Fr1Mu72xKOzY.woff2
-      │  ├─ KFOmCnqEu92Fr1Mu7GxKOzY.woff2
-      │  ├─ KFOmCnqEu92Fr1Mu7WxKOzY.woff2
-      │  └─ KFOmCnqEu92Fr1Mu7mxKOzY.woff2
-      └─ robotomono/v13/
-         ├─ L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSV0mf0h.woff2
-         ├─ L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSZ0mf0h.woff2
-         ├─ L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSd0mf0h.woff2
-         ├─ L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSh0mQ.woff2
-         ├─ L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSt0mf0h.woff2
-         ├─ L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSx0mf0h.woff2
-         ├─ L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtElOUlYIw.woff2
-         ├─ L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEleUlYIw.woff2
-         ├─ L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEluUlYIw.woff2
-         ├─ L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEm-Ul.woff2
-         ├─ L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEmOUlYIw.woff2
-         └─ L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEn-UlYIw.woff2</code></pre>
+<div id="example" class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-example-1"><a id="__codelineno-example-1" name="__codelineno-example-1" href="#__codelineno-example-1"></a>.
+</span><span id="__span-example-2"><a id="__codelineno-example-2" name="__codelineno-example-2" href="#__codelineno-example-2"></a>└─<span class="w"> </span>assets/external/
+</span><span id="__span-example-3"><a id="__codelineno-example-3" name="__codelineno-example-3" href="#__codelineno-example-3"></a><span class="w">   </span>├─<span class="w"> </span>unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+</span><span id="__span-example-4"><a id="__codelineno-example-4" name="__codelineno-example-4" href="#__codelineno-example-4"></a><span class="w">   </span>├─<span class="w"> </span>fonts.googleapis.com/css
+</span><span id="__span-example-5"><a id="__codelineno-example-5" name="__codelineno-example-5" href="#__codelineno-example-5"></a><span class="w">   </span>└─<span class="w"> </span>fonts.gstatic.com/s/
+</span><span id="__span-example-6"><a id="__codelineno-example-6" name="__codelineno-example-6" href="#__codelineno-example-6"></a><span class="w">      </span>├─<span class="w"> </span>roboto/v29/
+</span><span id="__span-example-7"><a id="__codelineno-example-7" name="__codelineno-example-7" href="#__codelineno-example-7"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TjASc-CsTKlA.woff2
+</span><span id="__span-example-8"><a id="__codelineno-example-8" name="__codelineno-example-8" href="#__codelineno-example-8"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TjASc0CsTKlA.woff2
+</span><span id="__span-example-9"><a id="__codelineno-example-9" name="__codelineno-example-9" href="#__codelineno-example-9"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TjASc1CsTKlA.woff2
+</span><span id="__span-example-10"><a id="__codelineno-example-10" name="__codelineno-example-10" href="#__codelineno-example-10"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TjASc2CsTKlA.woff2
+</span><span id="__span-example-11"><a id="__codelineno-example-11" name="__codelineno-example-11" href="#__codelineno-example-11"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TjASc3CsTKlA.woff2
+</span><span id="__span-example-12"><a id="__codelineno-example-12" name="__codelineno-example-12" href="#__codelineno-example-12"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TjASc5CsTKlA.woff2
+</span><span id="__span-example-13"><a id="__codelineno-example-13" name="__codelineno-example-13" href="#__codelineno-example-13"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TjASc6CsQ.woff2
+</span><span id="__span-example-14"><a id="__codelineno-example-14" name="__codelineno-example-14" href="#__codelineno-example-14"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TzBic-CsTKlA.woff2
+</span><span id="__span-example-15"><a id="__codelineno-example-15" name="__codelineno-example-15" href="#__codelineno-example-15"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TzBic0CsTKlA.woff2
+</span><span id="__span-example-16"><a id="__codelineno-example-16" name="__codelineno-example-16" href="#__codelineno-example-16"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TzBic1CsTKlA.woff2
+</span><span id="__span-example-17"><a id="__codelineno-example-17" name="__codelineno-example-17" href="#__codelineno-example-17"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TzBic2CsTKlA.woff2
+</span><span id="__span-example-18"><a id="__codelineno-example-18" name="__codelineno-example-18" href="#__codelineno-example-18"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TzBic3CsTKlA.woff2
+</span><span id="__span-example-19"><a id="__codelineno-example-19" name="__codelineno-example-19" href="#__codelineno-example-19"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TzBic5CsTKlA.woff2
+</span><span id="__span-example-20"><a id="__codelineno-example-20" name="__codelineno-example-20" href="#__codelineno-example-20"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOjCnqEu92Fr1Mu51TzBic6CsQ.woff2
+</span><span id="__span-example-21"><a id="__codelineno-example-21" name="__codelineno-example-21" href="#__codelineno-example-21"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOkCnqEu92Fr1Mu51xEIzIFKw.woff2
+</span><span id="__span-example-22"><a id="__codelineno-example-22" name="__codelineno-example-22" href="#__codelineno-example-22"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2
+</span><span id="__span-example-23"><a id="__codelineno-example-23" name="__codelineno-example-23" href="#__codelineno-example-23"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOkCnqEu92Fr1Mu51xGIzIFKw.woff2
+</span><span id="__span-example-24"><a id="__codelineno-example-24" name="__codelineno-example-24" href="#__codelineno-example-24"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOkCnqEu92Fr1Mu51xHIzIFKw.woff2
+</span><span id="__span-example-25"><a id="__codelineno-example-25" name="__codelineno-example-25" href="#__codelineno-example-25"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOkCnqEu92Fr1Mu51xIIzI.woff2
+</span><span id="__span-example-26"><a id="__codelineno-example-26" name="__codelineno-example-26" href="#__codelineno-example-26"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOkCnqEu92Fr1Mu51xLIzIFKw.woff2
+</span><span id="__span-example-27"><a id="__codelineno-example-27" name="__codelineno-example-27" href="#__codelineno-example-27"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOkCnqEu92Fr1Mu51xMIzIFKw.woff2
+</span><span id="__span-example-28"><a id="__codelineno-example-28" name="__codelineno-example-28" href="#__codelineno-example-28"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2
+</span><span id="__span-example-29"><a id="__codelineno-example-29" name="__codelineno-example-29" href="#__codelineno-example-29"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmSU5fBBc4.woff2
+</span><span id="__span-example-30"><a id="__codelineno-example-30" name="__codelineno-example-30" href="#__codelineno-example-30"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2
+</span><span id="__span-example-31"><a id="__codelineno-example-31" name="__codelineno-example-31" href="#__codelineno-example-31"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2
+</span><span id="__span-example-32"><a id="__codelineno-example-32" name="__codelineno-example-32" href="#__codelineno-example-32"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2
+</span><span id="__span-example-33"><a id="__codelineno-example-33" name="__codelineno-example-33" href="#__codelineno-example-33"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2
+</span><span id="__span-example-34"><a id="__codelineno-example-34" name="__codelineno-example-34" href="#__codelineno-example-34"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2
+</span><span id="__span-example-35"><a id="__codelineno-example-35" name="__codelineno-example-35" href="#__codelineno-example-35"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2
+</span><span id="__span-example-36"><a id="__codelineno-example-36" name="__codelineno-example-36" href="#__codelineno-example-36"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmWUlfBBc4.woff2
+</span><span id="__span-example-37"><a id="__codelineno-example-37" name="__codelineno-example-37" href="#__codelineno-example-37"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2
+</span><span id="__span-example-38"><a id="__codelineno-example-38" name="__codelineno-example-38" href="#__codelineno-example-38"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2
+</span><span id="__span-example-39"><a id="__codelineno-example-39" name="__codelineno-example-39" href="#__codelineno-example-39"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2
+</span><span id="__span-example-40"><a id="__codelineno-example-40" name="__codelineno-example-40" href="#__codelineno-example-40"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2
+</span><span id="__span-example-41"><a id="__codelineno-example-41" name="__codelineno-example-41" href="#__codelineno-example-41"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2
+</span><span id="__span-example-42"><a id="__codelineno-example-42" name="__codelineno-example-42" href="#__codelineno-example-42"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOmCnqEu92Fr1Mu4WxKOzY.woff2
+</span><span id="__span-example-43"><a id="__codelineno-example-43" name="__codelineno-example-43" href="#__codelineno-example-43"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOmCnqEu92Fr1Mu4mxK.woff2
+</span><span id="__span-example-44"><a id="__codelineno-example-44" name="__codelineno-example-44" href="#__codelineno-example-44"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOmCnqEu92Fr1Mu5mxKOzY.woff2
+</span><span id="__span-example-45"><a id="__codelineno-example-45" name="__codelineno-example-45" href="#__codelineno-example-45"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOmCnqEu92Fr1Mu72xKOzY.woff2
+</span><span id="__span-example-46"><a id="__codelineno-example-46" name="__codelineno-example-46" href="#__codelineno-example-46"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOmCnqEu92Fr1Mu7GxKOzY.woff2
+</span><span id="__span-example-47"><a id="__codelineno-example-47" name="__codelineno-example-47" href="#__codelineno-example-47"></a><span class="w">      </span>│<span class="w">  </span>├─<span class="w"> </span>KFOmCnqEu92Fr1Mu7WxKOzY.woff2
+</span><span id="__span-example-48"><a id="__codelineno-example-48" name="__codelineno-example-48" href="#__codelineno-example-48"></a><span class="w">      </span>│<span class="w">  </span>└─<span class="w"> </span>KFOmCnqEu92Fr1Mu7mxKOzY.woff2
+</span><span id="__span-example-49"><a id="__codelineno-example-49" name="__codelineno-example-49" href="#__codelineno-example-49"></a><span class="w">      </span>└─<span class="w"> </span>robotomono/v13/
+</span><span id="__span-example-50"><a id="__codelineno-example-50" name="__codelineno-example-50" href="#__codelineno-example-50"></a><span class="w">         </span>├─<span class="w"> </span>L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSV0mf0h.woff2
+</span><span id="__span-example-51"><a id="__codelineno-example-51" name="__codelineno-example-51" href="#__codelineno-example-51"></a><span class="w">         </span>├─<span class="w"> </span>L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSZ0mf0h.woff2
+</span><span id="__span-example-52"><a id="__codelineno-example-52" name="__codelineno-example-52" href="#__codelineno-example-52"></a><span class="w">         </span>├─<span class="w"> </span>L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSd0mf0h.woff2
+</span><span id="__span-example-53"><a id="__codelineno-example-53" name="__codelineno-example-53" href="#__codelineno-example-53"></a><span class="w">         </span>├─<span class="w"> </span>L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSh0mQ.woff2
+</span><span id="__span-example-54"><a id="__codelineno-example-54" name="__codelineno-example-54" href="#__codelineno-example-54"></a><span class="w">         </span>├─<span class="w"> </span>L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSt0mf0h.woff2
+</span><span id="__span-example-55"><a id="__codelineno-example-55" name="__codelineno-example-55" href="#__codelineno-example-55"></a><span class="w">         </span>├─<span class="w"> </span>L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSx0mf0h.woff2
+</span><span id="__span-example-56"><a id="__codelineno-example-56" name="__codelineno-example-56" href="#__codelineno-example-56"></a><span class="w">         </span>├─<span class="w"> </span>L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtElOUlYIw.woff2
+</span><span id="__span-example-57"><a id="__codelineno-example-57" name="__codelineno-example-57" href="#__codelineno-example-57"></a><span class="w">         </span>├─<span class="w"> </span>L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEleUlYIw.woff2
+</span><span id="__span-example-58"><a id="__codelineno-example-58" name="__codelineno-example-58" href="#__codelineno-example-58"></a><span class="w">         </span>├─<span class="w"> </span>L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEluUlYIw.woff2
+</span><span id="__span-example-59"><a id="__codelineno-example-59" name="__codelineno-example-59" href="#__codelineno-example-59"></a><span class="w">         </span>├─<span class="w"> </span>L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEm-Ul.woff2
+</span><span id="__span-example-60"><a id="__codelineno-example-60" name="__codelineno-example-60" href="#__codelineno-example-60"></a><span class="w">         </span>├─<span class="w"> </span>L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEmOUlYIw.woff2
+</span><span id="__span-example-61"><a id="__codelineno-example-61" name="__codelineno-example-61" href="#__codelineno-example-61"></a><span class="w">         </span>└─<span class="w"> </span>L0xdDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAIe2Imhk1T8rbociImtEn-UlYIw.woff2
+</span></code></pre></div>
 </details>
 <h2 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">¶</a></h2>
 <h3 id="custom-cookies">Custom Cookies<a class="headerlink" href="#custom-cookies" title="Permanent link">¶</a></h3>
@@ -1263,16 +1271,18 @@ following resources:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/javascripts/consent.js</code></label><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>var consent = __md_get("__consent")
-if (consent &amp;&amp; consent.custom) {
-  /* The user accepted the cookie */
-} else {
-  /* The user rejected the cookie */
-}</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">consent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">__md_get</span><span class="p">(</span><span class="s2">"__consent"</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">consent</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">consent</span><span class="p">.</span><span class="nx">custom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="cm">/* The user accepted the cookie */</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="cm">/* The user rejected the cookie */</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>extra_javascript:
-  - javascripts/consent.js</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">extra_javascript</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/consent.js</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>

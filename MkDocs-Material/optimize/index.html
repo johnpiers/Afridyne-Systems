@@ -1317,8 +1317,9 @@ file that can be downloaded.</p>
 <div class="admonition example">
 <p class="admonition-title">Configuration</p>
 <p>As with all [built-in plugins], getting started with the optimize plugin is straightforward. Just add the following lines to <code>mkdocs.yml</code>, and observe how media files are optimized automatically:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">optimize</span>
+</span></code></pre></div>
 <p>The optimize plugin is built into Material for MkDocs and doesn't need to be installed.</p>
 <p>However, in order to optimize all media files, it's necessary to install the dependencies for <a href="../image-processing/">image processing</a>, if they're not already available on your system. The linked guide includes instructions for several operating systems and mentions some alternative environments.</p>
 </div>
@@ -1331,9 +1332,10 @@ file that can be downloaded.</p>
 <p class="admonition-title">Enable or Disable</p>
 <h3 id="config-enabled"><code>Config-Enabled</code><a class="headerlink" href="#config-enabled" title="Permanent link">¶</a></h3>
 <p>Use this setting to enable or disable the plugin when <a href="../creating-your-site/#building-your-site">building your project</a>. If you want to disable the plugin, e.g., for local builds, you can use <a href="https://www.mkdocs.org/user-guide/configuration/#environment-variables">environment-variables</a> like <code>mkdocs.env</code> in <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      enabled: !ENV [CI, false]</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CI</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
 <p>This configuration enables the plugin only during continuous integration (CI).</p>
 </div>
 <hr>
@@ -1344,9 +1346,10 @@ file that can be downloaded.</p>
 <p class="admonition-title">Concurrency</p>
 <h3 id="concurrency"><code>Concurrency</code><a class="headerlink" href="#concurrency" title="Permanent link">¶</a></h3>
 <p>With more CPUs available, the plugin can do more work in parallel, and thus complete media file optimization faster. If you want to disable concurrent processing completely, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      concurrency: 1</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="nt">concurrency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span></code></pre></div>
 <p>By default, the plugin uses all available CPUs - 1 with a minimum of 1.</p>
 </div>
 <h2 id="caching">Caching<a class="headerlink" href="#caching" title="Permanent link">¶</a></h2>
@@ -1362,9 +1365,10 @@ file that can be downloaded.</p>
 <p class="admonition-title">Cache</p>
 <h3 id="cache"><code>cache</code><a class="headerlink" href="#cache" title="Permanent link">¶</a></h3>
 <p>Use this setting to instruct the plugin to bypass the cache, in order to re-optimize all media files, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      cache: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -1374,9 +1378,10 @@ file that can be downloaded.</p>
 <p class="admonition-title">cache_dir</p>
 <h3 id="cache_dir"><code>cache_dir</code><a class="headerlink" href="#cache_dir" title="Permanent link">¶</a></h3>
 <p>It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where media files are cached. If you want to change it, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      cache_dir: my/custom/dir</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="nt">cache_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my/custom/dir</span>
+</span></code></pre></div>
 <hr>
 <p>If you're using [multiple instances] of the plugin, it can be a good idea to set different cache directories for both instances, so that they don't interfere with each other.</p>
 </div>
@@ -1394,9 +1399,10 @@ file that can be downloaded.</p>
 <p class="admonition-title">Optimize</p>
 <h3 id="optimize"><code>optimize</code><a class="headerlink" href="#optimize" title="Permanent link">¶</a></h3>
 <p>Use this setting to enable or disable media file optimization. Currently, the plugin's sole purpose is to optimize media files, so it's equivalent to the [<code>enabled</code>][<code>config.enabled</code>] setting, but in the near future, other features might be added. If you want to disable optimization, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span><span class="nt">optimize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -1406,9 +1412,10 @@ file that can be downloaded.</p>
 <p class="admonition-title">Optimize_png</p>
 <h3 id="optimize_png"><code>optimize_png</code><a class="headerlink" href="#optimize_png" title="Permanent link">¶</a></h3>
 <p>Use this setting to enable or disable the optimization of <code>.png</code> files. It's normally not necessary to specify this setting, but if you want to disable the optimization of <code>.png</code> files, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize_png: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="nt">optimize_png</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -1421,14 +1428,16 @@ file that can be downloaded.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Slower <small>smaller</small></label><label for="__tabbed_1_2">Faster <small>larger</small></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize_png_speed: 1</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">optimize_png_speed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize_png_speed: 10</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="nt">optimize_png_speed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1444,9 +1453,10 @@ file that can be downloaded.</p>
 <p>Use this setting to specify whether <a href="https://pngquant.org/">pngquant</a> should strip optional metadata<br>
 from <code>.png</code> files that are not required to display the image, e.g., <a href="https://en.wikipedia.org/wiki/Exif">EXIF</a>.<br>
 If you want to preserve metadata, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize_png_strip: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">      </span><span class="nt">optimize_png_strip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -1458,9 +1468,10 @@ If you want to preserve metadata, use:</p>
 <p>Use this setting to enable or disable the optimization of <code>.jpg</code> files. It's<br>
 normally not necessary to specify this setting, but if you want to disable<br>
 the optimization of <code>.jpg</code> files, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize_jpg: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="nt">optimize_jpg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -1472,9 +1483,10 @@ the optimization of <code>.jpg</code> files, use:</p>
 <p>Use this setting to specify the image quality that <a href="https://pillow.readthedocs.io/">Pillow</a> applies when<br>
 optimizing <code>.jpg</code> files. If the images look blurry, it's a good idea to<br>
 fine-tune and change this setting:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize_jpg_quality: 75</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="nt">optimize_jpg_quality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">75</span>
+</span></code></pre></div>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -1486,9 +1498,10 @@ fine-tune and change this setting:</p>
 <p>Use this setting to specify whether <a href="https://pillow.readthedocs.io/">Pillow</a> should use progressive encoding<br>
 when optimizing <code>.jpg</code> files, rendering faster on slow connections. If you want<br>
 to disable progressive encoding, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize_jpg_progressive: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">      </span><span class="nt">optimize_jpg_progressive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -1500,10 +1513,11 @@ to disable progressive encoding, use:</p>
 <p>Use this setting to enable media file optimization for specific directories<br>
 of your project, e.g., when using [multiple instances] of the plugin to optimize<br>
 media files differently:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      optimize_include:
-        - screenshots/*</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">      </span><span class="nt">optimize_include</span><span class="p">:</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">screenshots/*</span>
+</span></code></pre></div>
 <p>This configuration enables optimization for all media files that are contained<br>
 in the <code>screenshots</code> folder and its subfolders inside the [<code>docs</code> directory]<br>
 [<code>mkdocs.docs_dir</code>].</p>
@@ -1518,10 +1532,11 @@ in the <code>screenshots</code> folder and its subfolders inside the [<code>docs
 <p>Use this setting to disable media file optimization for specific directories<br>
 of your project, e.g., when using [multiple instances] of the plugin to optimize<br>
 media files differently:</p>
-<pre class="lang-annotation"><code>plugins:
-  - social:
-      optimize_exclude:
-        - vendor/*</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">      </span><span class="nt">optimize_exclude</span><span class="p">:</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vendor/*</span>
+</span></code></pre></div>
 <p>This configuration disables optimization for all media files that are contained<br>
 in the <code>vendor</code> folder and its subfolders inside the [<code>docs</code> directory]<br>
 [<code>mkdocs.docs_dir</code>].</p>
@@ -1540,9 +1555,10 @@ in the <code>vendor</code> folder and its subfolders inside the [<code>docs</cod
 <h3 id="print_gain"><code>print_gain</code><a class="headerlink" href="#print_gain" title="Permanent link">¶</a></h3>
 <p>Use this setting to control whether the plugin should print the number of bytes<br>
 gained after optimizing each file. If you want to disable this behavior, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      print_gain: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">      </span><span class="nt">print_gain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -1554,9 +1570,10 @@ gained after optimizing each file. If you want to disable this behavior, use:</p
 <p>Use this setting to control whether the plugin should print the total number of<br>
 bytes gained after optimizing all files. If you want to disable this behavior,<br>
 use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - optimize:
-      print_gain_summary: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">      </span><span class="nt">print_gain_summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 </div>
 
 

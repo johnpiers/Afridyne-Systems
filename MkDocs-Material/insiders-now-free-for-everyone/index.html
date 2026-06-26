@@ -1258,7 +1258,8 @@ for quite some time. With the release of, all these features are now available t
 <div class="admonition desc">
 <p class="admonition-title">How to Upgrade</p>
 <p>You can upgrade with the following command:</p>
-<pre class="lang-annotation"><code>pip install --upgrade --force-reinstall mkdocs-material</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install --upgrade --force-reinstall mkdocs-material
+</span></code></pre></div>
 </div>
 <h2 id="switching-from-insiders">Switching from Insiders<a class="headerlink" href="#switching-from-insiders" title="Permanent link">¶</a></h2>
 <div class="admonition ex">
@@ -1266,9 +1267,9 @@ for quite some time. With the release of, all these features are now available t
 <p>If you've been a user of Insiders, we recommend to switch to the community edition as soon as possible, as it includes all Insiders features. This will make it much easier to handle third-party contributions, since no personal access tokens are necessary.</p>
 <p><strong>From now on, bug fixes that we make to Material for MkDocs will only be released to the community edition. Security vulnerabilities will be fixed in both editions.</strong></p>
 <p>Thus, please adjust your <code>requirements.txt</code> and GitHub Actions workflows:</p>
-<pre class="lang-annotation"><code>- pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders. git
-+ pip install mkdocs-material
-</code></pre>
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gd">- pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders. git</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gi">+ pip install mkdocs-material</span>
+</span></code></pre></div>
 <p>The Insiders repository itself will remain available for the next 6 months. When you build your project with Insiders, it will now show an informational message pointing to this blog post.</p>
 <ul>
 <li><strong>On February 1, 2026, this message will be turned into a warning</strong>.</li>

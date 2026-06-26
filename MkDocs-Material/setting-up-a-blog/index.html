@@ -1262,8 +1262,9 @@
 <div class="admonition abstract">
 <p class="admonition-title">Built-in blog plugin</p>
 <p>The built-in blog plugin adds support for building a blog from a folder of posts, which are annotated with dates and other structured data. First, add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - blog</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog</span>
+</span></code></pre></div>
 <hr>
 <ol>
 <li>
@@ -1273,10 +1274,11 @@
 <p>If you do have a navigation defined then you need to add <em>the blog index page only</em> to it. You need not and should not add the individual blog posts. For example:</p>
 </li>
 </ol>
-<pre class="lang-annotation"><code>nav:
-  - index.md
-  - Blog:
-    - blog/index.md</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Blog</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/index.md</span>
+</span></code></pre></div>
 <hr>
 <p>For a list of all settings, please consult the <a href="../blog/">plugin documentation</a>.</p>
 </div>
@@ -1287,17 +1289,19 @@
 <div class="admonition abstract">
 <p class="admonition-title">RSS feed integration</p>
 <p>The <a href="../blog/">built-in blog plugin</a> integrates seamlessly with the <a href="https://guts.github.io/mkdocs-rss-plugin/">RSS plugin</a>, which provides a simple way to add an RSS feed to your blog (or to your whole documentation). Install it with <code>uv pip</code>:</p>
-<pre class="lang-annotation"><code>uv pip install mkdocs-rss-plugin</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-rss-plugin
+</span></code></pre></div>
 <hr>
 <p>Then, add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - rss:
-      match_path: blog/posts/.* # (1)!
-      date_from_meta:
-        as_creation: date
-      categories:
-        - categories
-        - tags # (2)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rss</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">match_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/posts/.*</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">date_from_meta</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">as_creation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">categories</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">categories</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span><span class="w"> </span><span class="c1"># (2)!</span>
+</span></code></pre></div>
 <ol>
 <li>The RSS plugin allows to filter for URLs to be included in the feed. In this example, only blog posts will be part of the feed.</li>
 <li>If you want to include a post's categories as well as its tags in<br>
@@ -1311,9 +1315,10 @@ the feed, add both <code>categories</code> and <code>tags</code>.</li>
 <dt><!-- md:option rss.enabled --></dt>
 <dd>
 <p><!-- md:default <code>true</code> --> This option specifies whether the plugin is enabled when building your project. If you want to speed up local builds, you can use an [environment variable][<code>mkdocs.env</code>]:</p>
-<pre class="lang-annotation"><code>plugins:
-  - rss:
-      enabled: !ENV [CI, false]</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rss</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CI</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
 </dd>
 </dl>
 </div>
@@ -1323,9 +1328,10 @@ the feed, add both <code>categories</code> and <code>tags</code>.</li>
 <dt><!-- md:option rss.match_path --></dt>
 <dd>
 <p><!-- md:default <code>.*</code> --> This option specifies which pages should be included in the feed. For example, to only include blog posts in the feed, use the following regular expression:</p>
-<pre class="lang-annotation"><code>plugins:
-  - rss:
-      match_path: blog/posts/.*</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rss</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span><span class="nt">match_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/posts/.*</span>
+</span></code></pre></div>
 </dd>
 </dl>
 </div>
@@ -1335,10 +1341,11 @@ the feed, add both <code>categories</code> and <code>tags</code>.</li>
 <dt><!-- md:option rss.date_from_meta --></dt>
 <dd>
 <p><!-- md:default none --> This option specifies which front matter property should be used as a creation date of a page in the feed. It's recommended to use the <code>date</code> property:</p>
-<pre class="lang-annotation"><code>plugins:
-  - rss:
-      date_from_meta:
-        as_creation: date</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rss</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="nt">date_from_meta</span><span class="p">:</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nt">as_creation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+</span></code></pre></div>
 </dd>
 </dl>
 </div>
@@ -1348,11 +1355,12 @@ the feed, add both <code>categories</code> and <code>tags</code>.</li>
 <dt><!-- md:option rss.categories --></dt>
 <dd>
 <p><!-- md:default none --> This option specifies which front matter properties are used as categories as part of the feed. If you use <a href="../blog/#categories">categories</a> and <a href="../setting-up-tags/#built-in-tags-plugin">tags</a>, add both with the following lines:</p>
-<pre class="lang-annotation"><code>plugins:
-  - rss:
-      categories:
-        - categories
-        - tags</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rss</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">categories</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">categories</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span>
+</span></code></pre></div>
 </dd>
 </dl>
 </div>
@@ -1362,9 +1370,10 @@ the feed, add both <code>categories</code> and <code>tags</code>.</li>
 <dt><!-- md:option rss.comments_path --></dt>
 <dd>
 <p><!-- md:default none --> This option specifies the anchor at which comments for a post or page can be found. If you've integrated a <a href="../adding-a-comment-system/">comment system</a>, add the following lines:</p>
-<pre class="lang-annotation"><code>plugins:
-  - rss:
-      comments_path: "#__comments"</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rss</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="nt">comments_path</span><span class="p">:</span><span class="w"> </span><span class="s">"#__comments"</span>
+</span></code></pre></div>
 </dd>
 </dl>
 </div>
@@ -1374,21 +1383,23 @@ the feed, add both <code>categories</code> and <code>tags</code>.</li>
 <div class="admonition abstract">
 <p class="admonition-title">Pure blog configuration</p>
 <p>You might need to build a pure blog without any documentation. In this case, you can create a folder tree like this:</p>
-<pre class="lang-annotation no-copy"><code>.
-├─ docs/
-│  ├─ posts/ # (1)!
-│  ├─ .authors.yml
-│  └─ index.md
-└─ mkdocs.yml</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>.
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>├─<span class="w"> </span>docs/
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>│<span class="w">  </span>├─<span class="w"> </span>posts/<span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>│<span class="w">  </span>├─<span class="w"> </span>.authors.yml
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>│<span class="w">  </span>└─<span class="w"> </span>index.md
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>└─<span class="w"> </span>mkdocs.yml
+</span></code></pre></div>
 <ol>
 <li>🙋‍♂️ Notice that the <code>posts</code> directory is in the root of <code>docs</code><br>
 without intermediate <code>blog</code> directory.</li>
 </ol>
 <hr>
 <p>And add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - blog:
-      blog_dir: . # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="nt">blog_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>🙋‍♂️ Please see the <a href="../blog/">plugin documentation</a> for more information<br>
 about the <a href="../blog/#config.blog_dir"><code>blog_dir</code></a> setting.</li>
@@ -1401,13 +1412,14 @@ about the <a href="../blog/#config.blog_dir"><code>blog_dir</code></a> setting.<
 <div class="admonition abstract">
 <p class="admonition-title">Writing your first post</p>
 <p>After you've successfully set up the <a href="../blog/">built-in blog plugin</a>, it's time to write your first post. The plugin doesn't assume any specific directory structure, so you're completely free in how you organize your posts, as long as they are all located inside the <code>posts</code> directory:</p>
-<pre class="lang-annotation no-copy"><code>.
-├─ docs/
-│  └─ blog/
-│     ├─ posts/
-│     │  └─ hello-world.md # (1)!
-│     └─ index.md
-└─ mkdocs.yml</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>.
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>├─<span class="w"> </span>docs/
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>│<span class="w">  </span>└─<span class="w"> </span>blog/
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>│<span class="w">     </span>├─<span class="w"> </span>posts/
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>│<span class="w">     </span>│<span class="w">  </span>└─<span class="w"> </span>hello-world.md<span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>│<span class="w">     </span>└─<span class="w"> </span>index.md
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>└─<span class="w"> </span>mkdocs.yml
+</span></code></pre></div>
 <ol>
 <li>🙋‍♂️ If you'd like to arrange posts differently, you're free<br>
 to do so.The URLs are built from the format specified in<br>
@@ -1415,16 +1427,17 @@ to do so.The URLs are built from the format specified in<br>
 matter how they are organized inside the<code>posts</code> directory.</li>
 </ol>
 <p>Create a new file called <code>hello-world.md</code> and add the following lines:</p>
-<pre class="lang-annotation"><code>---
-draft: true # (1)!
-date: 2024-01-31 # (2)!
-categories:
-  - Hello
-  - World
----
-
-# Hello world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nn">---</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-31</span><span class="w"> </span><span class="c1"># (2)!</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nt">categories</span><span class="p">:</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hello</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">World</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nn">---</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="nn">...</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p>🙋‍♂️ If you mark a post as a <a href="../blog/#drafts">draft</a>, a red marker appears next to<br>
@@ -1437,13 +1450,14 @@ for rendering drafts when building deploy previews.</p>
 following syntax, allowing you to define a date when you last<br>
 updated the blog post + further custom dates you can add to<br>
 the template:</p>
-<pre class="lang-annotation"><code>---
-date:
-  created: 2022-01-31
-  updated: 2022-02-02
----
-
-# Hello world!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nn">---</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">date</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-01-31</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-02-02</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nn">---</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Hello world!</span>
+</span></code></pre></div>
 <p>Note that the creation date <strong>must</strong> be set under <code>date.created</code>, as each blog post must have a creation date set.</p>
 </li>
 </ol>
@@ -1453,14 +1467,15 @@ date:
 <div class="admonition abstract">
 <p class="admonition-title">Adding An Excerpt</p>
 <p>The blog index, as well as <a href="../blog/#archive">archive</a> and <a href="../blog/#categories">category</a> indexes can either list the entire content of each post, or excerpts of posts. An excerpt can be created by adding a <code>&lt;!-- more --&gt;</code> separator after the first few paragraphs of a post:</p>
-<pre class="lang-annotation"><code># Hello world!
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-massa, nec semper lorem quam in massa.
-
-&lt;!-- more --&gt;
-...</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">Lorem</span> <span class="n">ipsum</span> <span class="n">dolor</span> <span class="n">sit</span> <span class="n">amet</span><span class="p">,</span> <span class="n">consectetur</span> <span class="n">adipiscing</span> <span class="n">elit</span><span class="o">.</span> <span class="n">Nulla</span> <span class="n">et</span> <span class="n">euismod</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">nulla</span><span class="o">.</span> <span class="n">Curabitur</span> <span class="n">feugiat</span><span class="p">,</span> <span class="n">tortor</span> <span class="n">non</span> <span class="n">consequat</span> <span class="n">finibus</span><span class="p">,</span> <span class="n">justo</span> <span class="n">purus</span> <span class="n">auctor</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">massa</span><span class="p">,</span> <span class="n">nec</span> <span class="n">semper</span> <span class="n">lorem</span> <span class="n">quam</span> <span class="ow">in</span> <span class="n">massa</span><span class="o">.</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">more</span> <span class="o">--&gt;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="o">...</span>
+</span></code></pre></div>
 <hr>
 <p>When the <a href="../blog/">built-in blog plugin</a> generates all indexes, the content before the <a href="../blog/#config.post_excerpt_separator">excerpt separator</a> is automatically extracted, allowing the user to start reading a post before deciding to jump in.</p>
 </div>
@@ -1468,26 +1483,28 @@ massa, nec semper lorem quam in massa.
 <div class="admonition abstract">
 <p class="admonition-title">Adding Authors</p>
 <p>In order to add a little more personality to your posts, you can associate each post with one or multiple <a href="../blog/#authors">authors</a>. First, create the <a href="../blog/#config.authors_file"><code>.authors.yml</code></a> file in your blog directory, and add an author:</p>
-<pre class="lang-annotation"><code>authors:
-  squidfunk:
-    name: Martin Donath
-    description: Creator
-    avatar: https://github.com/squidfunk.png</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">authors</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">squidfunk</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Martin Donath</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Creator</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">avatar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/squidfunk.png</span>
+</span></code></pre></div>
 <hr>
 <p>The <a href="../blog/#config.authors_file"><code>.authors.yml</code></a> file associates each author with an identifier (in this example <code>squidfunk</code>), which can then be used in posts. Different attributes can be configured. For a list of all possible attributes, please consult the <a href="../blog/#config.authors_file"><code>authors_file</code></a> documentation.</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Assign One or More Authors to a Post</p>
 <p>Now, you can assign one or more authors to a post by referencing their identifiers in the front matter of the Markdown file under the <code>authors</code> property. For each author, a small profile is rendered in the left sidebar of each post, as well as in post excerpts on index pages:</p>
-<pre class="lang-annotation"><code>---
-date: 2024-01-31
-authors:
-  - squidfunk
-    ...
----
-
-# Hello world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nn">---</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-31</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nt">authors</span><span class="p">:</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">squidfunk</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nn">---</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="nn">...</span>
+</span></code></pre></div>
 </div>
 <h4 id="adding-author-profiles">Adding Author Profiles<a class="headerlink" href="#adding-author-profiles" title="Permanent link">¶</a></h4>
 <!-- md:version 9.7.0 -->
@@ -1496,9 +1513,10 @@ authors:
 <div class="admonition abstract">
 <p class="admonition-title">Adding Author Profiles</p>
 <p>If you wish to add a dedicated page for each author, you can enable author profiles by setting the <a href="../blog/#config.authors_profiles"><code>authors_profiles</code></a> configuration option to <code>true</code>. Just add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - blog:
-      authors_profiles: true</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">      </span><span class="nt">authors_profiles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
 <hr>
 <p>If you combine this with <a href="#custom-index-pages">custom index pages</a>, you can create a dedicated page for each author with a short description, social media links, etc. – basically anything you can write in Markdown. The list of posts is then appended after the content of the page.</p>
 </div>
@@ -1506,15 +1524,16 @@ authors:
 <div class="admonition abstract">
 <p class="admonition-title">Adding Categories</p>
 <p>Categories are an excellent way for grouping your posts thematically on dedicated index pages. This way, a user interested in a specific topic can explore all of your posts on this topic. Make sure <a href="../blog/#categories">categories</a> are enabled and add them to the front matter <code>categories</code> property:</p>
-<pre class="lang-annotation"><code>---
-date: 2024-01-31
-categories:
-  - Hello
-  - World
----
-
-# Hello world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nn">---</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-31</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nt">categories</span><span class="p">:</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hello</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">World</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nn">---</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="nn">...</span>
+</span></code></pre></div>
 <hr>
 <p>If you want to save yourself from typos when typing out categories, you can define your desired categories in <code>mkdocs.yml</code> as part of the <a href="../blog/#config.categories_allowed"><code>categories_allowed</code></a> configuration option. The <a href="../blog/">built-in blog plugin</a> will stop the build if a category is not found within the list.</p>
 </div>
@@ -1522,15 +1541,16 @@ categories:
 <div class="admonition abstract">
 <p class="admonition-title">Adding Tags</p>
 <p>Besides <a href="../blog/#categories">categories</a>, the <a href="../blog/">built-in blog plugin</a> also integrates with the <a href="../tags/">built-in tags plugin</a>. If you add tags in the front matter <code>tags</code> property as part of a post, the post is linked from the <a href="../setting-up-tags/#adding-a-tags-index">tags index</a>:</p>
-<pre class="lang-annotation"><code>---
-date: 2024-01-31
-tags:
-  - Foo
-  - Bar
----
-
-# Hello world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nn">---</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-31</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Foo</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bar</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nn">---</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="nn">...</span>
+</span></code></pre></div>
 <hr>
 <p>As usual, the tags are rendered above the main headline and posts are linked on the tags index page, if configured. Note that posts are, as pages, only linked with their titles.</p>
 </div>
@@ -1538,12 +1558,13 @@ tags:
 <div class="admonition abstract">
 <p class="admonition-title">Changing The Slug</p>
 <p>Slugs are the shortened description of your post used in the URL. They are automatically generated, but you can specify a custom slug for a page:</p>
-<pre class="lang-annotation"><code>---
-slug: hello-world
----
-
-# Hello there world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nn">---</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello-world</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nn">---</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1"># Hello there world!</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nn">...</span>
+</span></code></pre></div>
 </div>
 <h4 id="adding-related-links">Adding Related Links<a class="headerlink" href="#adding-related-links" title="Permanent link">¶</a></h4>
 <!-- md:version 9.6.0 -->
@@ -1552,31 +1573,33 @@ slug: hello-world
 <div class="admonition abstract">
 <p class="admonition-title">Adding Related Links</p>
 <p>Related links offer the perfect way to prominently add a <em>further reading</em> section to your post that is included in the left sidebar, guiding the user to other destinations of your documentation. Use the front matter <code>links</code> property to add related links to a post:</p>
-<pre class="lang-annotation"><code>---
-date: 2024-01-31
-links:
-  - plugins/search.md
-  - insiders/how-to-sponsor.md
----
-
-# Hello world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nn">---</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-31</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nt">links</span><span class="p">:</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plugins/search.md</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">insiders/how-to-sponsor.md</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nn">---</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="nn">...</span>
+</span></code></pre></div>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Related Links</p>
 <p>You can use the exact same syntax as for the [<code>nav</code>][<code>mkdocs.nav</code>] section in <code>mkdocs.yml</code>, which means you can set explicit titles for links, add external links and even use nesting:</p>
-<pre class="lang-annotation"><code>---
-date: 2024-01-31
-links:
-  - plugins/search.md
-  - insiders/how-to-sponsor.md
-  - Nested section:
-    - External link: https://example.com
-    - setup/setting-up-site-search.md
----
-
-# Hello world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nn">---</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-31</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nt">links</span><span class="p">:</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plugins/search.md</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">insiders/how-to-sponsor.md</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Nested section</span><span class="p">:</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">External link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">setup/setting-up-site-search.md</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nn">---</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="nn">...</span>
+</span></code></pre></div>
 <hr>
 <p>If you look closely, you'll realize that you can even use an anchor to link to a specific section of a document, extending the possibilities of the [<code>nav</code>][<code>mkdocs.nav</code>] syntax in <code>mkdocs.yml</code>. The <a href="../blog/">built-in blog plugin</a> resolves the anchor and sets the title of the anchor as a [subtitle] of the related link.</p>
 <p>Note that all links must be relative to [<code>docs_dir</code>][<code>mkdocs.docs_dir</code>], as is also the case for the [<code>nav</code>][<code>mkdocs.nav</code>] setting.</p>
@@ -1585,10 +1608,12 @@ links:
 <div class="admonition abstract">
 <p class="admonition-title">Linking From and To Posts</p>
 <p>While <a href="../blog/#config.post_url_format">post URLs</a> are dynamically computed, the <a href="../blog/">built-in blog plugin</a> ensures that all links from and to posts and a post's assets are correct. If you want to link to a post, just use the path to the Markdown file as a link reference (links must be relative):</p>
-<pre class="lang-annotation"><code>[Hello World!](blog/posts/hello-world.md)</code></pre>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>[<span class="nt">Hello World!</span>](<span class="na">blog/posts/hello-world.md</span>)
+</span></code></pre></div>
 <hr>
 <p>Linking from a post to a page, e.g. the index, follows the same method:</p>
-<pre class="lang-annotation"><code>[Blog](../index.md)</code></pre>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>[<span class="nt">Blog</span>](<span class="na">../index.md</span>)
+</span></code></pre></div>
 <hr>
 <p>All assets inside the <code>posts</code> directory are copied to the <code>blog/assets</code> folder when the site is being built. Of course, you can also reference assets from posts outside of the <code>posts</code> directory. The <a href="../blog/">built-in blog plugin</a> ensures that all links are correct.</p>
 </div>
@@ -1599,13 +1624,14 @@ links:
 <div class="admonition abstract">
 <p class="admonition-title">Pinning a Post</p>
 <p>If you want to pin a post to the top of the index page, as well as the archive and category indexes it is part of, you can use the front matter <code>pin</code> property:</p>
-<pre class="lang-annotation"><code>---
-date: 2024-01-31
-pin: true
----
-
-# Hello world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nn">---</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-31</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="nn">---</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nn">...</span>
+</span></code></pre></div>
 <hr>
 <p>If multiple posts are pinned, they are sorted by their creation date, with the most recent pinned post being shown first, followed by the other pinned posts in descending order.</p>
 </div>
@@ -1614,13 +1640,14 @@ pin: true
 <p class="admonition-title">Setting the Reading Time</p>
 <p>When <a href="../blog/#config.post_readtime">enabled</a>, the reading the expected reading time of each post is computed, which is rendered as part of the post and post excerpt. Nowadays, many blogs show reading times, which is why the <a href="../blog/">built-in blog plugin</a> offers this capability as well.</p>
 <p>Sometimes, however, the computed reading time might not feel accurate, or result in odd and unpleasant numbers. For this reason, reading time can be overridden and explicitly set with the front matter <code>readtime</code> property for a post:</p>
-<pre class="lang-annotation"><code>---
-date: 2024-01-31
-readtime: 15
----
-
-# Hello world!
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nn">---</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-31</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nt">readtime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nn">---</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="c1"># Hello world!</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nn">...</span>
+</span></code></pre></div>
 <hr>
 <p>This will disable automatic reading time computation.</p>
 </div>
@@ -1636,30 +1663,33 @@ readtime: 15
 <div class="admonition abstract">
 <p class="admonition-title">Default metadata configuration</p>
 <p>If you have a lot of posts, it might feel redundant to define all of the above for each post. Luckily, the <a href="../meta/">built-in meta plugin</a> allows to set default front matter properties per folder. You can group your posts by categories, or authors, and add a <code>.meta.yml</code> file to set common properties:</p>
-<pre class="lang-annotation no-copy"><code>.
-├─ docs/
-│  └─ blog/
-│     ├─ posts/
-│     ├─ .meta.yml # (1)!
-│     └─ index.md
-└─ mkdocs.yml</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>.
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>├─<span class="w"> </span>docs/
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>│<span class="w">  </span>└─<span class="w"> </span>blog/
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>│<span class="w">     </span>├─<span class="w"> </span>posts/
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>│<span class="w">     </span>├─<span class="w"> </span>.meta.yml<span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>│<span class="w">     </span>└─<span class="w"> </span>index.md
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>└─<span class="w"> </span>mkdocs.yml
+</span></code></pre></div>
 <ol>
 <li>
 <p>🙋‍♂️ As already noted, you can also place a <code>.meta.yml</code> file in<br>
 nested folders of the <code>posts</code> directory. This file then can define<br>
 all front matter properties that are valid in posts, e.g.:</p>
-<pre class="lang-annotation"><code>authors:
-  - squidfunk
-categories:
-  - Hello
-  - World</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nt">authors</span><span class="p">:</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">squidfunk</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nt">categories</span><span class="p">:</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hello</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">World</span>
+</span></code></pre></div>
 </li>
 </ol>
 <hr>
 <p>Note that order matters – the <a href="../meta/">built-in meta plugin</a> must be defined before the blog plugin in <code>mkdocs.yml</code>, so that all set defaults are correctly picked up by the <a href="../blog/">built-in blog plugin</a>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - meta
-  - blog</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog</span>
+</span></code></pre></div>
 <hr>
 <p>Lists and dictionaries in <code>.meta.yml</code> files are merged and deduplicated with the values defined for a post, which means you can define common properties in <code>.meta.yml</code> and then add specific properties or overrides for each post.</p>
 </div>
@@ -1674,11 +1704,12 @@ categories:
 <p>All generated indexes are included after the last specified page. For example, to add a page on the authors of the blog, add the following to <code>mkdocs.yml</code>:</p>
 </li>
 </ol>
-<pre class="lang-annotation"><code>nav:
-   - Blog:
-     - blog/index.md
-     - blog/authors.md
-       ...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Blog</span><span class="p">:</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/index.md</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/authors.md</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span></code></pre></div>
 </div>
 <h2 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">¶</a></h2>
 <h3 id="custom-index-pages">Custom Index Pages<a class="headerlink" href="#custom-index-pages" title="Permanent link">¶</a></h3>
@@ -1688,14 +1719,15 @@ categories:
 <div class="admonition abstract">
 <p class="admonition-title">Custom Index Pages</p>
 <p>If you want to add custom content to automatically generated <a href="../blog/#archive">archive</a> and <a href="../blog/#categories">category</a> indexes, e.g. to add a category description prior to the list of posts, you can manually create the category page in the same location where the <a href="../blog/">built-in blog plugin</a> would create it:</p>
-<pre class="lang-annotation no-copy"><code>.
-├─ docs/
-│  └─ blog/
-│     ├─ category/
-│     │  └─ hello.md # (1)!
-│     ├─ posts/
-│     └─ index.md
-└─ mkdocs.yml</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>.
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>├─<span class="w"> </span>docs/
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>│<span class="w">  </span>└─<span class="w"> </span>blog/
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>│<span class="w">     </span>├─<span class="w"> </span>category/
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>│<span class="w">     </span>│<span class="w">  </span>└─<span class="w"> </span>hello.md<span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>│<span class="w">     </span>├─<span class="w"> </span>posts/
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>│<span class="w">     </span>└─<span class="w"> </span>index.md
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>└─<span class="w"> </span>mkdocs.yml
+</span></code></pre></div>
 <ol>
 <li>
 <p>🙋‍♂️ The easiest way is to first <a href="#adding-categories">add the category</a> to the blog post,<br>
@@ -1713,12 +1745,13 @@ options, be sure to adjust the path accordingly:</p>
 </ol>
 <hr>
 <p>You can now add arbitrary content to the newly created file, or set specific front matter properties for this page, e.g. to change the [page description]:</p>
-<pre class="lang-annotation"><code>---
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
----
-
-# Hello
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nn">---</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nullam urna elit, malesuada eget finibus ut, ac tortor.</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="nn">---</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="c1"># Hello</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="nn">...</span>
+</span></code></pre></div>
 <hr>
 <p>All post excerpts belonging to the category are automatically appended. Lists and dictionaries in <code>.meta.yml</code> files are merged and deduplicated with the values defined for a post, which means you can define common properties in <code>.meta.yml</code> and then add specific properties or overrides for each post.</p>
 </div>

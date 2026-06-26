@@ -1319,11 +1319,13 @@
 <ul>
 <li>The plugin scans the generated HTML for external assets, i.e., scripts, style sheets, images, and web fonts, downloads them, stores them in the [<code>site</code> directory][<code>mkdocs.site_dir</code>] and replaces all references with links to the downloaded copies for effortless self-hosting. For example:</li>
 </ul>
-<pre class="lang-annotation"><code>&lt;script src="https://example.com/script.js"&gt;&lt;/script&gt;</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://example.com/script.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <ul>
 <li>This external script is downloaded, and the link is replaced with:</li>
 </ul>
-<p></p><pre class="lang-annotation"><code>&lt;script src="assets/external/example.com/script.js"&gt;&lt;/script&gt;</code></pre><br>
+<p></p><div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/external/example.com/script.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div><br>
 Of course, scripts and style sheets can reference further external assets, which is why this process is repeated recursively until no further external assets are detected:<p></p>
 <ul>
 <li>Scripts are scanned for further scripts, style sheets and JSON files</li>
@@ -1368,8 +1370,9 @@ file that can be downloaded.</p>
 <!-- md:flag experimental -->
 
 <p>As with all [built-in plugins], getting started with the privacy plugin is straightforward. Just add the following lines to <code>mkdocs.yml</code>, and start effortlessly self-hosting external assets:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">privacy</span>
+</span></code></pre></div>
 <p>The privacy plugin is built into Material for MkDocs and doesn't need to be installed.</p>
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">¶</a></h3>
 <p>The following settings are available:</p>
@@ -1379,9 +1382,10 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 
 <p>Use this setting to enable or disable the plugin when <a href="../creating-your-site/#building-your-site">building your project</a>. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable][<code>mkdocs.env</code>] in <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      enabled: !ENV [CI, false]</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CI</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
 <p>This configuration enables the plugin only during continuous integration (CI).</p>
 <hr>
 <h4 id="_2"><!-- md:setting config.concurrency --><a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
@@ -1389,9 +1393,10 @@ file that can be downloaded.</p>
 <!-- md:default available CPUs - 1 -->
 
 <p>With more CPUs available, the plugin can do more work in parallel, and thus complete handling of external assets faster. If you want to disable concurrent processing completely, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      concurrency: 1</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="nt">concurrency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span></code></pre></div>
 <p>By default, the plugin uses all available CPUs - 1 with a minimum of 1.</p>
 <h3 id="caching">Caching<a class="headerlink" href="#caching" title="Permanent link">¶</a></h3>
 <p>The plugin implements an <a href="../caching/">intelligent caching</a> mechanism, ensuring that external assets are only downloaded when they're not already contained in the cache. While the initial build might take some time, it's a good idea to use caching, as it will speed up consecutive builds.</p>
@@ -1402,18 +1407,20 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 
 <p>Use this setting to instruct the plugin to bypass the cache, in order to re-schedule downloads for all external assets, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      cache: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 <hr>
 <h4 id="_4"><!-- md:setting config.cache_dir --><a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
 <!-- md:version 9.5.0 -->
 <!-- md:default `.cache/plugin/privacy` -->
 
 <p>It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where downloaded copies are cached. If you want to change it, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      cache_dir: my/custom/dir</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="nt">cache_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my/custom/dir</span>
+</span></code></pre></div>
 <p>If you're using [multiple instances] of the plugin, it can be a good idea to set different cache directories for both instances, so that they don't interfere with each other.</p>
 <h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h3>
 <p>The following settings are available for logging:</p>
@@ -1423,9 +1430,10 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 
 <p>Use this setting to control whether the plugin should display log messages when building your site. While not being recommended, you can disable logging with:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      log: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 <hr>
 <h4 id="_6"><!-- md:setting config.log_level --><a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
 <!-- md:version 9.7.0 -->
@@ -1435,27 +1443,31 @@ file that can be downloaded.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><code>error</code></label><label for="__tabbed_1_2"><code>warn</code></label><label for="__tabbed_1_3"><code>info</code></label><label for="__tabbed_1_4"><code>debug</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      log_level: error</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">error</span>
+</span></code></pre></div>
 <p>Only errors are reported.</p>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      log_level: warn</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warn</span>
+</span></code></pre></div>
 <p>Errors and warnings are reported, terminating the build in [<code>strict</code>][<code>mkdocs.strict</code>] mode. This includes warnings when symlinks cannot be created due to a lack of permissions on Windows systems (#6550).</p>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      log_level: info</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
+</span></code></pre></div>
 <p>Errors, warnings and informational messages are reported, including which assets were successfully downloaded by the plugin.</p>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      log_level: debug</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">debug</span>
+</span></code></pre></div>
 <p>All messages are reported, including debug messages, if and only if MkDocs was started with the <code>--verbose</code> flag. Note that this will print a lot of messages and is only useful for debugging.</p>
 </div>
 </div>
@@ -1468,27 +1480,30 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 
 <p>Use this setting to control whether the plugin should download external assets. If you only want the plugin to process <a href="#external-links">external links</a>, you can disable handling of external assets with:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      assets: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">      </span><span class="nt">assets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 <hr>
 <h4 id="_8"><!-- md:setting config.assets_fetch --><a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
 <!-- md:version 9.5.0 -->
 <!-- md:default `true` -->
 
 <p>Use this setting to control whether the plugin should downloads or only report external assets when they're encountered. If you already self-host all external assets, this setting can be used as a safety net to detect links to external assets placed by the author in pages:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      assets_fetch: true</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">      </span><span class="nt">assets_fetch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
 <hr>
 <h4 id="_9"><!-- md:setting config.assets_fetch_dir --><a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
 <!-- md:version 9.5.0 -->
 <!-- md:default `assets/external` -->
 
 <p>It is normally not necessary to specify this setting, except for when you want to change the path within the [<code>site</code> directory][<code>mkdocs.site_dir</code>] where external assets are stored. If you want to change it, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      assets_fetch_dir: my/custom/dir</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">      </span><span class="nt">assets_fetch_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my/custom/dir</span>
+</span></code></pre></div>
 <p>This configuration stores the downloaded copies at <code>my/custom/dir</code> in the<br>
 [<code>site</code> directory][<code>mkdocs.site_dir</code>].</p>
 <hr>
@@ -1497,21 +1512,23 @@ file that can be downloaded.</p>
 <!-- md:default none -->
 
 <p>Use this setting to enable downloading of external assets for specific origins, e.g., when using [multiple instances] of the plugin to fine-tune processing of external assets for different origins:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      assets_include:
-        - unsplash.com/*</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">      </span><span class="nt">assets_include</span><span class="p">:</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unsplash.com/*</span>
+</span></code></pre></div>
 <hr>
 <h4 id="_11"><!-- md:setting config.assets_exclude --><a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
 <!-- md:version 9.7.0 -->
 <!-- md:default none -->
 
 <p>Use this setting to disable downloading of external assets for specific origins, e.g., when using [multiple instances] of the plugin to fine-tune processing of external assets for different origins:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      assets_exclude: # (1)!
-        - unpkg.com/mathjax@3/*
-        - giscus.app/*</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">      </span><span class="nt">assets_exclude</span><span class="p">:</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unpkg.com/mathjax@3/*</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">giscus.app/*</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p><a href="../math/">MathJax</a> loads web fonts for typesetting of mathematical content through relative URLs, and thus cannot be automatically bundled by the privacy plugin. <a href="https://docs.mathjax.org/en/latest/web/hosting.html">MathJax can be self-hosted</a>.</p>
@@ -1527,39 +1544,45 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 
 <p>Use this setting to instruct the plugin to parse and process external links to annotate them for <a href="https://developer.chrome.com/en/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/">improved security</a>, or to automatically add additional attributes to external links. If you want to disable processing of external links, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      links: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">      </span><span class="nt">links</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 <hr>
 <h4 id="_13"><!-- md:setting config.links_attr_map --><a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
 <!-- md:version 9.7.0 -->
 <!-- md:default none -->
 
 <p>Use this setting to specify additional attributes that should be added to external links, for example, to add <code>target="_blank"</code> to all external links so they open in a new tab:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      links_attr_map:
-        target: _blank</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">      </span><span class="nt">links_attr_map</span><span class="p">:</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+</span></code></pre></div>
 <hr>
 <h4 id="_14"><!-- md:setting config.links_noopener --><a class="headerlink" href="#_14" title="Permanent link">¶</a></h4>
 <!-- md:version 9.7.0 -->
 <!-- md:default `true` -->
 
 <p>It is normally not recommended to change this setting, as it will automatically annotate external links that open in a new window with <code>rel="noopener"</code> for <a href="https://developer.chrome.com/en/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/">improved security</a>:</p>
-<pre class="lang-annotation"><code>plugins:
-  - privacy:
-      links_noopener: true</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">      </span><span class="nt">links_noopener</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">¶</a></h2>
 <h3 id="dynamic-urls">Dynamic URLs<a class="headerlink" href="#dynamic-urls" title="Permanent link">¶</a></h3>
 <p>Dynamically created URLs as part of scripts are not detected, and thus cannot be downloaded automatically, as the plugin does not execute scripts – it only detects fully qualified URLs for downloading and replacement. In short, don't do this:</p>
-<pre class="lang-annotation"><code>const host = "https://example.com"
-const path = `${host}/script.js`</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://example.com"</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">host</span><span class="si">}</span><span class="sb">/script.js`</span>
+</span></code></pre></div>
 <p>Instead, always use fully qualified URLs:</p>
-<pre class="lang-annotation"><code>const url ="https://example.com/script.js"</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="s2">"https://example.com/script.js"</span>
+</span></code></pre></div>
 <h3 id="embedded-html">Embedded HTML<a class="headerlink" href="#embedded-html" title="Permanent link">¶</a></h3>
 <p>By default, embedded HTML files (e.g. in iframes) are not scanned for external assets. This is a limitation of MkDocs, as it considers <code>.html</code> files to be templates, which must be explicitly listed under [<code>extra_templates</code>][<code>mkdocs.extra_templates</code>]. Thus, to self-host external assets of an embedded HTML file:</p>
-<pre class="lang-annotation"><code>extra_templates:
-  - iframe.html</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">extra_templates</span><span class="p">:</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iframe.html</span>
+</span></code></pre></div>
 <p>Note that the path to <code>iframe.html</code> is relative to the [<code>docs_dir</code>][<code>mkdocs.docs_dir</code>] directory.</p>
 
 

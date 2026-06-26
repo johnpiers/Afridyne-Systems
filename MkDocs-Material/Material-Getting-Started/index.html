@@ -1040,16 +1040,20 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Latest</label><label for="__tabbed_1_2">9.x</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>pip install mkdocs-material</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>pip install mkdocs-material=="9.*" # (1)!</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material<span class="o">==</span><span class="s2">"9.*"</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>Material for MkDocs uses <a href="https://semver.org/">semantic versioning</a> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, which is why it's a good idea to limit upgrades to the current major version.<br>
     This will make sure that you don't accidentally <a href="../upgrade/">upgrade to the next major version</a>, which may include breaking changes that silently corrupt your site. Additionally, you can use <code>pip freeze</code> to create a lockfile, so builds are reproducible at all times:<br>
-    <pre class="lang-annotation"><code>pip freeze &gt; requirements.txt</code></pre><br>
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip freeze &gt; requirements.txt
+</span></code></pre></div><br>
     Now, the lockfile can be used for installation:<br>
-    <pre class="lang-annotation"><code>pip install -r requirements.txt</code></pre></li>
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip install -r requirements.txt
+</span></code></pre></div></li>
 </ol>
 <p>This will automatically install compatible versions of all dependencies: <a href="https://www.mkdocs.org">MkDocs</a>, <a href="https://python-markdown.github.io/">Markdown</a>, <a href="https://pygments.org/">Pygments</a> and <a href="https://facelessuser.github.io/pymdown-extensions/">Python Markdown Extensions</a>. Material for MkDocs always strives to support the latest versions, so there's no need to install those packages separately.</p>
 </div>
@@ -1070,10 +1074,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Latest</label><label for="__tabbed_2_2">9.x</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>docker pull squidfunk/mkdocs-material</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker pull squidfunk/mkdocs-material
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>docker pull squidfunk/mkdocs-material:9</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker pull squidfunk/mkdocs-material:9
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1091,23 +1097,24 @@
 <details class="question">
 <summary>How to add plugins to the Docker image?</summary>
 <p>Material for MkDocs only bundles selected plugins in order to keep the size of the official image small. If the plugin you want to use is not included, you can add them easily. Create a <code>Dockerfile</code> and extend the official image:</p>
-<p><code>Dockerfile title="Dockerfile"
-FROM squidfunk/mkdocs-material
-RUN pip install mkdocs-macros-plugin
-RUN pip install mkdocs-glightbox
-</code></p><pre class="lang-annotation"><code><code>
-Next, build the image with the following command:
-</code></code></pre><code>
-docker build -t squidfunk/mkdocs-material .</code><p></p>
+<div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
+</span></code></pre></div>
+<p>Next, build the image with the following command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker build -t squidfunk/mkdocs-material .
+</span></code></pre></div>
 <p>The new image will have additional packages installed and can be used exactly like the official image.</p>
 </details>
 <h3 id="with-git">With Git<a class="headerlink" href="#with-git" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">With Git</p>
 <p>Material for MkDocs can be directly used from <a href="https://github.com/squidfunk/mkdocs-material">GitHub</a> by cloning the repository into a subfolder of your project root which might be useful if you want to use the very latest version:</p>
-<pre class="lang-annotation"><code>git clone https://github.com/squidfunk/mkdocs-material.git</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git clone https://github.com/squidfunk/mkdocs-material.git
+</span></code></pre></div>
 <p>Next, install the theme and its dependencies with:</p>
-<pre class="lang-annotation"><code>pip install -e mkdocs-material</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip install -e mkdocs-material
+</span></code></pre></div>
 </div>
 <div class="footnote">
 <hr>

@@ -979,29 +979,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pep-621-dependencies-declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PEP 621 dependencies declaration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adapt-to-your-dependencies-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        adapt to your dependencies manager
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="adapt to your dependencies manager">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#migrate-to-the-new-python-handler" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1011,36 +988,8 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#pep-621-dependencies-declaration_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PEP 621 dependencies declaration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adapt-to-your-dependencies-manager_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        adapt to your dependencies manager
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="adapt to your dependencies manager">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#selection-options" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1050,8 +999,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#rendering-options" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1061,8 +1010,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#templates" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1072,8 +1021,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#custom-handlers" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1100,8 +1049,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#code" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1111,8 +1060,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#templates_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1122,8 +1071,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1133,8 +1082,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#handler-extensions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1142,11 +1091,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1213,14 +1157,13 @@
 <p>Since version 0.18, a new Python handler is available. It is based on <a href="https://github.com/mkdocstrings/griffe">Griffe</a>, which is an improved version of <a href="https://github.com/mkdocstrings/pytkdocs">pytkdocs</a>.</p>
 <p>If you want to keep using the legacy handler as long as possible, you can depend on <code>mkdocstrings-python-legacy</code> directly, or specify the <code>python-legacy</code> extra when depending on <em>mkdocstrings</em>:</p>
 <hr>
-<p>```toml title="pyproject.toml"</p>
-<h1 id="pep-621-dependencies-declaration">PEP 621 dependencies declaration<a class="headerlink" href="#pep-621-dependencies-declaration" title="Permanent link">¶</a></h1>
-<h1 id="adapt-to-your-dependencies-manager">adapt to your dependencies manager<a class="headerlink" href="#adapt-to-your-dependencies-manager" title="Permanent link">¶</a></h1>
-<p>[project]<br>
-dependencies = [<br>
-"mkdocstrings[python-legacy]&gt;=0.18",<br>
-]<br>
-```</p>
+<div class="language-toml highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># PEP 621 dependencies declaration</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># adapt to your dependencies manager</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">[project]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s2">"mkdocstrings[python-legacy]&gt;=0.18"</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">]</span>
+</span></code></pre></div>
 <hr>
 <p>The legacy handler will continue to "work" for many releases, as long as the new handler does not cover all previous use-cases.</p>
 </div>
@@ -1228,14 +1171,13 @@ dependencies = [<br>
 <div class="admonition example">
 <p class="admonition-title">New Python Handler</p>
 <p>To use the new Python handler, you can depend on <code>mkdocstrings-python</code> directly, or specify the <code>python</code> extra when depending on <em>mkdocstrings</em>:</p>
-<p>```toml title="pyproject.toml"</p>
-<h1 id="pep-621-dependencies-declaration_1">PEP 621 dependencies declaration<a class="headerlink" href="#pep-621-dependencies-declaration_1" title="Permanent link">¶</a></h1>
-<h1 id="adapt-to-your-dependencies-manager_1">adapt to your dependencies manager<a class="headerlink" href="#adapt-to-your-dependencies-manager_1" title="Permanent link">¶</a></h1>
-<p>[project]<br>
-dependencies = [<br>
-"mkdocstrings[python]&gt;=0.18",<br>
-]<br>
-```</p>
+<div class="language-toml highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># PEP 621 dependencies declaration</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># adapt to your dependencies manager</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">[project]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s2">"mkdocstrings[python]&gt;=0.18"</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">]</span>
+</span></code></pre></div>
 </div>
 <h4 id="selection-options">Selection Options<a class="headerlink" href="#selection-options" title="Permanent link">¶</a></h4>
 <div class="admonition decision">
@@ -1296,14 +1238,15 @@ dependencies = [<br>
 <ul>
 <li>For <em>mkdocstrings</em>, a custom handler package would have the following structure:</li>
 </ul>
-<pre class="lang-annotation"><code>📁 your_repository
-└─ 📁 mkdocstrings_handlers
-    └─ 📁 custom_handler
-        ├─ 📁 templates
-        │&nbsp;  ├─ 📁 material
-        │   ├─ 📁 mkdocs
-        │   └─ 📁 readthedocs
-        └─ 📄 __init__.py</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>📁 your_repository
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>└─ 📁 mkdocstrings_handlers
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    └─ 📁 custom_handler
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        ├─ 📁 templates
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        │&nbsp;  ├─ 📁 material
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        │   ├─ 📁 mkdocs
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        │   └─ 📁 readthedocs
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        └─ 📄 __init__.py
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note The Absence of Module!</p>
 <p><strong>Note the absence of <code>__init__.py</code> module in<code>mkdocstrings_handlers</code>!</strong></p>
@@ -1384,43 +1327,40 @@ dependencies = [<br>
 <p class="admonition-title"> Tell <em>mkdocstrings</em> to use the templates of another handler.</p>
 <p>Finally, it's possible to entirely omit templates, and tell <em>mkdocstrings</em> to use the templates of another handler. In you handler, override the <code>get_templates_dir()</code> method to return the other handlers templates path:</p>
 <hr>
-<pre class="lang-annotation"><code>from pathlib import Path
-from mkdocstrings import BaseHandler
-
-
-class CobraHandler(BaseHandler):
-def get_templates_dir(self, handler: str | None = None) -&gt; Path:
-# use the python handler templates
-# (it assumes the python handler is installed)
-return super().get_templates_dir("python")</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mkdocstrings</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseHandler</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CobraHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_templates_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># use the python handler templates</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># (it assumes the python handler is installed)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_templates_dir</span><span class="p">(</span><span class="s2">"python"</span><span class="p">)</span>
+</span></code></pre></div>
 </div>
 <h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h4>
 <div class="admonition info">
 <p class="admonition-title">Usage</p>
 <p>When a custom handler is installed, it is then available to <em>mkdocstrings</em>. You can configure it as usual:</p>
-<p>```yaml title="mkdocs.yml"<br>
-plugins:<br>
-- mkdocstrings:<br>
-    handlers:<br>
-      custom_handler:<br>
-        handler_config_option: yes<br>
-        options:<br>
-          some_config_option: "a"<br>
-          other_config_option: 0<br>
-</p><pre class="lang-annotation"><code>
----
-
-...and use it in your autodoc instructions:
-
-
-```md title="docs/some_page.md"
-# Documentation for an object
-
-::: some.objects.path
-    handler: custom_handler
-    options:
-      some_config_option: "b"
-      other_config_option: 1</code></pre><p></p>
+<div class="language-yaml highlight"><span class="filename">mkdocs.yml</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">handlers</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">custom_handler</span><span class="p">:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="nt">handler_config_option</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="nt">options</span><span class="p">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">          </span><span class="nt">some_config_option</span><span class="p">:</span><span class="w"> </span><span class="s">"a"</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">          </span><span class="nt">other_config_option</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span></code></pre></div>
+<hr>
+<p>...and use it in your autodoc instructions:</p>
+<div class="language-md highlight"><span class="filename">docs/some_page.md</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gh"># Documentation for an object</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>::: some.objects.path
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    handler: custom_handler
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    options:
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>      some_config_option: "b"
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>      other_config_option: 1
+</span></code></pre></div>
 </div>
 <h4 id="handler-extensions">Handler Extensions<a class="headerlink" href="#handler-extensions" title="Permanent link">¶</a></h4>
 <div class="admonition recommendation">
@@ -1435,9 +1375,9 @@ plugins:<br>
 <div class="admonition desc">
 <p class="admonition-title">Defining an entry-point</p>
 <p>An extension is a Python package that defines an entry-point for a specific handler:</p>
-<p><code>toml title="pyproject.toml"
-[project.entry-points."mkdocstrings.python.templates"] # (1)!
-extension-name = "extension_package:get_templates_path" # (2)!</code></p>
+<div class="language-toml highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[project.entry-points.</span><span class="s2">"mkdocstrings.python.templates"</span><span class="k">]</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">extension-name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"extension_package:get_templates_path"</span><span class="w"> </span><span class="c1"># (2)!</span>
+</span></code></pre></div>
 <ol>
 <li>Replace <code>python</code> by the name of the handler you want to add<br>
 templates to.</li>
@@ -1449,28 +1389,31 @@ the actual module path and function name in your package.</li>
 <div class="admonition desc">
 <p class="admonition-title">entry-point</p>
 <p>This entry-point assumes that the extension provides a <code>get_templates_path</code> function directly under the <code>extension_package</code> package:</p>
-<pre class="lang-annotation"><code><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.014 0h5.34v2.652H2.888v18.681h2.468V24H.015zm17.622 5.049v2.78h-4.274v12.935h-3.008V7.83H6.059V5.05zM23.986 24h-5.34v-2.652h2.467V2.667h-2.468V0h5.34v24Z"></path></svg></span> pyproject.toml
-📁 extension_package/
-├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"></path></svg></span> __init__.py
-└── 📁 templates/</code></pre>
-<p>```python title="extension_package/<strong>init</strong>.py"<br>
-from pathlib import Path</p>
-<p>def get_templates_path() -&gt; Path:<br>
-    return Path(<strong>file</strong>).parent / "templates"<br>
-```</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.014 0h5.34v2.652H2.888v18.681h2.468V24H.015zm17.622 5.049v2.78h-4.274v12.935h-3.008V7.83H6.059V5.05zM23.986 24h-5.34v-2.652h2.467V2.667h-2.468V0h5.34v24Z"></path></svg></span><span class="w"> </span>pyproject.toml
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>📁<span class="w"> </span>extension_package/
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"></path></svg></span><span class="w"> </span>__init__.py
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└──<span class="w"> </span>📁<span class="w"> </span>templates/
+</span></code></pre></div>
+<div class="language-python highlight"><span class="filename">extension_package/__init__.py</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_templates_path</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"templates"</span>
+</span></code></pre></div>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">Function</p>
 <p>This function doesn't accept any argument and returns the path (<a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path"><code>pathlib.Path</code></a> or <a href="https://docs.python.org/3/library/stdtypes.html#str"><code>str</code></a>) to a directory containing templates. The directory must contain one subfolder for each supported theme, even if empty (see "fallback theme" in <a href="#templates_1">custom handlers templates</a>).</p>
 <hr>
 <p>For example:</p>
-<pre class="lang-annotation"><code><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.014 0h5.34v2.652H2.888v18.681h2.468V24H.015zm17.622 5.049v2.78h-4.274v12.935h-3.008V7.83H6.059V5.05zM23.986 24h-5.34v-2.652h2.467V2.667h-2.468V0h5.34v24Z"></path></svg></span> pyproject.toml
-📁 extension_package/
-├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"></path></svg></span> __init__.py
-└── 📁 templates/
-    ├── 📁 material/
-    ├── 📁 readthedocs/
-    └── 📁 mkdocs/</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.014 0h5.34v2.652H2.888v18.681h2.468V24H.015zm17.622 5.049v2.78h-4.274v12.935h-3.008V7.83H6.059V5.05zM23.986 24h-5.34v-2.652h2.467V2.667h-2.468V0h5.34v24Z"></path></svg></span><span class="w"> </span>pyproject.toml
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>📁<span class="w"> </span>extension_package/
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"></path></svg></span><span class="w"> </span>__init__.py
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└──<span class="w"> </span>📁<span class="w"> </span>templates/
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>├──<span class="w"> </span>📁<span class="w"> </span>material/
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span>├──<span class="w"> </span>📁<span class="w"> </span>readthedocs/
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span>└──<span class="w"> </span>📁<span class="w"> </span>mkdocs/
+</span></code></pre></div>
 <hr>
 <ul>
 <li>

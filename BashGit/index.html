@@ -3481,22 +3481,17 @@
 
 <div class="admonition abstract">
 <p class="admonition-title">The Bourne - Again Shell</p>
-<p>``` markdown title="Bash Scripting."</p>
-<ul>
-<li>Category: CLI</li>
-<li>tags: [Featured]</li>
-<li>Keywords:</li>
-<li>Variables:<ul>
-<li>Functions</li>
-<li>Interpolation</li>
-<li>Brace expansions</li>
-<li>Loops</li>
-<li>Conditional execution</li>
-<li>Command substitution<br>
-```</li>
-</ul>
-</li>
-</ul>
+<div class="language-markdown highlight"><span class="filename">Bash Scripting.</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">-</span><span class="w"> </span>Category: CLI
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">-</span><span class="w"> </span>tags: [Featured]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">-</span><span class="w"> </span>Keywords:
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="k">-</span><span class="w"> </span>Variables:
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Functions
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Interpolation
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Brace expansions
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Loops
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Conditional execution
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Command substitution
+</span></code></pre></div>
 </div>
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">¶</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
@@ -3523,45 +3518,51 @@
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Example</p>
-<pre class="lang-annotation"><code>#!/usr/bin/env bash
-
-name="John"
-echo "Hello $name!"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/usr/bin/env bash</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">name</span><span class="o">=</span><span class="s2">"John"</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Hello </span><span class="nv">$name</span><span class="s2">!"</span>
+</span></code></pre></div>
 </div>
 <h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">¶</a></h3>
 <div class="admonition abstract">
 <p class="admonition-title">Variables</p>
-<pre class="lang-annotation"><code>name="John"
-echo $name  # see below
-echo "$name"
-echo "${name}!"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">"John"</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$name</span><span class="w">  </span><span class="c1"># see below</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$name</span><span class="s2">"</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">!"</span>
+</span></code></pre></div>
 </div>
 <div class="admonition ex">
 <p class="admonition-title">Generally Quote Variables</p>
 <ul>
 <li>Generally Quote Your Variables Unless They Contain Wildcards to Expand or Command Fragments.</li>
 </ul>
-<pre class="lang-annotation"><code>wildcard="*.txt"
-options="iv"
-cp -$options $wildcard /tmp</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">wildcard</span><span class="o">=</span><span class="s2">"*.txt"</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">options</span><span class="o">=</span><span class="s2">"iv"</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>cp<span class="w"> </span>-<span class="nv">$options</span><span class="w"> </span><span class="nv">$wildcard</span><span class="w"> </span>/tmp
+</span></code></pre></div>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">String Quotes</p>
-<pre class="lang-annotation"><code>name="John"
-echo "Hi $name"  #=&gt; Hi John
-echo 'Hi $name'  #=&gt; Hi $name</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">"John"</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Hi </span><span class="nv">$name</span><span class="s2">"</span><span class="w">  </span><span class="c1">#=&gt; Hi John</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'Hi $name'</span><span class="w">  </span><span class="c1">#=&gt; Hi $name</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Shell Execution</p>
-<pre class="lang-annotation"><code>echo "I'm in $(pwd)"
-echo "I'm in `pwd`"  # obsolescent
-# Same</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"I'm in </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"I'm in `pwd`"</span><span class="w">  </span><span class="c1"># obsolescent</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Same</span>
+</span></code></pre></div>
 </div>
 <div class="admonition git">
 <p class="admonition-title">Conditional Execution</p>
 <h4 id="conditional-execution">Conditional Execution<a class="headerlink" href="#conditional-execution" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>git commit &amp;&amp; git push
-git commit || echo "Commit failed"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>commit<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>commit<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Commit failed"</span>
+</span></code></pre></div>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -3585,11 +3586,12 @@ git commit || echo "Commit failed"</code></pre>
 <div class="admonition desc">
 <p class="admonition-title">Functions</p>
 <h4 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>get_name() {
-  echo "John"
-}
-
-echo "You are $(get_name)"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>get_name<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"John"</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="o">}</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"You are </span><span class="k">$(</span>get_name<span class="k">)</span><span class="s2">"</span>
+</span></code></pre></div>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -3613,11 +3615,12 @@ echo "You are $(get_name)"</code></pre>
 <div class="admonition desc">
 <p class="admonition-title">Conditionals</p>
 <h4 id="conditionals">Conditionals<a class="headerlink" href="#conditionals" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>if [[ -z "$string" ]]; then
-  echo "String is empty"
-elif [[ -n "$string" ]]; then
-  echo "String is not empty"
-fi</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$string</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"String is empty"</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$string</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"String is not empty"</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">fi</span>
+</span></code></pre></div>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -3641,8 +3644,9 @@ fi</code></pre>
 <div class="admonition desc">
 <p class="admonition-title">Strict Mode</p>
 <h4 id="strict-mode">Strict Mode<a class="headerlink" href="#strict-mode" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>set -euo pipefail
-IFS=$'\n\t'</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">IFS</span><span class="o">=</span><span class="s1">$'\n\t'</span>
+</span></code></pre></div>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -3666,7 +3670,8 @@ IFS=$'\n\t'</code></pre>
 <div class="admonition info">
 <p class="admonition-title">Brace Expansion</p>
 <h4 id="brace-expansion">Brace Expansion<a class="headerlink" href="#brace-expansion" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>echo {A,B}.js</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">echo</span><span class="w"> </span><span class="o">{</span>A,B<span class="o">}</span>.js
+</span></code></pre></div>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -3717,56 +3722,62 @@ IFS=$'\n\t'</code></pre>
 <p class="admonition-title">Parameter Expansion</p>
 <h3 id="parameter-expansion">Parameter Expansion<a class="headerlink" href="#parameter-expansion" title="Permanent link">¶</a></h3>
 <h4 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>name="John"
-echo "${name}"
-echo "${name/J/j}"    #=&gt; "john" (substitution)
-echo "${name:0:2}"    #=&gt; "Jo" (slicing)
-echo "${name::2}"     #=&gt; "Jo" (slicing)
-echo "${name::-1}"    #=&gt; "Joh" (slicing)
-echo "${name:(-1)}"   #=&gt; "n" (slicing from right)
-echo "${name:(-2):1}" #=&gt; "h" (slicing from right)
-echo "${food:-Cake}"  #=&gt; $food or "Cake"</code></pre>
-<pre class="lang-annotation"><code>length=2
-echo "${name:0:length}"  #=&gt; "Jo"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">"John"</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="p">/J/j</span><span class="si">}</span><span class="s2">"</span><span class="w">    </span><span class="c1">#=&gt; "john" (substitution)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="s2">"</span><span class="w">    </span><span class="c1">#=&gt; "Jo" (slicing)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="p">::</span><span class="nv">2</span><span class="si">}</span><span class="s2">"</span><span class="w">     </span><span class="c1">#=&gt; "Jo" (slicing)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="p">:</span><span class="k">:-</span><span class="nv">1</span><span class="si">}</span><span class="s2">"</span><span class="w">    </span><span class="c1">#=&gt; "Joh" (slicing)</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="p">:(-1)</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1">#=&gt; "n" (slicing from right)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="p">:(-2):</span><span class="nv">1</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="c1">#=&gt; "h" (slicing from right)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">food</span><span class="k">:-</span><span class="nv">Cake</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1">#=&gt; $food or "Cake"</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">length</span><span class="o">=</span><span class="m">2</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">name</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">length</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1">#=&gt; "Jo"</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Path &amp; String Manipulation</p>
 <h4 id="path-string-manipulation">Path &amp; String Manipulation<a class="headerlink" href="#path-string-manipulation" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>str="/path/to/foo.cpp"
-echo "${str%.cpp}"    # /path/to/foo
-echo "${str%.cpp}.o"  # /path/to/foo.o
-echo "${str%/*}"      # /path/to
-
-echo "${str##*.}"     # cpp (extension)
-echo "${str##*/}"     # foo.cpp (basepath)
-
-echo "${str#*/}"      # path/to/foo.cpp
-echo "${str##*/}"     # foo.cpp
-
-echo "${str/foo/bar}" # /path/to/bar.cpp</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">str</span><span class="o">=</span><span class="s2">"/path/to/foo.cpp"</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">%.cpp</span><span class="si">}</span><span class="s2">"</span><span class="w">    </span><span class="c1"># /path/to/foo</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">%.cpp</span><span class="si">}</span><span class="s2">.o"</span><span class="w">  </span><span class="c1"># /path/to/foo.o</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">%/*</span><span class="si">}</span><span class="s2">"</span><span class="w">      </span><span class="c1"># /path/to</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">##*.</span><span class="si">}</span><span class="s2">"</span><span class="w">     </span><span class="c1"># cpp (extension)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">##*/</span><span class="si">}</span><span class="s2">"</span><span class="w">     </span><span class="c1"># foo.cpp (basepath)</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">#*/</span><span class="si">}</span><span class="s2">"</span><span class="w">      </span><span class="c1"># path/to/foo.cpp</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">##*/</span><span class="si">}</span><span class="s2">"</span><span class="w">     </span><span class="c1"># foo.cpp</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">/foo/bar</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="c1"># /path/to/bar.cpp</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Slicing &amp; Extraction</p>
 <h4 id="slicing-extraction">Slicing &amp; Extraction<a class="headerlink" href="#slicing-extraction" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>str="Hello world"
-echo "${str:6:5}"    # "world"
-echo "${str: -5:5}"  # "world"</code></pre>
-<pre class="lang-annotation"><code>src="/path/to/foo.cpp"
-base=${src##*/}   #=&gt; "foo.cpp" (basepath)
-dir=${src%$base}  #=&gt; "/path/to/" (dirpath)</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">str</span><span class="o">=</span><span class="s2">"Hello world"</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">:</span><span class="nv">6</span><span class="p">:</span><span class="nv">5</span><span class="si">}</span><span class="s2">"</span><span class="w">    </span><span class="c1"># "world"</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">: -5:</span><span class="nv">5</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># "world"</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">src</span><span class="o">=</span><span class="s2">"/path/to/foo.cpp"</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">base</span><span class="o">=</span><span class="si">${</span><span class="nv">src</span><span class="p">##*/</span><span class="si">}</span><span class="w">   </span><span class="c1">#=&gt; "foo.cpp" (basepath)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nv">dir</span><span class="o">=</span><span class="si">${</span><span class="nv">src</span><span class="p">%</span><span class="nv">$base</span><span class="si">}</span><span class="w">  </span><span class="c1">#=&gt; "/path/to/" (dirpath)</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Expansion &amp; Indirection</p>
 <h4 id="prefix-name-expansion-indirection">Prefix Name Expansion &amp; Indirection<a class="headerlink" href="#prefix-name-expansion-indirection" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code># Prefix Name Expansion
-prefix_a=one
-prefix_b=two
-echo ${!prefix_*}  # prefix_a prefix_b
-
-# Indirection
-name=joe
-pointer=name
-echo ${!pointer}   # joe</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Prefix Name Expansion</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nv">prefix_a</span><span class="o">=</span>one
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nv">prefix_b</span><span class="o">=</span>two
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="p">!prefix_*</span><span class="si">}</span><span class="w">  </span><span class="c1"># prefix_a prefix_b</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1"># Indirection</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nv">name</span><span class="o">=</span>joe
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nv">pointer</span><span class="o">=</span>name
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="p">!pointer</span><span class="si">}</span><span class="w">   </span><span class="c1"># joe</span>
+</span></code></pre></div>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -3871,12 +3882,14 @@ echo ${!pointer}   # joe</code></pre>
 <div class="admonition desc">
 <p class="admonition-title">Comments</p>
 <h4 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code># Single line comment</code></pre>
-<pre class="lang-annotation"><code>: '
-This is a
-multi line
-comment
-'</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Single line comment</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>:<span class="w"> </span><span class="s1">'</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="s1">This is a</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="s1">multi line</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="s1">comment</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="s1">'</span>
+</span></code></pre></div>
 </div>
 <h3 id="substrings">Substrings<a class="headerlink" href="#substrings" title="Permanent link">¶</a></h3>
 <table>
@@ -3915,13 +3928,14 @@ comment
 <h3 id="manipulation">Manipulation<a class="headerlink" href="#manipulation" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Manipulation</p>
-<pre class="lang-annotation"><code>str="HELLO WORLD!"
-echo "${str,}"   #=&gt; "hELLO WORLD!" (lowercase 1st letter)
-echo "${str,,}"  #=&gt; "hello world!" (all lowercase)
-
-str="hello world!"
-echo "${str^}"   #=&gt; "Hello world!" (uppercase 1st letter)
-echo "${str^^}"  #=&gt; "HELLO WORLD!" (all uppercase)</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">str</span><span class="o">=</span><span class="s2">"HELLO WORLD!"</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">,</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1">#=&gt; "hELLO WORLD!" (lowercase 1st letter)</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">,,</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1">#=&gt; "hello world!" (all lowercase)</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nv">str</span><span class="o">=</span><span class="s2">"hello world!"</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">^</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1">#=&gt; "Hello world!" (uppercase 1st letter)</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">str</span><span class="p">^^</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1">#=&gt; "HELLO WORLD!" (all uppercase)</span>
+</span></code></pre></div>
 </div>
 <h3 id="default-values">Default Values<a class="headerlink" href="#default-values" title="Permanent link">¶</a></h3>
 <table>
@@ -3954,51 +3968,60 @@ echo "${str^^}"  #=&gt; "HELLO WORLD!" (all uppercase)</code></pre>
 <h2 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Basic For Loop</p>
-<pre class="lang-annotation"><code>for i in /etc/rc.*; do
-  echo "$i"
-done</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/rc.*<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">done</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">C-like For Loop</p>
-<pre class="lang-annotation"><code>for ((i = 0 ; i &lt; 100 ; i++)); do
-  echo "$i"
-done</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>i++<span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">done</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Ranges</p>
-<pre class="lang-annotation"><code>for i in {1..5}; do
-    echo "Welcome $i"
-done</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..5<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Welcome </span><span class="nv">$i</span><span class="s2">"</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">done</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">With Step Size</p>
-<pre class="lang-annotation"><code>for i in {5..50..5}; do
-    echo "Welcome $i"
-done</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Welcome </span><span class="nv">$i</span><span class="s2">"</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">done</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Reading Lines</p>
-<pre class="lang-annotation"><code>while read -r line; do
-  echo "$line"
-done &lt;file.txt</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>line<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$line</span><span class="s2">"</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">done</span><span class="w"> </span>&lt;file.txt
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Forever</p>
-<pre class="lang-annotation"><code>while true; do
-  ···
-done</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span>···
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">done</span>
+</span></code></pre></div>
 </div>
 <h2 id="functions_1">Functions<a class="headerlink" href="#functions_1" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Defining Functions</p>
-<pre class="lang-annotation"><code>myfunc() {
-    echo "hello $1"
-}</code></pre>
-<pre class="lang-annotation"><code># Same as above (alternate syntax)
-function myfunc {
-    echo "hello $1"
-}</code></pre>
-<pre class="lang-annotation"><code>myfunc "John"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>myfunc<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"hello </span><span class="nv">$1</span><span class="s2">"</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="o">}</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Same as above (alternate syntax)</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">function</span><span class="w"> </span>myfunc<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"hello </span><span class="nv">$1</span><span class="s2">"</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="o">}</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>myfunc<span class="w"> </span><span class="s2">"John"</span>
+</span></code></pre></div>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -4022,23 +4045,27 @@ function myfunc {
 <div class="admonition info">
 <p class="admonition-title">Returning Values</p>
 <h3 id="returning-values">Returning Values<a class="headerlink" href="#returning-values" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>myfunc() {
-    local myresult='some value'
-    echo "$myresult"
-}</code></pre>
-<pre class="lang-annotation"><code>result=$(myfunc)</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>myfunc<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nb">local</span><span class="w"> </span><span class="nv">myresult</span><span class="o">=</span><span class="s1">'some value'</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$myresult</span><span class="s2">"</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="o">}</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nv">result</span><span class="o">=</span><span class="k">$(</span>myfunc<span class="k">)</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Raising Errors</p>
 <h3 id="raising-errors">Raising Errors<a class="headerlink" href="#raising-errors" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>myfunc() {
-  return 1
-}</code></pre>
-<pre class="lang-annotation"><code>if myfunc; then
-  echo "success"
-else
-  echo "failure"
-fi</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>myfunc<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="o">}</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">if</span><span class="w"> </span>myfunc<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"success"</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="k">else</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"failure"</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="k">fi</span>
+</span></code></pre></div>
 </div>
 <h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">¶</a></h3>
 <table>
@@ -4224,120 +4251,138 @@ fi</code></pre>
 <div class="admonition info">
 <p class="admonition-title">Example</p>
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code># String
-if [[ -z "$string" ]]; then
-  echo "String is empty"
-elif [[ -n "$string" ]]; then
-  echo "String is not empty"
-else
-  echo "This never happens"
-fi</code></pre>
-<pre class="lang-annotation"><code># Combinations
-if [[ X &amp;&amp; Y ]]; then
-  ...
-fi</code></pre>
-<pre class="lang-annotation"><code># Equal
-if [[ "$A" == "$B" ]]</code></pre>
-<pre class="lang-annotation"><code># Regex
-if [[ "A" =~ . ]]</code></pre>
-<pre class="lang-annotation"><code>if (( $a &lt; $b )); then
-   echo "$a is smaller than $b"
-fi</code></pre>
-<pre class="lang-annotation"><code>if [[ -e "file.txt" ]]; then
-  echo "file exists"
-fi</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># String</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$string</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"String is empty"</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$string</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"String is not empty"</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="k">else</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"This never happens"</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="k">fi</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># Combinations</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>X<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>Y<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">  </span>...
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="k">fi</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Equal</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$A</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"</span><span class="nv">$B</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1"># Regex</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"A"</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>.<span class="w"> </span><span class="o">]]</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">$a</span><span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$b</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$a</span><span class="s2"> is smaller than </span><span class="nv">$b</span><span class="s2">"</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="k">fi</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"file.txt"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"file exists"</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="k">fi</span>
+</span></code></pre></div>
 </div>
 <h2 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Defining Arrays</p>
 <h3 id="defining-arrays">Defining Arrays<a class="headerlink" href="#defining-arrays" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>Fruits=('Apple' 'Banana' 'Orange')</code></pre>
-<pre class="lang-annotation"><code>Fruits[0]="Apple"
-Fruits[1]="Banana"
-Fruits[2]="Orange"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nv">Fruits</span><span class="o">=(</span><span class="s1">'Apple'</span><span class="w"> </span><span class="s1">'Banana'</span><span class="w"> </span><span class="s1">'Orange'</span><span class="o">)</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>Fruits<span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="s2">"Apple"</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>Fruits<span class="o">[</span><span class="m">1</span><span class="o">]=</span><span class="s2">"Banana"</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>Fruits<span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">"Orange"</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Working with arrays</p>
 <h3 id="working-with-arrays">Working with arrays<a class="headerlink" href="#working-with-arrays" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>echo "${Fruits[0]}"           # Element #0
-echo "${Fruits[-1]}"          # Last element
-echo "${Fruits[@]}"           # All elements, space-separated
-echo "${#Fruits[@]}"          # Number of elements
-echo "${#Fruits}"             # String length of the 1st element
-echo "${#Fruits[3]}"          # String length of the Nth element
-echo "${Fruits[@]:3:2}"       # Range (from position 3, length 2)
-echo "${!Fruits[@]}"          # Keys of all elements, space-separated</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">Fruits</span><span class="p">[0]</span><span class="si">}</span><span class="s2">"</span><span class="w">           </span><span class="c1"># Element #0</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">Fruits</span><span class="p">[-1]</span><span class="si">}</span><span class="s2">"</span><span class="w">          </span><span class="c1"># Last element</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">Fruits</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w">           </span><span class="c1"># All elements, space-separated</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${#</span><span class="nv">Fruits</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w">          </span><span class="c1"># Number of elements</span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${#</span><span class="nv">Fruits</span><span class="si">}</span><span class="s2">"</span><span class="w">             </span><span class="c1"># String length of the 1st element</span>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${#</span><span class="nv">Fruits</span><span class="p">[3]</span><span class="si">}</span><span class="s2">"</span><span class="w">          </span><span class="c1"># String length of the Nth element</span>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">Fruits</span><span class="p">[@]:</span><span class="nv">3</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="s2">"</span><span class="w">       </span><span class="c1"># Range (from position 3, length 2)</span>
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="p">!Fruits[@]</span><span class="si">}</span><span class="s2">"</span><span class="w">          </span><span class="c1"># Keys of all elements, space-separated</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Operations</p>
 <h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>Fruits=("${Fruits[@]}" "Watermelon")    # Push
-Fruits+=('Watermelon')                  # Also Push
-Fruits=( "${Fruits[@]/Ap*/}" )          # Remove by regex match
-unset Fruits[2]                         # Remove one item
-Fruits=("${Fruits[@]}")                 # Duplicate
-Fruits=("${Fruits[@]}" "${Veggies[@]}") # Concatenate
-words=($(&lt; datafile))                   # From file (split by IFS)</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nv">Fruits</span><span class="o">=(</span><span class="s2">"</span><span class="si">${</span><span class="nv">Fruits</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="s2">"Watermelon"</span><span class="o">)</span><span class="w">    </span><span class="c1"># Push</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="nv">Fruits</span><span class="o">+=(</span><span class="s1">'Watermelon'</span><span class="o">)</span><span class="w">                  </span><span class="c1"># Also Push</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="nv">Fruits</span><span class="o">=(</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">Fruits</span><span class="p">[@]/Ap*/</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="o">)</span><span class="w">          </span><span class="c1"># Remove by regex match</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="nb">unset</span><span class="w"> </span>Fruits<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w">                         </span><span class="c1"># Remove one item</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="nv">Fruits</span><span class="o">=(</span><span class="s2">"</span><span class="si">${</span><span class="nv">Fruits</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="o">)</span><span class="w">                 </span><span class="c1"># Duplicate</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="nv">Fruits</span><span class="o">=(</span><span class="s2">"</span><span class="si">${</span><span class="nv">Fruits</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">Veggies</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="o">)</span><span class="w"> </span><span class="c1"># Concatenate</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="nv">words</span><span class="o">=(</span><span class="k">$(</span>&lt;<span class="w"> </span>datafile<span class="k">)</span><span class="o">)</span><span class="w">                   </span><span class="c1"># From file (split by IFS)</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Iteration</p>
 <h3 id="iteration">Iteration<a class="headerlink" href="#iteration" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>for i in "${arrayName[@]}"; do
-  echo "$i"
-done</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">arrayName</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="k">done</span>
+</span></code></pre></div>
 </div>
 <h2 id="dictionaries">Dictionaries<a class="headerlink" href="#dictionaries" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Defining</p>
 <h3 id="defining">Defining<a class="headerlink" href="#defining" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>declare -A sounds</code></pre>
-<pre class="lang-annotation"><code>sounds[dog]="bark"
-sounds[cow]="moo"
-sounds[bird]="tweet"
-sounds[wolf]="howl"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nb">declare</span><span class="w"> </span>-A<span class="w"> </span>sounds
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>sounds<span class="o">[</span>dog<span class="o">]=</span><span class="s2">"bark"</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>sounds<span class="o">[</span>cow<span class="o">]=</span><span class="s2">"moo"</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>sounds<span class="o">[</span>bird<span class="o">]=</span><span class="s2">"tweet"</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>sounds<span class="o">[</span>wolf<span class="o">]=</span><span class="s2">"howl"</span>
+</span></code></pre></div>
 <p>Declares <code>sounds</code> as a Dictionary object (aka associative array).</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Working with dictionaries</p>
 <h3 id="working-with-dictionaries">Working with dictionaries<a class="headerlink" href="#working-with-dictionaries" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>echo "${sounds[dog]}" # Dog's sound
-echo "${sounds[@]}"   # All values
-echo "${!sounds[@]}"  # All keys
-echo "${#sounds[@]}"  # Number of elements
-unset sounds[dog]     # Delete dog</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">sounds</span><span class="p">[dog]</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="c1"># Dog's sound</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">sounds</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w">   </span><span class="c1"># All values</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="p">!sounds[@]</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># All keys</span>
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${#</span><span class="nv">sounds</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># Number of elements</span>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="nb">unset</span><span class="w"> </span>sounds<span class="o">[</span>dog<span class="o">]</span><span class="w">     </span><span class="c1"># Delete dog</span>
+</span></code></pre></div>
 </div>
 <h3 id="iteration_1">Iteration<a class="headerlink" href="#iteration_1" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Iterate over values</p>
 <h4 id="iterate-over-values">Iterate over values<a class="headerlink" href="#iterate-over-values" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>for val in "${sounds[@]}"; do
-  echo "$val"
-done</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">for</span><span class="w"> </span>val<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">sounds</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="k">done</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Iterate over keys</p>
 <h4 id="iterate-over-keys">Iterate over keys<a class="headerlink" href="#iterate-over-keys" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation"><code>for key in "${!sounds[@]}"; do
-  echo "$key"
-done</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="k">for</span><span class="w"> </span>key<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="p">!sounds[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$key</span><span class="s2">"</span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="k">done</span>
+</span></code></pre></div>
 </div>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Options</p>
 <h3 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>set -o noclobber  # Avoid overlay files (echo "hi" &gt; foo)
-set -o errexit    # Used to exit upon error, avoiding cascading errors
-set -o pipefail   # Unveils hidden failures
-set -o nounset    # Exposes unset variables</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nb">set</span><span class="w"> </span>-o<span class="w"> </span>noclobber<span class="w">  </span><span class="c1"># Avoid overlay files (echo "hi" &gt; foo)</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="nb">set</span><span class="w"> </span>-o<span class="w"> </span>errexit<span class="w">    </span><span class="c1"># Used to exit upon error, avoiding cascading errors</span>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="nb">set</span><span class="w"> </span>-o<span class="w"> </span>pipefail<span class="w">   </span><span class="c1"># Unveils hidden failures</span>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="nb">set</span><span class="w"> </span>-o<span class="w"> </span>nounset<span class="w">    </span><span class="c1"># Exposes unset variables</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Glob options</p>
 <h3 id="glob-options">Glob options<a class="headerlink" href="#glob-options" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>shopt -s nullglob    # Non-matching globs are removed  ('*.foo' =&gt; '')
-shopt -s failglob    # Non-matching globs throw errors
-shopt -s nocaseglob  # Case insensitive globs
-shopt -s dotglob     # Wildcards match dotfiles ("*.sh" =&gt; ".foo.sh")
-shopt -s globstar    # Allow ** for recursive matches ('lib/**/*.rb' =&gt; 'lib/a/b/c.rb')</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nb">shopt</span><span class="w"> </span>-s<span class="w"> </span>nullglob<span class="w">    </span><span class="c1"># Non-matching globs are removed  ('*.foo' =&gt; '')</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="nb">shopt</span><span class="w"> </span>-s<span class="w"> </span>failglob<span class="w">    </span><span class="c1"># Non-matching globs throw errors</span>
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="nb">shopt</span><span class="w"> </span>-s<span class="w"> </span>nocaseglob<span class="w">  </span><span class="c1"># Case insensitive globs</span>
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="nb">shopt</span><span class="w"> </span>-s<span class="w"> </span>dotglob<span class="w">     </span><span class="c1"># Wildcards match dotfiles ("*.sh" =&gt; ".foo.sh")</span>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="nb">shopt</span><span class="w"> </span>-s<span class="w"> </span>globstar<span class="w">    </span><span class="c1"># Allow ** for recursive matches ('lib/**/*.rb' =&gt; 'lib/a/b/c.rb')</span>
+</span></code></pre></div>
 <p>Set <code>GLOBIGNORE</code> as a colon-separated list of patterns to be removed from glob matches.</p>
 </div>
 <h2 id="history">History<a class="headerlink" href="#history" title="Permanent link">¶</a></h2>
@@ -4459,82 +4504,94 @@ shopt -s globstar    # Allow ** for recursive matches ('lib/**/*.rb' =&gt; 'lib/
 <div class="admonition info">
 <p class="admonition-title">Numeric calculations</p>
 <h3 id="numeric-calculations">Numeric calculations<a class="headerlink" href="#numeric-calculations" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>$((a + 200))      # Add 200 to $a</code></pre>
-<pre class="lang-annotation"><code>$(($RANDOM%200))  # Random number 0..199</code></pre>
-<pre class="lang-annotation"><code>declare -i count  # Declare as type integer
-count+=1          # Increment</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="k">$((</span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">200</span><span class="k">))</span><span class="w">      </span><span class="c1"># Add 200 to $a</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">200</span><span class="k">))</span><span class="w">  </span><span class="c1"># Random number 0..199</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nb">declare</span><span class="w"> </span>-i<span class="w"> </span>count<span class="w">  </span><span class="c1"># Declare as type integer</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="nv">count</span><span class="o">+=</span><span class="m">1</span><span class="w">          </span><span class="c1"># Increment</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Subshells</p>
 <h3 id="subshells">Subshells<a class="headerlink" href="#subshells" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>(cd somedir; echo "I'm now in $PWD")
-pwd # still in first directory</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="o">(</span><span class="nb">cd</span><span class="w"> </span>somedir<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"I'm now in </span><span class="nv">$PWD</span><span class="s2">"</span><span class="o">)</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="nb">pwd</span><span class="w"> </span><span class="c1"># still in first directory</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Redirection</p>
 <h3 id="redirection">Redirection<a class="headerlink" href="#redirection" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>python hello.py &gt; output.txt            # stdout to (file)
-python hello.py &gt;&gt; output.txt           # stdout to (file), append
-python hello.py 2&gt; error.log            # stderr to (file)
-python hello.py 2&gt;&amp;1                    # stderr to stdout
-python hello.py 2&gt;/dev/null             # stderr to (null)
-python hello.py &gt;output.txt 2&gt;&amp;1        # stdout and stderr to (file), equivalent to &amp;&gt;
-python hello.py &amp;&gt;/dev/null             # stdout and stderr to (null)
-echo "$0: warning: too many users" &gt;&amp;2  # print diagnostic message to stderr</code></pre>
-<pre class="lang-annotation"><code>python hello.py &lt; foo.txt      # feed foo.txt to stdin for python
-diff &lt;(ls -r) &lt;(ls)            # Compare two stdout without files</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>python<span class="w"> </span>hello.py<span class="w"> </span>&gt;<span class="w"> </span>output.txt<span class="w">            </span><span class="c1"># stdout to (file)</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>python<span class="w"> </span>hello.py<span class="w"> </span>&gt;&gt;<span class="w"> </span>output.txt<span class="w">           </span><span class="c1"># stdout to (file), append</span>
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>python<span class="w"> </span>hello.py<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>error.log<span class="w">            </span><span class="c1"># stderr to (file)</span>
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>python<span class="w"> </span>hello.py<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w">                    </span><span class="c1"># stderr to stdout</span>
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>python<span class="w"> </span>hello.py<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w">             </span><span class="c1"># stderr to (null)</span>
+</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>python<span class="w"> </span>hello.py<span class="w"> </span>&gt;output.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w">        </span><span class="c1"># stdout and stderr to (file), equivalent to &amp;&gt;</span>
+</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>python<span class="w"> </span>hello.py<span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="w">             </span><span class="c1"># stdout and stderr to (null)</span>
+</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$0</span><span class="s2">: warning: too many users"</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w">  </span><span class="c1"># print diagnostic message to stderr</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>python<span class="w"> </span>hello.py<span class="w"> </span>&lt;<span class="w"> </span>foo.txt<span class="w">      </span><span class="c1"># feed foo.txt to stdin for python</span>
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>-r<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="o">)</span><span class="w">            </span><span class="c1"># Compare two stdout without files</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Inspecting commands</p>
 <h3 id="inspecting-commands">Inspecting commands<a class="headerlink" href="#inspecting-commands" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>command -V cd
-#=&gt; "cd is a function/alias/whatever"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="nb">command</span><span class="w"> </span>-V<span class="w"> </span><span class="nb">cd</span>
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="c1">#=&gt; "cd is a function/alias/whatever"</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Trap errors</p>
 <h3 id="trap-errors">Trap errors<a class="headerlink" href="#trap-errors" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>trap 'echo Error at about $LINENO' ERR</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nb">trap</span><span class="w"> </span><span class="s1">'echo Error at about $LINENO'</span><span class="w"> </span>ERR
+</span></code></pre></div>
 <p>or</p>
-<pre class="lang-annotation"><code>traperr() {
-  echo "ERROR: ${BASH_SOURCE[1]} at about ${BASH_LINENO[0]}"
-}
-
-set -o errtrace
-trap traperr ERR</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>traperr<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"ERROR: </span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[1]</span><span class="si">}</span><span class="s2"> at about </span><span class="si">${</span><span class="nv">BASH_LINENO</span><span class="p">[0]</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="o">}</span>
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>
+</span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="nb">set</span><span class="w"> </span>-o<span class="w"> </span>errtrace
+</span><span id="__span-59-6"><a id="__codelineno-59-6" name="__codelineno-59-6" href="#__codelineno-59-6"></a><span class="nb">trap</span><span class="w"> </span>traperr<span class="w"> </span>ERR
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Case/switch</p>
 <h3 id="caseswitch">Case/switch<a class="headerlink" href="#caseswitch" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>case "$1" in
-  start | up)
-    vagrant up
-    ;;
-
-  *)
-    echo "Usage: $0 {start|stop|ssh}"
-    ;;
-esac</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="w">  </span>start<span class="w"> </span><span class="p">|</span><span class="w"> </span>up<span class="o">)</span>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="w">    </span>vagrant<span class="w"> </span>up
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a>
+</span><span id="__span-60-6"><a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a><span class="w">  </span>*<span class="o">)</span>
+</span><span id="__span-60-7"><a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|ssh}"</span>
+</span><span id="__span-60-8"><a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-60-9"><a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a><span class="k">esac</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Source relative</p>
 <h3 id="source-relative">Source relative<a class="headerlink" href="#source-relative" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>source "${0%/*}/../share/foo.sh"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">0</span><span class="p">%/*</span><span class="si">}</span><span class="s2">/../share/foo.sh"</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">printf</p>
 <h3 id="printf">printf<a class="headerlink" href="#printf" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>printf "Hello %s, I'm %s" Sven Olga
-#=&gt; "Hello Sven, I'm Olga
-
-printf "1 + 1 = %d" 2
-#=&gt; "1 + 1 = 2"
-
-printf "This is how you print a float: %f" 2
-#=&gt; "This is how you print a float: 2.000000"
-
-printf '%s\n' '#!/bin/bash' 'echo hello' &gt;file
-# format string is applied to each group of arguments
-printf '%i+%i=%i\n' 1 2 3  4 5 9</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="nb">printf</span><span class="w"> </span><span class="s2">"Hello %s, I'm %s"</span><span class="w"> </span>Sven<span class="w"> </span>Olga
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="c1">#=&gt; "Hello Sven, I'm Olga</span>
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>
+</span><span id="__span-62-4"><a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="nb">printf</span><span class="w"> </span><span class="s2">"1 + 1 = %d"</span><span class="w"> </span><span class="m">2</span>
+</span><span id="__span-62-5"><a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a><span class="c1">#=&gt; "1 + 1 = 2"</span>
+</span><span id="__span-62-6"><a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a>
+</span><span id="__span-62-7"><a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a><span class="nb">printf</span><span class="w"> </span><span class="s2">"This is how you print a float: %f"</span><span class="w"> </span><span class="m">2</span>
+</span><span id="__span-62-8"><a id="__codelineno-62-8" name="__codelineno-62-8" href="#__codelineno-62-8"></a><span class="c1">#=&gt; "This is how you print a float: 2.000000"</span>
+</span><span id="__span-62-9"><a id="__codelineno-62-9" name="__codelineno-62-9" href="#__codelineno-62-9"></a>
+</span><span id="__span-62-10"><a id="__codelineno-62-10" name="__codelineno-62-10" href="#__codelineno-62-10"></a><span class="nb">printf</span><span class="w"> </span><span class="s1">'%s\n'</span><span class="w"> </span><span class="s1">'#!/bin/bash'</span><span class="w"> </span><span class="s1">'echo hello'</span><span class="w"> </span>&gt;file
+</span><span id="__span-62-11"><a id="__codelineno-62-11" name="__codelineno-62-11" href="#__codelineno-62-11"></a><span class="c1"># format string is applied to each group of arguments</span>
+</span><span id="__span-62-12"><a id="__codelineno-62-12" name="__codelineno-62-12" href="#__codelineno-62-12"></a><span class="nb">printf</span><span class="w"> </span><span class="s1">'%i+%i=%i\n'</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">9</span>
+</span></code></pre></div>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -4609,65 +4666,73 @@ printf '%i+%i=%i\n' 1 2 3  4 5 9</code></pre>
 <div class="admonition info">
 <p class="admonition-title">Example</p>
 <h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>echo "Welcome To Devhints" | tr '[:lower:]' '[:upper:]'
-WELCOME TO DEVHINTS</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Welcome To Devhints"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">'[:lower:]'</span><span class="w"> </span><span class="s1">'[:upper:]'</span>
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>WELCOME<span class="w"> </span>TO<span class="w"> </span>DEVHINTS
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Directory of script</p>
 <h3 id="directory-of-script">Directory of script<a class="headerlink" href="#directory-of-script" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>dir=${0%/*}</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="nv">dir</span><span class="o">=</span><span class="si">${</span><span class="nv">0</span><span class="p">%/*</span><span class="si">}</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Getting options</p>
 <h3 id="getting-options">Getting options<a class="headerlink" href="#getting-options" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>while [[ "$1" =~ ^- &amp;&amp; ! "$1" == "--" ]]; do case $1 in
-  -V | --version )
-    echo "$version"
-    exit
-    ;;
-  -s | --string )
-    shift; string=$1
-    ;;
-  -f | --flag )
-    flag=1
-    ;;
-esac; shift; done
-if [[ "$1" == '--' ]]; then shift; fi</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="k">while</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^-<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>!<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"--"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="w">  </span>-V<span class="w"> </span><span class="p">|</span><span class="w"> </span>--version<span class="w"> </span><span class="o">)</span>
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$version</span><span class="s2">"</span>
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="w">    </span><span class="nb">exit</span>
+</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a><span class="w">  </span>-s<span class="w"> </span><span class="p">|</span><span class="w"> </span>--string<span class="w"> </span><span class="o">)</span>
+</span><span id="__span-65-7"><a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a><span class="w">    </span>shift<span class="p">;</span><span class="w"> </span><span class="nv">string</span><span class="o">=</span><span class="nv">$1</span>
+</span><span id="__span-65-8"><a id="__codelineno-65-8" name="__codelineno-65-8" href="#__codelineno-65-8"></a><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-65-9"><a id="__codelineno-65-9" name="__codelineno-65-9" href="#__codelineno-65-9"></a><span class="w">  </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>--flag<span class="w"> </span><span class="o">)</span>
+</span><span id="__span-65-10"><a id="__codelineno-65-10" name="__codelineno-65-10" href="#__codelineno-65-10"></a><span class="w">    </span><span class="nv">flag</span><span class="o">=</span><span class="m">1</span>
+</span><span id="__span-65-11"><a id="__codelineno-65-11" name="__codelineno-65-11" href="#__codelineno-65-11"></a><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-65-12"><a id="__codelineno-65-12" name="__codelineno-65-12" href="#__codelineno-65-12"></a><span class="k">esac</span><span class="p">;</span><span class="w"> </span>shift<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-65-13"><a id="__codelineno-65-13" name="__codelineno-65-13" href="#__codelineno-65-13"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'--'</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>shift<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Heredoc</p>
 <h3 id="heredoc">Heredoc<a class="headerlink" href="#heredoc" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>cat &lt;&lt;END
-hello world
-END</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;END</span>
+</span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="s">hello world</span>
+</span><span id="__span-66-3"><a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a><span class="s">END</span>
+</span></code></pre></div>
 <p>Heredoc allows a section of your source code to be treated as a file.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Herestring</p>
 <h3 id="herestring">Herestring<a class="headerlink" href="#herestring" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>tr '[:lower:]' '[:upper:]' &lt;&lt;&lt; "Will be uppercased, even $variable"</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>tr<span class="w"> </span><span class="s1">'[:lower:]'</span><span class="w"> </span><span class="s1">'[:upper:]'</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">"Will be uppercased, even </span><span class="nv">$variable</span><span class="s2">"</span>
+</span></code></pre></div>
 <p>Herestring allows a string to be treated as a standard input (stdin).</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Process substitution</p>
 <h3 id="process-substitution">Process substitution<a class="headerlink" href="#process-substitution" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code># loop on myfunc output lines
-while read -r line; do
-  echo "$line"
-done &lt; &lt;(myfunc)
-
-# compare content of two folders
-diff &lt;(ls "$dir1") &lt;(ls "$dir2")</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="c1"># loop on myfunc output lines</span>
+</span><span id="__span-68-2"><a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>line<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-68-3"><a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$line</span><span class="s2">"</span>
+</span><span id="__span-68-4"><a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a><span class="k">done</span><span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>myfunc<span class="o">)</span>
+</span><span id="__span-68-5"><a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a>
+</span><span id="__span-68-6"><a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a><span class="c1"># compare content of two folders</span>
+</span><span id="__span-68-7"><a id="__codelineno-68-7" name="__codelineno-68-7" href="#__codelineno-68-7"></a>diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span><span class="s2">"</span><span class="nv">$dir1</span><span class="s2">"</span><span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span><span class="s2">"</span><span class="nv">$dir2</span><span class="s2">"</span><span class="o">)</span>
+</span></code></pre></div>
 <p>Process substitution allows the input (or output) of a command to be treated as a file.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Reading input</p>
 <h3 id="reading-input">Reading input<a class="headerlink" href="#reading-input" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>echo -n "Proceed? [y/n]: "
-read -r ans
-echo "$ans"</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"Proceed? [y/n]: "</span>
+</span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>ans
+</span><span id="__span-69-3"><a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$ans</span><span class="s2">"</span>
+</span></code></pre></div>
 <p>The <code>-r</code> option disables a peculiar legacy behavior with backslashes.</p>
-<pre class="lang-annotation"><code>read -n 1 ans    # Just one character</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="nb">read</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>ans<span class="w">    </span><span class="c1"># Just one character</span>
+</span></code></pre></div>
 </div>
 <h3 id="special-variables">Special Variables<a class="headerlink" href="#special-variables" title="Permanent link">¶</a></h3>
 <table>
@@ -4707,25 +4772,28 @@ echo "$ans"</code></pre>
 <div class="admonition info">
 <p class="admonition-title">Go to Previous Directory</p>
 <h3 id="previous-directory">Previous Directory<a class="headerlink" href="#previous-directory" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>pwd # /home/user/foo
-cd bar/
-pwd # /home/user/foo/bar
-cd -
-pwd # /home/user/foo</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="nb">pwd</span><span class="w"> </span><span class="c1"># /home/user/foo</span>
+</span><span id="__span-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a><span class="nb">cd</span><span class="w"> </span>bar/
+</span><span id="__span-71-3"><a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a><span class="nb">pwd</span><span class="w"> </span><span class="c1"># /home/user/foo/bar</span>
+</span><span id="__span-71-4"><a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a><span class="nb">cd</span><span class="w"> </span>-
+</span><span id="__span-71-5"><a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a><span class="nb">pwd</span><span class="w"> </span><span class="c1"># /home/user/foo</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Check for Command's Result</p>
 <h3 id="check-comds-result">Check Comd's Result<a class="headerlink" href="#check-comds-result" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>if ping -c 1 google.com; then
-  echo "It appears you have a working internet connection"
-fi</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="k">if</span><span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>google.com<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"It appears you have a working internet connection"</span>
+</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="k">fi</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Grep Check</p>
 <h3 id="grep-check">Grep Check<a class="headerlink" href="#grep-check" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>if grep -q 'foo' ~/.bash_history; then
-  echo "You appear to have typed 'foo' in the past"
-fi</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="k">if</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s1">'foo'</span><span class="w"> </span>~/.bash_history<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-73-2"><a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"You appear to have typed 'foo' in the past"</span>
+</span><span id="__span-73-3"><a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a><span class="k">fi</span>
+</span></code></pre></div>
 </div>
 <h2 id="also-see">Also See<a class="headerlink" href="#also-see" title="Permanent link">¶</a></h2>
 <div class="grid cards cols-3">
@@ -4964,10 +5032,11 @@ fi</code></pre>
 </table>
 <h3 id="redirections">Redirections<a class="headerlink" href="#redirections" title="Permanent link">¶</a></h3>
 <p>But what if you'd want to save the results to a file? Bash&nbsp;has&nbsp;a redirect operator &gt; that may be used to control where the output is delivered.</p>
-<pre class="lang-annotation"><code>some_command &gt; out.log            # Redirect stdout to out.log
-some_command 2&gt; err.log           # Redirect stderr to file err.log
-some_command 2&gt;&amp;1                 # Redirect stderr to stdout
-some_command 1&gt;/dev/null 2&gt;&amp;1     # Silence both stdout and stderr</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>some_command<span class="w"> </span>&gt;<span class="w"> </span>out.log<span class="w">            </span><span class="c1"># Redirect stdout to out.log</span>
+</span><span id="__span-74-2"><a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>some_command<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>err.log<span class="w">           </span><span class="c1"># Redirect stderr to file err.log</span>
+</span><span id="__span-74-3"><a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a>some_command<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w">                 </span><span class="c1"># Redirect stderr to stdout</span>
+</span><span id="__span-74-4"><a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a>some_command<span class="w"> </span><span class="m">1</span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w">     </span><span class="c1"># Silence both stdout and stderr</span>
+</span></code></pre></div>
 <p>Complete summary:</p>
 <table>
 <thead>
@@ -5081,9 +5150,11 @@ some_command 1&gt;/dev/null 2&gt;&amp;1     # Silence both stdout and stderr</co
 </table>
 <h3 id="formatting-and-linting">Formatting and linting<a class="headerlink" href="#formatting-and-linting" title="Permanent link">¶</a></h3>
 <p>It is important to keep the formatting of your script as consistent as possible. <a href="https://github.com/lovesegfault/beautysh">Beautysh</a> is an amazing tool that helps you to format your script. To use it, just run the following command in a directory where your scripts are located:</p>
-<pre class="lang-annotation"><code>beautysh **/*.sh</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>beautysh<span class="w"> </span>**/*.sh
+</span></code></pre></div>
 <p>Additionally we advise to use <a href="https://github.com/koalaman/shellcheck">shellcheck</a> for code inspection.</p>
-<pre class="lang-annotation"><code>shellcheck **/*.sh</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>shellcheck<span class="w"> </span>**/*.sh
+</span></code></pre></div>
 <h2 id="available-scripts">Available scripts<a class="headerlink" href="#available-scripts" title="Permanent link">¶</a></h2>
 <h3 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">¶</a></h3>
 <table>

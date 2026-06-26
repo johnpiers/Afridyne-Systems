@@ -1096,9 +1096,10 @@
 <div class="admonition info">
 <p class="admonition-title">Versioning</p>
 <p><a href="https://github.com/jimporter/mike">mike</a> makes it easy to deploy multiple versions of your project documentation. It integrates natively with Material for MkDocs and can be enabled via <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>extra:
-  version:
-    provider: mike</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mike</span>
+</span></code></pre></div>
 </div>
 <p>This renders a version selector in the header:</p>
 <figure>
@@ -1137,14 +1138,15 @@ See the <a href="#publishing-a-new-version">"Publishing a new version"</a> secti
 <div class="admonition info">
 <p class="admonition-title">Version Warning</p>
 <p>If you're using versioning, you might want to display a warning when the user visits any other version than the latest version. Using <a href="../customization/#extending-the-theme">theme extension</a>, you can <a href="../customization/#overriding-blocks">override the <code>outdated</code> block</a>:</p>
-<pre class="lang-annotation"><code>{% extends "base.html" %}
-
-{% block outdated %}
-  You're not viewing the latest version.
-  &lt;a href="{{ '../' ~ base_url }}"&gt; &lt;!-- (1)! --&gt;
-    &lt;strong&gt;Click here to go to latest.&lt;/strong&gt;
-  &lt;/a&gt;
-{% endblock %}</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{% extends "base.html" %}
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>{% block outdated %}
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  You're not viewing the latest version.
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"{{ '../' ~ base_url }}"</span><span class="p">&gt;</span> <span class="cm">&lt;!-- (1)! --&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Click here to go to latest.<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>{% endblock %}
+</span></code></pre></div>
 <hr>
 <ol>
 <li>Given this value for the <code>href</code> attribute, the link will always redirect to the root of your site, which will then redirect to the latest version. This ensures that older versions of your site do not depend on a specific alias, e.g. <code>latest</code>, to allow for changing the alias later on without breaking earlier versions.</li>
@@ -1155,18 +1157,20 @@ See the <a href="#publishing-a-new-version">"Publishing a new version"</a> secti
 <div class="admonition info">
 <p class="admonition-title">Default Version ID</p>
 <p>The default version is identified by the <code>latest</code> alias. If you wish to set another alias as the latest version, e.g.<code>stable</code>, add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>extra:
-  version:
-    default: stable # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stable</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p>You can also define multiple aliases as the default version,<br>
 e.g. <code>stable</code> and <code>development</code>.</p>
-<pre class="lang-annotation"><code>extra:
-  version:
-    default:
-      - stable
-      - development</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">default</span><span class="p">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stable</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span>
+</span></code></pre></div>
 <p>Now every version that has the <code>stable</code> and <code>development</code> aliases<br>
 will not display the version warning.</p>
 </li>
@@ -1177,9 +1181,10 @@ will not display the version warning.</p>
 <div class="admonition info">
 <p class="admonition-title">Version Alias</p>
 <p>If you're using aliases for versioning, and want to show the version alias besides the version number, you can enable this feature by setting the <code>alias</code> option to <code>true</code>:</p>
-<pre class="lang-annotation"><code>extra:
-  version:
-    alias: true</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
 <div class="admonition info">
@@ -1190,10 +1195,12 @@ will not display the version warning.</p>
 <div class="admonition info">
 <p class="admonition-title">Publishing a New Version</p>
 <p>If you want to publish a new version of your project documentation, choose a version identifier and update the alias set as the default version with:</p>
-<pre class="lang-annotation"><code>mike deploy --push --update-aliases 0.1 latest</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mike deploy --push --update-aliases 0.1 latest
+</span></code></pre></div>
 <hr>
 <p>Note that every version will be deployed as a subdirectory of your <code>site_url</code>, which you should set explicitly. For example, if your <code>mkdocs.yml</code> contains:</p>
-<pre class="lang-annotation"><code>site_url: 'https://docs.example.com/'  # Trailing slash is recommended</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="s">'https://docs.example.com/'</span><span class="w">  </span><span class="c1"># Trailing slash is recommended</span>
+</span></code></pre></div>
 <p>the documentation will be published to URLs such as:</p>
 <ul>
 <li><em>docs.example.com/0.1/</em></li>
@@ -1205,7 +1212,8 @@ will not display the version warning.</p>
 <div class="admonition info">
 <p class="admonition-title">Setting a Default Version</p>
 <p>When starting with <a href="https://github.com/jimporter/mike">mike</a>, a good idea is to set an alias as a default version, e.g. <code>latest</code>, and when publishing a new version, always update the alias to point to the latest version:</p>
-<pre class="lang-annotation"><code>mike set-default --push latest</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mike set-default --push latest
+</span></code></pre></div>
 <hr>
 <p>When publishing a new version, <a href="https://github.com/jimporter/mike">mike</a> will create a redirect in the root of your project documentation to the version associated with the alias:</p>
 <p><em>docs.example.com</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> <em>docs.example.com/0.1</em></p>

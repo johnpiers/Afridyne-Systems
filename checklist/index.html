@@ -1735,13 +1735,14 @@
 <ul>
 <li>Before executing the full diagnostic tree, run these four commands to immediately isolate the root cause.</li>
 </ul>
-<pre class="lang-annotation sh no-copy"><code>pkill WebKitWebProcess
-
-fc-match monospace
-
-coredumpctl list WebKitWebProcess | tail
-
-LIBGL_ALWAYS_SOFTWARE=1 devhelp</code></pre>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pkill<span class="w"> </span>WebKitWebProcess
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>fc-match<span class="w"> </span>monospace
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>coredumpctl<span class="w"> </span>list<span class="w"> </span>WebKitWebProcess<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span></code></pre></div>
 </div>
 <h3 id="immediate-indicator-matrix">🔍 Immediate Indicator Matrix<a class="headerlink" href="#immediate-indicator-matrix" title="Permanent link">¶</a></h3>
 <table>
@@ -1790,15 +1791,18 @@ LIBGL_ALWAYS_SOFTWARE=1 devhelp</code></pre>
 <p>Because you are running an <strong>AMD Radeon RX 580</strong> via the open-source Mesa drivers, rendering issues are often caused by WebKit fighting with hardware acceleration, WebGL, or driver compilation layers. </p>
 <ul>
 <li><strong>Disable GPU Sandboxing (WebKit Flag)</strong><br>
-    <pre class="lang-annotation"><code>devhelp --disable-gpu-sandbox</code></pre><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>devhelp<span class="w"> </span>--disable-gpu-sandbox
+</span></code></pre></div><br>
 <em>Use Case:</em> WebKit's security sandbox often clashes with AMD driver memory allocation. If this works, the issue is sandboxing, not your GPU.</li>
 <li><strong>Bypass Driver Shaders (Mesa Toggles)</strong><br>
-    <pre class="lang-annotation"><code>R600_DEBUG=nocall devhelp
-# OR (For newer Vulkan-based WebKit paths)
-RADV_DEBUG=nocache devhelp</code></pre><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">R600_DEBUG</span><span class="o">=</span>nocall<span class="w"> </span>devhelp
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># OR (For newer Vulkan-based WebKit paths)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">RADV_DEBUG</span><span class="o">=</span>nocache<span class="w"> </span>devhelp
+</span></code></pre></div><br>
 <em>Use Case:</em> Disables specific hardware-level optimization steps in the AMD driver to see if a driver bug is misdrawing the app window.</li>
 <li><strong>Disable Compositing Mode</strong><br>
-    <pre class="lang-annotation"><code>WEBKIT_DISABLE_COMPOSITING_MODE=1 devhelp</code></pre><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">WEBKIT_DISABLE_COMPOSITING_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span></code></pre></div><br>
 <em>Use Case:</em> Forces WebKit to draw the window layout using standard rendering instead of hardware acceleration, bypassing deep driver layers entirely.</li>
 </ul>
 </div>
@@ -1806,13 +1810,16 @@ RADV_DEBUG=nocache devhelp</code></pre><br>
 <p>The proprietary Nvidia driver stack utilizes a completely different rendering path than Mesa. WebKit failures here usually relate to GLX contexts, thread management, or power-saving states.</p>
 <ul>
 <li><strong>Force Legacy GLX Indirect Rendering</strong><br>
-    <pre class="lang-annotation"><code>__GLX_FORCE_VENDOR_LIBRARY_0=1 devhelp</code></pre><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">__GLX_FORCE_VENDOR_LIBRARY_0</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span></code></pre></div><br>
 <em>Use Case:</em> Bypasses Nvidia's direct rendering infrastructure if there is a context mismatch between GTK and the display server.</li>
 <li><strong>Disable Threaded Optimizations</strong><br>
-    <pre class="lang-annotation"><code>__GL_THREADED_OPTIMUS=0 devhelp</code></pre><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">__GL_THREADED_OPTIMUS</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>devhelp
+</span></code></pre></div><br>
 <em>Use Case:</em> Resolves timing-related race conditions where WebKit threads collapse while communicating with the Nvidia binary driver.</li>
 <li><strong>Force WebKit WebGL Disabling</strong><br>
-    <pre class="lang-annotation"><code>WEBKIT_DISABLE_DMABUF_RENDERER=1 devhelp</code></pre><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">WEBKIT_DISABLE_DMABUF_RENDERER</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span></code></pre></div><br>
 <em>Use Case:</em> Fixes blank screens on Nvidia setups caused by broken DMA-BUF memory sharing protocols between the GPU and WebKit processes.</li>
 </ul>
 </div>
@@ -1820,10 +1827,12 @@ RADV_DEBUG=nocache devhelp</code></pre><br>
 <p>Intel graphics rely heavily on the modern <code>iris</code> driver within Mesa. Under production stress, it can experience severe rendering sync drops or memory caching faults.</p>
 <ul>
 <li><strong>Force Older Intel Driver Generation</strong><br>
-    <pre class="lang-annotation"><code>MESA_LOADER_DRIVER_OVERRIDE=i965 devhelp</code></pre><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">MESA_LOADER_DRIVER_OVERRIDE</span><span class="o">=</span>i965<span class="w"> </span>devhelp
+</span></code></pre></div><br>
 <em>Use Case:</em> Forces the system to fall back from the modern Iris driver to the mature, stable legacy i965 driver path.</li>
 <li><strong>Disable Performance Cache Compilations</strong><br>
-    <pre class="lang-annotation"><code>INTEL_DEBUG=nocache devhelp</code></pre><br>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">INTEL_DEBUG</span><span class="o">=</span>nocache<span class="w"> </span>devhelp
+</span></code></pre></div><br>
 <em>Use Case:</em> Instructs the Intel driver to bypass the internal shader cache, clearing up pipeline errors caused by corrupted system shader trees.</li>
 </ul>
 </div>
@@ -1839,7 +1848,8 @@ RADV_DEBUG=nocache devhelp</code></pre><br>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Run the following test suite in your terminal:<br>
-</p><pre class="lang-annotation"><code>remarkable &amp; devhelp &amp;</code></pre><p></p>
+</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>remarkable<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>devhelp<span class="w"> </span><span class="p">&amp;</span>
+</span></code></pre></div><p></p>
 </div>
 <div class="tabbed-block">
 <table>
@@ -1872,12 +1882,14 @@ RADV_DEBUG=nocache devhelp</code></pre><br>
 <div class="admonition grey">
 <p class="admonition-title">Check for Webkit Crashes</p>
 <p>Inspect the system core dump manager to verify if the underlying WebKit process is actively terminating.</p>
-<pre class="lang-annotation sh no-copy"><code>coredumpctl list WebKitWebProcess</code></pre>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>coredumpctl<span class="w"> </span>list<span class="w"> </span>WebKitWebProcess
+</span></code></pre></div>
 </div>
 <div class="admonition bug">
 <p class="admonition-title">Analysis of Outputs</p>
 <p>If fresh entries are populated in the list, extract the specific crash metadata using the Process ID (<code>PID</code>):<br>
-</p><pre class="lang-annotation sh no-copy"><code>coredumpctl info &lt;PID&gt;</code></pre><br>
+</p><div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>coredumpctl<span class="w"> </span>info<span class="w"> </span>&lt;PID&gt;
+</span></code></pre></div><br>
 *   <strong>Critical Signal to Look For:</strong> <code>Signal: 6 (ABRT)</code> or any explicit <code>WebKitWebProcess</code> failure tracking.<br>
 *   <strong>Verdict:</strong> If present, the WebKit engine itself is unstable. Proceed to package integrity validation.<p></p>
 </div>
@@ -1886,9 +1898,10 @@ RADV_DEBUG=nocache devhelp</code></pre><br>
 <div class="admonition grey">
 <p class="admonition-title">Trace Terminal Standard Outputs</p>
 <p>Launch the affected application directly from an active terminal session to capture real-time stdout and stderr diagnostic streams.</p>
-<pre class="lang-annotation sh no-copy"><code>devhelp
-# OR
-remarkable</code></pre>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>devhelp
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># OR</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>remarkable
+</span></code></pre></div>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Error Signature Branching</p>
@@ -1904,7 +1917,8 @@ remarkable</code></pre>
 <div class="admonition grey">
 <p class="admonition-title">Terminate Stale WebKit Renderers</p>
 <p>Stale background rendering processes can lock shared resources and prevent new instances from drawing GUI surfaces.</p>
-<pre class="lang-annotation sh no-copy"><code>pkill WebKitWebProcess</code></pre>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pkill<span class="w"> </span>WebKitWebProcess
+</span></code></pre></div>
 </div>
 <div class="admonition success">
 <p class="admonition-title">Validation</p>
@@ -1915,9 +1929,10 @@ remarkable</code></pre>
 <div class="admonition grey">
 <p class="admonition-title">Verify Font Subsystem Integrity</p>
 <p>A corrupted, missing, or hanging system font configuration can completely block text-heavy WebKit canvas initialization.</p>
-<pre class="lang-annotation sh no-copy"><code>fc-match monospace
-
-fc-list | head</code></pre>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>fc-match<span class="w"> </span>monospace
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>fc-list<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Output Evaluation</p>
@@ -1931,9 +1946,10 @@ fc-list | head</code></pre>
 <div class="admonition grey">
 <p class="admonition-title">Rebuild Font Subsystem Caches</p>
 <p>Force a complete purge and regeneration of the font configuration binaries. Execute this if Step 4 yielded any anomalies.</p>
-<pre class="lang-annotation sh no-copy"><code>rm -rf ~/.cache/fontconfig
-
-fc-cache -rv</code></pre>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/.cache/fontconfig
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>fc-cache<span class="w"> </span>-rv
+</span></code></pre></div>
 </div>
 <div class="admonition recommendation">
 <p class="admonition-title">Post-Execution Action</p>
@@ -1944,9 +1960,10 @@ fc-cache -rv</code></pre>
 <div class="admonition recommendation">
 <p class="admonition-title">Isolate GPU and Mesa Driver Conflicts</p>
 <p>Determine if hardware acceleration or the graphics driver stack is causing rendering failures by forcing a pure software rendering fallback.</p>
-<pre class="lang-annotation sh no-copy"><code>LIBGL_ALWAYS_SOFTWARE=1 devhelp
-# OR
-LIBGL_ALWAYS_SOFTWARE=1 remarkable</code></pre>
+<div class="language-bash sh no-copy highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>devhelp
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># OR</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>remarkable
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Deductible Outcomes</p>
@@ -1961,22 +1978,27 @@ LIBGL_ALWAYS_SOFTWARE=1 remarkable</code></pre>
 <p class="admonition-title">Validate Package Integrity</p>
 <p>Verify that the shared WebKit libraries and components are complete, uncorrupted, and synchronized via <code>pacman</code>.</p>
 <p><strong>Verify versions</strong></p>
-<pre class="lang-annotation"><code>pacman -Q webkit2gtk-4.1 javascriptcoregtk-4.1</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>pacman<span class="w"> </span>-Q<span class="w"> </span>webkit2gtk-4.1<span class="w"> </span>javascriptcoregtk-4.1
+</span></code></pre></div>
 <p><strong>Verify file hashes and permissions</strong></p>
-<pre class="lang-annotation"><code>pacman -Qkk webkit2gtk-4.1</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pacman<span class="w"> </span>-Qkk<span class="w"> </span>webkit2gtk-4.1
+</span></code></pre></div>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Package Discrepancies</p>
 <p>Look closely for warnings concerning <strong>Missing files</strong>, <strong>Modified files</strong>, or <strong>Partial upgrades</strong>. If any are found, force-reinstall the packages:<br>
-</p><pre class="lang-annotation"><code>sudo pacman -S webkit2gtk-4.1 javascriptcoregtk-4.1</code></pre><p></p>
+</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>webkit2gtk-4.1<span class="w"> </span>javascriptcoregtk-4.1
+</span></code></pre></div><p></p>
 </div>
 <hr>
 <h3 id="step-8-query-system-logs-for-component-failures">Step 8 — Query System Logs for Component Failures<a class="headerlink" href="#step-8-query-system-logs-for-component-failures" title="Permanent link">¶</a></h3>
 <div class="admonition grey">
 <p class="admonition-title">Query System Logs for Component Failures</p>
 <p>Filter user and system journals specifically for WebKit engine events generated during the current boot cycle.</p>
-<pre class="lang-annotation"><code>journalctl -b --user | grep -i webkit</code></pre>
-<pre class="lang-annotation"><code>journalctl -b | grep -i webkit</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>journalctl<span class="w"> </span>-b<span class="w"> </span>--user<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>webkit
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>journalctl<span class="w"> </span>-b<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>webkit
+</span></code></pre></div>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Log Analysis</p>
@@ -1987,8 +2009,10 @@ LIBGL_ALWAYS_SOFTWARE=1 remarkable</code></pre>
 <div class="admonition grey">
 <p class="admonition-title">Isolate Local User Profile Corruption</p>
 <p>Determine if the root cause resides within user configuration directories (<code>~/.config</code>, <code>~/.local</code>) or is a persistent system-wide fault.</p>
-<pre class="lang-annotation"><code>sudo useradd -m testwebkit</code></pre>
-<pre class="lang-annotation"><code>sudo passwd testwebkit</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>testwebkit
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>testwebkit
+</span></code></pre></div>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Test Protocol</p>
@@ -2021,7 +2045,8 @@ LIBGL_ALWAYS_SOFTWARE=1 remarkable</code></pre>
 <div class="admonition grey">
 <p class="admonition-title">Nuclear User Cache Reset</p>
 <p>If Step 9 proved the issue is isolated to your primary user profile, execute a complete clearance of local transient caches.</p>
-<pre class="lang-annotation"><code>rm -rf ~/.cache/*</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/.cache/*
+</span></code></pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Precautionary Step</p>
@@ -2033,11 +2058,15 @@ LIBGL_ALWAYS_SOFTWARE=1 remarkable</code></pre>
 <p class="admonition-title">Incident Data Collection Protocol</p>
 <p>When anomalous rendering behaviors occur, immediately dump the system state metrics. Preserving this timeline context prevents trial-and-error debugging later.</p>
 <p><b><code>Capture operational snapshot</code></b></p>
-<pre class="lang-annotation"><code>date &gt; issue.log</code></pre>
-<pre class="lang-annotation"><code>uname -a &gt;&gt; issue.log</code></pre>
-<pre class="lang-annotation"><code>pacman -Q webkit2gtk-4.1 javascriptcoregtk-4.1 mesa &gt;&gt; issue.log</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>date<span class="w"> </span>&gt;<span class="w"> </span>issue.log
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>uname<span class="w"> </span>-a<span class="w"> </span>&gt;&gt;<span class="w"> </span>issue.log
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>pacman<span class="w"> </span>-Q<span class="w"> </span>webkit2gtk-4.1<span class="w"> </span>javascriptcoregtk-4.1<span class="w"> </span>mesa<span class="w"> </span>&gt;&gt;<span class="w"> </span>issue.log
+</span></code></pre></div>
 <p><b><code>Extract the recent delta of the system log</code></b></p>
-<pre class="lang-annotation"><code>journalctl -b --since "10 minutes ago" &gt;&gt; issue.log</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>journalctl<span class="w"> </span>-b<span class="w"> </span>--since<span class="w"> </span><span class="s2">"10 minutes ago"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>issue.log
+</span></code></pre></div>
 </div>
 <hr>
 <div class="admonition abstract">

@@ -1104,38 +1104,43 @@ style D fill:#4d964d,stroke:#000,stroke-width:2px</code></pre>
 <div class="admonition info">
 <p class="admonition-title">CSS Centering</p>
 <p>Add this to your <code>custom.css</code> (or <code>extra.css</code>) to automatically center all diagrams site-wide without needing the <code>&lt;div&gt;</code> tags every time.</p>
-<pre class="lang-annotation"><code>/* Center all Mermaid diagrams on the site */
-.mermaid {
-text-align: center;
-}</code></pre>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">/* Center all Mermaid diagrams on the site */</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">.</span><span class="nc">mermaid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <hr>
-<pre class="lang-annotation"><code>/* Optional: Add spacing inside admonition boxes */
-.admonition .mermaid {
-margin-top: 1em;
-margin-bottom: 1em;
-}</code></pre>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">/* Optional: Add spacing inside admonition boxes */</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.</span><span class="nc">admonition</span><span class="w"> </span><span class="p">.</span><span class="nc">mermaid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <hr>
 <h5 id="step-1-configuration">STEP 1: CONFIGURATION<a class="headerlink" href="#step-1-configuration" title="Permanent link">¶</a></h5>
 <hr>
 <ul>
 <li>Configuration (mkdocs.yml)</li>
 </ul>
-<pre class="lang-annotation"><code>theme:
-  name: material</code></pre>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">theme</span><span class="o">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="nt">material</span>
+</span></code></pre></div>
 <hr>
 <ul>
 <li>I'm useing <code>styles/custom.css</code> under extra-css!</li>
 </ul>
-<pre class="lang-annotation"><code>extra_css:
-  - styles/custom.css</code></pre>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">extra_css</span><span class="o">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">styles</span><span class="o">/</span><span class="nt">custom</span><span class="p">.</span><span class="nc">css</span>
+</span></code></pre></div>
 <hr>
-<pre class="lang-annotation"><code>markdown_extensions:
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - admonition</code></pre>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">markdown_extensions</span><span class="o">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">pymdownx</span><span class="p">.</span><span class="nc">superfences</span><span class="o">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="nt">custom_fences</span><span class="o">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="nt">-</span><span class="w"> </span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="nt">mermaid</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">          </span><span class="nt">class</span><span class="o">:</span><span class="w"> </span><span class="nt">mermaid</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">          </span><span class="nt">format</span><span class="o">:</span><span class="w"> </span><span class="o">!!</span><span class="nt">python</span><span class="o">/</span><span class="nt">name</span><span class="p">:</span><span class="nd">pymdownx</span><span class="p">.</span><span class="nc">superfences</span><span class="p">.</span><span class="nc">fence_code_format</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">admonition</span>
+</span></code></pre></div>
 </div>
 <h5 id="step-2-how-to-save-as-a-clean-pdf">Step 2: How to save as a clean PDF<a class="headerlink" href="#step-2-how-to-save-as-a-clean-pdf" title="Permanent link">¶</a></h5>
 <div class="admonition info">
@@ -1287,12 +1292,13 @@ This is a purple box with a rocket icon!</p>
 <div class="admonition info">
 <p class="admonition-title">Mermaid Colours</p>
 <p>If you ever want to override Mermaid colors in mkdocs-material, you can add custom CSS:</p>
-<pre class="lang-annotation"><code>/* In your mkdocs.yml, under extra_css: */
-
-.mermaid .node rect {
-    fill: #f9f !important;
-    stroke: #333 !important;
-}</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/* In your mkdocs.yml, under extra_css: */
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>.mermaid .node rect {
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    fill: #f9f !important;
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    stroke: #333 !important;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>}
+</span></code></pre></div>
 </div>
 
 

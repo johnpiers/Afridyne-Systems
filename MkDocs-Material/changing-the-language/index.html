@@ -1084,8 +1084,9 @@
 <h3 id="site-language">Site Language<a class="headerlink" href="#site-language" title="Permanent link">¶</a></h3>
 <hr>
 <p>You can set the site language in <code>mkdocs.yml</code> with:</p>
-<pre class="lang-annotation"><code>theme:
-  language: en # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>HTML5 only allows to set a <a href="https://www.w3.org/International/questions/qa-html-language-declarations.en#attributes">single language per document</a>, which<br>
 is why Material for MkDocs only supports setting a canonical<br>
@@ -1107,14 +1108,15 @@ create one project in a subfolder per language, and then use the<br>
 <div class="admonition deep-dive">
 <p class="admonition-title">Multiple Language Documentation</p>
 <p>If your documentation is available in multiple languages, a language selector pointing to those languages can be added to the header. Alternate languages can be defined via <code>mkdocs.yml</code>.</p>
-<pre class="lang-annotation"><code>extra:
-  alternate:
-    - name: English
-      link: /en/ # (1)!
-      lang: en
-    - name: Deutsch
-      link: /de/
-      lang: de</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">alternate</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/en/</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deutsch</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/de/</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">de</span>
+</span></code></pre></div>
 <ol>
 <li>Note that this must be an absolute link. If it includes a domain<br>
 part, it's used as defined. Otherwise the domain part of the<br>
@@ -1142,17 +1144,19 @@ part, it's used as defined. Otherwise the domain part of the<br>
 <div class="admonition instruction">
 <p class="admonition-title">Stay on Page</p>
 <p>When switching between languages, e.g., if language <code>en</code> and <code>de</code> contain a page with the same path name, the user will stay on the current page:</p>
-<pre class="lang-annotation"><code>docs.example.com/en/     -&gt; docs.example.com/de/
-docs.example.com/en/foo/ -&gt; docs.example.com/de/foo/
-docs.example.com/en/bar/ -&gt; docs.example.com/de/bar/</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docs.example.com/en/     -&gt; docs.example.com/de/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docs.example.com/en/foo/ -&gt; docs.example.com/de/foo/
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>docs.example.com/en/bar/ -&gt; docs.example.com/de/bar/
+</span></code></pre></div>
 <p>No configuration is necessary.</p>
 </div>
 <h3 id="directionality">Directionality<a class="headerlink" href="#directionality" title="Permanent link">¶</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Directionality</p>
 <p>While many languages are read <code>ltr</code> (left-to-right), Material for MkDocs also supports <code>rtl</code> (right-to-left) directionality which is deduced from the selected language, but can also be set with:</p>
-<pre class="lang-annotation"><code>theme:
-  direction: ltr</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ltr</span>
+</span></code></pre></div>
 <p>Click on a tile to change the directionality:</p>
 <p><style>.mdx-switch button:hover{filter:brightness(1.15)!important;transform:translateY(-1px)!important}</style><span class="mdx-switch" style="display: flex !important; gap: 12px !important; margin: 16px 0 !important;"><button data-md-dir="ltr" style="cursor: pointer !important; background-color: var(--md-accent-fg-color, #00b0ff) !important; border: 1px solid var(--md-accent-fg-color, #00b0ff) !important; border-radius: 6px !important; padding: 6px 16px !important; color: var(--md-accent-bg-color, #ffffff) !important; font-family: var(--md-code-font-family), monospace !important; font-weight: bold !important; transition: all 0.2s !important;">ltr</button><button data-md-dir="rtl" style="cursor: pointer !important; background-color: var(--md-accent-fg-color, #00b0ff) !important; border: 1px solid var(--md-accent-fg-color, #00b0ff) !important; border-radius: 6px !important; padding: 6px 16px !important; color: var(--md-accent-bg-color, #ffffff) !important; font-family: var(--md-code-font-family), monospace !important; font-weight: bold !important; transition: all 0.2s !important;">rtl</button></span></p>
 <p><script><br />
@@ -1181,20 +1185,21 @@ docs.example.com/en/bar/ -&gt; docs.example.com/de/bar/</code></pre>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>overrides/partials/languages/custom.html</code></label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>&lt;!-- Import translations for language and fallback --&gt;
-{% import "partials/languages/de.html" as language %}
-{% import "partials/languages/en.html" as fallback %} &lt;!-- (1)! --&gt;
-
-&lt;!-- Define custom translations --&gt;
-{% macro override(key) %}{{ {
-  "source.file.date.created": "Erstellt am", &lt;!-- (2)! --&gt;
-  "source.file.date.updated": "Aktualisiert am"
-}[key] }}{% endmacro %}
-
-&lt;!-- Re-export translations --&gt;
-{% macro t(key) %}{{
-  override(key) or language.t(key) or fallback.t(key)
-}}{% endmacro %}</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">&lt;!-- Import translations for language and fallback --&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{% import "partials/languages/de.html" as language %}
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>{% import "partials/languages/en.html" as fallback %} <span class="cm">&lt;!-- (1)! --&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cm">&lt;!-- Define custom translations --&gt;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>{% macro override(key) %}{{ {
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  "source.file.date.created": "Erstellt am", <span class="cm">&lt;!-- (2)! --&gt;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  "source.file.date.updated": "Aktualisiert am"
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>}[key] }}{% endmacro %}
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="cm">&lt;!-- Re-export translations --&gt;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>{% macro t(key) %}{{
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>  override(key) or language.t(key) or fallback.t(key)
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>}}{% endmacro %}
+</span></code></pre></div>
 <ol>
 <li>
 <p>Note that <code>en</code> must always be used as a fallback language, as it's<br>
@@ -1206,8 +1211,9 @@ the default theme language.</p>
 </ol>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>theme:
-  language: custom</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>

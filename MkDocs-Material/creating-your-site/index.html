@@ -1088,7 +1088,8 @@
 <p class="admonition-title">After Installation</p>
 <h4 id="after-installation">After Installation.<a class="headerlink" href="#after-installation" title="Permanent link">¶</a></h4>
 <p>After you've <a href="../../MkDocs-Material-Start/">installed</a> Material for MkDocs, you can bootstrap your project documentation using the <code>mkdocs</code> executable. Go to the directory where you want your project to be located and enter:</p>
-<pre class="lang-annotation"><code>mkdocs new .</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdocs new .
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Docker Use</p>
@@ -1097,10 +1098,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Unix, Powershell</label><label for="__tabbed_1_2">Windows (cmd)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material new .</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material new .
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>docker run --rm -it -v "%cd%":/docs squidfunk/mkdocs-material new .</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker run --rm -it -v "%cd%":/docs squidfunk/mkdocs-material new .
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1108,21 +1111,22 @@
 <div class="admonition desc">
 <p class="admonition-title"> File Structure Created</p>
 <h4 id="this-will-create-the-following-structure">This will create the following structure:<a class="headerlink" href="#this-will-create-the-following-structure" title="Permanent link">¶</a></h4>
-<pre class="lang-annotation no-copy"><code>.
-├─ docs/
-│  └─ index.md
-└─ mkdocs.yml</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>.
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├─<span class="w"> </span>docs/
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│<span class="w">  </span>└─<span class="w"> </span>index.md
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>└─<span class="w"> </span>mkdocs.yml
+</span></code></pre></div>
 </div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
 <h3 id="minimal-configuration">Minimal Configuration<a class="headerlink" href="#minimal-configuration" title="Permanent link">¶</a></h3>
 <div class="admonition success">
 <p class="admonition-title">Minimal Configuration</p>
 <p>Simply set the <code>site_name</code> and add the following lines to <code>mkdocs.yml</code> to enable the theme:</p>
-<p><code>yaml hl_lines="2-5"
-site_name: My site
-site_url: https://mydomain.org/mysite
-theme:
-  name: material</code></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My site</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="hll"><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://mydomain.org/mysite</span>
+</span></span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="hll"><span class="nt">theme</span><span class="p">:</span>
+</span></span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="hll"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+</span></span></code></pre></div>
 <p>The <code>site_url</code> setting is important for a number of reasons. By default, MkDocs will assume that your site is hosted at the root of your domain. This is not the case, for example, when [publishing to GitHubpages] - unless you use a custom domain. Another reason is that some of the plugins require the <code>site_url</code> to be set, so you should always do this.</p>
 </div>
 <details class="tip" open="open">
@@ -1135,20 +1139,21 @@ theme:
 <li>Install <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml"><code>vscode-yaml</code></a> for YAML language support.</li>
 <li>
 <p>Add the schema under the <code>yaml.schemas</code> key in your user or workspace <a href="https://code.visualstudio.com/docs/getstarted/settings"><code>settings.json</code></a>:</p>
-<pre class="lang-annotation"><code>{
-  "yaml.schemas": {
-    "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
-  },
-  "yaml.customTags": [ // (1)!
-    "!ENV scalar",
-    "!ENV sequence",
-    "!relative scalar",
-    "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
-    "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
-    "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
-    "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
-  ]
-}</code></pre>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">"yaml.schemas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">"https://squidfunk.github.io/mkdocs-material/schema.json"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mkdocs.yml"</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">"yaml.customTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="c1">// (1)!</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="s2">"!ENV scalar"</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="s2">"!ENV sequence"</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="s2">"!relative scalar"</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg"</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji"</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"</span><span class="p">,</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>This setting is necessary if you plan to use <a href="../icons-emojis/">icons and emojis</a>, or Visual Studio Code will show errors on certain lines.</p>
@@ -1160,7 +1165,8 @@ theme:
 <li>Ensure your editor of choice has support for YAML schema validation.</li>
 <li>
 <p>Add the following lines at the top of <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code># yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json</span>
+</span></code></pre></div>
 </li>
 </ol>
 </div>
@@ -1290,24 +1296,28 @@ theme:
 <p class="admonition-title">Previewing as you Write</p>
 <p><a href="../info/#previewing-your-site">Back to: Previewing your Site</a></p>
 <p>MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving. Start it with:</p>
-<pre class="lang-annotation"><code>mkdocs serve # (1)!</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdocs<span class="w"> </span>serve<span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p>If you have a large documentation project, it might take minutes <br>
 until MkDocs has rebuilt all pages for you to preview. If you're only<br>
 interested in the current page, the <a href="https://www.mkdocs.org/about/release-notes/#support-for-dirty-builds-990"><code>--dirtyreload</code></a> flag will make<br>
 rebuilds much faster:</p>
-<pre class="lang-annotation"><code>mkdocs serve --dirtyreload</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mkdocs serve --dirtyreload
+</span></code></pre></div>
 </li>
 </ol>
 <p>If you're running Material for MkDocs from within Docker, use:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Unix, Powershell</label><label for="__tabbed_3_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>docker run --rm -it -p 8000:8000 -v \${PWD}:/docs squidfunk/mkdocs-material</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker run --rm -it -p 8000:8000 -v \${PWD}:/docs squidfunk/mkdocs-material
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>docker run --rm -it -p 8000:8000 -v "%cd%":/docs squidfunk/mkdocs-material</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker run --rm -it -p 8000:8000 -v "%cd%":/docs squidfunk/mkdocs-material
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1319,16 +1329,19 @@ rebuilds much faster:</p>
 <p class="admonition-title">Building your Site</p>
 <p><a href="../info/">Building your Project</a></p>
 <p>When you're finished editing, you can build a static site from your Markdown files with:</p>
-<pre class="lang-annotation"><code>mkdocs build</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdocs build
+</span></code></pre></div>
 <div class="admonition recommendation">
 <p>If you're running Material for MkDocs from within Docker, use:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Unix, Powershell</label><label for="__tabbed_4_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>docker run --rm -it -v \${PWD}:/docs squidfunk/mkdocs-material build</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker run --rm -it -v \${PWD}:/docs squidfunk/mkdocs-material build
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>docker run --rm -it -v "%cd%":/docs squidfunk/mkdocs-material build</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker run --rm -it -v "%cd%":/docs squidfunk/mkdocs-material build
+</span></code></pre></div>
 </div>
 </div>
 </div>

@@ -2532,9 +2532,10 @@
 <p>See <code>~/.aliases</code> for useful command aliases</p>
 <hr>
 <p>Add the following snippet to your ~/.bashrc (for Bash) or ~/.zshrc (for Zsh) to load your aliases automatically:</p>
-<pre class="lang-annotation"><code>if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">if [ -f ~/.aliases ]; then</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">. ~/.aliases</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">fi</span>
+</span></code></pre></div>
 <hr>
 <ul>
 <li>System Update: alias update="sudo pacman -Syu"</li>
@@ -2732,9 +2733,10 @@ fi</code></pre>
 <ol>
 <li>Add the <a href="https://github.com">LizardByte Repository</a> to your config: <code>sudo nano /etc/pacman.conf</code></li>
 </ol>
-<pre class="lang-annotation"><code>[lizardbyte]
-SigLevel = Optional
-Server = https://github.com/releases/latest/download</code></pre>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[lizardbyte]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">SigLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Optional</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">Server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">https://github.com/releases/latest/download</span>
+</span></code></pre></div>
 <ol>
 <li>Install Sunshine: <code>sudo pacman -Syyu lizardbyte/sunshine</code></li>
 <li>Start the application and access the Web Interface at <a href="https://localhost:47990">https://localhost:47990</a> to set your credentials.</li>
@@ -2955,16 +2957,18 @@ Server = https://github.com/releases/latest/download</code></pre>
 <summary>Minimal Installation</summary>
 <p>Set these properties to install Arch OS Core only with minimal packages &amp; configurations. This is the same as preset <code>core</code>:<br>
 </p><hr style="border: none; border-top: 1px solid #00b8d4; opacity: 0.8; margin: 15px 0;"><p></p>
-<p></p><pre class="lang-annotation"><code>ARCH_OS_CORE_TWEAKS_ENABLED='false'
-ARCH_OS_BOOTSPLASH_ENABLED='false'
-ARCH_OS_DESKTOP_ENABLED='false'
-ARCH_OS_MULTILIB_ENABLED='false'
-ARCH_OS_HOUSEKEEPING_ENABLED='false'
-ARCH_OS_SHELL_ENHANCEMENT_ENABLED='false'
-ARCH_OS_AUR_HELPER='none'</code></pre><br>
+<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ARCH_OS_CORE_TWEAKS_ENABLED='false'
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ARCH_OS_BOOTSPLASH_ENABLED='false'
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ARCH_OS_DESKTOP_ENABLED='false'
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ARCH_OS_MULTILIB_ENABLED='false'
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>ARCH_OS_HOUSEKEEPING_ENABLED='false'
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>ARCH_OS_SHELL_ENHANCEMENT_ENABLED='false'
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>ARCH_OS_AUR_HELPER='none'
+</span></code></pre></div><br>
 <hr style="border: none; border-top: 1px solid #00b8d4; opacity: 0.8; margin: 15px 0;"><br>
 - If you want to disable VM support add<br>
-<pre class="lang-annotation"><code>`ARCH_OS_VM_SUPPORT_ENABLED='false'`</code></pre><p></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>`ARCH_OS_VM_SUPPORT_ENABLED='false'`
+</span></code></pre></div><p></p>
 <div class="admonition danger">
 <p class="admonition-title">NOTE</p>
 <p>You will only be provided with a minimal tty after installation.</p>
@@ -3391,8 +3395,9 @@ fish_config</p>
 <div class="admonition info">
 <p class="admonition-title">Installed Packages</p>
 <p>These packages are installed:</p>
-<pre class="lang-annotation"><code>base-devel btrfs-progs efibootmgr inotify-tools
-grub grub-btrfs snapper snap-pac</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>base-devel btrfs-progs efibootmgr inotify-tools
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>grub grub-btrfs snapper snap-pac
+</span></code></pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">NOTE</p>
@@ -3405,15 +3410,17 @@ grub grub-btrfs snapper snap-pac</code></pre>
 <div class="admonition pied-piper">
 <p class="admonition-title">Packages</p>
 <p>This group of packages will be installed during Arch OS Core Installation (~150 packages in total):</p>
-<pre class="lang-annotation"><code>base; base-devel; linux-firmware; zram-generator; networkmanager [kernel_pkg] [microcode_pkg]</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>base; base-devel; linux-firmware; zram-generator; networkmanager [kernel_pkg] [microcode_pkg]
+</span></code></pre></div>
 </div>
 <h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">¶</a></h3>
 <div class="admonition pied-piper">
 <p class="admonition-title">Services</p>
 <p>These services will be enabled during Arch OS Core Installation:</p>
 <hr>
-<pre class="lang-annotation"><code>NetworkManager; fstrim.timer; systemd;-zram-setup@zram0.service; 
-systemd-oomd.service; systemd-boot-update.service; systemd-timesyncd.service</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>NetworkManager; fstrim.timer; systemd;-zram-setup@zram0.service; 
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>systemd-oomd.service; systemd-boot-update.service; systemd-timesyncd.service
+</span></code></pre></div>
 </div>
 <h3 id="configuration_1">Configuration<a class="headerlink" href="#configuration_1" title="Permanent link">¶</a></h3>
 <div class="admonition quote">
@@ -3433,14 +3440,16 @@ systemd-oomd.service; systemd-boot-update.service; systemd-timesyncd.service</co
 <div class="admonition quote">
 <p>If you need to rescue your Arch OS in case of a crash, <strong>boot from an Arch ISO device</strong> and start the <strong><a href="https://github.com/murkl/arch-os-recovery">Arch OS Recovery</a></strong>.</p>
 <hr>
-<pre class="lang-annotation"><code>curl -Ls bit.ly/arch-os-recovery | bash</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl -Ls bit.ly/arch-os-recovery | bash
+</span></code></pre></div>
 </div>
 <h3 id="btrfs-rollback-manually">BTRFS Rollback - Manually<a class="headerlink" href="#btrfs-rollback-manually" title="Permanent link">¶</a></h3>
 <div class="admonition quote">
 <p class="admonition-title">BTRFS Rollback - Manually</p>
-<pre class="lang-annotation"><code>btrfs subvolume list /mnt/recovery # List BTRFS snapshots
-btrfs subvolume delete --recursive /mnt/recovery/@
-btrfs subvolume snapshot /mnt/recovery/@snapshots/&lt;ID&gt;/snapshot /mnt/recovery/@</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>btrfs subvolume list /mnt/recovery # List BTRFS snapshots
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>btrfs subvolume delete --recursive /mnt/recovery/@
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>btrfs subvolume snapshot /mnt/recovery/@snapshots/&lt;ID&gt;/snapshot /mnt/recovery/@
+</span></code></pre></div>
 </div>
 <h3 id="ext4-recovery-manually">EXT4 Recovery - manually<a class="headerlink" href="#ext4-recovery-manually" title="Permanent link">¶</a></h3>
 <div class="admonition quote">
@@ -3508,19 +3517,21 @@ btrfs subvolume snapshot /mnt/recovery/@snapshots/&lt;ID&gt;/snapshot /mnt/recov
 <p># From booted Arch ISO:<br>
  nano /etc/pacman.d/mirrorlist</p>
 <hr>
-<pre class="lang-annotation"><code>....
-# Disable this server
-# Server = https://archlinux.thaller.ws/$repo/os/$arch
-Server = https://london.mirror.pkgbuild.com/$repo/os/$arch
-Server = https://mirror.ubrco.de/archlinux/$repo/os/$arch
-Server = https://mirror.f4st.host/archlinux/$repo/os/$arch
-....</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>....
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a># Disable this server
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a># Server = https://archlinux.thaller.ws/$repo/os/$arch
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Server = https://london.mirror.pkgbuild.com/$repo/os/$arch
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Server = https://mirror.ubrco.de/archlinux/$repo/os/$arch
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Server = https://mirror.f4st.host/archlinux/$repo/os/$arch
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>....
+</span></code></pre></div>
 </div>
 <h3 id="device-is-busy">Device is Busy<a class="headerlink" href="#device-is-busy" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Device is Busy</p>
 <p>Try terminate all processes with:</p>
-<pre class="lang-annotation"><code>fuser -km /mnt</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>fuser -km /mnt
+</span></code></pre></div>
 </div>
 <h3 id="legacy-routers-ecn-disabled">Legacy Routers (ECN disabled)<a class="headerlink" href="#legacy-routers-ecn-disabled" title="Permanent link">¶</a></h3>
 <div class="admonition info">
@@ -3530,45 +3541,50 @@ Server = https://mirror.f4st.host/archlinux/$repo/os/$arch
 <h3 id="downgrade-a-package">Downgrade a Package<a class="headerlink" href="#downgrade-a-package" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Downgrade a Package</p>
-<pre class="lang-annotation"><code>paru -S downgrade
-sudo downgrade my_package_name</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>paru -S downgrade
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo downgrade my_package_name
+</span></code></pre></div>
 </div>
 <h3 id="reset-pacman-keyring-update">Reset Pacman Keyring &amp; Update<a class="headerlink" href="#reset-pacman-keyring-update" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Reset Pacman Keyring &amp; Update</p>
-<pre class="lang-annotation"><code>sudo rm -rf /etc/pacman.d/gnupg
-sudo pacman-key --init
-sudo pacman-key --populate
-
-# Do update
-sudo pacman -Sy archlinux-keyring &amp;&amp; paru -Su</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo rm -rf /etc/pacman.d/gnupg
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo pacman-key --init
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo pacman-key --populate
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a># Do update
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>sudo pacman -Sy archlinux-keyring &amp;&amp; paru -Su
+</span></code></pre></div>
 </div>
 <h3 id="reset-pacmanaur-cache">Reset Pacman/AUR cache<a class="headerlink" href="#reset-pacmanaur-cache" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Reset Pacman/AUR cache</p>
-<pre class="lang-annotation"><code>paru -Scc</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>paru -Scc
+</span></code></pre></div>
 </div>
 <h3 id="development">Development<a class="headerlink" href="#development" title="Permanent link">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Development</p>
 <p>Create new pull request branches only from <a href="https://github.com/murkl/arch-os/tree/main">main branch</a>! The <a href="https://github.com/murkl/arch-os/tree/dev">dev branch</a> will be deleted after each merge into main.</p>
 <p>The Arch OS <a href="https://github.com/murkl/arch-os/tree/dev">dev branch</a> can be broken, use only for testing!</p>
-<pre class="lang-annotation"><code>curl -Ls bit.ly/arch-os-dev | bash</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>curl<span class="w"> </span>-Ls<span class="w"> </span>bit.ly/arch-os-dev<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</span></code></pre></div>
 </div>
 <h3 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Parameter</p>
-<pre class="lang-annotation"><code># Set password:
-ARCH_OS_PASSWORD=mySecret123 ./installer.sh
-
-# Force install:
-FORCE=true ./installer.sh
-
-# Custom gum:
-GUM=/usr/bin/gum ./installer.sh
-
-# Debug Simulator:
-DEBUG=true ./installer.sh</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a># Set password:
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ARCH_OS_PASSWORD=mySecret123 ./installer.sh
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a># Force install:
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>FORCE=true ./installer.sh
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a># Custom gum:
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>GUM=/usr/bin/gum ./installer.sh
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a># Debug Simulator:
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>DEBUG=true ./installer.sh
+</span></code></pre></div>
 </div>
 <h3 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">¶</a></h3>
 <details class="info">

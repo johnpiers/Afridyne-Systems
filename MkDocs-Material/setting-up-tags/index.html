@@ -1142,8 +1142,9 @@
 <p>The built-in tags plugin adds the ability to categorize any page with tags as part of the front matter of the page. In order to add support for tags, add the following lines to <code>mkdocs.yml</code>:</p>
 <div class="admonition abstract">
 <p class="admonition-title">Built-in Tags Plugin</p>
-<pre class="lang-annotation"><code>Plugin:
-- tags</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">Plugin</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span>
+</span></code></pre></div>
 </div>
 <p>For a list of all settings, please consult the <a href="../tags/">plugin documentation</a>.</p>
 <h3 id="tag-icons-and-identifiers">Tag Icons and Identifiers<a class="headerlink" href="#tag-icons-and-identifiers" title="Permanent link">¶</a></h3>
@@ -1154,9 +1155,10 @@
 <div class="admonition abstract">
 <p class="admonition-title">Built-in Tags Plugin</p>
 <p>Each tag can be associated with an icon, which is then rendered inside the tag. Before assigning icons to tags, associate each tag with a unique identifier, by adding the following to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>extra:
-  tags:
-    &lt;tag&gt;: &lt;identifier&gt; # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;tag&gt;</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;identifier&gt;</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>The identifier can only include alphanumeric characters, as<br>
 well as dashes and underscores. For example, if you have a<br>
@@ -1165,9 +1167,10 @@ tag <code>Compatibility</code>, you can set <code>compat</code> as an identifier
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Built-in Tags Plugin</p>
-<p></p><pre class="lang-annotation"><code>extra:
-  tags:
-    Compatibility: compat</code></pre><br>
+<p></p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">Compatibility</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compat</span>
+</span></code></pre></div><br>
 Identifiers can be reused between tags. Tags which are not explicitly associated will use the default tag icon which is <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m5.41 21 .71-4h-4l.35-2h4l1.06-6h-4l.35-2h4l.71-4h2l-.71 4h6l.71-4h2l-.71 4h4l-.35 2h-4l-1.06 6h4l-.35 2h-4l-.71 4h-2l.71-4h-6l-.71 4zM9.53 9l-1.06 6h6l1.06-6z"></path></svg></span><p></p>
 </div>
 <div class="admonition desc">
@@ -1179,10 +1182,11 @@ Identifiers can be reused between tags. Tags which are not explicitly associated
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Tag icon</label><label for="__tabbed_1_2">Tag default icon</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>theme:
-  icon:
-    tag:
-      &lt;identifier&gt;: &lt;icon&gt; # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">icon</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">tag</span><span class="p">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&lt;identifier&gt;</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;icon&gt;</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p>Enter a few keywords to use the global search found in the top<br>
@@ -1208,10 +1212,11 @@ the perfect icon name there.</p>
 </ol>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>theme:
-  icon:
-    tag:
-      default: &lt;icon&gt;</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">icon</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">tag</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;icon&gt;</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1228,37 +1233,41 @@ the perfect icon name there.</p>
 <p>When the <a href="../tags/">built-in tags plugin</a> is enabled, tags can be added for a document<br>
 with the front matter <code>tags</code> property. Add the following lines at the top of a<br>
 Markdown file:</p>
-<pre class="lang-annotation"><code>---
-tags:
-  - HTML5
-  - JavaScript
-  - CSS
----
-
-...</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>---
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tags:
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>-<span class="w"> </span>HTML5
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>-<span class="w"> </span>JavaScript
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span>-<span class="w"> </span>CSS
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>---
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>...
+</span></code></pre></div>
 <p>The page will now render with those tags above the main headline and within the<br>
 search preview, which now allows to <strong>find pages by tags</strong>.</p>
 </div>
 <details class="question">
 <summary>How to set tags for an entire folder?</summary>
 <p>With the help of the <a href="../meta/">built-in meta plugin</a>, you can ensure that tags are set for an entire section and all nested pages, by creating a <code>.meta.yml</code> file in the corresponding folder with the following content:</p>
-<pre class="lang-annotation"><code>tags:
-  - HTML5
-  - JavaScript
-  - CSS</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTML5</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JavaScript</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CSS</span>
+</span></code></pre></div>
 <p>The tags set in <code>.meta.yml</code> are merged and deduplicated with the tags defined for a page, which means you can define common tags in <code>.meta.yml</code> and then add specific tags for each page. The tags in <code>.meta.yml</code> are appended.</p>
 </details>
 <h3 id="adding-a-tags-index">Adding a Tags Index<a class="headerlink" href="#adding-a-tags-index" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Adding a Tags Index</p>
-<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 8.2.0 --&gt;
-&lt;!-- md:example tags --&gt;</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">8</span>.2.0<span class="w"> </span>--&gt;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&lt;!--<span class="w"> </span>md:example<span class="w"> </span>tags<span class="w"> </span>--&gt;
+</span></code></pre></div>
 <p>The <a href="../tags/">built-in tags plugin</a> allows to define a file to render a tags index, which can be any page that is part of the <code>nav</code> section. To add a tags index, create a page, e.g. <code>tags.md</code>:</p>
-<pre class="lang-annotation"><code># Tags
-
-Following is a list of relevant tags:
-
-&lt;!-- material/tags --&gt;</code></pre>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gh"># Tags</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Following is a list of relevant tags:
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>&lt;!-- material/tags --&gt;
+</span></code></pre></div>
 <p>The tags marker specifies the position of the tags index, i.e. it is replaced with the actual tags index when the page is rendered. You can include arbitrary content before and after the marker:</p>
 </div>
 <p><a href="../../assets/assets/screenshots/tags-index.png"><img alt="Tags index" src="../../assets/assets/screenshots/tags-index.png"></a></p>
@@ -1266,20 +1275,23 @@ Following is a list of relevant tags:
 <h4 id="configurable-listings">Configurable listings<a class="headerlink" href="#configurable-listings" title="Permanent link">¶</a></h4>
 <div class="admonition tldr">
 <p class="admonition-title">Configurable Listings</p>
-<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.6.0 --&gt;
-&lt;!-- md:flag experimental --&gt;</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.6.0<span class="w"> </span>--&gt;
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>&lt;!--<span class="w"> </span>md:flag<span class="w"> </span>experimental<span class="w"> </span>--&gt;
+</span></code></pre></div>
 <p>Listings can be configured in <code>mkdocs.yml</code> or directly at the location of the marker that you position in a Markdown document. Some examples:</p>
 <ul>
 <li>
 <p><strong>Use [scoped listings]</strong>: limit the tags index to pages that are on the same level of the subsection of the documentation the page is in:</p>
-<pre class="lang-annotation sh no-copy"><code>&lt;!-- material/tags { scope: true } --&gt;</code></pre>
+<div class="language-html sh no-copy highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cm">&lt;!-- material/tags { scope: true } --&gt;</span>
+</span></code></pre></div>
 </li>
 </ul>
 <hr>
 <ul>
 <li>
 <p><strong>List only specific tags</strong>: limit the tags index to a single or multiple selected tags, e.g., <code>Foo</code> and <code>Bar</code>, excluding all other tags:</p>
-<pre class="lang-annotation sh no-copy"><code>&lt;!-- material/tags { include: [Foo, Bar] } --&gt;</code></pre>
+<div class="language-html sh no-copy highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cm">&lt;!-- material/tags { include: [Foo, Bar] } --&gt;</span>
+</span></code></pre></div>
 </li>
 </ul>
 <hr>
@@ -1288,14 +1300,16 @@ Following is a list of relevant tags:
 <p><strong>Exclude pages with specific tags</strong>: don't include pages that are tagged<br>
   with specific tags, e.g. <code>Internal</code>. This can be any tag, including a shadow<br>
   tag:</p>
-<pre class="lang-annotation sh no-copy"><code>&lt;!-- material/tags { exclude: [Internal] } --&gt;</code></pre>
+<div class="language-html sh no-copy highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cm">&lt;!-- material/tags { exclude: [Internal] } --&gt;</span>
+</span></code></pre></div>
 </li>
 </ul>
 <hr>
 <ul>
 <li>
 <p><strong>Enable or disable tags inside the table of contents</strong>: specify whether the table of contents lists all tags under the nearest headline:</p>
-<pre class="lang-annotation sh no-copy"><code>&lt;!-- material/tags { toc: false } --&gt;</code></pre>
+<div class="language-html sh no-copy highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">&lt;!-- material/tags { toc: false } --&gt;</span>
+</span></code></pre></div>
 </li>
 </ul>
 <hr>
@@ -1304,59 +1318,68 @@ Following is a list of relevant tags:
 <h4 id="scoped-listings">Scoped Listings<a class="headerlink" href="#scoped-listings" title="Permanent link">¶</a></h4>
 <div class="admonition desc">
 <p class="admonition-title">Scoped listings</p>
-<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
-&lt;!-- md:flag experimental --&gt;</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>&lt;!--<span class="w"> </span>md:flag<span class="w"> </span>experimental<span class="w"> </span>--&gt;
+</span></code></pre></div>
 <p>If your documentation is large, you might want to consider using scoped listings which will only include pages that are on the same level or below the page containing the listing. Just use:</p>
-<pre class="lang-annotation"><code>&lt;!-- material/tags { scope: true } --&gt;</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cm">&lt;!-- material/tags { scope: true } --&gt;</span>
+</span></code></pre></div>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">Multiple Scoped Indexes</p>
 <p>If you plan to use multiple scoped indexes, it's a good idea to define a listing configuration in <code>mkdocs.yml</code>, which you can then reference by its id:</p>
-<pre class="lang-annotation"><code>plugins:
-  - tags:
-      listings_map:
-        scoped:
-          scope: true</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">      </span><span class="nt">listings_map</span><span class="p">:</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">        </span><span class="nt">scoped</span><span class="p">:</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">          </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">Tags Scoped</p>
 <p>You can now use:</p>
-<pre class="lang-annotation"><code>&lt;!-- material/tags scoped --&gt;</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cm">&lt;!-- material/tags scoped --&gt;</span>
+</span></code></pre></div>
 </div>
 <h4 id="shadow-tags">Shadow Tags<a class="headerlink" href="#shadow-tags" title="Permanent link">¶</a></h4>
 <div class="admonition desc">
 <p class="admonition-title">Shadow Tags</p>
-<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
-&lt;!-- md:flag experimental --&gt;</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>&lt;!--<span class="w"> </span>md:flag<span class="w"> </span>experimental<span class="w"> </span>--&gt;
+</span></code></pre></div>
 <p>Shadow tags are tags that are solely meant to organization, which can be included or excluded for rendering with a simple flag. They can be enumerated in the <a href="../tags/#configshadow_tags"><code>shadow_tags</code></a> setting:</p>
-<pre class="lang-annotation"><code>plugins:
-  - tags:
-      shadow_tags:
-        - Draft
-        - Internal</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">      </span><span class="nt">shadow_tags</span><span class="p">:</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Draft</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Internal</span>
+</span></code></pre></div>
 <p>If a document is tagged with <code>Draft</code>, the tag will only be rendered if <a href="../tags/#configshadow"><code>shadow</code></a> setting is enabled, and excluded when it is disabled. This is an excellent opportunity for using tags for structuring.</p>
 </div>
 <h4 id="nested-tags">Nested Tags<a class="headerlink" href="#nested-tags" title="Permanent link">¶</a></h4>
 <div class="admonition desc">
 <p class="admonition-title">Nested Tags</p>
-<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
-&lt;!-- md:flag experimental --&gt;</code></pre>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>&lt;!--<span class="w"> </span>md:flag<span class="w"> </span>experimental<span class="w"> </span>--&gt;
+</span></code></pre></div>
 <p>The <a href="../tags/#hierarchy_separator"><code>tags_hierarchy_separator</code></a> allows to create hierarchies of tags, e.g., <code>Foo/Bar</code>. Nested tags will be rendered as children of the parent tag:</p>
-<pre class="lang-annotation"><code>plugins:
-  - tags:
-      tags_hierarchy: true</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">      </span><span class="nt">tags_hierarchy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
 </div>
 <h3 id="hiding-tags-on-a-page">Hiding Tags on a Page<a class="headerlink" href="#hiding-tags-on-a-page" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Hiding Tags on a Page</p>
 <p>While the tags are rendered above the main headline, sometimes, it might be desirable to hide them for a specific page, which can be achieved with the front matter <code>hide</code> property:</p>
-<pre class="lang-annotation"><code>---
-hide:
-  - tags
----
-
-# Page title
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nn">---</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nt">hide</span><span class="p">:</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nn">---</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1"># Page title</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nn">...</span>
+</span></code></pre></div>
 </div>
 <details class="question">
 <summary>Suggested Useful Configurations</summary>
@@ -1364,25 +1387,29 @@ hide:
 <li>
 <p><strong>GitHub Wiki:</strong><br>
     (e.g. <code>https://github.com/project/repo/wiki/foo/bar/_edit</code>)</p>
-<pre class="lang-annotation"><code>repo_url: 'https://github.com/project/repo/wiki'
-edit_uri_template: '{path_noext}/_edit'</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="s">'https://github.com/project/repo/wiki'</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nt">edit_uri_template</span><span class="p">:</span><span class="w"> </span><span class="s">'{path_noext}/_edit'</span>
+</span></code></pre></div>
 </li>
 <li>
 <p><strong>BitBucket editor:</strong><br>
     (e.g. <code>https://bitbucket.org/project/repo/src/master/docs/foo/bar.md?mode=edit</code>)</p>
-<pre class="lang-annotation"><code>repo_url: 'https://bitbucket.org/project/repo/'
-edit_uri_template: 'src/master/docs/{path}?mode=edit'</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="s">'https://bitbucket.org/project/repo/'</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nt">edit_uri_template</span><span class="p">:</span><span class="w"> </span><span class="s">'src/master/docs/{path}?mode=edit'</span>
+</span></code></pre></div>
 </li>
 <li>
 <p><strong>GitLab Static Site Editor:</strong><br>
     (e.g. <code>https://gitlab.com/project/repo/-/sse/master/docs%2Ffoo%2bar.md</code>)</p>
-<pre class="lang-annotation"><code>repo_url: 'https://gitlab.com/project/repo'
-edit_uri_template: '-/sse/master/docs%2F{path!q}'</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="s">'https://gitlab.com/project/repo'</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nt">edit_uri_template</span><span class="p">:</span><span class="w"> </span><span class="s">'-/sse/master/docs%2F{path!q}'</span>
+</span></code></pre></div>
 </li>
 <li>
 <p><strong>GitLab Web IDE:</strong><br>
     (e.g. <code>https://gitlab.com/-/ide/project/repo/edit/master/-/docs/foo/bar.md</code>)</p>
-<pre class="lang-annotation"><code>edit_uri_template: 'https://gitlab.com/-/ide/project/repo/edit/master/-/docs/{path}'</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">edit_uri_template</span><span class="p">:</span><span class="w"> </span><span class="s">'https://gitlab.com/-/ide/project/repo/edit/master/-/docs/{path}'</span>
+</span></code></pre></div>
 </li>
 </ul>
 </details>

@@ -1046,9 +1046,10 @@
 
 <div class="admonition info">
 <p>When autohiding is enabled, the header is automatically hidden when the user scrolls past a certain threshold, leaving more space for content. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - header.autohide</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">header.autohide</span>
+</span></code></pre></div>
 </div>
 <h3 id="announcement-bar">Announcement Bar<a class="headerlink" href="#announcement-bar" title="Permanent link">¶</a></h3>
 <!-- md:version 5.0.0 -->
@@ -1056,11 +1057,12 @@
 
 <div class="admonition info">
 <p>Material for MkDocs includes an announcement bar, which is the perfect place to display project news or other important information to the user. When the user scrolls past the header, the bar will automatically disappear. In order to add an announcement bar, <a href="../customization/#extending-the-theme">extend the theme</a> and <a href="../customization/#overriding-blocks">override the <code>announce</code> block</a>, which is empty by default:</p>
-<pre class="lang-annotation"><code>{% extends "base.html" %}
-
-{% block announce %}
-&lt;!-- Add announcement here, including arbitrary HTML --&gt;
-{% endblock %}</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{% extends "base.html" %}
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>{% block announce %}
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cm">&lt;!-- Add announcement here, including arbitrary HTML --&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>{% endblock %}
+</span></code></pre></div>
 </div>
 <h4 id="mark-as-read">Mark as Read<a class="headerlink" href="#mark-as-read" title="Permanent link">¶</a></h4>
 <!-- md:version 8.4.0 -->
@@ -1069,9 +1071,10 @@
 
 <div class="admonition info">
 <p>In order to render temporary announcements that can be marked as read by the user, a button to dismiss the current announcement can be included. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - announce.dismiss</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">announce.dismiss</span>
+</span></code></pre></div>
 <p>When the user clicks the button, the current announcement is dismissed and not displayed again until the content of the announcement changes. This is handled automatically.</p>
 </div>
 <p><a class="md-button md-button--custom" href="../../MkDocs-Material-Start/#advanced-configuration">Back to: #Advanced-Configuration  <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"></path></svg></span></a></p>

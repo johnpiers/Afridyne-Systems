@@ -1313,41 +1313,47 @@
 <div class="admonition assumption">
 <p class="admonition-title">Instant Loading</p>
 <p>When instant loading is enabled, clicks on all internal links will be intercepted and dispatched via <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XHR</a> without fully reloading the page. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.instant</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant</span>
+</span></code></pre></div>
 <p>The resulting page is parsed and injected and all event handlers and components are rebound automatically, i.e., <strong>Material for MkDocs now behaves like a Single Page Application</strong>. Now, the search index survives navigation, which is especially useful for large documentation sites.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">The [<code>site_url</code>][<code>mkdocs.site_url</code>] setting must be set</p>
 <p>Note that you must set [<code>site_url</code>][<code>mkdocs.site_url</code>] when using instant navigation, as instant navigation relies on the generated <code>sitemap.xml</code> which will be empty if this setting is omitted. Example:</p>
-<pre class="lang-annotation"><code>site_url: https://example.com</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com</span>
+</span></code></pre></div>
 </div>
 <h4 id="instant-prefetching">Instant Prefetching<a class="headerlink" href="#instant-prefetching" title="Permanent link">¶</a></h4>
 <div class="admonition desc">
 <p class="admonition-title">Instant Prefetching</p>
 <p>Instant prefetching is a new experimental feature that will start to fetch a page once the user hovers over a link. This will reduce the perceived loading time for the user, especially on slow connections, as the page will be available immediately upon navigation. Enable it with:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.instant
-    - navigation.instant.prefetch</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant.prefetch</span>
+</span></code></pre></div>
 </div>
 <h4 id="progress-indicator">Progress Indicator<a class="headerlink" href="#progress-indicator" title="Permanent link">¶</a></h4>
 <div class="admonition desc">
 <p class="admonition-title">Progress Indicator</p>
 <p>In order to provide a better user experience on slow connections when using instant navigation, a progress indicator can be enabled. It will be shown at the top of the page and will be hidden once the page has fully loaded. You can enable it in <code>mkdocs.yml</code> with:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.instant
-    - navigation.instant.progress</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant.progress</span>
+</span></code></pre></div>
 <p>The progress indicator will only show if the page hasn't finished loading after 400ms, so that fast connections will never show it for a better instant experience.</p>
 </div>
 <h3 id="instant-previews">Instant Previews<a class="headerlink" href="#instant-previews" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Instant Previews</p>
 <p>Instant previews are a brand new feature that allow the user to preview another site of your documentation without navigating to it. They can be very helpful to keep the user in context. Instant previews can be enabled on any header link with the <code>data-preview</code> attribute:</p>
-<p><code>markdown title="Link with instant preview"
-</code></p><pre class="lang-annotation"><code><code>[Attribute Lists](#){ data-preview }</code></code></pre><p></p>
+<div class="language-markdown highlight"><span class="filename">Link with instant preview</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>``` markdown
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>[<span class="nt">Attribute Lists</span>](<span class="na">#</span>){ data-preview }
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>```
+</span></code></pre></div>
 </div>
 <div class="result">
 <p><a data-preview="data-preview" href="../python-markdown/#attribute-lists">Attribute Lists</a></p>
@@ -1360,32 +1366,34 @@
 <div class="admonition desc">
 <p class="admonition-title">Automatic Previews</p>
 <p>The recommended way to work with instant previews is to use the Markdown extension that is included with Material for MkDocs, as it allows you to enable instant previews on a per-page or per-section level for your documentation:</p>
-<pre class="lang-annotation"><code>markdown_extensions:
-  - material.extensions.preview:
-      configurations:
-        - targets:
-            include:
-              - changelog/index.md
-              - customization.md
-              - insiders/changelog/*
-              - setup/extensions/*</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">material.extensions.preview</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span><span class="nt">configurations</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">            </span><span class="nt">include</span><span class="p">:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">changelog/index.md</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">customization.md</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">insiders/changelog/*</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">setup/extensions/*</span>
+</span></code></pre></div>
 <p>The above configuration is what we use for our documentation. We've enabled instant previews for our changelogs, customization guide, and Insiders sections, as well as for all Markdown extensions that we support.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Full configuration example</p>
-<pre class="lang-annotation"><code>markdown_extensions:
-  - material.extensions.preview:
-      configurations:
-        - sources: # (1)!
-            include:
-              - ...
-            exclude:
-              - ...
-          targets: # (2)!
-            include:
-              - ...
-            exclude:
-              - ...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">material.extensions.preview</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="nt">configurations</span><span class="p">:</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sources</span><span class="p">:</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">            </span><span class="nt">include</span><span class="p">:</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">            </span><span class="nt">exclude</span><span class="p">:</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">          </span><span class="nt">targets</span><span class="p">:</span><span class="w"> </span><span class="c1"># (2)!</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">            </span><span class="nt">include</span><span class="p">:</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">            </span><span class="nt">exclude</span><span class="p">:</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p>Sources specify the pages <em>on</em> which instant previews should be<br>
@@ -1407,30 +1415,34 @@ previews.</p>
 <div class="admonition instruction">
 <p class="admonition-title">Instant Previews Globally</p>
 <p>Instant previews can also be enabled globally by adding the following lines to <code>mkdocs.yml</code>, which will enable instant previews for all header links, alleviating the need to add data attributes:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.instant.preview</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant.preview</span>
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">The [<code>site_url</code>][<code>mkdocs.site_url</code>] setting must be set</p>
 <p>Note that you must set [<code>site_url</code>][<code>mkdocs.site_url</code>] when using instant previews, as instant previews rely on the generated <code>sitemap.xml</code> which will be empty if this setting is omitted. Example:</p>
-<pre class="lang-annotation"><code>site_url: https://example.com</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com</span>
+</span></code></pre></div>
 </div>
 <h3 id="anchor-tracking">Anchor Tracking<a class="headerlink" href="#anchor-tracking" title="Permanent link">¶</a></h3>
 <div class="admonition ex">
 <p class="admonition-title">Anchor Tracking</p>
 <p>When anchor tracking is enabled, the URL in the address bar is automatically updated with the active anchor as highlighted in the table of contents. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.tracking</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tracking</span>
+</span></code></pre></div>
 </div>
 <h3 id="navigation-tabs">Navigation Tabs<a class="headerlink" href="#navigation-tabs" title="Permanent link">¶</a></h3>
 <div class="admonition tldr">
 <p class="admonition-title">Navigation Tabs</p>
 <p>When tabs are enabled, top-level sections are rendered in a menu layer below the header for viewports above <code>1220px</code>, but remain as-is on mobile.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.tabs</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">With tabs</label><label for="__tabbed_1_2">Without</label></div>
 <div class="tabbed-content">
@@ -1446,10 +1458,11 @@ previews.</p>
 <div class="admonition desc">
 <p class="admonition-title">Sticky Navigation Tabs</p>
 <p>When sticky tabs are enabled, navigation tabs will lock below the header and always remain visible when scrolling down. Just add the following two feature flags to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.tabs
-    - navigation.tabs.sticky</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs.sticky</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">With sticky tabs</label><label for="__tabbed_2_2">Without</label></div>
 <div class="tabbed-content">
@@ -1465,9 +1478,10 @@ previews.</p>
 <div class="admonition desc">
 <p class="admonition-title">Navigation Sections</p>
 <p>When sections are enabled, top-level sections are rendered as groups in the sidebar for viewports above <code>1220px</code>, but remain as-is on mobile. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.sections</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.sections</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">With sections</label><label for="__tabbed_3_2">Without</label></div>
 <div class="tabbed-content">
@@ -1487,9 +1501,10 @@ previews.</p>
 <div class="admonition desc">
 <p class="admonition-title">Navigation Expansion</p>
 <p>When expansion is enabled, the left sidebar will expand all collapsible subsections by default, so the user doesn't have to open subsections manually. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.expand</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.expand</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">With expansion</label><label for="__tabbed_4_2">Without</label></div>
 <div class="tabbed-content">
@@ -1505,9 +1520,10 @@ previews.</p>
 <div class="admonition desc">
 <p class="admonition-title"><code>Navigation Path Breadcrumbs</code></p>
 <p>When navigation paths are activated, a breadcrumb navigation is rendered above the title of each page, which might make orientation easier for users visiting your documentation on devices with smaller screens. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.path</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.path</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">With navigation path</label><label for="__tabbed_5_2">Without</label></div>
 <div class="tabbed-content">
@@ -1523,9 +1539,10 @@ previews.</p>
 <div class="admonition desc">
 <p class="admonition-title">Navigation Pruning</p>
 <p>When pruning is enabled, only the visible navigation items are included in the rendered HTML, <strong>reducing the size of the built site by 33% or more</strong>. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.prune # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.prune</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>This feature flag is not compatible with <a href="#navigation-expansion"><code>navigation.expand</code></a>, as<br>
 navigation expansion requires the complete navigation structure.</li>
@@ -1536,9 +1553,10 @@ navigation expansion requires the complete navigation structure.</li>
 <div class="admonition desc">
 <p class="admonition-title">Section Index Pages</p>
 <p>When section index pages are enabled, documents can be directly attached to sections, which is particularly useful for providing overview pages. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.indexes # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.indexes</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>This feature flag is not compatible with <a href="#navigation-integration"><code>toc.integrate</code></a>, as<br>
 sections cannot host the table of contents due to missing space.</li>
@@ -1556,12 +1574,13 @@ sections cannot host the table of contents due to missing space.</li>
 </div>
 <div class="admonition desc">
 <p>In order to link a page to a section, create a new document with the name <code>index.md</code> in the respective folder, and add it to the beginning of your navigation section:</p>
-<pre class="lang-annotation"><code>nav:
-  - Section:
-    - section/index.md # (1)!
-    - Page 1: section/page-1.md
-    ...
-    - Page n: section/page-n.md</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">section/index.md</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Page 1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">section/page-1.md</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Page n</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">section/page-n.md</span>
+</span></code></pre></div>
 <ol>
 <li>MkDocs also considers files called <code>README.md</code> as <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#index-pages">index pages</a>.</li>
 </ol>
@@ -1571,17 +1590,19 @@ sections cannot host the table of contents due to missing space.</li>
 <div class="admonition desc">
 <p class="admonition-title">Anchor Following</p>
 <p>When anchor following for the <a href="../python-markdown/#table-of-contents">table of contents</a> is enabled, the sidebar is automatically scrolled so that the active anchor is always visible. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - toc.follow</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc.follow</span>
+</span></code></pre></div>
 </div>
 <h4 id="navigation-integration">Navigation Integration<a class="headerlink" href="#navigation-integration" title="Permanent link">¶</a></h4>
 <div class="admonition desc">
 <p class="admonition-title">Navigation Integration</p>
 <p>When navigation integration for the <a href="../python-markdown/#table-of-contents">table of contents</a> is enabled, it is always rendered as part of the navigation sidebar on the left. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - toc.integrate # (1)!</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc.integrate</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
 <ol>
 <li>This feature flag is not compatible with <a href="#section-index-pages"><code>navigation.indexes</code></a>, as sections cannot host the table of contents due to missing space.</li>
 </ol>
@@ -1600,23 +1621,25 @@ sections cannot host the table of contents due to missing space.</li>
 <div class="admonition desc">
 <p class="admonition-title">Back-to-top Button</p>
 <p>A back-to-top button can be shown when the user, after scrolling down, starts to scroll up again. It's rendered centered and just below the header. Add the following lines to <code>mkdocs.yml</code>:</p>
-<pre class="lang-annotation"><code>theme:
-  features:
-    - navigation.top</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.top</span>
+</span></code></pre></div>
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
 <h3 id="hiding-the-sidebars">Hiding the Sidebars<a class="headerlink" href="#hiding-the-sidebars" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Hiding the Sidebars</p>
 <p>The navigation and/or table of contents sidebars can be hidden for a document with the front matter <code>hide</code> property. Add the following lines at the top of a Markdown file:</p>
-<pre class="lang-annotation"><code>---
-hide:
-  - navigation
-  - toc
----
-
-# Page title
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nn">---</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nt">hide</span><span class="p">:</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nn">---</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># Page title</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="nn">...</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><input id="__tabbed_8_3" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">Hide navigation</label><label for="__tabbed_8_2">Hide table of contents</label><label for="__tabbed_8_3">Hide both</label></div>
 <div class="tabbed-content">
@@ -1635,13 +1658,14 @@ hide:
 <div class="admonition desc">
 <p class="admonition-title">Hiding the Navigation Path</p>
 <p>While the <a href="#navigation-path">navigation path</a> is rendered above the main headline, sometimes, it might be desirable to hide it for a specific page, which can be achieved with the front matter <code>hide</code> property:</p>
-<pre class="lang-annotation"><code>---
-hide:
-  - path
----
-
-# Page title
-...</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nn">---</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nt">hide</span><span class="p">:</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">path</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nn">---</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1"># Page title</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nn">...</span>
+</span></code></pre></div>
 </div>
 <h2 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">¶</a></h2>
 <h3 id="keyboard-shortcuts">Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permanent link">¶</a></h3>
@@ -1674,19 +1698,21 @@ hide:
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="" id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/javascripts/shortcuts.js</code></label><label for="__tabbed_9_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>keyboard\$.subscribe(function(key) {
-  if (key.mode === "global" &amp;&amp; key.type === "x") {
-    /* Add custom keyboard handler here */
-    key.claim() // (1)!
-  }
-})</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nx">keyboard</span><span class="err">\</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="p">.</span><span class="nx">mode</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"global"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">key</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"x"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="cm">/* Add custom keyboard handler here */</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nx">key</span><span class="p">.</span><span class="nx">claim</span><span class="p">()</span><span class="w"> </span><span class="c1">// (1)!</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="p">})</span>
+</span></code></pre></div>
 <ol>
 <li>The call to <code>key.claim()</code> will execute <code>preventDefault()</code> on the underlying event, so the keypress will not propagate further and touch other event listeners.</li>
 </ol>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>extra_javascript:
-  - javascripts/shortcuts.js</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">extra_javascript</span><span class="p">:</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/shortcuts.js</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1699,21 +1725,24 @@ hide:
 <div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="" id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/stylesheets/extra.css</code></label><label for="__tabbed_10_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>.md-grid {
-  max-width: 1440px; /* (1)! */
-}</code></pre>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">.</span><span class="nc">md-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1440</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="c">/* (1)! */</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p>If you want the content area to always stretch to the available screen space, reset <code>max-width</code> with the following CSS:</p>
-<pre class="lang-annotation"><code>.md-grid {
-  max-width: initial;
-}</code></pre>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">.</span><span class="nc">md-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="kc">initial</span><span class="p">;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 </ol>
 </div>
 <div class="tabbed-block">
-<pre class="lang-annotation"><code>extra_css:
-  - stylesheets/extra.css</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">extra_css</span><span class="p">:</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stylesheets/extra.css</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>

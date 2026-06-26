@@ -1883,19 +1883,21 @@ execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%a
 <h3 id="with-album-art">With Album Art:<a class="headerlink" href="#with-album-art" title="Permanent link">¶</a></h3>
 <p>If you want song change notifications to have the album art of the currently playing song, you can use this script. Album art previews will be stored in $XDG_CONFIG_HOME/ncmpcpp/previews by default, scaled to 128x128. Preview filenames are the album names encoded in base64, so no duplicate previews should be saved.</p>
 <p>Assuming ~/.local/bin is in your $PATH, create (and make executable):</p>
-<p></p><pre class="lang-annotation"><code>~/.local/bin/songinfo
-#!/bin/sh
-
-music_dir="$HOME/Music"
-previewdir="$XDG_CONFIG_HOME/ncmpcpp/previews"
-filename="$(mpc --format "$music_dir"/%file% current)"
-previewname="$previewdir/$(mpc --format %album% current | base64).png"
-
-[ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=128:128 "$previewname" &gt; /dev/null 2&gt;&amp;1
-
-notify-send -r 27072 "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)" -i "$previewname"</code></pre><br>
+<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>~/.local/bin/songinfo
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>#!/bin/sh
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>music_dir="$HOME/Music"
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>previewdir="$XDG_CONFIG_HOME/ncmpcpp/previews"
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>filename="$(mpc --format "$music_dir"/%file% current)"
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>previewname="$previewdir/$(mpc --format %album% current | base64).png"
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=128:128 "$previewname" &gt; /dev/null 2&gt;&amp;1
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>notify-send -r 27072 "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)" -i "$previewname"
+</span></code></pre></div><br>
 and add this to your ncmpcpp config:<br>
-<pre class="lang-annotation"><code>execute_on_song_change = songinfo  </code></pre><p></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>execute_on_song_change = songinfo  
+</span></code></pre></div><p></p>
 <h2 id="cheatsheetsncmpcpp"><code>cheat.sheets:ncmpcpp</code><a class="headerlink" href="#cheatsheetsncmpcpp" title="Permanent link">¶</a></h2>
 <h3 id="ncmpcpp">ncmpcpp<a class="headerlink" href="#ncmpcpp" title="Permanent link">¶</a></h3>
 <hr>
@@ -1903,204 +1905,224 @@ and add this to your ncmpcpp config:<br>
 <p>An mpd client (compatible with mopidy) with a UI very similar to ncmpc, but it provides new useful features such as support for regular expressions for library searches, extended song format, items filtering, the ability to sort playlists, and a local filesystem browser.</p>
 <hr>
 <h3 id="configure-ncmpcpp">configure ncmpcpp<a class="headerlink" href="#configure-ncmpcpp" title="Permanent link">¶</a></h3>
-<pre class="lang-annotation"><code>mkdir ~/.ncmpcpp  
-cat &lt;&lt;EOF &gt; ~/.ncmpcpp/config  
-ncmpcpp_directory = "~/.ncmpcpp"  
-mpd_host = "127.0.0.1"  
-mpd_port = "6600"  
-mpd_music_dir = "/var/lib/mpd/music/"  
-EOF</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir ~/.ncmpcpp  
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>cat &lt;&lt;EOF &gt; ~/.ncmpcpp/config  
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ncmpcpp_directory = "~/.ncmpcpp"  
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>mpd_host = "127.0.0.1"  
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>mpd_port = "6600"  
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>mpd_music_dir = "/var/lib/mpd/music/"  
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>EOF
+</span></code></pre></div>
 <h2 id="movement">Movement<a class="headerlink" href="#movement" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Up k               Move cursor up
-Down j             Move cursor down
-[                  Move cursor up one album
-]                  Move cursor down one album
-{                  Move cursor up one artist
-}                  Move cursor down one artist
-Page Up            Page up
-Page Down          Page down
-Home               Home
-End                End</code></pre>
-<pre class="lang-annotation"><code>Tab                Switch to next screen in sequence
-Shift-Tab          Switch to previous screen in sequence
-F1                 Show help
-1                  Show playlist
-2                  Show browser
-3                  Show search engine
-4                  Show media library
-5                  Show playlist editor
-6                  Show tag editor
-7                  Show outputs
-8                  Show music visualizer
-=                  Show clock
-@                  Show server info</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Up k               Move cursor up
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Down j             Move cursor down
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>[                  Move cursor up one album
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>]                  Move cursor down one album
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>{                  Move cursor up one artist
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>}                  Move cursor down one artist
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Page Up            Page up
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Page Down          Page down
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Home               Home
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>End                End
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Tab                Switch to next screen in sequence
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Shift-Tab          Switch to previous screen in sequence
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>F1                 Show help
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>1                  Show playlist
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>2                  Show browser
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>3                  Show search engine
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>4                  Show media library
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>5                  Show playlist editor
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>6                  Show tag editor
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>7                  Show outputs
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>8                  Show music visualizer
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>=                  Show clock
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>@                  Show server info
+</span></code></pre></div>
 <h2 id="global">Global<a class="headerlink" href="#global" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>s                  Stop
-p                  Pause
-&gt;                  Next track
-&lt;                  Previous track
-Ctrl-H Backspace   Replay playing song
-f                  Seek forward in playing song
-b                  Seek backward in playing song
-- Left             Decrease volume by 2%
-Right +            Increase volume by 2%</code></pre>
-<pre class="lang-annotation"><code>t                  Toggle space mode (select/add)
-T                  Toggle add mode (add or remove/always add)
-|                  Toggle mouse support
-v                  Reverse selection
-V                  Remove selection
-B                  Select songs of album around the cursor
-a                  Add selected items to playlist
-`                  Add random items to playlist
-r                  Toggle repeat mode
-z                  Toggle random mode
-y                  Toggle single mode
-R                  Toggle consume mode
-Y                  Toggle replay gain mode
-#                  Toggle bitrate visibility
-Z                  Shuffle playlist
-x                  Toggle crossfade mode
-X                  Set crossfade</code></pre>
-<pre class="lang-annotation"><code>u                  Start music database update
-:                  Execute command
-Ctrl-F             Apply filter
-/                  Find item forward
-?                  Find item backward
-,                  Jump to previous found item
-.                  Jump to next found item
-w                  Toggle find mode (normal/wrapped)
-G                  Locate song in browser
-~                  Locate song in media library</code></pre>
-<pre class="lang-annotation"><code>Ctrl-L             Lock/unlock current screen
-Left h             Switch to master screen (left one)
-Right l            Switch to slave screen (right one)</code></pre>
-<pre class="lang-annotation"><code>E                  Locate song in tag editor
-P                  Toggle display mode
-\                  Toggle user interface
-!                  Toggle displaying separators between albums
-g                  Jump to given position in playing song (formats: mm:ss, x%)
-i                  Show song info
-I                  Show artist info
-L                  Toggle lyrics fetcher
-F                  Toggle fetching lyrics for playing songs in background
-q                  Quit</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>s                  Stop
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>p                  Pause
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&gt;                  Next track
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>&lt;                  Previous track
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Ctrl-H Backspace   Replay playing song
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>f                  Seek forward in playing song
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>b                  Seek backward in playing song
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>- Left             Decrease volume by 2%
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Right +            Increase volume by 2%
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>t                  Toggle space mode (select/add)
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>T                  Toggle add mode (add or remove/always add)
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>|                  Toggle mouse support
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>v                  Reverse selection
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>V                  Remove selection
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>B                  Select songs of album around the cursor
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>a                  Add selected items to playlist
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>`                  Add random items to playlist
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>r                  Toggle repeat mode
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>z                  Toggle random mode
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>y                  Toggle single mode
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>R                  Toggle consume mode
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>Y                  Toggle replay gain mode
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>#                  Toggle bitrate visibility
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Z                  Shuffle playlist
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>x                  Toggle crossfade mode
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>X                  Set crossfade
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>u                  Start music database update
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>:                  Execute command
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Ctrl-F             Apply filter
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>/                  Find item forward
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>?                  Find item backward
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>,                  Jump to previous found item
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>.                  Jump to next found item
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>w                  Toggle find mode (normal/wrapped)
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>G                  Locate song in browser
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>~                  Locate song in media library
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Ctrl-L             Lock/unlock current screen
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Left h             Switch to master screen (left one)
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Right l            Switch to slave screen (right one)
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>E                  Locate song in tag editor
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>P                  Toggle display mode
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>\                  Toggle user interface
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>!                  Toggle displaying separators between albums
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>g                  Jump to given position in playing song (formats: mm:ss, x%)
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>i                  Show song info
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>I                  Show artist info
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>L                  Toggle lyrics fetcher
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>F                  Toggle fetching lyrics for playing songs in background
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>q                  Quit
+</span></code></pre></div>
 <h2 id="playlist">Playlist<a class="headerlink" href="#playlist" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Enter              Play selected item
-Delete             Delete selected item(s) from playlist
-c                  Clear playlist
-C                  Clear playlist except selected item(s)
-Ctrl-P             Set priority of selected items
-Ctrl-K m           Move selected item(s) up
-n Ctrl-J           Move selected item(s) down
-M                  Move selected item(s) to cursor position
-A                  Add item to playlist
-e                  Edit song
-S                  Save playlist
-Ctrl-V             Sort playlist
-Ctrl-R             Reverse playlist
-o                  Jump to current song
-U                  Toggle playing song centering</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Enter              Play selected item
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Delete             Delete selected item(s) from playlist
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>c                  Clear playlist
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>C                  Clear playlist except selected item(s)
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Ctrl-P             Set priority of selected items
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Ctrl-K m           Move selected item(s) up
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>n Ctrl-J           Move selected item(s) down
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>M                  Move selected item(s) to cursor position
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>A                  Add item to playlist
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>e                  Edit song
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>S                  Save playlist
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>Ctrl-V             Sort playlist
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>Ctrl-R             Reverse playlist
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>o                  Jump to current song
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>U                  Toggle playing song centering
+</span></code></pre></div>
 <h2 id="browser">Browser<a class="headerlink" href="#browser" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Enter              Enter directory/Add item to playlist and play it
-Space              Add item to playlist/select it
-e                  Edit song/directory/playlist name
-2                  Browse MPD database/local filesystem
-`                  Toggle sort mode
-o                  Locate playing song
-Ctrl-H Backspace   Jump to parent directory
-Delete             Delete selected items from disk
-G                  Jump to playlist editor (playlists only)</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Enter              Enter directory/Add item to playlist and play it
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Space              Add item to playlist/select it
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>e                  Edit song/directory/playlist name
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>2                  Browse MPD database/local filesystem
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>`                  Toggle sort mode
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>o                  Locate playing song
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Ctrl-H Backspace   Jump to parent directory
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>Delete             Delete selected items from disk
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>G                  Jump to playlist editor (playlists only)
+</span></code></pre></div>
 <h2 id="search-engine">Search engine<a class="headerlink" href="#search-engine" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Enter              Add item to playlist and play it/change option
-Space              Add item to playlist
-e                  Edit song
-y                  Start searching
-3                  Reset search constraints and clear results</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Enter              Add item to playlist and play it/change option
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Space              Add item to playlist
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>e                  Edit song
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>y                  Start searching
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>3                  Reset search constraints and clear results
+</span></code></pre></div>
 <h2 id="media-library">Media library<a class="headerlink" href="#media-library" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>4                  Switch between two/three columns mode
-Left h             Previous column
-Right l            Next column
-Enter              Add item to playlist and play it
-Space              Add item to playlist
-e                  Edit song
-e                  Edit tag (left column)/album (middle/right column)
-`                  Toggle type of tag used in left column
-m                  Toggle sort mode</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>4                  Switch between two/three columns mode
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Left h             Previous column
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Right l            Next column
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Enter              Add item to playlist and play it
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Space              Add item to playlist
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>e                  Edit song
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>e                  Edit tag (left column)/album (middle/right column)
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>`                  Toggle type of tag used in left column
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>m                  Toggle sort mode
+</span></code></pre></div>
 <h2 id="playlist-editor">Playlist editor<a class="headerlink" href="#playlist-editor" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Left h             Previous column
-Right l            Next column
-Enter              Add item to playlist and play it
-Space              Add item to playlist/select it
-e                  Edit song/playlist name
-Ctrl-K m           Move selected item(s) up
-n Ctrl-J           Move selected item(s) down
-Delete             Delete selected playlists (left column)
-C                  Clear playlist except selected item(s)
-Ctrl-P             Set priority of selected items
-Ctrl-K m           Move selected item(s) up
-n Ctrl-J           Move selected item(s) down
-M                  Move selected item(s) to cursor position
-A                  Add item to playlist
-e                  Edit song
-S                  Save playlist
-Ctrl-V             Sort playlist
-Ctrl-R             Reverse playlist
-o                  Jump to current song
-U                  Toggle playing song centering</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Left h             Previous column
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Right l            Next column
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Enter              Add item to playlist and play it
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Space              Add item to playlist/select it
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>e                  Edit song/playlist name
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Ctrl-K m           Move selected item(s) up
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>n Ctrl-J           Move selected item(s) down
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Delete             Delete selected playlists (left column)
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>C                  Clear playlist except selected item(s)
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>Ctrl-P             Set priority of selected items
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>Ctrl-K m           Move selected item(s) up
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>n Ctrl-J           Move selected item(s) down
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>M                  Move selected item(s) to cursor position
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>A                  Add item to playlist
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>e                  Edit song
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>S                  Save playlist
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>Ctrl-V             Sort playlist
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>Ctrl-R             Reverse playlist
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>o                  Jump to current song
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>U                  Toggle playing song centering
+</span></code></pre></div>
 <h2 id="browser_1">Browser<a class="headerlink" href="#browser_1" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Enter              Enter directory/Add item to playlist and play it
-Space              Add item to playlist/select it
-e                  Edit song
-e                  Edit directory name
-e                  Edit playlist name
-2                  Browse MPD database/local filesystem
-`                  Toggle sort mode
-o                  Locate playing song
-Ctrl-H Backspace   Jump to parent directory
-Delete             Delete selected items from disk
-G                  Jump to playlist editor (playlists only)</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Enter              Enter directory/Add item to playlist and play it
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Space              Add item to playlist/select it
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>e                  Edit song
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>e                  Edit directory name
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>e                  Edit playlist name
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>2                  Browse MPD database/local filesystem
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>`                  Toggle sort mode
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>o                  Locate playing song
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>Ctrl-H Backspace   Jump to parent directory
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>Delete             Delete selected items from disk
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>G                  Jump to playlist editor (playlists only)
+</span></code></pre></div>
 <h2 id="search-engine_1">Search engine<a class="headerlink" href="#search-engine_1" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Enter              Add item to playlist and play it/change option
-Space              Add item to playlist
-e                  Edit song
-y                  Start searching
-3                  Reset search constraints and clear results</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Enter              Add item to playlist and play it/change option
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Space              Add item to playlist
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>e                  Edit song
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>y                  Start searching
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>3                  Reset search constraints and clear results
+</span></code></pre></div>
 <h2 id="media-library_1">Media library<a class="headerlink" href="#media-library_1" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>4                  Switch between two/three columns mode
-Left h             Previous column
-Right l            Next column
-Enter              Add item to playlist and play it
-Space              Add item to playlist
-e                  Edit song/tag (left column)/album (middle/right column)
-`                  Toggle type of tag used in left column
-m                  Toggle sort mode</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>4                  Switch between two/three columns mode
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Left h             Previous column
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Right l            Next column
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>Enter              Add item to playlist and play it
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>Space              Add item to playlist
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>e                  Edit song/tag (left column)/album (middle/right column)
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>`                  Toggle type of tag used in left column
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>m                  Toggle sort mode
+</span></code></pre></div>
 <h2 id="playlist-editor_1">Playlist editor<a class="headerlink" href="#playlist-editor_1" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Left h             Previous column
-Right l            Next column
-Enter              Add item to playlist and play it
-Space              Add item to playlist/select it
-e                  Edit song/playlist name
-Ctrl-K m           Move selected item(s) up
-n Ctrl-J           Move selected item(s) down
-Delete             Delete selected playlists (left column)
-Delete             Delete selected item(s) from playlist (right column)
-c                  Clear playlist
-C                  Clear playlist except selected items</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Left h             Previous column
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>Right l            Next column
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>Enter              Add item to playlist and play it
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>Space              Add item to playlist/select it
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>e                  Edit song/playlist name
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>Ctrl-K m           Move selected item(s) up
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>n Ctrl-J           Move selected item(s) down
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>Delete             Delete selected playlists (left column)
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>Delete             Delete selected item(s) from playlist (right column)
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>c                  Clear playlist
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>C                  Clear playlist except selected items
+</span></code></pre></div>
 <h2 id="lyrics">Lyrics<a class="headerlink" href="#lyrics" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Space              Toggle reloading lyrics upon song change
-e                  Open lyrics in external editor
-`                  Refetch lyrics</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Space              Toggle reloading lyrics upon song change
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>e                  Open lyrics in external editor
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>`                  Refetch lyrics
+</span></code></pre></div>
 <h2 id="tiny-tag-editor">Tiny tag editor<a class="headerlink" href="#tiny-tag-editor" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Enter              Edit tag
-y                  Save</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Enter              Edit tag
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>y                  Save
+</span></code></pre></div>
 <h2 id="tag-editor">Tag editor<a class="headerlink" href="#tag-editor" title="Permanent link">¶</a></h2>
-<pre class="lang-annotation"><code>Enter              Edit tag/filename of selected item (left column)
-Enter              Perform operation on all/selected items (middle column)
-Space              Switch to albums/directories view (left column)
-Space              Select item (right column)
-Left h             Previous column
-Right l            Next column
-Ctrl-H Backspace   Jump to parent directory (left column, directories view)</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Enter              Edit tag/filename of selected item (left column)
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Enter              Perform operation on all/selected items (middle column)
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Space              Switch to albums/directories view (left column)
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>Space              Select item (right column)
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>Left h             Previous column
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>Right l            Next column
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>Ctrl-H Backspace   Jump to parent directory (left column, directories view)
+</span></code></pre></div>
 <p>$tldr:ncmpcpp</p>
 <blockquote>
 <p><code>ncmpcpp</code></p>
@@ -2115,555 +2137,561 @@ Ctrl-H Backspace   Jump to parent directory (left column, directories view)</cod
 <p>Use a different set of key bindings from a file:</p>
 <p><code>ncmpcpp --bindings file</code></p>
 </blockquote>
-<pre class="lang-annotation"><code>This is the example bindings file. Copy it to 
-$XDG_CONFIG_HOME/ncmpcpp/bindings or ~/.ncmpcpp/bindings
-## and set up your preferences.                             </code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>This is the example bindings file. Copy it to 
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>$XDG_CONFIG_HOME/ncmpcpp/bindings or ~/.ncmpcpp/bindings
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>## and set up your preferences.                             
+</span></code></pre></div>
 <blockquote>
 <p>General rules</p>
 </blockquote>
 <p>1)<br>
-</p><pre class="lang-annotation"><code>##    Because each action has runtime checks whether it's
-##    ok to run it, a few actions can be bound to one key.
-##    Actions will be bound in order given in configuration
-##    file. When a key is pressed, first action in order
-##    will test itself whether it's possible to run it. If
-##    test succeeds, action is executed and other actions
-##    bound to this key are ignored. If it doesn't, next
-##    action in order tests itself etc.</code></pre><br>
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>##    Because each action has runtime checks whether it's
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>##    ok to run it, a few actions can be bound to one key.
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>##    Actions will be bound in order given in configuration
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>##    file. When a key is pressed, first action in order
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>##    will test itself whether it's possible to run it. If
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>##    test succeeds, action is executed and other actions
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>##    bound to this key are ignored. If it doesn't, next
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>##    action in order tests itself etc.
+</span></code></pre></div><br>
 2)<br>
-<pre class="lang-annotation"><code>##    It's possible to bind more that one action at once
-##    to a key. It can be done using the following syntax:
-##
-##    def_key "key"
-##      action1
-##      action2
-##      ...
-##
-##    This creates a chain of actions. When such chain is
-##    executed, each action in chain is run until the end of
-##    chain is reached or one of its actions fails to execute
-##    due to its requirements not being met. If multiple actions
-##    and/or chains are bound to the same key, they will be
-##    consecutively run until one of them gets fully executed.</code></pre><br>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>##    It's possible to bind more that one action at once
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>##    to a key. It can be done using the following syntax:
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>##
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>##    def_key "key"
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>##      action1
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>##      action2
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>##      ...
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>##
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>##    This creates a chain of actions. When such chain is
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>##    executed, each action in chain is run until the end of
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>##    chain is reached or one of its actions fails to execute
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>##    due to its requirements not being met. If multiple actions
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>##    and/or chains are bound to the same key, they will be
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>##    consecutively run until one of them gets fully executed.
+</span></code></pre></div><br>
 3)<br>
-<pre class="lang-annotation"><code>##    When ncmpcpp starts, bindings configuration file is
-##    parsed and then ncmpcpp provides "missing pieces"
-##    of default keybindings. If you want to disable some
-##    bindings, there is a special action called 'dummy'
-##    for that purpose. Eg. if you want to disable ability
-##    to crop playlists, you need to put the following
-##    into configuration file:
-##
-##    def_key "C"
-##      dummy
-##
-##    After that ncmpcpp will not bind any default action
-##    to this key.</code></pre><br>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>##    When ncmpcpp starts, bindings configuration file is
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>##    parsed and then ncmpcpp provides "missing pieces"
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>##    of default keybindings. If you want to disable some
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>##    bindings, there is a special action called 'dummy'
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>##    for that purpose. Eg. if you want to disable ability
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>##    to crop playlists, you need to put the following
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>##    into configuration file:
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>##
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>##    def_key "C"
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>##      dummy
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>##
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>##    After that ncmpcpp will not bind any default action
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>##    to this key.
+</span></code></pre></div><br>
 4)<br>
-<pre class="lang-annotation"><code>##    To let you write simple macros, the following special
-##    actions are provided:
-##
-##    - push_character "character" - pushes given special
-##      character into input queue, so it will be immediately
-##      picked by ncmpcpp upon next call to readKey function.
-##      Accepted values: mouse, up, down, page_up, page_down,
-##      home, end, space, enter, insert, delete, left, right,
-##      tab, ctrl-a, ctrl-b, ..., ctrl-z, ctrl-[, ctrl-\\,
-##      ctrl-], ctrl-^, ctrl-_, f1, f2, ..., f12, backspace.
-##      In addition, most of these names can be prefixed with
-##      alt-/ctrl-/shift- to be recognized with the appropriate
-##      modifier key(s).
-##
-##    - push_characters "string" - pushes given string into
-##      input queue.
-##
-##    - require_runnable "action" - checks whether given action
-##      is runnable and fails if it isn't. This is especially
-##      useful when mixed with previous two functions. Consider
-##      the following macro definition:
-##
-##      def_key "key"
-##        push_characters "custom_filter"
-##        apply_filter
-##
-##      If apply_filter can't be currently run, we end up with
-##      sequence of characters in input queue which will be
-##      treated just as we typed them. This may lead to unexpected
-##      results (in this case 'c' will most likely clear current
-##      playlist, 'u' will trigger database update, 's' will stop
-##      playback etc.). To prevent such thing from happening, we
-##      need to change above definition to this one:
-##
-##      def_key "key"
-##        require_runnable "apply_filter"
-##        push_characters "custom_filter"
-##        apply_filter
-##
-##      Here, first we test whether apply_filter can be actually run
-##      before we stuff characters into input queue, so if condition
-##      is not met, whole chain is aborted and we're fine.
-##
-##    - require_screen "screen" - checks whether given screen is
-##      currently active. accepted values: browser, clock, help,
-##      media_library, outputs, playlist, playlist_editor,
-##      search_engine, tag_editor, visualizer, last_fm, lyrics,
-##      selected_items_adder, server_info, song_info,
-##      sort_playlist_dialog, tiny_tag_editor.
-##
-##    - run_external_command "command" - runs given command using
-##      system() function.
-##
-##    - run_external_console_command "command" - runs given console
-##      command using system() function.</code></pre><br>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>##    To let you write simple macros, the following special
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>##    actions are provided:
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>##
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>##    - push_character "character" - pushes given special
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>##      character into input queue, so it will be immediately
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>##      picked by ncmpcpp upon next call to readKey function.
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>##      Accepted values: mouse, up, down, page_up, page_down,
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>##      home, end, space, enter, insert, delete, left, right,
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>##      tab, ctrl-a, ctrl-b, ..., ctrl-z, ctrl-[, ctrl-\\,
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>##      ctrl-], ctrl-^, ctrl-_, f1, f2, ..., f12, backspace.
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>##      In addition, most of these names can be prefixed with
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>##      alt-/ctrl-/shift- to be recognized with the appropriate
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>##      modifier key(s).
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>##
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>##    - push_characters "string" - pushes given string into
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>##      input queue.
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>##
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>##    - require_runnable "action" - checks whether given action
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>##      is runnable and fails if it isn't. This is especially
+</span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>##      useful when mixed with previous two functions. Consider
+</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>##      the following macro definition:
+</span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>##
+</span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>##      def_key "key"
+</span><span id="__span-26-24"><a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>##        push_characters "custom_filter"
+</span><span id="__span-26-25"><a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>##        apply_filter
+</span><span id="__span-26-26"><a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a>##
+</span><span id="__span-26-27"><a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a>##      If apply_filter can't be currently run, we end up with
+</span><span id="__span-26-28"><a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>##      sequence of characters in input queue which will be
+</span><span id="__span-26-29"><a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a>##      treated just as we typed them. This may lead to unexpected
+</span><span id="__span-26-30"><a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a>##      results (in this case 'c' will most likely clear current
+</span><span id="__span-26-31"><a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a>##      playlist, 'u' will trigger database update, 's' will stop
+</span><span id="__span-26-32"><a id="__codelineno-26-32" name="__codelineno-26-32" href="#__codelineno-26-32"></a>##      playback etc.). To prevent such thing from happening, we
+</span><span id="__span-26-33"><a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a>##      need to change above definition to this one:
+</span><span id="__span-26-34"><a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a>##
+</span><span id="__span-26-35"><a id="__codelineno-26-35" name="__codelineno-26-35" href="#__codelineno-26-35"></a>##      def_key "key"
+</span><span id="__span-26-36"><a id="__codelineno-26-36" name="__codelineno-26-36" href="#__codelineno-26-36"></a>##        require_runnable "apply_filter"
+</span><span id="__span-26-37"><a id="__codelineno-26-37" name="__codelineno-26-37" href="#__codelineno-26-37"></a>##        push_characters "custom_filter"
+</span><span id="__span-26-38"><a id="__codelineno-26-38" name="__codelineno-26-38" href="#__codelineno-26-38"></a>##        apply_filter
+</span><span id="__span-26-39"><a id="__codelineno-26-39" name="__codelineno-26-39" href="#__codelineno-26-39"></a>##
+</span><span id="__span-26-40"><a id="__codelineno-26-40" name="__codelineno-26-40" href="#__codelineno-26-40"></a>##      Here, first we test whether apply_filter can be actually run
+</span><span id="__span-26-41"><a id="__codelineno-26-41" name="__codelineno-26-41" href="#__codelineno-26-41"></a>##      before we stuff characters into input queue, so if condition
+</span><span id="__span-26-42"><a id="__codelineno-26-42" name="__codelineno-26-42" href="#__codelineno-26-42"></a>##      is not met, whole chain is aborted and we're fine.
+</span><span id="__span-26-43"><a id="__codelineno-26-43" name="__codelineno-26-43" href="#__codelineno-26-43"></a>##
+</span><span id="__span-26-44"><a id="__codelineno-26-44" name="__codelineno-26-44" href="#__codelineno-26-44"></a>##    - require_screen "screen" - checks whether given screen is
+</span><span id="__span-26-45"><a id="__codelineno-26-45" name="__codelineno-26-45" href="#__codelineno-26-45"></a>##      currently active. accepted values: browser, clock, help,
+</span><span id="__span-26-46"><a id="__codelineno-26-46" name="__codelineno-26-46" href="#__codelineno-26-46"></a>##      media_library, outputs, playlist, playlist_editor,
+</span><span id="__span-26-47"><a id="__codelineno-26-47" name="__codelineno-26-47" href="#__codelineno-26-47"></a>##      search_engine, tag_editor, visualizer, last_fm, lyrics,
+</span><span id="__span-26-48"><a id="__codelineno-26-48" name="__codelineno-26-48" href="#__codelineno-26-48"></a>##      selected_items_adder, server_info, song_info,
+</span><span id="__span-26-49"><a id="__codelineno-26-49" name="__codelineno-26-49" href="#__codelineno-26-49"></a>##      sort_playlist_dialog, tiny_tag_editor.
+</span><span id="__span-26-50"><a id="__codelineno-26-50" name="__codelineno-26-50" href="#__codelineno-26-50"></a>##
+</span><span id="__span-26-51"><a id="__codelineno-26-51" name="__codelineno-26-51" href="#__codelineno-26-51"></a>##    - run_external_command "command" - runs given command using
+</span><span id="__span-26-52"><a id="__codelineno-26-52" name="__codelineno-26-52" href="#__codelineno-26-52"></a>##      system() function.
+</span><span id="__span-26-53"><a id="__codelineno-26-53" name="__codelineno-26-53" href="#__codelineno-26-53"></a>##
+</span><span id="__span-26-54"><a id="__codelineno-26-54" name="__codelineno-26-54" href="#__codelineno-26-54"></a>##    - run_external_console_command "command" - runs given console
+</span><span id="__span-26-55"><a id="__codelineno-26-55" name="__codelineno-26-55" href="#__codelineno-26-55"></a>##      command using system() function.
+</span></code></pre></div><br>
 5)<br>
-<pre class="lang-annotation"><code>##    In addition to binding to a key, you can also bind actions
-##    or chains of actions to a command. If it comes to commands,
-##    syntax is very similar to defining keys. Here goes example
-##    definition of a command:
-##
-##      def_command "quit" [deferred]
-##        stop
-##        quit
-##
-##    If you execute the above command (which can be done by
-##    invoking action execute_command, typing 'quit' and pressing
-##    enter), ncmpcpp will stop the player and then quit. Note the
-##    presence of word 'deferred' enclosed in square brackets. It
-##    tells ncmpcpp to wait for confirmation (ie. pressing enter)
-##    after you typed quit. Instead of 'deferred', 'immediate'
-##    could be used. Then ncmpcpp will not wait for confirmation
-##    (enter) and will execute the command the moment it sees it.
-##
-##    Note: while command chains are executed, internal environment
-##    update (which includes current window refresh and mpd status
-##    update) is not performed for performance reasons. However, it
-##    may be desirable to do so in some situration. Therefore it's
-##    possible to invoke by hand by performing 'update enviroment'
-##    action.
-##
-## Note: There is a difference between:
-##
-##         def_key "key"
-##           action1
-##
-##         def_key "key"
-##           action2
-##
-##       and
-##
-##         def_key "key"
-##           action1
-##           action2
-##
-##      First one binds two single actions to the same key whilst
-##      second one defines a chain of actions. The behavior of
-##      these two is different and is described in (1) and (2).
-##
-## Note: Function def_key accepts non-ascii characters.
-##
-##### List of unbound actions #####
-##
-## The following actions are not bound to any key/command:
-##
-##  - set_volume
-##  - load
-##
-#
-#def_key "mouse"
-#  mouse_event
-#
-#def_key "up"
-#  scroll_up
-#
-#def_key "shift-up"
-#  select_item
-#  scroll_up
-#
-#def_key "down"
-#  scroll_down
-#
-#def_key "shift-down"
-#  select_item
-#  scroll_down
-#
-#def_key "["
-#  scroll_up_album
-#
-#def_key "]"
-#  scroll_down_album
-#
-#def_key "{"
-#  scroll_up_artist
-#
-#def_key "}"
-#  scroll_down_artist
-#
-#def_key "page_up"
-#  page_up
-#
-#def_key "page_down"
-#  page_down
-#
-#def_key "home"
-#  move_home
-#
-#def_key "end"
-#  move_end
-#
-#def_key "insert"
-#  select_item
-#
-#def_key "enter"
-#  enter_directory
-#
-#def_key "enter"
-#  toggle_output
-#
-#def_key "enter"
-#  run_action
-#
-#def_key "enter"
-#  play_item
-#
-#def_key "space"
-#  add_item_to_playlist
-#
-#def_key "space"
-#  toggle_lyrics_update_on_song_change
-#
-#def_key "space"
-#  toggle_visualization_type
-#
-#def_key "delete"
-#  delete_playlist_items
-#
-#def_key "delete"
-#  delete_browser_items
-#
-#def_key "delete"
-#  delete_stored_playlist
-#
-#def_key "right"
-#  next_column
-#
-#def_key "right"
-#  slave_screen
-#
-#def_key "right"
-#  volume_up
-#
-#def_key "+"
-#  volume_up
-#
-#def_key "left"
-#  previous_column
-#
-#def_key "left"
-#  master_screen
-#
-#def_key "left"
-#  volume_down
-#
-#def_key "-"
-#  volume_down
-#
-#def_key ":"
-#  execute_command
-#
-#def_key "tab"
-#  next_screen
-#
-#def_key "shift-tab"
-#  previous_screen
-#
-#def_key "f1"
-#  show_help
-#
-#def_key "1"
-#  show_playlist
-#
-#def_key "2"
-#  show_browser
-#
-#def_key "2"
-#  change_browse_mode
-#
-#def_key "3"
-#  show_search_engine
-#
-#def_key "3"
-#  reset_search_engine
-#
-#def_key "4"
-#  show_media_library
-#
-#def_key "4"
-#  toggle_media_library_columns_mode
-#
-#def_key "5"
-#  show_playlist_editor
-#
-#def_key "6"
-#  show_tag_editor
-#
-#def_key "7"
-#  show_outputs
-#
-#def_key "8"
-#  show_visualizer
-#
-#def_key "="
-#  show_clock
-#
-#def_key "@"
-#  show_server_info
-#
-#def_key "s"
-#  stop
-#
-#def_key "p"
-#  pause
-#
-#def_key "&gt;"
-#  next
-#
-#def_key "&lt;"
-#  previous
-#
-#def_key "ctrl-h"
-#  jump_to_parent_directory
-#
-#def_key "ctrl-h"
-#  replay_song
-#
-#def_key "backspace"
-#  jump_to_parent_directory
-#
-#def_key "backspace"
-#  replay_song
-#
-#def_key "backspace"
-#  play
-#
-#def_key "f"
-#  seek_forward
-#
-#def_key "b"
-#  seek_backward
-#
-#def_key "r"
-#  toggle_repeat
-#
-#def_key "z"
-#  toggle_random
-#
-#def_key "y"
-#  save_tag_changes
-#
-#def_key "y"
-#  start_searching
-#
-#def_key "y"
-#  toggle_single
-#
-#def_key "R"
-#  toggle_consume
-#
-#def_key "Y"
-#  toggle_replay_gain_mode
-#
-#def_key "T"
-#  toggle_add_mode
-#
-#def_key "|"
-#  toggle_mouse
-#
-#def_key "#"
-#  toggle_bitrate_visibility
-#
-#def_key "Z"
-#  shuffle
-#
-#def_key "x"
-#  toggle_crossfade
-#
-#def_key "X"
-#  set_crossfade
-#
-#def_key "u"
-#  update_database
-#
-#def_key "ctrl-s"
-#  sort_playlist
-#
-#def_key "ctrl-s"
-#  toggle_browser_sort_mode
-#
-#def_key "ctrl-s"
-#  toggle_media_library_sort_mode
-#
-#def_key "ctrl-r"
-#  reverse_playlist
-#
-#def_key "ctrl-f"
-#  apply_filter
-#
-#def_key "ctrl-_"
-#  select_found_items
-#
-#def_key "/"
-#  find
-#
-#def_key "/"
-#  find_item_forward
-#
-#def_key "?"
-#  find
-#
-#def_key "?"
-#  find_item_backward
-#
-#def_key "."
-#  next_found_item
-#
-#def_key ","
-#  previous_found_item
-#
-#def_key "w"
-#  toggle_find_mode
-#
-#def_key "e"
-#  edit_song
-#
-#def_key "e"
-#  edit_library_tag
-#
-#def_key "e"
-#  edit_library_album
-#
-#def_key "e"
-#  edit_directory_name
-#
-#def_key "e"
-#  edit_playlist_name
-#
-#def_key "e"
-#  edit_lyrics
-#
-#def_key "i"
-#  show_song_info
-#
-#def_key "I"
-#  show_artist_info
-#
-#def_key "g"
-#  jump_to_position_in_song
-#
-#def_key "l"
-#  show_lyrics
-#
-#def_key "ctrl-v"
-#  select_range
-#
-#def_key "v"
-#  reverse_selection
-#
-#def_key "V"
-#  remove_selection
-#
-#def_key "B"
-#  select_album
-#
-#def_key "a"
-#  add_selected_items
-#
-#def_key "c"
-#  clear_playlist
-#
-#def_key "c"
-#  clear_main_playlist
-#
-#def_key "C"
-#  crop_playlist
-#
-#def_key "C"
-#  crop_main_playlist
-#
-#def_key "m"
-#  move_sort_order_up
-#
-#def_key "m"
-#  move_selected_items_up
-#
-#def_key "n"
-#  move_sort_order_down
-#
-#def_key "n"
-#  move_selected_items_down
-#
-#def_key "M"
-#  move_selected_items_to
-#
-#def_key "A"
-#  add
-#
-#def_key "S"
-#  save_playlist
-#
-#def_key "o"
-#  jump_to_playing_song
-#
-#def_key "G"
-#  jump_to_browser
-#
-#def_key "G"
-#  jump_to_playlist_editor
-#
-#def_key "~"
-#  jump_to_media_library
-#
-#def_key "E"
-#  jump_to_tag_editor
-#
-#def_key "U"
-#  toggle_playing_song_centering
-#
-#def_key "P"
-#  toggle_display_mode
-#
-#def_key "\\"
-#  toggle_interface
-#
-#def_key "!"
-#  toggle_separators_between_albums
-#
-#def_key "L"
-#  toggle_lyrics_fetcher
-#
-#def_key "F"
-#  fetch_lyrics_in_background
-#
-#def_key "alt-l"
-#  toggle_fetching_lyrics_in_background
-#
-#def_key "ctrl-l"
-#  toggle_screen_lock
-#
-#def_key "`"
-#  toggle_library_tag_type
-#
-#def_key "`"
-#  refetch_lyrics
-#
-#def_key "`"
-#  add_random_items
-#
-#def_key "ctrl-p"
-#  set_selected_items_priority
-#
-#def_key "q"
-#  quit
-#</code></pre><p></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>##    In addition to binding to a key, you can also bind actions
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>##    or chains of actions to a command. If it comes to commands,
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>##    syntax is very similar to defining keys. Here goes example
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>##    definition of a command:
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>##
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>##      def_command "quit" [deferred]
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>##        stop
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>##        quit
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>##
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>##    If you execute the above command (which can be done by
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>##    invoking action execute_command, typing 'quit' and pressing
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>##    enter), ncmpcpp will stop the player and then quit. Note the
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>##    presence of word 'deferred' enclosed in square brackets. It
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>##    tells ncmpcpp to wait for confirmation (ie. pressing enter)
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>##    after you typed quit. Instead of 'deferred', 'immediate'
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>##    could be used. Then ncmpcpp will not wait for confirmation
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>##    (enter) and will execute the command the moment it sees it.
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>##
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>##    Note: while command chains are executed, internal environment
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>##    update (which includes current window refresh and mpd status
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>##    update) is not performed for performance reasons. However, it
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>##    may be desirable to do so in some situration. Therefore it's
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>##    possible to invoke by hand by performing 'update enviroment'
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>##    action.
+</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>##
+</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>## Note: There is a difference between:
+</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>##
+</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>##         def_key "key"
+</span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>##           action1
+</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a>##
+</span><span id="__span-27-31"><a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a>##         def_key "key"
+</span><span id="__span-27-32"><a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a>##           action2
+</span><span id="__span-27-33"><a id="__codelineno-27-33" name="__codelineno-27-33" href="#__codelineno-27-33"></a>##
+</span><span id="__span-27-34"><a id="__codelineno-27-34" name="__codelineno-27-34" href="#__codelineno-27-34"></a>##       and
+</span><span id="__span-27-35"><a id="__codelineno-27-35" name="__codelineno-27-35" href="#__codelineno-27-35"></a>##
+</span><span id="__span-27-36"><a id="__codelineno-27-36" name="__codelineno-27-36" href="#__codelineno-27-36"></a>##         def_key "key"
+</span><span id="__span-27-37"><a id="__codelineno-27-37" name="__codelineno-27-37" href="#__codelineno-27-37"></a>##           action1
+</span><span id="__span-27-38"><a id="__codelineno-27-38" name="__codelineno-27-38" href="#__codelineno-27-38"></a>##           action2
+</span><span id="__span-27-39"><a id="__codelineno-27-39" name="__codelineno-27-39" href="#__codelineno-27-39"></a>##
+</span><span id="__span-27-40"><a id="__codelineno-27-40" name="__codelineno-27-40" href="#__codelineno-27-40"></a>##      First one binds two single actions to the same key whilst
+</span><span id="__span-27-41"><a id="__codelineno-27-41" name="__codelineno-27-41" href="#__codelineno-27-41"></a>##      second one defines a chain of actions. The behavior of
+</span><span id="__span-27-42"><a id="__codelineno-27-42" name="__codelineno-27-42" href="#__codelineno-27-42"></a>##      these two is different and is described in (1) and (2).
+</span><span id="__span-27-43"><a id="__codelineno-27-43" name="__codelineno-27-43" href="#__codelineno-27-43"></a>##
+</span><span id="__span-27-44"><a id="__codelineno-27-44" name="__codelineno-27-44" href="#__codelineno-27-44"></a>## Note: Function def_key accepts non-ascii characters.
+</span><span id="__span-27-45"><a id="__codelineno-27-45" name="__codelineno-27-45" href="#__codelineno-27-45"></a>##
+</span><span id="__span-27-46"><a id="__codelineno-27-46" name="__codelineno-27-46" href="#__codelineno-27-46"></a>##### List of unbound actions #####
+</span><span id="__span-27-47"><a id="__codelineno-27-47" name="__codelineno-27-47" href="#__codelineno-27-47"></a>##
+</span><span id="__span-27-48"><a id="__codelineno-27-48" name="__codelineno-27-48" href="#__codelineno-27-48"></a>## The following actions are not bound to any key/command:
+</span><span id="__span-27-49"><a id="__codelineno-27-49" name="__codelineno-27-49" href="#__codelineno-27-49"></a>##
+</span><span id="__span-27-50"><a id="__codelineno-27-50" name="__codelineno-27-50" href="#__codelineno-27-50"></a>##  - set_volume
+</span><span id="__span-27-51"><a id="__codelineno-27-51" name="__codelineno-27-51" href="#__codelineno-27-51"></a>##  - load
+</span><span id="__span-27-52"><a id="__codelineno-27-52" name="__codelineno-27-52" href="#__codelineno-27-52"></a>##
+</span><span id="__span-27-53"><a id="__codelineno-27-53" name="__codelineno-27-53" href="#__codelineno-27-53"></a>#
+</span><span id="__span-27-54"><a id="__codelineno-27-54" name="__codelineno-27-54" href="#__codelineno-27-54"></a>#def_key "mouse"
+</span><span id="__span-27-55"><a id="__codelineno-27-55" name="__codelineno-27-55" href="#__codelineno-27-55"></a>#  mouse_event
+</span><span id="__span-27-56"><a id="__codelineno-27-56" name="__codelineno-27-56" href="#__codelineno-27-56"></a>#
+</span><span id="__span-27-57"><a id="__codelineno-27-57" name="__codelineno-27-57" href="#__codelineno-27-57"></a>#def_key "up"
+</span><span id="__span-27-58"><a id="__codelineno-27-58" name="__codelineno-27-58" href="#__codelineno-27-58"></a>#  scroll_up
+</span><span id="__span-27-59"><a id="__codelineno-27-59" name="__codelineno-27-59" href="#__codelineno-27-59"></a>#
+</span><span id="__span-27-60"><a id="__codelineno-27-60" name="__codelineno-27-60" href="#__codelineno-27-60"></a>#def_key "shift-up"
+</span><span id="__span-27-61"><a id="__codelineno-27-61" name="__codelineno-27-61" href="#__codelineno-27-61"></a>#  select_item
+</span><span id="__span-27-62"><a id="__codelineno-27-62" name="__codelineno-27-62" href="#__codelineno-27-62"></a>#  scroll_up
+</span><span id="__span-27-63"><a id="__codelineno-27-63" name="__codelineno-27-63" href="#__codelineno-27-63"></a>#
+</span><span id="__span-27-64"><a id="__codelineno-27-64" name="__codelineno-27-64" href="#__codelineno-27-64"></a>#def_key "down"
+</span><span id="__span-27-65"><a id="__codelineno-27-65" name="__codelineno-27-65" href="#__codelineno-27-65"></a>#  scroll_down
+</span><span id="__span-27-66"><a id="__codelineno-27-66" name="__codelineno-27-66" href="#__codelineno-27-66"></a>#
+</span><span id="__span-27-67"><a id="__codelineno-27-67" name="__codelineno-27-67" href="#__codelineno-27-67"></a>#def_key "shift-down"
+</span><span id="__span-27-68"><a id="__codelineno-27-68" name="__codelineno-27-68" href="#__codelineno-27-68"></a>#  select_item
+</span><span id="__span-27-69"><a id="__codelineno-27-69" name="__codelineno-27-69" href="#__codelineno-27-69"></a>#  scroll_down
+</span><span id="__span-27-70"><a id="__codelineno-27-70" name="__codelineno-27-70" href="#__codelineno-27-70"></a>#
+</span><span id="__span-27-71"><a id="__codelineno-27-71" name="__codelineno-27-71" href="#__codelineno-27-71"></a>#def_key "["
+</span><span id="__span-27-72"><a id="__codelineno-27-72" name="__codelineno-27-72" href="#__codelineno-27-72"></a>#  scroll_up_album
+</span><span id="__span-27-73"><a id="__codelineno-27-73" name="__codelineno-27-73" href="#__codelineno-27-73"></a>#
+</span><span id="__span-27-74"><a id="__codelineno-27-74" name="__codelineno-27-74" href="#__codelineno-27-74"></a>#def_key "]"
+</span><span id="__span-27-75"><a id="__codelineno-27-75" name="__codelineno-27-75" href="#__codelineno-27-75"></a>#  scroll_down_album
+</span><span id="__span-27-76"><a id="__codelineno-27-76" name="__codelineno-27-76" href="#__codelineno-27-76"></a>#
+</span><span id="__span-27-77"><a id="__codelineno-27-77" name="__codelineno-27-77" href="#__codelineno-27-77"></a>#def_key "{"
+</span><span id="__span-27-78"><a id="__codelineno-27-78" name="__codelineno-27-78" href="#__codelineno-27-78"></a>#  scroll_up_artist
+</span><span id="__span-27-79"><a id="__codelineno-27-79" name="__codelineno-27-79" href="#__codelineno-27-79"></a>#
+</span><span id="__span-27-80"><a id="__codelineno-27-80" name="__codelineno-27-80" href="#__codelineno-27-80"></a>#def_key "}"
+</span><span id="__span-27-81"><a id="__codelineno-27-81" name="__codelineno-27-81" href="#__codelineno-27-81"></a>#  scroll_down_artist
+</span><span id="__span-27-82"><a id="__codelineno-27-82" name="__codelineno-27-82" href="#__codelineno-27-82"></a>#
+</span><span id="__span-27-83"><a id="__codelineno-27-83" name="__codelineno-27-83" href="#__codelineno-27-83"></a>#def_key "page_up"
+</span><span id="__span-27-84"><a id="__codelineno-27-84" name="__codelineno-27-84" href="#__codelineno-27-84"></a>#  page_up
+</span><span id="__span-27-85"><a id="__codelineno-27-85" name="__codelineno-27-85" href="#__codelineno-27-85"></a>#
+</span><span id="__span-27-86"><a id="__codelineno-27-86" name="__codelineno-27-86" href="#__codelineno-27-86"></a>#def_key "page_down"
+</span><span id="__span-27-87"><a id="__codelineno-27-87" name="__codelineno-27-87" href="#__codelineno-27-87"></a>#  page_down
+</span><span id="__span-27-88"><a id="__codelineno-27-88" name="__codelineno-27-88" href="#__codelineno-27-88"></a>#
+</span><span id="__span-27-89"><a id="__codelineno-27-89" name="__codelineno-27-89" href="#__codelineno-27-89"></a>#def_key "home"
+</span><span id="__span-27-90"><a id="__codelineno-27-90" name="__codelineno-27-90" href="#__codelineno-27-90"></a>#  move_home
+</span><span id="__span-27-91"><a id="__codelineno-27-91" name="__codelineno-27-91" href="#__codelineno-27-91"></a>#
+</span><span id="__span-27-92"><a id="__codelineno-27-92" name="__codelineno-27-92" href="#__codelineno-27-92"></a>#def_key "end"
+</span><span id="__span-27-93"><a id="__codelineno-27-93" name="__codelineno-27-93" href="#__codelineno-27-93"></a>#  move_end
+</span><span id="__span-27-94"><a id="__codelineno-27-94" name="__codelineno-27-94" href="#__codelineno-27-94"></a>#
+</span><span id="__span-27-95"><a id="__codelineno-27-95" name="__codelineno-27-95" href="#__codelineno-27-95"></a>#def_key "insert"
+</span><span id="__span-27-96"><a id="__codelineno-27-96" name="__codelineno-27-96" href="#__codelineno-27-96"></a>#  select_item
+</span><span id="__span-27-97"><a id="__codelineno-27-97" name="__codelineno-27-97" href="#__codelineno-27-97"></a>#
+</span><span id="__span-27-98"><a id="__codelineno-27-98" name="__codelineno-27-98" href="#__codelineno-27-98"></a>#def_key "enter"
+</span><span id="__span-27-99"><a id="__codelineno-27-99" name="__codelineno-27-99" href="#__codelineno-27-99"></a>#  enter_directory
+</span><span id="__span-27-100"><a id="__codelineno-27-100" name="__codelineno-27-100" href="#__codelineno-27-100"></a>#
+</span><span id="__span-27-101"><a id="__codelineno-27-101" name="__codelineno-27-101" href="#__codelineno-27-101"></a>#def_key "enter"
+</span><span id="__span-27-102"><a id="__codelineno-27-102" name="__codelineno-27-102" href="#__codelineno-27-102"></a>#  toggle_output
+</span><span id="__span-27-103"><a id="__codelineno-27-103" name="__codelineno-27-103" href="#__codelineno-27-103"></a>#
+</span><span id="__span-27-104"><a id="__codelineno-27-104" name="__codelineno-27-104" href="#__codelineno-27-104"></a>#def_key "enter"
+</span><span id="__span-27-105"><a id="__codelineno-27-105" name="__codelineno-27-105" href="#__codelineno-27-105"></a>#  run_action
+</span><span id="__span-27-106"><a id="__codelineno-27-106" name="__codelineno-27-106" href="#__codelineno-27-106"></a>#
+</span><span id="__span-27-107"><a id="__codelineno-27-107" name="__codelineno-27-107" href="#__codelineno-27-107"></a>#def_key "enter"
+</span><span id="__span-27-108"><a id="__codelineno-27-108" name="__codelineno-27-108" href="#__codelineno-27-108"></a>#  play_item
+</span><span id="__span-27-109"><a id="__codelineno-27-109" name="__codelineno-27-109" href="#__codelineno-27-109"></a>#
+</span><span id="__span-27-110"><a id="__codelineno-27-110" name="__codelineno-27-110" href="#__codelineno-27-110"></a>#def_key "space"
+</span><span id="__span-27-111"><a id="__codelineno-27-111" name="__codelineno-27-111" href="#__codelineno-27-111"></a>#  add_item_to_playlist
+</span><span id="__span-27-112"><a id="__codelineno-27-112" name="__codelineno-27-112" href="#__codelineno-27-112"></a>#
+</span><span id="__span-27-113"><a id="__codelineno-27-113" name="__codelineno-27-113" href="#__codelineno-27-113"></a>#def_key "space"
+</span><span id="__span-27-114"><a id="__codelineno-27-114" name="__codelineno-27-114" href="#__codelineno-27-114"></a>#  toggle_lyrics_update_on_song_change
+</span><span id="__span-27-115"><a id="__codelineno-27-115" name="__codelineno-27-115" href="#__codelineno-27-115"></a>#
+</span><span id="__span-27-116"><a id="__codelineno-27-116" name="__codelineno-27-116" href="#__codelineno-27-116"></a>#def_key "space"
+</span><span id="__span-27-117"><a id="__codelineno-27-117" name="__codelineno-27-117" href="#__codelineno-27-117"></a>#  toggle_visualization_type
+</span><span id="__span-27-118"><a id="__codelineno-27-118" name="__codelineno-27-118" href="#__codelineno-27-118"></a>#
+</span><span id="__span-27-119"><a id="__codelineno-27-119" name="__codelineno-27-119" href="#__codelineno-27-119"></a>#def_key "delete"
+</span><span id="__span-27-120"><a id="__codelineno-27-120" name="__codelineno-27-120" href="#__codelineno-27-120"></a>#  delete_playlist_items
+</span><span id="__span-27-121"><a id="__codelineno-27-121" name="__codelineno-27-121" href="#__codelineno-27-121"></a>#
+</span><span id="__span-27-122"><a id="__codelineno-27-122" name="__codelineno-27-122" href="#__codelineno-27-122"></a>#def_key "delete"
+</span><span id="__span-27-123"><a id="__codelineno-27-123" name="__codelineno-27-123" href="#__codelineno-27-123"></a>#  delete_browser_items
+</span><span id="__span-27-124"><a id="__codelineno-27-124" name="__codelineno-27-124" href="#__codelineno-27-124"></a>#
+</span><span id="__span-27-125"><a id="__codelineno-27-125" name="__codelineno-27-125" href="#__codelineno-27-125"></a>#def_key "delete"
+</span><span id="__span-27-126"><a id="__codelineno-27-126" name="__codelineno-27-126" href="#__codelineno-27-126"></a>#  delete_stored_playlist
+</span><span id="__span-27-127"><a id="__codelineno-27-127" name="__codelineno-27-127" href="#__codelineno-27-127"></a>#
+</span><span id="__span-27-128"><a id="__codelineno-27-128" name="__codelineno-27-128" href="#__codelineno-27-128"></a>#def_key "right"
+</span><span id="__span-27-129"><a id="__codelineno-27-129" name="__codelineno-27-129" href="#__codelineno-27-129"></a>#  next_column
+</span><span id="__span-27-130"><a id="__codelineno-27-130" name="__codelineno-27-130" href="#__codelineno-27-130"></a>#
+</span><span id="__span-27-131"><a id="__codelineno-27-131" name="__codelineno-27-131" href="#__codelineno-27-131"></a>#def_key "right"
+</span><span id="__span-27-132"><a id="__codelineno-27-132" name="__codelineno-27-132" href="#__codelineno-27-132"></a>#  slave_screen
+</span><span id="__span-27-133"><a id="__codelineno-27-133" name="__codelineno-27-133" href="#__codelineno-27-133"></a>#
+</span><span id="__span-27-134"><a id="__codelineno-27-134" name="__codelineno-27-134" href="#__codelineno-27-134"></a>#def_key "right"
+</span><span id="__span-27-135"><a id="__codelineno-27-135" name="__codelineno-27-135" href="#__codelineno-27-135"></a>#  volume_up
+</span><span id="__span-27-136"><a id="__codelineno-27-136" name="__codelineno-27-136" href="#__codelineno-27-136"></a>#
+</span><span id="__span-27-137"><a id="__codelineno-27-137" name="__codelineno-27-137" href="#__codelineno-27-137"></a>#def_key "+"
+</span><span id="__span-27-138"><a id="__codelineno-27-138" name="__codelineno-27-138" href="#__codelineno-27-138"></a>#  volume_up
+</span><span id="__span-27-139"><a id="__codelineno-27-139" name="__codelineno-27-139" href="#__codelineno-27-139"></a>#
+</span><span id="__span-27-140"><a id="__codelineno-27-140" name="__codelineno-27-140" href="#__codelineno-27-140"></a>#def_key "left"
+</span><span id="__span-27-141"><a id="__codelineno-27-141" name="__codelineno-27-141" href="#__codelineno-27-141"></a>#  previous_column
+</span><span id="__span-27-142"><a id="__codelineno-27-142" name="__codelineno-27-142" href="#__codelineno-27-142"></a>#
+</span><span id="__span-27-143"><a id="__codelineno-27-143" name="__codelineno-27-143" href="#__codelineno-27-143"></a>#def_key "left"
+</span><span id="__span-27-144"><a id="__codelineno-27-144" name="__codelineno-27-144" href="#__codelineno-27-144"></a>#  master_screen
+</span><span id="__span-27-145"><a id="__codelineno-27-145" name="__codelineno-27-145" href="#__codelineno-27-145"></a>#
+</span><span id="__span-27-146"><a id="__codelineno-27-146" name="__codelineno-27-146" href="#__codelineno-27-146"></a>#def_key "left"
+</span><span id="__span-27-147"><a id="__codelineno-27-147" name="__codelineno-27-147" href="#__codelineno-27-147"></a>#  volume_down
+</span><span id="__span-27-148"><a id="__codelineno-27-148" name="__codelineno-27-148" href="#__codelineno-27-148"></a>#
+</span><span id="__span-27-149"><a id="__codelineno-27-149" name="__codelineno-27-149" href="#__codelineno-27-149"></a>#def_key "-"
+</span><span id="__span-27-150"><a id="__codelineno-27-150" name="__codelineno-27-150" href="#__codelineno-27-150"></a>#  volume_down
+</span><span id="__span-27-151"><a id="__codelineno-27-151" name="__codelineno-27-151" href="#__codelineno-27-151"></a>#
+</span><span id="__span-27-152"><a id="__codelineno-27-152" name="__codelineno-27-152" href="#__codelineno-27-152"></a>#def_key ":"
+</span><span id="__span-27-153"><a id="__codelineno-27-153" name="__codelineno-27-153" href="#__codelineno-27-153"></a>#  execute_command
+</span><span id="__span-27-154"><a id="__codelineno-27-154" name="__codelineno-27-154" href="#__codelineno-27-154"></a>#
+</span><span id="__span-27-155"><a id="__codelineno-27-155" name="__codelineno-27-155" href="#__codelineno-27-155"></a>#def_key "tab"
+</span><span id="__span-27-156"><a id="__codelineno-27-156" name="__codelineno-27-156" href="#__codelineno-27-156"></a>#  next_screen
+</span><span id="__span-27-157"><a id="__codelineno-27-157" name="__codelineno-27-157" href="#__codelineno-27-157"></a>#
+</span><span id="__span-27-158"><a id="__codelineno-27-158" name="__codelineno-27-158" href="#__codelineno-27-158"></a>#def_key "shift-tab"
+</span><span id="__span-27-159"><a id="__codelineno-27-159" name="__codelineno-27-159" href="#__codelineno-27-159"></a>#  previous_screen
+</span><span id="__span-27-160"><a id="__codelineno-27-160" name="__codelineno-27-160" href="#__codelineno-27-160"></a>#
+</span><span id="__span-27-161"><a id="__codelineno-27-161" name="__codelineno-27-161" href="#__codelineno-27-161"></a>#def_key "f1"
+</span><span id="__span-27-162"><a id="__codelineno-27-162" name="__codelineno-27-162" href="#__codelineno-27-162"></a>#  show_help
+</span><span id="__span-27-163"><a id="__codelineno-27-163" name="__codelineno-27-163" href="#__codelineno-27-163"></a>#
+</span><span id="__span-27-164"><a id="__codelineno-27-164" name="__codelineno-27-164" href="#__codelineno-27-164"></a>#def_key "1"
+</span><span id="__span-27-165"><a id="__codelineno-27-165" name="__codelineno-27-165" href="#__codelineno-27-165"></a>#  show_playlist
+</span><span id="__span-27-166"><a id="__codelineno-27-166" name="__codelineno-27-166" href="#__codelineno-27-166"></a>#
+</span><span id="__span-27-167"><a id="__codelineno-27-167" name="__codelineno-27-167" href="#__codelineno-27-167"></a>#def_key "2"
+</span><span id="__span-27-168"><a id="__codelineno-27-168" name="__codelineno-27-168" href="#__codelineno-27-168"></a>#  show_browser
+</span><span id="__span-27-169"><a id="__codelineno-27-169" name="__codelineno-27-169" href="#__codelineno-27-169"></a>#
+</span><span id="__span-27-170"><a id="__codelineno-27-170" name="__codelineno-27-170" href="#__codelineno-27-170"></a>#def_key "2"
+</span><span id="__span-27-171"><a id="__codelineno-27-171" name="__codelineno-27-171" href="#__codelineno-27-171"></a>#  change_browse_mode
+</span><span id="__span-27-172"><a id="__codelineno-27-172" name="__codelineno-27-172" href="#__codelineno-27-172"></a>#
+</span><span id="__span-27-173"><a id="__codelineno-27-173" name="__codelineno-27-173" href="#__codelineno-27-173"></a>#def_key "3"
+</span><span id="__span-27-174"><a id="__codelineno-27-174" name="__codelineno-27-174" href="#__codelineno-27-174"></a>#  show_search_engine
+</span><span id="__span-27-175"><a id="__codelineno-27-175" name="__codelineno-27-175" href="#__codelineno-27-175"></a>#
+</span><span id="__span-27-176"><a id="__codelineno-27-176" name="__codelineno-27-176" href="#__codelineno-27-176"></a>#def_key "3"
+</span><span id="__span-27-177"><a id="__codelineno-27-177" name="__codelineno-27-177" href="#__codelineno-27-177"></a>#  reset_search_engine
+</span><span id="__span-27-178"><a id="__codelineno-27-178" name="__codelineno-27-178" href="#__codelineno-27-178"></a>#
+</span><span id="__span-27-179"><a id="__codelineno-27-179" name="__codelineno-27-179" href="#__codelineno-27-179"></a>#def_key "4"
+</span><span id="__span-27-180"><a id="__codelineno-27-180" name="__codelineno-27-180" href="#__codelineno-27-180"></a>#  show_media_library
+</span><span id="__span-27-181"><a id="__codelineno-27-181" name="__codelineno-27-181" href="#__codelineno-27-181"></a>#
+</span><span id="__span-27-182"><a id="__codelineno-27-182" name="__codelineno-27-182" href="#__codelineno-27-182"></a>#def_key "4"
+</span><span id="__span-27-183"><a id="__codelineno-27-183" name="__codelineno-27-183" href="#__codelineno-27-183"></a>#  toggle_media_library_columns_mode
+</span><span id="__span-27-184"><a id="__codelineno-27-184" name="__codelineno-27-184" href="#__codelineno-27-184"></a>#
+</span><span id="__span-27-185"><a id="__codelineno-27-185" name="__codelineno-27-185" href="#__codelineno-27-185"></a>#def_key "5"
+</span><span id="__span-27-186"><a id="__codelineno-27-186" name="__codelineno-27-186" href="#__codelineno-27-186"></a>#  show_playlist_editor
+</span><span id="__span-27-187"><a id="__codelineno-27-187" name="__codelineno-27-187" href="#__codelineno-27-187"></a>#
+</span><span id="__span-27-188"><a id="__codelineno-27-188" name="__codelineno-27-188" href="#__codelineno-27-188"></a>#def_key "6"
+</span><span id="__span-27-189"><a id="__codelineno-27-189" name="__codelineno-27-189" href="#__codelineno-27-189"></a>#  show_tag_editor
+</span><span id="__span-27-190"><a id="__codelineno-27-190" name="__codelineno-27-190" href="#__codelineno-27-190"></a>#
+</span><span id="__span-27-191"><a id="__codelineno-27-191" name="__codelineno-27-191" href="#__codelineno-27-191"></a>#def_key "7"
+</span><span id="__span-27-192"><a id="__codelineno-27-192" name="__codelineno-27-192" href="#__codelineno-27-192"></a>#  show_outputs
+</span><span id="__span-27-193"><a id="__codelineno-27-193" name="__codelineno-27-193" href="#__codelineno-27-193"></a>#
+</span><span id="__span-27-194"><a id="__codelineno-27-194" name="__codelineno-27-194" href="#__codelineno-27-194"></a>#def_key "8"
+</span><span id="__span-27-195"><a id="__codelineno-27-195" name="__codelineno-27-195" href="#__codelineno-27-195"></a>#  show_visualizer
+</span><span id="__span-27-196"><a id="__codelineno-27-196" name="__codelineno-27-196" href="#__codelineno-27-196"></a>#
+</span><span id="__span-27-197"><a id="__codelineno-27-197" name="__codelineno-27-197" href="#__codelineno-27-197"></a>#def_key "="
+</span><span id="__span-27-198"><a id="__codelineno-27-198" name="__codelineno-27-198" href="#__codelineno-27-198"></a>#  show_clock
+</span><span id="__span-27-199"><a id="__codelineno-27-199" name="__codelineno-27-199" href="#__codelineno-27-199"></a>#
+</span><span id="__span-27-200"><a id="__codelineno-27-200" name="__codelineno-27-200" href="#__codelineno-27-200"></a>#def_key "@"
+</span><span id="__span-27-201"><a id="__codelineno-27-201" name="__codelineno-27-201" href="#__codelineno-27-201"></a>#  show_server_info
+</span><span id="__span-27-202"><a id="__codelineno-27-202" name="__codelineno-27-202" href="#__codelineno-27-202"></a>#
+</span><span id="__span-27-203"><a id="__codelineno-27-203" name="__codelineno-27-203" href="#__codelineno-27-203"></a>#def_key "s"
+</span><span id="__span-27-204"><a id="__codelineno-27-204" name="__codelineno-27-204" href="#__codelineno-27-204"></a>#  stop
+</span><span id="__span-27-205"><a id="__codelineno-27-205" name="__codelineno-27-205" href="#__codelineno-27-205"></a>#
+</span><span id="__span-27-206"><a id="__codelineno-27-206" name="__codelineno-27-206" href="#__codelineno-27-206"></a>#def_key "p"
+</span><span id="__span-27-207"><a id="__codelineno-27-207" name="__codelineno-27-207" href="#__codelineno-27-207"></a>#  pause
+</span><span id="__span-27-208"><a id="__codelineno-27-208" name="__codelineno-27-208" href="#__codelineno-27-208"></a>#
+</span><span id="__span-27-209"><a id="__codelineno-27-209" name="__codelineno-27-209" href="#__codelineno-27-209"></a>#def_key "&gt;"
+</span><span id="__span-27-210"><a id="__codelineno-27-210" name="__codelineno-27-210" href="#__codelineno-27-210"></a>#  next
+</span><span id="__span-27-211"><a id="__codelineno-27-211" name="__codelineno-27-211" href="#__codelineno-27-211"></a>#
+</span><span id="__span-27-212"><a id="__codelineno-27-212" name="__codelineno-27-212" href="#__codelineno-27-212"></a>#def_key "&lt;"
+</span><span id="__span-27-213"><a id="__codelineno-27-213" name="__codelineno-27-213" href="#__codelineno-27-213"></a>#  previous
+</span><span id="__span-27-214"><a id="__codelineno-27-214" name="__codelineno-27-214" href="#__codelineno-27-214"></a>#
+</span><span id="__span-27-215"><a id="__codelineno-27-215" name="__codelineno-27-215" href="#__codelineno-27-215"></a>#def_key "ctrl-h"
+</span><span id="__span-27-216"><a id="__codelineno-27-216" name="__codelineno-27-216" href="#__codelineno-27-216"></a>#  jump_to_parent_directory
+</span><span id="__span-27-217"><a id="__codelineno-27-217" name="__codelineno-27-217" href="#__codelineno-27-217"></a>#
+</span><span id="__span-27-218"><a id="__codelineno-27-218" name="__codelineno-27-218" href="#__codelineno-27-218"></a>#def_key "ctrl-h"
+</span><span id="__span-27-219"><a id="__codelineno-27-219" name="__codelineno-27-219" href="#__codelineno-27-219"></a>#  replay_song
+</span><span id="__span-27-220"><a id="__codelineno-27-220" name="__codelineno-27-220" href="#__codelineno-27-220"></a>#
+</span><span id="__span-27-221"><a id="__codelineno-27-221" name="__codelineno-27-221" href="#__codelineno-27-221"></a>#def_key "backspace"
+</span><span id="__span-27-222"><a id="__codelineno-27-222" name="__codelineno-27-222" href="#__codelineno-27-222"></a>#  jump_to_parent_directory
+</span><span id="__span-27-223"><a id="__codelineno-27-223" name="__codelineno-27-223" href="#__codelineno-27-223"></a>#
+</span><span id="__span-27-224"><a id="__codelineno-27-224" name="__codelineno-27-224" href="#__codelineno-27-224"></a>#def_key "backspace"
+</span><span id="__span-27-225"><a id="__codelineno-27-225" name="__codelineno-27-225" href="#__codelineno-27-225"></a>#  replay_song
+</span><span id="__span-27-226"><a id="__codelineno-27-226" name="__codelineno-27-226" href="#__codelineno-27-226"></a>#
+</span><span id="__span-27-227"><a id="__codelineno-27-227" name="__codelineno-27-227" href="#__codelineno-27-227"></a>#def_key "backspace"
+</span><span id="__span-27-228"><a id="__codelineno-27-228" name="__codelineno-27-228" href="#__codelineno-27-228"></a>#  play
+</span><span id="__span-27-229"><a id="__codelineno-27-229" name="__codelineno-27-229" href="#__codelineno-27-229"></a>#
+</span><span id="__span-27-230"><a id="__codelineno-27-230" name="__codelineno-27-230" href="#__codelineno-27-230"></a>#def_key "f"
+</span><span id="__span-27-231"><a id="__codelineno-27-231" name="__codelineno-27-231" href="#__codelineno-27-231"></a>#  seek_forward
+</span><span id="__span-27-232"><a id="__codelineno-27-232" name="__codelineno-27-232" href="#__codelineno-27-232"></a>#
+</span><span id="__span-27-233"><a id="__codelineno-27-233" name="__codelineno-27-233" href="#__codelineno-27-233"></a>#def_key "b"
+</span><span id="__span-27-234"><a id="__codelineno-27-234" name="__codelineno-27-234" href="#__codelineno-27-234"></a>#  seek_backward
+</span><span id="__span-27-235"><a id="__codelineno-27-235" name="__codelineno-27-235" href="#__codelineno-27-235"></a>#
+</span><span id="__span-27-236"><a id="__codelineno-27-236" name="__codelineno-27-236" href="#__codelineno-27-236"></a>#def_key "r"
+</span><span id="__span-27-237"><a id="__codelineno-27-237" name="__codelineno-27-237" href="#__codelineno-27-237"></a>#  toggle_repeat
+</span><span id="__span-27-238"><a id="__codelineno-27-238" name="__codelineno-27-238" href="#__codelineno-27-238"></a>#
+</span><span id="__span-27-239"><a id="__codelineno-27-239" name="__codelineno-27-239" href="#__codelineno-27-239"></a>#def_key "z"
+</span><span id="__span-27-240"><a id="__codelineno-27-240" name="__codelineno-27-240" href="#__codelineno-27-240"></a>#  toggle_random
+</span><span id="__span-27-241"><a id="__codelineno-27-241" name="__codelineno-27-241" href="#__codelineno-27-241"></a>#
+</span><span id="__span-27-242"><a id="__codelineno-27-242" name="__codelineno-27-242" href="#__codelineno-27-242"></a>#def_key "y"
+</span><span id="__span-27-243"><a id="__codelineno-27-243" name="__codelineno-27-243" href="#__codelineno-27-243"></a>#  save_tag_changes
+</span><span id="__span-27-244"><a id="__codelineno-27-244" name="__codelineno-27-244" href="#__codelineno-27-244"></a>#
+</span><span id="__span-27-245"><a id="__codelineno-27-245" name="__codelineno-27-245" href="#__codelineno-27-245"></a>#def_key "y"
+</span><span id="__span-27-246"><a id="__codelineno-27-246" name="__codelineno-27-246" href="#__codelineno-27-246"></a>#  start_searching
+</span><span id="__span-27-247"><a id="__codelineno-27-247" name="__codelineno-27-247" href="#__codelineno-27-247"></a>#
+</span><span id="__span-27-248"><a id="__codelineno-27-248" name="__codelineno-27-248" href="#__codelineno-27-248"></a>#def_key "y"
+</span><span id="__span-27-249"><a id="__codelineno-27-249" name="__codelineno-27-249" href="#__codelineno-27-249"></a>#  toggle_single
+</span><span id="__span-27-250"><a id="__codelineno-27-250" name="__codelineno-27-250" href="#__codelineno-27-250"></a>#
+</span><span id="__span-27-251"><a id="__codelineno-27-251" name="__codelineno-27-251" href="#__codelineno-27-251"></a>#def_key "R"
+</span><span id="__span-27-252"><a id="__codelineno-27-252" name="__codelineno-27-252" href="#__codelineno-27-252"></a>#  toggle_consume
+</span><span id="__span-27-253"><a id="__codelineno-27-253" name="__codelineno-27-253" href="#__codelineno-27-253"></a>#
+</span><span id="__span-27-254"><a id="__codelineno-27-254" name="__codelineno-27-254" href="#__codelineno-27-254"></a>#def_key "Y"
+</span><span id="__span-27-255"><a id="__codelineno-27-255" name="__codelineno-27-255" href="#__codelineno-27-255"></a>#  toggle_replay_gain_mode
+</span><span id="__span-27-256"><a id="__codelineno-27-256" name="__codelineno-27-256" href="#__codelineno-27-256"></a>#
+</span><span id="__span-27-257"><a id="__codelineno-27-257" name="__codelineno-27-257" href="#__codelineno-27-257"></a>#def_key "T"
+</span><span id="__span-27-258"><a id="__codelineno-27-258" name="__codelineno-27-258" href="#__codelineno-27-258"></a>#  toggle_add_mode
+</span><span id="__span-27-259"><a id="__codelineno-27-259" name="__codelineno-27-259" href="#__codelineno-27-259"></a>#
+</span><span id="__span-27-260"><a id="__codelineno-27-260" name="__codelineno-27-260" href="#__codelineno-27-260"></a>#def_key "|"
+</span><span id="__span-27-261"><a id="__codelineno-27-261" name="__codelineno-27-261" href="#__codelineno-27-261"></a>#  toggle_mouse
+</span><span id="__span-27-262"><a id="__codelineno-27-262" name="__codelineno-27-262" href="#__codelineno-27-262"></a>#
+</span><span id="__span-27-263"><a id="__codelineno-27-263" name="__codelineno-27-263" href="#__codelineno-27-263"></a>#def_key "#"
+</span><span id="__span-27-264"><a id="__codelineno-27-264" name="__codelineno-27-264" href="#__codelineno-27-264"></a>#  toggle_bitrate_visibility
+</span><span id="__span-27-265"><a id="__codelineno-27-265" name="__codelineno-27-265" href="#__codelineno-27-265"></a>#
+</span><span id="__span-27-266"><a id="__codelineno-27-266" name="__codelineno-27-266" href="#__codelineno-27-266"></a>#def_key "Z"
+</span><span id="__span-27-267"><a id="__codelineno-27-267" name="__codelineno-27-267" href="#__codelineno-27-267"></a>#  shuffle
+</span><span id="__span-27-268"><a id="__codelineno-27-268" name="__codelineno-27-268" href="#__codelineno-27-268"></a>#
+</span><span id="__span-27-269"><a id="__codelineno-27-269" name="__codelineno-27-269" href="#__codelineno-27-269"></a>#def_key "x"
+</span><span id="__span-27-270"><a id="__codelineno-27-270" name="__codelineno-27-270" href="#__codelineno-27-270"></a>#  toggle_crossfade
+</span><span id="__span-27-271"><a id="__codelineno-27-271" name="__codelineno-27-271" href="#__codelineno-27-271"></a>#
+</span><span id="__span-27-272"><a id="__codelineno-27-272" name="__codelineno-27-272" href="#__codelineno-27-272"></a>#def_key "X"
+</span><span id="__span-27-273"><a id="__codelineno-27-273" name="__codelineno-27-273" href="#__codelineno-27-273"></a>#  set_crossfade
+</span><span id="__span-27-274"><a id="__codelineno-27-274" name="__codelineno-27-274" href="#__codelineno-27-274"></a>#
+</span><span id="__span-27-275"><a id="__codelineno-27-275" name="__codelineno-27-275" href="#__codelineno-27-275"></a>#def_key "u"
+</span><span id="__span-27-276"><a id="__codelineno-27-276" name="__codelineno-27-276" href="#__codelineno-27-276"></a>#  update_database
+</span><span id="__span-27-277"><a id="__codelineno-27-277" name="__codelineno-27-277" href="#__codelineno-27-277"></a>#
+</span><span id="__span-27-278"><a id="__codelineno-27-278" name="__codelineno-27-278" href="#__codelineno-27-278"></a>#def_key "ctrl-s"
+</span><span id="__span-27-279"><a id="__codelineno-27-279" name="__codelineno-27-279" href="#__codelineno-27-279"></a>#  sort_playlist
+</span><span id="__span-27-280"><a id="__codelineno-27-280" name="__codelineno-27-280" href="#__codelineno-27-280"></a>#
+</span><span id="__span-27-281"><a id="__codelineno-27-281" name="__codelineno-27-281" href="#__codelineno-27-281"></a>#def_key "ctrl-s"
+</span><span id="__span-27-282"><a id="__codelineno-27-282" name="__codelineno-27-282" href="#__codelineno-27-282"></a>#  toggle_browser_sort_mode
+</span><span id="__span-27-283"><a id="__codelineno-27-283" name="__codelineno-27-283" href="#__codelineno-27-283"></a>#
+</span><span id="__span-27-284"><a id="__codelineno-27-284" name="__codelineno-27-284" href="#__codelineno-27-284"></a>#def_key "ctrl-s"
+</span><span id="__span-27-285"><a id="__codelineno-27-285" name="__codelineno-27-285" href="#__codelineno-27-285"></a>#  toggle_media_library_sort_mode
+</span><span id="__span-27-286"><a id="__codelineno-27-286" name="__codelineno-27-286" href="#__codelineno-27-286"></a>#
+</span><span id="__span-27-287"><a id="__codelineno-27-287" name="__codelineno-27-287" href="#__codelineno-27-287"></a>#def_key "ctrl-r"
+</span><span id="__span-27-288"><a id="__codelineno-27-288" name="__codelineno-27-288" href="#__codelineno-27-288"></a>#  reverse_playlist
+</span><span id="__span-27-289"><a id="__codelineno-27-289" name="__codelineno-27-289" href="#__codelineno-27-289"></a>#
+</span><span id="__span-27-290"><a id="__codelineno-27-290" name="__codelineno-27-290" href="#__codelineno-27-290"></a>#def_key "ctrl-f"
+</span><span id="__span-27-291"><a id="__codelineno-27-291" name="__codelineno-27-291" href="#__codelineno-27-291"></a>#  apply_filter
+</span><span id="__span-27-292"><a id="__codelineno-27-292" name="__codelineno-27-292" href="#__codelineno-27-292"></a>#
+</span><span id="__span-27-293"><a id="__codelineno-27-293" name="__codelineno-27-293" href="#__codelineno-27-293"></a>#def_key "ctrl-_"
+</span><span id="__span-27-294"><a id="__codelineno-27-294" name="__codelineno-27-294" href="#__codelineno-27-294"></a>#  select_found_items
+</span><span id="__span-27-295"><a id="__codelineno-27-295" name="__codelineno-27-295" href="#__codelineno-27-295"></a>#
+</span><span id="__span-27-296"><a id="__codelineno-27-296" name="__codelineno-27-296" href="#__codelineno-27-296"></a>#def_key "/"
+</span><span id="__span-27-297"><a id="__codelineno-27-297" name="__codelineno-27-297" href="#__codelineno-27-297"></a>#  find
+</span><span id="__span-27-298"><a id="__codelineno-27-298" name="__codelineno-27-298" href="#__codelineno-27-298"></a>#
+</span><span id="__span-27-299"><a id="__codelineno-27-299" name="__codelineno-27-299" href="#__codelineno-27-299"></a>#def_key "/"
+</span><span id="__span-27-300"><a id="__codelineno-27-300" name="__codelineno-27-300" href="#__codelineno-27-300"></a>#  find_item_forward
+</span><span id="__span-27-301"><a id="__codelineno-27-301" name="__codelineno-27-301" href="#__codelineno-27-301"></a>#
+</span><span id="__span-27-302"><a id="__codelineno-27-302" name="__codelineno-27-302" href="#__codelineno-27-302"></a>#def_key "?"
+</span><span id="__span-27-303"><a id="__codelineno-27-303" name="__codelineno-27-303" href="#__codelineno-27-303"></a>#  find
+</span><span id="__span-27-304"><a id="__codelineno-27-304" name="__codelineno-27-304" href="#__codelineno-27-304"></a>#
+</span><span id="__span-27-305"><a id="__codelineno-27-305" name="__codelineno-27-305" href="#__codelineno-27-305"></a>#def_key "?"
+</span><span id="__span-27-306"><a id="__codelineno-27-306" name="__codelineno-27-306" href="#__codelineno-27-306"></a>#  find_item_backward
+</span><span id="__span-27-307"><a id="__codelineno-27-307" name="__codelineno-27-307" href="#__codelineno-27-307"></a>#
+</span><span id="__span-27-308"><a id="__codelineno-27-308" name="__codelineno-27-308" href="#__codelineno-27-308"></a>#def_key "."
+</span><span id="__span-27-309"><a id="__codelineno-27-309" name="__codelineno-27-309" href="#__codelineno-27-309"></a>#  next_found_item
+</span><span id="__span-27-310"><a id="__codelineno-27-310" name="__codelineno-27-310" href="#__codelineno-27-310"></a>#
+</span><span id="__span-27-311"><a id="__codelineno-27-311" name="__codelineno-27-311" href="#__codelineno-27-311"></a>#def_key ","
+</span><span id="__span-27-312"><a id="__codelineno-27-312" name="__codelineno-27-312" href="#__codelineno-27-312"></a>#  previous_found_item
+</span><span id="__span-27-313"><a id="__codelineno-27-313" name="__codelineno-27-313" href="#__codelineno-27-313"></a>#
+</span><span id="__span-27-314"><a id="__codelineno-27-314" name="__codelineno-27-314" href="#__codelineno-27-314"></a>#def_key "w"
+</span><span id="__span-27-315"><a id="__codelineno-27-315" name="__codelineno-27-315" href="#__codelineno-27-315"></a>#  toggle_find_mode
+</span><span id="__span-27-316"><a id="__codelineno-27-316" name="__codelineno-27-316" href="#__codelineno-27-316"></a>#
+</span><span id="__span-27-317"><a id="__codelineno-27-317" name="__codelineno-27-317" href="#__codelineno-27-317"></a>#def_key "e"
+</span><span id="__span-27-318"><a id="__codelineno-27-318" name="__codelineno-27-318" href="#__codelineno-27-318"></a>#  edit_song
+</span><span id="__span-27-319"><a id="__codelineno-27-319" name="__codelineno-27-319" href="#__codelineno-27-319"></a>#
+</span><span id="__span-27-320"><a id="__codelineno-27-320" name="__codelineno-27-320" href="#__codelineno-27-320"></a>#def_key "e"
+</span><span id="__span-27-321"><a id="__codelineno-27-321" name="__codelineno-27-321" href="#__codelineno-27-321"></a>#  edit_library_tag
+</span><span id="__span-27-322"><a id="__codelineno-27-322" name="__codelineno-27-322" href="#__codelineno-27-322"></a>#
+</span><span id="__span-27-323"><a id="__codelineno-27-323" name="__codelineno-27-323" href="#__codelineno-27-323"></a>#def_key "e"
+</span><span id="__span-27-324"><a id="__codelineno-27-324" name="__codelineno-27-324" href="#__codelineno-27-324"></a>#  edit_library_album
+</span><span id="__span-27-325"><a id="__codelineno-27-325" name="__codelineno-27-325" href="#__codelineno-27-325"></a>#
+</span><span id="__span-27-326"><a id="__codelineno-27-326" name="__codelineno-27-326" href="#__codelineno-27-326"></a>#def_key "e"
+</span><span id="__span-27-327"><a id="__codelineno-27-327" name="__codelineno-27-327" href="#__codelineno-27-327"></a>#  edit_directory_name
+</span><span id="__span-27-328"><a id="__codelineno-27-328" name="__codelineno-27-328" href="#__codelineno-27-328"></a>#
+</span><span id="__span-27-329"><a id="__codelineno-27-329" name="__codelineno-27-329" href="#__codelineno-27-329"></a>#def_key "e"
+</span><span id="__span-27-330"><a id="__codelineno-27-330" name="__codelineno-27-330" href="#__codelineno-27-330"></a>#  edit_playlist_name
+</span><span id="__span-27-331"><a id="__codelineno-27-331" name="__codelineno-27-331" href="#__codelineno-27-331"></a>#
+</span><span id="__span-27-332"><a id="__codelineno-27-332" name="__codelineno-27-332" href="#__codelineno-27-332"></a>#def_key "e"
+</span><span id="__span-27-333"><a id="__codelineno-27-333" name="__codelineno-27-333" href="#__codelineno-27-333"></a>#  edit_lyrics
+</span><span id="__span-27-334"><a id="__codelineno-27-334" name="__codelineno-27-334" href="#__codelineno-27-334"></a>#
+</span><span id="__span-27-335"><a id="__codelineno-27-335" name="__codelineno-27-335" href="#__codelineno-27-335"></a>#def_key "i"
+</span><span id="__span-27-336"><a id="__codelineno-27-336" name="__codelineno-27-336" href="#__codelineno-27-336"></a>#  show_song_info
+</span><span id="__span-27-337"><a id="__codelineno-27-337" name="__codelineno-27-337" href="#__codelineno-27-337"></a>#
+</span><span id="__span-27-338"><a id="__codelineno-27-338" name="__codelineno-27-338" href="#__codelineno-27-338"></a>#def_key "I"
+</span><span id="__span-27-339"><a id="__codelineno-27-339" name="__codelineno-27-339" href="#__codelineno-27-339"></a>#  show_artist_info
+</span><span id="__span-27-340"><a id="__codelineno-27-340" name="__codelineno-27-340" href="#__codelineno-27-340"></a>#
+</span><span id="__span-27-341"><a id="__codelineno-27-341" name="__codelineno-27-341" href="#__codelineno-27-341"></a>#def_key "g"
+</span><span id="__span-27-342"><a id="__codelineno-27-342" name="__codelineno-27-342" href="#__codelineno-27-342"></a>#  jump_to_position_in_song
+</span><span id="__span-27-343"><a id="__codelineno-27-343" name="__codelineno-27-343" href="#__codelineno-27-343"></a>#
+</span><span id="__span-27-344"><a id="__codelineno-27-344" name="__codelineno-27-344" href="#__codelineno-27-344"></a>#def_key "l"
+</span><span id="__span-27-345"><a id="__codelineno-27-345" name="__codelineno-27-345" href="#__codelineno-27-345"></a>#  show_lyrics
+</span><span id="__span-27-346"><a id="__codelineno-27-346" name="__codelineno-27-346" href="#__codelineno-27-346"></a>#
+</span><span id="__span-27-347"><a id="__codelineno-27-347" name="__codelineno-27-347" href="#__codelineno-27-347"></a>#def_key "ctrl-v"
+</span><span id="__span-27-348"><a id="__codelineno-27-348" name="__codelineno-27-348" href="#__codelineno-27-348"></a>#  select_range
+</span><span id="__span-27-349"><a id="__codelineno-27-349" name="__codelineno-27-349" href="#__codelineno-27-349"></a>#
+</span><span id="__span-27-350"><a id="__codelineno-27-350" name="__codelineno-27-350" href="#__codelineno-27-350"></a>#def_key "v"
+</span><span id="__span-27-351"><a id="__codelineno-27-351" name="__codelineno-27-351" href="#__codelineno-27-351"></a>#  reverse_selection
+</span><span id="__span-27-352"><a id="__codelineno-27-352" name="__codelineno-27-352" href="#__codelineno-27-352"></a>#
+</span><span id="__span-27-353"><a id="__codelineno-27-353" name="__codelineno-27-353" href="#__codelineno-27-353"></a>#def_key "V"
+</span><span id="__span-27-354"><a id="__codelineno-27-354" name="__codelineno-27-354" href="#__codelineno-27-354"></a>#  remove_selection
+</span><span id="__span-27-355"><a id="__codelineno-27-355" name="__codelineno-27-355" href="#__codelineno-27-355"></a>#
+</span><span id="__span-27-356"><a id="__codelineno-27-356" name="__codelineno-27-356" href="#__codelineno-27-356"></a>#def_key "B"
+</span><span id="__span-27-357"><a id="__codelineno-27-357" name="__codelineno-27-357" href="#__codelineno-27-357"></a>#  select_album
+</span><span id="__span-27-358"><a id="__codelineno-27-358" name="__codelineno-27-358" href="#__codelineno-27-358"></a>#
+</span><span id="__span-27-359"><a id="__codelineno-27-359" name="__codelineno-27-359" href="#__codelineno-27-359"></a>#def_key "a"
+</span><span id="__span-27-360"><a id="__codelineno-27-360" name="__codelineno-27-360" href="#__codelineno-27-360"></a>#  add_selected_items
+</span><span id="__span-27-361"><a id="__codelineno-27-361" name="__codelineno-27-361" href="#__codelineno-27-361"></a>#
+</span><span id="__span-27-362"><a id="__codelineno-27-362" name="__codelineno-27-362" href="#__codelineno-27-362"></a>#def_key "c"
+</span><span id="__span-27-363"><a id="__codelineno-27-363" name="__codelineno-27-363" href="#__codelineno-27-363"></a>#  clear_playlist
+</span><span id="__span-27-364"><a id="__codelineno-27-364" name="__codelineno-27-364" href="#__codelineno-27-364"></a>#
+</span><span id="__span-27-365"><a id="__codelineno-27-365" name="__codelineno-27-365" href="#__codelineno-27-365"></a>#def_key "c"
+</span><span id="__span-27-366"><a id="__codelineno-27-366" name="__codelineno-27-366" href="#__codelineno-27-366"></a>#  clear_main_playlist
+</span><span id="__span-27-367"><a id="__codelineno-27-367" name="__codelineno-27-367" href="#__codelineno-27-367"></a>#
+</span><span id="__span-27-368"><a id="__codelineno-27-368" name="__codelineno-27-368" href="#__codelineno-27-368"></a>#def_key "C"
+</span><span id="__span-27-369"><a id="__codelineno-27-369" name="__codelineno-27-369" href="#__codelineno-27-369"></a>#  crop_playlist
+</span><span id="__span-27-370"><a id="__codelineno-27-370" name="__codelineno-27-370" href="#__codelineno-27-370"></a>#
+</span><span id="__span-27-371"><a id="__codelineno-27-371" name="__codelineno-27-371" href="#__codelineno-27-371"></a>#def_key "C"
+</span><span id="__span-27-372"><a id="__codelineno-27-372" name="__codelineno-27-372" href="#__codelineno-27-372"></a>#  crop_main_playlist
+</span><span id="__span-27-373"><a id="__codelineno-27-373" name="__codelineno-27-373" href="#__codelineno-27-373"></a>#
+</span><span id="__span-27-374"><a id="__codelineno-27-374" name="__codelineno-27-374" href="#__codelineno-27-374"></a>#def_key "m"
+</span><span id="__span-27-375"><a id="__codelineno-27-375" name="__codelineno-27-375" href="#__codelineno-27-375"></a>#  move_sort_order_up
+</span><span id="__span-27-376"><a id="__codelineno-27-376" name="__codelineno-27-376" href="#__codelineno-27-376"></a>#
+</span><span id="__span-27-377"><a id="__codelineno-27-377" name="__codelineno-27-377" href="#__codelineno-27-377"></a>#def_key "m"
+</span><span id="__span-27-378"><a id="__codelineno-27-378" name="__codelineno-27-378" href="#__codelineno-27-378"></a>#  move_selected_items_up
+</span><span id="__span-27-379"><a id="__codelineno-27-379" name="__codelineno-27-379" href="#__codelineno-27-379"></a>#
+</span><span id="__span-27-380"><a id="__codelineno-27-380" name="__codelineno-27-380" href="#__codelineno-27-380"></a>#def_key "n"
+</span><span id="__span-27-381"><a id="__codelineno-27-381" name="__codelineno-27-381" href="#__codelineno-27-381"></a>#  move_sort_order_down
+</span><span id="__span-27-382"><a id="__codelineno-27-382" name="__codelineno-27-382" href="#__codelineno-27-382"></a>#
+</span><span id="__span-27-383"><a id="__codelineno-27-383" name="__codelineno-27-383" href="#__codelineno-27-383"></a>#def_key "n"
+</span><span id="__span-27-384"><a id="__codelineno-27-384" name="__codelineno-27-384" href="#__codelineno-27-384"></a>#  move_selected_items_down
+</span><span id="__span-27-385"><a id="__codelineno-27-385" name="__codelineno-27-385" href="#__codelineno-27-385"></a>#
+</span><span id="__span-27-386"><a id="__codelineno-27-386" name="__codelineno-27-386" href="#__codelineno-27-386"></a>#def_key "M"
+</span><span id="__span-27-387"><a id="__codelineno-27-387" name="__codelineno-27-387" href="#__codelineno-27-387"></a>#  move_selected_items_to
+</span><span id="__span-27-388"><a id="__codelineno-27-388" name="__codelineno-27-388" href="#__codelineno-27-388"></a>#
+</span><span id="__span-27-389"><a id="__codelineno-27-389" name="__codelineno-27-389" href="#__codelineno-27-389"></a>#def_key "A"
+</span><span id="__span-27-390"><a id="__codelineno-27-390" name="__codelineno-27-390" href="#__codelineno-27-390"></a>#  add
+</span><span id="__span-27-391"><a id="__codelineno-27-391" name="__codelineno-27-391" href="#__codelineno-27-391"></a>#
+</span><span id="__span-27-392"><a id="__codelineno-27-392" name="__codelineno-27-392" href="#__codelineno-27-392"></a>#def_key "S"
+</span><span id="__span-27-393"><a id="__codelineno-27-393" name="__codelineno-27-393" href="#__codelineno-27-393"></a>#  save_playlist
+</span><span id="__span-27-394"><a id="__codelineno-27-394" name="__codelineno-27-394" href="#__codelineno-27-394"></a>#
+</span><span id="__span-27-395"><a id="__codelineno-27-395" name="__codelineno-27-395" href="#__codelineno-27-395"></a>#def_key "o"
+</span><span id="__span-27-396"><a id="__codelineno-27-396" name="__codelineno-27-396" href="#__codelineno-27-396"></a>#  jump_to_playing_song
+</span><span id="__span-27-397"><a id="__codelineno-27-397" name="__codelineno-27-397" href="#__codelineno-27-397"></a>#
+</span><span id="__span-27-398"><a id="__codelineno-27-398" name="__codelineno-27-398" href="#__codelineno-27-398"></a>#def_key "G"
+</span><span id="__span-27-399"><a id="__codelineno-27-399" name="__codelineno-27-399" href="#__codelineno-27-399"></a>#  jump_to_browser
+</span><span id="__span-27-400"><a id="__codelineno-27-400" name="__codelineno-27-400" href="#__codelineno-27-400"></a>#
+</span><span id="__span-27-401"><a id="__codelineno-27-401" name="__codelineno-27-401" href="#__codelineno-27-401"></a>#def_key "G"
+</span><span id="__span-27-402"><a id="__codelineno-27-402" name="__codelineno-27-402" href="#__codelineno-27-402"></a>#  jump_to_playlist_editor
+</span><span id="__span-27-403"><a id="__codelineno-27-403" name="__codelineno-27-403" href="#__codelineno-27-403"></a>#
+</span><span id="__span-27-404"><a id="__codelineno-27-404" name="__codelineno-27-404" href="#__codelineno-27-404"></a>#def_key "~"
+</span><span id="__span-27-405"><a id="__codelineno-27-405" name="__codelineno-27-405" href="#__codelineno-27-405"></a>#  jump_to_media_library
+</span><span id="__span-27-406"><a id="__codelineno-27-406" name="__codelineno-27-406" href="#__codelineno-27-406"></a>#
+</span><span id="__span-27-407"><a id="__codelineno-27-407" name="__codelineno-27-407" href="#__codelineno-27-407"></a>#def_key "E"
+</span><span id="__span-27-408"><a id="__codelineno-27-408" name="__codelineno-27-408" href="#__codelineno-27-408"></a>#  jump_to_tag_editor
+</span><span id="__span-27-409"><a id="__codelineno-27-409" name="__codelineno-27-409" href="#__codelineno-27-409"></a>#
+</span><span id="__span-27-410"><a id="__codelineno-27-410" name="__codelineno-27-410" href="#__codelineno-27-410"></a>#def_key "U"
+</span><span id="__span-27-411"><a id="__codelineno-27-411" name="__codelineno-27-411" href="#__codelineno-27-411"></a>#  toggle_playing_song_centering
+</span><span id="__span-27-412"><a id="__codelineno-27-412" name="__codelineno-27-412" href="#__codelineno-27-412"></a>#
+</span><span id="__span-27-413"><a id="__codelineno-27-413" name="__codelineno-27-413" href="#__codelineno-27-413"></a>#def_key "P"
+</span><span id="__span-27-414"><a id="__codelineno-27-414" name="__codelineno-27-414" href="#__codelineno-27-414"></a>#  toggle_display_mode
+</span><span id="__span-27-415"><a id="__codelineno-27-415" name="__codelineno-27-415" href="#__codelineno-27-415"></a>#
+</span><span id="__span-27-416"><a id="__codelineno-27-416" name="__codelineno-27-416" href="#__codelineno-27-416"></a>#def_key "\\"
+</span><span id="__span-27-417"><a id="__codelineno-27-417" name="__codelineno-27-417" href="#__codelineno-27-417"></a>#  toggle_interface
+</span><span id="__span-27-418"><a id="__codelineno-27-418" name="__codelineno-27-418" href="#__codelineno-27-418"></a>#
+</span><span id="__span-27-419"><a id="__codelineno-27-419" name="__codelineno-27-419" href="#__codelineno-27-419"></a>#def_key "!"
+</span><span id="__span-27-420"><a id="__codelineno-27-420" name="__codelineno-27-420" href="#__codelineno-27-420"></a>#  toggle_separators_between_albums
+</span><span id="__span-27-421"><a id="__codelineno-27-421" name="__codelineno-27-421" href="#__codelineno-27-421"></a>#
+</span><span id="__span-27-422"><a id="__codelineno-27-422" name="__codelineno-27-422" href="#__codelineno-27-422"></a>#def_key "L"
+</span><span id="__span-27-423"><a id="__codelineno-27-423" name="__codelineno-27-423" href="#__codelineno-27-423"></a>#  toggle_lyrics_fetcher
+</span><span id="__span-27-424"><a id="__codelineno-27-424" name="__codelineno-27-424" href="#__codelineno-27-424"></a>#
+</span><span id="__span-27-425"><a id="__codelineno-27-425" name="__codelineno-27-425" href="#__codelineno-27-425"></a>#def_key "F"
+</span><span id="__span-27-426"><a id="__codelineno-27-426" name="__codelineno-27-426" href="#__codelineno-27-426"></a>#  fetch_lyrics_in_background
+</span><span id="__span-27-427"><a id="__codelineno-27-427" name="__codelineno-27-427" href="#__codelineno-27-427"></a>#
+</span><span id="__span-27-428"><a id="__codelineno-27-428" name="__codelineno-27-428" href="#__codelineno-27-428"></a>#def_key "alt-l"
+</span><span id="__span-27-429"><a id="__codelineno-27-429" name="__codelineno-27-429" href="#__codelineno-27-429"></a>#  toggle_fetching_lyrics_in_background
+</span><span id="__span-27-430"><a id="__codelineno-27-430" name="__codelineno-27-430" href="#__codelineno-27-430"></a>#
+</span><span id="__span-27-431"><a id="__codelineno-27-431" name="__codelineno-27-431" href="#__codelineno-27-431"></a>#def_key "ctrl-l"
+</span><span id="__span-27-432"><a id="__codelineno-27-432" name="__codelineno-27-432" href="#__codelineno-27-432"></a>#  toggle_screen_lock
+</span><span id="__span-27-433"><a id="__codelineno-27-433" name="__codelineno-27-433" href="#__codelineno-27-433"></a>#
+</span><span id="__span-27-434"><a id="__codelineno-27-434" name="__codelineno-27-434" href="#__codelineno-27-434"></a>#def_key "`"
+</span><span id="__span-27-435"><a id="__codelineno-27-435" name="__codelineno-27-435" href="#__codelineno-27-435"></a>#  toggle_library_tag_type
+</span><span id="__span-27-436"><a id="__codelineno-27-436" name="__codelineno-27-436" href="#__codelineno-27-436"></a>#
+</span><span id="__span-27-437"><a id="__codelineno-27-437" name="__codelineno-27-437" href="#__codelineno-27-437"></a>#def_key "`"
+</span><span id="__span-27-438"><a id="__codelineno-27-438" name="__codelineno-27-438" href="#__codelineno-27-438"></a>#  refetch_lyrics
+</span><span id="__span-27-439"><a id="__codelineno-27-439" name="__codelineno-27-439" href="#__codelineno-27-439"></a>#
+</span><span id="__span-27-440"><a id="__codelineno-27-440" name="__codelineno-27-440" href="#__codelineno-27-440"></a>#def_key "`"
+</span><span id="__span-27-441"><a id="__codelineno-27-441" name="__codelineno-27-441" href="#__codelineno-27-441"></a>#  add_random_items
+</span><span id="__span-27-442"><a id="__codelineno-27-442" name="__codelineno-27-442" href="#__codelineno-27-442"></a>#
+</span><span id="__span-27-443"><a id="__codelineno-27-443" name="__codelineno-27-443" href="#__codelineno-27-443"></a>#def_key "ctrl-p"
+</span><span id="__span-27-444"><a id="__codelineno-27-444" name="__codelineno-27-444" href="#__codelineno-27-444"></a>#  set_selected_items_priority
+</span><span id="__span-27-445"><a id="__codelineno-27-445" name="__codelineno-27-445" href="#__codelineno-27-445"></a>#
+</span><span id="__span-27-446"><a id="__codelineno-27-446" name="__codelineno-27-446" href="#__codelineno-27-446"></a>#def_key "q"
+</span><span id="__span-27-447"><a id="__codelineno-27-447" name="__codelineno-27-447" href="#__codelineno-27-447"></a>#  quit
+</span><span id="__span-27-448"><a id="__codelineno-27-448" name="__codelineno-27-448" href="#__codelineno-27-448"></a>#
+</span></code></pre></div><p></p>
 
 
 

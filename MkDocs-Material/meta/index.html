@@ -1102,25 +1102,23 @@ and recursively merges the contents of those files with the metadata (front<br>
 matter) of all pages that are contained in the same folder and all subfolders.<br>
 For example, if you want to add the tag <span class="md-tag">Example</span> to<br>
 multiple pages, use:</p>
-<p>``` yaml title=".meta.yml"<br>
-tags:<br>
-  - Example<br>
-</p><pre class="lang-annotation"><code>
-Now, given the following directory layout, if you store the file in the folder
-named `example`, all pages in that folder receive the tag, while all pages
-outside of the folder remain unaffected:
-
-``` { .sh .no-copy hl_lines="4-8" }
-.
-├─ docs/
-│  ├─ ...
-│  ├─ example/
-│  │  ├─ .meta.yml
-│  │  ├─ a.md
-│  │  ├─ ...
-│  │  └─ z.md
-│  └─ ...
-└─ mkdocs.yml</code></pre><p></p>
+<div class="language-yaml highlight"><span class="filename">.meta.yml</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example</span>
+</span></code></pre></div>
+<p>Now, given the following directory layout, if you store the file in the folder<br>
+named <code>example</code>, all pages in that folder receive the tag, while all pages<br>
+outside of the folder remain unaffected:</p>
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├─<span class="w"> </span>docs/
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│<span class="w">  </span>├─<span class="w"> </span>...
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="hll">│<span class="w">  </span>├─<span class="w"> </span>example/
+</span></span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="hll">│<span class="w">  </span>│<span class="w">  </span>├─<span class="w"> </span>.meta.yml
+</span></span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="hll">│<span class="w">  </span>│<span class="w">  </span>├─<span class="w"> </span>a.md
+</span></span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="hll">│<span class="w">  </span>│<span class="w">  </span>├─<span class="w"> </span>...
+</span></span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="hll">│<span class="w">  </span>│<span class="w">  </span>└─<span class="w"> </span>z.md
+</span></span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│<span class="w">  </span>└─<span class="w"> </span>...
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>└─<span class="w"> </span>mkdocs.yml
+</span></code></pre></div>
 <p>When combining metadata, lists and dictionaries are recursively merged, which<br>
 means you can append values to a list and add or set specific properties in a<br>
 dictionary on arbitrary levels.</p>
@@ -1137,9 +1135,9 @@ of the meta plugin and other built-in plugins are:</p>
 <p>The meta plugin can be used to <a href="../social/#meta.social.cards_layout">change the layout</a> for social cards or<br>
 <a href="../social/#meta.social.cards_layout_options">change specific layout options</a> like <a href="../social/#option.background_color">background</a> or <a href="../social/#option.color">color</a><br>
 for a subset of pages.</p>
-<p><code>yaml title=".meta.yml"
-social:
-  cards_layout: default/variant</code></p>
+<div class="language-yaml highlight"><span class="filename">.meta.yml</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">social</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default/variant</span>
+</span></code></pre></div>
 </li>
 <li>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5v14H4V5zm0-2H4c-1.11 0-2 .89-2 2v14c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2m-2 12H6v2h12zm-8-8H6v6h4zm2 2h6V7h-6zm6 2h-6v2h6z"></path></svg></span> &nbsp; <strong><a href="../blog/">Built-in blog plugin</a></strong></p>
@@ -1147,9 +1145,9 @@ social:
 <p>The meta plugin allows to automatically associate blog posts with specific<br>
 <a href="../blog/#meta.authors">authors</a> and <a href="../blog/#meta.categories">categories</a>, ensuring that blog posts are always correctly<br>
 annotated.</p>
-<p><code>yaml title=".meta.yml"
-authors:
-  - squidfunk</code></p>
+<div class="language-yaml highlight"><span class="filename">.meta.yml</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">authors</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">squidfunk</span>
+</span></code></pre></div>
 </li>
 <li>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.41l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8m5.09 7.41-4-4L9 10l4 4m2.59.41-5.5-5.5L11.5 7.5 17 13Z"></path></svg></span> &nbsp; <strong><a href="../tags/">Built-in tags plugin</a></strong></p>
@@ -1157,9 +1155,9 @@ authors:
 <p>The meta plugin makes it possible to ensure that subsections of your<br>
 project are annotated with <a href="../tags/#meta.tags">specific tags</a>, so they can't be forgotten when<br>
 adding pages.</p>
-<p><code>yaml title=".meta.yml"
-tags:
-  - Example</code></p>
+<div class="language-yaml highlight"><span class="filename">.meta.yml</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example</span>
+</span></code></pre></div>
 </li>
 <li>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg></span> &nbsp; <strong><a href="../search/">Built-in search plugin</a></strong></p>
@@ -1167,9 +1165,9 @@ tags:
 <p>The meta plugin makes it easy to <a href="../search/#meta.search.boost">boost</a> specific sections in search results<br>
 or to <a href="../search/#meta.search.exclude">exclude</a> them entirely from being indexed, giving more granular<br>
 control over search.</p>
-<p><code>yaml title=".meta.yml"
-search:
-  exclude: true</code></p>
+<div class="language-yaml highlight"><span class="filename">.meta.yml</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">search</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">exclude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
 </li>
 </ul>
 </div>
@@ -1181,8 +1179,9 @@ search:
 <p>As with all [built-in plugins], getting started with the meta plugin is<br>
 straightforward. Just add the following lines to <code>mkdocs.yml</code>, and start<br>
 applying metadata for multiple pages at once:</p>
-<pre class="lang-annotation"><code>plugins:
-  - meta</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta</span>
+</span></code></pre></div>
 <p>The meta plugin is included with Material for MkDocs and doesn't need to be<br>
 installed.</p>
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">¶</a></h3>
@@ -1195,9 +1194,10 @@ installed.</p>
 <p>Use this setting to enable or disable the plugin when <a href="../creating-your-site/#building-your-site">building your project</a>.<br>
 It's normally not necessary to specify this setting, but if you want to disable<br>
 the plugin, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - meta:
-      enabled: false</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">meta</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
 <h3 id="meta-file">Meta file<a class="headerlink" href="#meta-file" title="Permanent link">¶</a></h3>
 <p>The following settings are available for meta files:</p>
 <hr>
@@ -1208,9 +1208,10 @@ the plugin, use:</p>
 <p>Use this setting to change the meta file name the plugin will look for when<br>
 scanning the [<code>docs</code> directory][<code>mkdocs.docs_dir</code>]. It's normally not necessary to<br>
 change this setting, but if you want to change it, use:</p>
-<pre class="lang-annotation"><code>plugins:
-  - meta:
-      meta_file: .meta.yml</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">meta</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="nt">meta_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.meta.yml</span>
+</span></code></pre></div>
 <p>The provided path is resolved from the [<code>docs</code> directory][<code>mkdocs.docs_dir</code>]<br>
 recursively.</p>
 

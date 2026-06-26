@@ -1887,10 +1887,11 @@
 <div class="tabbed-block">
 <p></p><div style="display: flex; gap: 20px;"><br>
 <div style="flex: 1;"><p></p>
-<pre class="lang-annotation"><code>mkdocs.yml    # (1)
-docs/
-    index.md  # (2)
-    ...       # (3)</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">mkdocs.yml</span><span class="w">    </span><span class="c1"># (1)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">docs/</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w">  </span><span class="c1"># (2)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w">       </span><span class="c1"># (3)</span>
+</span></code></pre></div>
 <p></p></div><br>
 <div style="flex: 1; font-size: 0.9em; padding-top: 10px;"><p></p>
 <ol>
@@ -1910,15 +1911,17 @@ docs/
 <div class="admonition quote">
 <p class="admonition-title">Installation</p>
 <p>To install MkDocs, run the following command from the command line:</p>
-<pre class="lang-annotation"><code>pip install mkdocs</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
+</span></code></pre></div>
 </div>
 <p>For more details, see the <a href="https://www.mkdocs.org/user-guide/installation/">Installation Guide</a>.</p>
 <h2 id="creating-a-new-project">Creating a New Project<a class="headerlink" href="#creating-a-new-project" title="Permanent link">¶</a></h2>
 <div class="admonition pied-piper">
 <p class="admonition-title">Creating a New Project</p>
 <p>Getting started is super easy. To create a new project, run the following command from the command line:</p>
-<pre class="lang-annotation"><code>$ mkdocs new my-project
-cd my-project</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>mkdocs<span class="w"> </span>new<span class="w"> </span>my-project
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>my-project
+</span></code></pre></div>
 <hr>
 <p></p><h4 style="text-align: center;">Take a moment to review the initial project that has been created for you.</h4><p></p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/20260224-085639.png" data-desc-position="bottom"><img alt="The initial MkDocs layout" class="center-image" src="imgs/20260224-085639.png"></a></p>
@@ -1941,12 +1944,13 @@ cd my-project</code></pre>
 <p>Make sure you're in the same directory as the <code>mkdocs.yml</code> configuration file, and then start the server by running the <code>mkdocs serve</code> command:</p>
 </li>
 </ul>
-<pre class="lang-annotation"><code>$ mkdocs serve
-INFO    -  Building documentation...
-INFO    -  Cleaning site directory
-INFO    -  Documentation built in 0.22 seconds
-INFO    -  [15:50:43] Watching paths for changes: 'docs', 'mkdocs.yml'
-INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/</code></pre>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>mkdocs<span class="w"> </span>serve
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">INFO    -  Building documentation...</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">INFO    -  Cleaning site directory</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="go">INFO    -  Documentation built in 0.22 seconds</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="go">INFO    -  [15:50:43] Watching paths for changes: 'docs', 'mkdocs.yml'</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="go">INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/</span>
+</span></code></pre></div>
 <p>Open up <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> in your browser, and you'll see the default home page being displayed:</p>
 </div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/20260224-085814.png" data-desc-position="bottom"><img alt="The MkDocs live server" class="center-image" src="imgs/20260224-085814.png"></a></p>
@@ -1961,7 +1965,8 @@ INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/</code></pre>
 <div class="admonition info">
 <p class="admonition-title">mkdocs.yml</p>
 <p>Now try editing the configuration file: <code>mkdocs.yml</code>. Change the <a href="https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/configuration.md#site_name"><code>site_name</code></a> setting to <code>MkLorum</code> and save the file.</p>
-<pre class="lang-annotation"><code>site_name: MkLorum</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+</span></code></pre></div>
 <hr>
 <p></p><h4 style="text-align: center;">Your browser should immediately reload, and you'll see your new site name take effect.</h4><p></p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/20260224-091757.png" data-desc-position="bottom"><img alt="The site_name setting" class="center-image" src="imgs/20260224-091757.png"></a></p>
@@ -1974,15 +1979,17 @@ INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/</code></pre>
 <div class="admonition info">
 <p class="admonition-title">AddingPages</p>
 <p>Now add a second page to your documentation:</p>
-<pre class="lang-annotation"><code>curl 'https://jaspervdj.be/lorem-markdownum/markdown.txt' &gt; docs/about.md</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span><span class="s1">'https://jaspervdj.be/lorem-markdownum/markdown.txt'</span><span class="w"> </span>&gt;<span class="w"> </span>docs/about.md
+</span></code></pre></div>
 </div>
 <div class="admonition pied-piper">
 <p class="admonition-title">Edit Config</p>
 <p>As our documentation site will include some navigation headers, you may want to edit the configuration file and add some information about the order, title, and nesting of each page in the navigation header by adding a <a href="https://www.mkdocs.org/user-guide/configuration/#nav"><code>nav</code></a> setting:</p>
-<pre class="lang-annotation"><code>site_name: MkLorum
-nav:
-  - Home: index.md
-  - About: about.md</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span>
+</span></code></pre></div>
 </div>
 <div class="admonition pied-piper">
 <p>Save your changes and you'll now see a navigation bar with <code>Home</code> and <code>About</code> items on the left as well as <code>Search</code>, <code>Previous</code>, and <code>Next</code> items on the right.<br>
@@ -2006,11 +2013,12 @@ page.</p>
 <div class="admonition info">
 <p class="admonition-title">Theming</p>
 <p>Now change the configuration file to alter how the documentation is displayed by changing the theme. Edit the <code>mkdocs.yml</code> file and add a <a href="https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/configuration.md#theme"><code>theme</code></a> setting:</p>
-<pre class="lang-annotation"><code>site_name: MkLorum
-nav:
-  - Home: index.md
-  - About: about.md
-theme: readthedocs</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readthedocs</span>
+</span></code></pre></div>
 <p>Save your changes, and you'll see the ReadTheDocs theme being used.</p>
 </div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/20260224-084351.png" data-desc-position="bottom"><img alt="Screenshot" src="imgs/20260224-084351.png"></a></p>
@@ -2022,11 +2030,13 @@ theme: readthedocs</code></pre>
 <p class="admonition-title">Building the Site</p>
 <p>That's looking good. You're ready to deploy the first pass of your <code>MkLorum</code> documentation.</p>
 <p>First build the documentation:</p>
-<pre class="lang-annotation"><code>mkdocs build</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mkdocs<span class="w"> </span>build
+</span></code></pre></div>
 <hr>
 <p>This will create a new directory, named <code>site</code>. Take a look inside the directory:</p>
-<pre class="lang-annotation"><code>$ ls site
-$ about fonts index.html license search.html css img js mkdocs sitemap.xml</code></pre>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>ls<span class="w"> </span>site
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="gp">$ </span>about<span class="w"> </span>fonts<span class="w"> </span>index.html<span class="w"> </span>license<span class="w"> </span>search.html<span class="w"> </span>css<span class="w"> </span>img<span class="w"> </span>js<span class="w"> </span>mkdocs<span class="w"> </span>sitemap.xml
+</span></code></pre></div>
 </div>
 <ul>
 <li>
@@ -2041,7 +2051,8 @@ $ about fonts index.html license search.html css img js mkdocs sitemap.xml</code
 </ul>
 <div class="admonition pied-piper">
 <p>If you're using source code control such as <code>git</code> you probably don't want to check your documentation builds into the repository. Add a line containing <code>site/</code> to your <code>.gitignore</code> file.</p>
-<pre class="lang-annotation"><code>echo "site/" &gt;&gt; .gitignore</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"site/"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
+</span></code></pre></div>
 <hr>
 <ul>
 <li>If you're using another source code control tool you'll want to check its documentation on how to ignore specific directories.</li>
@@ -2051,12 +2062,14 @@ $ about fonts index.html license search.html css img js mkdocs sitemap.xml</code
 <div class="admonition pied-piper">
 <p class="admonition-title">Other Commands and Options</p>
 <p>There are various other commands and options available. For a complete list of commands, use the <code>--help</code> flag:</p>
-<pre class="lang-annotation"><code>mkdocs --help</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdocs<span class="w"> </span>--help
+</span></code></pre></div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Options</p>
 <p>To view a list of options available on a given command, use the <code>--help</code> flag with that command. For example, to get a list of all options available for the <code>build</code> command run the following:</p>
-<pre class="lang-annotation"><code>mkdocs build --help</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--help
+</span></code></pre></div>
 </div>
 <h5 id="deploying">Deploying<a class="headerlink" href="#deploying" title="Permanent link">¶</a></h5>
 <div class="admonition quote">

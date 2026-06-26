@@ -1065,26 +1065,30 @@
 <div class="admonition info">
 <p class="admonition-title">Templates</p>
 <p>To use custom templates and override the theme ones, specify the relative path from your configuration file to your templates directory with the <code>custom_templates</code> global configuration option: (yaml title="mkdocs.yml")</p>
-<pre class="lang-annotation no-copy"><code>mkdocs.yaml</code></pre>
-<pre class="lang-annotation no-copy"><code>plugins:
-- mkdocstrings:
-    custom_templates: templates</code></pre>
+<div class="language-yaml no-copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">mkdocs.yaml</span>
+</span></code></pre></div>
+<div class="language-yaml no-copy highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">custom_templates</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates</span>
+</span></code></pre></div>
 <hr>
 <p>Your directory structure must be identical to the provided templates one:</p>
-<pre class="lang-annotation no-copy"><code>📁 templates/
-├── 📁 &lt;HANDLER 1&gt;/
-│    ├── 📁 &lt;THEME 1&gt;/
-│    └── 📁 &lt;THEME 2&gt;/
-└── 📁 &lt;HANDLER 2&gt;/
-     ├── 📁 &lt;THEME 1&gt;/
-     └── 📁 &lt;THEME 2&gt;/</code></pre>
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>📁<span class="w"> </span>templates/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├──<span class="w"> </span>📁<span class="w"> </span>&lt;HANDLER<span class="w"> </span><span class="m">1</span>&gt;/
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│<span class="w">    </span>├──<span class="w"> </span>📁<span class="w"> </span>&lt;THEME<span class="w"> </span><span class="m">1</span>&gt;/
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│<span class="w">    </span>└──<span class="w"> </span>📁<span class="w"> </span>&lt;THEME<span class="w"> </span><span class="m">2</span>&gt;/
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>└──<span class="w"> </span>📁<span class="w"> </span>&lt;HANDLER<span class="w"> </span><span class="m">2</span>&gt;/
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">     </span>├──<span class="w"> </span>📁<span class="w"> </span>&lt;THEME<span class="w"> </span><span class="m">1</span>&gt;/
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">     </span>└──<span class="w"> </span>📁<span class="w"> </span>&lt;THEME<span class="w"> </span><span class="m">2</span>&gt;/
+</span></code></pre></div>
 <p>For example, check out the Python <a href="https://github.com/mkdocstrings/python/tree/master/src/mkdocstrings_handlers/python/templates/">template tree</a> on GitHub.</p>
 <p>You don't have to replicate the whole tree, only the handlers, themes or templates you want to override. For example, to override some templates of the <em>Material</em> theme for Python:</p>
-<pre class="lang-annotation no-copy"><code>📁 templates/
-└── 📁 python/
-└── 📁 material/
-     ├── 📄 parameters.html
-     └── 📄 exceptions.html</code></pre>
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>📁<span class="w"> </span>templates/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>└──<span class="w"> </span>📁<span class="w"> </span>python/
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>└──<span class="w"> </span>📁<span class="w"> </span>material/
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">     </span>├──<span class="w"> </span>📄<span class="w"> </span>parameters.html
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">     </span>└──<span class="w"> </span>📄<span class="w"> </span>exceptions.html
+</span></code></pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Rreplace Original Contents with Modified Version</p>
@@ -1104,11 +1108,12 @@
 <div class="admonition pied-piper">
 <p class="admonition-title">Debugging</p>
 <p>Every template has access to a <code>log</code> function, allowing to log messages as usual:</p>
-<pre class="lang-annotation no-copy"><code>{{ log.debug("A DEBUG message.") }}
-{{ log.info("An INFO message.") }}
-{{ log.warning("A WARNING message.") }}
-{{ log.error("An ERROR message.") }}
-{{ log.critical("A CRITICAL message.") }}</code></pre>
+<div class="language-jinja no-copy highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{{</span> <span class="nv">log.debug</span><span class="o">(</span><span class="s2">"A DEBUG message."</span><span class="o">)</span> <span class="cp">}}</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">{{</span> <span class="nv">log.info</span><span class="o">(</span><span class="s2">"An INFO message."</span><span class="o">)</span> <span class="cp">}}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cp">{{</span> <span class="nv">log.warning</span><span class="o">(</span><span class="s2">"A WARNING message."</span><span class="o">)</span> <span class="cp">}}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="cp">{{</span> <span class="nv">log.error</span><span class="o">(</span><span class="s2">"An ERROR message."</span><span class="o">)</span> <span class="cp">}}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cp">{{</span> <span class="nv">log.critical</span><span class="o">(</span><span class="s2">"A CRITICAL message."</span><span class="o">)</span> <span class="cp">}}</span>
+</span></code></pre></div>
 </div>
 <h5 id="css-classes">CSS Classes<a class="headerlink" href="#css-classes" title="Permanent link">¶</a></h5>
 <div class="admonition abstract">
