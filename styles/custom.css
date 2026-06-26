@@ -1531,10 +1531,17 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 /* ==========================================================================
-   🔗 ABSOLUTE CATCH-ALL ROUTE REDIRECT FOR MATERIALX CUSTOM ICONS
+   🔗 ABSOLUTE GLOBAL URL ROUTE REDIRECT FOR MATERIALX CUSTOM ICONS
    ========================================================================== */
 
-/* Light Mode: Force custom vectors to render as deep charcoal black */
+/* Catch any element holding the theme's default stripped root icon path and force-inject your GitHub repository folder layout instead */
+.mdx-iconsearch-result__item [style*="mask: url('/assets/local_icons/"],
+.mdx-iconsearch-result__item [style*="-webkit-mask: url('/assets/local_icons/"] {
+  -webkit-mask-image: url('https://github.io') !important;
+  mask-image: url('https://github.io') !important;
+}
+
+/* Light Mode Mode Color Lock: Forces your matching vectors to stay deep charcoal black */
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #373b44 !important;
@@ -1544,7 +1551,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
   min-height: 18px !important;
 }
 
-/* Dark Mode: Force custom vectors to invert completely to high-contrast white */
+/* Dark Mode Mode Color Lock: Forces your matching vectors to stay high-contrast white */
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #ffffff !important;
