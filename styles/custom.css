@@ -1254,6 +1254,134 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 /* ==========================================================================
+   ZONE 1: OFFICIAL INTEGRATED MKDOCS LAYOUT SYSTEM (ICON SEARCH)
+   ========================================================================== */
+
+.mdx-iconsearch {
+  margin: 1.5rem auto !important;
+  max-width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.mdx-iconsearch__bar {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  background-color: #1e222b !important;
+  border-bottom: 2px solid #3f51b5 !important;
+  padding: 4px 16px !important;
+  gap: 16px !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.mdx-iconsearch__input {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 6px 0 !important;
+  font-size: 0.85rem !important;
+  color: #e6edf3 !important;
+  flex-grow: 1 !important;
+  margin: 0 !important;
+}
+
+.mdx-iconsearch-result__meta {
+  font-size: 0.75rem !important;
+  color: #64748b !important;
+  white-space: nowrap !important;
+  margin-left: auto !important;
+}
+
+.mdx-iconsearch-result__select {
+  background: transparent !important;
+  color: #94a3b8 !important;
+  border: none !important;
+  padding: 2px 18px 2px 4px !important;
+  font-size: 0.75rem !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+}
+
+.mdx-iconsearch-result__list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-height: 380px !important;
+  overflow-y: auto !important;
+  background-color: #1e222b !important;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.mdx-iconsearch-result__list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mdx-iconsearch-result__list::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.mdx-iconsearch-result__item {
+  margin: 0 !important;
+  padding: 8px 16px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.mdx-iconsearch-result__item:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.mdx-iconsearch-result__item .md-button--primary {
+  background: transparent !important;
+  color: #5c6370 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+  font-size: 0.6rem !important;
+  font-weight: 600 !important;
+  padding: 2px 6px !important;
+  margin-left: auto !important;
+  min-height: auto !important;
+}
+
+.mdx-iconsearch-result__item .md-button--primary:hover {
+  color: #00bee6 !important;
+  border-color: #00bee6 !important;
+}
+
+.mdx-iconsearch-result__item span.shortcode-text {
+  font-size: 0.8rem !important;
+  font-family: monospace !important;
+  color: #00bee6 !important;
+  font-weight: 500;
+}
+
+.mdx-iconsearch-result__item img.icon-preview {
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain !important;
+}
+
+.mdx-iconsearch-result__item img.icon-preview {
+  filter: invert(1) brightness(1.5) !important;
+}
+
+.mdx-iconsearch-result__item img[src*="twemoji"].icon-preview,
+.mdx-iconsearch-result__item img[src*="emoji"].icon-preview {
+  filter: none !important;
+}
+
+/* ==========================================================================
    💎 UNIFIED MASTER SEARCH SYSTEM (ALL VARIATIONS LOCK)
    Perfectly manages page blocks, popups, and headerless containers.
    ========================================================================== */
@@ -1273,20 +1401,17 @@ th[role=columnheader]:not(.no-sort):hover:after {
   background: #ffffff !important;
 }
 
-/* Accent Cyan line treatment for light layout bars */
 [data-md-color-scheme="default"] .mdx-iconsearch__bar,
 [data-md-color-scheme="default"] .annotate .mdx-iconsearch__bar {
   border-bottom: 2px solid #00bee6 !important;
 }
 
-/* Light theme readable text for search input bars */
 [data-md-color-scheme="default"] .mdx-iconsearch__input,
 [data-md-color-scheme="default"] .annotate .mdx-iconsearch__input,
 [data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch__input {
   color: #24292e !important;
 }
 
-/* Dropdown selections text and arrow vector paths */
 [data-md-color-scheme="default"] .mdx-iconsearch-result__select,
 [data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__select,
 [data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__select {
@@ -1294,7 +1419,6 @@ th[role=columnheader]:not(.no-sort):hover:after {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c6370' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
 }
 
-/* Neutralize filters on standard icon paths */
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item img.icon-preview,
 [data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__item img.icon-preview,
 [data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__item img.icon-preview {
@@ -1302,20 +1426,18 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 /* Force custom local mask assets to stay charcoal dark instead of white */
-[data-md-color-scheme="default"] .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
-[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
-[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__list [style*="/assets/local_icons/"] {
+[data-md-color-scheme="default"] .mdx-iconsearch-result__list [style*="assets/local_icons/"],
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__list [style*="assets/local_icons/"],
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__list [style*="assets/local_icons/"] {
   background-color: #373b44 !important;
   color: #373b44 !important;
 }
 
-/* Clean up light grid row row dividers */
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item,
 [data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__item,
 [data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__item {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
 }
-
 
 /* 🌙 SECTION 2: GLOBAL DARK PALETTE ENVIRONMENT OVERRIDES */
 
@@ -1356,9 +1478,10 @@ th[role=columnheader]:not(.no-sort):hover:after {
   filter: invert(1) brightness(1.5) !important;
 }
 
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
-[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
-[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__list [style*="/assets/local_icons/"] {
+/* Force custom local mask assets to stay charcoal dark instead of white */
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__list [style*="assets/local_icons/"],
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__list [style*="assets/local_icons/"],
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__list [style*="assets/local_icons/"] {
   background-color: #ffffff !important;
   color: #ffffff !important;
 }
@@ -1369,9 +1492,8 @@ th[role=columnheader]:not(.no-sort):hover:after {
   border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
 }
 
+/* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules) */
 
-/* 🛠️ SECTION 3: REFINED BUTTON STYLING (Universal Layout Adaptive rules)
-   ========================================================================== */
 .mdx-iconsearch-result__item button,
 .mdx-iconsearch-result__item .md-button,
 .annotate .mdx-iconsearch-result__item button,
@@ -1384,11 +1506,6 @@ th[role=columnheader]:not(.no-sort):hover:after {
 
 .mdx-iconsearch-result__item button:hover,
 .annotate .mdx-iconsearch-result__item button:hover,
-.md-annotation__content .mdx-iconsearch-result__item button:hover {
-  color: #00bee6 !important;
-  border-color: #00bee6 !important;
-  background-color: rgba(0, 190, 230, 0.05) !important;
-}
 
 
 /* ==========================================================================
