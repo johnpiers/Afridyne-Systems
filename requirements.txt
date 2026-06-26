@@ -16,3 +16,4 @@ markdown-exec
 mkdocs-section-index
 mkdocs-open-in-new-tab
 mkdocs-schema-reader
+mkdocs-caption
