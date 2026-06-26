@@ -12,3 +12,4 @@ mkdocs-click
 mkdocs-rss-plugin
 mkdocs-table-reader-plugin
 mkdocs-glightbox
+markdown-exec
