@@ -1078,8 +1078,7 @@
 <p class="admonition-title">How It Works</p>
 <p>After <a href="../creating-your-site/#building-your-site">building your project</a>, switch to the [<code>site</code> directory]<code>mkdocs.site_dir</code> and open <code>index.html</code> in your browser – you're now viewing your documentation from your local file system! Most browsers will denote this by showing <code>file://</code> in the address bar. However, you'll realize that the site search is gone.</p>
 <p>Material for MkDocs offers many interactive features, some of which will not work from the local file system due to the restrictions of modern browsers. More specifically and technically, all calls to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> will error with a message like:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Cross origin requests are only supported for protocol schemes: http, [...]
-</span></code></pre></div>
+<pre class="lang-annotation"><code>Cross origin requests are only supported for protocol schemes: http, [...]</code></pre>
 <p>While browsers impose those restriction for security reasons, it reduces the interactivity of your project. The offline plugin makes sure that site search keeps working by moving the search index to a JavaScript file, and leveraging @squidfunk's <a href="https://github.com/squidfunk/iframe-worker">iframe-worker</a> shim.</p>
 <p>Additionally, the plugin auto disables the [<code>use_directory_urls</code>][<code>mkdocs.use_directory_urls</code>] setting, ensuring that users can open your documentation directly from the local file system.</p>
 <p>There are some <a href="#limitations">limitations</a>.</p>
@@ -1115,9 +1114,8 @@ techniques.</p>
 <div class="admonition info">
 <p class="admonition-title">Configuration</p>
 <p>As with all [built-in plugins], getting started with the offline plugin is straightforward. Just add the following lines to <code>mkdocs.yml</code>, and start building offline-capable documentation:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">offline</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - offline</code></pre>
 <p>The offline plugin is built into Material for MkDocs and doesn't need to be installed.</p>
 </div>
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">¶</a></h3>
@@ -1127,10 +1125,9 @@ techniques.</p>
 <p class="admonition-title"><code>enabled</code></p>
 <h3 id="enabled"><code>enabled</code><a class="headerlink" href="#enabled" title="Permanent link">¶</a></h3>
 <p>Use this setting to enable or disable the plugin when <a href="../creating-your-site/#building-your-site">building your project</a>. If you want to build online- as well as offline-capable documentation, it's a good idea to use an [environment variable][<code>mkdocs.env</code>]:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">offline</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">OFFLINE</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - offline:
+      enabled: !ENV [OFFLINE, false]</code></pre>
 </div>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">¶</a></h2>
 <p>When enabling the offline plugin, make sure to disable the following settings, as they make use of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> which will error when invoked from the local file system:</p>

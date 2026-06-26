@@ -1180,8 +1180,7 @@
 <li>Both can also be done in one fell swoop via <code>just dev-install</code>.</li>
 </ul>
 <p>To aide in development, it is encouraged to configure git to follow this project's guidelines:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>just<span class="w"> </span>configure-git
-</span></code></pre></div>
+<pre class="lang-annotation"><code>just configure-git</code></pre>
 <p>This <code>just</code> command takes care of a few things:</p>
 <ul>
 <li>Configure <code>git</code> to sign commits for this repository using OpenPGP.</li>
@@ -1198,8 +1197,7 @@
 <div class="admonition pied-piper">
 <p class="admonition-title">Translation Key Structure</p>
 <p>Translation keys use a hierarchical kebab-case naming scheme that maps the code base structure:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{module}-{group}-{key}
-</span></code></pre></div>
+<pre class="lang-annotation"><code>{module}-{group}-{key}</code></pre>
 <ul>
 <li><code>module</code> typically mirrors the Rust file that contains the translation usage.</li>
 <li><code>group</code> is optional and highlights that a subset of keys inside a module refers to the same feature.</li>
@@ -1325,12 +1323,11 @@
 </ol>
 <hr>
 <p>Here is an example of a good commit message:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>feat(parser): Enhance error handling in parser
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Improve error handling by adding specific error codes and messages to make debugging easier and more informative. This update enhances parsing accuracy and provides more context for handling parsing errors.
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Signed-off-by: John Doe &lt;john@archlinux.org&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>feat(parser): Enhance error handling in parser
+
+Improve error handling by adding specific error codes and messages to make debugging easier and more informative. This update enhances parsing accuracy and provides more context for handling parsing errors.
+
+Signed-off-by: John Doe &lt;john@archlinux.org&gt;</code></pre>
 </div>
 <h2 id="merging-changes">Merging Changes<a class="headerlink" href="#merging-changes" title="Permanent link">¶</a></h2>
 <div class="admonition git">
@@ -1341,12 +1338,10 @@
 <div class="admonition ex">
 <p class="admonition-title">Creating Releases</p>
 <p>Releases are created by the developers of this project using [<code>release-plz</code>] by running (per package in the workspace):</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>just<span class="w"> </span>prepare-release<span class="w"> </span>&lt;package&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>just prepare-release &lt;package&gt;</code></pre>
 <p>Changed files are added in a pull request towards the default branch.</p>
 <p>Once the changes are merged to the default branch a tag is created and pushed for the respective package:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>just<span class="w"> </span>release<span class="w"> </span>&lt;package&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>just release &lt;package&gt;</code></pre>
 <p>The crate is afterwards automatically published on <a href="https://crates.io">https://crates.io</a> using a pipeline job.</p>
 </div>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">¶</a></h2>

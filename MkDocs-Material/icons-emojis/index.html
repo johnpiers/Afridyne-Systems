@@ -1157,12 +1157,11 @@
 <div class="admonition desc">
 <p class="admonition-title">Configuration</p>
 <p>This configuration enables the use of icons and emojis by using simple shortcodes which can be discovered through the <a href="https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/">icon search</a>. Add the following lines to <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.emoji</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">emoji_index</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.twemoji</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">emoji_generator</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.to_svg</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg</code></pre>
 </div>
 <p>The following icon sets are bundled with Material for MkDocs:</p>
 <div class="grid cards cols-3">
@@ -1211,18 +1210,17 @@
 <div class="admonition desc">
 <p class="admonition-title"> Using Emojis</p>
 <p>Emojis can be integrated in Markdown by putting the shortcode of the emoji between two colons. If you're using <a href="https://github.com">Twemoji</a> (recommended), you can look up the shortcodes at <a href="https://emojipedia.org">Emojipedia</a>:</p>
-<div class="language-text highlight"><span class="filename">Emoji</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>:smile:
-</span></code></pre></div>
+<p><code>title="Emoji"
+:smile:</code></p>
 <p><img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f604.svg" title=":smile:"></p>
 </div>
 <div class="admonition ex">
 <p class="admonition-title">smile</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;div<span class="w"> </span><span class="nv">class</span><span class="o">=</span><span class="s2">"result"</span><span class="w"> </span>markdown&gt;
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>:smile:
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&lt;/div&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;div class="result" markdown&gt;
+
+:smile:
+
+&lt;/div&gt;</code></pre>
 <div class="result" markdown="">
 <p><img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f604.svg" title=":smile:"></p>
 </div>
@@ -1231,8 +1229,8 @@
 <div class="admonition desc">
 <p class="admonition-title">Using Icons</p>
 <p>When <a href="https://github.com/jaywhj/mkdocs-materialx/blob/main/docs/setup/extensions/python-markdown-extensions.md#emoji">Emoji</a> is enabled, icons can be used similar to emojis, by referencing a valid path to any icon bundled with the theme, which are located in the <a href="https://github.com"><code>.icons</code></a> directory, and replacing <code>/</code> with <code>-</code>:</p>
-<div class="language-text highlight"><span class="filename">Icon</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>:fontawesome-regular-face-laugh-wink:
-</span></code></pre></div>
+<p><code>title="Icon"
+:fontawesome-regular-face-laugh-wink:</code></p>
 <p></p><div class="result" markdown=""><br>
 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M464 256a208 208 0 1 0-416 0 208 208 0 1 0 416 0M0 256a256 256 0 1 1 512 0 256 256 0 1 1-512 0m118.3 58.2c-4.2-13.7 7.1-26.2 21.4-26.2h232.6c14.3 0 25.6 12.5 21.4 26.2C375.7 373.1 320.8 416 256 416s-119.7-42.9-137.7-101.8M144 192a32 32 0 1 1 64 0 32 32 0 1 1-64 0m164 8c0 11-9 20-20 20s-20-9-20-20c0-33.1 26.9-60 60-60h16c33.1 0 60 26.9 60 60 0 11-9 20-20 20s-20-9-20-20-9-20-20-20h-16c-11 0-20 9-20 20"></path></svg></span><br>
 </div><p></p>
@@ -1250,15 +1248,13 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/stylesheets/extra.css</code></label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">.</span><span class="nc">youtube</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#EE0F0F</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>.youtube {
+color: #EE0F0F;
+}</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">extra_css</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stylesheets/extra.css</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra_css:
+  - stylesheets/extra.css</code></pre>
 </div>
 </div>
 </div>
@@ -1266,8 +1262,8 @@
 <div class="admonition instruction">
 <p class="admonition-title">Apply Customization</p>
 <p>After applying the customization, add the CSS class to the icon shortcode:</p>
-<div class="language-markdown highlight"><span class="filename">Icon with color</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>:fontawesome-brands-youtube:{ .youtube }
-</span></code></pre></div>
+<p><code>markdown title="Icon with color"
+:fontawesome-brands-youtube:{ .youtube }</code></p>
 <div class="result" markdown="">
 <p><span class="twemoji youtube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"></path></svg></span></p>
 </div>
@@ -1279,23 +1275,21 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/stylesheets/extra.css</code></label><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">heart</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">0</span><span class="o">%,</span><span class="w"> </span><span class="nt">40</span><span class="o">%,</span><span class="w"> </span><span class="nt">80</span><span class="o">%,</span><span class="w"> </span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">20</span><span class="o">%,</span><span class="w"> </span><span class="nt">60</span><span class="o">%</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">1.15</span><span class="p">);</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">.</span><span class="nc">heart</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="k">animation</span><span class="p">:</span><span class="w"> </span><span class="n">heart</span><span class="w"> </span><span class="mi">1000</span><span class="kt">ms</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>@keyframes heart {
+  0%, 40%, 80%, 100% {
+    transform: scale(1);
+  }
+  20%, 60% {
+    transform: scale(1.15);
+  }
+}
+.heart {
+  animation: heart 1000ms infinite;
+}</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">extra_css</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stylesheets/extra.css</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra_css:
+  - stylesheets/extra.css</code></pre>
 </div>
 </div>
 </div>
@@ -1303,8 +1297,8 @@
 <p class="admonition-title">Add CSS Class</p>
 <p>After applying the customization, add the CSS class to the icon shortcode:</p>
 <div class="result" markdown="">
-<div class="language-markdown highlight"><span class="filename">Icon with animation</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>:octicons-heart-fill-24:{ .heart }
-</span></code></pre></div>
+<p><code>markdown title="Icon with animation"
+:octicons-heart-fill-24:{ .heart }</code></p>
 <p><span class="twemoji heart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 20.408c-.492.308-.903.546-1.192.709q-.23.129-.463.252h-.002a.75.75 0 0 1-.686 0 17 17 0 0 1-.465-.252 31 31 0 0 1-4.803-3.34C3.8 15.572 1 12.331 1 8.513 1 5.052 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262A31 31 0 0 1 14 20.408"></path></svg></span></p>
 </div>
 </div>
@@ -1316,10 +1310,9 @@
 <div class="admonition ex">
 <p class="admonition-title">Using Icons in Templates</p>
 <p>When you're [extending the theme] with partials or blocks, you can simply reference any icon that's <a href="https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/">bundled with the theme</a> with Jinja's <code>include</code> function and wrap it with the <code>.twemoji</code> CSS class:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"twemoji"</span><span class="p">&gt;</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  {% include ".icons/fontawesome/brands/youtube.svg" %} <span class="cm">&lt;!-- (1)! --&gt;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;span class="twemoji"&gt;
+  {% include ".icons/fontawesome/brands/youtube.svg" %} &lt;!-- (1)! --&gt;
+&lt;/span&gt;</code></pre>
 <ol>
 <li>
 <p>Enter a few keywords to find the perfect icon using our <a href="https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/">icon search</a> and click on the shortcode to copy it to your clipboard:</p>

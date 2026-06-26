@@ -1556,46 +1556,46 @@
 </li>
 </ul>
 <hr>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>options:
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>-h, --help              Show this help message and exit.
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--version               Show program's version number and exit.
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>--list-profiles         List available profiles and exit.
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>--profile PROFILE       Load a specific profile on startup.
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>-s, --search TERM [TERM ...] 
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                        One or more search terms. Regular expressions are automatically
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                        detected (e.g. '^lib.*').
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>-l, --limit LIMIT       Limit results to integer limit. Defaults to 20, '-1' sets to
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                        infinite.
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>-f, --filter key=value
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                        Apply one or more filters (can be repeated and combined with
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                        --search). Example: "-f maintainer=alice -f out_of_date" Supported
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                        keys: maintainer, source, depends, makedepends, checkdepends,
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                        optdepends, provides, out_of_date, abandoned, comaintainers,
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                        license, arch, submitter
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>--deptree PACKAGE [PACKAGE ...]
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>                        Resolve and display the shallow dependency installation tree for
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                        one or more packages.
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>--deptree-deep PACKAGE [PACKAGE ...]
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>                        Resolve and display the deep dependency installation tree for one
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>                        or more packages.
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>--rebuild               Force a full download and rebuild of the package database.
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>--update                Download AUR metadata and update the package database.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>options:
+
+-h, --help              Show this help message and exit.
+--version               Show program's version number and exit.
+--list-profiles         List available profiles and exit.
+--profile PROFILE       Load a specific profile on startup.
+
+-s, --search TERM [TERM ...] 
+                        One or more search terms. Regular expressions are automatically
+                        detected (e.g. '^lib.*').
+
+-l, --limit LIMIT       Limit results to integer limit. Defaults to 20, '-1' sets to
+                        infinite.
+-f, --filter key=value
+                        Apply one or more filters (can be repeated and combined with
+                        --search). Example: "-f maintainer=alice -f out_of_date" Supported
+                        keys: maintainer, source, depends, makedepends, checkdepends,
+                        optdepends, provides, out_of_date, abandoned, comaintainers,
+                        license, arch, submitter
+
+--deptree PACKAGE [PACKAGE ...]
+                        Resolve and display the shallow dependency installation tree for
+                        one or more packages.
+
+--deptree-deep PACKAGE [PACKAGE ...]
+                        Resolve and display the deep dependency installation tree for one
+                        or more packages.
+
+--rebuild               Force a full download and rebuild of the package database.
+--update                Download AUR metadata and update the package database.</code></pre>
 </div>
 <hr>
 <h5 id="aurdex-abandoned">Aurdex Abandoned<a class="headerlink" href="#aurdex-abandoned" title="Permanent link">¶</a></h5>
 <div class="admonition pied-piper">
 <p class="admonition-title">Aurdex Abandoned</p>
-<div class="language-markdown highlight"><span class="filename">$ aurdex -f abandoned -f out_of_date -l 5</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Running search for  with {'abandoned': 'true', 'out_of_date': 'true'}...
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Printing directly... 
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Found 5 packages (limit: 5).
-</span></code></pre></div>
+<p>``` markdown title="$ aurdex -f abandoned -f out_of_date -l 5"</p>
+<p>Running search for  with {'abandoned': 'true', 'out_of_date': 'true'}...<br>
+Printing directly... <br>
+Found 5 packages (limit: 5).<br>
+```</p>
 <table>
 <thead>
 <tr>
@@ -1644,58 +1644,57 @@
 <h5 id="aurdex-installation">Aurdex Installation<a class="headerlink" href="#aurdex-installation" title="Permanent link">¶</a></h5>
 <div class="admonition quote">
 <p class="admonition-title">Aurdex Example CLI Usage</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>aurdex<span class="w"> </span>--deptree<span class="w"> </span>waydroid
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Resolving<span class="w"> </span>shallow<span class="w"> </span>dependency<span class="w"> </span>tree<span class="w"> </span><span class="k">for</span>:<span class="w"> </span>waydroid...
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>📦<span class="w"> </span>Installation<span class="w"> </span>Plan
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>└──<span class="w"> </span>✅<span class="w"> </span>Step<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Install<span class="w"> </span>Dependencies
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>├──<span class="w"> </span>Already<span class="w"> </span>satisfied
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>bash
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>dbus
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>glib2
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>glibc
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>gmp
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>gtk3
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>libcap
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>libidn2
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>libnetfilter_conntrack
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>libseccomp
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>nettle
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>nftables
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>perl
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>python
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>python-dbus
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>python-gobject
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>✔️<span class="w"> </span>rsync
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>✔️<span class="w"> </span>wget
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span>├──<span class="w"> </span>From<span class="w"> </span>Repositories
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>📦<span class="w"> </span>dnsmasq<span class="w"> </span><span class="o">(</span><span class="m">2</span>.91-1<span class="o">)</span><span class="w"> </span><span class="o">(</span>extra<span class="o">)</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>📦<span class="w"> </span>lxc<span class="w"> </span><span class="o">(</span><span class="m">1</span>:6.0.4-2<span class="o">)</span><span class="w"> </span><span class="o">(</span>extra<span class="o">)</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span>└──<span class="w"> </span>From<span class="w"> </span>AUR
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">        </span>├──<span class="w"> </span>🔨<span class="w"> </span>libglibutil<span class="w"> </span><span class="o">(</span><span class="m">1</span>.0.80-1<span class="o">)</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">        </span>├──<span class="w"> </span>🔨<span class="w"> </span>libgbinder<span class="w"> </span><span class="o">(</span><span class="m">1</span>.1.42-2<span class="o">)</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">        </span>├──<span class="w"> </span>🔨<span class="w"> </span>python-gbinder<span class="w"> </span><span class="o">(</span><span class="m">1</span>.1.2-3<span class="o">)</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">        </span>└──<span class="w"> </span>🔨<span class="w"> </span>waydroid<span class="w"> </span><span class="o">(</span><span class="m">1</span>.5.4-1<span class="o">)</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ aurdex --deptree waydroid
+Resolving shallow dependency tree for: waydroid...
+📦 Installation Plan
+└── ✅ Step 1: Install Dependencies
+    ├── Already satisfied
+    │   ├── ✔️ bash
+    │   ├── ✔️ dbus
+    │   ├── ✔️ glib2
+    │   ├── ✔️ glibc
+    │   ├── ✔️ gmp
+    │   ├── ✔️ gtk3
+    │   ├── ✔️ libcap
+    │   ├── ✔️ libidn2
+    │   ├── ✔️ libnetfilter_conntrack
+    │   ├── ✔️ libseccomp
+    │   ├── ✔️ nettle
+    │   ├── ✔️ nftables
+    │   ├── ✔️ perl
+    │   ├── ✔️ python
+    │   ├── ✔️ python-dbus
+    │   ├── ✔️ python-gobject
+    │   ├── ✔️ rsync
+    │   └── ✔️ wget
+    ├── From Repositories
+    │   ├── 📦 dnsmasq (2.91-1) (extra)
+    │   └── 📦 lxc (1:6.0.4-2) (extra)
+    └── From AUR
+        ├── 🔨 libglibutil (1.0.80-1)
+        ├── 🔨 libgbinder (1.1.42-2)
+        ├── 🔨 python-gbinder (1.1.2-3)
+        └── 🔨 waydroid (1.5.4-1)</code></pre>
 <div class="admonition info">
 <p class="admonition-title">Aurdex Installation</p>
 <p>The <strong>aurdex</strong> tool is available in the <strong>AUR</strong> (Arch User Repository).</p>
 <p>You can install it using an AUR helper such as <strong>yay</strong> or <strong>paru</strong>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>yay<span class="w"> </span>-S<span class="w"> </span>aurdex
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># or</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$<span class="w"> </span>paru<span class="w"> </span>-S<span class="w"> </span>aurdex
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ yay -S aurdex
+
+# or
+
+$ paru -S aurdex</code></pre>
 </div>
 </div>
 <hr>
 <h5 id="aurdex-manual-installation">Aurdex Manual Installation<a class="headerlink" href="#aurdex-manual-installation" title="Permanent link">¶</a></h5>
 <div class="admonition quote">
 <p class="admonition-title">Aurdex Manual Installation</p>
-<div class="language-markdown highlight"><span class="filename">Clone the package and build it with makepkg:</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> $ git clone https://aur.archlinux.org/aurdex.git
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> $ cd aurdex
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> $ makepkg -si
-</span></code></pre></div>
+<p>``` markdown title="Clone the package and build it with makepkg:"</p>
+<p>$ git clone https://aur.archlinux.org/aurdex.git<br>
+ $ cd aurdex<br>
+ $ makepkg -si<br>
+```</p>
 </div>
 
 

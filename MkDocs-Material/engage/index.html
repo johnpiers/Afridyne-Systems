@@ -1078,21 +1078,21 @@
 <div class="admonition example">
 <p class="admonition-title">Add an RSS feed</p>
 <p>Install the RSS plugin into your project:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ pip install mkdocs-rss-plugin
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ pip install mkdocs-rss-plugin</code></pre>
 <p>It is important that have the <code>site_name</code>, <code>site_description</code> and <code>site_url</code> settings configured as <a href="../basic/#setting-up-your-blog">instructed in the basic blog tutorial</a>. The RSS plugin makes use of this information to construct the feed, so make sure you have configured them.</p>
 <p>Now, configure the plugin in the <code>mkdocs.yml</code>. The options provided restrict the pages that RSS entries are created for to the blog posts, which is probably what you want. Also note the configuration of the date fields to match the format that Material for MkDocs uses to accommodate both a creation date and a date for updates.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rss</span><span class="p">:</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nt">match_path</span><span class="p">:</span><span class="w"> </span><span class="s">"blog/posts/.*"</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">date_from_meta</span><span class="p">:</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">          </span><span class="nt">as_creation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date.created</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">          </span><span class="nt">as_update</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date.updated</span>
-</span></code></pre></div>
-<p>Have a look at http://localhost:8000/feed_rss_created.xml to see the RSS feed in all its XML glory. You can use a browser like Firefox or Chrome that can display the raw RSS feed or use <code>curl</code> to get the feed and <code>xmllint</code> to format it. (You may need to install these tools.)</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -s http://localhost:8000/feed_rss_created.xml | xmllint --format -
-</span></code></pre></div>
+<p><code>yaml hl_lines="9"
+plugins:
+    - ...
+    - rss:
+        match_path: "blog/posts/.*"
+        date_from_meta:
+          as_creation: date.created
+          as_update: date.updated
+</code></p><pre class="lang-annotation"><code><code>
+Have a look at http://localhost:8000/feed_rss_created.xml to see the RSS feed in all its XML glory. You can use a browser like Firefox or Chrome that can display the raw RSS feed or use `curl` to get the feed and `xmllint` to format it. (You may need to install these tools.)
+</code></code></pre><code>
+curl -s http://localhost:8000/feed_rss_created.xml | xmllint --format -</code><p></p>
 <p>You may also want to try your feed with a feed reader. There are various desktop and mobile apps as well as online services. Of course, to use the latter you will need to deploy your project somewhere that is accessible to them.</p>
 </div>
 <p>This minimal configuration should work well if you have not made any changes to the default configuration of the blog plugin. For more information on adapting the feed to your needs, see <a href="https://guts.github.io/mkdocs-rss-plugin/">the RSS plugin's documentation</a>.</p>
@@ -1103,12 +1103,11 @@
 <div class="admonition example">
 <p class="admonition-title">Adding social media profile links</p>
 <p>Add an <code>extra</code> section to your <code>mkdocs.yml</code> and, within it, a <code>social</code> section to contain a list of link definitions. These consist of the logo to use and the link to the profile.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">extra</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontawesome/brands/mastodon</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">squidfunk on Mastodon</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://fosstodon.org/@squidfunk</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra:
+  social:
+    - icon: fontawesome/brands/mastodon
+      name: squidfunk on Mastodon
+      link: https://fosstodon.org/@squidfunk</code></pre>
 <ol>
 <li>
 <p>For the <code>icon</code>, you can choose any valid path to an icon bundled with the theme. The <code>name</code> will be used as the title attribute for the icon and including this improves accessibility.</p>
@@ -1120,19 +1119,17 @@
 <p>You can also use other schemes. For example, to create an icon that allows people to create an email, add this:</p>
 </li>
 </ol>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">extra</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/fontawesome/regular/envelope</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">send me an email</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mailto:&lt;email-address&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra:
+  social:
+  - icon: /fontawesome/regular/envelope
+    name: send me an email
+    link: mailto:&lt;email-address&gt;</code></pre>
 <p><strong>Finally</strong>, you can specify a URL within your site, such as to your contact page. It is possible to specify only the path to the page:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">extra</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/material/mailbox</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">contact us</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/contact</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra:
+  social:
+  - icon: /material/mailbox
+    name: contact us
+    link: /contact</code></pre>
 </div>
 <h3 id="share-and-like-buttons">Share and Like Buttons<a class="headerlink" href="#share-and-like-buttons" title="Permanent link">¶</a></h3>
 <p>Adding buttons that let people share your content on social media is a bit more involved, which is why there are companies offering components for this.</p>
@@ -1161,43 +1158,40 @@
 <p>Create a directory <code>hooks</code> in your project root and configure it in your <code>mkdocs.yml</code>:</p>
 </li>
 </ol>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">hooks</span><span class="p">:</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hooks/socialmedia.py</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>hooks:
+  - hooks/socialmedia.py</code></pre>
 <ul>
 <li><strong>Add</strong> the file <code>hooks/socialmedia.py</code> with the following Python code:</li>
 </ul>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">textwrap</span><span class="w"> </span><span class="kn">import</span> <span class="n">dedent</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">x_intent</span> <span class="o">=</span> <span class="s2">"https://x.com/intent/tweet"</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">fb_sharer</span> <span class="o">=</span> <span class="s2">"https://www.facebook.com/sharer/sharer.php"</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">include</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"blog/[1-9].*"</span><span class="p">)</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">on_page_markdown</span><span class="p">(</span><span class="n">markdown</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">page</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">config</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">'config'</span><span class="p">]</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">include</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">url</span><span class="p">):</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        <span class="k">return</span> <span class="n">markdown</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="n">page_url</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">site_url</span><span class="o">+</span><span class="n">page</span><span class="o">.</span><span class="n">url</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="n">page_title</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">title</span><span class="o">+</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="k">return</span> <span class="n">markdown</span> <span class="o">+</span> <span class="n">dedent</span><span class="p">(</span><span class="sa">f</span><span class="s2">"""</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="s2">    [Share on :simple-x:](</span><span class="si">{</span><span class="n">x_intent</span><span class="si">}</span><span class="s2">?text=</span><span class="si">{</span><span class="n">page_title</span><span class="si">}</span><span class="s2">&amp;url=</span><span class="si">{</span><span class="n">page_url</span><span class="si">}</span><span class="s2">)</span><span class="se">{{</span><span class="s2"> .md-button </span><span class="se">}}</span>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="s2">    [Share on :simple-facebook:](</span><span class="si">{</span><span class="n">fb_sharer</span><span class="si">}</span><span class="s2">?u=</span><span class="si">{</span><span class="n">page_url</span><span class="si">}</span><span class="s2">)</span><span class="se">{{</span><span class="s2"> .md-button </span><span class="se">}}</span>
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="s2">    """</span><span class="p">)</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>from textwrap import dedent
+import urllib.parse
+import re
+
+x_intent = "https://x.com/intent/tweet"
+fb_sharer = "https://www.facebook.com/sharer/sharer.php"
+include = re.compile(r"blog/[1-9].*")
+
+def on_page_markdown(markdown, **kwargs):
+    page = kwargs['page']
+    config = kwargs['config']
+    if not include.match(page.url):
+        return markdown
+
+    page_url = config.site_url+page.url
+    page_title = urllib.parse.quote(page.title+'\n')
+
+    return markdown + dedent(f"""
+    [Share on :simple-x:]({x_intent}?text={page_title}&amp;url={page_url}){{ .md-button }}
+    [Share on :simple-facebook:]({fb_sharer}?u={page_url}){{ .md-button }}
+    """)</code></pre>
 <ul>
 <li>The hook first checks if the current page is a blog post and then appends Markdown code for the share buttons. The buttons use icons, so you also need to configure the following markdown extensions:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.emoji</span><span class="p">:</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="nt">emoji_index</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.twemoji</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="nt">emoji_generator</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.to_svg</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg</code></pre>
 </div>
 <h2 id="add-a-discussion-system"><u><strong>Add a Discussion System</strong></u><a class="headerlink" href="#add-a-discussion-system" title="Permanent link">¶</a></h2>
 <ul>
@@ -1237,23 +1231,22 @@
 </ol>
 </div>
 <p><strong>That is all the preparation you will need for the repository. Next, it is time to generate a piece of code that embeds Giscus in your site. The resulting code snippet will look something like this:</strong></p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://giscus.app/client.js"</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        <span class="na">data-repo</span><span class="o">=</span><span class="s">"&lt;username&gt;/&lt;repository&gt;"</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        <span class="na">data-repo-id</span><span class="o">=</span><span class="s">"..."</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="na">data-category</span><span class="o">=</span><span class="s">"Announcements"</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="na">data-category-id</span><span class="o">=</span><span class="s">"..."</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        <span class="na">data-mapping</span><span class="o">=</span><span class="s">"title"</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="na">data-strict</span><span class="o">=</span><span class="s">"1"</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="na">data-reactions-enabled</span><span class="o">=</span><span class="s">"1"</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="na">data-emit-metadata</span><span class="o">=</span><span class="s">"1"</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="na">data-input-position</span><span class="o">=</span><span class="s">"top"</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="na">data-theme</span><span class="o">=</span><span class="s">"preferred_color_scheme"</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="na">data-lang</span><span class="o">=</span><span class="s">"en"</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>        <span class="na">data-loading</span><span class="o">=</span><span class="s">"lazy"</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        <span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        <span class="na">async</span><span class="p">&gt;</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;script src="https://giscus.app/client.js"
+        data-repo="&lt;username&gt;/&lt;repository&gt;"
+        data-repo-id="..."
+        data-category="Announcements"
+        data-category-id="..."
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async&gt;
+&lt;/script&gt;</code></pre>
 <div class="admonition example">
 <p class="admonition-title">Configure the Code Needed to Embed Giscus into your Blog</p>
 <p>Go to the <a href="https://giscus.app/">Giscus homepage</a> and configure the embedding code. There are a number of settings:</p>
@@ -1284,34 +1277,29 @@
 <ul>
 <li>First, you need to create an <code>overrides</code> directory that will contain the templates and partials you want to override.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir -p overrides/partials
-</span></code></pre></div>
+<pre class="lang-annotation"><code>mkdir -p overrides/partials</code></pre>
 <ul>
 <li>You need to declare it in your <code>mkdocs.yaml</code>:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">theme</span><span class="p">:</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="hll"><span class="w">  </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overrides</span>
-</span></span></code></pre></div>
-<ul>
-<li>
-<p>Now add a file <code>overrides/partials/comments.html</code> and paste in the code snippet you obtained from the Giscus homepage. Look at the result locally and you will see that the integration is active on all pages of the site.</p>
-</li>
-<li>
-<p>If you want to restrict it to your blog posts, you need to add a conditional around the Giscus script that tests if comments should be included. A simple way of doing this is to test for a metadata flag:</p>
-</li>
-</ul>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{% if page.meta.comments %}
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;...&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>{% endif %}
-</span></code></pre></div>
+<p>```yaml hl_lines="3"<br>
+theme:<br>
+  name: material<br>
+  custom_dir: overrides<br>
+</p><pre class="lang-annotation"><code>
+- Now add a file `overrides/partials/comments.html` and paste in the code snippet you obtained from the Giscus homepage. Look at the result locally and you will see that the integration is active on all pages of the site.
+
+- If you want to restrict it to your blog posts, you need to add a conditional around the Giscus script that tests if comments should be included. A simple way of doing this is to test for a metadata flag:
+
+```html
+{% if page.meta.comments %}
+&lt;script&gt;...&lt;/script&gt;
+{% endif %}</code></pre><p></p>
 <ul>
 <li>The disadvantage is that you now need to manually turn on comments for each blog post - unless you want to turn them off on some. To get the comments section on all blog posts, use code like this:</li>
 </ul>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>{% if page.file.src_uri.startswith('blog/posts') %}
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;...&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>{% endif %}
-</span></code></pre></div>
+<pre class="lang-annotation"><code>{% if page.file.src_uri.startswith('blog/posts') %}
+&lt;script&gt;...&lt;/script&gt;
+{% endif %}</code></pre>
 <ul>
 <li>You should see now that the Giscus comments are added at the bottom of your blog posts but not on other pages.</li>
 </ul>

@@ -1007,17 +1007,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#using-inline-block-syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Inline Block Syntax
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1082,39 +1071,37 @@ SVG, MathML. To use MathJax within your project, add the following lines to your
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/javascripts/mathjax.js</code></label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"\\("</span><span class="p">,</span><span class="w"> </span><span class="s2">"\\)"</span><span class="p">]],</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nx">displayMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"\\["</span><span class="p">,</span><span class="w"> </span><span class="s2">"\\]"</span><span class="p">]],</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">processEscapes</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nx">processEnvironments</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">ignoreHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">".*|"</span><span class="p">,</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">processHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">"arithmatex"</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">};</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (1)!</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nx">clearCache</span><span class="p">()</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetClear</span><span class="p">()</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">texReset</span><span class="p">()</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetPromise</span><span class="p">()</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">})</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>window.MathJax = {
+  tex: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    processEscapes: true,
+    processEnvironments: true
+  },
+  options: {
+    ignoreHtmlClass: ".*|",
+    processHtmlClass: "arithmatex"
+  }
+};
+
+document$.subscribe(() =&gt; { // (1)!
+  MathJax.startup.output.clearCache()
+  MathJax.typesetClear()
+  MathJax.texReset()
+  MathJax.typesetPromise()
+})</code></pre>
 <ol>
 <li>This integrates MathJax with <a href="../setting-up-navigation/#instant-loading">instant loading</a>.</li>
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.arithmatex</span><span class="p">:</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">      </span><span class="nt">generic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">extra_javascript</span><span class="p">:</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/mathjax.js</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js</code></pre>
 </div>
 </div>
 </div>
@@ -1146,34 +1133,32 @@ within your project, add the following lines to your:<br>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/javascripts/katex.js</code></label><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(({</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (1)!</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">renderMathInElement</span><span class="p">(</span><span class="nx">body</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">delimiters</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">left</span><span class="o">:</span><span class="w"> </span><span class="s2">"$$"</span><span class="p">,</span><span class="w">  </span><span class="nx">right</span><span class="o">:</span><span class="w"> </span><span class="s2">"$$"</span><span class="p">,</span><span class="w">  </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">left</span><span class="o">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">   </span><span class="nx">right</span><span class="o">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">   </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">left</span><span class="o">:</span><span class="w"> </span><span class="s2">"\\("</span><span class="p">,</span><span class="w"> </span><span class="nx">right</span><span class="o">:</span><span class="w"> </span><span class="s2">"\\)"</span><span class="p">,</span><span class="w"> </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">left</span><span class="o">:</span><span class="w"> </span><span class="s2">"\\["</span><span class="p">,</span><span class="w"> </span><span class="nx">right</span><span class="o">:</span><span class="w"> </span><span class="s2">"\\]"</span><span class="p">,</span><span class="w"> </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">],</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">})</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">})</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>document$.subscribe(({ body }) =&gt; { // (1)!
+  renderMathInElement(body, {
+    delimiters: [
+      { left: "$$",  right: "$$",  display: true },
+      { left: "$",   right: "$",   display: false },
+      { left: "\\(", right: "\\)", display: false },
+      { left: "\\[", right: "\\]", display: true }
+    ],
+  })
+})</code></pre>
 <ol>
 <li>This integrates KaTeX with <a href="../setting-up-navigation/#instant-loading">instant loading</a>.</li>
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.arithmatex</span><span class="p">:</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">generic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">extra_javascript</span><span class="p">:</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/katex.js</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/katex@0/dist/katex.min.js</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/katex@0/dist/contrib/auto-render.min.js</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nt">extra_css</span><span class="p">:</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/katex@0/dist/katex.min.css</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css</code></pre>
 </div>
 </div>
 </div>
@@ -1181,21 +1166,27 @@ within your project, add the following lines to your:<br>
 <h3 id="using-block-syntax">Using Block Syntax<a class="headerlink" href="#using-block-syntax" title="Permanent link">¶</a></h3>
 <p>Blocks must be enclosed in <code class="language-latex highlight"><span class="sb">$$</span><span class="nb">...</span><span class="s">$$</span></code> or <code class="language-latex highlight"><span class="sb">\[</span><span class="nb">...</span><span class="s">\]</span></code> on separate<br>
 lines:</p>
-<div class="language-latex highlight"><span class="filename">block syntax</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="sb">$$</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">\cos</span><span class="nb"> x</span><span class="o">=</span><span class="nv">\sum</span><span class="nb">_{k</span><span class="o">=</span><span class="m">0</span><span class="nb">}^{</span><span class="nv">\infty</span><span class="nb">}</span><span class="nv">\frac</span><span class="nb">{</span><span class="o">(-</span><span class="m">1</span><span class="o">)</span><span class="nb">^k}{</span><span class="o">(</span><span class="m">2</span><span class="nb">k</span><span class="o">)!</span><span class="nb">}x^{</span><span class="m">2</span><span class="nb">k}</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="s">$$</span>
-</span></code></pre></div>
-<div class="result">
-<div class="arithmatex">\[
+<p>``` latex title="block syntax"<br>
+$$<br>
+\cos x=\sum_{k=0}<sup>{\infty}\frac{(-1)</sup>k}{(2k)!}x^{2k}<br>
+$$<br>
+</p><pre class="lang-annotation"><code>
+&lt;div class="result" markdown&gt;
+
+$$
 \cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-\]</div>
-</div>
-<h3 id="using-inline-block-syntax">Using Inline Block Syntax<a class="headerlink" href="#using-inline-block-syntax" title="Permanent link">¶</a></h3>
-<p>Inline blocks must be enclosed in <code class="language-latex highlight"><span class="s">$</span><span class="nb">...</span><span class="s">$</span></code> or <code class="language-latex highlight"><span class="s">\(</span><span class="nb">...</span><span class="s">\)</span></code>:</p>
-<div class="language-latex highlight"><span class="filename">inline syntax</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>The homomorphism <span class="s">$</span><span class="nb">f</span><span class="s">$</span> is injective if and only if its kernel is only the
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>singleton set <span class="s">$</span><span class="nb">e_G</span><span class="s">$</span>, because otherwise <span class="s">$</span><span class="nv">\exists</span><span class="nb"> a,b</span><span class="nv">\in</span><span class="nb"> G</span><span class="s">$</span> with <span class="s">$</span><span class="nb">a</span><span class="nv">\neq</span><span class="nb"> b</span><span class="s">$</span> such
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>that <span class="s">$</span><span class="nb">f</span><span class="o">(</span><span class="nb">a</span><span class="o">)=</span><span class="nb">f</span><span class="o">(</span><span class="nb">b</span><span class="o">)</span><span class="s">$</span>.
-</span></code></pre></div>
+$$
+
+&lt;/div&gt;
+
+### Using Inline Block Syntax
+
+Inline blocks must be enclosed in `#!latex $...$` or `#!latex \(...\)`:
+
+``` latex title="inline syntax"
+The homomorphism $f$ is injective if and only if its kernel is only the
+singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such
+that $f(a)=f(b)$.</code></pre><p></p>
 <div class="result">
 <p>The homomorphism <span class="arithmatex">\(f\)</span> is injective if and only if its kernel is only the singleton set <span class="arithmatex">\(e_G\)</span>, because otherwise <span class="arithmatex">\(\exists a,b\in G\)</span> with <span class="arithmatex">\(a\neq b\)</span> such that <span class="arithmatex">\(f(a)=f(b)\)</span>.</p>
 </div>

@@ -1557,33 +1557,32 @@
 </div>
 <p>The point can be illustrated by comparing a sample of <a href="https://asciidoc.org/">AsciiDoc</a> with an equivalent sample of Markdown.</p>
 <div class="admonition abstract">    <p class="admonition-title">A Sample of AsciiDoc. <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:"></p>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. List item one.
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>+
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>List item one continued with a second paragraph followed by an
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Indented block.
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>+
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>.................
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>$ ls *.sh
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>$ mv *.sh ~/tmp
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>.................
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>+
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>List item continued with a third paragraph.
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>2. List item two continued with an open block.
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>+
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>--
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>This paragraph is part of the preceding list item.
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>a. This list is nested and does not require explicit item
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>continuation.
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>+
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>This paragraph is part of the preceding list item.
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>b. List item b.
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>This paragraph belongs to item two of the outer list.
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>--
-</span></code></pre></div>
+    <pre class="lang-annotation"><code>1. List item one.
++
+List item one continued with a second paragraph followed by an
+Indented block.
++
+.................
+$ ls *.sh
+$ mv *.sh ~/tmp
+.................
++
+List item continued with a third paragraph.
+
+2. List item two continued with an open block.
++
+--
+This paragraph is part of the preceding list item.
+
+a. This list is nested and does not require explicit item
+continuation.
++
+This paragraph is part of the preceding list item.
+
+b. List item b.
+
+This paragraph belongs to item two of the outer list.
+--</code></pre>
     </div>
 
 <div class="language-text highlight"><pre><span></span><code>And here is the equivalent in Markdown:
@@ -1651,8 +1650,7 @@ $ mv *.sh ~/tmp
 <p class="admonition-title">About This Document</p>
 <p><strong>1.3</strong> About this document.</p>
 <p><strong>1.3.1</strong> This document attempts to specify Markdown syntax unambiguously. It contains many examples with side-by-side Markdown and HTML. These are intended to double as conformance tests. An accompanying  script  <code>spec_tests.py</code> can be used to run the tests against any Markdown program:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python test/spec_tests.py --spec spec.txt --program PROGRAM
-</span></code></pre></div>
+<pre class="lang-annotation"><code>python test/spec_tests.py --spec spec.txt --program PROGRAM</code></pre>
 <p><strong>1.3.2</strong> Since this document describes how Markdown is to be parsed into an abstract syntax tree, it would have made sense to use an abstract representation of the syntax tree instead of HTML. But HTML is capable of representing the structural distinctions we need to make, and the choice of HTML for the tests makes it possible to run the tests against an implementation without writing an abstract syntax tree renderer.</p>
 <hr>
 <p><strong>1.3.3</strong> Note that not every feature of the HTML samples is mandated by the spec. For example, the spec says what counts as a link destination, but it doesn’t mandate that non-ASCII characters in the URL be percent-encoded. To use the automatic tests, implementers will need to provide a renderer that conforms to the expectations of the spec examples (percent-encoding non-ASCII characters in URLs). But a conforming implementation can use a different renderer and may choose not to percent-encode non-ASCII characters in URLs.</p>

@@ -1633,12 +1633,10 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Latest</label><label for="__tabbed_1_2">9.x</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pip install mkdocs-material</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material<span class="o">==</span><span class="s2">"9.*"</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pip install mkdocs-material=="9.*" # (1)!</code></pre>
 <ol>
 <li>Material for MkDocs uses <a href="https://semver.org/">semantic versioning</a> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, which is why<br>
 it's a good idea to limit upgrades to the current major version.<br>
@@ -1646,11 +1644,9 @@ This will make sure that you don't accidentally <a href="../MkDocs-Material/upgr
 next major version</a>, which may include breaking changes that<br>
 silently corrupt your site. Additionally, you can use <code>pip freeze</code><br>
 to create a lockfile, so builds are reproducible at all times:<br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip freeze &gt; requirements.txt
-</span></code></pre></div><br>
+    <pre class="lang-annotation"><code>pip freeze &gt; requirements.txt</code></pre><br>
     Now, the lockfile can be used for installation:<br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip install -r requirements.txt
-</span></code></pre></div></li>
+    <pre class="lang-annotation"><code>pip install -r requirements.txt</code></pre></li>
 </ol>
 <p>This will automatically install compatible versions of all dependencies: <a href="https://www.mkdocs.org">MkDocs</a>, <a href="https://python-markdown.github.io/">Markdown</a>, <a href="https://pygments.org/">Pygments</a> and <a href="https://facelessuser.github.io/pymdown-extensions/">Python Markdown Extensions</a>. Material for MkDocs always strives to support the latest versions, so there's no need to install those packages separately.</p>
 </div>
@@ -1671,12 +1667,10 @@ to create a lockfile, so builds are reproducible at all times:<br>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Latest</label><label for="__tabbed_2_2">9.x</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker pull squidfunk/mkdocs-material
-</span></code></pre></div>
+<pre class="lang-annotation"><code>docker pull squidfunk/mkdocs-material</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker pull squidfunk/mkdocs-material:9
-</span></code></pre></div>
+<pre class="lang-annotation"><code>docker pull squidfunk/mkdocs-material:9</code></pre>
 </div>
 </div>
 </div>
@@ -1694,24 +1688,23 @@ to create a lockfile, so builds are reproducible at all times:<br>
 <details class="question">
 <summary>How to add plugins to the Docker image?</summary>
 <p>Material for MkDocs only bundles selected plugins in order to keep the size of the official image small. If the plugin you want to use is not included, you can add them easily. Create a <code>Dockerfile</code> and extend the official image:</p>
-<div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
-</span></code></pre></div>
-<p>Next, build the image with the following command:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker build -t squidfunk/mkdocs-material .
-</span></code></pre></div>
+<p><code>Dockerfile title="Dockerfile"
+FROM squidfunk/mkdocs-material
+RUN pip install mkdocs-macros-plugin
+RUN pip install mkdocs-glightbox
+</code></p><pre class="lang-annotation"><code><code>
+Next, build the image with the following command:
+</code></code></pre><code>
+docker build -t squidfunk/mkdocs-material .</code><p></p>
 <p>The new image will have additional packages installed and can be used exactly like the official image.</p>
 </details>
 <h3 id="with-git">With Git<a class="headerlink" href="#with-git" title="Permanent link">¶</a></h3>
 <div class="admonition git">
 <p class="admonition-title">With Git</p>
 <p>Material for MkDocs can be directly used from <a href="https://github.com/squidfunk/mkdocs-material">GitHub</a> by cloning the repository into a subfolder of your project root which might be useful if you want to use the very latest version:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git clone https://github.com/squidfunk/mkdocs-material.git
-</span></code></pre></div>
+<pre class="lang-annotation"><code>git clone https://github.com/squidfunk/mkdocs-material.git</code></pre>
 <p>Next, install the theme and its dependencies with:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip install -e mkdocs-material
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pip install -e mkdocs-material</code></pre>
 </div>
 <h3 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">¶</a></h3>
 <div class="admonition bug">
@@ -1833,10 +1826,9 @@ to create a lockfile, so builds are reproducible at all times:<br>
 <div class="admonition info">
 <p class="admonition-title">Arithmatex</p>
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/">Arithmatex</a> extension allows for rendering of block and inline block equations and integrates seamlessly with <a href="https://www.mathjax.org/">MathJax</a><sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> – a library for mathematical typesetting. Enable it via <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.arithmatex</span><span class="p">:</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="nt">generic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true</code></pre>
 </div>
 <p>Besides enabling the extension in <code>mkdocs.yml</code>, a MathJax configuration and the JavaScript runtime need to be included, which can be done with a few lines of <a href="https://github.com/squidfunk/mkdocs-material/blob/master/docs/customization.md#additional-javascript">additional JavaScript</a>:</p>
 <div class="admonition info">
@@ -1844,35 +1836,33 @@ to create a lockfile, so builds are reproducible at all times:<br>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/javascripts/mathjax.js</code></label><label for="__tabbed_3_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"\\("</span><span class="p">,</span><span class="w"> </span><span class="s2">"\\)"</span><span class="p">]],</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nx">displayMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"\\["</span><span class="p">,</span><span class="w"> </span><span class="s2">"\\]"</span><span class="p">]],</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nx">processEscapes</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="nx">processEnvironments</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="nx">ignoreHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">".*|"</span><span class="p">,</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="nx">processHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">"arithmatex"</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="p">};</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (1)!</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nx">clearCache</span><span class="p">()</span>
-</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetClear</span><span class="p">()</span>
-</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">texReset</span><span class="p">()</span>
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetPromise</span><span class="p">()</span>
-</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="p">})</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>window.MathJax = {
+  tex: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    processEscapes: true,
+    processEnvironments: true
+  },
+  options: {
+    ignoreHtmlClass: ".*|",
+    processHtmlClass: "arithmatex"
+  }
+};
+
+document$.subscribe(() =&gt; { // (1)!
+  MathJax.startup.output.clearCache()
+  MathJax.typesetClear()
+  MathJax.texReset()
+  MathJax.typesetPromise()
+})</code></pre>
 <ol>
 <li>This integrates MathJax with <a href="../MkDocs-Material/setting-up-navigation/#instant-loading">instant loading</a></li>
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">extra_javascript</span><span class="p">:</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/mathjax.js</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js</code></pre>
 </div>
 </div>
 </div>

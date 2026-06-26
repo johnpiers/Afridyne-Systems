@@ -2433,9 +2433,8 @@
 
 <div class="admonition quote">
 <p>In order to get started with the social plugin, just add the following lines to <code>mkdocs.yml</code>, and observe how Material for MkDocs generates beautiful social cards for you:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">social</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social</code></pre>
 <hr>
 <p>The social plugin is built into Material for MkDocs and doesn't need to be installed.</p>
 </div>
@@ -2450,10 +2449,9 @@
 <p class="admonition-title">config.enabled</p>
 <h3 id="configenabled"><code>config.enabled</code><a class="headerlink" href="#configenabled" title="Permanent link">¶</a></h3>
 <p>Use this setting to enable or disable the plugin when <a href="../creating-your-site/#building-your-site">building your project</a>. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable][<code>mkdocs.env</code>] in <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CI</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      enabled: !ENV [CI, false]</code></pre>
 <hr>
 <p>This configuration enables the plugin only during continuous integration (CI).</p>
 </div>
@@ -2465,10 +2463,9 @@
 <p class="admonition-title">config.concurrency</p>
 <h3 id="configconcurrency"><code>config.concurrency</code><a class="headerlink" href="#configconcurrency" title="Permanent link">¶</a></h3>
 <p>With more CPUs available, the plugin can do more work in parallel, and thus complete social card generation faster. If you want to disable concurrent processing completely, use:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="nt">concurrency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      concurrency: 1</code></pre>
 <hr>
 <p>By default, the plugin uses all available CPUs - 1 with a minimum of 1.</p>
 </div>
@@ -2477,17 +2474,15 @@
 <ul>
 <li>In order to get started with the social plugin, just add the following lines to <code>mkdocs.yml</code>, and observe how Material for MkDocs generates beautiful social cards for you:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">social</span><span class="w"> </span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social </code></pre>
 <ul>
 <li>Use this setting to enable or disable the plugin when building your project. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable] [<code>mkdocs.env</code>] in <code>mkdocs.yml</code>:<br>
 The following settings are available:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CI</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      enabled: !ENV [CI, false]</code></pre>
 <hr>
 <ul>
 <li>The social plugin is built into Material for MkDocs and doesn't need to be installed.</li>
@@ -2530,10 +2525,9 @@ The following settings are available:</li>
 </ul>
 <hr>
 <p>Caching can be disabled with:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cache: false</code></pre>
 </div>
 <hr>
 <!-- md:version 8.5.0 -->
@@ -2547,10 +2541,9 @@ The following settings are available:</li>
 <li>It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where social card images are cached.</li>
 </ul>
 <p>If you want to change it, use:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="nt">cache_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my/custom/dir</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cache_dir: my/custom/dir</code></pre>
 <hr>
 <ul>
 <li>If you're using <a href="https://jaywhj.github.io/mkdocs-materialx/plugins/index.html#multiple-instances">multiple instances</a> of the plugin, it can be a good idea to set different cache directories for both instances, so that they don't interfere with each other.</li>
@@ -2573,10 +2566,9 @@ The following settings are available:</li>
 <p>To terminate the build, use:</p>
 </li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      log: false</code></pre>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -2598,27 +2590,24 @@ The following settings are available:</li>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><code>warn</code></label><label for="__tabbed_1_2"><code>info</code></label><label for="__tabbed_1_3"><code>ignore</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warn</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      log_level: warn</code></pre>
 <hr>
 <p>Errors are reported as warnings, terminating the build in<br>
 [<code>strict</code>][<code>mkdocs.strict</code>] mode.</p>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      log_level: info</code></pre>
 <hr>
 <p>Errors are only reported as informational messages.</p>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ignore</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      log_level: ignore</code></pre>
 <hr>
 <p>Errors are only reported when using the <code>--verbose</code> flag.</p>
 </div>
@@ -2642,10 +2631,9 @@ The following settings are available:</li>
 <p>If you want to disable social card generation, use:</p>
 </li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="nt">cards</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards: false</code></pre>
 </div>
 <hr>
 <!-- md:version 8.5.0 -->
@@ -2659,10 +2647,9 @@ The following settings are available:</li>
 <li>It is normally not necessary to specify this setting, except for when you want to change the path within the <code>site</code> directory <a href="https://www.mkdocs.org/user-guide/configuration/#site_dir">mkdocs.site_dir</a> where social cards are stored.</li>
 </ul>
 <p>If you want to change it, use:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">        </span><span class="nt">cards_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my/custom/dir</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+    - social:
+        cards_dir: my/custom/dir</code></pre>
 <hr>
 <ul>
 <li>This configuration stores the generated images at <code>my/custom/dir</code> in the [<code>site</code> directory][<code>mkdocs.site_dir</code>].</li>
@@ -2677,10 +2664,9 @@ The following settings are available:</li>
 <p class="admonition-title">Cards_layout_dir</p>
 <h3 id="cards_layout_dir"><code>cards_layout_dir</code><a class="headerlink" href="#cards_layout_dir" title="Permanent link">¶</a></h3>
 <p>If you want to build a <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/?h=social#customization">custom social card layout</a>, use this setting to change the folder where you store your custom layouts, the default being a folder called <code>layouts</code> in your root directory:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">      </span><span class="nt">cards_layout_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">layouts</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_dir: layouts</code></pre>
 <hr>
 <p>The provided path is resolved from the root directory.</p>
 </div>
@@ -2688,13 +2674,12 @@ The following settings are available:</li>
 <div class="admonition tip">
 <p class="admonition-title">Where to store custom layouts</p>
 <p>Our recommendation is to locate the folder outside of the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir"><code>docs</code> directory</a>, to make sure that your <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/?h=social#customization">custom layouts</a> are not copied to the <a href="https://www.mkdocs.org/user-guide/configuration/#site_dir"><code>site</code> directory</a> when <a href="../creating-your-site/#building-your-site">building your project</a>, e.g., by adhering to the following directory layout:</p>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>.
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├─<span class="w"> </span>docs/
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>│<span class="w">  </span>└─<span class="w"> </span>*.md
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>├─<span class="w"> </span>layouts/
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>│<span class="w">  </span>└─<span class="w"> </span>*.yml
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>└─<span class="w"> </span>mkdocs.yml
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>.
+├─ docs/
+│  └─ *.md
+├─ layouts/
+│  └─ *.yml
+└─ mkdocs.yml</code></pre>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
@@ -2704,10 +2689,9 @@ The following settings are available:</li>
 <p class="admonition-title">Config.cards_layout</p>
 <h3 id="confcards_layout"><code>conf.cards_layout</code><a class="headerlink" href="#confcards_layout" title="Permanent link">¶</a></h3>
 <p>The plugin ships a growing list of <a href="#layouts"><code>default</code> layouts</a> for social cards. If you've created a <a href="../custom/">custom social card layout</a>, you can instruct the plugin to use it exactly as one of the included layouts:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">       </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-custom-layout</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+   - social:
+       cards_layout: my-custom-layout</code></pre>
 <hr>
 <p>The provided path is resolved from the [<code>layouts</code> directory][<code>config.cards_layout_dir</code>].</p>
 </div>
@@ -2715,13 +2699,12 @@ The following settings are available:</li>
 <div class="admonition tip">
 <p class="admonition-title">How custom layouts are resolved</p>
 <p>By default, the plugin will load your <a href="../custom/">custom layouts</a> from a folder named <code>layouts</code> in your root directory. If your layout is called <code>my-custom-layout</code>, the directory layout must adhere to:</p>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>.
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>├─<span class="w"> </span>docs/
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>│<span class="w">  </span>└─<span class="w"> </span>*.md
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>├─<span class="w"> </span>layouts/
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>│<span class="w">  </span>└─<span class="w"> </span>my-custom-layout.yml
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>└─<span class="w"> </span>mkdocs.yml
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>.
+├─ docs/
+│  └─ *.md
+├─ layouts/
+│  └─ my-custom-layout.yml
+└─ mkdocs.yml</code></pre>
 </div>
 <hr>
 <!-- md:version 9.1.10 -->
@@ -2731,11 +2714,10 @@ The following settings are available:</li>
 <p class="admonition-title">Layout_options</p>
 <h3 id="layout_options"><code>layout_options</code><a class="headerlink" href="#layout_options" title="Permanent link">¶</a></h3>
 <p>Use setting to set options for the layout specified via [<code>cards_layout</code>] [<code>config.cards_layout</code>] (if the layout supports it), which allows for making layouts easily and entirely configurable:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">        </span><span class="nt">&lt;option&gt;</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        &lt;option&gt;: &lt;value&gt;</code></pre>
 <p>When creating a <a href="https://jaywhj.github.io/mkdocs-materialx/setup/setting-up-social-cards.html#customization">custom layout</a>, you are completely free in defining which parts of your layout can be parametrized. The <a href="#layouts">default layouts</a> included with the plugin support the following options:</p>
 </div>
 <div style="display: flex; gap: 20px;">
@@ -2764,11 +2746,10 @@ The following settings are available:</li>
 <p class="admonition-title">Config.cards_include</p>
 <h3 id="confcards_include"><code>conf.cards_include</code><a class="headerlink" href="#confcards_include" title="Permanent link">¶</a></h3>
 <p>Use this setting to enable social card generation for subsections of your project, e.g., when using <a href="https://jaywhj.github.io/mkdocs-materialx/plugins/index.html#multiple-instances">multiple instances</a> of the plugin to generate different social cards for different subsections:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">      </span><span class="nt">cards_include</span><span class="p">:</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/*</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_include:
+        - blog/*</code></pre>
 <p>This configuration enables social card generation for all pages that are contained in the <code>blog</code> folder and its subfolders inside the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir"><code>docs</code> directory</a>.</p>
 </div>
 <hr>
@@ -2779,11 +2760,10 @@ The following settings are available:</li>
 <p class="admonition-title">Setting config.cards_exclude</p>
 <h3 id="confcards_exclude"><code>conf.cards_exclude</code><a class="headerlink" href="#confcards_exclude" title="Permanent link">¶</a></h3>
 <p>Use this setting to disable social card generation for subsections of your project, e.g., when using <a href="https://jaywhj.github.io/mkdocs-materialx/plugins/index.html#multiple-instances">multiple instances</a> of the plugin to generate different social cards for different subsections:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">      </span><span class="nt">cards_exclude</span><span class="p">:</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">changelog/*</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_exclude:
+        - changelog/*</code></pre>
 <hr>
 <p>This configuration disables social card generation for all pages that are contained in the <code>changelog</code> folder and its subfolders inside the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir"><code>docs</code> directory</a>.</p>
 </div>
@@ -2798,20 +2778,18 @@ The following settings are available:</li>
 <p class="admonition-title">setting config.debug</p>
 <h3 id="configdebug"><code>config.debug</code><a class="headerlink" href="#configdebug" title="Permanent link">¶</a></h3>
 <p>Use this setting to enable a special mode for debugging your layout, which renders each layer with a colored outline and its <code>x</code> and <code>y</code> offsets, and overlays a dot grid for alignment, so it's easier to understand how the distinct layers of your layout are composed together:<br>
-</p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">      </span><span class="nt">debug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div><p></p>
+</p><pre class="lang-annotation"><code>plugins:
+  - social:
+      debug: true</code></pre><p></p>
 </div>
 <hr>
 <div class="admonition info">
 <p class="admonition-title">setting config.debug_on_build</p>
 <h3 id="configdebug_on_build"><code>config.debug_on_build</code><a class="headerlink" href="#configdebug_on_build" title="Permanent link">¶</a></h3>
 <p>By default, the plugin automatically disables debug mode when building your project, so you can be sure that debug overlays are never deployed to production. If you want to change that, use:<br>
-</p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">      </span><span class="nt">debug_on_build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div><br>
+</p><pre class="lang-annotation"><code>plugins:
+  - social:
+      debug_on_build: true</code></pre><br>
 It's normally not necessary to change this setting, as it's just intended to be a safety net.<p></p>
 </div>
 <hr>
@@ -2819,30 +2797,27 @@ It's normally not necessary to change this setting, as it's just intended to be 
 <p class="admonition-title">setting config.debug_grid</p>
 <h3 id="configdebug_grid"><code>config.debug_grid</code><a class="headerlink" href="#configdebug_grid" title="Permanent link">¶</a></h3>
 <p>When debug mode is enabled, this setting specifies whether a dot grid is rendered on top of all layers, to allow for better alignment. If you want to switch the grid off, use:<br>
-</p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">      </span><span class="nt">debug_grid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div><p></p>
+</p><pre class="lang-annotation"><code>plugins:
+  - social:
+      debug_grid: false</code></pre><p></p>
 </div>
 <hr>
 <div class="admonition info">
 <p class="admonition-title">setting config.debug_grid_step</p>
 <h3 id="debug_grid_step"><code>.debug_grid_step</code><a class="headerlink" href="#debug_grid_step" title="Permanent link">¶</a></h3>
 <p>Use this setting to specify the step size of the dot grid in pixels, if enabled, which can be useful to create perfectly aligned layers for ideal composition. If you want to change it, use:<br>
-</p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">      </span><span class="nt">debug_grid_step</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span>
-</span></code></pre></div><p></p>
+</p><pre class="lang-annotation"><code>plugins:
+  - social:
+      debug_grid_step: 64</code></pre><p></p>
 </div>
 <hr>
 <div class="admonition info">
 <p class="admonition-title">setting config.debug_color</p>
 <h3 id="configdebug_color"><code>config.debug_color</code><a class="headerlink" href="#configdebug_color" title="Permanent link">¶</a></h3>
 <p>Use this setting to specify the color of the outlines that are added to each layer and the dot grid that is rendered on top of all layers. If you need to change it, use:<br>
-</p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">      </span><span class="nt">debug_color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yellow</span>
-</span></code></pre></div><br>
+</p><pre class="lang-annotation"><code>plugins:
+  - social:
+      debug_color: yellow</code></pre><br>
 In rare cases, it might be necessary to change this setting if the dot grid or the outlines are hard to distinguish, as the plugin will automatically adjust the color if not explicitly set.<p></p>
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
@@ -2862,44 +2837,41 @@ In rare cases, it might be necessary to change this setting if the dot grid or t
 <p class="admonition-title">setting meta.social.cards</p>
 <h3 id="metasocialcards"><code>meta.social.cards</code><a class="headerlink" href="#metasocialcards" title="Permanent link">¶</a></h3>
 <p>Use this property to override the cards setting for the given page:<br>
-</p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nn">---</span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="nt">cards</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="nn">---</span>
-</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
-</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="c1"># Page title</span>
-</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nn">...</span>
-</span></code></pre></div><p></p>
+</p><pre class="lang-annotation"><code>---
+social:
+  cards: false
+---
+
+# Page title
+...</code></pre><p></p>
 </div>
 <hr>
 <div class="admonition info">
 <p class="admonition-title">meta.social.cards_layout_options</p>
 <h3 id="socialcards_layout"><code>.social.cards_layout</code><a class="headerlink" href="#socialcards_layout" title="Permanent link">¶</a></h3>
 <p>Use this property to override the cards_layout setting for the given page:<br>
-</p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nn">---</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">  </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-custom-layout</span>
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nn">---</span>
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="c1"># Page title</span>
-</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nn">...</span>
-</span></code></pre></div><p></p>
+</p><pre class="lang-annotation"><code>---
+social:
+  cards_layout: my-custom-layout
+---
+
+# Page title
+...</code></pre><p></p>
 </div>
 <hr>
 <div class="admonition info">
 <p class="admonition-title">meta.social.cards_layout_options</p>
 <h3 id="cards_layout_options"><code>.cards_layout_options</code><a class="headerlink" href="#cards_layout_options" title="Permanent link">¶</a></h3>
 <p>Use this property to override the cards_layout_options setting for the given page:<br>
-</p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nn">---</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span><span class="w">             </span><span class="c1"># Change background color</span>
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="nt">background_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">             </span><span class="c1"># Remove background image</span>
-</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nn">---</span>
-</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
-</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1"># Page title</span>
-</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="nn">...</span>
-</span></code></pre></div><br>
+</p><pre class="lang-annotation"><code>---
+social:
+  cards_layout_options:
+    background_color: blue             # Change background color
+    background_image: null             # Remove background image
+---
+
+# Page title
+...</code></pre><br>
 Setting an option to <code class="language-yaml highlight"><span class="l l-Scalar l-Scalar-Plain">null</span></code> resets the option.<p></p>
 </div>
 <h3 id="layouts">Layouts<a class="headerlink" href="#layouts" title="Permanent link">¶</a></h3>
@@ -2912,10 +2884,9 @@ Setting an option to <code class="language-yaml highlight"><span class="l l-Scal
 <div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1"><code>default</code></label><label for="__tabbed_2_2"><code>default/variant</code></label><label for="__tabbed_2_3"><code>default/accent</code></label><label for="__tabbed_2_4"><code>default/invert</code></label><label for="__tabbed_2_5"><code>default/only/image</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">      </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout: default</code></pre>
 <div class="result" markdown="">
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/assets/screenshots/social-cards.png" data-desc-position="bottom"><img alt="Layout default" src="../../assets/assets/screenshots/social-cards.png"></a></p>
 <p>This layout sets the following defaults:</p>
@@ -2932,10 +2903,9 @@ Setting an option to <code class="language-yaml highlight"><span class="l l-Scal
 </div>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">      </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default/variant</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout: default/variant</code></pre>
 <div class="result" markdown="">
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/assets/screenshots/social-cards-variant.png" data-desc-position="bottom"><img alt="Layout default variant" src="../../assets/assets/screenshots/social-cards-variant.png"></a></p>
 <p>This layout includes the [page icon] and sets the following defaults:</p>
@@ -2952,10 +2922,9 @@ Setting an option to <code class="language-yaml highlight"><span class="l l-Scal
 </div>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">      </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default/accent</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout: default/accent</code></pre>
 <div class="result" markdown="">
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/assets/screenshots/social-cards-accent.png" data-desc-position="bottom"><img alt="Layout default accent" src="../../assets/assets/screenshots/social-cards-accent.png"></a></p>
 <p>This layout sets the following defaults:</p>
@@ -2972,10 +2941,9 @@ Setting an option to <code class="language-yaml highlight"><span class="l l-Scal
 </div>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">      </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default/invert</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout: default/invert</code></pre>
 <div class="result" markdown="">
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/assets/screenshots/social-cards-invert.png" data-desc-position="bottom"><img alt="Layout default invert" src="../../assets/assets/screenshots/social-cards-invert.png"></a></p>
 <p>This layout sets the following defaults:</p>
@@ -2992,12 +2960,12 @@ Setting an option to <code class="language-yaml highlight"><span class="l l-Scal
 </div>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">      </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default/only/image</span>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">        </span><span class="nt">background_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">layouts/background.png</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout: default/only/image
+      cards_layout_options:
+        background_image: layouts/background.png
+</code></pre>
 <div class="result" markdown="">
 <p>This layout only shows the given background image and scales it to cover.</p>
 </div>
@@ -3021,11 +2989,10 @@ Setting an option to <code class="language-yaml highlight"><span class="l l-Scal
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Hexadecimal</label><label for="__tabbed_3_2">Color function</label><label for="__tabbed_3_3">Color name</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">        </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="s">"#ff1493"</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        background_color: "#ff1493" # (1)!</code></pre>
 <ol>
 <li>
 <p>The following notations are supported, whereas each character<br>
@@ -3040,11 +3007,10 @@ after the <code>#</code> must be a valid hexadecimal in the range <code class="l
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">        </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgb(255, 20, 147)</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        background_color: rgb(255, 20, 147) # (1)!</code></pre>
 <ol>
 <li>
 <p>The following functions are supported, listing the allowed<br>
@@ -3059,11 +3025,10 @@ or <code class="language-css highlight"><span class="nt">0</span><span class="o"
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">        </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deeppink</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        background_color: deeppink # (1)!</code></pre>
 <ol>
 <li>See the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color">named-color</a> CSS data type for a list of supported<br>
 color names. Note that some might not be available.</li>
@@ -3072,11 +3037,10 @@ color names. Note that some might not be available.</li>
 </div>
 </div>
 <p>If this options is used together with [<code>background_image</code>] [<code>option.background_image</code>], the color is rendered on top of the image which allows for tinting images. If you want to remove the background color, use:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">        </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">transparent</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        background_color: transparent</code></pre>
 </div>
 <hr>
 <div class="admonition info">
@@ -3089,20 +3053,18 @@ color names. Note that some might not be available.</li>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Image</label><label for="__tabbed_4_2">Image with tint</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">        </span><span class="nt">background_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">layouts/background.png</span>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">transparent</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        background_image: layouts/background.png
+        background_color: transparent</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">        </span><span class="nt">background_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">layouts/background.png</span>
-</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">        </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="s">"#ff149366"</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        background_image: layouts/background.png
+        background_color: "#ff149366"</code></pre>
 </div>
 </div>
 </div>
@@ -3118,11 +3080,10 @@ color names. Note that some might not be available.</li>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Hexadecimal</label><label for="__tabbed_5_2">Color function</label><label for="__tabbed_5_3">Color name</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">"#ffffff"</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        color: "#ffffff" # (1)!</code></pre>
 <ol>
 <li>
 <p>The following notations are supported, whereas each character<br>
@@ -3137,11 +3098,10 @@ after the <code>#</code> must be a valid hexadecimal in the range <code class="l
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgb(255, 255, 255)</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        color: rgb(255, 255, 255) # (1)!</code></pre>
 <ol>
 <li>
 <p>The following functions are supported, listing the allowed<br>
@@ -3156,11 +3116,10 @@ or <code class="language-css highlight"><span class="nt">0</span><span class="o"
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">white</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        color: white # (1)!</code></pre>
 <ol>
 <li>See the <a href="https://mozilla.org"><code>named_colour.</code></a> CSS data type for a list of<br>
 supported color names. Note that some might not be available.</li>
@@ -3174,11 +3133,10 @@ supported color names. Note that some might not be available.</li>
 <p class="admonition-title">setting option.font_family</p>
 <h3 id="font_family"><code>font_family</code><a class="headerlink" href="#font_family" title="Permanent link">¶</a></h3>
 <p>Use this option to change the font family of the generated social card. The plugin automatically downloads the font from <a href="https://fonts.google.com/">Google Fonts</a>, so the font must point to an existing Google Font:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">        </span><span class="nt">font_family</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ubuntu</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        font_family: Ubuntu</code></pre>
 <hr>
 <p>When you've found a font that you like on <a href="https://fonts.google.com/">Google Fonts</a>, you can just copy the name from the font's specimen page and use it as the value for this option – no further configuration needed.</p>
 </div>
@@ -3187,11 +3145,10 @@ supported color names. Note that some might not be available.</li>
 <p class="admonition-title">setting option.font_variant</p>
 <h3 id="font_variant">font_variant<a class="headerlink" href="#font_variant" title="Permanent link">¶</a></h3>
 <p>Use this option to change the font variant used to generate the social card. If the downloaded font has variants like <code>Condensed</code> or <code>Expanded</code>, you can set them with:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">        </span><span class="nt">font_variant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Condensed</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        font_variant: Condensed</code></pre>
 <hr>
 <p>The variant is combined with the style as used in the custom layout, so the plugin is instructed to use combinations like <code>Condensed Regular</code> or <code>Expanded Bold</code>.</p>
 </div>
@@ -3200,11 +3157,10 @@ supported color names. Note that some might not be available.</li>
 <p class="admonition-title">setting option.logo</p>
 <h3 id="optionlogo"><code>option.logo</code><a class="headerlink" href="#optionlogo" title="Permanent link">¶</a></h3>
 <p>Use this option to change the logo that is used in the generated social card. By default, the plugin uses the <a href="../changing-the-logo-and-icons/#logo-image"><code>theme.logo</code></a> or <a href="../changing-the-logo-and-icons/#logo-icon-bundled"><code>theme.icon.logo</code></a> setting from <code>mkdocs.yml</code>. You can change it with:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">        </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">layouts/logo.png</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        logo: layouts/logo.png</code></pre>
 <hr>
 <p>The provided path is resolved from the root directory.</p>
 </div>
@@ -3213,22 +3169,20 @@ supported color names. Note that some might not be available.</li>
 <p class="admonition-title">setting option.title</p>
 <h3 id="setting-optiontitle"><code>setting option.title</code><a class="headerlink" href="#setting-optiontitle" title="Permanent link">¶</a></h3>
 <p>Use this option to change the title of the generated social card. This overrides the computed page title as assigned by MkDocs, as well as the <a href="https://jaywhj.github.io/mkdocs-materialx/reference/index.html#setting-the-page-title">title</a> metadata property:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My custom title</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        title: My custom title</code></pre>
 </div>
 <hr>
 <div class="admonition info">
 <p class="admonition-title">setting option.description</p>
 <h3 id="optiondescription"><code>option.description</code><a class="headerlink" href="#optiondescription" title="Permanent link">¶</a></h3>
 <p>Use this option to change the description of the generated social card. This overrides the set <a href="https://www.mkdocs.org/user-guide/configuration/#site_description">site description</a>, if defined, as well as the <a href="https://jaywhj.github.io/mkdocs-materialx/reference/index.html#setting-the-page-description"><code>description</code></a> metadata property:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My custom description</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - social:
+      cards_layout_options:
+        description: My custom description</code></pre>
 </div>
 <hr>
 <div class="admonition question">

@@ -979,6 +979,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#hl_lines4-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ``` hl_lines="4 5""
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-tags" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -994,6 +1005,17 @@
     <span class="md-ellipsis">
       
         Defining Authors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hl_lines5-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ```hl_lines="5-6"
       
     </span>
   </a>
@@ -1027,6 +1049,17 @@
     <span class="md-ellipsis">
       
         Custom Slugs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hl_lines7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ```hl_lines="7"
       
     </span>
   </a>
@@ -1100,19 +1133,21 @@
 <div class="admonition example">
 <p class="admonition-title">Integrate with Site Navigation</p>
 <p>Add the following to your <code>mkdocs.yml</code> to see how the Blog plugin can integrate the blog navigation with the overall navigation structure. Note that the only thing you need to specify at this point is the index page for the blog and its path must match the <code>blog_dir</code> setting, which is <code>blog</code> by default:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">nav</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Install</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install.md</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usage.md</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Blog</span><span class="p">:</span>
-</span></span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="hll"><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/index.md</span>
-</span></span></code></pre></div>
-<p>You will notice that "Blog" is duplicated in the navigation structure. To avoid this, you can use the <code>navigation.indexes</code> feature to make the blog index the section index page for the blog:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">theme</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="hll"><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
-</span></span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.indexes</span>
-</span></span></code></pre></div>
+<p>```yaml hl_lines="5 6"<br>
+nav:<br>
+  - Home: index.md<br>
+  - Install: install.md<br>
+  - Usage: usage.md<br>
+  - Blog:<br>
+     - blog/index.md<br>
+</p><pre class="lang-annotation"><code>
+You will notice that "Blog" is duplicated in the navigation structure. To avoid this, you can use the `navigation.indexes` feature to make the blog index the section index page for the blog:
+
+```yaml hl_lines="3 4"
+theme:
+  name: material
+  features:
+    - navigation.indexes</code></pre><p></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Stand-alone Blog</p>
@@ -1127,9 +1162,9 @@
 <div class="admonition example">
 <p class="admonition-title">Organize Posts by Month</p>
 <p>Add the following to your <code>mkdocs.yml</code> to get a listing with the month name (in the language selected in the theme options):</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="hll"><span class="w">    </span><span class="nt">archive_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MMMM yyyy</span>
-</span></span></code></pre></div>
+<p><code>yaml hl_lines="2"
+- blog:
+    archive_date_format: MMMM yyyy</code></p>
 <p>If you do not want the full month name, you can make the date configuration <code>MM/yyyy</code>, for example.</p>
 <p>If you want to add the day, you can add a placeholder for them. For example, to get an American-style output, <br>
 make it <code>MM/dd/yyyy</code>. For the plugin to sort the blog posts by the full date, you will also need to set the <code>archive_url_date_format</code> to include the month and day, so make it <code>MM/dd/yyyy</code> as well.</p>
@@ -1140,13 +1175,13 @@ make it <code>MM/dd/yyyy</code>. For the plugin to sort the blog posts by the fu
 <div class="admonition example">
 <p class="admonition-title">Add a Category</p>
 <p>Add a category to your first blog post by adding it to the page header:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>---
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>date: 2023-12-31
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>updated: 2024-01-02
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="hll">categories:
-</span></span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="hll">  - Holidays
-</span></span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>---
-</span></code></pre></div>
+<h2 id="hl_lines4-5">``` hl_lines="4 5""<a class="headerlink" href="#hl_lines4-5" title="Permanent link">¶</a></h2>
+<p>date: 2023-12-31<br>
+updated: 2024-01-02<br>
+categories:<br>
+  - Holidays</p>
+<hr>
+<p>```</p>
 <p>Now that the blog post has been categorised, <code>Holidays</code> appears under <code>Categories</code> in the main navigation and the blog post appears in the index page for this category.</p>
 </div>
 <div class="admonition tip">
@@ -1158,14 +1193,14 @@ make it <code>MM/dd/yyyy</code>. For the plugin to sort the blog posts by the fu
 <p class="admonition-title">Control your Categories</p>
 <p>Add a <code>categories_allowed</code> entry to the configuration of the Blog plugin<br>
 with the entries "Holidays" and "News":</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">archive_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MMMM yyyy</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="hll"><span class="w">      </span><span class="nt">categories_allowed</span><span class="p">:</span>
-</span></span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Holidays</span>
-</span></span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span>
-</span></span></code></pre></div>
+<p><code>yaml hl_lines="5-7"
+plugins:
+  - search
+  - blog:
+      archive_date_format: MMMM yyyy
+      categories_allowed:
+        - Holidays
+        - News</code></p>
 <p>Now, when you add a category to a blog post that does not match one of these two, you should get a build error.</p>
 </div>
 <h2 id="using-tags"><u>Using Tags</u><a class="headerlink" href="#using-tags" title="Permanent link">¶</a></h2>
@@ -1175,30 +1210,32 @@ and reference documentation. Adding the same tag to all three shows that they ar
 <div class="admonition example">
 <p class="admonition-title">Enable the Plugin and Add Tags</p>
 <p>First, you need to add the plugin to your <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span><span class="nt">archive_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MMMM yyyy</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span><span class="nt">categories_allowed</span><span class="p">:</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Holidays</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span>
-</span></span></code></pre></div>
-<p>Once this is done, you can add tags to posts in the page header:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>---
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>date:
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  created: 2023-12-31
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  updated: 2024-01-02
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>authors:
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  - material
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>categories:
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  - Holidays
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="hll">tags:
-</span></span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="hll">  - new year
-</span></span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="hll">  - hogmanay
-</span></span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="hll">  - festive season
-</span></span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>---
-</span></code></pre></div>
+<p>```yaml hl_lines="8"<br>
+plugins:<br>
+  - search<br>
+  - blog:<br>
+      archive_date_format: MMMM yyyy<br>
+      categories_allowed:<br>
+        - Holidays<br>
+        - News<br>
+  - tags<br>
+</p><pre class="lang-annotation"><code>
+Once this is done, you can add tags to posts in the page header:
+
+``` hl_lines="9-12""
+---
+date:
+  created: 2023-12-31
+  updated: 2024-01-02
+authors:
+  - material
+categories:
+  - Holidays
+tags:
+  - new year
+  - hogmanay
+  - festive season
+---</code></pre><p></p>
 </div>
 <p>You should see the tags that you defined at the top of the post. However, at the moment that is it. While the blog plugin automatically creates an index page for categories, the tags plugin does not do the same for tags. This is because the tags plugin is not specific for blogs. You can use it for any site content, so it is not obvious were the tag index should go.</p>
 <p>You can configure a basic tag index using the public version of Material for MkDocs. The Insider Edition supports this as well, of course, but also provides an alternative index mechanism that allows for an arbitrary number of tag indexes, scoped listings, shadow tags, nested tags, and much more.</p>
@@ -1208,24 +1245,24 @@ and reference documentation. Adding the same tag to all three shows that they ar
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>To configure a tag index using the public version, add a <code>tags_file</code> entry to your configuration of the tags plugin and configure it in your <code>nav</code> section. Remember to add a colon at the end of the existing <code>tags</code> entry.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="nt">archive_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MMMM yyyy</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">categories_allowed</span><span class="p">:</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Holidays</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tags</span><span class="p">:</span>
-</span></span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="hll"><span class="w">        </span><span class="nt">tags_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/tags.md</span>
-</span></span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nt">nav</span><span class="p">:</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Install</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install.md</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usage.md</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Blog</span><span class="p">:</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/index.md</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/tags.md</span>
-</span></span></code></pre></div>
+<p>```yaml hl_lines="8-9 17"<br>
+plugins:<br>
+    - search<br>
+    - blog:<br>
+        archive_date_format: MMMM yyyy<br>
+        categories_allowed:<br>
+            - Holidays<br>
+            - News<br>
+    - tags:<br>
+        tags_file: blog/tags.md</p>
+<p>nav:<br>
+    - Home: index.md<br>
+    - Install: install.md<br>
+    - Usage: usage.md<br>
+    - Blog:<br>
+        - blog/index.md<br>
+        - Tags: blog/tags.md<br>
+```</p>
 <ul>
 <li>
 <p>The tag index will be appended to the configured page, which you should now create at the location specified.</p>
@@ -1238,21 +1275,18 @@ and reference documentation. Adding the same tag to all three shows that they ar
 <div class="tabbed-block">
 <p>To add a tag index, you add a placeholder in a Markdown file to tell the plugin to insert an index at that point. This means that you can add content before and after the index. Crucially, you can add placeholders in multiple pages, each with a configuration of what subset of tags should be displayed in the index.</p>
 <p>The simplest index page looks like this. Create it under <code>docs/tags.md</code>.</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gh"># Tag index</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>&lt;!-- material/tags --&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code># Tag index
+&lt;!-- material/tags --&gt;</code></pre>
 <p>Now, you may want to keep the tags for your blog separate from tags you use in the rest of your page. You can achieve this by assigning the tag index a scope. Put the following under <code>docs/blog/tags.md</code>:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gh"># Tag index  for the blog</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>&lt;!-- material/tags { scope: true } --&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code># Tag index  for the blog
+&lt;!-- material/tags { scope: true } --&gt;</code></pre>
 <p>You now have two index pages: one covers the whole site and one covers only the blog. Add both to the navigation:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">nav</span><span class="p">:</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags.md</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Blog</span><span class="p">:</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/index.md</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/tags.md</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>nav:
+    - Home: index.md
+    - Tags: tags.md
+    - Blog:
+        - blog/index.md
+        - blog/tags.md</code></pre>
 <p>The tags plugin in the Insider Edition is an incredibly powerful tool and we can only scratch the surface of what is possible with it. If you want to explore more after you have worked for this part of the tutorial, have a look at the <a href="../tags/">tags plugin reference</a>.</p>
 </div>
 </div>
@@ -1263,57 +1297,58 @@ and reference documentation. Adding the same tag to all three shows that they ar
 <div class="admonition example">
 <p class="admonition-title">Create Author Info</p>
 <p>Create a file <code>docs/blog/.authors.yml</code> with this content:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">authors</span><span class="p">:</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">team</span><span class="p">:</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Team</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Creator</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nt">avatar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://simpleicons.org/icons/materialformkdocs.svg</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="nt">squidfunk</span><span class="p">:</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Martin Donath</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Creator</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="nt">avatar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/squidfunk.png</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>authors:
+  team:
+    name: Team
+    description: Creator
+    avatar: https://simpleicons.org/icons/materialformkdocs.svg
+  squidfunk:
+    name: Martin Donath
+    description: Creator
+    avatar: https://github.com/squidfunk.png</code></pre>
 <p>and then add a line to the header of the first post:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>---
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>date:
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  created: 2023-12-31
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  updated: 2024-01-02
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="hll">authors:
-</span></span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="hll">  - team
-</span></span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>---
-</span></code></pre></div>
+<h2 id="hl_lines5-6">```hl_lines="5-6"<a class="headerlink" href="#hl_lines5-6" title="Permanent link">¶</a></h2>
+<p>date:<br>
+  created: 2023-12-31<br>
+  updated: 2024-01-02<br>
+authors:<br>
+  - team</p>
+<hr>
+<p>```</p>
 <p>Note that <code>authors</code> is a list, so you can specify multiple authors.</p>
 </div>
 <p>You can create custom author index pages that can highlight the contributions of an author as well as provide additional information about them.</p>
 <div class="admonition example">
 <p class="admonition-title">Add Author Page</p>
 <p>First, you need to enable author profiles in the <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">      </span><span class="nt">archive_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MMMM yyyy</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">      </span><span class="nt">categories_allowed</span><span class="p">:</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Holidays</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="hll"><span class="w">      </span><span class="nt">authors_profiles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></span></code></pre></div>
-<p>Check your blog to see that there is now an extra entry in the main navigation next to <code>archive</code> and <code>categories</code> that lists the authors and their contributions.</p>
-<p>To customize the author page, you can create a page that overrides the one generated by default. First, create the <code>author</code> directory that the profile pages will live in:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docs
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├── blog
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="hll">│&nbsp;&nbsp; ├── author
-</span></span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>│&nbsp;&nbsp; ├── index.md
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>│&nbsp;&nbsp; └── posts
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>│&nbsp;&nbsp;     ├── draft.md
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>│&nbsp;&nbsp;     └── myfirst.md
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>└── index.md
-</span></code></pre></div>
+<p>```yaml hl_lines="8"<br>
+plugins:<br>
+  - search<br>
+  - blog:<br>
+      archive_date_format: MMMM yyyy<br>
+      categories_allowed:<br>
+          - Holidays<br>
+          - News<br>
+      authors_profiles: true<br>
+</p><pre class="lang-annotation"><code>
+Check your blog to see that there is now an extra entry in the main navigation next to `archive` and `categories` that lists the authors and their contributions.
+
+To customize the author page, you can create a page that overrides the one generated by default. First, create the `author` directory that the profile pages will live in:
+
+```hl_lines="3"
+docs
+├── blog
+│&nbsp;&nbsp; ├── author
+│&nbsp;&nbsp; ├── index.md
+│&nbsp;&nbsp; └── posts
+│&nbsp;&nbsp;     ├── draft.md
+│&nbsp;&nbsp;     └── myfirst.md
+└── index.md</code></pre><p></p>
 <p>Then create a page <code>docs/blog/author/team.md</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a># The Material Team
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>A small group of people dedicated to making writing documentation easy, if not
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>outright fun! Here are some of the things we have blogged about:
-</span></code></pre></div>
+<pre class="lang-annotation"><code># The Material Team
+
+A small group of people dedicated to making writing documentation easy, if not
+outright fun! Here are some of the things we have blogged about:</code></pre>
 <p>As you can see, the author index gets appended to the content you have written in the Markdown file.</p>
 </div>
 <h2 id="pagination"><u>Pagination</u><a class="headerlink" href="#pagination" title="Permanent link">¶</a></h2>
@@ -1321,36 +1356,38 @@ and reference documentation. Adding the same tag to all three shows that they ar
 <div class="admonition example">
 <p class="admonition-title">Changing Pagination</p>
 <p>Add five more blog posts, then set the pagination setting to show five per page only:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nt">archive_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MMMM yyyy</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">categories_allowed</span><span class="p">:</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Holidays</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nt">authors_profiles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="hll"><span class="w">    </span><span class="nt">pagination_per_page</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
-</span></span></code></pre></div>
-<p>You will see that the pagination setting for archive and category pages are inherited from the setting you added. If you want to have different settings for the different index pages, you can specify each setting separately:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nt">archive_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MMMM yyyy</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">categories_allowed</span><span class="p">:</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Holidays</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="nt">authors_profiles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="nt">pagination_per_page</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="nt">archive_pagination_per_page</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="nt">categories_pagination_per_page</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-</span></code></pre></div>
+<p>```yaml hl_lines="7"<br>
+- blog:<br>
+    archive_date_format: MMMM yyyy<br>
+    categories_allowed:<br>
+        - Holidays<br>
+        - News<br>
+    authors_profiles: true<br>
+    pagination_per_page: 5<br>
+</p><pre class="lang-annotation"><code>
+You will see that the pagination setting for archive and category pages are inherited from the setting you added. If you want to have different settings for the different index pages, you can specify each setting separately:
+
+```yaml
+- blog:
+    archive_date_format: MMMM yyyy
+    categories_allowed:
+        - Holidays
+        - News
+    authors_profiles: true
+    pagination_per_page: 5
+    archive_pagination_per_page: 10
+    categories_pagination_per_page: 10</code></pre><p></p>
 </div>
 <h2 id="blog-table-of-contents"><u>Blog Table of Contents</u><a class="headerlink" href="#blog-table-of-contents" title="Permanent link">¶</a></h2>
 <p>Another thing you may want to do once you have a large enough number of posts is to turn on the function that produces a table of contents for the blog index pages, giving your readers the opportunity to quickly scan the content of each page for something that interests them without having to scroll (assuming that the number of post per page is not too big).</p>
 <div class="admonition example">
 <p class="admonition-title">Turn on the Table of Contents Feature</p>
 <p>To produce a table of contents for the blog index pages, add the following to the configuration of the blog plugin:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="hll"><span class="w">    </span><span class="nt">blog_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nt">archive_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MMMM yyyy</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="c1"># ...</span>
-</span></code></pre></div>
+<p><code>yaml hl_lines="2"
+- blog:
+    blog_toc: true
+    archive_date_format: MMMM yyyy
+    # ...</code></p>
 </div>
 <h2 id="custom-slugs"><u>Custom Slugs</u><a class="headerlink" href="#custom-slugs" title="Permanent link">¶</a></h2>
 <p>If, for some reason, you are not happy with the way that Material for MkDocs turns headings into slugs, you can create your own slugify function or you can manually define a slug for a specific post.</p>
@@ -1358,52 +1395,51 @@ and reference documentation. Adding the same tag to all three shows that they ar
 <p class="admonition-title">Slugify Function</p>
 <p>To define your own slugify function, you need to write a Python function that converts text into a slug given additional arguments from the configuration. You also need to write a function that returns that function.</p>
 <p>Say you want to define two slugify functions that you can switch between. The first one returns a slug similar to what the default slugify function produces. The second one cuts the result of that up into words and returns a slug based on a maximum of five of them:</p>
-<p></p><div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span><span class="o">,</span><span class="w"> </span><span class="nn">functools</span><span class="o">,</span><span class="w"> </span><span class="nn">unicodedata</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">RE_HTML_TAGS</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;/?[^&gt;]*&gt;'</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">RE_INVALID_SLUG_CHAR</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'[^\w\- ]'</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">RE_WHITESPACE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\s'</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">_make_slug</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>    <span class="n">slug</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">'NFC'</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>    <span class="n">slug</span> <span class="o">=</span> <span class="n">RE_HTML_TAGS</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    <span class="n">slug</span> <span class="o">=</span> <span class="n">RE_INVALID_SLUG_CHAR</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>    <span class="n">slug</span> <span class="o">=</span> <span class="n">slug</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>    <span class="n">slug</span> <span class="o">=</span> <span class="n">RE_WHITESPACE</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">sep</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>    <span class="k">return</span> <span class="n">slug</span>
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">_make_slug_short</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>    <span class="n">words</span> <span class="o">=</span> <span class="n">_make_slug</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="p">)</span>
-</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>    <span class="k">return</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
-</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
-</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="k">def</span><span class="w"> </span><span class="nf">slugify</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>    <span class="k">if</span> <span class="s1">'short'</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">'short'</span><span class="p">]:</span>
-</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>        <span class="k">return</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">_make_slug_short</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>    <span class="k">return</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">_make_slug</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</span></code></pre></div><br>
+<p></p><pre class="lang-annotation"><code>import re, functools, unicodedata
+
+RE_HTML_TAGS = re.compile(r'&lt;/?[^&gt;]*&gt;', re.UNICODE)
+RE_INVALID_SLUG_CHAR = re.compile(r'[^\w\- ]', re.UNICODE)
+RE_WHITESPACE = re.compile(r'\s', re.UNICODE)
+
+def _make_slug(text, sep, **kwargs):
+    slug = unicodedata.normalize('NFC', text)
+    slug = RE_HTML_TAGS.sub('', slug)
+    slug = RE_INVALID_SLUG_CHAR.sub('', slug)
+    slug = slug.strip().lower()
+    slug = RE_WHITESPACE.sub(sep, slug)
+    return slug
+
+def _make_slug_short(text, sep, **kwargs):
+    words = _make_slug(text, sep, **kwargs).split(sep)
+    return sep.join(words[:5])
+
+def slugify(**kwargs):
+    if 'short' in kwargs and kwargs['short']:
+        return functools.partial(_make_slug_short, **kwargs)
+    return functools.partial(_make_slug, **kwargs)</code></pre><br>
 Save this code in <code>ext/slugs.py</code> and also add an (empty) <code>__init__.py</code> file to indicate that the directory is a module. Now you can configure your custom slugify code like this:<p></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="c1"># other entries omitted</span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="hll"><span class="w">    </span><span class="nt">post_slugify</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/object/apply:ext.slugs.slugify</span>
-</span></span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="hll"><span class="w">      </span><span class="nt">kwds</span><span class="p">:</span>
-</span></span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="hll"><span class="w">        </span><span class="nt">short</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></span></code></pre></div>
+<p><code>yaml hl_lines="4-6"
+plugins:
+- blog:
+    # other entries omitted
+    post_slugify: !!python/object/apply:ext.slugs.slugify
+      kwds:
+        short: true</code></p>
 <p>Change the heading of a blog post to be longer than five words and observe how the slugify function shortens the URL. Change the <code>short</code> attribute to <code>false</code> and you can turn this off again.</p>
 </div>
 <p>If you want to influence the slug only for a single blog post, you can define it manually by specifying it in the header of the post. Note that this is meant as a last resort option. Specifying a custom slug manually for every post would be tedious.</p>
 <div class="admonition example">
 <p class="admonition-title">Manually Define Slug</p>
 <p>If, for example, you wanted the slug to be 'ny-eve'  instead of the somewhat lengthy 'happy-new-years-eve', you could add the following:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>---
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>date:
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>  created: 2023-12-31
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  updated: 2024-01-02
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>readtime: 15
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>pin: true
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="hll">slug: ny-eve
-</span></span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>---
-</span></code></pre></div>
+<h2 id="hl_lines7">```hl_lines="7"<a class="headerlink" href="#hl_lines7" title="Permanent link">¶</a></h2>
+<p>date:<br>
+  created: 2023-12-31<br>
+  updated: 2024-01-02<br>
+readtime: 15<br>
+pin: true<br>
+slug: ny-eve</p>
+<hr>
+<p>```</p>
 <p>The URL for this post should now be <code>http://localhost:8000/blog/2023/01/31/ny-eve/</code>.</p>
 </div>
 <h2 id="whats-next"><u>What's Next?</u><a class="headerlink" href="#whats-next" title="Permanent link">¶</a></h2>

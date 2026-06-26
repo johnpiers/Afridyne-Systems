@@ -998,8 +998,8 @@
 <div class="admonition info">
 <p class="admonition-title">Prerequisites</p>
 <p>Caching is entirely optional but enabled by default. It can be disabled per plugin. If not configured otherwise, plugins will cache their data in the <code>.cache</code> folder in the root of your project. For this reason it's recommended to create a <code>.gitignore</code> file in the root of your project:</p>
-<div class="language-text highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.cache
-</span></code></pre></div>
+<p><code>title=".gitignore"
+.cache</code></p>
 <hr>
 <p>This ensures that cached files are not added to your git repository–something that is generally not recommended to do unless absolutely necessary. In some cases, you might need to check in cached files, e.g. when you need to pre-generate <a href="../setting-up-social-cards/">social cards</a> locally, e.g., when you're not be able to install the image processing dependencies in your continuous integration (CI) environment.</p>
 <p>In this case, we recommend changing the <code>cache_dir</code> setting – something that all plugins that implement caching share – to a folder which you add to your git repository.</p>

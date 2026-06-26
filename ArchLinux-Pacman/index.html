@@ -1576,23 +1576,18 @@ You can <a href="https://wiki.archlinux.org/title/Enable/start">enable/start</a>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>To install a single package or list of packages, including dependencies, issue the following command:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># pacman -S package_name1 package_name2 ...
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -S package_name1 package_name2 ...</code></pre>
 </div>
 <div class="admonition pied-piper">
 <p class="admonition-title">Regex-package Install</p>
 <p>To install a list of packages with regex (see <a href="https://bbs.archlinux.org/viewtopic.php?id=7179">this forum thread</a>):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># pacman -S $ (pacman -Ssq package_regex)
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -S $ (pacman -Ssq package_regex)</code></pre>
 <p>Sometimes there are multiple versions of a package in different repositories (e.g. <em>extra</em> and <em>extra-testing</em>). To install the version from the <em>extra repository</em> in this example, the repository needs to be defined in front of the package name:</p>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># pacman -S extra/ package_name
-</span></code></pre></div><br>
+<p></p><pre class="lang-annotation"><code># pacman -S extra/ package_name</code></pre><br>
 To install a number of packages sharing similar patterns in their names, one can use curly brace expansion. For example:<p></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># pacman -S plasma-{desktop,mediacenter,nm}
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -S plasma-{desktop,mediacenter,nm}</code></pre>
 <p>This can be expanded to however many levels needed:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># pacman -S plasma-{workspace{,-wallpapers},pa}
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -S plasma-{workspace{,-wallpapers},pa}</code></pre>
 </div>
 <h5 id="Virtual_packages">Virtual Packages<a class="headerlink" href="#Virtual_packages" title="Permanent link">¶</a></h5>
 <p><a href="https://wiki.archlinux.org/index.php?title=Pacman&amp;action=edit&amp;section=4">[edit source]</a></p>
@@ -1609,8 +1604,7 @@ To install a number of packages sharing similar patterns in their names, one can
 <div class="admonition pied-piper">
 <p class="admonition-title">Installing Package Groups</p>
 <p>Some packages belong to a <a href="https://wiki.archlinux.org/title/Meta_package_and_package_group">group of packages</a> that can all be installed simultaneously. For example, issuing the command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># pacman -S gnome</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -S gnome</code></pre>
 <p>Will prompt you to select the packages from the <a href="https://archlinux.org/groups/x86_64/gnome/">gnome</a> group that you wish to install.</p>
 <hr>
 <p>Sometimes a package group will contain a large amount of packages, and there may be only a few that you do or do not want to install. Instead of having to enter all the numbers except the ones you do not want, it is sometimes more convenient to select or exclude packages or ranges of packages with the following syntax:</p>
@@ -1630,8 +1624,7 @@ To install a number of packages sharing similar patterns in their names, one can
 </ul>
 <hr>
 <p>To see what packages belong to the gnome group, run:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ pacman -Sg gnome
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ pacman -Sg gnome</code></pre>
 <hr>
 <p>Also <a href="https://archlinux.org/groups/">visit</a> to see what package groups are available.</p>
 </div>
@@ -1644,35 +1637,29 @@ To install a number of packages sharing similar patterns in their names, one can
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To remove a single package, leaving all of its dependencies installed:</p>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># pacman -R package_name
-</span></code></pre></div><br>
+<p></p><pre class="lang-annotation"><code># pacman -R package_name</code></pre><br>
 To remove a package and its dependencies which are not required by any other installed package:<p></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># pacman -Rs package_name
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -Rs package_name</code></pre>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Warning</p>
 <p>When removing a group, such as <em>gnome</em>, this ignores the install reason of the packages in the group, because it acts as though each package in the group is listed separately. Install reason of dependencies is still respected.</p>
 <p>The above may sometimes refuse to run when removing a group which contains otherwise needed packages. In this case try:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># pacman -Rsu package_name
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -Rsu package_name</code></pre>
 </div>
 <p>To remove a package, its dependencies and all the packages that depend on the target package:</p>
 <div class="admonition danger">
 <p class="admonition-title">Warning</p>
 <p>This operation is recursive, and must be used with care since it can remove many potentially needed packages.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a># pacman -Rsc package_name
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -Rsc package_name</code></pre>
 <p>To remove a package, which is required by another package, without removing the dependent package:</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Warning</p>
 <p>The following operation can break a system and should be avoided. See <a href="https://wiki.archlinux.org/title/System_maintenance#Avoid_certain_pacman_commands">System Maintenance</a></p>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a># pacman -Rdd package_name
-</span></code></pre></div><br>
+<p></p><pre class="lang-annotation"><code># pacman -Rdd package_name</code></pre><br>
 <em>Pacman</em> saves important configuration files when removing certain applications and names them with the extension: <em>.pacsave</em>. To prevent the creation of these backup files use the <strong>-n</strong> option:<p></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a># pacman -Rn package_name
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -Rn package_name</code></pre>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1705,8 +1692,7 @@ To remove a package and its dependencies which are not required by any other ins
 <p>The following command synchronizes the repository databases <em>and</em> updates the system's packages, excluding "local" packages that are not in the configured repositories:</p>
 </li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a># pacman -Syu
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -Syu</code></pre>
 </div>
 <div class="admonition pied-piper">
 <p class="admonition-title">Tip</p>
@@ -1724,29 +1710,25 @@ To remove a package and its dependencies which are not required by any other ins
 <ul>
 <li>Sync the files database before querying it to get up-to-date results:</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a># pacman -Fy
-</span></code></pre></div>
+<pre class="lang-annotation"><code># pacman -Fy</code></pre>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>Pacman can search for packages in the database, searching both in packages' names and descriptions:</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$ pacman -Ss string1 string2 ...
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ pacman -Ss string1 string2 ...</code></pre>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>Sometimes, -s's builtin ERE (Extended Regular Expressions) can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$ pacman -Ss '^vim-'
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ pacman -Ss '^vim-'</code></pre>
 <ul>
 <li>To search for already installed packages:</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$ pacman -Qs string1 string2 ...
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ pacman -Qs string1 string2 ...</code></pre>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note.</p>
@@ -1773,25 +1755,21 @@ To remove a package and its dependencies which are not required by any other ins
 <p class="admonition-title">Info.</p>
 <p>If the ESP is not mounted to <code>/boot</code>, make sure to not rely on the <a href="https://wiki.archlinux.org/title/Fstab#Automount_with_systemd" title="Fstab">systemd automount mechanism</a> (including that of <a href="https://wiki.archlinux.org/title/Systemd#GPT_partition_automounting" title="Systemd">systemd-gpt-auto-generator</a>) during kernel upgrades. Always mount it manually prior to any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on the ESP.</p>
 <p>Alternatively <a href="https://wiki.archlinux.org/title/Kernel_module#systemd" title="Kernel module">preload the required kernel modules on boot</a>, e.g.:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>/etc/modules-load.d/vfat.conf
-</span></code></pre></div>
+<pre class="lang-annotation"><code>/etc/modules-load.d/vfat.conf</code></pre>
 <hr>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>vfat
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>nls_cp437
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>nls_ascii
-</span></code></pre></div>
+<pre class="lang-annotation"><code>vfat
+nls_cp437
+nls_ascii</code></pre>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Abstract.</p>
 <p>If the ESP is not mounted to <code>/boot</code>, make sure to not rely on the <a href="https://wiki.archlinux.org/title/Fstab#Automount_with_systemd" title="Fstab">systemd automount mechanism</a> (including that of <a href="https://wiki.archlinux.org/title/Systemd#GPT_partition_automounting" title="Systemd">systemd-gpt-auto-generator</a>) during kernel upgrades. Always mount it manually prior to any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on the ESP.</p>
 <p>Alternatively <a href="https://wiki.archlinux.org/title/Kernel_module#systemd" title="Kernel module">preload the required kernel modules on boot</a>, e.g.:</p>
-<div class="language-text no-copy no-style highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/etc/modules-load.d/vfat.conf
-</span></code></pre></div>
+<pre class="lang-annotation no-copy no-style"><code>/etc/modules-load.d/vfat.conf</code></pre>
 <hr>
-<div class="language-text no-copy no-style highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>vfat
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>nls_cp437
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>nls_ascii
-</span></code></pre></div>
+<pre class="lang-annotation no-copy no-style"><code>vfat
+nls_cp437
+nls_ascii</code></pre>
 </div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260131-222654.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20260131-222654.png"></a></p>
 <h3 id="star-s62-mermaid-diagram"><u>Star S62</u> - Mermaid Diagram<a class="headerlink" href="#star-s62-mermaid-diagram" title="Permanent link">¶</a></h3>

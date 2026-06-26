@@ -1705,29 +1705,24 @@ An extremely fast Python package and project manager, written in Rust.
 <p>Install uv with our standalone installers:</p>
 <div class="admonition abstract">
 <p class="admonition-title">On macOS and Linux.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl -LsSf https://astral.sh/uv/install.sh | sh
-</span></code></pre></div>
+<pre class="lang-annotation"><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">On Windows.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code></pre>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title"> With pip.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip install uv
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pip install uv</code></pre>
 <ul>
 <li>or pipx</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pipx install uv
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pipx install uv</code></pre>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Standalone Installer</p>
 <p>If installed via the standalone installer, uv can update itself to the latest version:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>uv self update
-</span></code></pre></div>
+<pre class="lang-annotation"><code>uv self update</code></pre>
 <hr>
 <ul>
 <li>See the <a href="https://docs.astral.sh/uv/getting-started/installation/">installation documentation </a> for details and alternative installation methods.</li>
@@ -1749,29 +1744,28 @@ An extremely fast Python package and project manager, written in Rust.
 <ul>
 <li>uv manages project dependencies and environments, with support for lockfiles, workspaces, and more, similar to <code><b>rye</b></code><i> or </i><code><b>poetry</b></code></li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>uv<span class="w"> </span>init<span class="w"> </span>example
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Initialized<span class="w"> </span>project<span class="w"> </span><span class="sb">`</span>example<span class="sb">`</span><span class="w"> </span>at<span class="w"> </span><span class="sb">`</span>/home/user/example<span class="sb">`</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>example
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>$<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>ruff
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Creating<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>at:<span class="w"> </span>.venv
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Resolved<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span>170ms
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">   </span>Built<span class="w"> </span>example<span class="w"> </span>@<span class="w"> </span>file:///home/user/example
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Prepared<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span>627ms
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Installed<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span>1ms
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w"> </span>+<span class="w"> </span><span class="nv">example</span><span class="o">==</span><span class="m">0</span>.1.0<span class="w"> </span><span class="o">(</span>from<span class="w"> </span>file:///home/user/example<span class="o">)</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w"> </span>+<span class="w"> </span><span class="nv">ruff</span><span class="o">==</span><span class="m">0</span>.5.4
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>check
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>All<span class="w"> </span>checks<span class="w"> </span>passed!
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>$<span class="w"> </span>uv<span class="w"> </span>lock
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>Resolved<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.33ms
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>$<span class="w"> </span>uv<span class="w"> </span>sync
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>Resolved<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.70ms
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>Audited<span class="w"> </span><span class="m">1</span><span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.02ms
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv init example
+Initialized project `example` at `/home/user/example`
+
+$ cd example
+
+$ uv add ruff
+Creating virtual environment at: .venv
+Resolved 2 packages in 170ms
+   Built example @ file:///home/user/example
+Prepared 2 packages in 627ms
+Installed 2 packages in 1ms
+ + example==0.1.0 (from file:///home/user/example)
+ + ruff==0.5.4
+
+$ uv run ruff check
+All checks passed!
+
+$ uv lock
+Resolved 2 packages in 0.33ms
+$ uv sync
+Resolved 2 packages in 0.70ms
+Audited 1 package in 0.02ms</code></pre>
 </details>
 <hr>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">¶</a></h2>
@@ -1781,30 +1775,29 @@ An extremely fast Python package and project manager, written in Rust.
 <ul>
 <li>uv manages project dependencies and environments, with support for lockfiles, workspaces, and more, similar to <code><b>rye</b></code><i> or </i><code><b>poetry:</b></code></li>
 </ul>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>uv<span class="w"> </span>init<span class="w"> </span>example
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">Initialized project `example` at `/home/user/example`</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>example
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="gp">$ </span>uv<span class="w"> </span>add<span class="w"> </span>ruff
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="go">Creating virtual environment at: .venv</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="go">Resolved 2 packages in 170ms</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="go">   Built example @ file:///home/user/example</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="go">Prepared 2 packages in 627ms</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="go">Installed 2 packages in 1ms</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="go"> + example==0.1.0 (from file:///home/user/example)</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="go"> + ruff==0.5.0</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>check
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="go">All checks passed!</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="gp">$ </span>uv<span class="w"> </span>lock
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="go">Resolved 2 packages in 0.33ms</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="gp">$ </span>uv<span class="w"> </span>sync
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="go">Resolved 2 packages in 0.70ms</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="go">Audited 1 package in 0.02ms</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv init example
+Initialized project `example` at `/home/user/example`
+
+$ cd example
+
+$ uv add ruff
+Creating virtual environment at: .venv
+Resolved 2 packages in 170ms
+   Built example @ file:///home/user/example
+Prepared 2 packages in 627ms
+Installed 2 packages in 1ms
+ + example==0.1.0 (from file:///home/user/example)
+ + ruff==0.5.0
+
+$ uv run ruff check
+All checks passed!
+
+$ uv lock
+Resolved 2 packages in 0.33ms
+
+$ uv sync
+Resolved 2 packages in 0.70ms
+Audited 1 package in 0.02ms</code></pre>
 </details>
 <div class="admonition info">
 <ul>
@@ -1826,20 +1819,18 @@ An extremely fast Python package and project manager, written in Rust.
 <ul>
 <li>Create a new script and add inline metadata declaring its dependencies:</li>
 </ul>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'import requests; print(requests.get("https://astral.sh"))'</span><span class="w"> </span>&gt;<span class="w"> </span>example.py
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="gp">$ </span>uv<span class="w"> </span>add<span class="w"> </span>--script<span class="w"> </span>example.py<span class="w"> </span>requests
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">Updated `example.py`</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ echo 'import requests; print(requests.get("https://astral.sh"))' &gt; example.py
+
+$ uv add --script example.py requests
+Updated `example.py`</code></pre>
 <hr>
 <ul>
 <li>Then, run the script in an isolated virtual environment:</li>
 </ul>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>example.py
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">Reading inline script metadata from: example.py</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">Installed 5 packages in 12ms</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">&lt;Response [200]&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv run example.py
+Reading inline script metadata from: example.py
+Installed 5 packages in 12ms
+&lt;Response [200]&gt;</code></pre>
 <hr>
 <ul>
 <li>See the <a href="https://docs.astral.sh/uv/guides/scripts/">scripts documentation</a> to get started.</li>
@@ -1850,31 +1841,28 @@ An extremely fast Python package and project manager, written in Rust.
 <p class="admonition-title">uv similar to pipx</p>
 <p>uv executes and installs command-line tools provided by Python packages, similar to <code>pipx</code>.</p>
 <p>Run a tool in an ephemeral environment using <code>uvx</code> (an alias for <code>uv tool run</code>):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>uvx<span class="w"> </span>pycowsay<span class="w"> </span><span class="s1">'hello world!'</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Resolved<span class="w"> </span><span class="m">1</span><span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span>167ms
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Installed<span class="w"> </span><span class="m">1</span><span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span>9ms
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w"> </span>+<span class="w"> </span><span class="nv">pycowsay</span><span class="o">==</span><span class="m">0</span>.0.0.2
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>    ------------
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  &lt; What the hell! &gt;
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    ------------
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>      \   ^__^
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>       \  (oo)\_______
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>          (__)\       )\/\
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>           ||   ----w |
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>           ||        ||
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uvx pycowsay 'hello world!'
+Resolved 1 package in 167ms
+Installed 1 package in 9ms
+ + pycowsay==0.0.0.2</code></pre>
+<pre class="lang-annotation"><code>    ------------
+  &lt; What the hell! &gt;
+    ------------
+      \   ^__^
+       \  (oo)\_______
+          (__)\       )\/\
+           ||   ----w |
+           ||        ||</code></pre>
 <p>Install a tool with <code>uv tool install</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>ruff
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Resolved<span class="w"> </span><span class="m">1</span><span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span>6ms
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Installed<span class="w"> </span><span class="m">1</span><span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span>2ms
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w"> </span>+<span class="w"> </span><span class="nv">ruff</span><span class="o">==</span><span class="m">0</span>.5.0
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Installed<span class="w"> </span><span class="m">1</span><span class="w"> </span>executable:<span class="w"> </span>ruff
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>$<span class="w"> </span>ruff<span class="w"> </span>--version
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>ruff<span class="w"> </span><span class="m">0</span>.5.0
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv tool install ruff
+Resolved 1 package in 6ms
+Installed 1 package in 2ms
+ + ruff==0.5.0
+Installed 1 executable: ruff
+
+
+$ ruff --version
+ruff 0.5.0</code></pre>
 <p>See the <a href="https://docs.astral.sh/uv/guides/tools/">tools documentation</a> to get started.</p>
 </div>
 <h3 id="python-versions">Python versions<a class="headerlink" href="#python-versions" title="Permanent link">¶</a></h3>
@@ -1888,27 +1876,24 @@ An extremely fast Python package and project manager, written in Rust.
 <p>Install multiple Python versions:</p>
 </li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>uv<span class="w"> </span>python<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.10<span class="w"> </span><span class="m">3</span>.11<span class="w"> </span><span class="m">3</span>.12
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Searching<span class="w"> </span><span class="k">for</span><span class="w"> </span>Python<span class="w"> </span>versions<span class="w"> </span>matching:<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.10
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Searching<span class="w"> </span><span class="k">for</span><span class="w"> </span>Python<span class="w"> </span>versions<span class="w"> </span>matching:<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.11
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>Searching<span class="w"> </span><span class="k">for</span><span class="w"> </span>Python<span class="w"> </span>versions<span class="w"> </span>matching:<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.12
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Installed<span class="w"> </span><span class="m">3</span><span class="w"> </span>versions<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">3</span>.42s
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w"> </span>+<span class="w"> </span>cpython-3.10.14-macos-aarch64-none
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w"> </span>+<span class="w"> </span>cpython-3.11.9-macos-aarch64-none
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w"> </span>+<span class="w"> </span>cpython-3.12.4-macos-aarch64-none
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv python install 3.10 3.11 3.12
+Searching for Python versions matching: Python 3.10
+Searching for Python versions matching: Python 3.11
+Searching for Python versions matching: Python 3.12
+Installed 3 versions in 3.42s
+ + cpython-3.10.14-macos-aarch64-none
+ + cpython-3.11.9-macos-aarch64-none
+ + cpython-3.12.4-macos-aarch64-none</code></pre>
 <hr>
 <ul>
 <li>Download Python versions as needed:</li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.0
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Using<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.12.0
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Creating<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>at:<span class="w"> </span>.venv
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Activate<span class="w"> </span>with:<span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv venv --python 3.12.0
+Using Python 3.12.0
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate</code></pre>
 <hr>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ uv run --python pypy@3.8 -- python --version
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv run --python pypy@3.8 -- python --version</code></pre>
 <ul>
 <li>Python 3.8.16 (a9dbdca6fc3286b0addd2240f11d97d8e8de187a, Dec 29 2022, 11:45:30) [PyPy 7.3.11 with GCC Apple LLVM 13.1.6 (clang-1316.0.21.2.5)] on darwin Type "help", "copyright", "credits" or "license" for more information.</li>
 </ul>
@@ -1916,9 +1901,8 @@ An extremely fast Python package and project manager, written in Rust.
 <ul>
 <li>Use a specific Python version in the current directory:</li>
 </ul>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>uv<span class="w"> </span>python<span class="w"> </span>pin<span class="w"> </span><span class="m">3</span>.11
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Pinned<span class="w"> </span><span class="sb">`</span>.python-version<span class="sb">`</span><span class="w"> </span>to<span class="w"> </span><span class="sb">`</span><span class="m">3</span>.11<span class="sb">`</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv python pin 3.11
+Pinned `.python-version` to `3.11`</code></pre>
 <hr>
 <ul>
 <li>See the <a href="https://docs.astral.sh/uv/guides/install-python/">Python installation documentation</a> to get started.</li>
@@ -1941,31 +1925,28 @@ An extremely fast Python package and project manager, written in Rust.
 <ul>
 <li>Compile requirements into a platform-independent requirements file:</li>
 </ul>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="gp">$ </span>uv<span class="w"> </span>pip<span class="w"> </span>compile<span class="w"> </span>docs/requirements.in<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">   </span>--universal<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">   </span>--output-file<span class="w"> </span>docs/requirements.txt
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="go">Resolved 43 packages in 12ms</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv pip compile docs/requirements.in \
+   --universal \
+   --output-file docs/requirements.txt
+Resolved 43 packages in 12ms</code></pre>
 <hr>
 <ul>
 <li>Create a virtual environment:</li>
 </ul>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="gp">$ </span>uv<span class="w"> </span>venv
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="go">Using Python 3.12.3</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">Creating virtual environment at: .venv</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="go">Activate with: source .venv/bin/activate</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv venv
+Using Python 3.12.3
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate</code></pre>
 <hr>
 <ul>
 <li>Install the locked requirements:</li>
 </ul>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="gp">$ </span>uv<span class="w"> </span>pip<span class="w"> </span>sync<span class="w"> </span>docs/requirements.txt
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="go">Resolved 43 packages in 11ms</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="go">Installed 43 packages in 208ms</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="go">+ babel==2.15.0</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="go">+ black==24.4.2</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="go">+ certifi==2024.7.4</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv pip sync docs/requirements.txt
+Resolved 43 packages in 11ms
+Installed 43 packages in 208ms
++ babel==2.15.0
++ black==24.4.2
++ certifi==2024.7.4</code></pre>
 <hr>
 <p>See the <a href="https://docs.astral.sh/uv/pip/index/">pip interface documentation</a> to get started.</p>
 </div>
@@ -1977,11 +1958,10 @@ An extremely fast Python package and project manager, written in Rust.
 <div class="admonition tip">
 <p class="admonition-title">Scripts</p>
 <p>Create a new script and add inline metadata declaring its dependencies:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'import requests; print(requests.get("https://astral.sh"))'</span><span class="w"> </span>&gt;<span class="w"> </span>example.py
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>$<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>--script<span class="w"> </span>example.py<span class="w"> </span>requests
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>Updated<span class="w"> </span><span class="sb">`</span>example.py<span class="sb">`</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ echo 'import requests; print(requests.get("https://astral.sh"))' &gt; example.py
+
+$ uv add --script example.py requests
+Updated `example.py`</code></pre>
 </div>
 <h2 id="versioning-policy">Versioning Policy<a class="headerlink" href="#versioning-policy" title="Permanent link">¶</a></h2>
 <div class="admonition desc">
@@ -2041,44 +2021,35 @@ An extremely fast Python package and project manager, written in Rust.
 <div class="tabbed-set tabbed-alternate" data-tabs="1:8"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><input id="__tabbed_1_7" name="__tabbed_1" type="radio"><input id="__tabbed_1_8" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Debian/Ubuntu</label><label for="__tabbed_1_2">Fedora</label><label for="__tabbed_1_3">Arch Linux</label><label for="__tabbed_1_4">Gentoo</label><label for="__tabbed_1_5">macOS (Homebrew)</label><label for="__tabbed_1_6">FreeBSD</label><label for="__tabbed_1_7">Windows (Mercurial)</label><label for="__tabbed_1_8">Windows (TortoiseHg)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>apt<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>apt install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>dnf<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>dnf install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pacman -S mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>emerge<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>emerge mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>brew<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>brew install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Binary packages can be installed using <code>pkg</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>pkg<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pkg install mercurial</code></pre>
 <p>Alternatively, you can install from source via the ports collection:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/ports/devel/mercurial
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>make<span class="w"> </span>install
-</span></code></pre></div>
+<pre class="lang-annotation"><code>cd /usr/ports/devel/mercurial
+make install</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>winget<span class="w"> </span>install<span class="w"> </span>Mercurial.Mercurial<span class="w"> </span>-e
-</span></code></pre></div>
+<pre class="lang-annotation"><code>winget install Mercurial.Mercurial -e</code></pre>
 <p>Or download from the list of <a href="https://www.mercurial-scm.org">binary releases</a>.</p>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>winget<span class="w"> </span>install<span class="w"> </span>TortoiseHg.TortoiseHg<span class="w"> </span>-e
-</span></code></pre></div>
+<pre class="lang-annotation"><code>winget install TortoiseHg.TortoiseHg -e</code></pre>
 <p>Or download from the list of <a href="https://mercurial-book.readthedocs.io/en/latest/working-together/collab.html?highlight=windows+tortoisehg">binary releases</a>.</p>
 </div>
 </div>
@@ -2093,12 +2064,10 @@ An extremely fast Python package and project manager, written in Rust.
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Debian/Ubuntu</label><label for="__tabbed_2_2">Fedora</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>$ apt install git
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ apt install git</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>$ dnf install git
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ dnf install git</code></pre>
 </div>
 </div>
 </div>
@@ -2112,12 +2081,10 @@ An extremely fast Python package and project manager, written in Rust.
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">macOS and Linux</label><label for="__tabbed_3_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>$<span class="w"> </span>curl<span class="w"> </span>-LsSf<span class="w"> </span>astral.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ curl -LsSf astral.sh | sh</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">PS</span><span class="p">&gt;</span> <span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">"irm astral.sh | iex"</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>PS&gt; powershell -ExecutionPolicy ByPass -c "irm astral.sh | iex"</code></pre>
 </div>
 </div>
 </div>

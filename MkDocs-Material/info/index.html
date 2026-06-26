@@ -1179,9 +1179,8 @@
 <div class="admonition info">
 <p class="admonition-title">Configuration</p>
 <p>In order to get started with the built-in info plugin, just add the following lines to <code>mkdocs.yml</code>, and quickly <a href="../creating-a-reproduction/">create a minimal reproduction</a> to share with us, the maintainers:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - info</code></pre>
 <p>The info plugin is built into Material for MkDocs and doesn't need to be installed.</p>
 </div>
 <h5 id="general">General<a class="headerlink" href="#general" title="Permanent link">¶</a></h5>
@@ -1192,9 +1191,8 @@
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.enabled</p>
 <h4 id="configenabled"><code>config.enabled</code><a class="headerlink" href="#configenabled" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.0.0 --&gt;
+&lt;!-- md:default `true` --&gt;</code></pre>
 </div>
 <h5 id="available-settings">Available Settings<a class="headerlink" href="#available-settings" title="Permanent link">¶</a></h5>
 <hr>
@@ -1208,17 +1206,15 @@
 <p>It's normally not necessary to specify this setting, but if you want to disable the plugin, use:</p>
 </li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - info:
+      enabled: false</code></pre>
 </div>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.enabled_on_serve</p>
 <h4 id="enabled_on_serve"><code>enabled_on_serve</code><a class="headerlink" href="#enabled_on_serve" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.6<span class="w"> </span>--&gt;
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">false</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.0.6 --&gt;
+&lt;!-- md:default `false` --&gt;</code></pre>
 </div>
 <h5 id="previewing-your-site">Previewing your Site<a class="headerlink" href="#previewing-your-site" title="Permanent link">¶</a></h5>
 <hr>
@@ -1227,10 +1223,9 @@
 <ul>
 <li>Use this setting to control whether the plugin should be enabled when <a href="../creating-your-site/#previewing-as-you-write">previewing your site</a>. It's normally not necessary to specify this setting, but if you want to change this behavior, use:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="nt">enabled_on_serve</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - info:
+      enabled_on_serve: true</code></pre>
 <ul>
 <li>This setting streamlines the process of creating and inspecting minimal reproductions, as it allows to quickly iterate on the reproduction without having to disable the plugin first.</li>
 </ul>
@@ -1239,37 +1234,33 @@
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.archive</p>
 <h4 id="configarchive"><code>config.archive</code><a class="headerlink" href="#configarchive" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.0.0 --&gt;
+&lt;!-- md:default `true` --&gt;</code></pre>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">Creating a Zip File</p>
 <ul>
 <li>Use this setting to control whether the plugin should create a <code>.zip</code> file from the project or exit after the version check. This setting is solely intended for debugging the plugin itself:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="nt">archive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - info:
+      archive: false</code></pre>
 </div>
 <hr>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.archive_stop_on_violation</p>
 <h4 id="stop_on_violation"><code>stop_on_violation</code><a class="headerlink" href="#stop_on_violation" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.0.0 --&gt;
+&lt;!-- md:default `true` --&gt;</code></pre>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Stop Plugin Creating File</p>
 <ul>
 <li>Use this setting to control whether the plugin should stop creating the <code>.zip</code> file when one of the <a href="#how-it-works">requirements</a> is not satisfied. This setting must only be used when <a href="../reporting-a-bug/">reporting a bug</a> that is related to a customization <a href="?q=%22extends+base%22">explicitly mentioned in our documentation</a>. You can change it with:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="nt">archive_stop_on_violation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - info:
+      archive_stop_on_violation: false</code></pre>
 <ul>
 <li>If you're using this setting when <a href="../reporting-a-bug/">reporting a bug</a>, please explain why you think it is necessary to include customizations. If you're unsure, please ask us first by <a href="https://github.com/squidfunk/mkdocs-material/discussions">creating a discussion</a>.</li>
 </ul>

@@ -1419,8 +1419,7 @@
 <hr>
 <h3 id="step-1-install-mpd-ncmpcpp-and-mpc">Step 1: Install MPD, ncmpcpp, and mpc<a class="headerlink" href="#step-1-install-mpd-ncmpcpp-and-mpc" title="Permanent link">¶</a></h3>
 <p>First, let's install the necessary packages. These are available in the official Arch Linux repositories.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>mpd<span class="w"> </span>ncmpcpp<span class="w"> </span>mpc
-</span></code></pre></div>
+<pre class="lang-annotation"><code>sudo pacman -S mpd ncmpcpp mpc</code></pre>
 <p><strong>Video Resource:</strong><br>
 For a general installation overview on Arch-based systems, you might find this helpful:</p>
 <ul>
@@ -1431,77 +1430,63 @@ For a general installation overview on Arch-based systems, you might find this h
 <p>MPD needs to be configured to know where your music is, where to store its database, and how to output audio. It's generally recommended to run MPD as a user service.</p>
 <p>1:  <strong>Create MPD configuration directory and files:</strong><br>
     It's good practice to keep MPD's configuration and related files in <code>~/.config/mpd/</code>.</p>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdir -p ~/.config/mpd/playlists
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mkdir -p ~/.local/state/mpd  # Recommended for state_file
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>touch ~/.config/mpd/database
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>touch ~/.config/mpd/log
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>touch ~/.config/mpd/pid
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>touch ~/.config/mpd/state
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>touch ~/.config/mpd/sticker.sql
-</span></code></pre></div><br>
+<p></p><pre class="lang-annotation"><code>mkdir -p ~/.config/mpd/playlists
+mkdir -p ~/.local/state/mpd  # Recommended for state_file
+touch ~/.config/mpd/database
+touch ~/.config/mpd/log
+touch ~/.config/mpd/pid
+touch ~/.config/mpd/state
+touch ~/.config/mpd/sticker.sql</code></pre><br>
 2:  <strong>Copy the example configuration file:</strong><br>
     MPD provides a good starting point for its configuration.<p></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
-</span></code></pre></div>
+<pre class="lang-annotation"><code>cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf</code></pre>
 <p>3:  <strong>Edit <code>mpd.conf</code>:</strong><br>
     Open the copied configuration file with your favorite text editor (e.g., <code>nano</code>, <code>vim</code>):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nano ~/.config/mpd/mpd.conf
-</span></code></pre></div>
+<pre class="lang-annotation"><code>nano ~/.config/mpd/mpd.conf</code></pre>
 <p>You'll need to modify or uncomment the following lines. Make sure to adjust paths to match your system.</p>
 <ul>
 <li><strong><code>music_directory</code></strong>: This is crucial. Point it to where your music files are.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>music_directory "~/Music"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>music_directory "~/Music"</code></pre>
 <p><em>Self-Correction:</em> If your music is on an external drive or in multiple locations, you can use symbolic links within your <code>music_directory</code> and ensure <code>follow_outside_symlinks</code> is set to <code>yes</code>.</p>
 <ul>
 <li><strong><code>playlist_directory</code></strong>: Where MPD will save your playlists.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>playlist_directory "~/.config/mpd/playlists"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>playlist_directory "~/.config/mpd/playlists"</code></pre>
 <ul>
 <li><strong><code>db_file</code></strong>: Path to the music database file.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>db_file "~/.config/mpd/database"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>db_file "~/.config/mpd/database"</code></pre>
 <ul>
 <li><strong><code>log_file</code></strong>: Path to MPD's log file.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>log_file "~/.config/mpd/log"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>log_file "~/.config/mpd/log"</code></pre>
 <ul>
 <li><strong><code>pid_file</code></strong>: Path to the process ID file.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pid_file "~/.config/mpd/pid"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pid_file "~/.config/mpd/pid"</code></pre>
 <ul>
 <li><strong><code>state_file</code></strong>: Path to the file where MPD saves its state (e.g., current playlist, playback position).</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>state_file "~/.local/state/mpd/state"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>state_file "~/.local/state/mpd/state"</code></pre>
 <ul>
 <li><strong><code>sticker_file</code></strong>: Path to the sticker database.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sticker_file "~/.config/mpd/sticker.sql"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>sticker_file "~/.config/mpd/sticker.sql"</code></pre>
 <ul>
 <li><strong><code>bind_to_address</code></strong>: Unless you want MPD to be accessible from other machines on your network, keep it local.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>bind_to_address "localhost"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>bind_to_address "localhost"</code></pre>
 <p>or</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>bind_to_address "127.0.0.1"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>bind_to_address "127.0.0.1"</code></pre>
 <ul>
 <li><strong><code>port</code></strong>: The default is <code>6600</code>. You usually don't need to change this.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>port "6600"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>port "6600"</code></pre>
 <ul>
 <li><strong><code>auto_update</code></strong>: This is very useful. MPD will automatically update its database when changes are detected in your <code>music_directory</code>.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>auto_update "yes"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>auto_update "yes"</code></pre>
 <ul>
 <li>
 <p><strong><code>audio_output</code></strong>: This is where you configure how MPD outputs sound.</p>
@@ -1510,30 +1495,27 @@ For a general installation overview on Arch-based systems, you might find this h
 </ul>
 </li>
 </ul>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>            audio_output {
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>                type "pulse"
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>                name "My Pulse Audio"
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>            }
-</span></code></pre></div><br>
+<p></p><pre class="lang-annotation"><code>            audio_output {
+                type "pulse"
+                name "My Pulse Audio"
+            }</code></pre><br>
 If you are using PulseAudio (which is common on modern Linux desktops), this is the simplest way.<p></p>
 <ul>
 <li>
 <p><strong>ALSA (Alternative):</strong><br>
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>audio_output {
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   type "alsa"
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>   name "My ALSA Output"
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>   # device "hw:0,0" # Uncomment and adjust if you have issues with default ALSA device
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>   # mixer_type "software" # Optional: Can help with volume control issues
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>            }
-</span></code></pre></div><br>
+</p><pre class="lang-annotation"><code>audio_output {
+   type "alsa"
+   name "My ALSA Output"
+   # device "hw:0,0" # Uncomment and adjust if you have issues with default ALSA device
+   # mixer_type "software" # Optional: Can help with volume control issues
+            }</code></pre><br>
 If you prefer ALSA directly, use this block.<p></p>
 </li>
 <li>
 <p><strong><code>restore_paused</code></strong>: If you want MPD to resume playback where you left off.</p>
 </li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>restore_paused "yes"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>restore_paused "yes"</code></pre>
 <p>Save and close the <code>mpd.conf</code> file.</p>
 <p><strong>Video Resource:</strong></p>
 <ul>
@@ -1560,29 +1542,24 @@ You won't see much output until it's done.</p>
 <h3 id="step-3-configure-ncmpcpp">Step 3: Configure ncmpcpp<a class="headerlink" href="#step-3-configure-ncmpcpp" title="Permanent link">¶</a></h3>
 <p><code>ncmpcpp</code> is the client you'll interact with most often. It has a rich set of features and is highly customizable.</p>
 <p>1:  <strong>Create ncmpcpp configuration directory and copy example config:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>mkdir -p ~/.config/ncmpcpp
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>cp /usr/share/doc/ncmpcpp/config ~/.config/ncmpcpp/config
-</span></code></pre></div>
+<pre class="lang-annotation"><code>mkdir -p ~/.config/ncmpcpp
+cp /usr/share/doc/ncmpcpp/config ~/.config/ncmpcpp/config</code></pre>
 <p>2:  <strong>Edit <code>ncmpcpp/config</code>:</strong><br>
     Open the configuration file:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>nano ~/.config/ncmpcpp/config
-</span></code></pre></div>
+<pre class="lang-annotation"><code>nano ~/.config/ncmpcpp/config</code></pre>
 <p>At a minimum, ensure these lines match your MPD setup:</p>
 <ul>
 <li><strong><code>mpd_host</code></strong>: Should match your <code>mpd.conf</code>.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>mpd_host = "localhost"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>mpd_host = "localhost"</code></pre>
 <ul>
 <li><strong><code>mpd_port</code></strong>: Should match your <code>mpd.conf</code>.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>mpd_port = "6600"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>mpd_port = "6600"</code></pre>
 <ul>
 <li><strong><code>mpd_music_dir</code></strong>: This path is important for ncmpcpp to correctly display file paths and enable features like the tag editor. It <em>must</em> match the <code>music_directory</code> you set in <code>mpd.conf</code>.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>mpd_music_dir = "~/Music"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>mpd_music_dir = "~/Music"</code></pre>
 <p><strong>Optional (but highly recommended) ncmpcpp customizations:</strong></p>
 <ul>
 <li>
@@ -1592,23 +1569,20 @@ You won't see much output until it's done.</p>
 </ul>
 </li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>            audio_output {
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>                type "fifo"
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>                name "my_fifo"
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>                path "/tmp/mpd.fifo"
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>                format "44100:16:2"
-</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>            }
-</span></code></pre></div>
+<pre class="lang-annotation"><code>            audio_output {
+                type "fifo"
+                name "my_fifo"
+                path "/tmp/mpd.fifo"
+                format "44100:16:2"
+            }</code></pre>
 <h5 id="save-and-restart-mpd">Save and restart MPD:<a class="headerlink" href="#save-and-restart-mpd" title="Permanent link">¶</a></h5>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>systemctl --user restart mpd.service
-</span></code></pre></div><br>
+<p></p><pre class="lang-annotation"><code>systemctl --user restart mpd.service</code></pre><br>
 Then, edit <code>~/.config/ncmpcpp/config</code>:<p></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>visualizer_data_source = "/tmp/mpd.fifo"
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>visualizer_output_name = "my_fifo"
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>visualizer_in_stereo = "yes"
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>visualizer_type = "spectrum" # Or "wave", "ellipse", "wave_filled"
-</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>visualizer_look = "+|" # Customize how the visualizer bars look
-</span></code></pre></div>
+<pre class="lang-annotation"><code>visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum" # Or "wave", "ellipse", "wave_filled"
+visualizer_look = "+|" # Customize how the visualizer bars look</code></pre>
 <ul>
 <li>
 <p><strong>Layout and Colors:</strong> <code>ncmpcpp</code> is extremely customizable.<br><br>
@@ -1637,8 +1611,7 @@ Save and close the <code>ncmpcpp/config</code> file.</li>
 <li>
 <p><strong>Start ncmpcpp:</strong><br>
     Simply type <code>ncmpcpp</code> in your terminal:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ncmpcpp
-</span></code></pre></div>
+<pre class="lang-annotation"><code>ncmpcpp</code></pre>
 <ul>
 <li><strong>Initial Database Scan:</strong> If you just updated the MPD database, <code>ncmpcpp</code> might show a progress bar at the bottom indicating the database update. Once it's done, you should see your music library.<br><br>
   <br></li>
@@ -1664,26 +1637,19 @@ Save and close the <code>ncmpcpp/config</code> file.</li>
 <code>mpc</code> is a command-line tool for quick control over MPD.</p>
 <ul>
 <li><strong>Play/Pause:</strong><br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>mpc toggle
-</span></code></pre></div></li>
+    <pre class="lang-annotation"><code>mpc toggle</code></pre></li>
 <li><strong>Next song:</strong><br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mpc next
-</span></code></pre></div></li>
+    <pre class="lang-annotation"><code>mpc next</code></pre></li>
 <li><strong>Previous song:</strong><br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>mpc prev
-</span></code></pre></div></li>
+    <pre class="lang-annotation"><code>mpc prev</code></pre></li>
 <li><strong>Set volume:</strong><br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>mpc volume 70 # Sets volume to 70%
-</span></code></pre></div></li>
+    <pre class="lang-annotation"><code>mpc volume 70 # Sets volume to 70%</code></pre></li>
 <li><strong>Show current song:</strong><br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>mpc current
-</span></code></pre></div></li>
+    <pre class="lang-annotation"><code>mpc current</code></pre></li>
 <li><strong>Update database:</strong><br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>mpc update
-</span></code></pre></div></li>
+    <pre class="lang-annotation"><code>mpc update</code></pre></li>
 <li><strong>List all commands:</strong><br>
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>mpc help
-</span></code></pre></div></li>
+    <pre class="lang-annotation"><code>mpc help</code></pre></li>
 </ul>
 <hr>
 <p><strong>Video Resource:</strong></p>

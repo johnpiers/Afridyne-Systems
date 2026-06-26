@@ -1032,8 +1032,7 @@
 <div class="admonition pied-piper">
 <p class="admonition-title">Dependencies</p>
 <p>The libraries for image processing are entirely optional, and only need to be installed if you want to use the <a href="../social/">social</a> plugin or the <a href="../optimize/">optimize</a> plugin. The libraries are listed under the <code>imaging</code> extra:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install "mkdocs-material[imaging]"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pip install "mkdocs-material[imaging]"</code></pre>
 <p>This will install compatible versions of the following packages:</p>
 <ul>
 <li><a href="https://pillow.readthedocs.io/">Pillow</a> </li>
@@ -1048,13 +1047,11 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Make sure <a href="https://brew.sh/">Homebrew</a> is installed, which is a modern package manager for macOS. Next, use the following command to install all necessary dependencies:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>brew install cairo freetype libffi libjpeg libpng zlib
-</span></code></pre></div>
+<pre class="lang-annotation"><code>brew install cairo freetype libffi libjpeg libpng zlib</code></pre>
 </div>
 <div class="tabbed-block">
 <p>The easiest way to get up and running with the <a href="https://www.cairographics.org/">Cairo Graphics</a> library is by installing it via <a href="https://www.msys2.org/">MSYS2</a>, which is a software distribution and building platform for Windows. Run the following command inside of a MSYS2 shell:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pacman -S mingw-w64-ucrt-x86_64-cairo
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pacman -S mingw-w64-ucrt-x86_64-cairo</code></pre>
 <p>MSYS2 provides the Cairo Graphics library in several different environments. The above command uses the <a href="https://www.msys2.org/docs/environments/">UCRT64</a> environment, as recommended by the MSYS2 developers.</p>
 </div>
 <div class="tabbed-block">
@@ -1062,16 +1059,13 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-7.66-4.26c.58.33 1.31.13 1.66-.44.31-.57.12-1.3-.46-1.64-.57-.33-1.31-.16-1.64.44-.33.57-.13 1.31.44 1.64m-2.46 7.76c-.53 0-1.03-.11-1.47-.32l-.84 1.5c.7.32 1.48.54 2.31.54.49 0 .95-.07 1.4-.19.08-.49.36-.93.82-1.19.46-.27.98-.29 1.44-.12.89-.87 1.46-2.06 1.55-3.39l-1.71-.02a3.506 3.506 0 0 1-3.5 3.19m0-7c1.84 0 3.34 1.39 3.5 3.19l1.71-.03a5.2 5.2 0 0 0-1.55-3.38c-.46.17-.99.14-1.44-.12-.46-.26-.74-.71-.82-1.19-.45-.12-.91-.19-1.4-.19-.83 0-1.61.19-2.31.54l.84 1.5c.44-.21.94-.32 1.47-.32M8.37 12c0-1.19.59-2.24 1.49-2.87L9 7.65a5.22 5.22 0 0 0-2.17 3.04c.38.31.62.78.62 1.31s-.24 1-.62 1.31A5.2 5.2 0 0 0 9 16.34l.86-1.47c-.9-.63-1.49-1.68-1.49-2.87m5.97 4.26c-.57.33-.77 1.06-.44 1.64.33.57 1.07.77 1.64.44.58-.34.77-1.07.46-1.64-.35-.58-1.08-.77-1.66-.44M5.76 10.8c-.66 0-1.2.54-1.2 1.2s.54 1.2 1.2 1.2c.67 0 1.2-.54 1.2-1.2s-.53-1.2-1.2-1.2"></path></svg></span> Ubuntu</label><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.47 2 12v7.73C2 21 3 22 4.27 22H12c5.53 0 10-4.5 10-10S17.5 2 12 2m2.03 4.12c1.68 0 3.26 1.28 3.26 3.06 0 .16 0 .32-.02.51-.05.47-.48.81-.95.75a.836.836 0 0 1-.7-.98c0-.06.01-.14.01-.28 0-1.01-.82-1.4-1.6-1.4s-1.48.66-1.48 1.4c.01.85 0 1.7 0 2.56l1.45-.02c1.12-.02 1.13 1.68 0 1.67l-1.45.01-.01 2.39c-.18 1.88-1.77 3.37-3.69 3.37-2.03 0-3.71-1.66-3.71-3.7A3.8 3.8 0 0 1 9 11.74l1.15-.01v1.67L9 13.41h-.03c-1.16.03-2.15.82-2.16 2.06 0 1.12.91 2.03 2.04 2.03 1.15 0 2.03-.83 2.03-2.03.02-2.01-.01-4.22 0-6.3 0-.12.01-.21.02-.34.19-1.54 1.57-2.71 3.13-2.71"></path></svg></span> Fedora</label><label for="__tabbed_2_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M604.5 210a10.4 10.4 0 1 1-11.4-17.4 10.4 10.4 0 1 1 11.4 17.4m16.5-22.8a38.5 38.5 0 1 1-75 17.6 38.5 38.5 0 1 1 75-17.6M433.7 336.7c3.2 4.6 5.8 9 7.3 13.4 1 3.1 2.4 7.3 5.5 8.9.2.1.3.2.5.2 5.7 2.1 20.3 1.7 20.3 1.7h26.8c2.3 0 22.4 0 21.9-2.3-2.4-10.8-14.9-12.7-24.4-18.3-8.7-5.2-17-11.1-20.8-21.3-2-5.2-.8-17.4 2.6-21.8 2.5-3.2 6.1-5.3 10-6.2 4.3-.9 8.8-.1 13.1.3 5.3.5 10.6 1.5 15.9 2.2 10.3 1.3 20.6 1.9 31 1.6 17.1-.5 34.2-3.2 50.4-8.7 11.3-3.8 22.4-8.9 32-16.1 10.9-8.1 8.1-7.4-3-6.2-13.3 1.4-26.6 1.6-39.9.8-12.4-.7-24.7-2.2-35.9-7.9-8.8-4.6-16.4-9.1-23.4-16.2-1-1.1-1.7-4.2.2-6.2 1.9-1.9 5.8-.8 7 .2 12.2 10.2 30.5 18.6 49.3 19.5 10.2.5 20.1.7 30.4.3 5.1-.2 12.8-.2 17.9-.3 2.6 0 9.8.7 11.2-2.1.4-.8.4-1.8.3-2.7-1.5-40.9-4.5-86.9-47.3-106.5-31.9-14.6-79.7-37.2-99.9-46.6-4.7-2.2-10.2 1.3-10.2 6.5 0 13.6.7 33.3.7 51.1-9.7-9.9-26-16.1-38.4-21.8-14.1-6.5-28.7-12-43.5-16.6-29.8-9.2-60.7-14.9-91.7-18-35.2-3.5-71-1.8-105.7 5.3-56.9 12.2-113.1 39.7-155.7 79.8-26.1 24.6-46.6 59.7-48 95.2-2 50.3 12.1 77.3 38 105.2 41.3 44.4 130.2 50.6 166.2-2 16.2-23.7 19.7-55.8 8-82-11.8-26.2-38.8-45.1-67.4-46-22.2-.7-45.9 10.6-54.5 31.1-6.5 15.7-2.8 35.1 9 47.3 4.6 4.8 10.9 8.7 17.7 7.1 4-.9 7.4-3.9 8-8 .9-6-4.4-9.9-7.6-14.5-5.8-8.3-4.7-20.9 2.7-27.9 6.2-6 15.3-7.8 23.9-7.7 8 0 16.2 1.4 23.1 5.5 9.7 5.7 16.2 16.2 18.4 27.2 6.7 33-20.2 59.9-56.6 62-18.6 1.1-37.6-3.8-52.1-15.5-36.9-29.8-45.9-90.3-3.8-122.7 40-30.7 90.4-22.8 120.2-6.8 23.8 12.8 41.5 33.6 55 56.7 6.7 11.6 12.5 23.7 17.8 36.1 5.1 11.8 9.9 23.8 20.2 32.5 6.8 5.8 15.2 5.6 24.1 5.6h50.8c6.9 0 5.2-4.6 2.2-7.7-6.7-6.9-16.4-8.4-25.4-10.9-20.5-5.6-18.4-32.8-12.7-32.8 18.3 0 18.9.6 34.9.3 23.2-.3 30.2-1.7 48.3 5 9.7 3.6 19 13.1 25.1 21.7"></path></svg></span> openSUSE</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
-</span></code></pre></div>
+<pre class="lang-annotation"><code>apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>yum install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel
-</span></code></pre></div>
+<pre class="lang-annotation"><code>yum install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>zypper install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel
-</span></code></pre></div>
+<pre class="lang-annotation"><code>zypper install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel</code></pre>
 </div>
 </div>
 </div>
@@ -1093,22 +1087,19 @@ explains how to install <a href="https://pngquant.org/">pngquant</a> system:</p>
 <p>Make sure <a href="https://brew.sh/">Homebrew</a> is installed, which is a modern package manager for<br>
 macOS. Next, use the following command to install all necessary<br>
 dependencies:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>brew install pngquant
-</span></code></pre></div>
+<pre class="lang-annotation"><code>brew install pngquant</code></pre>
 </div>
 <div class="tabbed-block">
 <p>The easiest way to get <a href="https://pngquant.org/">pngquant</a> is by installing it via <a href="https://www.msys2.org/">MSYS2</a>, which is<br>
 a software distribution and building platform for Windows. Run the following<br>
 command inside of a MSYS2 shell:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pacman -S mingw-w64-ucrt-x86_64-pngquant
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pacman -S mingw-w64-ucrt-x86_64-pngquant</code></pre>
 </div>
 <div class="tabbed-block">
 <p>All popular Linux distributions, regardless of package manager, should<br>
 allow to install <a href="https://pngquant.org/">pngquant</a> with the bundled package manager. For example,<br>
 on Ubuntu, <a href="https://pngquant.org/">pngquant</a> can be installed with:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>apt-get install pngquant
-</span></code></pre></div>
+<pre class="lang-annotation"><code>apt-get install pngquant</code></pre>
 <p>The same is true for <code>yum</code> and <code>zypper</code>.</p>
 </div>
 </div>
@@ -1121,13 +1112,12 @@ on Ubuntu, <a href="https://pngquant.org/">pngquant</a> can be installed with:</
 <h3 id="cairo-library-was-not-found">Cairo library was not found<a class="headerlink" href="#cairo-library-was-not-found" title="Permanent link">¶</a></h3>
 <p>After following the installation guide above it may happen that you still get<br>
 the following error:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>no<span class="w"> </span>library<span class="w"> </span>called<span class="w"> </span><span class="s2">"cairo-2"</span><span class="w"> </span>was<span class="w"> </span>found
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>no<span class="w"> </span>library<span class="w"> </span>called<span class="w"> </span><span class="s2">"cairo"</span><span class="w"> </span>was<span class="w"> </span>found
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>no<span class="w"> </span>library<span class="w"> </span>called<span class="w"> </span><span class="s2">"libcairo-2"</span><span class="w"> </span>was<span class="w"> </span>found
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>cannot<span class="w"> </span>load<span class="w"> </span>library<span class="w"> </span><span class="s1">'libcairo.so.2'</span>:<span class="w"> </span>error<span class="w"> </span>0x7e.<span class="w">  </span>Additionally,<span class="w"> </span>ctypes.util.find_library<span class="o">()</span><span class="w"> </span>did<span class="w"> </span>not<span class="w"> </span>manage<span class="w"> </span>to<span class="w"> </span>locate<span class="w"> </span>a<span class="w"> </span>library<span class="w"> </span>called<span class="w"> </span><span class="s1">'libcairo.so.2'</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>cannot<span class="w"> </span>load<span class="w"> </span>library<span class="w"> </span><span class="s1">'libcairo.2.dylib'</span>:<span class="w"> </span>error<span class="w"> </span>0x7e.<span class="w">  </span>Additionally,<span class="w"> </span>ctypes.util.find_library<span class="o">()</span><span class="w"> </span>did<span class="w"> </span>not<span class="w"> </span>manage<span class="w"> </span>to<span class="w"> </span>locate<span class="w"> </span>a<span class="w"> </span>library<span class="w"> </span>called<span class="w"> </span><span class="s1">'libcairo.2.dylib'</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>cannot<span class="w"> </span>load<span class="w"> </span>library<span class="w"> </span><span class="s1">'libcairo-2.dll'</span>:<span class="w"> </span>error<span class="w"> </span>0x7e.<span class="w">  </span>Additionally,<span class="w"> </span>ctypes.util.find_library<span class="o">()</span><span class="w"> </span>did<span class="w"> </span>not<span class="w"> </span>manage<span class="w"> </span>to<span class="w"> </span>locate<span class="w"> </span>a<span class="w"> </span>library<span class="w"> </span>called<span class="w"> </span><span class="s1">'libcairo-2.dll'</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>no library called "cairo-2" was found
+no library called "cairo" was found
+no library called "libcairo-2" was found
+cannot load library 'libcairo.so.2': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo.so.2'
+cannot load library 'libcairo.2.dylib': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo.2.dylib'
+cannot load library 'libcairo-2.dll': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo-2.dll'</code></pre>
 <p>This means that the <a href="https://pypi.org/project/CairoSVG"><code>cairosvg</code></a> package was installed, but the<br>
 underlying <a href="https://pypi.org/project/CairoCFFI"><code>cairocffi</code></a> dependency couldn't <a href="https://github.com/Kozea/cairocffi/blob/f1984d644bbc462ef0ec33b97782cf05733d7b53/cairocffi/__init__.py#L24-L49">find</a><br>
 the installed library. Depending on the operating system the library lookup<br>
@@ -1149,11 +1139,10 @@ library directory, but if that didn't happen, you can use the debug script<br>
 below to see what paths are looked up.</p>
 <p>A <a href="https://github.com/squidfunk/mkdocs-material/issues/5121">known workaround</a> is to add the Homebrew lib path directly<br>
 before running MkDocs:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DYLD_FALLBACK_LIBRARY_PATH</span><span class="o">=</span>/opt/homebrew/lib
-</span></code></pre></div>
+<pre class="lang-annotation"><code>export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib</code></pre>
 <p>View source code of <a href="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-macos.py">cairo-lookup-macos.py</a></p>
-<div class="language-bash highlight"><span class="filename">Python Debug macOS Script</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl<span class="w"> </span><span class="s2">"https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-macos.py"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>python<span class="w"> </span>-
-</span></code></pre></div>
+<p><code>bash title="Python Debug macOS Script"
+curl "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-macos.py" | python -</code></p>
 </div>
 <div class="tabbed-block">
 <p>On Windows the library lookup checks inside the paths defined in the<br>
@@ -1161,8 +1150,7 @@ environmental <code>PATH</code> variable. Additionally each library <code>name</
 in <a href="https://github.com/python/cpython/blob/4d58a1d8fb27048c11bcbda3da1bebf78f979335/Lib/ctypes/util.py#L59-L67">two variants</a> with the <code>name</code> and <code>name.dll</code> format.</p>
 <p>The default binary and shared library path for the <a href="https://www.msys2.org/docs/environments/">UCRT64</a> environment of<br>
 <a href="https://www.msys2.org/">MSYS2</a>, in which the packages were installed using the above commands, is:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">C</span><span class="p">:\</span><span class="n">msys64</span><span class="p">\</span><span class="n">ucrt64</span><span class="p">\</span><span class="n">bin</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>C:\msys64\ucrt64\bin</code></pre>
 <p>Use the debug script below to check if the path is included. If it isn't then:</p>
 <ol>
 <li>Press <span class="keys"><kbd class="key-windows">Win</kbd><span> ＋ </span><kbd class="key-r">R</kbd></span>.</li>
@@ -1172,11 +1160,13 @@ in <a href="https://github.com/python/cpython/blob/4d58a1d8fb27048c11bcbda3da1be
 <li>Click OK on all open windows to apply changes.</li>
 <li>Fully restart any open Terminal windows and their parent hosts like IDEs.</li>
 </ol>
-<div class="language-powershell highlight"><span class="filename">You can also list paths using PowerShell</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">$env:Path</span> <span class="n">-split</span> <span class="s1">';'</span>
-</span></code></pre></div>
-<p>View source code of <a href="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-windows.py">cairo-lookup-windows.py</a></p>
-<div class="language-powershell highlight"><span class="filename">PowerShell - Python Debug Windows Script</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="nb">Invoke-WebRequest</span> <span class="s2">"https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-windows.py"</span><span class="p">).</span><span class="n">Content</span> <span class="p">|</span> <span class="n">python</span> <span class="p">-</span>
-</span></code></pre></div>
+<p>```powershell title="You can also list paths using PowerShell"<br>
+$env:Path -split ';'<br>
+</p><pre class="lang-annotation"><code>
+View source code of [cairo-lookup-windows.py]
+
+```powershell title="PowerShell - Python Debug Windows Script"
+(Invoke-WebRequest "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-windows.py").Content | python -</code></pre><p></p>
 </div>
 <div class="tabbed-block">
 <p>On Linux the library lookup can <a href="https://github.com/python/cpython/blob/4d58a1d8fb27048c11bcbda3da1bebf78f979335/Lib/ctypes/util.py#L92">differ greatly</a> and is<br>
@@ -1187,15 +1177,14 @@ in <a href="https://manpages.ubuntu.com/manpages/xenial/man1/ld.1.html"><code>ld
 <p>You can extend the <code>LD_LIBRARY_PATH</code> environmental variable with an absolute<br>
 path to a library directory containing <code>libcairo.so</code> etc. Run this directly<br>
 before MkDocs:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/absolute/path/to/lib:<span class="nv">$LD_LIBRARY_PATH</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>export LD_LIBRARY_PATH=/absolute/path/to/lib:$LD_LIBRARY_PATH</code></pre>
 <p>You can also modify the <code>/etc/ld.so.conf</code> file.</p>
 <p>The Python script below shows, which function is being run to find installed<br>
 libraries. You can check the source to find out what specific commands are<br>
 executed on your system during library lookup.</p>
 <p>View source code of <a href="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-linux.py">cairo-lookup-linux.py</a></p>
-<div class="language-bash highlight"><span class="filename">Python Debug Linux Script</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>curl<span class="w"> </span><span class="s2">"https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-linux.py"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>python<span class="w"> </span>-
-</span></code></pre></div>
+<p><code>bash title="Python Debug Linux Script"
+curl "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-linux.py" | python -</code></p>
 </div>
 </div>
 </div>

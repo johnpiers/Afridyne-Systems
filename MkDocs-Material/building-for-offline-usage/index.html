@@ -1033,13 +1033,11 @@
 <h3 id="built-in-offline-plugin">Built-in offline Plugin<a class="headerlink" href="#built-in-offline-plugin" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Built-in offline Plugin</p>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;!--<span class="w"> </span>md:plugin<span class="w"> </span><span class="o">[</span>offline<span class="o">]</span><span class="w"> </span>–<span class="w"> </span>built-in<span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.0.0 --&gt;
+&lt;!-- md:plugin [offline] – built-in --&gt;</code></pre>
 <p>The built-in offline plugin makes sure that the <a href="../setting-up-site-search/">site search</a> works when you distribute the contents of your <a href="https://www.mkdocs.org/user-guide/configuration/#site_dir">site directory</a> as a download. Simply add the following lines to <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">offline</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - offline</code></pre>
 <p>For a list of all settings, please consult the <a href="../offline/">plugin documentation</a>.</p>
 </div>
 <div class="admonition tip">

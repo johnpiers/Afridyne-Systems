@@ -1706,12 +1706,10 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">macOS and Linux</label><label for="__tabbed_1_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>curl<span class="w"> </span>-LsSf<span class="w"> </span>astral.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ curl -LsSf astral.sh | sh</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">PS</span><span class="p">&gt;</span> <span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">"irm astral.sh | iex"</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>PS&gt; powershell -ExecutionPolicy ByPass -c "irm astral.sh | iex"</code></pre>
 </div>
 </div>
 </div>
@@ -1721,44 +1719,35 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:8"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><input id="__tabbed_2_6" name="__tabbed_2" type="radio"><input id="__tabbed_2_7" name="__tabbed_2" type="radio"><input id="__tabbed_2_8" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Debian/Ubuntu</label><label for="__tabbed_2_2">Fedora</label><label for="__tabbed_2_3">Arch Linux</label><label for="__tabbed_2_4">Gentoo</label><label for="__tabbed_2_5">macOS (Homebrew)</label><label for="__tabbed_2_6">FreeBSD</label><label for="__tabbed_2_7">Windows (Mercurial)</label><label for="__tabbed_2_8">Windows (TortoiseHg)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apt<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>apt install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>dnf<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>dnf install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pacman -S mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>emerge<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>emerge mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>brew<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>brew install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Binary packages can be installed using <code>pkg</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pkg<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pkg install mercurial</code></pre>
 <p>Alternatively, you can install from source via the ports collection:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/ports/devel/mercurial
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>make<span class="w"> </span>install
-</span></code></pre></div>
+<pre class="lang-annotation"><code>cd /usr/ports/devel/mercurial
+make install</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>winget<span class="w"> </span>install<span class="w"> </span>Mercurial.Mercurial<span class="w"> </span>-e
-</span></code></pre></div>
+<pre class="lang-annotation"><code>winget install Mercurial.Mercurial -e</code></pre>
 <p>Or download from the list of <a href="https://www.mercurial-scm.org">binary releases</a>.</p>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>winget<span class="w"> </span>install<span class="w"> </span>TortoiseHg.TortoiseHg<span class="w"> </span>-e
-</span></code></pre></div>
+<pre class="lang-annotation"><code>winget install TortoiseHg.TortoiseHg -e</code></pre>
 <p>Or download from the list of <a href="https://mercurial-book.readthedocs.io/en/latest/working-together/collab.html?highlight=windows+tortoisehg">binary releases</a>.</p>
 </div>
 </div>
@@ -1809,19 +1798,16 @@
 <p class="admonition-title">Danger</p>
 <p>If the ESP is not mounted to <code>/boot</code>, make sure to not rely on the <a href="https://wiki.archlinux.org/title/Fstab#Automount_with_systemd" title="Fstab">systemd automount mechanism</a> (including that of <a href="https://wiki.archlinux.org/title/Systemd#GPT_partition_automounting" title="Systemd">systemd-gpt-auto-generator</a>) during kernel upgrades. Always mount it manually prior to any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on the ESP.</p>
 <p>Alternatively <a href="https://wiki.archlinux.org/title/Kernel_module#systemd" title="Kernel module">preload the required kernel modules on boot</a>, e.g.:</p>
-<div class="language-text no-copy no-style highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>/etc/modules-load.d/vfat.conf
-</span></code></pre></div>
+<pre class="lang-annotation no-copy no-style"><code>/etc/modules-load.d/vfat.conf</code></pre>
 <hr>
-<div class="language-text no-copy no-style highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>vfat
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>nls_cp437
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>nls_ascii
-</span></code></pre></div>
+<pre class="lang-annotation no-copy no-style"><code>vfat
+nls_cp437
+nls_ascii</code></pre>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some text.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"some code"</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>echo "some code"</code></pre>
 </div>
 <hr>
 <blockquote>
@@ -1846,14 +1832,12 @@
 <hr>
 <div class="admonition note">
 <p class="admonition-title">📝 To generate an initramfs for the running kernel::</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># dracut --add-confdir no-network /boot/initramfs-linux.img</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code># dracut --add-confdir no-network /boot/initramfs-linux.img</code></pre>
 <hr>
 <ul>
 <li>In some cases, especially when installing a system for the first time, the above command will not work. Use the following:</li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>dracut<span class="w"> </span>-f<span class="w"> </span>--regenerate-all
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ dracut -f --regenerate-all</code></pre>
 </div>
 <hr>
 <div class="admonition abstract">
@@ -1890,23 +1874,22 @@
 <hr>
 <div class="admonition pied-piper">
 <p class="admonition-title">Pied Piper</p>
-<div class="language-markdown highlight"><span class="filename">The last 3 special directories.</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a> NB: The last 3 special directories (last, week and month) which links
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a> repectively to the last synced repository, to the last Monday and to the first of
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a> the current month.
-</span></code></pre></div>
+<p>``` markdown title="The last 3 special directories."</p>
+<p>NB: The last 3 special directories (last, week and month) which links<br>
+ repectively to the last synced repository, to the last Monday and to the first of<br>
+ the current month.<br>
+```</p>
 </div>
 <hr>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the ESP is not mounted to <code>/boot</code>, make sure to not rely on the <a href="https://wiki.archlinux.org/title/Fstab#Automount_with_systemd%20Fstab">systemd automount mechanism</a> (including that of <a href="https://wiki.archlinux.org/title/Systemd#GPT_partition_automounting%20Systemd">systemd-gpt-auto-generator</a>) during kernel upgrades. Always mount it manually prior to any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on the ESP.</p>
 <p>Alternatively <a href="https://wiki.archlinux.org/title/Kernel_module#systemd%20Kernel%20module">preload the required kernel modules on boot</a>, e.g.:</p>
-<div class="language-text no-copy no-style highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>/etc/modules-load.d/vfat.conf
-</span></code></pre></div>
+<pre class="lang-annotation no-copy no-style"><code>/etc/modules-load.d/vfat.conf</code></pre>
 <hr>
-<div class="language-text no-copy no-style highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>vfat
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>nls_cp437
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>nls_ascii
-</span></code></pre></div>
+<pre class="lang-annotation no-copy no-style"><code>vfat
+nls_cp437
+nls_ascii</code></pre>
 </div>
 <hr>
 <div class="admonition note">
@@ -1924,29 +1907,27 @@
 <li>Install <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml"><code>vscode-yaml</code></a> for YAML language support.</li>
 <li>Add the schema under the <code>yaml.schemas</code> key in your user or workspace <a href="https://code.visualstudio.com/docs/getstarted/settings"><code>settings.json</code></a>:</li>
 </ol>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">"yaml.schemas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">"https://squidfunk.github.io/mkdocs-material/schema.json"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mkdocs.yml"</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="nt">"yaml.customTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="s2">"!ENV scalar"</span><span class="p">,</span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="s2">"!ENV sequence"</span><span class="p">,</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="s2">"!relative scalar"</span><span class="p">,</span>
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg"</span><span class="p">,</span>
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji"</span><span class="p">,</span>
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/object/apply:pymdownx.superfences.fence_code_format"</span><span class="p">,</span>
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"</span>
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">  </span><span class="p">]</span>
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>{
+  "yaml.schemas": {
+    "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+  },
+  "yaml.customTags": [ 
+    "!ENV scalar",
+    "!ENV sequence",
+    "!relative scalar",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+    "tag:yaml.org,2002:python/object/apply:pymdownx.superfences.fence_code_format",
+    "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
+  ]
+}</code></pre>
 </div>
 <div class="tabbed-block">
 <ol>
 <li>Ensure your editor of choice has support for YAML schema validation.</li>
 <li>Add the following lines at the top of <code>mkdocs.yml</code>:</li>
 </ol>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code># yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json</code></pre>
 </div>
 </div>
 </div>
@@ -1959,22 +1940,21 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Create a <code>Dockerfile</code> and extend the official image:</p>
-<div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
-</span></code></pre></div>
+<p><code>Dockerfile title="Dockerfile"
+FROM squidfunk/mkdocs-material
+RUN pip install mkdocs-macros-plugin
+RUN pip install mkdocs-glightbox</code></p>
 </div>
 <div class="tabbed-block">
 <p>Clone or fork the Insiders repository, and create a file called <code>user-requirements.txt</code> in the root of the repository. Then, add the plugins that should be installed to the file, e.g.:</p>
-<div class="language-text highlight"><span class="filename">user-requirements.txt</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>mkdocs-macros-plugin
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>mkdocs-glightbox
-</span></code></pre></div>
+<p><code>text title="user-requirements.txt"
+mkdocs-macros-plugin
+mkdocs-glightbox</code></p>
 </div>
 </div>
 </div>
 <p>Next, build the image with the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>docker build -t squidfunk/mkdocs-material .</code></pre>
 <p>The new image will have additional packages installed and can be used exactly like the official image.</p>
 </details>
 <hr>
@@ -2011,34 +1991,36 @@
 <div class="admonition example">
 <p class="admonition-title">Change the background color</p>
 <p>To change the background color to an attention-grabbing hot pink, you might add:</p>
-<div class="language-yaml highlight"><span class="filename">config.yml</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">      </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">        </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="s">"#ff1493"</span>
-</span></code></pre></div>
+<p><code>yaml title="config.yml"
+plugins:
+  - social:
+      cards_layout_options:
+        background_color: "#ff1493"</code></p>
 </div>
 <hr>
 <div class="admonition example">
 <p class="admonition-title">Social cards for event pages</p>
 <p>First, create a directory in your <code>docs</code> directory to hold the event pages:</p>
-<div class="language-text highlight"><span class="filename">Terminal</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>$ mkdir docs/events
-</span></code></pre></div>
-<p>Then, add a file <code>.meta.yml</code> inside this new directory with settings for the page icon and a hot pink background color that will stand out on social media. Note that you can override the background image by setting it to <code>null</code> here since it is not visible anyway because of the opaque coloring.</p>
-<div class="language-yaml highlight"><span class="filename">.meta.yml</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nn">---</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/calendar-plus</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">  </span><span class="nt">cards_layout_options</span><span class="p">:</span>
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="nt">background_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">    </span><span class="nt">background_color</span><span class="p">:</span><span class="w"> </span><span class="s">"#ff1493"</span>
-</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nn">---</span>
-</span></code></pre></div>
+<p>```text title="Terminal"<br>
+$ mkdir docs/events<br>
+</p><pre class="lang-annotation"><code>
+Then, add a file `.meta.yml` inside this new directory with settings for the page icon and a hot pink background color that will stand out on social media. Note that you can override the background image by setting it to `null` here since it is not visible anyway because of the opaque coloring.
+
+```yaml title=".meta.yml"
+---
+icon: material/calendar-plus
+social:
+  cards_layout_options:
+    background_image: null
+    background_color: "#ff1493"
+---</code></pre><p></p>
 <p>Now add a page within the <code>docs/events</code> directory. It does not need to have any special content, just a top level header.</p>
 <p>To turn on the <code>default/variant</code> layout in <code>mkdocs.yml</code>, add the <code>cards_layout</code> option and also add the meta plugin:</p>
-<div class="language-yaml highlight"><span class="filename">mkdocs.yml</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta</span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">      </span><span class="nt">cards_layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default/variant</span>
-</span></code></pre></div>
+<p><code>yaml title="mkdocs.yml"
+plugins:
+  - meta
+  - social:
+      cards_layout: default/variant</code></p>
 <p>After running <code>mkdocs build</code>, you can see that the social card at <code>site/assets/images/social/events/index.png</code> features the page icon.</p>
 </div>
 <hr>
@@ -2240,28 +2222,27 @@
 <p><strong>CSS:</strong>&nbsp;</p>
 <div class="admonition pied-piper">
 <p class="admonition-title">CSS</p>
-<div class="language-markdown highlight"><span class="filename">• Define variables for different modes.</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>/* Define variables for light mode first (default) */
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>:root {
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>  --border-color: <span class="ni">#000000</span>; /* Black border for light mode */
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>  --background-color: <span class="ni">#ffffff</span>;
-</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>  color-scheme: light dark; /* Informs the user agent about supported schemes */
-</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>}
-</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
-</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>/* Override variables for dark mode */
-</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="ni">@media</span> (prefers-color-scheme: dark) {
-</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>  :root {
-</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>    --border-color: <span class="ni">#ffffff</span>; /* White border for dark mode */
-</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>    --background-color: <span class="ni">#121212</span>;
-</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>  }
-</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>}
-</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>
-</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>/* Apply the variable to an element */
-</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>.my-element {
-</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>  border: 2px solid var(--border-color);
-</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>  background-color: var(--background-color);
-</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>  padding: 1rem;
-</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>}
-</span></code></pre></div>
+<p>```markdown title="• Define variables for different modes."<br>
+/* Define variables for light mode first (default) <em>/<br>
+:root {<br>
+  --border-color: #000000; /</em> Black border for light mode <em>/<br>
+  --background-color: #ffffff;<br>
+  color-scheme: light dark; /</em> Informs the user agent about supported schemes */<br>
+}</p>
+<p>/* Override variables for dark mode <em>/<br>
+@media (prefers-color-scheme: dark) {<br>
+  :root {<br>
+    --border-color: #ffffff; /</em> White border for dark mode */<br>
+    --background-color: #121212;<br>
+  }<br>
+}</p>
+<p>/* Apply the variable to an element */<br>
+.my-element {<br>
+  border: 2px solid var(--border-color);<br>
+  background-color: var(--background-color);<br>
+  padding: 1rem;<br>
+}<br>
+```</p>
 <hr>
 <ul>
 <li>Include the <code>&lt;meta name="color-scheme" content="light dark"&gt;</code> tag in your HTML's <code>&lt;head&gt;</code> to prevent flashes of unstyled content on page load.</li>
@@ -2273,15 +2254,15 @@
 <p>CSS:</p>
 <div class="admonition pied-piper">
 <p class="admonition-title">CSS Function</p>
-<div class="language-markdown highlight"><span class="filename">• A newer CSS function.</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>:root {
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>  color-scheme: light dark;
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>}
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>.my-element {
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>/* First value for light mode, second for dark mode */
-</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>  border: 2px solid light-dark(#000000, <span class="ni">#ffffff</span>);
-</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>}
-</span></code></pre></div>
+<p>```markdown title="• A newer CSS function."<br>
+:root {<br>
+  color-scheme: light dark;<br>
+}</p>
+<p>.my-element {<br>
+/* First value for light mode, second for dark mode */<br>
+  border: 2px solid light-dark(#000000, #ffffff);<br>
+}<br>
+```</p>
 </div>
 <hr>
 <p>3. Combining with JavaScript for a manual toggle&nbsp;</p>
@@ -2289,137 +2270,129 @@
 <p>CSS:</p>
 <div class="admonition warning">
 <p class="admonition-title">CSS, manually switching modes</p>
-<div class="language-markdown highlight"><span class="filename">• Combining with JavaScript for a manual toggle.</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>:root {
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>  --border-color: <span class="ni">#000000</span>;
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>}
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
-</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>body.dark-mode {
-</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>  --border-color: <span class="ni">#ffffff</span>; /* Override the variable for manual dark mode */
-</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>}
-</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
-</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>.my-element {
-</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>  border: 2px solid var(--border-color);
-</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>}
-</span></code></pre></div>
+<p>```markdown title="• Combining with JavaScript for a manual toggle."<br>
+:root {<br>
+  --border-color: #000000;<br>
+}</p>
+<p>body.dark-mode {<br>
+  --border-color: #ffffff; /* Override the variable for manual dark mode */<br>
+}</p>
+<p>.my-element {<br>
+  border: 2px solid var(--border-color);<br>
+}<br>
+```</p>
 </div>
 <hr>
 <p>JavaScript:</p>
 <div class="admonition warning">
 <p class="admonition-title">JavaScript manually switching modes</p>
-<div class="language-markdown highlight"><span class="filename">• Manually switching modes.</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>// Function to toggle the dark-mode class on the body
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>function toggleDarkMode() {
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>  document.body.classList.toggle('dark-mode');
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>}
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>// Example button click handler (assuming a button with id="theme-toggle")
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>document.getElementById('theme-toggle').addEventListener('click', toggleDarkMode);
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
-</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>// Optionally, detect the initial system preference
-</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>if (prefersDark.matches) {
-</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>  document.body.classList.add('dark-mode');
-</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>}
-</span></code></pre></div>
+<p>```markdown title="• Manually switching modes."<br>
+// Function to toggle the dark-mode class on the body<br>
+function toggleDarkMode() {<br>
+  document.body.classList.toggle('dark-mode');<br>
+}</p>
+<p>// Example button click handler (assuming a button with id="theme-toggle")<br>
+document.getElementById('theme-toggle').addEventListener('click', toggleDarkMode);</p>
+<p>// Optionally, detect the initial system preference<br>
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');<br>
+if (prefersDark.matches) {<br>
+  document.body.classList.add('dark-mode');<br>
+}<br>
+```</p>
 </div>
 <hr>
 <p>html:</p>
 <details class="pied-piper">
 <summary>HTML Source Code</summary>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
-</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span>
-</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Dynamic Color Provider<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">        </span><span class="c">/* Define CSS variables for light mode (default) */</span>
-</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w">        </span><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="w">            </span><span class="nv">--background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
-</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">            </span><span class="nv">--text-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#000000</span><span class="p">;</span>
-</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="w">            </span><span class="nv">--border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#000000</span><span class="p">;</span><span class="w"> </span><span class="c">/* Default border color */</span>
-</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>
-</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="w">        </span><span class="c">/* Define CSS variables for dark mode */</span>
-</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="w">        </span><span class="nt">body</span><span class="p">.</span><span class="nc">dark-mode</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="w">            </span><span class="nv">--background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="p">;</span>
-</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="w">            </span><span class="nv">--text-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
-</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a><span class="w">            </span><span class="nv">--border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span><span class="w"> </span><span class="c">/* Dark mode border color */</span>
-</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>
-</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a><span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a><span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--background-color</span><span class="p">);</span>
-</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a><span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color</span><span class="p">);</span>
-</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a><span class="w">            </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">background-color</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="p">,</span><span class="w"> </span><span class="kc">color</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
-</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a><span class="w">            </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
-</span><span id="__span-32-27"><a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a><span class="w">            </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
-</span><span id="__span-32-28"><a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a><span class="w">            </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
-</span><span id="__span-32-29"><a id="__codelineno-32-29" name="__codelineno-32-29" href="#__codelineno-32-29"></a><span class="w">            </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-</span><span id="__span-32-30"><a id="__codelineno-32-30" name="__codelineno-32-30" href="#__codelineno-32-30"></a><span class="w">            </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-</span><span id="__span-32-31"><a id="__codelineno-32-31" name="__codelineno-32-31" href="#__codelineno-32-31"></a><span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">vh</span><span class="p">;</span>
-</span><span id="__span-32-32"><a id="__codelineno-32-32" name="__codelineno-32-32" href="#__codelineno-32-32"></a><span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-32-33"><a id="__codelineno-32-33" name="__codelineno-32-33" href="#__codelineno-32-33"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-32-34"><a id="__codelineno-32-34" name="__codelineno-32-34" href="#__codelineno-32-34"></a>
-</span><span id="__span-32-35"><a id="__codelineno-32-35" name="__codelineno-32-35" href="#__codelineno-32-35"></a><span class="w">        </span><span class="p">.</span><span class="nc">content-box</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-36"><a id="__codelineno-32-36" name="__codelineno-32-36" href="#__codelineno-32-36"></a><span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-32-37"><a id="__codelineno-32-37" name="__codelineno-32-37" href="#__codelineno-32-37"></a><span class="w">            </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--border-color</span><span class="p">);</span><span class="w"> </span><span class="c">/* The dynamic border */</span>
-</span><span id="__span-32-38"><a id="__codelineno-32-38" name="__codelineno-32-38" href="#__codelineno-32-38"></a><span class="w">            </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">border-color</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
-</span><span id="__span-32-39"><a id="__codelineno-32-39" name="__codelineno-32-39" href="#__codelineno-32-39"></a><span class="w">            </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-</span><span id="__span-32-40"><a id="__codelineno-32-40" name="__codelineno-32-40" href="#__codelineno-32-40"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-32-41"><a id="__codelineno-32-41" name="__codelineno-32-41" href="#__codelineno-32-41"></a>
-</span><span id="__span-32-42"><a id="__codelineno-32-42" name="__codelineno-32-42" href="#__codelineno-32-42"></a><span class="w">        </span><span class="nt">button</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-43"><a id="__codelineno-32-43" name="__codelineno-32-43" href="#__codelineno-32-43"></a><span class="w">            </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-32-44"><a id="__codelineno-32-44" name="__codelineno-32-44" href="#__codelineno-32-44"></a><span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-32-45"><a id="__codelineno-32-45" name="__codelineno-32-45" href="#__codelineno-32-45"></a><span class="w">            </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
-</span><span id="__span-32-46"><a id="__codelineno-32-46" name="__codelineno-32-46" href="#__codelineno-32-46"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-32-47"><a id="__codelineno-32-47" name="__codelineno-32-47" href="#__codelineno-32-47"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</span><span id="__span-32-48"><a id="__codelineno-32-48" name="__codelineno-32-48" href="#__codelineno-32-48"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-32-49"><a id="__codelineno-32-49" name="__codelineno-32-49" href="#__codelineno-32-49"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-32-50"><a id="__codelineno-32-50" name="__codelineno-32-50" href="#__codelineno-32-50"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"content-box"</span><span class="p">&gt;</span>
-</span><span id="__span-32-51"><a id="__codelineno-32-51" name="__codelineno-32-51" href="#__codelineno-32-51"></a>        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Dynamic Border Color<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span><span id="__span-32-52"><a id="__codelineno-32-52" name="__codelineno-32-52" href="#__codelineno-32-52"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The border color of this box changes with the mode.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-32-53"><a id="__codelineno-32-53" name="__codelineno-32-53" href="#__codelineno-32-53"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-32-54"><a id="__codelineno-32-54" name="__codelineno-32-54" href="#__codelineno-32-54"></a>
-</span><span id="__span-32-55"><a id="__codelineno-32-55" name="__codelineno-32-55" href="#__codelineno-32-55"></a>    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"toggleMode()"</span><span class="p">&gt;</span>Toggle Mode<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</span><span id="__span-32-56"><a id="__codelineno-32-56" name="__codelineno-32-56" href="#__codelineno-32-56"></a>
-</span><span id="__span-32-57"><a id="__codelineno-32-57" name="__codelineno-32-57" href="#__codelineno-32-57"></a>    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-</span><span id="__span-32-58"><a id="__codelineno-32-58" name="__codelineno-32-58" href="#__codelineno-32-58"></a><span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">toggleMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-59"><a id="__codelineno-32-59" name="__codelineno-32-59" href="#__codelineno-32-59"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
-</span><span id="__span-32-60"><a id="__codelineno-32-60" name="__codelineno-32-60" href="#__codelineno-32-60"></a><span class="w">            </span><span class="c1">// Toggle the 'dark-mode' class on the body</span>
-</span><span id="__span-32-61"><a id="__codelineno-32-61" name="__codelineno-32-61" href="#__codelineno-32-61"></a><span class="w">            </span><span class="nx">body</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s1">'dark-mode'</span><span class="p">);</span>
-</span><span id="__span-32-62"><a id="__codelineno-32-62" name="__codelineno-32-62" href="#__codelineno-32-62"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-32-63"><a id="__codelineno-32-63" name="__codelineno-32-63" href="#__codelineno-32-63"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span><span id="__span-32-64"><a id="__codelineno-32-64" name="__codelineno-32-64" href="#__codelineno-32-64"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-32-65"><a id="__codelineno-32-65" name="__codelineno-32-65" href="#__codelineno-32-65"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Dynamic Color Provider&lt;/title&gt;
+    &lt;style&gt;
+        /* Define CSS variables for light mode (default) */
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #000000; /* Default border color */
+        }
+
+        /* Define CSS variables for dark mode */
+        body.dark-mode {
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+            --border-color: #ffffff; /* Dark mode border color */
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .content-box {
+            padding: 20px;
+            border: 5px solid var(--border-color); /* The dynamic border */
+            transition: border-color 0.3s;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="content-box"&gt;
+        &lt;h1&gt;Dynamic Border Color&lt;/h1&gt;
+        &lt;p&gt;The border color of this box changes with the mode.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;button onclick="toggleMode()"&gt;Toggle Mode&lt;/button&gt;
+
+    &lt;script&gt;
+        function toggleMode() {
+            const body = document.body;
+            // Toggle the 'dark-mode' class on the body
+            body.classList.toggle('dark-mode');
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
 </details>
 <h4 id="for-pcs-without-wifibluetooth-hardware">For PC's without wifi/bluetooth hardware.<a class="headerlink" href="#for-pcs-without-wifibluetooth-hardware" title="Permanent link">¶</a></h4>
 <div class="admonition info">
 <p class="admonition-title">For PC's without wifi/bluetooth hardware.</p>
 <p>The short answer is to execute the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>cp<span class="w"> </span>/usr/share/gdm/default.pa<span class="w"> </span>~/.config/pulse/
-</span></code></pre></div>
+<pre class="lang-annotation"><code>cp /usr/share/gdm/default.pa ~/.config/pulse/</code></pre>
 <hr>
 <p>So search the the global settings and find the <code>default.pa</code> file there. You might want to edit this file, which is what I did!</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/pulse/default.pa
-</span></code></pre></div>
+<pre class="lang-annotation"><code>sudo nano /etc/pulse/default.pa</code></pre>
 <hr>
 <p>Comment out the lines below that loaded the bluetooth module. And the error will be removed.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1">### Automatically load driver modules for Bluetooth hardware (edited)</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="c1">#.ifexists module-bluetooth-policy.so</span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="c1">#load-module module-bluetooth-policy</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="c1">#.endif</span>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>
-</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="c1">#.ifexists module-bluetooth-discover.so</span>
-</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="c1">#load-module module-bluetooth-discover</span>
-</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="c1">#.endif</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>### Automatically load driver modules for Bluetooth hardware (edited)
+#.ifexists module-bluetooth-policy.so
+#load-module module-bluetooth-policy
+#.endif
+
+#.ifexists module-bluetooth-discover.so
+#load-module module-bluetooth-discover
+#.endif</code></pre>
 <hr>
 <p>Or if you don't like changing a global config file as root, you can copy the file from:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>/etc/pulse/default.pa
-</span></code></pre></div>
+<pre class="lang-annotation"><code>/etc/pulse/default.pa</code></pre>
 <p>to your</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>~/.config/pulse/default.pa
-</span></code></pre></div>
+<pre class="lang-annotation"><code>~/.config/pulse/default.pa</code></pre>
 <p>and edit the file there and comment out these lines locally.</p>
 <hr>
 <div class="admonition tip">
@@ -2438,12 +2411,10 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">macOS and Linux</label><label for="__tabbed_5_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>$<span class="w"> </span>curl<span class="w"> </span>-LsSf<span class="w"> </span>astral.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ curl -LsSf astral.sh | sh</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">PS</span><span class="p">&gt;</span> <span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">"irm astral.sh | iex"</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>PS&gt; powershell -ExecutionPolicy ByPass -c "irm astral.sh | iex"</code></pre>
 </div>
 </div>
 </div>
@@ -2456,8 +2427,7 @@
 <div class="admonition note">
 <p class="admonition-title">Installation</p>
 <p>Use the following command to install uv:<br>
-</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>python<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>uv
-</span></code></pre></div><p></p>
+</p><pre class="lang-annotation"><code>python -m ensurepip &amp;&amp; python -m pip install uv</code></pre><p></p>
 </div>
 <hr>
 <h3>Mercurial</h3>
@@ -2473,44 +2443,35 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="6:8"><input checked="" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><input id="__tabbed_6_4" name="__tabbed_6" type="radio"><input id="__tabbed_6_5" name="__tabbed_6" type="radio"><input id="__tabbed_6_6" name="__tabbed_6" type="radio"><input id="__tabbed_6_7" name="__tabbed_6" type="radio"><input id="__tabbed_6_8" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Debian/Ubuntu</label><label for="__tabbed_6_2">Fedora</label><label for="__tabbed_6_3">Arch Linux</label><label for="__tabbed_6_4">Gentoo</label><label for="__tabbed_6_5">macOS (Homebrew)</label><label for="__tabbed_6_6">FreeBSD</label><label for="__tabbed_6_7">Windows (Mercurial)</label><label for="__tabbed_6_8">Windows (TortoiseHg)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>apt<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>apt install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>dnf<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>dnf install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pacman -S mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>emerge<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>emerge mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>brew<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>brew install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Binary packages can be installed using <code>pkg</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>pkg<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pkg install mercurial</code></pre>
 <p>Alternatively, you can install from source via the ports collection:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/ports/devel/mercurial
-</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>make<span class="w"> </span>install
-</span></code></pre></div>
+<pre class="lang-annotation"><code>cd /usr/ports/devel/mercurial
+make install</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>winget<span class="w"> </span>install<span class="w"> </span>Mercurial.Mercurial<span class="w"> </span>-e
-</span></code></pre></div>
+<pre class="lang-annotation"><code>winget install Mercurial.Mercurial -e</code></pre>
 <p>Or download from the list of <a href="https://www.mercurial-scm.org">binary releases</a>.</p>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>winget<span class="w"> </span>install<span class="w"> </span>TortoiseHg.TortoiseHg<span class="w"> </span>-e
-</span></code></pre></div>
+<pre class="lang-annotation"><code>winget install TortoiseHg.TortoiseHg -e</code></pre>
 <p>Or download from the list of <a href="https://mercurial-book.readthedocs.io/en/latest/working-together/collab.html?highlight=windows+tortoisehg">binary releases</a>.</p>
 </div>
 </div>
@@ -2522,21 +2483,19 @@
 <div class="admonition example">
 <p class="admonition-title">Website HEX codes.</p>
 <p>I spent some time investigating and I believe any colors that follow the following HEX code will work:</p>
-<div class="language-css no-copy highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">FF0099</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">153</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">PinkPurple</span>
-</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">FF9900</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">153</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">OrangeYellow</span>
-</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">99FF00</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">153</span><span class="o">,</span><span class="w"> </span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">Lime</span><span class="w"> </span><span class="nt">Green</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">NOT</span><span class="w"> </span><span class="nt">GOOD</span>
-</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">9900FF</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">153</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">255</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">PurpleViolet</span>
-</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">0099FF</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">153</span><span class="o">,</span><span class="w"> </span><span class="nt">255</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">BlueCyan</span>
-</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">00FF99</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">153</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">Sea</span><span class="w"> </span><span class="nt">Green</span><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">NOT</span><span class="w"> </span><span class="nt">GOOD</span>
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>• #FF0099 - 255, 0, 153 - PinkPurple
+• #FF9900 - 255, 153, 0 - OrangeYellow
+• #99FF00 - 153, 255, 0 - Lime Green - NOT GOOD
+• #9900FF - 153, 0, 255 - PurpleViolet
+• #0099FF - 0, 153, 255 - BlueCyan
+• #00FF99 - 0, 255, 153 - Sea Green  - NOT GOOD</code></pre>
 <p>This pattern places all of these color codes on the Web Safe list of colors; I was unaware of that before I started investigating this. For a full list of all the web safe colors, check out this Web Safe Color Chart. <a href="https://websafecolors.info/color-chart">Colour Chart</a> and <a href="https://htmlcolorcodes.com/color-chart/web-safe-color-chart/">web-safe-color-chart</a> This is the website I used to check the colors (icons, not text unfortunately) on both light and dark background: <a href="https://notionicons.so/icon-set/atlas">icon-set/atlas</a></p>
-<div class="language-css no-copy highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">FF0099</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">153</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">PinkPurple</span>
-</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">FF9900</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">153</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">OrangeYellow</span>
-</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">66CC00</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">102</span><span class="o">,</span><span class="w"> </span><span class="nt">204</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">GreenBlue</span>
-</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">9900FF</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">153</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">255</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">PurpleViolet</span>
-</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">0099FF</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">153</span><span class="o">,</span><span class="w"> </span><span class="nt">255</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">BlueCyan</span>
-</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="err">•</span><span class="w"> </span><span class="p">#</span><span class="nn">00CC66</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">204</span><span class="o">,</span><span class="w"> </span><span class="nt">102</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">BlueGreen</span>
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>• #FF0099 - 255, 0, 153 - PinkPurple
+• #FF9900 - 255, 153, 0 - OrangeYellow
+• #66CC00 - 102, 204, 0 - GreenBlue
+• #9900FF - 153, 0, 255 - PurpleViolet
+• #0099FF - 0, 153, 255 - BlueCyan
+• #00CC66 - 0, 204, 102 - BlueGreen</code></pre>
 <div class="admonition danger">
 <p class="admonition-title">Warning</p>
 <p>Please be aware that the names I chose to describe the colours are not official names. Looking at the colours of the icons as you switch a theme from dark to light several times can create optical illusions in which the colours appear to be different on different themes</p>
@@ -2555,24 +2514,19 @@
 <p><b>Install uv with our standalone installers:</b></p>
 <hr>
 <p><b># On macOS and Linux.</b></p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nt">curl</span><span class="w"> </span><span class="nt">-LsSf</span><span class="w"> </span><span class="nt">https</span><span class="o">://</span><span class="nt">astral</span><span class="p">.</span><span class="nc">sh</span><span class="o">/</span><span class="nt">uv</span><span class="o">/</span><span class="nt">install</span><span class="p">.</span><span class="nc">sh</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">sh</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
 <hr>
 <p><b># On Windows.</b></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">"irm https://astral.sh/uv/install.ps1 | iex"</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code></pre>
 <hr>
 <p><b># With pip.</b></p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="o">$</span><span class="w"> </span><span class="nt">pip</span><span class="w"> </span><span class="nt">install</span><span class="w"> </span><span class="nt">uv</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ pip install uv</code></pre>
 <hr>
 <p><b># Or pipx.</b></p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="o">$</span><span class="w"> </span><span class="nt">pipx</span><span class="w"> </span><span class="nt">install</span><span class="w"> </span><span class="nt">uv</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ pipx install uv</code></pre>
 <hr>
 <p><b>If installed via the standalone installer, uv can update itself to the latest version:</b></p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="o">$</span><span class="w"> </span><span class="nt">uv</span><span class="w"> </span><span class="nt">self</span><span class="w"> </span><span class="nt">update</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ uv self update</code></pre>
 </details>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2590,38 +2544,36 @@
 <ul>
 <li>uv manages project dependencies and environments, with support for lockfiles, workspaces, and more, similar to rye or poetry.</li>
 </ul>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>$<span class="w"> </span>uv<span class="w"> </span>init<span class="w"> </span>example<span class="w"> </span>Initialized<span class="w"> </span>project<span class="w"> </span>example<span class="w"> </span>at<span class="w"> </span>/home/user/example
-</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>example
-</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>
-</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>$<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>ruff
-</span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>Creating<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>at:<span class="w"> </span>.venv
-</span><span id="__span-57-6"><a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>Resolved<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span>170ms
-</span><span id="__span-57-7"><a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a><span class="w">   </span>Built<span class="w"> </span>example<span class="w"> </span>@<span class="w"> </span>file:///home/user/example
-</span><span id="__span-57-8"><a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>Prepared<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span>627ms
-</span><span id="__span-57-9"><a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a>Installed<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span>1ms
-</span><span id="__span-57-10"><a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a><span class="w"> </span>+<span class="w"> </span><span class="nv">example</span><span class="o">==</span><span class="m">0</span>.1.0<span class="w"> </span><span class="o">(</span>from<span class="w"> </span>file:///home/user/example<span class="o">)</span>
-</span><span id="__span-57-11"><a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a><span class="w"> </span>+<span class="w"> </span><span class="nv">ruff</span><span class="o">==</span><span class="m">0</span>.5.4
-</span><span id="__span-57-12"><a id="__codelineno-57-12" name="__codelineno-57-12" href="#__codelineno-57-12"></a>
-</span><span id="__span-57-13"><a id="__codelineno-57-13" name="__codelineno-57-13" href="#__codelineno-57-13"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>check
-</span><span id="__span-57-14"><a id="__codelineno-57-14" name="__codelineno-57-14" href="#__codelineno-57-14"></a>All<span class="w"> </span>checks<span class="w"> </span>passed!
-</span><span id="__span-57-15"><a id="__codelineno-57-15" name="__codelineno-57-15" href="#__codelineno-57-15"></a>
-</span><span id="__span-57-16"><a id="__codelineno-57-16" name="__codelineno-57-16" href="#__codelineno-57-16"></a>$<span class="w"> </span>uv<span class="w"> </span>lock
-</span><span id="__span-57-17"><a id="__codelineno-57-17" name="__codelineno-57-17" href="#__codelineno-57-17"></a>Resolved<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.33ms
-</span><span id="__span-57-18"><a id="__codelineno-57-18" name="__codelineno-57-18" href="#__codelineno-57-18"></a>$<span class="w"> </span>uv<span class="w"> </span>sync
-</span><span id="__span-57-19"><a id="__codelineno-57-19" name="__codelineno-57-19" href="#__codelineno-57-19"></a>Resolved<span class="w"> </span><span class="m">2</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.70ms
-</span><span id="__span-57-20"><a id="__codelineno-57-20" name="__codelineno-57-20" href="#__codelineno-57-20"></a>Audited<span class="w"> </span><span class="m">1</span><span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.02ms
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>$ uv init example Initialized project example at /home/user/example
+$ cd example
+
+$ uv add ruff
+Creating virtual environment at: .venv
+Resolved 2 packages in 170ms
+   Built example @ file:///home/user/example
+Prepared 2 packages in 627ms
+Installed 2 packages in 1ms
+ + example==0.1.0 (from file:///home/user/example)
+ + ruff==0.5.4
+
+$ uv run ruff check
+All checks passed!
+
+$ uv lock
+Resolved 2 packages in 0.33ms
+$ uv sync
+Resolved 2 packages in 0.70ms
+Audited 1 package in 0.02ms</code></pre>
 </div>
 <hr>
 <h2 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Scripts</p>
 <p>Create a new script and add inline metadata declaring its dependencies:</p>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'import requests; print(requests.get("https://astral.sh"))'</span><span class="w"> </span>&gt;<span class="w"> </span>example.py
-</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>
-</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>$<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>--script<span class="w"> </span>example.py<span class="w"> </span>requests
-</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>Updated<span class="w"> </span><span class="sb">`</span>example.py<span class="sb">`</span>
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>$ echo 'import requests; print(requests.get("https://astral.sh"))' &gt; example.py
+
+$ uv add --script example.py requests
+Updated `example.py`</code></pre>
 </div>
 <hr>
 <div class="admonition note">
@@ -2770,16 +2722,16 @@ and running in minutes</p>
 </table>
 <div class="admonition info">
 <p class="admonition-title">Code Block</p>
-<div class="language-css no-copy highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="err">#</span><span class="w"> </span><span class="nt">code</span><span class="w"> </span><span class="nt">block</span>
-</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w">  </span><span class="nt">print</span><span class="w"> </span><span class="s1">'3 backticks or'</span>
-</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="w">  </span><span class="nt">print</span><span class="w"> </span><span class="s1">'indent 4 spaces'</span>
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code># code block
+  print '3 backticks or'
+  print 'indent 4 spaces'</code></pre>
 </div>
 <div class="admonition pied-piper">
 <p class="admonition-title">Pied Piper</p>
-<div class="language-markdown highlight"><span class="filename">The last 3 special directories.</span><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>NB: The last 3 special directories (last, week and month) which links repectively to the last
-</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>synced repository, to the last Monday and to the first of the current month.
-</span></code></pre></div>
+<p>``` markdown title="The last 3 special directories."</p>
+<p>NB: The last 3 special directories (last, week and month) which links repectively to the last<br>
+synced repository, to the last Monday and to the first of the current month.<br>
+```</p>
 </div>
 <hr>
 <center>My Centered Heading</center>
@@ -2807,8 +2759,7 @@ and running in minutes</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can create a link from the user's former home directory to the new one. Doing this will allow programs to find files that have hardcoded paths.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a># ln -s /my/new/home/ /my/old/home
-</span></code></pre></div>
+<pre class="lang-annotation"><code># ln -s /my/new/home/ /my/old/home</code></pre>
 <p>Make sure there is no trailing / on /my/old/home.</p>
 </div>
 <hr>
@@ -2987,44 +2938,35 @@ and running in minutes</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:8"><input checked="" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><input id="__tabbed_7_3" name="__tabbed_7" type="radio"><input id="__tabbed_7_4" name="__tabbed_7" type="radio"><input id="__tabbed_7_5" name="__tabbed_7" type="radio"><input id="__tabbed_7_6" name="__tabbed_7" type="radio"><input id="__tabbed_7_7" name="__tabbed_7" type="radio"><input id="__tabbed_7_8" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Debian/Ubuntu</label><label for="__tabbed_7_2">Fedora</label><label for="__tabbed_7_3">Arch Linux</label><label for="__tabbed_7_4">Gentoo</label><label for="__tabbed_7_5">macOS (Homebrew)</label><label for="__tabbed_7_6">FreeBSD</label><label for="__tabbed_7_7">Windows (Mercurial)</label><label for="__tabbed_7_8">Windows (TortoiseHg)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>apt<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>apt install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>dnf<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>dnf install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>pacman<span class="w"> </span>-S<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pacman -S mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>emerge<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>emerge mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>brew<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>brew install mercurial</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Binary packages can be installed using <code>pkg</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>pkg<span class="w"> </span>install<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>pkg install mercurial</code></pre>
 <p>Alternatively, you can install from source via the ports collection:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/ports/devel/mercurial
-</span><span id="__span-68-2"><a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>make<span class="w"> </span>install
-</span></code></pre></div>
+<pre class="lang-annotation"><code>cd /usr/ports/devel/mercurial
+make install</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>winget<span class="w"> </span>install<span class="w"> </span>Mercurial.Mercurial<span class="w"> </span>-e
-</span></code></pre></div>
+<pre class="lang-annotation"><code>winget install Mercurial.Mercurial -e</code></pre>
 <p>Or download from the list of <a href="https://www.mercurial-scm.org">binary releases</a>.</p>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>winget<span class="w"> </span>install<span class="w"> </span>TortoiseHg.TortoiseHg<span class="w"> </span>-e
-</span></code></pre></div>
+<pre class="lang-annotation"><code>winget install TortoiseHg.TortoiseHg -e</code></pre>
 <p>Or download from the list of <a href="https://mercurial-book.readthedocs.io/en/latest/working-together/collab.html?highlight=windows+tortoisehg">binary releases</a>.</p>
 </div>
 </div>
@@ -3037,22 +2979,21 @@ and running in minutes</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Create a <code>Dockerfile</code> and extend the official image:</p>
-<div class="language-dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
-</span><span id="__span-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
-</span><span id="__span-71-3"><a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
-</span></code></pre></div>
+<p><code>dockerfile title="Dockerfile"
+FROM squidfunk/mkdocs-material
+RUN pip install mkdocs-macros-plugin
+RUN pip install mkdocs-glightbox</code></p>
 </div>
 <div class="tabbed-block">
 <p>Clone or fork the Insiders repository, and create a file called <code>user-requirements.txt</code> in the root of the repository. Then, add the plugins that should be installed to the file, e.g.:</p>
-<div class="language-text highlight"><span class="filename">user-requirements.txt</span><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>mkdocs-macros-plugin
-</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>mkdocs-glightbox
-</span></code></pre></div>
+<p><code>text title="user-requirements.txt"
+mkdocs-macros-plugin
+mkdocs-glightbox</code></p>
 </div>
 </div>
 </div>
 <p>Next, build the image with the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>docker build -t squidfunk/mkdocs-material .</code></pre>
 <p>The new image will have additional packages installed and can be used exactly like the official image.</p>
 </details>
 <hr>
@@ -3079,8 +3020,7 @@ and running in minutes</p>
 </div>
 <div class="admonition info">
 <p>1. Install the <i><code>gnome-user-share</code></i> <b>package using</b> <i><code>pacman.</code></i></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="c1"># sudo pacman -S gnome-user-share apache nss-mdns</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code># sudo pacman -S gnome-user-share apache nss-mdns</code></pre>
 </div>
 <ul>
 <li>
@@ -3096,10 +3036,9 @@ and running in minutes</p>
 <div class="admonition pied-piper">
 <p class="admonition-title">Avahi Service</p>
 <p>2. To enable this, install and start the<code>avahi</code>service:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="c1"># sudo pacman -S avahi</span>
-</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="c1"># sudo systemctl enable avahi-daemon</span>
-</span><span id="__span-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a><span class="c1"># sudo systemctl start avahi-daemon</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code># sudo pacman -S avahi
+# sudo systemctl enable avahi-daemon
+# sudo systemctl start avahi-daemon</code></pre>
 </div>
 <div class="admonition info">
 <p>Configure Avahi for hostname resolution: Edit the hosts line in <code>/etc/nsswitch.conf</code>to include mdns_minimal and [NOTFOUND=return] so that<code>mDNS</code>hostnames are resolved correctly. The line should look like this:</p>
@@ -3107,8 +3046,7 @@ and running in minutes</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>3. Configure Avahi for Hostname Resolution.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="c1"># hosts: mymachines resolve [!UNAVAIL=return] files myhostname dns hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code># hosts: mymachines resolve [!UNAVAIL=return] files myhostname dns hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns</code></pre>
 </div>
 <ul>
 <li>Install<code>gvfs-smb</code><b>(Optional for Windows Interoperability)</b>: If you also want to browse and access Samba shares from your Arch Linux system (In other words, not host the<code>gnome-user-share</code> via<code>Samba</code>), install<code>gvfs-smb.</code></li>
@@ -3116,20 +3054,18 @@ and running in minutes</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>4. After installation, you may need to <b>enable</b> and <b>start</b> the<code>avahi daemon</code>for <b>zero-configuration networking</b>, which helps in discovering shared folders on the local network:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="c1"># sudo systemctl enable avahi-daemon</span>
-</span><span id="__span-77-2"><a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a><span class="c1"># sudo systemctl start avahi-daemon</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code># sudo systemctl enable avahi-daemon
+# sudo systemctl start avahi-daemon</code></pre>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Final Configuration</p>
 <p>5. Enable Sharing in GNOME Settings:</p>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="w"> </span><span class="m">1</span>.<span class="w"> </span>Open<span class="w"> </span>the<span class="w"> </span>Activities<span class="w"> </span>overview<span class="w"> </span>and<span class="w"> </span>search<span class="w"> </span><span class="k">for</span><span class="w"> </span>Settings.
-</span><span id="__span-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a><span class="w"> </span><span class="m">2</span>.<span class="w"> </span>Navigate<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Sharing<span class="w"> </span>panel.
-</span><span id="__span-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a><span class="w"> </span><span class="m">3</span>.<span class="w"> </span>Toggle<span class="w"> </span>the<span class="w"> </span>main<span class="w"> </span>Sharing<span class="w"> </span>switch<span class="w"> </span>to<span class="w"> </span>On.
-</span><span id="__span-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a><span class="w"> </span><span class="m">4</span>.<span class="w"> </span>Select<span class="w"> </span>Personal<span class="w"> </span>File<span class="w"> </span>Sharing<span class="w"> </span>and<span class="w"> </span>switch<span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span>On.
-</span><span id="__span-78-5"><a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a><span class="w"> </span><span class="m">5</span>.<span class="w"> </span>This<span class="w"> </span>makes<span class="w"> </span>your<span class="w"> </span>~/Public<span class="w"> </span>folder<span class="w"> </span>accessible<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span><span class="nb">local</span><span class="w"> </span>network.
-</span><span id="__span-78-6"><a id="__codelineno-78-6" name="__codelineno-78-6" href="#__codelineno-78-6"></a><span class="w"> </span><span class="m">6</span>.<span class="w"> </span>A<span class="w"> </span>URI<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>displayed<span class="w"> </span>that<span class="w"> </span>other<span class="w"> </span>users<span class="w"> </span>can<span class="w"> </span>use<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>your<span class="w"> </span>shared<span class="w"> </span>folder.
-</span></code></pre></div>
+<pre class="lang-annotation no-copy" style="padding-top: 5px; padding-bottom: 5px; margin-top: 0;"><code> 1. Open the Activities overview and search for Settings.
+ 2. Navigate to the Sharing panel.
+ 3. Toggle the main Sharing switch to On.
+ 4. Select Personal File Sharing and switch it to On.
+ 5. This makes your ~/Public folder accessible on the local network.
+ 6. A URI will be displayed that other users can use to access your shared folder.</code></pre>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Warning</p>
@@ -3155,17 +3091,14 @@ and running in minutes</p>
 <p class="admonition-title">Misc</p>
 <ol>
 <li>Import the main components:<br>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="m">1</span>.<span class="w"> </span>From<span class="w"> </span>src.example<span class="w"> </span>import<span class="w"> </span>Calculator
-</span><span id="__span-79-2"><a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a><span class="m">2</span>.<span class="w"> </span>From<span class="w"> </span>src.example.utils<span class="w"> </span>import<span class="w"> </span>validate_input,<span class="w"> </span>format_number
-</span></code></pre></div></li>
+<pre class="lang-annotation no-copy"><code>1. From src.example import Calculator
+2. From src.example.utils import validate_input, format_number</code></pre></li>
 <li>Validate inputs and perform calculation:<br>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a><span class="m">1</span>.<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>validate_input<span class="o">(</span><span class="s2">"10.5"</span><span class="o">)</span>
-</span><span id="__span-80-2"><a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a><span class="m">2</span>.<span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>validate_input<span class="o">(</span><span class="s2">"5.2"</span><span class="o">)</span>
-</span><span id="__span-80-3"><a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a><span class="m">3</span>.<span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>calc.add<span class="o">(</span>a,<span class="w"> </span>b<span class="o">)</span>
-</span></code></pre></div></li>
+<pre class="lang-annotation no-copy" style="padding-top: 2px; padding-bottom: 2px; margin-top: 0;"><code>1. a = validate_input("10.5")
+2. b = validate_input("5.2")
+3. result = calc.add(a, b)</code></pre></li>
 <li>Format output:<br>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="m">1</span>.<span class="w"> </span>print<span class="o">(</span>format_number<span class="o">(</span>result<span class="o">))</span><span class="w">  </span><span class="c1"># Output: 15.70</span>
-</span></code></pre></div></li>
+<pre class="lang-annotation no-copy" style="padding-top: 2px; padding-bottom: 2px; margin-top: 0;"><code>1. print(format_number(result))  # Output: 15.70</code></pre></li>
 </ol>
 </div>
 <hr>
@@ -3179,21 +3112,20 @@ and running in minutes</p>
 <li>Install <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml"><code>vscode-yaml</code></a> for YAML language support.</li>
 <li>
 <p>Add the schema under the <code>yaml.schemas</code> key in your user or workspace <a href="https://code.visualstudio.com/docs/getstarted/settings"><code>settings.json</code></a>:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="p">{</span>
-</span><span id="__span-82-2"><a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a><span class="w">  </span><span class="nt">"yaml.schemas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-82-3"><a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a><span class="w">    </span><span class="nt">"https://squidfunk.github.io/mkdocs-material/schema.json"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mkdocs.yml"</span>
-</span><span id="__span-82-4"><a id="__codelineno-82-4" name="__codelineno-82-4" href="#__codelineno-82-4"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-82-5"><a id="__codelineno-82-5" name="__codelineno-82-5" href="#__codelineno-82-5"></a><span class="w">  </span><span class="nt">"yaml.customTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-82-6"><a id="__codelineno-82-6" name="__codelineno-82-6" href="#__codelineno-82-6"></a><span class="w">    </span><span class="s2">"!ENV scalar"</span><span class="p">,</span>
-</span><span id="__span-82-7"><a id="__codelineno-82-7" name="__codelineno-82-7" href="#__codelineno-82-7"></a><span class="w">    </span><span class="s2">"!ENV sequence"</span><span class="p">,</span>
-</span><span id="__span-82-8"><a id="__codelineno-82-8" name="__codelineno-82-8" href="#__codelineno-82-8"></a><span class="w">    </span><span class="s2">"!relative scalar"</span><span class="p">,</span>
-</span><span id="__span-82-9"><a id="__codelineno-82-9" name="__codelineno-82-9" href="#__codelineno-82-9"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg"</span><span class="p">,</span>
-</span><span id="__span-82-10"><a id="__codelineno-82-10" name="__codelineno-82-10" href="#__codelineno-82-10"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji"</span><span class="p">,</span>
-</span><span id="__span-82-11"><a id="__codelineno-82-11" name="__codelineno-82-11" href="#__codelineno-82-11"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/object/apply:pymdownx.superfences.fence_code_format"</span><span class="p">,</span>
-</span><span id="__span-82-12"><a id="__codelineno-82-12" name="__codelineno-82-12" href="#__codelineno-82-12"></a><span class="w">    </span><span class="s2">"tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"</span>
-</span><span id="__span-82-13"><a id="__codelineno-82-13" name="__codelineno-82-13" href="#__codelineno-82-13"></a><span class="w">  </span><span class="p">]</span>
-</span><span id="__span-82-14"><a id="__codelineno-82-14" name="__codelineno-82-14" href="#__codelineno-82-14"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>{
+  "yaml.schemas": {
+    "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+  },
+  "yaml.customTags": [
+    "!ENV scalar",
+    "!ENV sequence",
+    "!relative scalar",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+    "tag:yaml.org,2002:python/object/apply:pymdownx.superfences.fence_code_format",
+    "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
+  ]
+}</code></pre>
 </li>
 </ol>
 </div>
@@ -3202,8 +3134,7 @@ and running in minutes</p>
 <li>Ensure your editor of choice has support for YAML schema validation.</li>
 <li>
 <p>Add the following lines at the top of <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="c1"># yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code># yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json</code></pre>
 </li>
 </ol>
 </div>
@@ -3213,27 +3144,22 @@ and running in minutes</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="10:5"><input checked="" id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><input id="__tabbed_10_3" name="__tabbed_10" type="radio"><input id="__tabbed_10_4" name="__tabbed_10" type="radio"><input id="__tabbed_10_5" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1">Bash</label><label for="__tabbed_10_2">Zsh</label><label for="__tabbed_10_3">fish</label><label for="__tabbed_10_4">Elvish</label><label for="__tabbed_10_5">PowerShell / pwsh</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'eval "$(uv generate-shell-completion bash)"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</span></code></pre></div>
+<pre class="lang-annotation"><code>echo 'eval "$(uv generate-shell-completion bash)"' &gt;&gt; ~/.bashrc</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-zsh highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'eval "$(uv generate-shell-completion zsh)"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
-</span></code></pre></div>
+<pre class="lang-annotation"><code>echo 'eval "$(uv generate-shell-completion zsh)"' &gt;&gt; ~/.zshrc</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-fish highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a><span class="k">echo</span> <span class="s1">'uv generate-shell-completion fish | source'</span> <span class="o">&gt;</span> ~/.config/fish/completions/uv.fish
-</span></code></pre></div>
+<pre class="lang-annotation"><code>echo 'uv generate-shell-completion fish | source' &gt; ~/.config/fish/completions/uv.fish</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>echo 'eval (uv generate-shell-completion elvish | slurp)' &gt;&gt; ~/.elvish/rc.elv
-</span></code></pre></div>
+<pre class="lang-annotation"><code>echo 'eval (uv generate-shell-completion elvish | slurp)' &gt;&gt; ~/.elvish/rc.elv</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a><span class="k">if</span> <span class="p">(!(</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="nv">$PROFILE</span><span class="p">))</span> <span class="p">{</span>
-</span><span id="__span-88-2"><a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a>  <span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">File</span> <span class="n">-Path</span> <span class="nv">$PROFILE</span> <span class="n">-Force</span>
-</span><span id="__span-88-3"><a id="__codelineno-88-3" name="__codelineno-88-3" href="#__codelineno-88-3"></a><span class="p">}</span>
-</span><span id="__span-88-4"><a id="__codelineno-88-4" name="__codelineno-88-4" href="#__codelineno-88-4"></a><span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="nv">$PROFILE</span> <span class="n">-Value</span> <span class="s1">'(&amp; uv generate-shell-completion powershell) | Out-String | Invoke-Expression'</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>if (!(Test-Path -Path $PROFILE)) {
+  New-Item -ItemType File -Path $PROFILE -Force
+}
+Add-Content -Path $PROFILE -Value '(&amp; uv generate-shell-completion powershell) | Out-String | Invoke-Expression'</code></pre>
 </div>
 </div>
 </div>
@@ -3243,44 +3169,35 @@ and running in minutes</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:8"><input checked="" id="__tabbed_11_1" name="__tabbed_11" type="radio"><input id="__tabbed_11_2" name="__tabbed_11" type="radio"><input id="__tabbed_11_3" name="__tabbed_11" type="radio"><input id="__tabbed_11_4" name="__tabbed_11" type="radio"><input id="__tabbed_11_5" name="__tabbed_11" type="radio"><input id="__tabbed_11_6" name="__tabbed_11" type="radio"><input id="__tabbed_11_7" name="__tabbed_11" type="radio"><input id="__tabbed_11_8" name="__tabbed_11" type="radio"><div class="tabbed-labels"><label for="__tabbed_11_1">CPU &amp; Memory</label><label for="__tabbed_11_2">Memory Status</label><label for="__tabbed_11_3">Mercurial</label><label for="__tabbed_11_4">Tasks</label><label for="__tabbed_11_5">Unknown</label><label for="__tabbed_11_6">FreeBSD / Arch</label><label for="__tabbed_11_7">Windows (Network)</label><label for="__tabbed_11_8">Windows (Linux Pkgs)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>$ Requires Delegation: CPUAccounting, CPUWeight, CPUQuota, AllowedCPUs, AllowedMemoryNodes
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ Requires Delegation: CPUAccounting, CPUWeight, CPUQuota, AllowedCPUs, AllowedMemoryNodes</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>$ Yes: MemoryLow, MemoryHigh, MemoryMax, MemorySwapMaxl
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ Yes: MemoryLow, MemoryHigh, MemoryMax, MemorySwapMaxl</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>$<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>mercurial
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ pacman -S mercurial</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>$ Yes: TasksMax
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ Yes: TasksMax</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>$ No: ?
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ No: ?</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Binary packages can be installed using <code>pkg</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>piers-linux
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ sudo pacman -S piers-linux</code></pre>
 <p>Alternatively, install from yay:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/home/piers-linux
-</span><span id="__span-95-2"><a id="__codelineno-95-2" name="__codelineno-95-2" href="#__codelineno-95-2"></a>$<span class="w"> </span>make<span class="w"> </span>install
-</span></code></pre></div>
+<pre class="lang-annotation"><code>$ cd /usr/home/piers-linux
+$ make install</code></pre>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a><span class="n">PS</span><span class="p">&gt;</span> <span class="n">No</span><span class="p">:</span> <span class="n">IPAddressDeny</span><span class="p">,</span> <span class="n">DeviceAllow</span><span class="p">,</span> <span class="n">DevicePolicy</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>PS&gt; No: IPAddressDeny, DeviceAllow, DevicePolicy</code></pre>
 <p>Or download from the list of binary releases.</p>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-97-1"><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a><span class="n">PS</span><span class="p">&gt;</span> <span class="n">Yes</span><span class="p">:</span> <span class="n">Packages</span> <span class="k">for</span> <span class="n">common</span> <span class="n">Linux</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>PS&gt; Yes: Packages for common Linux</code></pre>
 <p>Or download from the list of binary releases.</p>
 </div>
 </div>
@@ -3519,15 +3436,17 @@ and running in minutes</p>
 <hr>
 <div class="admonition failure">
 <p class="admonition-title">Failure</p>
-<div class="language-markdown highlight"><span class="filename">The last 3 special directories.</span><pre><span></span><code><span id="__span-98-1"><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>NB: The last 3 special directories (last, week and month) which links repectively to the last
-</span><span id="__span-98-2"><a id="__codelineno-98-2" name="__codelineno-98-2" href="#__codelineno-98-2"></a>synced repository, to the last Monday and to the first of the current month.
-</span></code></pre></div>
+<p>``` markdown title="The last 3 special directories."</p>
+<p>NB: The last 3 special directories (last, week and month) which links repectively to the last<br>
+synced repository, to the last Monday and to the first of the current month.<br>
+```</p>
 </div>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<div class="language-markdown highlight"><span class="filename">The last 3 special directories.</span><pre><span></span><code><span id="__span-99-1"><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>NB: The last 3 special directories (last, week and month) which links repectively to the last
-</span><span id="__span-99-2"><a id="__codelineno-99-2" name="__codelineno-99-2" href="#__codelineno-99-2"></a>synced repository, to the last Monday and to the first of the current month.
-</span></code></pre></div>
+<p>``` markdown title="The last 3 special directories."</p>
+<p>NB: The last 3 special directories (last, week and month) which links repectively to the last<br>
+synced repository, to the last Monday and to the first of the current month.<br>
+```</p>
 </div>
 <div class="admonition pied-piper">
 <p class="admonition-title">→ xiph.org</p>
@@ -3814,25 +3733,22 @@ and running in minutes</p>
 <p>(1.) Use the correct CSS class:</p>
 <p>Instead of .unlisted (which requires that extra config), use the class .skip-toc or simply { data-toc-label="" }. However, the most reliable "MkDocs-Material" way to hide a heading from the ToC while keeping it on the page is:</p>
 <p>Option A: (Best for MkDocs-Material):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-100-1"><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>#### Documentation for `MyClass` { #doc-myclass data-toc-label="" }
-</span></code></pre></div>
+<pre class="lang-annotation"><code>#### Documentation for `MyClass` { #doc-myclass data-toc-label="" }</code></pre>
 <p>Setting data-toc-label to an empty string effectively removes it from the sidebar in most Material setups.</p>
 <hr>
 <p>Option B: (The "Hidden" Heading trick):</p>
 <p>If Option A still shows a blank bullet point in the ToC, use this syntax which uses the attr_list to tell the TOC extension specifically to ignore it:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-101-1"><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>#### Documentation for `MyClass` {: .ignore-toc }
-</span></code></pre></div>
+<pre class="lang-annotation"><code>#### Documentation for `MyClass` {: .ignore-toc }</code></pre>
 <p>Note: This only works if we can tell the TOC to ignore that class, but since your TOC config is being picky, let's try the direct approach below.</p>
 <hr>
 <p>(2.) The "No-Fail" Approach:</p>
 <p>If you want to guarantee it never hits the ToC and never crashes your server, stop using the #### Markdown syntax for the Result tab only, and use plain HTML. MkDocs' TOC extension ignores raw HTML tags:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-102-1"><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a>=== "Result"
-</span><span id="__span-102-2"><a id="__codelineno-102-2" name="__codelineno-102-2" href="#__codelineno-102-2"></a>&lt;h4 style="font-weight: bold; margin-top: 1em;"&gt;Documentation for &lt;code&gt;MyClass&lt;/code&gt;&lt;/h4&gt;
-</span><span id="__span-102-3"><a id="__codelineno-102-3" name="__codelineno-102-3" href="#__codelineno-102-3"></a>Print print print!
-</span><span id="__span-102-4"><a id="__codelineno-102-4" name="__codelineno-102-4" href="#__codelineno-102-4"></a>
-</span><span id="__span-102-5"><a id="__codelineno-102-5" name="__codelineno-102-5" href="#__codelineno-102-5"></a>&lt;h4 style="font-weight: bold; margin-top: 1em;"&gt;&lt;code&gt;method_a(self)&lt;/code&gt;&lt;/h4&gt;
-</span><span id="__span-102-6"><a id="__codelineno-102-6" name="__codelineno-102-6" href="#__codelineno-102-6"></a>Print A!
-</span></code></pre></div>
+<pre class="lang-annotation"><code>=== "Result"
+&lt;h4 style="font-weight: bold; margin-top: 1em;"&gt;Documentation for &lt;code&gt;MyClass&lt;/code&gt;&lt;/h4&gt;
+Print print print!
+
+&lt;h4 style="font-weight: bold; margin-top: 1em;"&gt;&lt;code&gt;method_a(self)&lt;/code&gt;&lt;/h4&gt;
+Print A!</code></pre>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Fixing Incorrect Printing and Erroneous TOC Entries</p>
@@ -3842,25 +3758,22 @@ and running in minutes</p>
 <li>However, the most reliable "MkDocs-Material" way to hide a heading from the ToC while keeping it on the page is:</li>
 </ul>
 <p><strong>Option A: (Best for MkDocs-Material):</strong></p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-103-1"><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a><span class="gu">#### Documentation for `MyClass` { #doc-myclass data-toc-label="" }</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>#### Documentation for `MyClass` { #doc-myclass data-toc-label="" }</code></pre>
 <p>Setting <code>data-toc-label</code> to an empty string effectively removes it from the sidebar in most Material setups.</p>
 <hr>
 <p><strong>Option B: (The "Hidden" Heading trick):</strong></p>
 <p>If Option A still shows a blank bullet point in the ToC, use this syntax which uses the <code>attr_list</code> to tell the TOC extension specifically to ignore it:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a><span class="gu">#### Documentation for `MyClass` {: .ignore-toc }</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>#### Documentation for `MyClass` {: .ignore-toc }</code></pre>
 <p>Note: This only works if we can tell the TOC to ignore that class, but since your TOC config is being picky, let's try the direct approach below.</p>
 <hr>
 <p>2. <strong>The "No-Fail" Approach:</strong></p>
 <p>If you want to guarantee it never hits the ToC and never crashes your server, stop using the <code>####</code> Markdown syntax for the Result tab only, and use plain HTML. MkDocs' TOC extension ignores raw HTML tags:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a>=== "Result"
-</span><span id="__span-105-2"><a id="__codelineno-105-2" name="__codelineno-105-2" href="#__codelineno-105-2"></a>&lt;h4 style="font-weight: bold; margin-top: 1em;"&gt;Documentation for &lt;code&gt;MyClass&lt;/code&gt;&lt;/h4&gt;
-</span><span id="__span-105-3"><a id="__codelineno-105-3" name="__codelineno-105-3" href="#__codelineno-105-3"></a>Print print print!
-</span><span id="__span-105-4"><a id="__codelineno-105-4" name="__codelineno-105-4" href="#__codelineno-105-4"></a>
-</span><span id="__span-105-5"><a id="__codelineno-105-5" name="__codelineno-105-5" href="#__codelineno-105-5"></a>&lt;h4 style="font-weight: bold; margin-top: 1em;"&gt;&lt;code&gt;method_a(self)&lt;/code&gt;&lt;/h4&gt;
-</span><span id="__span-105-6"><a id="__codelineno-105-6" name="__codelineno-105-6" href="#__codelineno-105-6"></a>Print A!
-</span></code></pre></div>
+<pre class="lang-annotation"><code>=== "Result"
+&lt;h4 style="font-weight: bold; margin-top: 1em;"&gt;Documentation for &lt;code&gt;MyClass&lt;/code&gt;&lt;/h4&gt;
+Print print print!
+
+&lt;h4 style="font-weight: bold; margin-top: 1em;"&gt;&lt;code&gt;method_a(self)&lt;/code&gt;&lt;/h4&gt;
+Print A!</code></pre>
 </div>
 <h5 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">¶</a></h5>
 <div class="grid cards">

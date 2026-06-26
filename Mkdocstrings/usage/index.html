@@ -1162,9 +1162,8 @@
 <p><em>mkdocstrings</em> works by processing special expressions in your Markdown files.</p>
 <hr>
 <p>The syntax is as follows:</p>
-<div class="language-md no-copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>::: identifier
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>YAML block
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>::: identifier
+YAML block</code></pre>
 </div>
 <h5 id="resources-on-yaml">Resources on YAML<a class="headerlink" href="#resources-on-yaml" title="Permanent link">¶</a></h5>
 <div class="admonition note">
@@ -1213,39 +1212,36 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">docs/my_page.md</label><label for="__tabbed_1_2">mkdocs.yml</label><label for="__tabbed_1_3">src/my_package/my_module.py</label><label for="__tabbed_1_4">Result</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-md highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Documentation for `MyClass`</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>::: my_package.my_module.MyClass
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    handler: python
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    options:
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      members:
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="k">-</span><span class="w"> </span>method_a
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="k">-</span><span class="w"> </span>method_b
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      show_root_heading: false
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      show_source: false
-</span></code></pre></div>
+<pre class="lang-annotation"><code># Documentation for `MyClass`
+
+::: my_package.my_module.MyClass
+    handler: python
+    options:
+      members:
+        - method_a
+        - method_b
+      show_root_heading: false
+      show_source: false</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">nav</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"My</span><span class="nv"> </span><span class="s">page"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_page.md</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>nav:
+  - "My page": my_page.md</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">"""Print print print!"""</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">method_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="sd">"""Print A!"""</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"A!"</span><span class="p">)</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">method_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="sd">"""Print B!"""</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"B!"</span><span class="p">)</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">method_c</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="sd">"""Print C!"""</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"C!"</span><span class="p">)</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>class MyClass:
+    """Print print print!"""
+
+    def method_a(self):
+        """Print A!"""
+        print("A!")
+
+    def method_b(self):
+        """Print B!"""
+        print("B!")
+
+    def method_c(self):
+        """Print C!"""
+        print("C!")</code></pre>
 </div>
 <div class="tabbed-block">
 <h4 id="doc-myclass">Documentation for <code>MyClass</code><a class="headerlink" href="#doc-myclass" title="Permanent link">¶</a></h4>
@@ -1261,17 +1257,15 @@
 <div class="admonition info">
 <p class="admonition-title">INFO</p>
 <p>It is also possible to integrate a mkdocstrings identifier into a Markdown header:</p>
-<div class="language-md no-copy highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gu">## ::: my_package.my_module.MyClass</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    options:
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>      show_source: false
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>## ::: my_package.my_module.MyClass
+    options:
+      show_source: false</code></pre>
 <hr>
 <p>The above is equivalent to:</p>
-<div class="language-md no-copy highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>::: my_package.my_module.MyClass
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>      options:
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        show_source: false
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        heading_level: 2
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>::: my_package.my_module.MyClass
+      options:
+        show_source: false
+        heading_level: 2</code></pre>
 </div>
 <h5 id="global-options">Global Options<a class="headerlink" href="#global-options" title="Permanent link">¶</a></h5>
 <div class="admonition pied-piper">
@@ -1306,22 +1300,24 @@
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="language-yaml highlight"><span class="filename">mkdocs.yml</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ENABLE_MKDOCSTRINGS</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">]</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">custom_templates</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">default_handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">handlers</span><span class="p">:</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="nt">python</span><span class="p">:</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="nt">options</span><span class="p">:</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">          </span><span class="nt">show_source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
-<p>The handlers global configuration can then be overridden by local configurations:</p>
-<div class="language-yaml highlight"><span class="filename">docs/some_page.md</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">::</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_package.my_module.MyClass</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">options</span><span class="p p-Indicator">:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">show_source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<p>```yaml title="mkdocs.yml"<br>
+plugins:<br>
+- mkdocstrings:<br>
+    enabled: !ENV [ENABLE_MKDOCSTRINGS, true]<br>
+    custom_templates: templates<br>
+    default_handler: python<br>
+    locale: en<br>
+    handlers:<br>
+      python:<br>
+        options:<br>
+          show_source: false<br>
+</p><pre class="lang-annotation"><code>
+The handlers global configuration can then be overridden by local configurations:
+
+```yaml title="docs/some_page.md"
+::: my_package.my_module.MyClass
+    options:
+      show_source: true</code></pre><p></p>
 </div>
 <div class="admonition success">
 <p class="admonition-title">Handler of Interest!</p>
@@ -1347,19 +1343,17 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Markdown</label><label for="__tabbed_2_2">HTML Result</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-md no-copy highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>With a custom title:
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>[<span class="sb">`Object 1`</span>][full.path.object1]
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>With the identifier as title:
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>[<span class="nt">full.path.object2</span>][]
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>With a custom title:
+[`Object 1`][full.path.object1]
+
+With the identifier as title:
+[full.path.object2][]</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-html no-copy highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>With a custom title:
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://example.com/page1#full.path.object1"</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>Object 1<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>With the identifier as title:
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://example.com/page2#full.path.object2"</span><span class="p">&gt;</span>full.path.object2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;p&gt;With a custom title:
+&lt;a href="https://example.com/page1#full.path.object1"&gt;&lt;code&gt;Object 1&lt;/code&gt;&lt;/a&gt;&lt;p&gt;
+&lt;p&gt;With the identifier as title:
+&lt;a href="https://example.com/page2#full.path.object2"&gt;full.path.object2&lt;/a&gt;&lt;/p&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1387,12 +1381,12 @@
 <p>TIP: <strong>Changed in version 0.15.</strong><br>
 Linking to any Markdown heading used to be the default, but now opt-in is required.</p>
 <p>If you want to link to <em>any</em> Markdown heading, not just <em>mkdocstrings</em>-inserted items, please enable the <a href="https://github.com/mkdocstrings/autorefs"><em>autorefs</em> plugin for <em>MkDocs</em></a> by adding <code>autorefs</code> to <code>plugins</code>:</p>
-<div class="language-yaml highlight"><span class="filename">mkdocs.yml</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="hll"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autorefs</span>
-</span></span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="p p-Indicator">[</span><span class="nv">...</span><span class="p p-Indicator">]</span>
-</span></code></pre></div>
+<p><code>yaml title="mkdocs.yml" hl_lines="3"
+plugins:
+- search
+- autorefs
+- mkdocstrings:
+    [...]</code></p>
 <p>Note that you don't need to (<code>pip</code>) install anything more; this plugin is guaranteed to be pulled in with <em>mkdocstrings</em>.</p>
 </div>
 <div class="admonition example">
@@ -1400,20 +1394,17 @@ Linking to any Markdown heading used to be the default, but now opt-in is requir
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">doc1.md</label><label for="__tabbed_3_2">doc2.md</label><label for="__tabbed_3_3">Result HTML for doc2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-md highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gu">## Hello, world!</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Testing
-</span></code></pre></div>
+<pre class="lang-annotation"><code>## Hello, world!
+
+Testing</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-md highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gu">## Something else</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Please see the [<span class="nt">Hello, World!</span>][<span class="nl">hello-world</span>] section.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>## Something else
+
+Please see the [Hello, World!][hello-world] section.</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Please see the <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"doc1.html#hello-world"</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> section.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;Please see the &lt;a href="doc1.html#hello-world"&gt;Hello, World!&lt;/a&gt; section.&lt;/p&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1432,26 +1423,22 @@ Linking to any Markdown heading used to be the default, but now opt-in is requir
 <div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">foo.py</label><label for="__tabbed_4_2">doc1.md</label><label for="__tabbed_4_3">doc2.md</label><label for="__tabbed_4_4">HTML result for doc2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bar</span><span class="p">():</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="sd">"""Hello, world!</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="sd">    # Tips</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="sd">    - Stay hydrated.</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="sd">    """</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>def bar():
+    """Hello, world!
+
+    # Tips
+
+    - Stay hydrated.
+    """</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-md highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>::: foo.bar
-</span></code></pre></div>
+<pre class="lang-annotation"><code>::: foo.bar</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-md highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Check out the [<span class="nt">tips</span>][<span class="nl">foo.bar--tips</span>]
-</span></code></pre></div>
+<pre class="lang-annotation"><code>Check out the [tips][foo.bar--tips]</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Check out the <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"doc1.html#foo.bar--tips"</span><span class="p">&gt;</span>tips<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;Check out the &lt;a href="doc1.html#foo.bar--tips"&gt;tips&lt;/a&gt;&lt;/p&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1481,13 +1468,13 @@ Linking to any Markdown heading used to be the default, but now opt-in is requir
 <div class="admonition desc">
 <p class="admonition-title">Load Inventory</p>
 <p>In the following snippet, we load the inventory provided by <code>installer</code>:</p>
-<div class="language-yaml highlight"><span class="filename">mkdocs.yml</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nt">handlers</span><span class="p">:</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">      </span><span class="nt">python</span><span class="p">:</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span><span class="nt">inventories</span><span class="p">:</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://installer.readthedocs.io/en/stable/objects.inv</span>
-</span></code></pre></div>
+<p><code>yaml title="mkdocs.yml"
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        inventories:
+        - https://installer.readthedocs.io/en/stable/objects.inv</code></p>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">Cross-reference <code>installer</code></p>
@@ -1495,12 +1482,10 @@ Linking to any Markdown heading used to be the default, but now opt-in is requir
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Markdown</label><label for="__tabbed_5_2">Result (HTML)</label><label for="__tabbed_5_3">Result (displayed)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-md no-copy highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>See[installer.records](https://mkdocstrings.github.io/usage/?h=installer.records#cross-references-to-other-projects-inventories) to learn about records.
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>See[installer.records](https://mkdocstrings.github.io/usage/?h=installer.records#cross-references-to-other-projects-inventories) to learn about records.</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-html no-copy highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>See <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://installer.readthedocs.io/en/stable/api/records/#module-installer.records"</span><span class="p">&gt;</span>installer.records<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> to learn about records.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;p&gt;See &lt;a href="https://installer.readthedocs.io/en/stable/api/records/#module-installer.records"&gt;installer.records&lt;/a&gt; to learn about records.&lt;/p&gt;</code></pre>
 </div>
 <div class="tabbed-block">
 <p>See <a href="https://mkdocstrings.github.io/usage/?h=installer.records#cross-references-to-other-projects-inventories">installer.records</a> to learn about records.</p>
@@ -1511,42 +1496,37 @@ Linking to any Markdown heading used to be the default, but now opt-in is requir
 <div class="admonition desc">
 <p class="admonition-title">Select another Version</p>
 <p>You can of course select another version of the inventory, for example:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nt">handlers</span><span class="p">:</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">      </span><span class="nt">python</span><span class="p">:</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">        </span><span class="nt">inventories</span><span class="p">:</span>
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">        </span><span class="c1"># latest instead of stable</span>
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://installer.readthedocs.io/en/latest/objects.inv</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        inventories:
+        # latest instead of stable
+        - https://installer.readthedocs.io/en/latest/objects.inv</code></pre>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">Explicitly specify both URL's</p>
 <p>In case the inventory file is not served under the base documentation URL,  you can explicitly specify both URLs:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">handlers</span><span class="p">:</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">      </span><span class="nt">python</span><span class="p">:</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">        </span><span class="nt">inventories</span><span class="p">:</span>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cdn.example.com/version/objects.inv</span>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">          </span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://docs.example.com/version</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        inventories:
+        - url: https://cdn.example.com/version/objects.inv
+          base_url: https://docs.example.com/version</code></pre>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">Absolute URL's</p>
 <p>Absolute URLs to cross-referenced items will then be based on <code>https://docs.example.com/version/</code> instead of <code>https://cdn.example.com/version/</code>.</p>
 <p>If you need authentication to access the inventory file, you can provide the credentials in the URL, either as <code>username:password</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://username:password@private.example.com/version/objects.inv</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>- url: https://username:password@private.example.com/version/objects.inv</code></pre>
 <div class="admonition desc">
 <p>...or with token authentication:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://token123@private.example.com/version/objects.inv</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>- url: https://token123@private.example.com/version/objects.inv</code></pre>
 </div>
 <div class="admonition desc">
 <p>The credentials can also be specified using environment variables in the form <code>${ENV_VAR}</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://\({USERNAME}:\){PASSWORD}@private.example.com/version/objects.inv</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>- url: https://\({USERNAME}:\){PASSWORD}@private.example.com/version/objects.inv</code></pre>
 </div>
 </div>
 <div class="admonition desc">
@@ -1565,10 +1545,9 @@ Linking to any Markdown heading used to be the default, but now opt-in is requir
 <p>To explicitly enable or disable the generation of the inventory file, use the global <code>enable_inventory</code> option:</p>
 </li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nt">enable_inventory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+- mkdocstrings:
+    enable_inventory: false</code></pre>
 <pre class="mermaid"><code>  info</code></pre>
 </div>
 <p><a class="md-button md-button--custom" href="../../MkDocs-Material-Start/#advanced-configuration">Back to: #Advanced-Configuration  <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"></path></svg></span></a></p>

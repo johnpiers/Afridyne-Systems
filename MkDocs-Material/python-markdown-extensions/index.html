@@ -1172,43 +1172,40 @@
 <!-- md:extension [pymdownx.arithmatex][Arithmatex] -->
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/">Arithmatex</a> extension allows for rendering of block and inline block equations and integrates seamlessly with <a href="https://www.mathjax.org/">MathJax</a>[<code>^1</code>] – a library for mathematical typesetting. Enable it via <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.arithmatex</span><span class="p">:</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">      </span><span class="nt">generic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true</code></pre>
 <p>Besides enabling the extension in <code>mkdocs.yml</code>, a MathJax configuration and the JavaScript runtime need to be included, which can be done with a few lines of <a href="../customization/#additional-javascript">additional JavaScript</a>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/javascripts/mathjax.js</code></label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"\\("</span><span class="p">,</span><span class="w"> </span><span class="s2">"\\)"</span><span class="p">]],</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">displayMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"\\["</span><span class="p">,</span><span class="w"> </span><span class="s2">"\\]"</span><span class="p">]],</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nx">processEscapes</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nx">processEnvironments</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nx">ignoreHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">".*|"</span><span class="p">,</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">processHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">"arithmatex"</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">};</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (1)!</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nx">clearCache</span><span class="p">()</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetClear</span><span class="p">()</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">texReset</span><span class="p">()</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetPromise</span><span class="p">()</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">})</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>window.MathJax = {
+  tex: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    processEscapes: true,
+    processEnvironments: true
+  },
+  options: {
+    ignoreHtmlClass: ".*|",
+    processHtmlClass: "arithmatex"
+  }
+};
+
+document$.subscribe(() =&gt; { // (1)!
+  MathJax.startup.output.clearCache()
+  MathJax.typesetClear()
+  MathJax.texReset()
+  MathJax.typesetPromise()
+})</code></pre>
 <ol>
 <li>This integrates MathJax with <a href="../setting-up-navigation/#instant-loading">instant loading</a></li>
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">extra_javascript</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/mathjax.js</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js</code></pre>
 </div>
 </div>
 </div>
@@ -1225,18 +1222,16 @@ them at your own risk.</p>
 <!-- md:extension [pymdownx.betterem][BetterEm] -->
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/betterem/">BetterEm</a> extension improves the detection of Markup to emphasize text in Markdown using special characters, i.e. for <code>**bold**</code> and <code>_italic_</code> formatting. Enable it via <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.betterem</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.betterem</code></pre>
 <p>The configuration options of this extension are not specific to Material for MkDocs, as they only impact the Markdown parsing stage. See the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/betterem/">BetterEm documentation</a> for more information.</p>
 <h3 id="caption">Caption<a class="headerlink" href="#caption" title="Permanent link">¶</a></h3>
 <!-- md:version 1.0.0 -->
 <!-- md:extension [pymdownx.blocks.caption][Caption] -->
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/caption/">Caption</a> extension adds the ability to add captions to any Markdown block, including images, tables, and code blocks. Enable it via <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.blocks.caption</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.blocks.caption</code></pre>
 <p>The configuration options of this extension are not specific to Material for MkDocs, as they only impact the Markdown parsing stage. See the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/caption/">Caption documentation</a> for more information.</p>
 <h3 id="caret-mark-tilde">Caret, Mark &amp; Tilde<a class="headerlink" href="#caret-mark-tilde" title="Permanent link">¶</a></h3>
 <!-- md:version 1.0.0 -->
@@ -1244,11 +1239,10 @@ them at your own risk.</p>
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/caret/">Caret</a>, <a href="https://facelessuser.github.io/pymdown-extensions/extensions/mark/">Mark</a> and <a href="https://facelessuser.github.io/pymdown-extensions/extensions/tilde/">Tilde</a> extensions add the ability to highlight text and define sub - and superscript using a simple syntax. Enable them together via<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.caret</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.mark</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.tilde</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde</code></pre>
 <p>The configuration options of this extension are not specific to Material for MkDocs, as they only impact the Markdown parsing stage. See the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/caret/">Caret</a>, <a href="https://facelessuser.github.io/pymdown-extensions/extensions/mark/">Mark</a> and <a href="https://facelessuser.github.io/pymdown-extensions/extensions/tilde/">Tilde documentation</a> for guidance.</p>
 <p>See reference for usage:</p>
 <ul>
@@ -1261,9 +1255,8 @@ them at your own risk.</p>
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/critic/">Critic</a> extension allows for the usage of <a href="https://github.com/CriticMarkup/CriticMarkup-toolkit">Critic Markup</a> to highlight added, deleted or updated sections in a document, i.e. for tracking changes in Markdown syntax. Enable it via<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.critic</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.critic</code></pre>
 <p>The following configuration options are supported:</p>
 <dl>
 <dt><!-- md:option pymdownx.critic.mode -->
@@ -1273,22 +1266,19 @@ them at your own risk.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">View changes</label><label for="__tabbed_2_2">Accept changes</label><label for="__tabbed_2_3">Reject changes</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.critic</span><span class="p">:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">view</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.critic:
+      mode: view</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.critic</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accept</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.critic:
+      mode: accept</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.critic</span><span class="p">:</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reject</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.critic:
+      mode: reject</code></pre>
 </div>
 </div>
 </div>
@@ -1304,9 +1294,8 @@ them at your own risk.</p>
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/details/">Details</a> extension supercharges the <a href="../python-markdown/#admonition">Admonition</a> extension, making the resulting <em>call-outs</em> collapsible, allowing them to be opened and closed by the user. Enable it via: –<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.details</code></pre>
 <p>No configuration options are available. See reference for usage:</p>
 <ul>
 <li><a href="../../admonitions/#collapsible-blocks">Collapsible blocks</a></li>
@@ -1317,11 +1306,10 @@ them at your own risk.</p>
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/emoji/">Emoji</a> extension automatically inlines bundled and custom icons and emojis in <code>*.svg</code> file format into the resulting HTML page. Enable it via: –<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.emoji</span><span class="p">:</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="nt">emoji_index</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.twemoji</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">      </span><span class="nt">emoji_generator</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.to_svg</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji # (1)!
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg</code></pre>
 <ol>
 <li><a href="https://facelessuser.github.io/pymdown-extensions">Python Markdown Extensions</a> uses the <code>pymdownx</code> namespace, but in order to support the inlining of icons, the <code>materialx</code> namespace must be used, as it extends the functionality of <code>pymdownx</code>.</li>
 </ol>
@@ -1332,32 +1320,29 @@ them at your own risk.</p>
 <dd>
 <p><!-- md:default <code>emojione</code> --> This option defines which set of emojis is used for rendering. Note that the use of <code>emojione</code> is not recommended due to: –<br>
 <a href="https://facelessuser.github.io/pymdown-extensions/extensions/emoji/#default-emoji-indexes">Restrictions in Licensing</a>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.emoji</span><span class="p">:</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">      </span><span class="nt">emoji_index</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.twemoji</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji</code></pre>
 </dd>
 <dt><!-- md:option pymdownx.emoji.emoji_generator -->
 </dt>
 <dd>
 <p><!-- md:default <code>to_png</code> --> This option defines how the resolved emoji or icon shortcode is rendered. Note that icons can only be used together with the <code>to_svg</code> configuration:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.emoji</span><span class="p">:</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">      </span><span class="nt">emoji_generator</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.to_svg</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg</code></pre>
 </dd>
 <dt><!-- md:option pymdownx.emoji.options.custom_icons -->
 </dt>
 <dd>
 <p><!-- md:default none --> This option allows to list folders with additional icon sets to be used in Markdown or <code>mkdocs.yml</code>, which is explained in more detail in the <a href="../changing-the-logo-and-icons/#additional-icons">icon customization guide</a>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.emoji</span><span class="p">:</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">      </span><span class="nt">emoji_index</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.twemoji</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">      </span><span class="nt">emoji_generator</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.to_svg</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">        </span><span class="nt">custom_icons</span><span class="p">:</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overrides/.icons</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons</code></pre>
 </dd>
 </dl>
 <p>The other configuration options of this extension are not officially supported by Material for MkDocs, which is why they may yield unexpected results. Use them at your own risk.</p>
@@ -1373,11 +1358,10 @@ them at your own risk.</p>
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/highlight/">Highlight</a> extension adds support for syntax highlighting of code blocks (with the help of <a href="#superfences">SuperFences</a>) and inline code blocks (with the help of [InlineHilite <a href="#inlinehilite">pymdownx.inlinehilite</a>). Enable it via: –<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">      </span><span class="nt">anchor_linenums</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences # (1)!</code></pre>
 <ol>
 <li><a href="https://facelessuser.github.io/pymdown-extensions/extensions/highlight/">Highlight</a> is used by the <a href="#superfences">SuperFences</a> extension toperform syntax highlighting on code blocks, not the other way round, which is why this extension also needs to be enabled.</li>
 </ol>
@@ -1390,35 +1374,31 @@ them at your own risk.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Pygments</label><label for="__tabbed_3_2">JavaScript</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">      </span><span class="nt">use_pygments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">      </span><span class="nt">use_pygments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: false</code></pre>
 <p>As an example, <a href="https://highlightjs.org/">Highlight.js</a>, a JavaScript syntax highlighter, can be<br>
 integrated with some <a href="../customization/#additional-javascript">additional JavaScript</a> and an <a href="../customization/#additional-css">additional style<br>
 sheet</a> in <code>mkdocs.yml</code>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>docs/javascripts/highlight.js</code></label><label for="__tabbed_4_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nx">hljs</span><span class="p">.</span><span class="nx">highlightAll</span><span class="p">()</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="p">})</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>document$.subscribe(() =&gt; {
+  hljs.highlightAll()
+})</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">extra_javascript</span><span class="p">:</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/highlight.js</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nt">extra_css</span><span class="p">:</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - javascripts/highlight.js
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css</code></pre>
 </div>
 </div>
 </div>
@@ -1435,19 +1415,17 @@ sheet</a> in <code>mkdocs.yml</code>:</p>
 <p><!-- md:default <code>false</code> --> This option instructs <a href="https://pygments.org">Pygments</a> to add a CSS class to identify the language of the code block, which is essential for custom annotation markers to function:</p>
 </dd>
 </dl>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">      </span><span class="nt">pygments_lang_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      pygments_lang_class: true</code></pre>
 <dl>
 <dt><!-- md:option pymdownx.highlight.auto_title -->
 </dt>
 <dd>
 <p><!-- md:default <code>false</code> --> This option will automatically add a <a href="../code-blocks/#adding-a-title">title</a> to all code blocks that shows the name of the language being used, e.g. <code>Python</code> is printed for a <code>py</code> block:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">      </span><span class="nt">auto_title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      auto_title: true</code></pre>
 </dd>
 <dt><!-- md:option pymdownx.highlight.linenums -->
 </dt>
@@ -1455,20 +1433,18 @@ sheet</a> in <code>mkdocs.yml</code>:</p>
 <p><!-- md:default <code>false</code> --> This option will add line numbers to <em>all</em> code blocks. If you wish to add line numbers to<br>
 <em>some</em>, but not all code blocks, consult the section on <a href="../code-blocks/#adding-line-numbers">adding line numbers</a> in the code<br>
 block reference, which also contains some tips on working with line numbers:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">      </span><span class="nt">linenums</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      linenums: true</code></pre>
 </dd>
 <dt><!-- md:option pymdownx.highlight.linenums_style -->
 </dt>
 <dd>
 <p><!-- md:default <code>table</code> --> The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/highlight/">Highlight</a> extension provides three ways to add line numbers, two of which are supported by Material for MkDocs. While <code>table</code> wraps a code block in a <code>&lt;table&gt;</code><br>
 element, <code>pymdownx-inline</code> renders line numbers as part of the line itself:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">      </span><span class="nt">linenums_style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx-inline</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline</code></pre>
 <p>Note that <code>inline</code> will put line numbers next to the actual code, which means that they will be included when selecting text with the cursor or copying a code block to the clipboard. Thus, the usage of either <code>table</code> or <code>pymdownx-inline</code> is recommended.</p>
 </dd>
 <dt><!-- md:option pymdownx.highlight.anchor_linenums -->
@@ -1476,19 +1452,17 @@ element, <code>pymdownx-inline</code> renders line numbers as part of the line i
 <dd>
 <p><!-- md:version 8.1.0 --> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75m7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.25.25 0 0 0-.163-.06"></path></svg></span><br>
 Default: <code>false</code> – If a code blocks contains line numbers, enabling this setting will wrap them with anchor links, so they can be hyperlinked and shared more easily:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">      </span><span class="nt">anchor_linenums</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true</code></pre>
 </dd>
 <dt><!-- md:option pymdownx.highlight.line_spans -->
 </dt>
 <dd>
 <p><!-- md:default none --> When this option is set, each line of a code block is wrapped in a <code>span</code>, which is essential for features like line highlighting to work correctly:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">      </span><span class="nt">line_spans</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">__span</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight:
+      line_spans: __span</code></pre>
 </dd>
 </dl>
 <p>The other configuration options of this extension are not officially supported by Material for MkDocs, which is why they may yield unexpected results. Use them at your own risk.</p>
@@ -1506,10 +1480,9 @@ Default: <code>false</code> – If a code blocks contains line numbers, enabling
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/">InlineHilite</a> extension add support for syntax highlighting of inline code blocks. It's built on top of the <a href="#highlight">Highlight</a> extension, from which it sources its configuration. Enable it via<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.highlight</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.inlinehilite</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite</code></pre>
 <p>The configuration options of this extension are not specific to Material for MkDocs, as they only impact the Markdown parsing stage. The only exception is the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/#options"><code>css_class</code></a> option, which must not be changed. See the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/">InlineHilite documentation</a> for guidance.</p>
 <p>See reference for usage:</p>
 <ul>
@@ -1521,9 +1494,8 @@ Default: <code>false</code> – If a code blocks contains line numbers, enabling
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/keys/">Keys</a> extension adds a simple syntax to allow for the rendering of keyboard<br>
 keys and combinations, e.g. <span class="keys"><kbd class="key-control">Ctrl</kbd><span> ＋ </span><kbd class="key-alt">Alt</kbd><span> ＋ </span><kbd class="key-delete">Del</kbd></span>. Enable it via <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.keys</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.keys</code></pre>
 <p>The configuration options of this extension are not specific to Material for MkDocs, as they only impact the Markdown parsing stage. The only exception is the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/keys/#options"><code>class</code></a> option, which must not be changed. See the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/keys/">Keys documentation</a> for more information.</p>
 <p>See reference for usage:</p>
 <ul>
@@ -1535,9 +1507,8 @@ keys and combinations, e.g. <span class="keys"><kbd class="key-control">Ctrl</kb
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/">SmartSymbols</a> extension converts some sequences of characters into their corresponding symbols, e.g. copyright symbols or fractions. Enable it via: —<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.smartsymbols</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.smartsymbols</code></pre>
 <p>The configuration options of this extension are not specific to Material for MkDocs, as they only impact the Markdown parsing stage. See the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/">SmartSymbols documentation</a> for guidance.</p>
 <h3 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">¶</a></h3>
 <!-- md:version 0.1.0 -->
@@ -1546,9 +1517,8 @@ keys and combinations, e.g. <span class="keys"><kbd class="key-control">Ctrl</kb
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/snippets/">Snippets</a> extension adds the ability to embed content from arbitrary files<br>
 into a document, including other documents or source files, by using a simple<br>
 syntax. Enable it via <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.snippets</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.snippets</code></pre>
 <p>The configuration options of this extension are not specific to Material for MkDocs, as they only impact the Markdown parsing stage. See the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/snippets/">Snippets documentation</a> for more information.</p>
 <p>See reference for usage:</p>
 <ul>
@@ -1560,9 +1530,8 @@ syntax. Enable it via <code>mkdocs.yml</code>:</p>
 <!-- md:extension [pymdownx.superfences][SuperFences] -->
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/superfences/">SuperFences</a> extension allows for arbitrary nesting of code and content blocks inside each other, including admonitions, tabs, lists and all other elements. Enable it via <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.superfences</code></pre>
 <p>The following configuration options are supported:</p>
 <dl>
 <dt><!-- md:option pymdownx.superfences.custom_fences -->
@@ -1571,13 +1540,12 @@ syntax. Enable it via <code>mkdocs.yml</code>:</p>
 <p><!-- md:default none --> This option allows to define a handler for custom fences,<br>
 e.g. to preserve the definitions of <a href="https://mermaid-js.github.io/mermaid/">Mermaid.js</a> diagrams to<br>
 be interpreted in the browser:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.superfences</span><span class="p">:</span>
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">      </span><span class="nt">custom_fences</span><span class="p">:</span>
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">          </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">          </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:pymdownx.superfences.fence_code_format</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format</code></pre>
 <p>Note that this will primarily prevent syntax highlighting from being<br>
 applied. See the reference on <a href="../diagrams/">diagrams</a> to learn how Mermaid.js is<br>
 integrated with Material for MkDocs.</p>
@@ -1604,10 +1572,9 @@ them at your own risk.</p>
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/">Tabbed</a> extension allows the usage of content tabs, a simple way to group<br>
 related content and code blocks under accessible tabs. Enable it via<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tabbed</span><span class="p">:</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">      </span><span class="nt">alternate_style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true</code></pre>
 <p>The following configuration options are supported:</p>
 <dl>
 <dt><!-- md:option pymdownx.tabbed.alternate_style -->
@@ -1615,20 +1582,18 @@ related content and code blocks under accessible tabs. Enable it via<br>
 <dd>
 <p><!-- md:version 7.3.1 --> <!-- md:default <code>false</code> --><br>
 <!-- md:flag required -->  This option enables the content tabs <a href="https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/#alternate-style">alternate style</a>, which has <a href="https://x.com/squidfunk/status/1424740370596958214">better behavior on mobile viewports</a>, and is the only supported style:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tabbed</span><span class="p">:</span>
-</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">      </span><span class="nt">alternate_style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true</code></pre>
 </dd>
 <dt><!-- md:option pymdownx.tabbed.combine_header_slug -->
 </dt>
 <dd>
 <p><!-- md:default <code>false</code> --> This option enables the content tabs' [<code>combine_header_slug</code> style] flag,<br>
 which prepends the id of the header tothe id of the tab:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tabbed</span><span class="p">:</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">      </span><span class="nt">combine_header_slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.tabbed:
+      combine_header_slug: true</code></pre>
 </dd>
 <dt><!-- md:option pymdownx.tabbed.slugify -->
 </dt>
@@ -1637,18 +1602,16 @@ which prepends the id of the header tothe id of the tab:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Unicode</label><label for="__tabbed_5_2">Unicode, case-sensitive</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tabbed</span><span class="p">:</span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">      </span><span class="nt">slugify</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/object/apply:pymdownx.slugs.slugify</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">        </span><span class="nt">kwds</span><span class="p">:</span>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">          </span><span class="nt">case</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lower</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.tabbed:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower</code></pre>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tabbed</span><span class="p">:</span>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">      </span><span class="nt">slugify</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/object/apply:pymdownx.slugs.slugify</span><span class="w"> </span><span class="p p-Indicator">{}</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.tabbed:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {}</code></pre>
 </div>
 </div>
 </div>
@@ -1668,29 +1631,26 @@ MkDocs, which is why they may yield unexpected results. Use them at your own ris
 
 <p>The <a href="https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/">Tasklist</a> extension allows for the usage of <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a> inspired <a href="https://github.github.com/gfm/#task-list-items-extension-">task lists</a>, following the same syntactical conventions. Enable it via<br>
 <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tasklist</span><span class="p">:</span>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">      </span><span class="nt">custom_checkbox</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true</code></pre>
 <p>The following configuration options are supported:</p>
 <dl>
 <dt><!-- md:option pymdownx.tasklist.custom_checkbox -->
 </dt>
 <dd>
 <p><!-- md:default <code>false</code> --> This option toggles the rendering style of checkboxes, replacing native checkbox styles with beautiful icons, and is therefore recommended:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tasklist</span><span class="p">:</span>
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">      </span><span class="nt">custom_checkbox</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true</code></pre>
 </dd>
 <dt><!-- md:option pymdownx.tasklist.clickable_checkbox -->
 </dt>
 <dd>
 <p><!-- md:default <code>false</code> --> This option toggles whether checkboxes are clickable. As the state is not persisted, the use of this option is <em>rather discouraged</em> from a user experience perspective:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tasklist</span><span class="p">:</span>
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">      </span><span class="nt">clickable_checkbox</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - pymdownx.tasklist:
+      clickable_checkbox: true</code></pre>
 </dd>
 </dl>
 <p>The other configuration options of this extension are not officially supported<br>

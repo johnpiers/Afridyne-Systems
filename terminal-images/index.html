@@ -1042,8 +1042,7 @@
 <h2 id="map-view-v3">Map view (v3)<a class="headerlink" href="#map-view-v3" title="Permanent link">¶</a></h2>
 <p>In the experimental map view, that is available under the view code <code>v3</code>,<br>
 weather information about a geographical region is available:</p>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    curl wttr.in/Bayern
-</span></code></pre></div><br>
+<p></p><pre class="lang-annotation"><code>    curl wttr.in/Bayern</code></pre><br>
 <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260419-035651.png" data-desc-position="bottom"><img alt="" src="../imgs/20260419-035651.png"></a><p></p>
 <p>or directly in browser:</p>
 <ul>
@@ -1169,15 +1168,12 @@ weather information about a geographical region is available:</p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">¶</a></h2>
 <h3 id="xtermuxterm">xterm/uxterm<a class="headerlink" href="#xtermuxterm" title="Permanent link">¶</a></h3>
 <p>To start xterm/uxterm with Sixel support:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uxterm -ti vt340
-</span></code></pre></div>
+<pre class="lang-annotation"><code>uxterm -ti vt340</code></pre>
 <h3 id="kitty">Kitty<a class="headerlink" href="#kitty" title="Permanent link">¶</a></h3>
 <p>To view images in kitty:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -s v3.wttr.in/Tabasco.png | kitty icat --align=left
-</span></code></pre></div>
+<pre class="lang-annotation"><code>curl -s v3.wttr.in/Tabasco.png | kitty icat --align=left</code></pre>
 <p>or even without <code>curl</code> at  all, because <code>icat</code> knows how to handle URLs:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kitty icat --align=left https://v3.wttr.in/Tabasco.png
-</span></code></pre></div>
+<pre class="lang-annotation"><code>kitty icat --align=left https://v3.wttr.in/Tabasco.png</code></pre>
 
 
 

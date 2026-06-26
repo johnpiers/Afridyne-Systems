@@ -1310,17 +1310,17 @@
 <p class="admonition-title">How it works</p>
 <p>The plugin scans the configured [<code>projects</code> directory][<code>config.projects_dir</code>] for <code>mkdocs.yml</code> files, identifies all nested projects and builds them concurrently. If not configured otherwise, the plugin expects that your project has the following directory layout, e.g. for a multi-language project:</p>
 <hr>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─<span class="w"> </span>docs/
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─<span class="w"> </span>projects/
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│<span class="w">  </span>├─<span class="w"> </span>en/
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│<span class="w">  </span>│<span class="w">  </span>├─<span class="w"> </span>docs/
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│<span class="w">  </span>│<span class="w">  </span>└─<span class="w"> </span>mkdocs.yml
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│<span class="w">  </span>└─<span class="w"> </span>de/
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│<span class="w">     </span>├─<span class="w"> </span>docs/
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│<span class="w">     </span>└─<span class="w"> </span>mkdocs.yml
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>└─<span class="w"> </span>mkdocs.yml
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>
+.
+├─ docs/
+├─ projects/
+│  ├─ en/
+│  │  ├─ docs/
+│  │  └─ mkdocs.yml
+│  └─ de/
+│     ├─ docs/
+│     └─ mkdocs.yml
+└─ mkdocs.yml</code></pre>
 <hr>
 <p>One of the most useful and interesting features of the plugin is that it allows <a href="../creating-your-site/#previewing-as-you-write">previewing your site</a> from the main project, while still being able to preview and build each project individually. This is especially useful for multi-language projects.</p>
 <p>If, when <a href="../creating-your-site/#previewing-as-you-write">previewing your site</a>, you change a file in one of the projects, the plugin only rebuilds this project and makes sure that MkDocs will also reload the associated files. This also creates the opportunity for splitting your main project into several projects for a better editing experience.</p>
@@ -1340,9 +1340,8 @@
 <div class="admonition instruction">
 <p class="admonition-title">Configuration</p>
 <p>In order to get started with the projects plugin, just add the following lines to<code>mkdocs.yml</code>, and split your main project into several distinct projects that can be built concurrently:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">projects</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects</code></pre>
 <p>The projects plugin is built into Material for MkDocs and doesn't need to be installed.</p>
 </div>
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">¶</a></h3>
@@ -1354,28 +1353,24 @@
 <div class="admonition recommendation">
 <p class="admonition-title">setting option.title</p>
 <h4 id="configenabled"><code>config.enabled</code><a class="headerlink" href="#configenabled" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `true` --&gt;</code></pre>
 <p>Use this setting to enable or disable the plugin when <a href="../creating-your-site/#building-your-site">building your project</a>. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable][<code>mkdocs.env</code>] in <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CI</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      enabled: !ENV [CI, false]</code></pre>
 <p>This configuration enables the plugin only during continuous integration (CI).</p>
 </div>
 <hr>
 <div class="admonition recommendation">
 <p class="admonition-title">Config. Concurrency</p>
 <h4 id="configconcurrency"><code>config.concurrency</code><a class="headerlink" href="#configconcurrency" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span>available<span class="w"> </span>CPUs<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default available CPUs - 1 --&gt;</code></pre>
 <p>With more CPUs available, the plugin can do more work in parallel, and thus build projects faster. If you want to disable concurrent processing completely, use:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span><span class="nt">concurrency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      concurrency: 1</code></pre>
 <p>By default, the plugin uses all available CPUs - 1 with a minimum of 1.</p>
 </div>
 <h3 id="caching">Caching<a class="headerlink" href="#caching" title="Permanent link">¶</a></h3>
@@ -1388,27 +1383,23 @@
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.cache</p>
 <h4 id="configcache"><code>config.cache</code><a class="headerlink" href="#configcache" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `true` --&gt;</code></pre>
 <p>Use this setting to instruct the plugin to bypass the cache, in order to rebuild all projects, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      cache: false</code></pre>
 </div>
 <hr>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.cache_dir</p>
 <h4 id="configcache_dir"><code>config.cache_dir</code><a class="headerlink" href="#configcache_dir" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span>.cache/plugin/projects<span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `.cache/plugin/projects` --&gt;</code></pre>
 <p>It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where the metadata is cached. If you want to change it, use:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">      </span><span class="nt">cache_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my/custom/dir</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      cache_dir: my/custom/dir</code></pre>
 </div>
 <h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
@@ -1419,51 +1410,44 @@
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.log</p>
 <h4 id="configlog"><code>config.log</code><a class="headerlink" href="#configlog" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `true` --&gt;</code></pre>
 <p>Use this setting to control whether the plugin should display log messages from projects when building your site. While not being recommended, you can disable logging with:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="nt">log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      log: false</code></pre>
 </div>
 <hr>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.log_level</p>
 <h4 id="configlog_level"><code>config.log_level</code><a class="headerlink" href="#configlog_level" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span>info<span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `info` --&gt;</code></pre>
 <p>Use this setting to control the log level that the plugin should employ when encountering errors, which requires that the [<code>log</code>][<code>config.log</code>] setting is enabled. The following log levels are available:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><code>error</code></label><label for="__tabbed_1_2"><code>warn</code></label><label for="__tabbed_1_3"><code>info</code></label><label for="__tabbed_1_4"><code>debug</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">error</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      log_level: error</code></pre>
 <p>Only errors are reported.</p>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warn</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      log_level: warn</code></pre>
 <p>Errors and warnings are reported, terminating the build in [<code>strict</code>][<code>mkdocs.strict</code>] mode.</p>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      log_level: info</code></pre>
 <p>Errors, warnings and informational messages are reported.</p>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">      </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">debug</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      log_level: debug</code></pre>
 <p>All messages are reported, including debug messages.</p>
 </div>
 </div>
@@ -1478,27 +1462,23 @@
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.projects</p>
 <h4 id="configprojects"><code>config.projects</code><a class="headerlink" href="#configprojects" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `true` --&gt;</code></pre>
 <p>Use this setting to enable or disable building of projects. Currently, the plugin's sole purpose is to build projects, so it's equivalent to the [<code>enabled</code>][<code>config.enabled</code>] setting, but in the future, other features might be added. If you want to disable building of projects, use:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">      </span><span class="nt">projects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      projects: false</code></pre>
 </div>
 <hr>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.projects_dir</p>
 <h4 id="projects_dir"><code>projects_dir</code><a class="headerlink" href="#projects_dir" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span>projects<span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `projects` --&gt;</code></pre>
 <p>Use this setting to change the folder where your projects are located. It's normally not necessary to change this setting, but if you want to rename the folder or change its file system location, use:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">      </span><span class="nt">projects_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">projects</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      projects_dir: projects</code></pre>
 <p>Note that the [<code>projects</code> directory][<code>config.projects_dir</code>] is solely used for project organization – it is not included in project URLs, since projects are automatically hoisted by the plugin.</p>
 <p>The provided path is resolved from the root directory.</p>
 </div>
@@ -1506,36 +1486,32 @@
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.projects_config_files</p>
 <h4 id="proj_config_files"><code>proj_config_files</code><a class="headerlink" href="#proj_config_files" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span>*/mkdocs.yml<span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `*/mkdocs.yml` --&gt;</code></pre>
 <p>Use this setting to change the location or name of configuration files the plugin will look for when scanning the [<code>projects</code> directory][<code>config.projects_dir</code>]. Adjusting this setting can be necessary when the configuration files are located in subdirectories of projects, e.g.</p>
 <p><code>docs/mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">      </span><span class="nt">projects_config_files</span><span class="p">:</span><span class="w"> </span><span class="s">"**/mkdocs.yml"</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      projects_config_files: "**/mkdocs.yml" # (1)!</code></pre>
 <ol>
 <li>
 <p>If all projects share the same location for their configuration files, e.g., <code>docs/mkdocs.yml</code>, it's advisable to fully qualify the path, as<br>
 it's faster to resolve than a <code>**</code> glob pattern.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">      </span><span class="nt">projects_config_files</span><span class="p">:</span><span class="w"> </span><span class="s">"*/docs/mkdocs.yml"</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      projects_config_files: "*/docs/mkdocs.yml"</code></pre>
 <p>This configuration fits the following directory structure, which is<br>
 quite common for projects using git submodules:</p>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>.
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>├─<span class="w"> </span>docs/
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>├─<span class="w"> </span>projects/
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>│<span class="w">  </span>├─<span class="w"> </span>git-submodule-a/
-</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>│<span class="w">  </span>│<span class="w">  </span>└─<span class="w"> </span>docs/
-</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>│<span class="w">  </span>│<span class="w">     </span>└─<span class="w"> </span>mkdocs.yml
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>│<span class="w">  </span>└─<span class="w"> </span>git-submodule-b/
-</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>│<span class="w">     </span>└─<span class="w"> </span>docs/
-</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>│<span class="w">        </span>└─<span class="w"> </span>mkdocs.yml
-</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>└─<span class="w"> </span>mkdocs.yml
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>.
+├─ docs/
+├─ projects/
+│  ├─ git-submodule-a/
+│  │  └─ docs/
+│  │     └─ mkdocs.yml
+│  └─ git-submodule-b/
+│     └─ docs/
+│        └─ mkdocs.yml
+└─ mkdocs.yml</code></pre>
 </li>
 </ol>
 <p>The provided path is resolved from the [<code>projects</code> directory][<code>config.projects_dir</code>].</p>
@@ -1544,28 +1520,24 @@ quite common for projects using git submodules:</p>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.projects_config_transform</p>
 <h4 id="config_transform"><code>config_transform</code><a class="headerlink" href="#config_transform" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span>none<span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default none --&gt;</code></pre>
 <p>Use this setting to transform the configuration of each project as read from <code>mkdocs.yml</code> before it is built, which allows for adjusting the configuration of each project when building them together, but leave them untouched when building them individually:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">      </span><span class="nt">projects_config_transform</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:projects.transform</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      projects_config_transform: !!python/name:projects.transform</code></pre>
 <p>The provided module and function name are looked up in Python's <a href="https://docs.python.org/3/library/sys_path_init.html">module search path</a>. You need to add your root directory to the search path when building your site, so Python can resolve it. The easiest way is to add the working directory to the <a href="https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH"><code>PYTHONPATH</code></a> environment variable:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>export PYTHONPATH=.</code></pre>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">How to define a configuration transformation function</p>
 <p>The <a href="https://pyyaml.org/wiki/PyYAMLDocumentation#yaml-tags-and-python-types"><code>python/name</code></a> tag is provided by <a href="https://pyyaml.org/">PyYAML</a> and must point to a valid module and function name within Python's <a href="https://docs.python.org/3/library/sys_path_init.html">module search path</a>.</p>
 <p>The plugin passes the <code>project</code> and top-level <code>config</code> objects to the function.</p>
 <p>As an example, we can inherit the [<code>use_directory_urls</code>][<code>mkdocs.use_directory_urls</code>] setting for all projects from the top-level configuration:</p>
-<div class="language-py no-copy highlight"><span class="filename">projects/__init__.py</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mkdocs.config.defaults</span><span class="w"> </span><span class="kn">import</span> <span class="n">MkDocsConfig</span>
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="c1"># Transform project configuration def transform(project: MkDocsConfig, config: MkDocsConfig):</span>
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="n">project</span><span class="o">.</span><span class="n">use_directory_urls</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">use_directory_urls</span>
-</span></code></pre></div>
+<pre class="lang-annotation no-copy" title="projects/__init__.py"><code>from mkdocs.config.defaults import MkDocsConfig
+
+# Transform project configuration def transform(project: MkDocsConfig, config: MkDocsConfig):
+project.use_directory_urls = config.use_directory_urls</code></pre>
 </div>
 <h3 id="hoisting">Hoisting<a class="headerlink" href="#hoisting" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
@@ -1576,14 +1548,12 @@ quite common for projects using git submodules:</p>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.hoisting</p>
 <h4 id="confighoisting"><code>config.hoisting</code><a class="headerlink" href="#confighoisting" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.7.0<span class="w"> </span>--&gt;
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
-</span></code></pre></div>
+<pre class="lang-annotation no-copy"><code>&lt;!-- md:version 9.7.0 --&gt;
+&lt;!-- md:default `true` --&gt;</code></pre>
 <p>Use this setting to enable or disable hoisting of themes files to the main project. If you disable this setting, each project receives a copy of the theme's files, which can be considered redundant:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">projects</span><span class="p">:</span>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">      </span><span class="nt">hoisting</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects:
+      hoisting: false</code></pre>
 <p>It's generally advisable to enable hoisting, as it yields faster deployments and faster loading of your project's sites, because the files are the same for all projects and can be deduplicated.</p>
 </div>
 <h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">¶</a></h3>

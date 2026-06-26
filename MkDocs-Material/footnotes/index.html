@@ -1083,9 +1083,8 @@
 <p class="admonition-title">Configuration</p>
 <p>This configuration adds the ability to define inline footnotes, which are then rendered below all Markdown content of a document. Add the following lines to:</p>
 <p><code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">footnotes</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>markdown_extensions:
+  - footnotes</code></pre>
 <p>See Additional Configuration Options:</p>
 <ul>
 <li><a href="../python-markdown/#footnotes">Footnotes</a></li>
@@ -1095,10 +1094,9 @@
 <div class="admonition desc">
 <p class="admonition-title">Footnote Tooltips</p>
 <p>Footnotes can be rendered as inline tooltips, so the user can read the footnote without leaving the context of the document. Footnote tooltips can be enabled in <code>mkdocs.yml</code> with:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">theme</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.footnote.tooltips</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>theme:
+  features:
+    - content.footnote.tooltips</code></pre>
 <p><strong>Footnote tooltips are enabled on our documentation</strong>, so to try it out, you can just hover or focus any footnote on this page or any other page of our documentation.</p>
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
@@ -1106,8 +1104,8 @@
 <div class="admonition info">
 <p class="admonition-title">Adding Footnote References</p>
 <p>A footnote reference must be enclosed in square brackets and must start with a caret <code>^</code>, directly followed by an arbitrary identifier, which is similar to the standard Markdown link syntax.</p>
-<div class="language-text highlight"><span class="filename">Text with footnote references</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
-</span></code></pre></div>
+<p><code>title="Text with footnote references"
+Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]</code></p>
 <div class="result" markdown="">
 <p>Lorem ipsum<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> dolor sit amet, consectetur adipiscing elit.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 </div>
@@ -1121,8 +1119,7 @@
 <div class="admonition desc">
 <p class="admonition-title">On a Single Line</p>
 <p>Short footnotes can be written on the same line:</p>
-<div class="language-text highlight"><span class="filename">Footnote</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-</span></code></pre></div>
+<p>``` title="Footnote"</p>
 <div class="result" markdown="">
 <p><a href="./#fn:1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.97 13.22a.75.75 0 0 1 1.06 0L11 18.19V3.75a.75.75 0 0 1 1.5 0v14.44l4.97-4.97a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734l-6.25 6.25a.75.75 0 0 1-1.06 0l-6.25-6.25a.75.75 0 0 1 0-1.06"></path></svg></span> Jump to footnote</a></p>
 </div>
@@ -1131,9 +1128,7 @@
 <div class="admonition desc">
 <p class="admonition-title">On Multiple Lines</p>
 <p>Paragraphs can be written on the next line and must be indented by four spaces:</p>
-<div class="language-text highlight"><span class="filename">Footnote</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[^2]:
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
-</span></code></pre></div>
+<p>``` title="Footnote"</p>
 <div class="result" markdown="">
 <p><a href="./#fn:2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.97 13.22a.75.75 0 0 1 1.06 0L11 18.19V3.75a.75.75 0 0 1 1.5 0v14.44l4.97-4.97a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734l-6.25 6.25a.75.75 0 0 1-1.06 0l-6.25-6.25a.75.75 0 0 1 0-1.06"></path></svg></span> Jump to footnote</a></p>
 </div>

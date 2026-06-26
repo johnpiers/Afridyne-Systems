@@ -1044,9 +1044,8 @@
 <div class="admonition ex">
 <p class="admonition-title"><code>Built-in Projects Plugin</code></p>
 <p>The built-in projects plugin allows to split your documentation into multiple distinct MkDocs projects, <strong>build them concurrently</strong> and <strong>serve them together</strong>. Add the following to <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">projects</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - projects</code></pre>
 <p>For a list of all settings, please consult the <a href="../projects/">plugin documentation</a>.</p>
 </div>
 <details class="info">
@@ -1065,25 +1064,22 @@ powerful as we discover new use cases.</p>
 <div class="admonition desc">
 <p class="admonition-title"><code>Scope</code></p>
 <p>There might be a use case, where you want to share user-level settings like the selected <a href="../changing-the-colors/#color-palette">color palette</a>, or <a href="../ensuring-data-privacy/#cookie-consent">cookie consent</a> across all projects. To do so, add the following lines to <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">extra</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra:
+  scope: /</code></pre>
 </div>
 <div class="admonition example">
 <p class="admonition-title"><code>How it works</code></p>
 <p>Suppose you have this site structure:<br>
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>└── /
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    ├── subsite-a/
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    ├── subsite-b/
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    └── subsite-c/
-</span></code></pre></div><br>
+</p><pre class="lang-annotation"><code>.
+└── /
+    ├── subsite-a/
+    ├── subsite-b/
+    └── subsite-c/</code></pre><br>
 By default, each site will have its own scope (<code>/subsite-a/</code>, <code>/subsite-b/</code>,<br>
 <code>/subsite-c/</code>). To modify this behaviour, add the following lines to<br>
 <code>mkdocs.yml</code>:<p></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">extra</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra:
+  scope: /</code></pre>
 <p>By setting it to <code>/</code>, it should allow you to share the following preferences<br>
 across the main site and all subsites:</p>
 <ul>
@@ -1096,9 +1092,8 @@ across the main site and all subsites:</p>
 <div class="admonition info">
 <p class="admonition-title"><code>Built-in Optimize Plugin</code></p>
 <p>The built-in optimize plugin automatically identifies and optimizes all media files as part of the build using compression and conversion techniques. Add the following lines to <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">optimize</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>plugins:
+  - optimize</code></pre>
 <p>For a list of all settings, please consult the <a href="../optimize/">plugin documentation</a>.</p>
 </div>
 <p><a class="md-button md-button--custom" href="../../MkDocs-Material-Start/#advanced-configuration">Back to: #Advanced-Configuration  <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"></path></svg></span></a></p>

@@ -1781,26 +1781,22 @@
 </ul>
 <div class="admonition desc">
 <p class="admonition-title">Debian/Ubuntu</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fish
-</span></code></pre></div>
+<pre class="lang-annotation"><code>sudo apt update</code></pre>
+<pre class="lang-annotation"><code>sudo apt install fish</code></pre>
 </div>
 <ul>
 <li><strong>Fedora:</strong></li>
 </ul>
 <div class="admonition desc">
 <p class="admonition-title">Fedora</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>fish
-</span></code></pre></div>
+<pre class="lang-annotation"><code>sudo dnf install fish</code></pre>
 </div>
 <ul>
 <li><strong>Arch Linux:</strong></li>
 </ul>
 <div class="admonition desc">
 <p class="admonition-title">Arch Linux</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>fish
-</span></code></pre></div>
+<pre class="lang-annotation"><code>sudo pacman -S fish</code></pre>
 </div>
 </div>
 <hr>
@@ -1815,12 +1811,9 @@
 <p>Packages for Ubuntu are available from the <a href="https://launchpad.net">fish PPA</a> and can be installed using:</p>
 </li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt-add-repository<span class="w"> </span>ppa:fish-shell/release-4
-</span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fish
-</span></code></pre></div>
+<pre class="lang-annotation"><code>sudo apt-add-repository ppa:fish-shell/release-4</code></pre>
+<pre class="lang-annotation"><code>sudo apt update</code></pre>
+<pre class="lang-annotation"><code>sudo apt install fish</code></pre>
 <div class="admonition info">
 <p class="admonition-title">Other Distro's</p>
 <p>Instructions for other distributions may be found at <a href="https://fishshell.com">fishshell.com</a>.</p>
@@ -1894,11 +1887,10 @@
 <p>Rather than building from source, consider using a packaged build for your platform. Using the steps below makes fish difficult to uninstall or upgrade. Release packages are available from the links above, and up-to-date development builds of fish are available for many platforms <a href="https://github.com/fish-shell/fish-shell/wiki/Development-builds">Development-builds</a></p>
 <hr>
 <p>To install into <code>/usr/local</code>, run:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdir<span class="w"> </span>build<span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cmake<span class="w"> </span>..
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>cmake<span class="w"> </span>--build<span class="w"> </span>.
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>sudo<span class="w"> </span>cmake<span class="w"> </span>--install<span class="w"> </span>.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>mkdir build; cd build
+cmake ..
+cmake --build .
+sudo cmake --install .</code></pre>
 <p>The install directory can be changed using the <code>-DCMAKE_INSTALL_PREFIX</code> parameter for <code>cmake</code>.</p>
 </div>
 <h3 id="cmake-build-options">CMake Build Options<a class="headerlink" href="#cmake-build-options" title="Permanent link">¶</a></h3>
@@ -1925,16 +1917,15 @@
 </ul>
 <p>This example uses <a href="https://github.com/astral-sh/uv">UV</a> to install Sphinx (which is used for man-pages and <code>--help</code> options).</p>
 <p>You can also install Sphinx another way and drop the <code>uv run --no-managed-python</code> prefix.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fish-shell/fish-shell
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">cd</span><span class="w"> </span>fish-shell
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Optional: check out a specific version rather than building the latest</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># development version.</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>git<span class="w"> </span>checkout<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>git<span class="w"> </span><span class="k">for</span>-each-ref<span class="w"> </span>refs/tags/<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'$2 == "tag" { print $3 }'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1<span class="k">)</span><span class="s2">"</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>uv<span class="w"> </span>run<span class="w"> </span>--no-managed-python<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span>cargo<span class="w"> </span>install<span class="w"> </span>--path<span class="w"> </span>.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>git clone https://github.com/fish-shell/fish-shell
+cd fish-shell
+
+# Optional: check out a specific version rather than building the latest
+# development version.
+git checkout "$(git for-each-ref refs/tags/ | awk '$2 == "tag" { print $3 }' | tail -1)"
+
+uv run --no-managed-python \
+    cargo install --path .</code></pre>
 <ul>
 <li>This will place standalone binaries in <code>~/.cargo/bin/</code>, but you can move them wherever you want.</li>
 </ul>

@@ -2659,9 +2659,10 @@
 <hr>
 <div class="admonition pied-piper">
 <p class="admonition-title">Pied Piper</p>
-<div class="language-markdown highlight"><span class="filename">The last 3 special directories.</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> NB: The last 3 special directories (last, week and month) which links repectively to the last
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> synced repository, to the last Monday and to the first of the current month.
-</span></code></pre></div>
+<p>``` markdown title="The last 3 special directories."</p>
+<p>NB: The last 3 special directories (last, week and month) which links repectively to the last<br>
+ synced repository, to the last Monday and to the first of the current month.<br>
+```</p>
 </div>
 <hr>
 <!-- md:option type:bug -->
@@ -2898,61 +2899,59 @@ P(E) = \binom{n}{k} p^k (1-p)^{n-k}
 <p>Replace the entire contents of your <code>javascripts/mathjax.js</code> file with this clean, optimized version. It fixes the trailing pipe regex bug, preserves your dynamic page-switching hooks, and forces your single-click zoom layout for everyone sitewide.</p>
 <details class="desc">
 <summary><code>MathJax .js config</code> <code>Click To See Code</code> </summary>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"\\("</span><span class="p">,</span><span class="w"> </span><span class="s2">"\\)"</span><span class="p">]],</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">displayMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"\\["</span><span class="p">,</span><span class="w"> </span><span class="s2">"\\]"</span><span class="p">]],</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nx">processEscapes</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nx">processEnvironments</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nx">ignoreHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">".*"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FIXED: Cleaned up the trailing pipe '|' to prevent parsing bugs</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">processHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">"arithmatex"</span><span class="p">,</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// LOCKS USER ZOOM PREFERENCES SITEWIDE FOR ALL VISITORS</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">menuOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="s1">'Click'</span><span class="p">,</span><span class="w">     </span><span class="c1">// Forces a simple left-mouse click to trigger the zoom window</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="nx">zscale</span><span class="o">:</span><span class="w"> </span><span class="s1">'200%'</span><span class="w">     </span><span class="c1">// Sets the default zoom scaling level to 200%</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">};</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c1">// CRITICAL FOR MATERIALX / MKDOCS: Handles dynamic theme changes and SPA page switches</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="nb">document</span><span class="err">\</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nx">clearCache</span><span class="p">()</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetClear</span><span class="p">()</span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">texReset</span><span class="p">()</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">  </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetPromise</span><span class="p">()</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">})</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>window.MathJax = {
+  tex: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    processEscapes: true,
+    processEnvironments: true
+  },
+  options: {
+    ignoreHtmlClass: ".*", // FIXED: Cleaned up the trailing pipe '|' to prevent parsing bugs
+    processHtmlClass: "arithmatex",
+
+    // LOCKS USER ZOOM PREFERENCES SITEWIDE FOR ALL VISITORS
+    menuOptions: {
+      settings: {
+        zoom: 'Click',     // Forces a simple left-mouse click to trigger the zoom window
+        zscale: '200%'     // Sets the default zoom scaling level to 200%
+      }
+    }
+  }
+};
+
+// CRITICAL FOR MATERIALX / MKDOCS: Handles dynamic theme changes and SPA page switches
+document\$.subscribe(() =&gt; { 
+  MathJax.startup.output.clearCache()
+  MathJax.typesetClear()
+  MathJax.texReset()
+  MathJax.typesetPromise()
+})</code></pre>
 </details>
 <h2 id="2-streamlined-mkdocsyml-settings">2. Streamlined mkdocs.yml Settings<a class="headerlink" href="#2-streamlined-mkdocsyml-settings" title="Permanent link">¶</a></h2>
 <p>Configuration blocks are clean and perfectly structured. Active components load immediately, while unused options are safely preserved as plain comments for future reference without causing layout compile errors:</p>
 <details class="desc">
 <summary><code>yaml restructure</code> <code>Click To See Code</code></summary>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">extra_css</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="c1"># Future Reference (KaTeX Toggle):</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="c1"># https://unpkg.com/katex@0/dist/katex.min.css</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">styles/custom.css</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">extra_javascript</span><span class="p">:</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/mathjax.js</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/expand-code.js</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="c1"># Future Reference (MathJax Toggles):</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="c1"># https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/theme_extra.js</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="c1"># Future Reference (KaTeX Toggles):</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="c1"># javascripts/katex.js</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="c1"># https://unpkg.com/katex@0/dist/katex.min.js</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="c1"># https://unpkg.com/katex@0/dist/contrib/auto-render.min.js</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/tablesort@5.3.0/dist/sorts/tablesort.number.min.js</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/tablesort.js</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/iconsearch.js</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>extra_css:
+  # Future Reference (KaTeX Toggle):
+  # https://unpkg.com/katex@0/dist/katex.min.css
+  - styles/custom.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/expand-code.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  # Future Reference (MathJax Toggles):
+  # https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/theme_extra.js
+  # Future Reference (KaTeX Toggles):
+  # javascripts/katex.js
+  # https://unpkg.com/katex@0/dist/katex.min.js
+  # https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - https://unpkg.com/tablesort@5.3.0/dist/sorts/tablesort.number.min.js
+  - javascripts/tablesort.js
+  - javascripts/iconsearch.js</code></pre>
 </details>
 <h2 id="3-page-layout-cheat-sheet-the-3-math-situations">3. Page Layout Cheat Sheet (The 3 Math Situations)<a class="headerlink" href="#3-page-layout-cheat-sheet-the-3-math-situations" title="Permanent link">¶</a></h2>
 <p>Use these exact Markdown syntax patterns depending on the alignment and sizing goals for page sections:</p>

@@ -2205,8 +2205,7 @@
 <p class="admonition-title">Movable Type</p>
 <p>Markdown works with Movable Type version 2.6 or later (including Movable Type 3.0).</p>
 <p>1 ] Copy the “Markdown.pl” file into your Movable Type “plugins” directory. The “plugins” directory should be in the same directory as “mt.cgi”; if the “plugins” directory doesn’t already exist, use your FTP program to create it. Your installation should look like this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>(mt home)/plugins/Markdown.pl
-</span></code></pre></div>
+<pre class="lang-annotation"><code>(mt home)/plugins/Markdown.pl</code></pre>
 <p>2 ] Once installed, Markdown will appear as an option in Movable Type’s Text Formatting pop-up menu. This is selectable on a per-post basis:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://daringfireball.net/graphics/markdown/mt_textformat_menu.png" data-desc-position="bottom"><img alt="Screenshot of Movable Type 'Text Formatting' Menu" src="https://daringfireball.net/graphics/markdown/mt_textformat_menu.png"></a></p>
 <p>Markdown translates your posts to HTML when you publish; the posts themselves are stored in your MT database in Markdown format.</p>
@@ -2238,8 +2237,7 @@
 <p class="admonition-title">BBEdit</p>
 <p>Markdown works with BBEdit 6.1 or later on Mac OS X. It also works with BBEdit 5.1 or later and MacPerl 5.6.1 on Mac OS 8.6 or later. If you’re running Mac OS X 10.2 (Jaguar), you may need to install the Perl module&nbsp;<a href="http://search.cpan.org/dist/Digest-MD5/MD5.pm">Digest::MD5</a>&nbsp;from CPAN; Digest::MD5 comes pre-installed on Mac OS X 10.3 (Panther).</p>
 <p>1 ] Copy the “Markdown.pl” file to appropriate filters folder in your “BBEdit Support” folder. On Mac OS X, this should be:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>BBEdit Support/Unix Support/Unix Filters/
-</span></code></pre></div>
+<pre class="lang-annotation"><code>BBEdit Support/Unix Support/Unix Filters/</code></pre>
 <p>See the BBEdit documentation for more details on the location of these folders.</p>
 <p>You can rename “Markdown.pl” to whatever you wish.</p>
 <p>2 ] That’s it. To use Markdown, select some text in a BBEdit document, then choose Markdown from the Filters sub-menu in the “#!” menu, or the Filters floating palette</p>
@@ -2248,33 +2246,28 @@
 <div class="admonition git">
 <p class="admonition-title">Configuration</p>
 <p>By default, Markdown produces XHTML-style output for tags with empty elements. E.g.:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;br /&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;br /&gt;</code></pre>
 <p>Markdown can be configured to produce HTML-style tags; e.g.:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;br&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;br&gt;</code></pre>
 </div>
 <h3 id="movable-type_1">Movable Type<a class="headerlink" href="#movable-type_1" title="Permanent link">¶</a></h3>
 <div class="admonition git">
 <p class="admonition-title">Movable Type</p>
 <p>You need to use a special&nbsp;<code>MTMarkdownOptions</code>&nbsp;container tag in each Movable Type template where you want HTML 4-style output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;MTMarkdownOptions output='html4'&gt;
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   ... put your entry content here ...
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> &lt;/MTMarkdownOptions&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;MTMarkdownOptions output='html4'&gt;
+   ... put your entry content here ...
+ &lt;/MTMarkdownOptions&gt;</code></pre>
 <p>The easiest way to use MTMarkdownOptions is probably to put the opening tag right after your&nbsp;<code>&lt;body&gt;</code>&nbsp;tag, and the closing tag right before&nbsp;<code>&lt;/body&gt;</code>.</p>
 <p>To suppress Markdown processing in a particular template, i.e. to publish the raw Markdown-formatted text without translation into (X)HTML, set the&nbsp;<code>output</code>&nbsp;attribute to ‘raw’:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&lt;MTMarkdownOptions output='raw'&gt;
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   ... put your entry content here ...
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&lt;/MTMarkdownOptions&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;MTMarkdownOptions output='raw'&gt;
+   ... put your entry content here ...
+&lt;/MTMarkdownOptions&gt;</code></pre>
 </div>
 <h3 id="command-line">Command-Line<a class="headerlink" href="#command-line" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Command-Line</p>
 <p>Use the&nbsp;<code>--html4tags</code>&nbsp;command-line switch to produce HTML output from a Unix-style command line. E.g.:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>% perl Markdown.pl --html4tags foo.text
-</span></code></pre></div>
+<pre class="lang-annotation"><code>% perl Markdown.pl --html4tags foo.text</code></pre>
 <p>Type&nbsp;<code>perldoc Markdown.pl</code>, or read the POD documentation within the Markdown.pl source code for more information.</p>
 </div>
 <h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">¶</a></h2>
@@ -2304,215 +2297,188 @@
 <p class="admonition-title">Markdown / Output</p>
 <p>Blockquotes are indicated using email-style ‘<code>&gt;</code>’ angle brackets.</p>
 <p>Markdown:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>A First Level Header
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>====================
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>A Second Level Header
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>---------------------
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Now is the time for all good men to come to
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>the aid of their country. This is just a
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>regular paragraph.
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>The quick brown fox jumped over the lazy
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>dog's back.
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>### Header 3
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>&gt; This is a blockquote.
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>&gt; 
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>&gt; This is the second paragraph in the blockquote.
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>&gt;
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>&gt; ## This is an H2 in a blockquote
-</span></code></pre></div>
+<pre class="lang-annotation"><code>A First Level Header
+====================
+
+A Second Level Header
+---------------------
+
+Now is the time for all good men to come to
+the aid of their country. This is just a
+regular paragraph.
+
+The quick brown fox jumped over the lazy
+dog's back.
+
+### Header 3
+
+&gt; This is a blockquote.
+&gt; 
+&gt; This is the second paragraph in the blockquote.
+&gt;
+&gt; ## This is an H2 in a blockquote</code></pre>
 <p>Output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;h1&gt;A First Level Header&lt;/h1&gt;
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>&lt;h2&gt;A Second Level Header&lt;/h2&gt;
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>&lt;p&gt;Now is the time for all good men to come to
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>the aid of their country. This is just a
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>regular paragraph.&lt;/p&gt;
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>&lt;p&gt;The quick brown fox jumped over the lazy
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>dog's back.&lt;/p&gt;
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>&lt;h3&gt;Header 3&lt;/h3&gt;
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>&lt;blockquote&gt;
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    &lt;p&gt;This is a blockquote.&lt;/p&gt;
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>    &lt;p&gt;This is the second paragraph in the blockquote.&lt;/p&gt;
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>    &lt;h2&gt;This is an H2 in a blockquote&lt;/h2&gt;
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>&lt;/blockquote&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;h1&gt;A First Level Header&lt;/h1&gt;
+
+&lt;h2&gt;A Second Level Header&lt;/h2&gt;
+
+&lt;p&gt;Now is the time for all good men to come to
+the aid of their country. This is just a
+regular paragraph.&lt;/p&gt;
+
+&lt;p&gt;The quick brown fox jumped over the lazy
+dog's back.&lt;/p&gt;
+
+&lt;h3&gt;Header 3&lt;/h3&gt;
+
+&lt;blockquote&gt;
+    &lt;p&gt;This is a blockquote.&lt;/p&gt;
+
+    &lt;p&gt;This is the second paragraph in the blockquote.&lt;/p&gt;
+
+    &lt;h2&gt;This is an H2 in a blockquote&lt;/h2&gt;
+&lt;/blockquote&gt;</code></pre>
 </div>
 <h3 id="phrase-emphasis">Phrase Emphasis<a class="headerlink" href="#phrase-emphasis" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Phrase Emphasis</p>
 <p>Markdown uses asterisks and underscores to indicate spans of emphasis.</p>
 <p>Markdown:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Some of these words *are emphasized*.
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Some of these words _are emphasized also_.
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Use two asterisks for **strong emphasis**.
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Or, if you prefer, __use two underscores instead__.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>Some of these words *are emphasized*.
+Some of these words _are emphasized also_.
+
+Use two asterisks for **strong emphasis**.
+Or, if you prefer, __use two underscores instead__.</code></pre>
 <p>Output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;p&gt;Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.&lt;/p&gt;
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>&lt;p&gt;Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/p&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
+Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
+Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/p&gt;</code></pre>
 </div>
 <h2 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Lists</p>
 <p>Unordered (bulleted) lists use asterisks, pluses, and hyphens (<code>*</code>, <code>+</code>, and <code>-</code>) as list markers. These three markers are interchangable; this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>*   Candy.
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>*   Gum.
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>*   Booze.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>*   Candy.
+*   Gum.
+*   Booze.</code></pre>
 <p>this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>+   Candy.
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>+   Gum.
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>+   Booze.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>+   Candy.
++   Gum.
++   Booze.</code></pre>
 <p>and this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>-   Candy.
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>-   Gum.
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>-   Booze.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>-   Candy.
+-   Gum.
+-   Booze.</code></pre>
 <p>all produce the same output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&lt;ul&gt;
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>&lt;li&gt;Candy.&lt;/li&gt;
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&lt;li&gt;Gum.&lt;/li&gt;
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>&lt;li&gt;Booze.&lt;/li&gt;
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>&lt;/ul&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;ul&gt;
+&lt;li&gt;Candy.&lt;/li&gt;
+&lt;li&gt;Gum.&lt;/li&gt;
+&lt;li&gt;Booze.&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 <p>Ordered (numbered) lists use regular numbers, followed by periods, as list markers:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>1.  Red
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>2.  Green
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>3.  Blue
-</span></code></pre></div>
+<pre class="lang-annotation"><code>1.  Red
+2.  Green
+3.  Blue</code></pre>
 <p>Output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>&lt;ol&gt;
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>&lt;li&gt;Red&lt;/li&gt;
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>&lt;li&gt;Green&lt;/li&gt;
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>&lt;li&gt;Blue&lt;/li&gt;
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>&lt;/ol&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;ol&gt;
+&lt;li&gt;Red&lt;/li&gt;
+&lt;li&gt;Green&lt;/li&gt;
+&lt;li&gt;Blue&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
 <p>If you put blank lines between items, you’ll get <code>&lt;p&gt;</code> tags for the list item text. You can create multi-paragraph list items by indenting the paragraphs by 4 spaces or 1 tab:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>*   A list item.
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    With multiple paragraphs.
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>*   Another item in the list.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>*   A list item.
+
+    With multiple paragraphs.
+
+*   Another item in the list.</code></pre>
 <p>Output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>&lt;ul&gt;
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>&lt;li&gt;&lt;p&gt;A list item.&lt;/p&gt;
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>&lt;p&gt;With multiple paragraphs.&lt;/p&gt;&lt;/li&gt;
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>&lt;li&gt;&lt;p&gt;Another item in the list.&lt;/p&gt;&lt;/li&gt;
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>&lt;/ul&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A list item.&lt;/p&gt;
+&lt;p&gt;With multiple paragraphs.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Another item in the list.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 </div>
 <h3 id="links">Links<a class="headerlink" href="#links" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Links</p>
 <p>Markdown supports two styles for creating links: <em>inline</em> and <em>reference</em>. With both styles, you use square brackets to delimit the text you want to turn into a link.</p>
 <p>Inline-style links use parentheses immediately after the link text. For example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>This is an [example link](http://example.com).
-</span></code></pre></div>
+<pre class="lang-annotation"><code>This is an [example link](http://example.com).</code></pre>
 <p>Output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>&lt;p&gt;This is an &lt;a href="http://example.com"&gt;
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>example link&lt;/a&gt;.&lt;/p&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;This is an &lt;a href="http://example.com"&gt;
+example link&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>Optionally, you may include a title attribute in the parentheses:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>This is an [example link](http://example.com "With a Title").
-</span></code></pre></div>
+<pre class="lang-annotation"><code>This is an [example link](http://example.com "With a Title").</code></pre>
 <p>Output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>&lt;p&gt;This is an &lt;a href="http://example.com" title="With a Title"&gt;
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>example link&lt;/a&gt;.&lt;/p&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;This is an &lt;a href="http://example.com" title="With a Title"&gt;
+example link&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>Reference-style links allow you to refer to your links by names, which you define elsewhere in your document:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>I get 10 times more traffic from [Google][1] than from
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>[Yahoo][2] or [MSN][3].
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>[1]: http://google.com        "Google"
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>[2]: http://yahoo.com  "Yahoo Search"
-</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>[3]: http://msn.com    "MSN Search"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>I get 10 times more traffic from [Google][1] than from
+[Yahoo][2] or [MSN][3].
+
+[1]: http://google.com        "Google"
+[2]: http://yahoo.com  "Yahoo Search"
+[3]: http://msn.com    "MSN Search"</code></pre>
 <p>Output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com"
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>title="Google"&gt;Google&lt;/a&gt; than from &lt;a href="http://yahoo.com"
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://msn.com"
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com"
+title="Google"&gt;Google&lt;/a&gt; than from &lt;a href="http://yahoo.com"
+title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://msn.com"
+title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>The title attribute is optional. Link names may contain letters, numbers and spaces, but are <em>not</em> case sensitive:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>I start my morning with a cup of coffee and
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>[The New York Times][NY Times].
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>[ny times]: http://nytimes.com
-</span></code></pre></div>
+<pre class="lang-annotation"><code>I start my morning with a cup of coffee and
+[The New York Times][NY Times].
+
+[ny times]: http://nytimes.com</code></pre>
 <p>Output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>&lt;p&gt;I start my morning with a cup of coffee and
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>&lt;a href="http://nytimes.com"&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;I start my morning with a cup of coffee and
+&lt;a href="http://nytimes.com"&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;</code></pre>
 </div>
 <h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Images</p>
 <p>Image syntax is very much like link syntax.</p>
 <p>Inline (titles are optional):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>![alt text](/path/to/img.jpg "Title")
-</span></code></pre></div>
+<pre class="lang-annotation"><code>![alt text](/path/to/img.jpg "Title")</code></pre>
 <p>Reference-style:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>![alt text][id]
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>[id]: /path/to/img.jpg "Title"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>![alt text][id]
+
+[id]: /path/to/img.jpg "Title"</code></pre>
 <p>Both of the above examples produce the same output:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"/path/to/img.jpg"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"alt text"</span> <span class="na">title</span><span class="o">=</span><span class="s">"Title"</span> <span class="p">/&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;img src="/path/to/img.jpg" alt="alt text" title="Title" /&gt;</code></pre>
 </div>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Code</p>
 <p>In a regular paragraph, you can create code span by wrapping text in backtick quotes. Any ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> or <code>&gt;</code>) will automatically be translated into HTML entities. This makes it easy to use Markdown to write about HTML example code:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>I strongly recommend against using any `&lt;blink&gt;` tags.
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>I wish SmartyPants used named entities like `—`
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>instead of decimal-encoded entities like `—`.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>I strongly recommend against using any `&lt;blink&gt;` tags.
+
+I wish SmartyPants used named entities like `—`
+instead of decimal-encoded entities like `—`.</code></pre>
 <p>Output:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I strongly recommend against using any
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;&lt;</span><span class="nt">blink</span><span class="p">&gt;&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> tags.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I wish SmartyPants used named entities like
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span><span class="ni">&amp;mdash;</span><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> instead of decimal-encoded
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>entities like <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>—<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;I strongly recommend against using any
+&lt;code&gt;&lt;blink&gt;&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;p&gt;I wish SmartyPants used named entities like
+&lt;code&gt;&amp;mdash;&lt;/code&gt; instead of decimal-encoded
+entities like &lt;code&gt;—&lt;/code&gt;.&lt;/p&gt;</code></pre>
 <p>To specify an entire block of pre-formatted code, indent every line of the block by 4 spaces or 1 tab. Just like with code spans, <code>&amp;</code>, <code>&lt;</code>, and <code>&gt;</code> characters will be escaped automatically.</p>
 <p>Markdown:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>If you want your page to validate under XHTML 1.0 Strict,
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>you've got to put paragraph tags in your blockquotes:
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    &lt;blockquote&gt;
-</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>        &lt;p&gt;For example.&lt;/p&gt;
-</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>    &lt;/blockquote&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragraph tags in your blockquotes:
+
+    &lt;blockquote&gt;
+        &lt;p&gt;For example.&lt;/p&gt;
+    &lt;/blockquote&gt;</code></pre>
 <p>Output:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>If you want your page to validate under XHTML 1.0 Strict,
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>you've got to put paragraph tags in your blockquotes:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
-</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>For example.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;blockquote&gt;
+    &lt;p&gt;For example.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
 </div>
 <div class="grid cards cols-3">
 <ul>
@@ -2644,16 +2610,15 @@
 <p>For any markup that is not covered by Markdown’s syntax, you simply use HTML itself. There’s no need to preface it or delimit it to indicate that you’re switching from Markdown to HTML; you just use the tags.</p>
 <p>The only restrictions are that block-level HTML elements — e.g. <code>&lt;div&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;p&gt;</code>, etc. — must be separated from surrounding content by blank lines, and the start and end tags of the block should not be indented with tabs or spaces. Markdown is smart enough not to add extra (unwanted) <code>&lt;p&gt;</code> tags around HTML block-level tags.</p>
 <p>For example, to add an HTML table to a Markdown article:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>This is a regular paragraph.
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>&lt;table&gt;
-</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>    &lt;tr&gt;
-</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>        &lt;td&gt;Foo&lt;/td&gt;
-</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>    &lt;/tr&gt;
-</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>&lt;/table&gt;
-</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>
-</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>This is another regular paragraph.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>This is a regular paragraph.
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Foo&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+This is another regular paragraph.</code></pre>
 <p>Note that Markdown formatting syntax is not processed within block-level HTML tags. E.g., you can’t use Markdown-style <code>*emphasis*</code> inside an HTML block.</p>
 <p>Span-level HTML tags — e.g. <code>&lt;span&gt;</code>, <code>&lt;cite&gt;</code>, or <code>&lt;del&gt;</code> — can be used anywhere in a Markdown paragraph, list item, or header. If you want, you can even use HTML tags instead of Markdown formatting; e.g. if you’d prefer to use HTML <code>&lt;a&gt;</code> or <code>&lt;img&gt;</code> tags instead of Markdown’s link or image syntax, go right ahead.</p>
 <p>Unlike block-level HTML tags, Markdown syntax <em>is</em> processed within span-level tags.</p>
@@ -2663,28 +2628,21 @@
 <p class="admonition-title">Automatic Escaping for Special Characters</p>
 <p>In HTML, there are two characters that demand special treatment: <code>&lt;</code> and <code>&amp;</code>. Left angle brackets are used to start tags; ampersands are used to denote HTML entities. If you want to use them as literal characters, you must escape them as entities, e.g. <code>&amp;lt;</code>, and <code>&amp;amp;</code>.</p>
 <p>Ampersands in particular are bedeviling for web writers. If you want to write about ‘AT&amp;T’, you need to write ‘<code>AT&amp;amp;T</code>’. You even need to escape ampersands within URLs. Thus, if you want to link to:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>http://images.google.com/images?num=30&amp;q=larry+bird
-</span></code></pre></div>
+<pre class="lang-annotation"><code>http://images.google.com/images?num=30&amp;q=larry+bird</code></pre>
 <p>you need to encode the URL as:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>http://images.google.com/images?num=30&amp;q=larry+bird
-</span></code></pre></div>
+<pre class="lang-annotation"><code>http://images.google.com/images?num=30&amp;q=larry+bird</code></pre>
 <p>in your anchor tag <code>href</code> attribute. Needless to say, this is easy to forget, and is probably the single most common source of HTML validation errors in otherwise well-marked-up web sites.</p>
 <p>Markdown allows you to use these characters naturally, taking care of all the necessary escaping for you. If you use an ampersand as part of an HTML entity, it remains unchanged; otherwise it will be translated into <code>&amp;amp;</code>.</p>
 <p>So, if you want to include a copyright symbol in your article, you can write:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>©
-</span></code></pre></div>
+<pre class="lang-annotation"><code>©</code></pre>
 <p>and Markdown will leave it alone. But if you write:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>AT&amp;T
-</span></code></pre></div>
+<pre class="lang-annotation"><code>AT&amp;T</code></pre>
 <p>Markdown will translate it to:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>AT&amp;T
-</span></code></pre></div>
+<pre class="lang-annotation"><code>AT&amp;T</code></pre>
 <p>Similarly, because Markdown supports <a href="https://daringfireball.net/projects/markdown/syntax#html">inline HTML</a>, if you use angle brackets as delimiters for HTML tags, Markdown will treat them as such. But if you write:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>4 &lt; 5
-</span></code></pre></div>
+<pre class="lang-annotation"><code>4 &lt; 5</code></pre>
 <p>Markdown will translate it to:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>4 &lt; 5
-</span></code></pre></div>
+<pre class="lang-annotation"><code>4 &lt; 5</code></pre>
 <p>However, inside Markdown code spans and blocks, angle brackets and ampersands are <em>always</em> encoded automatically. This makes it easy to use Markdown to write about HTML code. (As opposed to raw HTML, which is a terrible format for writing about HTML syntax, because every single <code>&lt;</code> and <code>&amp;</code> in your example code needs to be escaped.)</p>
 </div>
 <hr>
@@ -2702,64 +2660,57 @@
 <p class="admonition-title">Headers</p>
 <p>Markdown supports two styles of headers, <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> and <a href="http://www.aaronsw.com/2002/atx/">atx</a>.</p>
 <p>Setext-style headers are “underlined” using equal signs (for first-level headers) and dashes (for second-level headers). For example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>This is an H1
-</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>=============
-</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
-</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>This is an H2
-</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>-------------
-</span></code></pre></div>
+<pre class="lang-annotation"><code>This is an H1
+=============
+
+This is an H2
+-------------</code></pre>
 <p>Any number of underlining <code>=</code>’s or <code>-</code>’s will work.</p>
 <p>Atx-style headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6. For example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a># This is an H1
-</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
-</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>## This is an H2
-</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>
-</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>###### This is an H6
-</span></code></pre></div>
+<pre class="lang-annotation"><code># This is an H1
+
+## This is an H2
+
+###### This is an H6</code></pre>
 <p>Optionally, you may “close” atx-style headers. This is purely cosmetic — you can use this if you think it looks better. The closing hashes don’t even need to match the number of hashes used to open the header. (The number of opening hashes determines the header level.) :</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a># This is an H1 #
-</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
-</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>## This is an H2 ##
-</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>
-</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>### This is an H3 ######
-</span></code></pre></div>
+<pre class="lang-annotation"><code># This is an H1 #
+
+## This is an H2 ##
+
+### This is an H3 ######</code></pre>
 </div>
 <h3 id="blockquotes">Blockquotes<a class="headerlink" href="#blockquotes" title="Permanent link">¶</a></h3>
 <div class="admonition ex">
 <p class="admonition-title">Blockquotes</p>
 <p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you’re familiar with quoting passages of text in an email message, then you know how to create a blockquote in Markdown. It looks best if you hard wrap the text and put a <code>&gt;</code> before every line:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>&gt; 
-</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>&gt; id sem consectetuer libero luctus adipiscing.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+&gt; 
+&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+&gt; id sem consectetuer libero luctus adipiscing.</code></pre>
 <p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first line of a hard-wrapped paragraph:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>
-</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>id sem consectetuer libero luctus adipiscing.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.</code></pre>
 <p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of <code>&gt;</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>&gt; This is the first level of quoting.
-</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>&gt;
-</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>&gt; &gt; This is nested blockquote.
-</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>&gt;
-</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>&gt; Back to the first level.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&gt; This is the first level of quoting.
+&gt;
+&gt; &gt; This is nested blockquote.
+&gt;
+&gt; Back to the first level.</code></pre>
 <p>Blockquotes can contain other Markdown elements, including headers, lists, and code blocks:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>&gt; ## This is a header.
-</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>&gt; 
-</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>&gt; 1.   This is the first list item.
-</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>&gt; 2.   This is the second list item.
-</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>&gt; 
-</span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>&gt; Here's some example code:
-</span><span id="__span-48-7"><a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>&gt; 
-</span><span id="__span-48-8"><a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a>&gt;     return shell_exec("echo $input | $markdown_script");
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&gt; ## This is a header.
+&gt; 
+&gt; 1.   This is the first list item.
+&gt; 2.   This is the second list item.
+&gt; 
+&gt; Here's some example code:
+&gt; 
+&gt;     return shell_exec("echo $input | $markdown_script");</code></pre>
 <p>Any decent text editor should make email-style quoting easy. For example, with BBEdit, you can make a selection and choose Increase Quote Level from the Text menu.</p>
 </div>
 <h3 id="lists_1">Lists<a class="headerlink" href="#lists_1" title="Permanent link">¶</a></h3>
@@ -2767,125 +2718,108 @@
 <p class="admonition-title">Lists</p>
 <p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
 <p>Unordered lists use asterisks, pluses, and hyphens — interchangably — as list markers:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>*   Red
-</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>*   Green
-</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>*   Blue
-</span></code></pre></div>
+<pre class="lang-annotation"><code>*   Red
+*   Green
+*   Blue</code></pre>
 <p>is equivalent to:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>+   Red
-</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>+   Green
-</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>+   Blue
-</span></code></pre></div>
+<pre class="lang-annotation"><code>+   Red
++   Green
++   Blue</code></pre>
 <p>and:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>-   Red
-</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>-   Green
-</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>-   Blue
-</span></code></pre></div>
+<pre class="lang-annotation"><code>-   Red
+-   Green
+-   Blue</code></pre>
 <p>Ordered lists use numbers followed by periods:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>1.  Bird
-</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>2.  McHale
-</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>3.  Parish
-</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>4.  The output is a standard HTML &lt;ol&gt; list.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>1.  Bird
+2.  McHale
+3.  Parish
+4.  The output is a standard HTML &lt;ol&gt; list.</code></pre>
 <p>It’s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces. If you instead wrote the list in Markdown like this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>1.  Bird
-</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>1.  McHale
-</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>1.  Parish
-</span></code></pre></div>
+<pre class="lang-annotation"><code>1.  Bird
+1.  McHale
+1.  Parish</code></pre>
 <p>you’d get the exact same HTML output. The point is, if you want to, you can use ordinal numbers in your ordered Markdown lists, so that the numbers in your source match the numbers in your published HTML. But if you want to be lazy, you don’t have to.</p>
 <p>List markers typically start at the left margin, but may be indented by up to three spaces. List markers must be followed by one or more spaces or a tab.</p>
 <p>To make lists look nice, you can wrap items with hanging indents:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>    viverra nec, fringilla in, laoreet vitae, risus.
-</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>    Suspendisse id sem consectetuer libero luctus adipiscing.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.</code></pre>
 <p>If list items are separated by blank lines, Markdown will wrap the items in <code>&lt;p&gt;</code> tags in the HTML output.</p>
 <p>List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>1.  This is a list item with two paragraphs. Lorem ipsum dolor
-</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>    mi posuere lectus.
-</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>
-</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>    sit amet velit.
-</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>
-</span><span id="__span-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.</code></pre>
 <p>To put a blockquote within a list item, the blockquote’s <code>&gt;</code> delimiters need to be indented:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>*   A list item with a blockquote:
-</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>
-</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>    &gt; This is a blockquote
-</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>    &gt; inside a list item.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>*   A list item with a blockquote:
+
+    &gt; This is a blockquote
+    &gt; inside a list item.</code></pre>
 <p>To put a code block within a list item, the code block needs to be indented <em>twice</em> — 8 spaces or two tabs:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>*   A list item with a code block:
-</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>
-</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>        &lt;code goes here&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>*   A list item with a code block:
+
+        &lt;code goes here&gt;</code></pre>
 <p>It’s worth noting that it’s possible to trigger an ordered list by accident. To avoid this, you can backslash-escape the period:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>1986\. What a great season.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>1986\. What a great season.</code></pre>
 </div>
 <h3 id="code-blocks">Code Blocks<a class="headerlink" href="#code-blocks" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Code Blocks</p>
 <p>Pre-formatted code blocks are used for writing about programming or markup source code. Rather than forming normal paragraphs, the lines of a code block are interpreted literally. Markdown wraps a code block in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
 <p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab. For example, given this input:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>This is a normal paragraph:
-</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>
-</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>    This is a code block.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>This is a normal paragraph:
+
+    This is a code block.</code></pre>
 <p>Markdown will generate:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a normal paragraph:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>
-</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>This is a code block.
-</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;This is a normal paragraph:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a code block.
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
 <p>One level of indentation — 4 spaces or 1 tab — is removed from each line of the code block. For example, this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>Here is an example of AppleScript:
-</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>
-</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a>    tell application "Foo"
-</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>        beep
-</span><span id="__span-61-5"><a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a>    end tell
-</span></code></pre></div>
+<pre class="lang-annotation"><code>Here is an example of AppleScript:
+
+    tell application "Foo"
+        beep
+    end tell</code></pre>
 <p>will turn into:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Here is an example of AppleScript:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>
-</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>tell application "Foo"
-</span><span id="__span-62-4"><a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>    beep
-</span><span id="__span-62-5"><a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a>end tell
-</span><span id="__span-62-6"><a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tell application "Foo"
+    beep
+end tell
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
 <p>A code block continues until it reaches a line that is not indented (or the end of the article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>) are automatically converted into HTML entities. This makes it very easy to include example HTML source code using Markdown — just paste it and indent it, and Markdown will handle the hassle of encoding the ampersands and angle brackets. For example, this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>    &lt;div class="footer"&gt;
-</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>        &amp;copy; 2004 Foo Corporation
-</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>    &lt;/div&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>    &lt;div class="footer"&gt;
+        &amp;copy; 2004 Foo Corporation
+    &lt;/div&gt;</code></pre>
 <p>will turn into:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"footer"</span><span class="p">&gt;</span>
-</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>    <span class="ni">&amp;copy;</span> 2004 Foo Corporation
-</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span id="__span-64-4"><a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;pre&gt;&lt;code&gt;&lt;div class="footer"&gt;
+    &amp;copy; 2004 Foo Corporation
+&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
 <p>Regular Markdown syntax is not processed within code blocks. E.g., asterisks are just literal asterisks within a code block. This means it’s also easy to use Markdown to write about Markdown’s own syntax.</p>
 </div>
 <h3 id="horizontal-rules">Horizontal Rules<a class="headerlink" href="#horizontal-rules" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Horizontal Rules</p>
 <p>You can produce a horizontal rule tag (<code>&lt;hr /&gt;</code>) by placing three or more hyphens, asterisks, or underscores on a line by themselves. If you wish, you may use spaces between the hyphens or asterisks. Each of the following lines will produce a horizontal rule:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>* * *
-</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>
-</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>***
-</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>
-</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>*****
-</span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a>
-</span><span id="__span-65-7"><a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a>- - -
-</span><span id="__span-65-8"><a id="__codelineno-65-8" name="__codelineno-65-8" href="#__codelineno-65-8"></a>
-</span><span id="__span-65-9"><a id="__codelineno-65-9" name="__codelineno-65-9" href="#__codelineno-65-9"></a>---------------------------------------
-</span></code></pre></div>
+<pre class="lang-annotation"><code>* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------</code></pre>
 </div>
 <h2 id="span-elements">Span Elements<a class="headerlink" href="#span-elements" title="Permanent link">¶</a></h2>
 <h3 id="links_1">Links<a class="headerlink" href="#links_1" title="Permanent link">¶</a></h3>
@@ -2894,29 +2828,23 @@
 <p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
 <p>In both styles, the link text is delimited by [square brackets].</p>
 <p>To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the URL where you want the link to point, along with an <em>optional</em> title for the link, surrounded in quotes. For example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>This is [an example](http://example.com/ "Title") inline link.
-</span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>
-</span><span id="__span-66-3"><a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>[This link](http://example.net/) has no title attribute.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>This is [an example](http://example.com/ "Title") inline link.
+
+[This link](http://example.net/) has no title attribute.</code></pre>
 <p>Will produce:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://example.com/"</span> <span class="na">title</span><span class="o">=</span><span class="s">"Title"</span><span class="p">&gt;</span>
-</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>an example<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> inline link.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>
-</span><span id="__span-67-4"><a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://example.net/"</span><span class="p">&gt;</span>This link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> has no
-</span><span id="__span-67-5"><a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>title attribute.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;This is &lt;a href="http://example.com/" title="Title"&gt;
+an example&lt;/a&gt; inline link.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://example.net/"&gt;This link&lt;/a&gt; has no
+title attribute.&lt;/p&gt;</code></pre>
 <p>If you’re referring to a local resource on the same server, you can use relative paths:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>See my [About](/about/) page for details.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>See my [About](/about/) page for details.</code></pre>
 <p>Reference-style links use a second set of square brackets, inside which you place a label of your choosing to identify the link:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>This is [an example][id] reference-style link.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>This is [an example][id] reference-style link.</code></pre>
 <p>You can optionally use a space to separate the sets of brackets:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>This is [an example] [id] reference-style link.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>This is [an example] [id] reference-style link.</code></pre>
 <p>Then, anywhere in the document, you define your link label like this, on a line by itself:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>[id]: http://example.com/  "Optional Title Here"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[id]: http://example.com/  "Optional Title Here"</code></pre>
 <p>That is:</p>
 <ul>
 <li>Square brackets containing the link identifier (optionally indented from the left margin using up to three spaces);</li>
@@ -2926,64 +2854,52 @@
 <li>optionally followed by a title attribute for the link, enclosed in double or single quotes, or enclosed in parentheses.</li>
 </ul>
 <p>The following three link definitions are equivalent:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>[foo]: http://example.com/  "Optional Title Here"
-</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>[foo]: http://example.com/  'Optional Title Here'
-</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a>[foo]: http://example.com/  (Optional Title Here)
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[foo]: http://example.com/  "Optional Title Here"
+[foo]: http://example.com/  'Optional Title Here'
+[foo]: http://example.com/  (Optional Title Here)</code></pre>
 <p><strong>Note:</strong> There is a known bug in Markdown.pl 1.0.1 which prevents single quotes from being used to delimit link titles.</p>
 <p>The link URL may, optionally, be surrounded by angle brackets:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>[id]: &lt;http://example.com/&gt;  "Optional Title Here"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[id]: &lt;http://example.com/&gt;  "Optional Title Here"</code></pre>
 <p>You can put the title attribute on the next line and use extra spaces or tabs for padding, which tends to look better with longer URLs:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>[id]: http://example.com/longish/path/to/resource/here
-</span><span id="__span-74-2"><a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>    "Optional Title Here"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[id]: http://example.com/longish/path/to/resource/here
+    "Optional Title Here"</code></pre>
 <p>Link definitions are only used for creating links during Markdown processing, and are stripped from your document in the HTML output.</p>
 <p>Link definition names may consist of letters, numbers, spaces, and punctuation — but they are <em>not</em> case sensitive. E.g. these two links:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>[link text][a]
-</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>[link text][A]
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[link text][a]
+[link text][A]</code></pre>
 <p>are equivalent.</p>
 <p>The <em>implicit link name</em> shortcut allows you to omit the name of the link, in which case the link text itself is used as the name. Just use an empty set of square brackets — e.g., to link the word “Google” to the google.com web site, you could simply write:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>[Google][]
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[Google][]</code></pre>
 <p>And then define the link:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>[Google]: http://google.com/
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[Google]: http://google.com/</code></pre>
 <p>Because link names may contain spaces, this shortcut even works for multiple words in the link text:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>Visit [Daring Fireball][] for more information.
-</span></code></pre></div>
+<pre class="lang-annotation"><code>Visit [Daring Fireball][] for more information.</code></pre>
 <p>And then define the link:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>[Daring Fireball]: http://daringfireball.net/
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[Daring Fireball]: http://daringfireball.net/</code></pre>
 <p>Link definitions can be placed anywhere in your Markdown document. I tend to put them immediately after each paragraph in which they’re used, but if you want, you can put them all at the end of your document, sort of like footnotes.</p>
 <p>Here’s an example of reference links in action:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>I get 10 times more traffic from [Google] [1] than from
-</span><span id="__span-80-2"><a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a>[Yahoo] [2] or [MSN] [3].
-</span><span id="__span-80-3"><a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>
-</span><span id="__span-80-4"><a id="__codelineno-80-4" name="__codelineno-80-4" href="#__codelineno-80-4"></a>  [1]: http://google.com/        "Google"
-</span><span id="__span-80-5"><a id="__codelineno-80-5" name="__codelineno-80-5" href="#__codelineno-80-5"></a>  [2]: http://search.yahoo.com/  "Yahoo Search"
-</span><span id="__span-80-6"><a id="__codelineno-80-6" name="__codelineno-80-6" href="#__codelineno-80-6"></a>  [3]: http://search.msn.com/    "MSN Search"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+  [1]: http://google.com/        "Google"
+  [2]: http://search.yahoo.com/  "Yahoo Search"
+  [3]: http://search.msn.com/    "MSN Search"</code></pre>
 <p>Using the implicit link name shortcut, you could instead write:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>I get 10 times more traffic from [Google][] than from
-</span><span id="__span-81-2"><a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>[Yahoo][] or [MSN][].
-</span><span id="__span-81-3"><a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>
-</span><span id="__span-81-4"><a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a>  [google]: http://google.com/        "Google"
-</span><span id="__span-81-5"><a id="__codelineno-81-5" name="__codelineno-81-5" href="#__codelineno-81-5"></a>  [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
-</span><span id="__span-81-6"><a id="__codelineno-81-6" name="__codelineno-81-6" href="#__codelineno-81-6"></a>  [msn]:    http://search.msn.com/    "MSN Search"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>I get 10 times more traffic from [Google][] than from
+[Yahoo][] or [MSN][].
+
+  [google]: http://google.com/        "Google"
+  [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
+  [msn]:    http://search.msn.com/    "MSN Search"</code></pre>
 <p>Both of the above examples will produce the following HTML output:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I get 10 times more traffic from <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://google.com/"</span>
-</span><span id="__span-82-2"><a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a><span class="na">title</span><span class="o">=</span><span class="s">"Google"</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> than from
-</span><span id="__span-82-3"><a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://search.yahoo.com/"</span> <span class="na">title</span><span class="o">=</span><span class="s">"Yahoo Search"</span><span class="p">&gt;</span>Yahoo<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span><span id="__span-82-4"><a id="__codelineno-82-4" name="__codelineno-82-4" href="#__codelineno-82-4"></a>or <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://search.msn.com/"</span> <span class="na">title</span><span class="o">=</span><span class="s">"MSN Search"</span><span class="p">&gt;</span>MSN<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com/"
+title="Google"&gt;Google&lt;/a&gt; than from
+&lt;a href="http://search.yahoo.com/" title="Yahoo Search"&gt;Yahoo&lt;/a&gt;
+or &lt;a href="http://search.msn.com/" title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>For comparison, here is the same paragraph written using Markdown’s inline link style:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>I get 10 times more traffic from [Google](http://google.com/ "Google")
-</span><span id="__span-83-2"><a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a>than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
-</span><span id="__span-83-3"><a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a>[MSN](http://search.msn.com/ "MSN Search").
-</span></code></pre></div>
+<pre class="lang-annotation"><code>I get 10 times more traffic from [Google](http://google.com/ "Google")
+than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
+[MSN](http://search.msn.com/ "MSN Search").</code></pre>
 <p>The point of reference-style links is not that they’re easier to write. The point is that with reference-style links, your document source is vastly more readable. Compare the above examples: using reference-style links, the paragraph itself is only 81 characters long; with inline-style links, it’s 176 characters; and as raw HTML, it’s 234 characters. In the raw HTML, there’s more markup than there is text.</p>
 <p>With Markdown’s reference-style links, a source document much more closely resembles the final output, as rendered in a browser. By allowing you to move the markup-related metadata out of the paragraph, you can add links without interrupting the narrative flow of your prose.</p>
 </div>
@@ -2991,31 +2907,27 @@
 <div class="admonition ex">
 <p class="admonition-title">Emphasis</p>
 <p>Markdown treats asterisks (<code>*</code>) and underscores (<code>_</code>) as indicators of emphasis. Text wrapped with one <code>*</code> or <code>_</code> will be wrapped with an HTML <code>&lt;em&gt;</code> tag; double <code>*</code>’s or <code>_</code>’s will be wrapped with an HTML <code>&lt;strong&gt;</code> tag. E.g., this input:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>*single asterisks*
-</span><span id="__span-84-2"><a id="__codelineno-84-2" name="__codelineno-84-2" href="#__codelineno-84-2"></a>
-</span><span id="__span-84-3"><a id="__codelineno-84-3" name="__codelineno-84-3" href="#__codelineno-84-3"></a>_single underscores_
-</span><span id="__span-84-4"><a id="__codelineno-84-4" name="__codelineno-84-4" href="#__codelineno-84-4"></a>
-</span><span id="__span-84-5"><a id="__codelineno-84-5" name="__codelineno-84-5" href="#__codelineno-84-5"></a>**double asterisks**
-</span><span id="__span-84-6"><a id="__codelineno-84-6" name="__codelineno-84-6" href="#__codelineno-84-6"></a>
-</span><span id="__span-84-7"><a id="__codelineno-84-7" name="__codelineno-84-7" href="#__codelineno-84-7"></a>__double underscores__
-</span></code></pre></div>
+<pre class="lang-annotation"><code>*single asterisks*
+
+_single underscores_
+
+**double asterisks**
+
+__double underscores__</code></pre>
 <p>will produce:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>single asterisks<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
-</span><span id="__span-85-2"><a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a>
-</span><span id="__span-85-3"><a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a><span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>single underscores<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
-</span><span id="__span-85-4"><a id="__codelineno-85-4" name="__codelineno-85-4" href="#__codelineno-85-4"></a>
-</span><span id="__span-85-5"><a id="__codelineno-85-5" name="__codelineno-85-5" href="#__codelineno-85-5"></a><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>double asterisks<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
-</span><span id="__span-85-6"><a id="__codelineno-85-6" name="__codelineno-85-6" href="#__codelineno-85-6"></a>
-</span><span id="__span-85-7"><a id="__codelineno-85-7" name="__codelineno-85-7" href="#__codelineno-85-7"></a><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>double underscores<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;em&gt;single asterisks&lt;/em&gt;
+
+&lt;em&gt;single underscores&lt;/em&gt;
+
+&lt;strong&gt;double asterisks&lt;/strong&gt;
+
+&lt;strong&gt;double underscores&lt;/strong&gt;</code></pre>
 <p>You can use whichever style you prefer; the lone restriction is that the same character must be used to open and close an emphasis span.</p>
 <p>Emphasis can be used in the middle of a word:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>un*frigging*believable
-</span></code></pre></div>
+<pre class="lang-annotation"><code>un*frigging*believable</code></pre>
 <p>But if you surround an <code>*</code> or <code>_</code> with spaces, it’ll be treated as a literal asterisk or underscore.</p>
 <p>To produce a literal asterisk or underscore at a position where it would otherwise be used as an emphasis delimiter, you can backslash escape it:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>\*this text is surrounded by literal asterisks\*
-</span></code></pre></div>
+<pre class="lang-annotation"><code>\*this text is surrounded by literal asterisks\*</code></pre>
 </div>
 <h3 id="images_1">Images<a class="headerlink" href="#images_1" title="Permanent link">¶</a></h3>
 <div class="admonition ex">
@@ -3023,10 +2935,9 @@
 <p>Admittedly, it’s fairly difficult to devise a “natural” syntax for placing images into a plain text document format.</p>
 <p>Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: <em>inline</em> and <em>reference</em>.</p>
 <p>Inline image syntax looks like this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>![Alt text](/path/to/img.jpg)
-</span><span id="__span-88-2"><a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a>
-</span><span id="__span-88-3"><a id="__codelineno-88-3" name="__codelineno-88-3" href="#__codelineno-88-3"></a>![Alt text](/path/to/img.jpg "Optional title")
-</span></code></pre></div>
+<pre class="lang-annotation"><code>![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg "Optional title")</code></pre>
 <p>That is:</p>
 <ul>
 <li>An exclamation mark: <code>!</code>;</li>
@@ -3034,11 +2945,9 @@
 <li>followed by a set of parentheses, containing the URL or path to the image, and an optional <code>title</code> attribute enclosed in double or single quotes.</li>
 </ul>
 <p>Reference-style image syntax looks like this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>![Alt text][id]
-</span></code></pre></div>
+<pre class="lang-annotation"><code>![Alt text][id]</code></pre>
 <p>Where “id” is the name of a defined image reference. Image references are defined using syntax identical to link references:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>[id]: url/to/image  "Optional title attribute"
-</span></code></pre></div>
+<pre class="lang-annotation"><code>[id]: url/to/image  "Optional title attribute"</code></pre>
 <p>As of this writing, Markdown has no syntax for specifying the dimensions of an image; if this is important to you, you can simply use regular HTML <code>&lt;img&gt;</code> tags.</p>
 </div>
 <hr>
@@ -3047,20 +2956,16 @@
 <div class="admonition ex">
 <p class="admonition-title">Automatic Links</p>
 <p>Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the URL or email address with angle brackets. What this means is that if you want to show the actual text of a URL or email address, and also have it be a clickable link, you can do this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>&lt;http://example.com/&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;http://example.com/&gt;</code></pre>
 <p>Markdown will turn this into:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://example.com/"</span><span class="p">&gt;</span>http://example.com/<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;a href="http://example.com/"&gt;http://example.com/&lt;/a&gt;</code></pre>
 <p>Automatic links for email addresses work similarly, except that Markdown will also perform a bit of randomized decimal and hex entity-encoding to help obscure your address from address-harvesting spambots. For example, Markdown will turn this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>&lt;address@example.com&gt;
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;address@example.com&gt;</code></pre>
 <p>into something like this:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;</span>
-</span><span id="__span-94-2"><a id="__codelineno-94-2" name="__codelineno-94-2" href="#__codelineno-94-2"></a><span class="s">ss@ex&amp;#x61;m&amp;#x70;&amp;#x6C;e&amp;#x2E;co</span>
-</span><span id="__span-94-3"><a id="__codelineno-94-3" name="__codelineno-94-3" href="#__codelineno-94-3"></a><span class="s">m"</span><span class="p">&gt;</span><span class="ni">&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;</span>ss@ex<span class="ni">&amp;#x61;</span>
-</span><span id="__span-94-4"><a id="__codelineno-94-4" name="__codelineno-94-4" href="#__codelineno-94-4"></a>m<span class="ni">&amp;#x70;&amp;#x6C;</span>e<span class="ni">&amp;#x2E;</span>com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span></code></pre></div>
+<pre class="lang-annotation"><code>&lt;a href="&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;
+ss@ex&amp;#x61;m&amp;#x70;&amp;#x6C;e&amp;#x2E;co
+m"&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;ss@ex&amp;#x61;
+m&amp;#x70;&amp;#x6C;e&amp;#x2E;com&lt;/a&gt;</code></pre>
 <p>which will render in a browser as a clickable link to “address@example.com”.</p>
 <p>(This sort of entity-encoding trick will indeed fool many, if not most, address-harvesting bots, but it definitely won’t fool all of them. It’s better than nothing, but an address published in this way will probably eventually start receiving spam.)</p>
 </div>
@@ -3068,22 +2973,20 @@
 <div class="admonition ex">
 <p class="admonition-title">Backslash Escapes</p>
 <p>Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special meaning in Markdown’s formatting syntax. For example, if you wanted to surround a word with literal asterisks (instead of an HTML <code>&lt;em&gt;</code> tag), you can use backslashes before the asterisks, like this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>\*literal asterisks\*
-</span></code></pre></div>
+<pre class="lang-annotation"><code>\*literal asterisks\*</code></pre>
 <p>Markdown provides backslash escapes for the following characters:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>\   backslash
-</span><span id="__span-96-2"><a id="__codelineno-96-2" name="__codelineno-96-2" href="#__codelineno-96-2"></a>`   backtick
-</span><span id="__span-96-3"><a id="__codelineno-96-3" name="__codelineno-96-3" href="#__codelineno-96-3"></a>*   asterisk
-</span><span id="__span-96-4"><a id="__codelineno-96-4" name="__codelineno-96-4" href="#__codelineno-96-4"></a>_   underscore
-</span><span id="__span-96-5"><a id="__codelineno-96-5" name="__codelineno-96-5" href="#__codelineno-96-5"></a>{}  curly braces
-</span><span id="__span-96-6"><a id="__codelineno-96-6" name="__codelineno-96-6" href="#__codelineno-96-6"></a>[]  square brackets
-</span><span id="__span-96-7"><a id="__codelineno-96-7" name="__codelineno-96-7" href="#__codelineno-96-7"></a>()  parentheses
-</span><span id="__span-96-8"><a id="__codelineno-96-8" name="__codelineno-96-8" href="#__codelineno-96-8"></a>#   hash mark
-</span><span id="__span-96-9"><a id="__codelineno-96-9" name="__codelineno-96-9" href="#__codelineno-96-9"></a>+   plus sign
-</span><span id="__span-96-10"><a id="__codelineno-96-10" name="__codelineno-96-10" href="#__codelineno-96-10"></a>-   minus sign (hyphen)
-</span><span id="__span-96-11"><a id="__codelineno-96-11" name="__codelineno-96-11" href="#__codelineno-96-11"></a>.   dot
-</span><span id="__span-96-12"><a id="__codelineno-96-12" name="__codelineno-96-12" href="#__codelineno-96-12"></a>!   exclamation mark
-</span></code></pre></div>
+<pre class="lang-annotation"><code>\   backslash
+`   backtick
+*   asterisk
+_   underscore
+{}  curly braces
+[]  square brackets
+()  parentheses
+#   hash mark
++   plus sign
+-   minus sign (hyphen)
+.   dot
+!   exclamation mark</code></pre>
 </div>
 
 
