@@ -153764,8 +153764,7 @@ document.addEventListener("DOMContentLoaded", function() {
           const cleanUrl = urlParts.join("/") + item.iconName + ".svg";
           visualHtml = `<img src="${cleanUrl}" style="width: 24px; height: 24px;" />`;
         } else {
-          const maskParts = ["../../assets/local_icons", item.path];
-          const localUrl = maskParts.join("/");
+          const localUrl = "https://johnpiers.github.io/Afridyne-Systems/assets/local_icons/" + item.path;
           visualHtml = `<div style="width: 24px; height: 24px; background-color: currentColor; display: inline-block; vertical-align: middle; -webkit-mask: url('${localUrl}') no-repeat center / contain; mask: url('${localUrl}') no-repeat center / contain;"></div>`;
         }
         return `<li class="mdx-iconsearch-result__item" style="display: flex; align-items: center; justify-content: space-between; padding: 8px; border-bottom: 1px solid #222;">
