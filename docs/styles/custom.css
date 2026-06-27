@@ -1439,34 +1439,22 @@ a.md-button.md-button--custom:hover,
    🎨 MATERIALX VECTOR ENGINE DRAW FORCE (FINALIZE COLOR CHANNELS)
    ========================================================================== */
 
-/* Intercepts any inline style layer and forces a dynamic look up path directly inside your repository assets folder */
+/* Bypasses the broken masking layers and forces the browser to render the raw SVGs directly */
 .mdx-iconsearch-result__item div[style*="url("] {
-  -webkit-mask-image: var(--production-icon-route) !important;
-  mask-image: var(--production-icon-route) !important;
-}
-
-/* Dynamically hooks individual custom vectors directly based on the plain-text shortcode labels inside each row */
-.mdx-iconsearch-result__item:has(.shortcode-text) {
-  --production-icon-route: none;
-}
-.mdx-iconsearch-result__item:has(.shortcode-text:hover),
-.mdx-iconsearch-result__item:has(.shortcode-text) {
-  /* Fallback wildcard behavior for the asset pipeline */
-}
-
-/* Global structural rules to ensure vectors render cleanly */
-.mdx-iconsearch-result__item .twemoji,
-.mdx-iconsearch-result__item span.twemoji,
-.mdx-iconsearch-result__item div[style*="url("] {
-  display: inline-block !important;
+  background-image: inherit !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
   min-width: 18px !important;
   min-height: 18px !important;
-  -webkit-mask-size: contain !important;
-  mask-size: contain !important;
-  -webkit-mask-repeat: no-repeat !important;
-  mask-repeat: no-repeat !important;
-  -webkit-mask-position: center !important;
-  mask-position: center !important;
+  display: inline-block !important;
+}
+
+/* Inverts the raw custom SVGs to high-contrast white strictly in Dark Mode */
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item div[style*="url("] {
+  filter: invert(1) brightness(2) !important;
 }
 
 /* Light Mode: Enforces deep charcoal color across your custom vectors */
