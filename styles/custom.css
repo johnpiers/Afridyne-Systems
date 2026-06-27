@@ -1167,7 +1167,6 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 
-
 /* ==========================================================================
    ZONE 2: BOOTSTRAP README CLICKABLE IMAGE & TOOLTIP SYSTEM
    ========================================================================== */
@@ -1255,134 +1254,6 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 /* ==========================================================================
-   ZONE 1: OFFICIAL INTEGRATED MKDOCS LAYOUT SYSTEM (ICON SEARCH)
-   ========================================================================== */
-
-.mdx-iconsearch {
-  margin: 1.5rem auto !important;
-  max-width: 100% !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-.mdx-iconsearch__bar {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  background-color: #1e222b !important;
-  border-bottom: 2px solid #3f51b5 !important;
-  padding: 4px 16px !important;
-  gap: 16px !important;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.mdx-iconsearch__input {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 6px 0 !important;
-  font-size: 0.85rem !important;
-  color: #e6edf3 !important;
-  flex-grow: 1 !important;
-  margin: 0 !important;
-}
-
-.mdx-iconsearch-result__meta {
-  font-size: 0.75rem !important;
-  color: #64748b !important;
-  white-space: nowrap !important;
-  margin-left: auto !important;
-}
-
-.mdx-iconsearch-result__select {
-  background: transparent !important;
-  color: #94a3b8 !important;
-  border: none !important;
-  padding: 2px 18px 2px 4px !important;
-  font-size: 0.75rem !important;
-  cursor: pointer !important;
-  margin: 0 !important;
-  appearance: none !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
-  background-repeat: no-repeat !important;
-  background-position: right center !important;
-}
-
-.mdx-iconsearch-result__list {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  max-height: 380px !important;
-  overflow-y: auto !important;
-  background-color: #1e222b !important;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.mdx-iconsearch-result__list::-webkit-scrollbar {
-  width: 4px;
-}
-
-.mdx-iconsearch-result__list::-webkit-scrollbar-thumb {
-  background-color: rgba(255,255,255,0.1);
-}
-
-.mdx-iconsearch-result__item {
-  margin: 0 !important;
-  padding: 8px 16px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 14px !important;
-}
-
-.mdx-iconsearch-result__item:hover {
-  background-color: rgba(255, 255, 255, 0.02) !important;
-}
-
-.mdx-iconsearch-result__item .md-button--primary {
-  background: transparent !important;
-  color: #5c6370 !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 4px !important;
-  font-size: 0.6rem !important;
-  font-weight: 600 !important;
-  padding: 2px 6px !important;
-  margin-left: auto !important;
-  min-height: auto !important;
-}
-
-.mdx-iconsearch-result__item .md-button--primary:hover {
-  color: #00bee6 !important;
-  border-color: #00bee6 !important;
-}
-
-.mdx-iconsearch-result__item span.shortcode-text {
-  font-size: 0.8rem !important;
-  font-family: monospace !important;
-  color: #00bee6 !important;
-  font-weight: 500;
-}
-
-.mdx-iconsearch-result__item img.icon-preview {
-  width: 18px !important;
-  height: 18px !important;
-  object-fit: contain !important;
-}
-
-.mdx-iconsearch-result__item img.icon-preview {
-  filter: invert(1) brightness(1.5) !important;
-}
-
-.mdx-iconsearch-result__item img[src*="twemoji"].icon-preview,
-.mdx-iconsearch-result__item img[src*="emoji"].icon-preview {
-  filter: none !important;
-}
-
-/* ==========================================================================
    💎 UNIFIED MASTER SEARCH SYSTEM (ALL VARIATIONS LOCK)
    Perfectly manages page blocks, popups, and headerless containers.
    ========================================================================== */
@@ -1423,10 +1294,17 @@ th[role=columnheader]:not(.no-sort):hover:after {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c6370' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
 }
 
+/* Neutralize filters on standard icon paths */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__item img.icon-preview {
+  filter: none !important;
+}
+
 /* Force custom local mask assets to stay charcoal dark instead of white */
-[data-md-color-scheme="default"] .mdx-iconsearch-result__list [style*="assets/local_icons/"],
-[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__list [style*="assets/local_icons/"],
-[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__list [style*="assets/local_icons/"] {
+[data-md-color-scheme="default"] .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="default"] .annotate .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="default"] .md-annotation__content .mdx-iconsearch-result__list [style*="/assets/local_icons/"] {
   background-color: #373b44 !important;
   color: #373b44 !important;
 }
@@ -1472,10 +1350,15 @@ th[role=columnheader]:not(.no-sort):hover:after {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e2e8f0' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
 }
 
-/* Force custom local mask assets to stay white instead of breaking layout canvas colors */
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__list [style*="assets/local_icons/"],
-[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__list [style*="assets/local_icons/"],
-[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__list [style*="assets/local_icons/"] {
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__item img.icon-preview,
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__item img.icon-preview {
+  filter: invert(1) brightness(1.5) !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="slate"] .annotate .mdx-iconsearch-result__list [style*="/assets/local_icons/"],
+[data-md-color-scheme="slate"] .md-annotation__content .mdx-iconsearch-result__list [style*="/assets/local_icons/"] {
   background-color: #ffffff !important;
   color: #ffffff !important;
 }
@@ -1508,6 +1391,27 @@ th[role=columnheader]:not(.no-sort):hover:after {
 }
 
 
+/* ==========================================================================
+   🚀 ISOLATED FIX FOR NAV BUTTONS (Ghost Style Normal State)
+   ========================================================================== */
+a.md-button.md-button--custom,
+.md-typeset a.md-button.md-button--custom {
+  background-color: rgba(0, 190, 230, 0.05) !important; /* Subtle tint */
+  color: #00bee6 !important;                           /* Cyan text and icon */
+  border: 1px solid rgba(0, 190, 230, 0.15) !important;/* Soft border */
+  text-decoration: underline !important;               /* Restores underline */
+  display: inline-block;
+}
+
+/* Hover state: Default behavior (Dark Mode / Fallback) */
+a.md-button.md-button--custom:hover,
+.md-typeset a.md-button.md-button--custom:hover {
+  background-color: #00bee6 !important;                /* Solid cyan fill */
+  color: #ffffff !important;                           /* White text */
+  border-color: #00bee6 !important;
+  text-decoration: none !important;                    /* Removes underline */
+}
+
 /* 🌓 LIGHT MODE HOVER OVERRIDE 
    Changes the text and icon color to black/deep charcoal strictly in light mode */
 [data-md-color-scheme="default"] a.md-button.md-button--custom:hover,
@@ -1531,35 +1435,3 @@ th[role=columnheader]:not(.no-sort):hover:after {
   border: 0 !important;
 }
 
-/* ==========================================================================
-   🔗 ABSOLUTE GLOBAL URL ROUTE REDIRECT FOR MATERIALX CUSTOM ICONS
-   ========================================================================== */
-
-/* Catch any element holding the theme's default stripped root icon path and force-inject your GitHub repository folder layout instead */
-.mdx-iconsearch-result__item [style*="mask: url('/assets/local_icons/"],
-.mdx-iconsearch-result__item [style*="-webkit-mask: url('/assets/local_icons/"] {
-  -webkit-mask-image: url('https://github.io') !important;
-  mask-image: url('https://github.io') !important;
-}
-
-/* Light Mode Mode Color Lock: Forces your matching vectors to stay deep charcoal black */
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="local_icons/"] {
-  background-color: #373b44 !important;
-  color: #373b44 !important;
-  display: inline-block !important;
-  min-width: 18px !important;
-  min-height: 18px !important;
-}
-
-/* Dark Mode Mode Color Lock: Forces your matching vectors to stay high-contrast white */
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="local_icons/"] {
-  background-color: #ffffff !important;
-  color: #ffffff !important;
-  display: inline-block !important;
-  min-width: 18px !important;
-  min-height: 18px !important;
-}
-
-@keyframes heart{0%,40%,80%,to{transform:scale(1)}20%,60%{transform:scale(1.15)}}.md-typeset .twitter{color:#00acee}.md-typeset .mastodon{color:#897ff8}.md-typeset .mdx-video{width:auto}.md-typeset .mdx-video__inner{height:0;padding-bottom:56.138%;position:relative;width:100%}.md-typeset .mdx-video iframe{border:none;height:100%;left:0;overflow:hidden;position:absolute;top:0;width:100%}.md-typeset .mdx-heart{animation:heart 1s infinite}.md-typeset .mdx-insiders{color:#e91e63}.md-typeset .mdx-badge{font-size:.85em}.md-typeset .mdx-badge--heart{--md-typeset-a-color:#e92063;--md-accent-fg-color:#ff4281;--md-accent-fg-color--transparent:#e920631a;color:#e91e63}.md-typeset .mdx-badge--heart .twemoji{animation:heart 1s infinite}.md-typeset .mdx-badge--right{float:right;margin-left:.35em}[dir=ltr] .md-typeset .mdx-badge__icon{border-top-left-radius:.1rem}[dir=rtl] .md-typeset .mdx-badge__icon{border-top-right-radius:.1rem}[dir=ltr] .md-typeset .mdx-badge__icon{border-bottom-left-radius:.1rem}[dir=rtl] .md-typeset .mdx-badge__icon{border-bottom-right-radius:.1rem}.md-typeset .mdx-badge__icon{background:var(--md-accent-fg-color--transparent);padding:.2rem}.md-typeset .mdx-badge__icon:last-child{border-radius:.1rem}[dir=ltr] .md-typeset .mdx-badge__text{border-top-right-radius:.1rem}[dir=rtl] .md-typeset .mdx-badge__text{border-top-left-radius:.1rem}[dir=ltr] .md-typeset .mdx-badge__text{border-bottom-right-radius:.1rem}[dir=rtl] .md-typeset .mdx-badge__text{border-bottom-left-radius:.1rem}.md-typeset .mdx-badge__text{box-shadow:0 0 0 1px inset var(--md-accent-fg-color--transparent);padding:.2rem .3rem}.md-typeset .mdx-switch button{cursor:pointer;transition:opacity .25s}.md-typeset .mdx-switch button:focus,.md-typeset .mdx-switch button:hover{opacity:.75}.md-typeset .mdx-switch button>code{background-color:var(--md-primary-fg-color);color:var(--md-primary-bg-color);display:block}.md-typeset .mdx-columns ol,.md-typeset .mdx-columns ul{column-count:2}@media screen and (max-width:29.984375em){.md-typeset .mdx-columns ol,.md-typeset .mdx-columns ul{columns:initial}}.md-typeset .mdx-columns li{break-inside:avoid}.md-typeset .mdx-flags{margin:2em auto}.md-typeset .mdx-flags ol{list-style:none}.md-typeset .mdx-flags ol li{margin-bottom:1em}.md-typeset .mdx-flags__item{display:flex;gap:.6rem}.md-typeset .mdx-flags__content{display:flex;flex:1;flex-direction:column}.md-typeset .mdx-flags__content span{align-items:baseline;display:inline-flex;justify-content:space-between}.md-typeset .mdx-flags__content>span:nth-child(2){font-size:80%}.md-typeset .mdx-flags__content code{float:right}.md-typeset .mdx-social{height:min(27rem,80vw);position:relative}.md-typeset .mdx-social:hover .mdx-social__image{background-color:#e4e4e40d}.md-typeset .mdx-social__layer{margin-top:4rem;position:absolute;transform-style:preserve-3d;transition:.25s cubic-bezier(.7,0,.3,1)}.md-typeset .mdx-social__layer:hover .mdx-social__label{opacity:1}.md-typeset .mdx-social__layer:hover .mdx-social__image{background-color:#7f7f7ffc}.md-typeset .mdx-social__layer:hover~.mdx-social__layer{opacity:0}.md-typeset .mdx-social__image{box-shadow:-.25rem .25rem .5rem #0000000d;transform:rotate(-40deg) skew(15deg,15deg) scale(.7);transition:all .25s}.md-typeset .mdx-social__image img{display:block}.md-typeset .mdx-social__label{background-color:var(--md-default-fg-color--light);color:var(--md-default-bg-color);display:block;opacity:0;padding:.2rem .4rem;position:absolute;transition:all .25s}.md-typeset .mdx-social:hover .mdx-social__layer:nth-child(6){transform:translateY(-30px)}.md-typeset .mdx-social:hover .mdx-social__layer:nth-child(5){transform:translateY(-20px)}.md-typeset .mdx-social:hover .mdx-social__layer:nth-child(4){transform:translateY(-10px)}.md-typeset .mdx-social:hover .mdx-social__layer:nth-child(3){transform:translateY(0)}.md-typeset .mdx-social:hover .mdx-social__layer:nth-child(2){transform:translateY(10px)}.md-typeset .mdx-social:hover .mdx-social__layer:first-child{transform:translateY(20px)}.md-typeset .mdx-social:hover .mdx-social__layer:nth-child(0){transform:translateY(30px)}.md-banner{color:var(--md-footer-fg-color--lighter)}.md-banner strong{white-space:nowrap}.md-banner a,.md-banner strong{color:var(--md-footer-fg-color)}.md-banner a:focus,.md-banner a:hover{color:currentcolor}.md-banner a:focus .twemoji,.md-banner a:hover .twemoji{background-color:var(--md-footer-fg-color);box-shadow:none}.md-banner .twemoji{border-radius:100%;box-shadow:inset 0 0 0 .05rem currentcolor;display:inline-block;height:1.2rem;padding:.25rem;transition:all .25s;vertical-align:bottom;width:1.2rem}.md-banner .twemoji svg{display:block;max-height:none}.mdx-container{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: hsla(0, 0%, 100%, 1)' /></svg>") no-repeat bottom,linear-gradient(to bottom,var(--md-primary-fg-color),#a63fd9 99%,var(--md-default-bg-color) 99%);padding-top:1rem}[data-md-color-scheme=slate] .mdx-container{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: hsla(230, 15%, 14%, 1)' /></svg>") no-repeat bottom,linear-gradient(to bottom,var(--md-primary-fg-color),#363949 99%,var(--md-default-bg-color) 99%)}.mdx-hero{color:var(--md-primary-bg-color);margin:0 .8rem}.mdx-hero h1{color:currentcolor;font-weight:700;margin-bottom:1rem}@media screen and (max-width:29.984375em){.mdx-hero h1{font-size:1.4rem}}.mdx-hero__content{padding-bottom:6rem}@media screen and (min-width:60em){.mdx-hero{align-items:stretch;display:flex}.mdx-hero__content{margin-top:3.5rem;max-width:19rem;padding-bottom:14vw}.mdx-hero__image{order:1;transform:translateX(4rem);width:38rem}}@media screen and (min-width:76.25em){.mdx-hero__image{transform:translateX(8rem)}}.mdx-hero .md-button{color:var(--md-primary-bg-color);margin-right:.5rem;margin-top:.5rem}.mdx-hero .md-button:focus,.mdx-hero .md-button:hover{background-color:var(--md-accent-fg-color);border-color:var(--md-accent-fg-color);color:var(--md-accent-bg-color)}.mdx-hero .md-button--primary{background-color:var(--md-primary-bg-color);border-color:var(--md-primary-bg-color);color:#894da8}.md-typeset .mdx-iconsearch{background-color:var(--md-default-bg-color);border-radius:.1rem;box-shadow:var(--md-shadow-z1);position:relative;transition:box-shadow 125ms}.md-typeset .mdx-iconsearch:focus-within,.md-typeset .mdx-iconsearch:hover{box-shadow:var(--md-shadow-z2)}.md-typeset .mdx-iconsearch .md-input{background:var(--md-default-bg-color);box-shadow:none}[data-md-color-scheme=slate] .md-typeset .mdx-iconsearch .md-input{background:var(--md-code-bg-color)}.md-typeset .mdx-iconsearch-result{backface-visibility:hidden;max-height:50vh;overflow-y:auto;scrollbar-color:var(--md-default-fg-color--lighter) #0000;scrollbar-width:thin;touch-action:pan-y}.md-tooltip .md-typeset .mdx-iconsearch-result{max-height:10.25rem}.md-typeset .mdx-iconsearch-result::-webkit-scrollbar{height:.2rem;width:.2rem}.md-typeset .mdx-iconsearch-result::-webkit-scrollbar-thumb{background-color:var(--md-default-fg-color--lighter)}.md-typeset .mdx-iconsearch-result::-webkit-scrollbar-thumb:hover{background-color:var(--md-accent-fg-color)}.md-typeset .mdx-iconsearch-result__meta{color:var(--md-default-fg-color--lighter);font-size:.64rem;position:absolute;right:.6rem;top:.4rem}@media screen and (max-width:29.984375em){.md-typeset .mdx-iconsearch-result__meta{display:none}}.md-typeset .mdx-iconsearch-result__select{background-color:var(--md-default-fg-color--lightest);border:none;border-radius:.1rem;color:var(--md-default-fg-color--light);font-size:.64rem;padding-bottom:.15em;padding-top:.15em;position:absolute;right:.6rem;top:.4rem;transition:color 125ms,background-color 125ms}.md-typeset .mdx-iconsearch-result__select:focus,.md-typeset .mdx-iconsearch-result__select:hover{background-color:var(--md-accent-fg-color);color:var(--md-accent-bg-color);outline:none}.md-typeset .mdx-iconsearch-result__select+.mdx-iconsearch-result__meta{right:4.1rem}[dir=ltr] .md-typeset .mdx-iconsearch-result__list{margin-left:0}[dir=rtl] .md-typeset .mdx-iconsearch-result__list{margin-right:0}.md-typeset .mdx-iconsearch-result__list{list-style:none;margin:0;padding:0}[dir=ltr] .md-typeset .mdx-iconsearch-result__item{margin-left:0}[dir=rtl] .md-typeset .mdx-iconsearch-result__item{margin-right:0}.md-typeset .mdx-iconsearch-result__item{border-bottom:.05rem solid var(--md-default-fg-color--lightest);margin:0;padding:.2rem .6rem}.md-typeset .mdx-iconsearch-result__item:last-child{border-bottom:none}.md-typeset .mdx-iconsearch-result__item>*{margin-right:.6rem}.md-typeset .mdx-iconsearch-result__item img{height:.9rem;width:.9rem}[data-md-color-scheme=slate] .md-typeset .mdx-iconsearch-result__item img[src*=squidfunk]{filter:invert(1)}.md-typeset .mdx-premium p{margin:2em 0;text-align:center}.md-typeset .mdx-premium img{height:3.25rem}.md-typeset .mdx-premium p:last-child{display:flex;flex-wrap:wrap;justify-content:center}.md-typeset .mdx-premium p:last-child>a{display:block;flex-shrink:0}.md-typeset .mdx-sponsorship__list{margin:2em 0}.md-typeset .mdx-sponsorship__list:after{clear:both;content:"";display:block}[dir=ltr] .md-typeset .mdx-sponsorship__item{float:left}[dir=rtl] .md-typeset .mdx-sponsorship__item{float:right}.md-typeset .mdx-sponsorship__item{border-radius:100%;display:block;height:1.6rem;margin:.2rem;overflow:hidden;transform:scale(1);transition:color 125ms,transform 125ms;width:1.6rem}.md-typeset .mdx-sponsorship__item:focus,.md-typeset .mdx-sponsorship__item:hover{transform:scale(1.1)}.md-typeset .mdx-sponsorship__item:focus img,.md-typeset .mdx-sponsorship__item:hover img{filter:grayscale(0)}.md-typeset .mdx-sponsorship__item--private{background:var(--md-default-fg-color--lightest);color:var(--md-default-fg-color--lighter);font-size:.6rem;font-weight:700;line-height:1.6rem;text-align:center}.md-typeset .mdx-sponsorship__item img{display:block;filter:grayscale(100%) opacity(75%);height:auto;transition:filter 125ms;width:100%}.md-typeset .mdx-sponsorship-button{font-weight:400}.md-typeset .mdx-sponsorship-count,.md-typeset .mdx-sponsorship-total{font-weight:700}
