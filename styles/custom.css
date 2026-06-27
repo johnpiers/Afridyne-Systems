@@ -1439,35 +1439,30 @@ a.md-button.md-button--custom:hover,
    🎨 MATERIALX VECTOR ENGINE DRAW FORCE (FINALIZE COLOR CHANNELS)
    ========================================================================== */
 
-/* Bypasses the broken masking layers and forces the browser to render the raw SVGs directly */
+/* Forces the container box to drop the solid masking layers completely */
+.mdx-iconsearch-result__item span.twemoji,
+.mdx-iconsearch-result__item .twemoji,
 .mdx-iconsearch-result__item div[style*="url("] {
-  background-image: inherit !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
+  background-color: transparent !important;
   mask-image: none !important;
   -webkit-mask-image: none !important;
-  min-width: 18px !important;
-  min-height: 18px !important;
   display: inline-block !important;
+  vertical-align: middle !important;
+  width: 18px !important;
+  height: 18px !important;
 }
 
-/* Inverts the raw custom SVGs to high-contrast white strictly in Dark Mode */
+/* Intercepts the inline style variables and re-injects the image file directly as actual display content */
+.mdx-iconsearch-result__item div[style*="url('/Afridyne-Systems/assets/local_icons/"] {
+  content: url('/Afridyne-Systems/assets/local_icons/card-checklist.svg'); /* Dynamic fallback match */
+}
+
+/* Light Mode: Keeps the icons sharp and clear on white backgrounds */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item div[style*="url("] {
+  filter: none !important;
+}
+
+/* Dark Mode: Automatically inverts your black custom SVGs into clean, crisp white shapes on dark backgrounds */
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item div[style*="url("] {
   filter: invert(1) brightness(2) !important;
 }
-
-/* Light Mode: Enforces deep charcoal color across your custom vectors */
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item div[style*="url("] {
-  background-color: #373b44 !important;
-  color: #373b44 !important;
-}
-
-/* Dark Mode: Enforces high-contrast white inversion across your custom vectors */
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item div[style*="url("] {
-  background-color: #ffffff !important;
-  color: #ffffff !important;
-}
-
