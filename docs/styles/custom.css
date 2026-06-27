@@ -1439,26 +1439,10 @@ a.md-button.md-button--custom:hover,
    🔗 ABSOLUTE PATH FALLBACK RULE FOR PRODUCTION SEARCH ICONS
    ========================================================================== */
 
-/* Intercepts any inline layout block trying to load a custom icon from the root page tree and forces the correct assets directory path */
-.mdx-iconsearch-result__item [style*="url("] {
-  -webkit-mask-image: var(--icon-production-path) !important;
-  mask-image: var(--icon-production-path) !important;
-}
-
-/* Dynamically reconstructs the asset paths using your true repository folder names */
-.mdx-iconsearch-result__item:has([style*="sparkles-fill-16.svg"]) { --icon-production-path: url('/Afridyne-Systems/assets/local_icons/sparkles-fill-16.svg'); }
-.mdx-iconsearch-result__item:has([style*="forklift.svg"]) { --icon-production-path: url('/Afridyne-Systems/assets/local_icons/forklift.svg'); }
-.mdx-iconsearch-result__item:has([style*="necklace.svg"]) { --icon-production-path: url('/Afridyne-Systems/assets/local_icons/necklace.svg'); }
-.mdx-iconsearch-result__item:has([style*="material-sickle.svg"]) { --icon-production-path: url('/Afridyne-Systems/assets/local_icons/material-sickle.svg'); }
-
-/* Global catch-all rule that captures any standalone file names and routes them straight to your production assets directory */
-.mdx-iconsearch-result__item [style*=".svg"] {
-  -webkit-mask-size: contain !important;
-  mask-size: contain !important;
-  -webkit-mask-repeat: no-repeat !important;
-  mask-repeat: no-repeat !important;
-  -webkit-mask-position: center !important;
-  mask-position: center !important;
+/* Intercepts the inline style attributes and appends the missing repository subfolder path prefix dynamically */
+.mdx-iconsearch-result__item [style*="url('/assets/local_icons/"] {
+  -webkit-mask-image: url('/Afridyne-Systems/assets/local_icons/' + attr(data-icon)) !important;
+  mask-image: url('/Afridyne-Systems/assets/local_icons/' + attr(data-icon)) !important;
 }
 
 /* Light Mode: Enforces deep charcoal color across your custom vectors */
@@ -1479,4 +1463,10 @@ a.md-button.md-button--custom:hover,
   display: inline-block !important;
   min-width: 18px !important;
   min-height: 18px !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
 }
