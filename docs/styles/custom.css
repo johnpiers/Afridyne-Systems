@@ -1435,3 +1435,34 @@ a.md-button.md-button--custom:hover,
   border: 0 !important;
 }
 
+/* ==========================================================================
+   🔗 GLOBAL ROUTE REDIRECT FOR PRODUCTION LOCAL ICONS
+   ========================================================================== */
+
+/* Automatically forces your live site's mask paths to look inside the correct project subfolder subpath */
+.mdx-iconsearch-result__item [style*="mask: url('/assets/local_icons/"],
+.mdx-iconsearch-result__item [style*="-webkit-mask: url('/assets/local_icons/"] {
+  -webkit-mask-image: url('https://github.io') !important;
+  mask-image: url('https://github.io') !important;
+}
+
+/* Light Mode: Maps vectors directly to the true live subfolder destination and forces deep charcoal color */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="local_icons/"] {
+  background-color: #373b44 !important;
+  color: #373b44 !important;
+  display: inline-block !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+}
+
+/* Dark Mode: Maps vectors directly to the true live subfolder destination and forces high-contrast white */
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="local_icons/"] {
+  background-color: #ffffff !important;
+  color: #ffffff !important;
+  display: inline-block !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+}
+
