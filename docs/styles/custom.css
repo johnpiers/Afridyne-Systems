@@ -1419,6 +1419,11 @@ a.md-button.md-button--custom:hover,
   color: #1a1a1a !important;                           /* High-contrast dark text/icon */
 }
 
+/* Dark mode: invert local SVG icons only */
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item img[src*="local_icons"] {
+  filter: invert(1);
+}
+
 
 /* ==========================================================================
    🙈 INVISIBLE TOC HEADER TRICK (Hides repeating headers inside boxes)
@@ -1436,8 +1441,3 @@ a.md-button.md-button--custom:hover,
 }
 
 
-
-/* Dark mode: invert local icons */
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item img {
-  filter: invert(1);
-}
