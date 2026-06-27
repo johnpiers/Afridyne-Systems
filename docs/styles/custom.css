@@ -1439,20 +1439,33 @@ a.md-button.md-button--custom:hover,
    🎨 MATERIALX VECTOR ENGINE DRAW FORCE (FINALIZE COLOR CHANNELS)
    ========================================================================== */
 
-/* Light Mode: Force custom vectors to render as deep charcoal black */
-.mdx-iconsearch-result__item [style*="local_icons/"] {
-  background-color: #373b44 !important;
-  color: #373b44 !important;
+/* Universal: Forces custom icon containers to display as high-utility vector rendering masks */
+.mdx-iconsearch-result__item .twemoji,
+.mdx-iconsearch-result__item span.twemoji,
+.mdx-iconsearch-result__item [style*="assets/"] {
   display: inline-block !important;
   min-width: 18px !important;
   min-height: 18px !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
 }
 
-/* Dark Mode: Force custom vectors to invert completely to high-contrast white */
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="local_icons/"] {
+/* Light Mode: Enforces deep charcoal color across your custom vectors */
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item .twemoji,
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="assets/"] {
+  background-color: #373b44 !important;
+  color: #373b44 !important;
+}
+
+/* Dark Mode: Enforces high-contrast white inversion across your custom vectors */
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item .twemoji,
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="assets/"] {
   background-color: #ffffff !important;
   color: #ffffff !important;
-  display: inline-block !important;
-  min-width: 18px !important;
-  min-height: 18px !important;
 }
