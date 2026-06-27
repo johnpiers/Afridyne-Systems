@@ -2,7 +2,7 @@ import os
 import json
 import shutil
 
-icons_dir = "overrides/.icons"
+icons_dir = "docs/assets/local_icons"
 js_file_path = "docs/javascripts/iconsearch.js"
 site_assets_dest = "docs/assets/local_icons"
 
@@ -49,12 +49,19 @@ for root, dirs, files in os.walk(icons_dir):
             elif "simple" in clean_path_forward:
                 icon_set_string = "simple"
             
+            # Checks if building on local machine vs remote GitHub Actions production runner
+            import os as native_os
+            if native_os.getenv('GITHUB_ACTIONS') == 'true':
+                production_path = f"/Afridyne-Systems/assets/local_icons/{clean_path_forward}"
+            else:
+                production_path = f"/assets/local_icons/{clean_path_forward}"
+
             icon_database.append({
                 "name": icon_handle.replace("-", " ").lower(),
                 "shortcode": shortcode,
                 "set": icon_set_string,
                 "iconName": pure_filename,
-                "path": clean_path_forward,
+                "path": production_path,
                 "type": "icons"
             })
 

@@ -1436,18 +1436,11 @@ a.md-button.md-button--custom:hover,
 }
 
 /* ==========================================================================
-   🔗 ABSOLUTE PATH FALLBACK RULE FOR PRODUCTION SEARCH ICONS
+   🎨 MATERIALX VECTOR ENGINE DRAW FORCE (FINALIZE COLOR CHANNELS)
    ========================================================================== */
 
-/* Intercepts the inline style attributes and appends the missing repository subfolder path prefix dynamically */
-.mdx-iconsearch-result__item [style*="url('/assets/local_icons/"] {
-  -webkit-mask-image: url('/Afridyne-Systems/assets/local_icons/' + attr(data-icon)) !important;
-  mask-image: url('/Afridyne-Systems/assets/local_icons/' + attr(data-icon)) !important;
-}
-
-/* Light Mode: Enforces deep charcoal color across your custom vectors */
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="local_icons/"] {
+/* Light Mode: Force custom vectors to render as deep charcoal black */
+.mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #373b44 !important;
   color: #373b44 !important;
   display: inline-block !important;
@@ -1455,18 +1448,11 @@ a.md-button.md-button--custom:hover,
   min-height: 18px !important;
 }
 
-/* Dark Mode: Enforces high-contrast white inversion across your custom vectors */
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
+/* Dark Mode: Force custom vectors to invert completely to high-contrast white */
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #ffffff !important;
   color: #ffffff !important;
   display: inline-block !important;
   min-width: 18px !important;
   min-height: 18px !important;
-  -webkit-mask-size: contain !important;
-  mask-size: contain !important;
-  -webkit-mask-repeat: no-repeat !important;
-  mask-repeat: no-repeat !important;
-  -webkit-mask-position: center !important;
-  mask-position: center !important;
 }
