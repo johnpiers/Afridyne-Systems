@@ -1439,14 +1439,7 @@ a.md-button.md-button--custom:hover,
    🔗 GLOBAL ROUTE REDIRECT FOR PRODUCTION LOCAL ICONS
    ========================================================================== */
 
-/* Catches the broken inline styles and explicitly injects the correct project subpath URL prefix */
-.mdx-iconsearch-result__item [style*="url('/assets/local_icons/"],
-.mdx-iconsearch-result__item [style*="-webkit-mask: url('/assets/local_icons/"] {
-  -webkit-mask-image: url('/Afridyne-Systems/assets/local_icons/card-checklist.svg') !important;
-  mask-image: url('/Afridyne-Systems/assets/local_icons/card-checklist.svg') !important;
-}
-
-/* Light Mode: Enforces deep charcoal color across your custom vectors */
+/* Light Mode: Maps vectors directly to the true live subfolder destination and forces deep charcoal color */
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #373b44 !important;
@@ -1456,7 +1449,7 @@ a.md-button.md-button--custom:hover,
   min-height: 18px !important;
 }
 
-/* Dark Mode: Enforces high-contrast white inversion across your custom vectors */
+/* Dark Mode: Maps vectors directly to the true live subfolder destination and forces high-contrast white */
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #ffffff !important;
