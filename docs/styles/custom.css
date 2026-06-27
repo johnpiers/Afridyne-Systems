@@ -1436,10 +1436,32 @@ a.md-button.md-button--custom:hover,
 }
 
 /* ==========================================================================
-   🔗 GLOBAL ROUTE REDIRECT FOR PRODUCTION LOCAL ICONS
+   🔗 ABSOLUTE PATH FALLBACK RULE FOR PRODUCTION SEARCH ICONS
    ========================================================================== */
 
-/* Light Mode: Maps vectors directly to the true live subfolder destination and forces deep charcoal color */
+/* Intercepts any inline layout block trying to load a custom icon from the root page tree and forces the correct assets directory path */
+.mdx-iconsearch-result__item [style*="url("] {
+  -webkit-mask-image: var(--icon-production-path) !important;
+  mask-image: var(--icon-production-path) !important;
+}
+
+/* Dynamically reconstructs the asset paths using your true repository folder names */
+.mdx-iconsearch-result__item:has([style*="sparkles-fill-16.svg"]) { --icon-production-path: url('/Afridyne-Systems/assets/local_icons/sparkles-fill-16.svg'); }
+.mdx-iconsearch-result__item:has([style*="forklift.svg"]) { --icon-production-path: url('/Afridyne-Systems/assets/local_icons/forklift.svg'); }
+.mdx-iconsearch-result__item:has([style*="necklace.svg"]) { --icon-production-path: url('/Afridyne-Systems/assets/local_icons/necklace.svg'); }
+.mdx-iconsearch-result__item:has([style*="material-sickle.svg"]) { --icon-production-path: url('/Afridyne-Systems/assets/local_icons/material-sickle.svg'); }
+
+/* Global catch-all rule that captures any standalone file names and routes them straight to your production assets directory */
+.mdx-iconsearch-result__item [style*=".svg"] {
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+}
+
+/* Light Mode: Enforces deep charcoal color across your custom vectors */
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #373b44 !important;
@@ -1449,7 +1471,7 @@ a.md-button.md-button--custom:hover,
   min-height: 18px !important;
 }
 
-/* Dark Mode: Maps vectors directly to the true live subfolder destination and forces high-contrast white */
+/* Dark Mode: Enforces high-contrast white inversion across your custom vectors */
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="local_icons/"] {
   background-color: #ffffff !important;
@@ -1458,4 +1480,3 @@ a.md-button.md-button--custom:hover,
   min-width: 18px !important;
   min-height: 18px !important;
 }
-
