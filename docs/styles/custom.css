@@ -1439,10 +1439,23 @@ a.md-button.md-button--custom:hover,
    🎨 MATERIALX VECTOR ENGINE DRAW FORCE (FINALIZE COLOR CHANNELS)
    ========================================================================== */
 
-/* Universal: Forces custom icon containers to display as high-utility vector rendering masks */
+/* Intercepts any inline style layer and forces a dynamic look up path directly inside your repository assets folder */
+.mdx-iconsearch-result__item [style*="url("] {
+  -webkit-mask-image: var(--production-icon-route) !important;
+  mask-image: var(--production-icon-route) !important;
+}
+
+/* Dynamically hooks individual custom vectors directly based on the unique text matching variables */
+.mdx-iconsearch-result__item:has([shortcode*="forklift"]) { --production-icon-route: url('https://github.io'); }
+.mdx-iconsearch-result__item:has([shortcode*="sickle"]) { --production-icon-route: url('https://github.io'); }
+.mdx-iconsearch-result__item:has([shortcode*="necklace"]) { --production-icon-route: url('https://github.io'); }
+.mdx-iconsearch-result__item:has([shortcode*="klingon"]) { --production-icon-route: url('https://github.io'); }
+.mdx-iconsearch-result__item:has([shortcode*="sprinkler"]) { --production-icon-route: url('https://github.io'); }
+
+/* Global structural rules to ensure vectors render cleanly */
 .mdx-iconsearch-result__item .twemoji,
 .mdx-iconsearch-result__item span.twemoji,
-.mdx-iconsearch-result__item [style*="assets/"] {
+.mdx-iconsearch-result__item div[style*="url("] {
   display: inline-block !important;
   min-width: 18px !important;
   min-height: 18px !important;
@@ -1455,17 +1468,15 @@ a.md-button.md-button--custom:hover,
 }
 
 /* Light Mode: Enforces deep charcoal color across your custom vectors */
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item .twemoji,
 [data-md-color-scheme="default"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="default"] .mdx-iconsearch-result__item [style*="assets/"] {
+[data-md-color-scheme="default"] .mdx-iconsearch-result__item div[style*="url("] {
   background-color: #373b44 !important;
   color: #373b44 !important;
 }
 
 /* Dark Mode: Enforces high-contrast white inversion across your custom vectors */
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item .twemoji,
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item span.twemoji,
-[data-md-color-scheme="slate"] .mdx-iconsearch-result__item [style*="assets/"] {
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item div[style*="url("] {
   background-color: #ffffff !important;
   color: #ffffff !important;
 }
