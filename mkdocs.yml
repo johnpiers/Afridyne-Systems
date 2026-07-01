@@ -133,7 +133,7 @@ plugins:
       enabled: !ENV [CI, false]
       cache: true
   - schema_reader
-  - materialx/typeset       # Added 'material/'
+  - material/typeset       # Added 'material/'
   - caption:
       figure:
         enable: false
