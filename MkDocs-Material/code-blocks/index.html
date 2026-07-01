@@ -9,7 +9,7 @@
         <meta name="author" content="John Piers Cilliers">
       
       
-        <link rel="canonical" href="https://johnpiers.github.io/Afridyne-Systems/MkDocs-Material/code-blocks/">
+        <link rel="canonical" href="https://example.com/MkDocs-Material/code-blocks/">
       
       
       
@@ -222,15 +222,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Code blocks - Afridyne Systems (PTY) LTD">
 <meta property="og:description" content="Born for documents, yet beyond documents.  Accessible to everyone, extremely easy to use.  Modern, lightweight, customizable, responsive.">
-<meta property="og:image" content="https://johnpiers.github.io/Afridyne-Systems/assets/images/social/MkDocs-Material/code-blocks.png">
+<meta property="og:image" content="https://example.com/assets/images/social/MkDocs-Material/code-blocks.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://johnpiers.github.io/Afridyne-Systems/MkDocs-Material/code-blocks/">
+<meta property="og:url" content="https://example.com/MkDocs-Material/code-blocks/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Code blocks - Afridyne Systems (PTY) LTD">
 <meta property="twitter:description" content="Born for documents, yet beyond documents.  Accessible to everyone, extremely easy to use.  Modern, lightweight, customizable, responsive.">
-<meta property="twitter:image" content="https://johnpiers.github.io/Afridyne-Systems/assets/images/social/MkDocs-Material/code-blocks.png">
+<meta property="twitter:image" content="https://example.com/assets/images/social/MkDocs-Material/code-blocks.png">
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -497,7 +497,7 @@
   <span class="md-ellipsis">
     
   
-    Afridyne Blog
+    Index
   
 
     
@@ -1260,7 +1260,8 @@
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.annotate</span><span class="w"> </span><span class="c1"># (1)!</span>
 </span></code></pre></div>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"> I'm a code annotation! I can contain <code>code</code>, <strong>formatted text</strong>, images, ... basically anything that can be written in Markdown.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"> I'm a code annotation! I can contain <code>code</code>, <strong>formatted text</strong>,<br>
+ images, ... basically anything that can be written in Markdown.</li>
 </ol>
 <details class="info">
 <summary>Enabling code annotations for a specific code block</summary>
@@ -1283,7 +1284,11 @@
 </span></code></pre></div>
 <ol>
 <li>
-<p><a href="https://github.com/squidfunk/mkdocs-material/blob/87d5ca487b9d9ab95c41ee72813149d214048693/src/assets/stylesheets/main/extensions/pymdownx/_highlight.scss#L45"><code>.s2</code></a> is the name of the lexeme that <a href="https://pygments.org">Pygments</a> generates for double-quoted strings. If you want to use a code annotation in another lexeme than a comment, inspect the code block and determine which lexeme needs to be added to the list of additional selectors.</p>
+<p><a href="https://github.com/squidfunk/mkdocs-material/blob/87d5ca487b9d9ab95c41ee72813149d214048693/src/assets/stylesheets/main/extensions/pymdownx/_highlight.scss#L45"><code>.s2</code></a> is the name of the lexeme that <a href="https://pygments.org">Pygments</a> generates for<br>
+    double-quoted strings. If you want to use a code annotation in<br>
+    another lexeme than a comment, inspect the code block and<br>
+    determine which lexeme needs to be added to the list of additional<br>
+    selectors.</p>
 <p><strong>Important</strong>: Code annotations cannot be split between lexemes.</p>
 </li>
 </ol>
@@ -1340,7 +1345,9 @@
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.annotate</span><span class="w"> </span><span class="c1"># (1)</span>
 </span></code></pre></div>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"> I'm a code annotation! I can contain <code>code</code>, <strong>formatted    text</strong>, images, ... basically anything that can be written in Markdown.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"> I'm a code annotation! I can contain <code>code</code>,  <strong>formatted<br>
+    text</strong>, images, ... basically anything that can be written in<br>
+    Markdown.</li>
 </ol>
 </div>
 <h4 id="stripping-comments">Stripping Comments<a class="headerlink" href="#stripping-comments" title="Permanent link">¶</a></h4>
@@ -1535,11 +1542,7 @@
 <hr>
 <ol>
 <li id="fn:1">
-<p>Code annotations require syntax highlighting with <a href="https://pygments.org">Pygments</a> – they're<br>
-currently not compatible with JavaScript syntax highlighters, or languages<br>
-that do not have comments in their grammar. However, we're actively working<br>
-on supporting alternate ways of defining code annotations, allowing to<br>
-always place code annotations at the end of lines.&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Code annotations require syntax highlighting with <a href="https://pygments.org">Pygments</a> – they're currently not compatible with JavaScript syntax highlighters, or languages that do not have comments in their grammar. However, we're actively working on supporting alternate ways of defining code annotations, allowing to  always place code annotations at the end of lines.&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 </ol>
 </div>

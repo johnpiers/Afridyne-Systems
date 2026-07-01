@@ -1,25 +1,26 @@
 window.MathJax = {
   tex: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]],
+    inlineMath: [["\\(", "\\)"], ["$", "$"]],
+    displayMath: [["\\[", "\\]"], ["$$", "$$"]],
     processEscapes: true,
-    processEnvironments: true
+    processEnvironments: true,
+    packages: {'[+]': ['color']}
+  },
+  loader: {
+    load: ['[tex]/color']
   },
   options: {
-    ignoreHtmlClass: ".*", // Clears out the trailing pipe bug for optimal speed
+    ignoreHtmlClass: ".*",
     processHtmlClass: "arithmatex",
-    
-    // Sets your preferred user interface defaults for everyone sitewide
     menuOptions: {
       settings: {
-        zoom: 'Click',     // Locks left-mouse click as the zoom trigger
-        zscale: '200%'     // Maintains your current zoom scale
+        zoom: 'Click',
+        zscale: '200%'
       }
     }
   }
 };
 
-// CRITICAL FOR MATERIALX / MKDOCS: Handles fast dynamic page switching
 document$.subscribe(() => { 
   MathJax.startup.output.clearCache()
   MathJax.typesetClear()
