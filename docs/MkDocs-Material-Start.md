@@ -29,44 +29,36 @@ MaterialX for MkDocs is published as a [Python package] and can be installed wit
 !!! info "Installation"
     === "Latest"
         ``` sh
-        pip install mkdocs-material
+        pip install mkdocs-materialx
         ```
-    === "9.x"
+    === "Pin"
         ``` sh
-        pip install mkdocs-material=="9.*" # (1)!
+        pip install mkdocs-materialx=="10.1.8"
+        ```
+    === "Upgrade"
+
+        ```
+        pip install --upgrade mkdocs-materialx
         ```
 
-        1.  Material for MkDocs uses [semantic versioning] [^2], which is why
-        it's a good idea to limit upgrades to the current major version.
-        This will make sure that you don't accidentally [upgrade to the
-        next major version], which may include breaking changes that
-        silently corrupt your site. Additionally, you can use `pip freeze`
-        to create a lockfile, so builds are reproducible at all times:
-            ```
-            pip freeze > requirements.txt
-            ```
-            Now, the lockfile can be used for installation:
-            ```
-            pip install -r requirements.txt
-            ```
+    This will automatically install compatible versions of all dependencies:  [MkDocs], [Markdown], [Pygments] and [Python Markdown Extensions].  MaterialX always strives to support the latest versions, so there's no need to install those packages separately.
+    
 
-        [^2]:
-            Note that improvements of existing features are sometimes released as patch releases, like for example improved rendering of content tabs, as they're not considered to be new features.
-
-        This will automatically install compatible versions of all dependencies: [MkDocs], [Markdown], [Pygments] and [Python Markdown Extensions]. Material for MkDocs always strives to support the latest versions, so there's no need to install those packages separately.
-
-    ---
-
-    :fontawesome-brands-youtube:{ style="color: #EE0F0F" } __[How to set up Material for MkDocs]__ by @james-willett – :octicons-clock-24: 27m – Learn how to create and host a documentation site using Material for MkDocs on GitHub Pages in a step-by-step guide.
-
-    [How to set up Material for MkDocs]: https://www.youtube.com
-
-
-
+  [Python package]: https://pypi.org/project/mkdocs-materialx/
+  [virtual environment]: https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment
+  [Markdown]: https://python-markdown.github.io/
+  [Pygments]: https://pygments.org/
+  [Python Markdown Extensions]: https://facelessuser.github.io/pymdown-extensions/
 
 ---
 
-!!! Important
+:fontawesome-brands-youtube:{ style="color: #EE0F0F" } __[How to set up Material for MkDocs]__ by @james-willett – :octicons-clock-24: 27m – Learn how to create and host a documentation site using Material for MkDocs on GitHub Pages in a step-by-step guide.
+
+[How to set up Material for MkDocs]: https://www.youtube.com
+
+---
+
+!!! important ""
 
     If you don't have prior experience with Python, we recommend reading [Using Python's pip to Manage Your Projects' Dependencies], which is a really good introduction on the mechanics of Python package management and helps you troubleshoot if you run into errors.
 
@@ -86,15 +78,62 @@ MaterialX for MkDocs is published as a [Python package] and can be installed wit
 
     === "Latest"
         ```
-        docker pull squidfunk/mkdocs-material
+        docker pull jaywhj/mkdocs-materialx
         ```
 
-    === "9.x"
+    === "Pin"
         ```
-        docker pull squidfunk/mkdocs-material:9
+        docker pull jaywhj/mkdocs-materialx:10.1.8
         ```
+    
+    ``` title="Selected Plugins"
+    
+    MaterialX for MkDocs only bundles selected plugins in order to keep the size of the official
+    image small. If the plugin you want to use is not included, you can add them easily. Create
+    a `Dockerfile` and extend the official image:
+    ```
+    
+    ``` Dockerfile title="Dockerfile"
+    FROM jaywhj/mkdocs-materialx
+    RUN pip install mkdocs-glightbox
+    ```
+    
+    [Docker image]: https://hub.docker.com/r/jaywhj/mkdocs-materialx
+    
+#### Build the Image
 
-    The `mkdocs` executable is provided as an entry point and `serve` is the default command. If you're not familiar with Docker don't worry, we have you covered in the following sections.
+!!! desc "Build the Image"
+
+    ```
+    docker build -t materialx .
+    ```
+    
+#### Run the Container
+
+!!! desc "Run the Container"
+
+    ```
+    docker run -p 8000:8000 -v ${PWD}:/docs materialx
+    ```
+    
+### With Git
+
+!!! git "With Git"
+    MaterialX for MkDocs can be directly used from [GitHub] by cloning the repository into a subfolder of your project root which might be useful if you want to use the very latest version:
+    
+    You can clone the source code from a GitHub repo via `git clone` and install it locally:
+
+    ```
+    git clone https://github.com/jaywhj/mkdocs-materialx.git
+    ```
+
+    Next, install it with the following command
+
+    ```
+    pip install -e mkdocs-materialx
+    ```
+    
+  [GitHub]: https://github.com/jaywhj/mkdocs-materialx
 
 
 The following plugins are bundled with the Docker image:
@@ -129,29 +168,10 @@ The following plugins are bundled with the Docker image:
 
     The new image will have additional packages installed and can be used exactly like the official image.
 
-### With Git
-
-!!! git "With Git"
-    Material for MkDocs can be directly used from [GitHub] by cloning the repository into a subfolder of your project root which might be useful if you want to use the very latest version:
-
-    ```
-    git clone https://github.com/squidfunk/mkdocs-material.git
-    ```
-
-    Next, install the theme and its dependencies with:
-
-    ```
-    pip install -e mkdocs-material
-    ```
-
-
-  [GitHub]: https://github.com/squidfunk/mkdocs-material
-
-
 ### Advanced Configuration
 
 !!! bug ""
-    - Material for MkDocs comes with many configuration options.
+    - MaterialX for MkDocs comes with many configuration options.
     
     - The setup section explains in great detail how to configure and customize colors, fonts, icons and much more:
     
@@ -271,7 +291,7 @@ In general, all extensions that are part of [Python Markdown Extensions](https:/
 
 !!! info "Arithmatex"
 
-    The [Arithmatex] extension allows for rendering of block and inline block equations and integrates seamlessly with [MathJax][^1] – a library for mathematical typesetting. Enable it via `mkdocs.yml`:
+    The [Arithmatex] extension allows for rendering of block and inline block equations and integrates seamlessly with [MathJax][^3] – a library for mathematical typesetting. Enable it via `mkdocs.yml`:
 
     ``` yaml
     markdown_extensions:
@@ -279,7 +299,7 @@ In general, all extensions that are part of [Python Markdown Extensions](https:/
           generic: true
     ```
 
-    [^1]:
+    [^3]:
         Other libraries like [KaTeX] are also supported and can be integrated with some additional effort. See the [Arithmatex documentation on KaTeX] for further guidance, as this is beyond the scope of Material for MkDocs.
 
 
@@ -288,21 +308,30 @@ Besides enabling the extension in `mkdocs.yml`, a MathJax configuration and the 
 !!! info "Arithmatex"
 
     === ":octicons-file-code-16: `docs/javascripts/mathjax.js`"
-
         ``` js
         window.MathJax = {
           tex: {
-            inlineMath: [["\\(", "\\)"]],
-            displayMath: [["\\[", "\\]"]],
+            inlineMath: [["\\(", "\\)"], ["$", "$"]],
+            displayMath: [["\\[", "\\]"], ["$$", "$$"]],
             processEscapes: true,
-            processEnvironments: true
+            processEnvironments: true,
+            packages: {'[+]': ['color']}
+          },
+          loader: {
+            load: ['[tex]/color']
           },
           options: {
-            ignoreHtmlClass: ".*|",
-            processHtmlClass: "arithmatex"
+            ignoreHtmlClass: ".*",
+            processHtmlClass: "arithmatex",
+            menuOptions: {
+              settings: {
+                zoom: 'Click',
+                zscale: '200%'
+              }
+            }
           }
         };
-
+        
         document$.subscribe(() => { // (1)!
           MathJax.startup.output.clearCache()
           MathJax.typesetClear()
@@ -310,11 +339,12 @@ Besides enabling the extension in `mkdocs.yml`, a MathJax configuration and the 
           MathJax.typesetPromise()
         })
         ```
-
+        
         1. This integrates MathJax with [instant loading]
-
+        
+        
     === ":octicons-file-code-16: `mkdocs.yml`"
-
+    
         ``` yaml
         extra_javascript:
           - javascripts/mathjax.js
@@ -391,5 +421,4 @@ See reference for usage:
 </div>
 
 ---
- 
-  
+

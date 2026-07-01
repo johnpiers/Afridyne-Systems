@@ -783,3 +783,119 @@ Evaluating the localized operator $(\nabla_i Y)^k$ reveals how the vector field 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/spUNpyF58BY?si=KM9OQ1ZrYyUqsJ3b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+---
+
+!!! desc "3 Steps To Convert °F to °C"
+
+    __1. Perform Subtraction__
+    
+    ---
+    
+    First, subtract 32 from the Fahrenheit temperature.
+    
+    111 - 32 = 79
+    
+    $(111^\circ\text{F} - 32) = 79^\circ\text{F}$
+    
+    ---
+    
+    __2. Multiply by Fraction__
+    
+    ---
+    
+    Next, multiply the result by 5 and then divide by 9.
+    
+    79 × 5/9 = 395/9
+    
+    $79 \times \frac{5}{9} = \frac{395}{9}$
+    
+    ---
+    
+    __3. Convert to Decimal__
+    
+    ---
+    
+    Finally, divide the numbers to get the repeating decimal.
+    
+    395/9 = 43.8889
+    
+    $\frac{395}{9} \approx 43{,}8889^\circ\text{C}$
+    
+    ---
+    
+    $(111^\circ\text{F} - 32) \times \frac{5}{9} = 43{,}8889^\circ\text{C}$
+
+
+$({\color[RGB]{255,107,107}{111^\circ\text{F}}} - 32) = {\color[RGB]{77,173,247}{79^\circ\text{F}}}$
+
+
+## 🌡️ Temperature Conversion Guide
+
+!!! recommendation "Temperature Conversion Guide"
+
+    > **Task:** __Convert Fahrenheit ($^\circ\text{F}$) to Celsius ($^\circ\text{C}$)__
+    
+    ---
+    
+    __1. Perform Subtraction__
+    
+    First, subtract 32 from the Fahrenheit temperature.
+    
+    111 - 32 = 79
+    
+    $\color{#ff6b6b}({111^\circ\text{F}} - 32) = \color{#4dadf7}{79^\circ\text{F}}$
+    
+    ---
+    
+    __2. Multiply by Fraction__
+    
+    Next, multiply the result by 5 and then divide by 9.
+    
+    79 × 5/9 = 395/9
+    
+    $\color{#4dadf7}{79} \times \frac{5}{9} = \color{#ffd43b}{\frac{395}{9}}$
+    
+    ---
+    
+    __3. Convert to Decimal__
+    
+    Finally, divide the numbers to get the repeating decimal.
+    
+    395/9 = 43.8889
+    
+    $\color{#ffd43b}{\frac{395}{9}} \approx \color{#20c997}{43{,}8889^\circ\text{C}}$
+    
+    ---
+    
+    **Summary Formula:** $\color{#ff6b6b}({111^\circ\text{F}} - 32) \times \frac{5}{9} \approx \color{#20c997}{43{,}8889^\circ\text{C}}$
+    
+## 🌡️ Temperature Conversion Guide 2
+
+!!! recommendation "Temperature Conversion Celsius ($^\circ\text{C}$) to Fahrenheit ($^\circ\text{F}$)"
+
+    > **Task:** __Convert Celsius ($^\circ\text{C}$) to Fahrenheit ($^\circ\text{F}$)__
+    
+    ---
+    
+    __1. Multiply by Fraction__
+    
+    First, multiply the Celsius temperature by 9 and divide by 5.
+    
+    43.8889 × 9/5 = 79
+    
+    $\color{#20c997}({43{,}8889^\circ\text{C}} \times \frac{9}{5}) \approx \color{#4dadf7}{79^\circ\text{C equivalent}}$
+    
+    ---
+    
+    __2. Add Constant__
+    
+    Next, add 32 to the result to get the final Fahrenheit temperature.
+    
+    79 + 32 = 111
+    
+    $\color{#4dadf7}{79} + 32 = \color{#ff6b6b}{111^\circ\text{F}}$
+    
+    ---
+    
+    **Summary Formula:** $\color{#20c997}({43{,}8889^\circ\text{C}} \times \frac{9}{5}) + 32 \approx \color{#ff6b6b}{111^\circ\text{F}}$
+    

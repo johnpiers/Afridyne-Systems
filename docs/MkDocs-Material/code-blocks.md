@@ -116,7 +116,8 @@ theme:
     - content.code.annotate # (1)!
 ```
 
-1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__, images, ... basically anything that can be written in Markdown.
+1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__,
+ images, ... basically anything that can be written in Markdown.
 
 ??? info "Enabling code annotations for a specific code block"
 
@@ -147,7 +148,11 @@ extra:
     json: [.s2] # (1)!
 ```
 
-1.  [`.s2`][s2] is the name of the lexeme that [Pygments] generates for double-quoted strings. If you want to use a code annotation in another lexeme than a comment, inspect the code block and determine which lexeme needs to be added to the list of additional selectors.
+1.  [`.s2`][s2] is the name of the lexeme that [Pygments] generates for
+    double-quoted strings. If you want to use a code annotation in
+    another lexeme than a comment, inspect the code block and
+    determine which lexeme needs to be added to the list of additional
+    selectors.
 
     __Important__: Code annotations cannot be split between lexemes.
 
@@ -215,11 +220,7 @@ def bubble_sort(items):
 Code annotations can be placed anywhere in a code block where a comment for the language of the block can be placed, e.g. for JavaScript in `#!js // ...` and `#!js /* ... */`, for YAML in `#!yaml # ...`, etc.[^1]:
 
   [^1]:
-    Code annotations require syntax highlighting with [Pygments] – they're
-    currently not compatible with JavaScript syntax highlighters, or languages
-    that do not have comments in their grammar. However, we're actively working
-    on supporting alternate ways of defining code annotations, allowing to
-    always place code annotations at the end of lines.
+    Code annotations require syntax highlighting with [Pygments] – they're currently not compatible with JavaScript syntax highlighters, or languages that do not have comments in their grammar. However, we're actively working on supporting alternate ways of defining code annotations, allowing to  always place code annotations at the end of lines.
 
 ```` markdown title="Code block with annotation"
 ``` yaml
@@ -240,7 +241,9 @@ theme:
     - content.code.annotate # (1)
 ```
 
-1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted    text__, images, ... basically anything that can be written in Markdown.
+1.  :man_raising_hand: I'm a code annotation! I can contain `code`,  __formatted
+    text__, images, ... basically anything that can be written in
+    Markdown.
 
 </div>
 

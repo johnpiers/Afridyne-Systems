@@ -4153,3 +4153,46 @@ Citric Acid Cycle | 2 ATP ||
 
     1.  This special notation marker instructs the theme engine to compile folder structures as dynamic blogs.
     ```
+
+??? desc "Click To See Code for Table below"
+
+    ```bash
+    | Right oriented rendering |
+    |-------------------------:|
+    | 150.0                    |
+    | or text                  |
+    ```
+    
+| Right oriented rendering |
+|-------------------------:|
+| 150.0                    |
+| or text                  |
+
+??? desc "Click To See Code for Table below"
+
+    ```bash
+    | Left oriented rendering |
+    | :---------------------- |
+    | 150.0                   |
+    | or text                 |
+    ```
+
+| Left oriented rendering |
+| :---------------------- |
+| 150.0                   |
+| or text                 |
+
+??? desc "Click To See Code for Table below"
+
+    ```bash
+    | Centered rendering |
+    | :----------------: |
+    |       150.0        |
+    |      or text       |
+    ```
+    
+| Centered rendering |
+| :----------------: |
+|       150.0        |
+|      or text       |
+

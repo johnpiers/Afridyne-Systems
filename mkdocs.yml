@@ -1,5 +1,5 @@
 site_name: Afridyne Systems (PTY) LTD
-site_url: https://johnpiers.github.io/Afridyne-Systems/
+site_url: https://example.com
 site_author: John Piers Cilliers
 site_description: >-
   Born for documents, yet beyond documents. 
@@ -30,7 +30,6 @@ theme:
   name: materialx
   custom_dir: overrides
   icon:
-    repo: overrides/.icons
     annotation: material/arrow-right-circle
   topbar_style: glass
   favicon: assets/favicon.png  # Path relative to your 'docs' folder
@@ -93,7 +92,7 @@ validation:
   anchors: ignore
 
 plugins:
-  - materialx/blog:        # Added 'materialx/'
+  - material/blog:         # Added 'material/'
       blog_dir: blog
       post_url_format: "{date}/{slug}"
       authors_file: "{blog}/.authors.yml"
@@ -128,12 +127,13 @@ plugins:
   - open-in-new-tab
   - offline:
       enabled: !ENV [OFFLINE, false]
-  - materialx/social:       # Added 'material/'
+  - material/social:       # Added 'material/'
       enabled: !ENV [CI, true]
-  - materialx/optimize:
-      cache: false     # Added 'materialx/'
-      enabled: !ENV [CI, true]
+  - material/optimize:     # Added 'material/'
+      enabled: !ENV [CI, false]
+      cache: true
   - schema_reader
+  - material/typeset       # Added 'material/'
   - caption:
       figure:
         enable: false
@@ -344,5 +344,3 @@ extra:
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
 
-watch:
-  - docs/assets/local_icons
