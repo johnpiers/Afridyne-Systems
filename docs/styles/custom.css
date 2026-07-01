@@ -1435,3 +1435,8 @@ a.md-button.md-button--custom:hover,
   border: 0 !important;
 }
 
+
+/* Dark mode: invert local SVG icons only */
+[data-md-color-scheme="slate"] .mdx-iconsearch-result__item img[src*="local_icons"] {
+  filter: invert(1);
+}
