@@ -92,7 +92,7 @@ validation:
   anchors: ignore
 
 plugins:
-  - materialx/blog:         # Added 'material/'
+  - material/blog:         # Added 'material/'
       blog_dir: blog
       post_url_format: "{date}/{slug}"
       authors_file: "{blog}/.authors.yml"
@@ -127,13 +127,13 @@ plugins:
   - open-in-new-tab
   - offline:
       enabled: !ENV [OFFLINE, false]
-  - materialx/social:       # Added 'material/'
+  - material/social:       # Added 'material/'
       enabled: !ENV [CI, true]
-  - materialx/optimize:     # Added 'material/'
+  - material/optimize:     # Added 'material/'
       enabled: !ENV [CI, false]
       cache: true
   - schema_reader
-  - material/typeset       # Added 'material/'
+  #- material/typeset       # Added 'material/'
   - caption:
       figure:
         enable: false
