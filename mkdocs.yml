@@ -159,7 +159,7 @@ nav:
       - Afridyne: afridyne.md
       - Blog Config: MkDocs-Material/blog.md
       - Social Config: MkDocs-Material/social.md
-
+      
   - Afridyne Blog: blog/index.md
   
   - Markdown:
