@@ -1,5 +1,6 @@
 ---
 icon: simple/materialformkdocs
+title: Afridyne Blog
 ---
 
 <div style="display: none;"><h1>Header</h1></div>
