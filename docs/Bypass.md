@@ -1,22 +1,27 @@
 ---
 icon: material/microsoft-windows-classic
 ---
+
+![](imgs/20260712-025255.png){: style="display: block; margin: 0 auto"}
+
 <H1 style="text-align: center;"> WinJS-Microsoft-Account-Bypass</H1>
 
 ## **Overview**
 
 This guide explains a method to bypass the Microsoft Account (MSA) requirement during the Windows 11 Out-Of-Box Experience (OOBE) by using the Developer Console to invoke a hidden local account setup screen. This method was discovered by examining the Windows 11 OOBE source code, which revealed an event listener for a hidden `_localAccountButton`.
 
-> [!NOTE]
-> This method still works in the October 2025 Preview that blocked most methods for Local Accounts on OOBE including `start ms-cxh://localonly`.<br/>
-> The method I have documented is still the only known method for S-Mode installations.
+!!! abstract "Method"
 
-Following these steps, you can create a local account without needing to sign in with or create a Microsoft account.
-
-I also have a [Youtube Tutorial](https://youtu.be/PnePd_defik) that follows the same instructions below
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PnePd_defik?si=2DdYxJOja2OeBQyJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+    - This method still works in the October 2025 Preview that blocked most methods for Local Accounts on OOBE including `start ms-cxh://localonly`.
+    
+    - The method I have documented is still the only known method for S-Mode installations.
+    
+    - Following these steps, you can create a local account without needing to sign in with or create a Microsoft account.
+    
+    - I also have a [Youtube Tutorial](https://youtu.be/PnePd_defik) that follows the same instructions below:
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PnePd_defik?si=2DdYxJOja2OeBQyJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
 ![Local Account Setup Screen](./images/LocalAccount.png)
 
 ## **Steps to Bypass Microsoft Account Setup**

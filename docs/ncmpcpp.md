@@ -14,6 +14,56 @@ icon: material/music
 
 <kbd> <br> [<b>ncmpcpp++</b>](https://rybczak.net/ncmpcpp/) ↗️ <br> </kbd>
 
+**Main Features:**
+
+<div class="grid cards cols-3" markdown>
+
+-   <span style="color: #2094f3">:material-palette:</span> **Tag-Editor**
+    [:octicons-arrow-right-24: View Guide](#tag-editor){ .md-button style="border-color: #2094f3; color: #2094f3" }
+    
+    Get your music files looking professional.
+
+-   <span style="color: #2094f3">:material-format-font:</span> **Playlist-Editor**
+    [:octicons-arrow-right-24: View Guide](#playlist-editor){ .md-button style="border-color: #2094f3; color: #2094f3" }
+    
+    As the name implies edit and change to your hearts content.
+
+-   <span style="color: #2094f3">:material-translate:</span> **Search-Engine**
+    [:octicons-arrow-right-24: View Guide](#search-engine){ .md-button style="border-color: #2094f3; color: #2094f3" }
+    
+    Search for what you need, to play, edit or change.
+
+-   <span style="color: #00e5ff">:material-emoticon-happy-outline:</span> **Media-Library**
+    [:octicons-arrow-right-24: View Guide](#media-library){{ .md-button style="border-color: #00e5ff; color: #00e5ff" }
+    
+    Switch between two/three columns mode and more.
+
+-   <span style="color: #00e5ff">:material-shield-check:</span> **Movement**
+    [:octicons-arrow-right-24: View Guide](#movement){ .md-button style="border-color: #00e5ff; color: #00e5ff" }
+    
+    Show music visualizer (8).
+
+-   <span style="color: #00e5ff">:material-compass:</span> **last.fm**
+    [:octicons-arrow-right-24: Go To Site](http://last.fm/){ .md-button style="border-color: #00e5ff; color: #00e5ff" }
+    
+    Ability to fetch artist info from last.fm.
+
+-   <span style="color: #4caf50">:material-magnify:</span> **Display Mode**
+    [:octicons-arrow-right-24: View Guide](#global){ .md-button style="border-color: #4caf50; color: #4caf50" }
+    
+    New Display Mode, Toggle display mode.
+    
+-   <span style="color: #4caf50">:material-chart-bar:</span> **User Interface**
+    [:octicons-arrow-right-24: View Guide](#global){ .md-button style="border-color: #4caf50; color: #4caf50" }
+    
+    Alternative User Interface, Toggle user interface.
+
+-   <span style="color: #4caf50">:material-page-layout-header:</span> **Browse**
+    [:octicons-arrow-right-24: View Guide](#browser){ .md-button style="border-color: #4caf50; color: #4caf50" }
+    
+    Ability to browse, add files from outside of MPD music dir.
+
+</div>
 
 Main features:
 <ul>
@@ -32,7 +82,7 @@ Dependencies:
 <ul>
 <li><a href="http://www.boost.org">boost library</a></li>
 <li><a href="http://www.gnu.org/software/ncurses/ncurses.html">ncurses library</a></li>
-<li><a href="http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html">readline library</a></li>
+<li><a href="https://tiswww.case.edu/php/chet/readline/rltop.html">readline library</a></li>
 <li><a href="http://curl.haxx.se/">curl library</a> (for fetching lyrics and last.fm data)</li>
 <li><a href="http://www.fftw.org/">fftw library</a> (optional, required for frequency spectrum music visualization mode)</li>
 <li><a href="http://developer.kde.org/~wheeler/taglib.html">tag library</a> (optional, required for tag editing)</li>

@@ -19,56 +19,57 @@ icon: simple/materialformkdocs
 
 ## Configuration
 
-The following configuration enables support for rendering block and inline block equations using [MathJax] and [KaTeX].
+!!! pied-piper "Configuration"
 
+    The following configuration enables support for rendering block and inline block equations using [MathJax] and [KaTeX].
+    
 ### MathJax
 
-[MathJax] is a powerful and flexible library that supports multiple input formats,
-such as [LaTeX], [MathML], [AsciiMath], as well as various output formats like HTML,
-SVG, MathML. To use MathJax within your project, add the following lines to your
-`mkdocs.yml`.
+!!! deep-dive "MathJax"
 
-=== ":octicons-file-code-16: `docs/javascripts/mathjax.js`"
+    [MathJax] is a powerful and flexible library that supports multiple input formats, such as [LaTeX], [MathML], [AsciiMath], as well as various output formats like HTML, SVG, MathML. To use MathJax within your project, add the following lines to your `mkdocs.yml`.
 
-    ``` js
-    window.MathJax = {
-      tex: {
-        inlineMath: [["\\(", "\\)"]],
-        displayMath: [["\\[", "\\]"]],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        ignoreHtmlClass: ".*|",
-        processHtmlClass: "arithmatex"
-      }
-    };
+    === ":octicons-file-code-16: `docs/javascripts/mathjax.js`"
 
-    document$.subscribe(() => { // (1)!
-      MathJax.startup.output.clearCache()
-      MathJax.typesetClear()
-      MathJax.texReset()
-      MathJax.typesetPromise()
-    })
-    ```
+        ``` js
+        window.MathJax = {
+          tex: {
+            inlineMath: [["\\(", "\\)"]],
+            displayMath: [["\\[", "\\]"]],
+            processEscapes: true,
+            processEnvironments: true
+          },
+          options: {
+            ignoreHtmlClass: ".*|",
+            processHtmlClass: "arithmatex"
+          }
+        };
 
-    1. This integrates MathJax with [instant loading].
+        document\$.subscribe(() => { // (1)!
+          MathJax.startup.output.clearCache()
+          MathJax.typesetClear()
+          MathJax.texReset()
+          MathJax.typesetPromise()
+        })
+        ```
 
-=== ":octicons-file-code-16: `mkdocs.yml`"
+        1. This integrates MathJax with [instant loading].
 
-    ``` yaml
-    markdown_extensions:
-      - pymdownx.arithmatex:
-          generic: true
+    === ":octicons-file-code-16: `mkdocs.yml`"
 
-    extra_javascript:
-      - javascripts/mathjax.js
-      - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-    ```
+        ``` yaml
+        markdown_extensions:
+          - pymdownx.arithmatex:
+              generic: true
 
-See additional configuration options:
+        extra_javascript:
+          - javascripts/mathjax.js
+          - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+        ```
 
-- [Arithmatex]
+    See additional configuration options:
+
+    - [Arithmatex]
 
   [Arithmatex]: python-markdown-extensions.md#arithmatex
   [instant loading]: setting-up-navigation.md#instant-loading
@@ -91,109 +92,107 @@ See additional configuration options:
 
 ### KaTeX
 
-[KaTeX] is a lightweight library that focuses on speed and simplicity. It supports a
-subset of LaTeX syntax and can render math to HTML and SVG. To use [KaTeX]
-within your project, add the following lines to your:
-`mkdocs.yml`.
+!!! tldr "KaTeX"
 
-=== ":octicons-file-code-16: `docs/javascripts/katex.js`"
+    [KaTeX] is a lightweight library that focuses on speed and simplicity. It supports a subset of LaTeX syntax and can render math to HTML and SVG. To use [KaTeX] within your project, add the following lines to your: `mkdocs.yml`.
 
-    ``` js
-    document$.subscribe(({ body }) => { // (1)!
-      renderMathInElement(body, {
-        delimiters: [
-          { left: "$$",  right: "$$",  display: true },
-          { left: "$",   right: "$",   display: false },
-          { left: "\\(", right: "\\)", display: false },
-          { left: "\\[", right: "\\]", display: true }
-        ],
-      })
-    })
-    ```
+    === ":octicons-file-code-16: `docs/javascripts/katex.js`"
 
-    1. This integrates KaTeX with [instant loading].
+        ``` js
+        document\$.subscribe(({ body }) => { // (1)!
+          renderMathInElement(body, {
+            delimiters: [
+              { left: "\[",  right: "\]",  display: true },
+              { left: "", right: "",   display: false },
+              { left: "\\(", right: "\\)", display: false },
+              { left: "\\[", right: "\\]", display: true }
+            ],
+          })
+        })
+        ```
 
-=== ":octicons-file-code-16: `mkdocs.yml`"
+        1. This integrates KaTeX with [instant loading].
 
-    ``` yaml
-    markdown_extensions:
-      - pymdownx.arithmatex:
-          generic: true
+    === ":octicons-file-code-16: `mkdocs.yml`"
 
-    extra_javascript:
-      - javascripts/katex.js
-      - https://unpkg.com/katex@0/dist/katex.min.js
-      - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+        ``` yaml
+        markdown_extensions:
+          - pymdownx.arithmatex:
+              generic: true
 
-    extra_css:
-      - https://unpkg.com/katex@0/dist/katex.min.css
-    ```
+        extra_javascript:
+          - javascripts/katex.js
+          - https://unpkg.com/katex@0/dist/katex.min.js
+          - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+        extra_css:
+          - https://unpkg.com/katex@0/dist/katex.min.css
+        ```
 
 ## Usage
 
 ### Using Block Syntax
 
-Blocks must be enclosed in `#!latex $$...$$` or `#!latex \[...\]` on separate
-lines:
+!!! desc "Using Block Syntax"
 
-``` latex title="block syntax"
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
-```
+    Blocks must be enclosed in `#!latex $$...$$` or `#!latex \[...\]` on separate lines:
 
-<div class="result" markdown>
+    ``` latex title="block syntax (centred)"
+    \[\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}\]
+    ```
 
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
+    <div class="result" markdown>
 
-</div>
+    $$
+    \cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
+    $$
+
+
+    ``` latex title="block syntax (left aligned)"
+    \(\begin{aligned}     \cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}     \end{aligned}\)
+    ```
+
+    $\begin{aligned}
+    \cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
+    \end{aligned}$
+
+    </div>
+
 
 ### Using Inline Block Syntax
 
-Inline blocks must be enclosed in `#!latex $...$` or `#!latex \(...\)`:
+!!! ex "Using Inline Block Syntax"
 
-``` latex title="inline syntax"
-The homomorphism $f$ is injective if and only if its kernel is only the
-singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such
-that $f(a)=f(b)$.
-```
+    Inline blocks must be enclosed in `#!latex $...$` or `#!latex \(...\)`:
 
-<div class="result" markdown>
+    ``` latex title="inline syntax"
+    The homomorphism \(f\) is injective if and only if its kernel is only the singleton set \(e_G\),
+    because otherwise \(\exists a,b\in G\) with \(a\neq b\) such that \(f(a)=f(b)\).
+    ```
 
-The homomorphism $f$ is injective if and only if its kernel is only the singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such that $f(a)=f(b)$.
+    <div class="result" markdown>
 
-</div>
+    The homomorphism $f$ is injective if and only if its kernel is only the singleton set $e_G$, because otherwise
+    $\exists a,b\in G$ with $a\neq b$ such that $f(a)=f(b)$.
+
+    </div>
 
 ## Comparing MathJax and KaTeX
 
-When deciding between MathJax and KaTeX, there are several key factors to
-consider:
+!!! ex "Comparing MathJax and KaTeX"
 
-- __Speed__: KaTeX is generally faster than MathJax. If your site requires
-  rendering large quantities of complex equations quickly, KaTeX may be the
-  better choice.
+    When deciding between MathJax and KaTeX, there are several key factors to consider:
 
-- __Syntax Support__: MathJax supports a wider array of LaTeX commands and can
-  process a variety of mathematical markup languages (like AsciiMath and MathML).
-  If you need advanced LaTeX features, MathJax may be more suitable.
+    - __Speed__: KaTeX is generally faster than MathJax. If your site requires rendering large quantities of complex equations quickly, KaTeX may be the better choice.
 
-- __Output Format__: Both libraries support HTML and SVG outputs. However,
-  MathJax also offers MathML output, which can be essential for accessibility,
-  as it is readable by screen readers.
+    - __Syntax Support__: MathJax supports a wider array of LaTeX commands and can process a variety of mathematical markup languages (like AsciiMath and MathML). If you need advanced LaTeX features, MathJax may be more suitable.
 
-- __Configurability__: MathJax provides a range of configuration options,
-  allowing for more precise control over its behavior. If you have specific
-  rendering requirements, MathJax might be a more flexible choice.
+    - __Output Format__: Both libraries support HTML and SVG outputs. However, MathJax also offers MathML output, which can be essential for accessibility, as it is readable by screen readers.
 
-- __Browser Support__: While both libraries work well in modern browsers,
-  MathJax has broader compatibility with older browsers. If your audience uses a
-  variety of browsers, including older ones, MathJax might be a safer option.
+    - __Configurability__: MathJax provides a range of configuration options, allowing for more precise control over its behavior. If you have specific rendering requirements, MathJax might be a more flexible choice.
 
-In summary, KaTeX shines with its speed and simplicity, whereas MathJax offers
-more features and better compatibility at the expense of speed. The choice
-between the two will largely depend on your specific needs and constraints.
+    - __Browser Support__: While both libraries work well in modern browsers, MathJax has broader compatibility with older browsers. If your audience uses a variety of browsers, including older ones, MathJax might be a safer option.
+
+    In summary, KaTeX shines with its speed and simplicity, whereas MathJax offers more features and better compatibility at the expense of speed. The choice between the two will largely depend on your specific needs and constraints.
 
 
-The homomorphism $f$ is injective if and only if its kernel is only the singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such that $f(a)=f(b)$.

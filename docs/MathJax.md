@@ -829,7 +829,7 @@ Evaluating the localized operator $(\nabla_i Y)^k$ reveals how the vector field 
 $({\color[RGB]{255,107,107}{111^\circ\text{F}}} - 32) = {\color[RGB]{77,173,247}{79^\circ\text{F}}}$
 
 
-## 🌡️ Temperature Conversion Guide
+### 🌡️ Temperature Conversion Guide
 
 !!! recommendation "Temperature Conversion Guide"
 
@@ -869,7 +869,7 @@ $({\color[RGB]{255,107,107}{111^\circ\text{F}}} - 32) = {\color[RGB]{77,173,247}
     
     **Summary Formula:** $\color{#ff6b6b}({111^\circ\text{F}} - 32) \times \frac{5}{9} \approx \color{#20c997}{43{,}8889^\circ\text{C}}$
     
-## 🌡️ Temperature Conversion Guide 2
+### 🌡️ Temperature Conversion Guide 2
 
 !!! recommendation "Temperature Conversion Celsius ($^\circ\text{C}$) to Fahrenheit ($^\circ\text{F}$)"
 
@@ -898,4 +898,136 @@ $({\color[RGB]{255,107,107}{111^\circ\text{F}}} - 32) = {\color[RGB]{77,173,247}
     ---
     
     **Summary Formula:** $\color{#20c997}({43{,}8889^\circ\text{C}} \times \frac{9}{5}) + 32 \approx \color{#ff6b6b}{111^\circ\text{F}}$
+    
+---
+
+!!! ex "Extraterrestrial Solar Irradiance"
+
+    This equation, $\color{#20c997}E_{\rm {ext}} = \color{#ff6b6b}E_{\rm {sc}} \cdot \left(1 + 0.033412 \cdot \cos {\color{#4dadf7}\left(2\pi \frac{{\rm {dn}} - 3}{365}\right)}\right)$ __calculates extraterrestrial solar irradiance__, which is the intensity of the Sun's energy reaching the top of Earth's atmosphere on any given day of the year.
+    
+    ---
+    
+    $$E_{\rm {ext}}=E_{\rm {sc}}\cdot \left(1+0.033412\cdot \cos \left(2\pi {\frac {{\rm {dn}}-3}{365}}\right)\right)$$
+    
+### Equation Overview
+
+- The formula accounts for the predictable, annual variation in solar intensity caused by Earth's elliptical orbit.
+- As the distance between the Earth and the Sun changes, the incoming power density fluctuates by approximately <font color="#EF559F">__± 3.34%__</font> relative to the average solar constant.
+
+![](imgs/20260701-200757.png)
+
+### Technical Specifications
+
+!!! recommendation "Technical Specifications"
+
+    - $\color{#20c997}\boldsymbol{E}_{\mathbf{ext}}$: Extraterrestrial radiation flux measured in watts per square meter $\color{#4dadf7}\mathbf{W/m²}$. 
+    
+    - $\color{#ff6b6b}\boldsymbol{E}_{\mathbf{sc}}$: The canonical Solar Constant, typically valued at $\color{#4dadf7}\mathbf{\approx 1361.5 \text{ W/m²}}$ or $\color{#4dadf7}\mathbf{\approx 1367 \text{ W/m²}}$.
+    
+    - <font color="#EF559F">__0.033412__</font>: Orbit eccentricity correction factor reflecting the <font color="#4dadf7">__Earth__</font> __-__ <font color="#ff6b6b">__Sun__</font> distance ratio squared.
+    
+    - $\color{#4dadf7}\mathbf{dn}$: Day number of the year ranging sequentially from __1__ <font color="#20c997">(__January 1st__)</font> to __365__ <font color="#20c997">(__December 31st__)</font>.
+    
+    - <font color="#FFDF42">__-3__</font>: Shift factor adjusting for <font color="#4dadf7">__Earth's__</font> perihelion, which occurs around <font color="#20c997">__January 3rd__</font>.
+    
+    ---
+    
+    This equation, $\color{#20c997}E_{\rm {ext}} = \color{#ff6b6b}E_{\rm {sc}} \cdot \left(1 + 0.033412 \cdot \cos {\color{#4dadf7}\left(2\pi \frac{{\rm {dn}} - 3}{365}\right)}\right)$ __calculates extraterrestrial solar irradiance__, which is the intensity of the Sun's energy reaching the top of Earth's atmosphere on any given day of the year.
+    
+### Quantitative Impact Analysis
+
+!!! desc "Quantitative Impact Analysis"
+
+    * **Maximum Intensity:** Reaches $\color{#4dadf7}\mathbf{\approx 1407 \text{ W/m²}}$ at perihelion <font color="#20c997">(__January 3rd__)</font> when <font color="#4dadf7">__Earth__</font> is closest to the <font color="#ff6b6b">__Sun__</font>.
+    
+    * **Minimum Intensity:** Drops to $\color{#20c997}\mathbf{\approx 1316 \text{ W/m²}}$ at aphelion (__early__ <font color="#20c997">__July__</font>) when <font color="#4dadf7">__Earth__</font> is furthest away.
+    
+    * **Total Variance:** The input power density fluctuates by $\color{#ff6b6b}\mathbf{\approx \pm 3.34\%}$ across a net span of $\color{#ff6b6b}\mathbf{\approx 91 \text{ W/m²}}$ over the 12-month orbital path.
+    
+![](imgs/20260705-175819.png){ .center-image }
+
+<H4 style="text-align: center;">Solar spectrum compared to black-body at 5775 K</H4>
+
+---
+
+This page breaks down how to calculate the intensity of sunlight both outside Earth's atmosphere and at ground level, factoring in orbital variance and atmospheric loss.
+
+!!! info "Core Concept"
+
+    ### Solar Irradiance and Illuminance Models {.toc-hidden-header}
+    
+    Solar radiation levels are not static. They fluctuate based on Earth's position in its elliptical orbit and the thickness of the atmosphere the light must penetrate.
+
+---
+
+!!! info "Extraterrestrial Solar Irradiance ($G_0$)"
+
+    ### Solar Irradiance ($G_0$) {.toc-hidden-header} 
+    
+    The base formula calculates **extraterrestrial solar irradiance**, representing the intensity of the Sun's energy hitting the top of Earth's atmosphere on any specific day of the year.
+
+    $$\begin{flalign*}
+    \color{#20c997}E_{\rm {ext}} = \color{#ff6b6b}E_{\rm {sc}} \cdot \left(1 + 0.033412 \cdot \cos {\color{#4dadf7}\left(2\pi \frac{{\rm {dn}} - 3}{365}\right)}\right) &&
+    \end{flalign*}$$
+
+    #### Technical Specifications {.toc-hidden-header}
+
+    1. $\color{#20c997}\boldsymbol{E}_{\mathbf{ext}}$: Extraterrestrial radiation flux measured in watts per square meter $\color{#4dadf7}\mathbf{W/m²}$.
+    2. $\color{#ff6b6b}\boldsymbol{E}_{\mathbf{sc}}$: The canonical Solar Constant, typically valued at $\color{#4dadf7}\mathbf{\approx 1361.5 \text{ W/m²}}$ or $\color{#4dadf7}\mathbf{\approx 1367 \text{ W/m²}}$.
+    3. <font color="#EF559F">__0.033412__</font>: Orbit eccentricity correction factor reflecting the <font color="#4dadf7">__Earth__</font> __-__ <font color="#ff6b6b">__Sun__</font> distance ratio squared.
+    4. $\color{#4dadf7}\mathbf{dn}$: Day number of the year ranging sequentially from __1__ <font color="#20c997">(__January 1st__)</font> to __365__ <font color="#20c997">(__December 31st__)</font>.
+    5. <font color="#FFDF42">__-3__</font>: Shift factor adjusting for <font color="#4dadf7">__Earth's__</font> perihelion, which occurs around <font color="#20c997">__January 3rd__</font>.
+
+    !!! abstract "Orbital Impact Analysis"
+        * **Maximum Intensity:** Reaches $\color{#4dadf7}\mathbf{\approx 1407 \text{ W/m²}}$ at perihelion <font color="#20c997">(__January 3rd__)</font> when <font color="#4dadf7">__Earth__</font> is closest to the <font color="#ff6b6b">__Sun__</font>.
+        
+        * **Minimum Intensity:** Drops to $\color{#20c997}\mathbf{\approx 1316 \text{ W/m²}}$ at aphelion (__early__ <font color="#20c997">__July__</font>) when <font color="#4dadf7">__Earth__</font> is furthest away.
+        
+        * **Total Variance:** The input power density fluctuates by $\color{#ff6b6b}\mathbf{\approx \pm 3.34\%}$ across a net span of $\color{#ff6b6b}\mathbf{\approx 91 \text{ W/m²}}$ over the 12-month orbital path.
+
+---
+
+!!! ex "Ground-Level Solar Illuminance"
+
+    ### Solar Illuminance {.toc-hidden-header}
+
+     - To calculate the actual amount of sunlight reaching the ground, we swap from irradiance (energy) to illuminance (visible brightness) and account for atmospheric filtering. The solar illuminance constant $\color{#ff6b6b}\boldsymbol{E}_{\mathbf{sc}}$ in this model is equal to ${\color{#4dadf7}{128 \times 10^3 \text{ lux}}} = {\color{#ffd43b}{128,000 \text{ lux}}}$.
+
+    - The direct normal illuminance $\color{#4dadf7}\boldsymbol{E}_{\mathbf{dn}}$, corrected for the attenuating effects of the atmosphere, is given by **Beer-Lambert's Law**:
+
+    $$\begin{flalign*}
+    \color{#4dadf7}\boldsymbol{E}_{\mathbf{dn}} = \color{#20c997}\boldsymbol{E}_{\mathbf{ext}} \, e^{-\mathbf{cm}} &&
+    \end{flalign*}$$
+    
+!!! desc "Atmospheric Attenuation Variables"
+    #### Attenuation Variables {.toc-hidden-header}
+    * **$\color{#4dadf7}\boldsymbol{E}_{\mathbf{dn}}$:** The final Direct Normal Illuminance reaching a surface on the ground, measured in lux.
+    * **$\color{#20c997}\boldsymbol{E}_{\mathbf{ext}}$:** The orbital-corrected extraterrestrial illuminance entering the upper atmosphere.
+    * **${\color{#ffd43b}{e}}$:** Euler's constant (${\color{#ffd43b}{\approx 2.718}}$), acting as the mathematical base for natural exponential decay.
+    * **${\color{#ff6b6b}{\mathbf{c}}}$:** The atmospheric extinction coefficient. This describes air clarity; clean, crisp skies have a low value, while humid, dusty, or smoggy skies have a high value.
+    * **${\color{#cc5de8}{\mathbf{m}}}$:** The relative optical airmass. This dictates the physical volume of air the light beams must pass through before reaching the ground.
+    !!! warning "Airmass Mechanics"
+        The value of ${\color{#cc5de8}{\mathbf{m}}}$ is entirely dependent on the sun's position in the sky:
+        * When the sun is directly overhead (at zenith), the light takes the shortest path straight down, meaning ${\color{#cc5de8}{\mathbf{m} = 1}}$.
+        * As the sun moves lower toward the horizon, the sunlight must travel sideways through a dramatically thicker layer of the atmosphere (${\color{#cc5de8}{\mathbf{m} > 1}}$).
+
+!!! recommendation "Summary of Environmental Loss"
+    #### Environmental Loss {.toc-hidden-header}
+    The filtering term ${\color{#ff6b6b}{e^{-\mathbf{cm}}}}$ scales down the incoming light. While raw space sunlight $\color{#20c997}\boldsymbol{E}_{\mathbf{ext}}$ hovers around ${\color{#20c997}{128,000 \text{ lux}}}$, standard atmospheric scattering and absorption under a clear sky typically brings that number down to roughly ${\color{#4dadf7}{100,000 \text{ lux}}}$ at sea level.
+
+---
+
+![](imgs/20260705-175618.png){ .center-image }
+
+<H4 style="text-align: center;">Spectral distribution of sunlight.</H4>
+
+!!! recommendation ""
+    - The different curves reflect 3 different equally valid ways of characterizing the same sunlight. These curves have peaks at different wavelengths, which demonstrates that the notion of a location where the "peak" amount of sunlight is emitted is not meaningful, and is not a characteristic of the light itself (but is merely an artifact of how the spectrum is represented). 
+    
+    - Percentiles offer a way of thinking about the distribution of energy which is independent of the representation. 50 percent of solar irradiance is associated with wavelengths less than about 711 nm (based on approximating sunlight by the emissions of a 5775 K blackbody).
+    
+![](imgs/20260705-182735.png)
+
+!!! recommendation ""
+    Solar spectral irradiance (watts per square metre per nanometre) above atmosphere (yellow) and at surface (red). Extreme UV and X-rays are produced (left of wavelength range) but comprise very small amounts of the Sun's total output power (area under the curve).
     

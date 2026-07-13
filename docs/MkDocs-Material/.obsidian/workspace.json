@@ -11,10 +11,14 @@
             "id": "79d93590f6694296",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "python-markdown.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "python-markdown"
             }
           }
         ]
@@ -178,6 +182,22 @@
   },
   "active": "79d93590f6694296",
   "lastOpenFiles": [
+    "Material-Getting-Started.md",
+    "license.md",
+    "lists.md",
+    "caching.md",
+    "buttons.md",
+    "auto-sync.md",
+    "basic.md",
+    "changing-the-colors.md",
+    "code-blocks.md",
+    "search-better-faster-smaller/search-preview.png",
+    "changing-the-language.md",
+    "blog.md",
+    "annotations.md",
+    "adding-a-comment-system.md",
+    "search-better-faster-smaller/search-preview-now.png",
+    "search-better-faster-smaller/search-preview-before.png",
     "icons-emojis.md"
   ]
 }

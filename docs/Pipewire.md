@@ -25,515 +25,434 @@ icon: material/music-circle-outline
     
     - If you want to build and install PipeWire yourself, refer to [install](https://github.com/PipeWire/pipewire/blob/master/INSTALL.md) for instructions.
 
-## Usage
+### Usage
 
-The most important purpose of PipeWire is to run your favorite apps.
+!!! recommendation "Usage"
+    
+    - The most important purpose of PipeWire is to run your favorite apps.
 
-Some applications use the native PipeWire API, such as most compositors
-(gnome-shell, wayland, ...) to implement screen sharing. These apps will
-just work automatically.
+    - Some applications use the native PipeWire API, such as most compositors (gnome-shell, wayland, ...) to implement screen sharing. These apps will just work automatically.
 
-Most audio applications can use either ALSA, JACK or PulseAudio as a
-backend. PipeWire provides support for all 3 backends. Depending on how
-your distribution has configured things this should just work automatically
-or with the provided scripts shown below.
+    - Most audio applications can use either ALSA, JACK or PulseAudio as a backend. PipeWire provides support for all 3 backends. Depending on how your distribution has configured things this should just work automatically or with the provided scripts shown below.
 
-PipeWire can use environment variables to control the behaviour of
-applications:
+    ---
+    
+    PipeWire can use environment variables to control the behaviour of applications:
 
-* `PIPEWIRE_DEBUG=<level>`         to increase the debug level (or use one of
-                                   `XEWIDT` for none, error, warnings, info,
-                                   debug, or trace, respectively).
-* `PIPEWIRE_LOG=<filename>`        to redirect log to filename
-* `PIPEWIRE_LOG_SYSTEMD=false`     to disable logging to systemd journal
-* `PIPEWIRE_LATENCY=<num/denom>`   to configure latency as a fraction. 10/1000
-                                   configures a 10ms latency. Usually this is
-				   expressed as a fraction of the samplerate,
-				   like 256/48000, which uses 256 samples at a
-				   samplerate of 48KHz for a latency of 5.33ms.
-				   This function does not attempt to configure
-				   the samplerate.
-* `PIPEWIRE_RATE=<num/denom>`      to configure a rate for the graph.
-* `PIPEWIRE_QUANTUM=<num/denom>`   to configure latency as a fraction and a
-                   samplerate. This function will force the graph samplerate to
-                   `denom` and force the specified `num` as the buffer size.
-* `PIPEWIRE_NODE=<id>`             to request a link to the specified node. The
-                    id can be a node.name or object.serial of the target node.
+    * `PIPEWIRE_DEBUG=<level>` to increase the debug level (or use one of `XEWIDT` for none, error, warnings, info, debug, or trace, respectively).
+    * `PIPEWIRE_LOG=<filename>` to redirect log to filename 
+    * `PIPEWIRE_LOG_SYSTEMD=false` to disable logging to systemd journal
+    * `PIPEWIRE_LATENCY=<num/denom>` to configure latency as a fraction. 10/1000 configures a 10ms latency. Usually this is expressed as a fraction of the samplerate, like 256/48000, which uses 256 samples at a samplerate of 48KHz for a latency of 5.33ms. This function does not attempt to configure the samplerate.
+    * `PIPEWIRE_RATE=<num/denom>` to configure a rate for the graph.
+    * `PIPEWIRE_QUANTUM=<num/denom>` to configure latency as a fraction and a samplerate. This function will force the graph samplerate to `denom` and force the specified `num` as the buffer size.
+    * `PIPEWIRE_NODE=<id>` to request a link to the specified node. The id can be a node.name or object.serial of the target node.
 
-### Using tools
 
-`pw-cat` can be used to play and record audio and midi. Use `pw-cat -h` to get
-some more help. There are some aliases like `pw-play` and `pw-record` to make
-things easier:
+### Using Tools
 
-```
-$ pw-play /home/wim/data/01.\ Firepower.wav
-```
+!!! desc "Using tools"
+    `pw-cat` can be used to play and record audio and midi. Use `pw-cat -h` to get some more help. There are some aliases like `pw-play` and `pw-record` to make things easier:
 
-### Running JACK applications
+    ```bash
+    \$ pw-play /home/wim/data/01.\ Firepower.wav
+    ```
 
-Depending on how the system was configured, you can either run PipeWire and
-JACK side-by-side or have PipeWire take over the functionality of JACK
-completely.
+### Running JACK Applications
 
-In dual mode, JACK apps will by default use the JACK server. To direct a JACK
-app to PipeWire, you can use the `pw-jack` script like this:
+!!! desc "Running JACK applications"
+    Depending on how the system was configured, you can either run PipeWire and JACK side-by-side or have PipeWire take over the functionality of JACK completely.
 
-```
-$ pw-jack <appname>
-```
+    In dual mode, JACK apps will by default use the JACK server. To direct a JACK app to PipeWire, you can use the `pw-jack` script like this:
 
-If you replaced JACK with PipeWire completely, `pw-jack` does not have any
-effect and can be omitted.
+    ```bash
+    \$ pw-jack <appname>
+    ```
 
-JACK applications will automatically use the buffer-size chosen by the
-server. You can force a maximum buffer size (latency) by setting the
-`PIPEWIRE_LATENCY` environment variable like so:
+    If you replaced JACK with PipeWire completely, `pw-jack` does not have any effect and can be omitted.
 
-```
-PIPEWIRE_LATENCY=128/48000 jack_simple_client
-```
-Requests the `jack_simple_client` to run with a buffer of 128 or
-less samples.
+    JACK applications will automatically use the buffer-size chosen by the server. You can force a maximum buffer size (latency) by setting the `PIPEWIRE_LATENCY` environment variable like so:
 
+    ```bash
+    PIPEWIRE_LATENCY=128/48000 jack_simple_client
+    ```
 
-### Running PulseAudio applications
+    Requests the `jack_simple_client` to run with a buffer of 128 or less samples.
 
-PipeWire can run a PulseAudio compatible replacement server. You can't
-use both servers at the same time. Usually your package manager will
-make the server conflict so that you can only install one or the
-other.
+### Running PulseAudio Applications
 
-PulseAudio applications still use the regular PulseAudio client
-libraries and you don't need to do anything else than change the
-server implementation.
+!!! desc "Running PulseAudio Applications"
+    PipeWire can run a PulseAudio compatible replacement server. You can't use both servers at the same time. Usually your package manager will make the server conflict so that you can only install one or the other.
 
-A successful swap of the server can be verified by checking the
-output of
+    PulseAudio applications still use the regular PulseAudio client libraries and you don't need to do anything else than change the server implementation.
 
-```
-pactl info
-```
-It should include the string:
-```
+    A successful swap of the server can be verified by checking the output of:
 
-Server Name: PulseAudio (on PipeWire 0.3.x)
+    ```bash
+    pactl info
+    ```
 
-```
+    It should include the string:
 
-You can use pavucontrol to change profiles and ports, change volumes
-or redirect streams, just like with PulseAudio.
+    ```text
+    Server Name: PulseAudio (on PipeWire 0.3.x)
+    ```
 
+    You can use `pavucontrol` to change profiles and ports, change volumes or redirect streams, just like with __PulseAudio__.
 
-### Running ALSA applications
+### Running ALSA Applications
 
-If the PipeWire alsa module is installed, it can be seen with
+!!! desc "Running ALSA Applications"
+    If the PipeWire alsa module is installed, it can be seen with
 
-```
-$ aplay -L
-```
+    ```bash
+    \$ aplay -L
+    ```
 
-ALSA applications can then use the `pipewire:` device to use PipeWire
-as the audio system.
+    ALSA applications can then use the `pipewire:` device to use PipeWire as the audio system.
 
-### Running GStreamer applications
+### Running GStreamer Applications
 
-PipeWire includes 2 GStreamer elements called `pipewiresrc` and
-`pipewiresink`. They can be used in pipelines such as this:
+!!! desc "Running GStreamer Applications"
+    PipeWire includes 2 GStreamer elements called `pipewiresrc` and
+    `pipewiresink`. They can be used in pipelines such as this:
 
-```
-$ gst-launch-1.0 pipewiresrc ! videoconvert ! autovideosink
-```
+    ```bash
+    \$ gst-launch-1.0 pipewiresrc ! videoconvert ! autovideosink
+    ```
 
-Or to play a beeping sound:
+    Or to play a beeping sound:
 
-```
-$ gst-launch-1.0 audiotestsrc ! pipewiresink
-```
+    ```bash
+    \$ gst-launch-1.0 audiotestsrc ! pipewiresink
+    ```
 
-PipeWire provides a device monitor as well so that
+    PipeWire provides a device monitor as well so that
 
-```
-$ gst-device-monitor-1.0
-```
+    ```bash
+    \$ gst-device-monitor-1.0
+    ```
 
-shows the PipeWire devices and applications like cheese will
-automatically use the PipeWire video source when possible.
+    Shows the PipeWire devices and applications like cheese will automatically use the PipeWire video source when possible.
 
-### Inspecting the PipeWire state
+??? git "Helvum"
+    Helvum is a GTK-based patchbay for pipewire, inspired by the JACK tool [catia](https://kx.studio/Applications:Catia).
 
-To inspect and manipulate the PipeWire graph via GUI, you can use [Helvum](https://gitlab.freedesktop.org/ryuukyu/helvum).
+    !!! important "Project Status"
+        Helvum is currently not actively maintained. If you are interested in maintaining the project, please see [project](https://gitlab.freedesktop.org/pipewire/helvum/-/issues/137)
 
-<details>
+    ![screenshot](imgs/20260709-194930.png)
 
-<summary><h2 style="display: inline;" id="screenshots">Helvum</h2></summary>
+    [![Flathub Badge](https://flathub.org/assets/badges/flathub-badge-en.png){ width="300" }](https://flathub.org/apps/details/org.pipewire.Helvum)
 
-Helvum is a GTK-based patchbay for pipewire, inspired by the JACK tool [catia](https://kx.studio/Applications:Catia).
+    [![Repology Badge](https://repology.org/badge/vertical-allrepos/helvum.svg){ width="300" }](https://repology.org/project/helvum/versions)
 
-> [!caution]
-> Helvum is currently not actively maintained.
-> If you are interested in maintaining the project, please see https://gitlab.freedesktop.org/pipewire/helvum/-/issues/137
+    !!! desc "Features Planned"
+        - Volume control
+        - "Debug mode" that lets you view advanced information for nodes and ports
+        
+        More suggestions are welcome!
 
-![Screenshot](docs/screenshot.png)
+    !!! desc "Building"
+        Via Flatpak:
 
-<a href="https://flathub.org/apps/details/org.pipewire.Helvum"><img src="https://flathub.org/assets/badges/flathub-badge-en.png" width="300"/></a>
+        If you don't have the flathub repo in your remote-list for flatpak you will need to add that first:
 
-<a href="https://repology.org/project/helvum/versions"><img src="https://repology.org/badge/vertical-allrepos/helvum.svg" width="300"/></a>
+        ```shell
+        \$ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        ```
 
-# Features planned
+        Then install the required flatpak platform and SDK, if you dont have them already:
 
-- Volume control
-- "Debug mode" that lets you view advanced information for nodes and ports
+        ```shell
+        \$ flatpak install org.gnome.{Platform,Sdk}//45 org.freedesktop.Sdk.Extension.rust-stable//23.08 org.freedesktop.Sdk.Extension.llvm16//23.08
+        ```
 
-More suggestions are welcome!
+        To compile and install as a flatpak, clone the project, change to the project directory, and run:
 
-# Building
+        ```shell
+        \$ flatpak-builder --install flatpak-build/ build-aux/org.pipewire.Helvum.json
+        ```
 
-## Via flatpak
-If you don't have the flathub repo in your remote-list for flatpak you will need to add that first:
-```shell
-$ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-```
+        You can then run the app via:
 
-Then install the required flatpak platform and SDK, if you dont have them already:
-```shell
-$ flatpak install org.gnome.{Platform,Sdk}//45 org.freedesktop.Sdk.Extension.rust-stable//23.08 org.freedesktop.Sdk.Extension.llvm16//23.08
-```
+        ```shell
+        \$ flatpak run org.pipewire.Helvum
+        ```
 
-To compile and install as a flatpak, clone the project, change to the project directory, and run:
-```shell
-$ flatpak-builder --install flatpak-build/ build-aux/org.pipewire.Helvum.json
-```
+    !!! desc "Manually"
+        For compilation, you will need:
 
-You can then run the app via
-```shell
-$ flatpak run org.pipewire.Helvum
-```
+        - Meson
+        - An up-to-date rust toolchain
+        - `libclang-3.7` or higher
+        - `libadwaita-1` and `libpipewire-0.3` development packages and their dependencies
 
-## Manually
-For compilation, you will need:
+        To compile and install, run:
 
-- Meson
-- An up-to-date rust toolchain
-- `libclang-3.7` or higher
-- `libadwaita-1` and `libpipewire-0.3` development packages and their dependencies
+        ```shell
+        \$ meson setup build && cd build
+        \$ meson compile
+        \$ meson install
+        ```
 
-To compile and install, run
+        In the repository root.
 
-```shell
-$ meson setup build && cd build
-$ meson compile
-$ meson install
-```
+        This will install the compiled project files into `/usr/local`.
 
-in the repository root.
-This will install the compiled project files into `/usr/local`.
+    !!! desc "License and Credits"
+        Helvum is distributed under the terms of the GPL3 license.
+        See LICENSE for more information.
 
-# License and Credits
-Helvum is distributed under the terms of the GPL3 license.
-See LICENSE for more information.
+        Parts of the build system were taken from the [gtk-rust-template](https://gitlab.gnome.org/World/Rust/gtk-rust-template) project, which is provided under the terms of the [MIT license](https://gitlab.gnome.org/World/Rust/gtk-rust-template/-/blob/master/LICENSE.md).
 
-Parts of the build system were taken from the [gtk-rust-template](https://gitlab.gnome.org/World/Rust/gtk-rust-template) project,
-which is provided under the terms of the [MIT license](https://gitlab.gnome.org/World/Rust/gtk-rust-template/-/blob/master/LICENSE.md).
+### Inspecting the PipeWire State
 
+!!! desc "Inspecting the PipeWire State"
+    To inspect and manipulate the PipeWire graph via GUI, you can use [Helvum](https://gitlab.freedesktop.org/ryuukyu/helvum).
 
-</div>
+    - Alternatively, you can use use one of the excellent JACK tools, such as `Carla`, `catia`, `qjackctl`, ...
+    - However, you will not be able to see all features like the video ports.
+    - `pw-mon` dumps and monitors the state of the PipeWire daemon.
+    - `pw-dot` can dump a graph of the pipeline, check out the help for how to do this.
+    - `pw-top` monitors the real-time status of the graph. This is handy to find out what clients are running and how much DSP resources they use.
+    - `pw-dump` dumps the state of the PipeWire daemon in JSON format. This can be used to find out the properties and parameters of the objects in the PipeWire daemon.
 
-</details>
+    ---
 
-Alternatively, you can use use one of the excellent JACK tools, such as `Carla`,
-`catia`, `qjackctl`, ...
-However, you will not be able to see all features like the video
-ports.
+    There is a more complicated tool to inspect the state of the server with `pw-cli`. This tool can be used interactively or it can execute single commands like this to get the server information:
 
-`pw-mon` dumps and monitors the state of the PipeWire daemon.
+    ```bash
+    \$ pw-cli info 0
+    ```
 
-`pw-dot` can dump a graph of the pipeline, check out the help for
-how to do this.
+### Documentation
 
-`pw-top` monitors the real-time status of the graph. This is handy to
-find out what clients are running and how much DSP resources they
-use.
+!!! desc "Documentation"
+    - Find tutorials and design documentation [here](https://github.com/PipeWire/pipewire/tree/master/doc/dox).
+    - The (incomplete) autogenerated API docs are [here](https://docs.pipewire.org).
+    - The Wiki can be found [here](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
 
-`pw-dump` dumps the state of the PipeWire daemon in JSON format. This
-can be used to find out the properties and parameters of the objects
-in the PipeWire daemon.
+### Contributing
 
-There is a more complicated tool to inspect the state of the server
-with `pw-cli`. This tool can be used interactively or it can execute
-single commands like this to get the server information:
+!!! desc "Contributing"
+    - PipeWire is Free Software and is developed in the open. It is mostly licensed under the [MIT license](https://github.com/PipeWire/pipewire/blob/master/COPYING). Check [LICENSE](https://github.com/PipeWire/pipewire/blob/master/LICENSE) for more details about the exceptions.
+    - Contributors are encouraged to submit merge requests or file bugs on [gitlab](https://gitlab.freedesktop.org/pipewire).
+    - Join us on IRC at #pipewire on [OFTC](https://www.oftc.net/).
+    - We adhere to the Contributor Covenant for our [code of conduct](https://github.com/PipeWire/pipewire/blob/master/CODE_OF_CONDUCT.md).
+    - [Donate using Liberapay](https://liberapay.com/PipeWire/donate).
 
-```
-$ pw-cli info 0
-```
+### Getting help
 
-## Documentation
+!!! desc "Getting Help"
+    - You can ask for help on the IRC channel (see above).
+    - You can also ask questions by [raising](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/new) a gitlab issue.
 
-Find tutorials and design documentation [here](https://github.com/PipeWire/pipewire/tree/master/doc/dox).
+### Building
 
-The (incomplete) autogenerated API docs are [here](https://docs.pipewire.org).
+!!! desc "Building"
+    PipeWire uses a build tool called [*Meson*](https://mesonbuild.com) as a basis for its build process.  It's a tool with some resemblance to Autotools and CMake. Meson again generates build files for a lower level build tool called [*Ninja*](https://ninja-build.org/), working in about the same level of abstraction as more familiar GNU Make does.
 
-The Wiki can be found [here](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
+    Meson uses a user-specified build directory and all files produced by Meson are in that build directory. This build directory will be called `builddir` in this document.
 
-## Contributing
+    Generate the build files for Ninja:
 
-PipeWire is Free Software and is developed in the open. It is mostly
-licensed under the [MIT license](https://github.com/PipeWire/pipewire/blob/master/COPYING). Check [LICENSE](https://github.com/PipeWire/pipewire/blob/master/LICENSE) for
-more details about the exceptions.
+    ```bash
+    \$ meson setup builddir
+    ```
 
-Contributors are encouraged to submit merge requests or file bugs on
-[gitlab](https://gitlab.freedesktop.org/pipewire).
+    ---
 
-Join us on IRC at #pipewire on [OFTC](https://www.oftc.net/).
+    For distribution-specific build dependencies, please check our [CI pipeline](https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/.gitlab-ci.yml)(search for `FDO_DISTRIBUTION_PACKAGES`). Note that some dependencies are optional and depend on options passed to meson.
 
-We adhere to the Contributor Covenant for our [code of conduct](https://github.com/PipeWire/pipewire/blob/master/CODE_OF_CONDUCT.md).
+    Once this is done, the next step is to review the build options:
 
-[Donate using Liberapay](https://liberapay.com/PipeWire/donate).
+    ```bash
+    \$ meson configure builddir
+    ```
 
-## Getting help
+    Define the installation prefix:
 
-You can ask for help on the IRC channel (see above).  You can also ask
-questions by [raising](https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/new)
-a gitlab issue.
+    ```bash
+    \$ meson configure builddir -Dprefix=/usr # Default: /usr/local
+    ```
 
+    PipeWire specific build options are listed in the "Project options" section. They are defined in `meson_options.txt`.
 
-## Building
+    Finally, invoke the build:
 
-PipeWire uses a build tool called [*Meson*](https://mesonbuild.com) as a basis for its build
-process.  It's a tool with some resemblance to Autotools and CMake. Meson
-again generates build files for a lower level build tool called [*Ninja*](https://ninja-build.org/),
-working in about the same level of abstraction as more familiar GNU Make
-does.
+    ```bash
+    \$ meson compile -C builddir
+    ```
 
-Meson uses a user-specified build directory and all files produced by Meson
-are in that build directory. This build directory will be called `builddir`
-in this document.
+    Just to avoid any confusion: `autogen.sh` is a script invoked by *Jhbuild*, which orchestrates multi-component builds.
 
-Generate the build files for Ninja:
+### Running
 
-```
-$ meson setup builddir
-```
+!!! desc "Running"
+    If you want to run PipeWire without installing it on your system, there is a script that you can run. This puts you in an environment in which PipeWire can be run from the build directory, and ALSA, PulseAudio and JACK applications will use the PipeWire emulation libraries automatically in this environment. You can get into this environment with:
 
-For distribution-specific build dependencies, please check our
-[CI pipeline](https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/.gitlab-ci.yml)
-(search for `FDO_DISTRIBUTION_PACKAGES`). Note that some dependencies are
-optional and depend on options passed to meson.
+    ```bash
+    \$ ./pw-uninstalled.sh -b builddir
+    ```
 
-Once this is done, the next step is to review the build options:
+    In most cases you would want to run the default pipewire daemon. Look below for how to make this daemon start automatically using systemd. If you want to run pipewire from the build directory, you can do this by doing:
 
-```
-$ meson configure builddir
-```
+    ```bash
+    cd builddir/
+    make run
+    ```
 
-Define the installation prefix:
+    This will use the default config file to configure and start the daemon. The default config will also start `pipewire-media-session`, a default example media session and `pipewire-pulse`, a PulseAudio compatible server.
 
-```
-$ meson configure builddir -Dprefix=/usr # Default: /usr/local
-```
+    You can also enable more debugging with the `PIPEWIRE_DEBUG` and `WIREPLUMBER_DEBUG` environment variables like so:
 
-PipeWire specific build options are listed in the "Project options"
-section. They are defined in `meson_options.txt`.
+    ```bash
+    cd builddir/
+    PIPEWIRE_DEBUG="D" WIREPLUMBER_DEBUG="D" make run
+    ```
 
-Finally, invoke the build:
+    You might have to stop the pipewire service/socket that might have been started already, with:
 
-```
-$ meson compile -C builddir
-```
+    ```bash
+    systemctl --user stop pipewire.service \
+                          pipewire.socket \
+                          pipewire-media-session.service \
+                          pipewire-pulse.service \
+                          pipewire-pulse.socket
+    ```
 
-Just to avoid any confusion: `autogen.sh` is a script invoked by *Jhbuild*,
-which orchestrates multi-component builds.
 
-## Running
+### Installing
 
-If you want to run PipeWire without installing it on your system, there is a
-script that you can run. This puts you in an environment in which PipeWire can
-be run from the build directory, and ALSA, PulseAudio and JACK applications
-will use the PipeWire emulation libraries automatically
-in this environment. You can get into this environment with:
+!!! desc "Installing"
+    PipeWire comes with quite a bit of libraries and tools, run:
 
-```
-$ ./pw-uninstalled.sh -b builddir
-```
+    ```bash
+    meson install -C builddir
+    ```
 
-In most cases you would want to run the default pipewire daemon. Look
-below for how to make this daemon start automatically using systemd.
-If you want to run pipewire from the build directory, you can do this
-by doing:
+    - To install everything onto the system into the specified prefix. Depending on the configured installation prefix, the above command may need to be run with elevated privileges (e.g. with `sudo`).
+    - Some additional steps will have to be performed to integrate with the distribution as shown below.
 
-```
-cd builddir/
-make run
-```
 
-This will use the default config file to configure and start the daemon.
-The default config will also start `pipewire-media-session`, a default
-example media session and `pipewire-pulse`, a PulseAudio compatible server.
+### PipeWire Daemon
 
-You can also enable more debugging with the `PIPEWIRE_DEBUG` and
-`WIREPLUMBER_DEBUG` environment variables like so:
+!!! desc "PipeWire Daemon"
+    - A correctly installed PipeWire system should have a pipewire process, a pipewire-media-session (or alternative) and an (optional) pipewire-pulse process running. PipeWire is usually started as a systemd unit using socket activation or as a service.
+    - Configuration of the PipeWire daemon can be found in `/usr/share/pipewire/pipewire.conf`. Please refer to the comments in the config file for more information about the configuration options.
 
-```
-cd builddir/
-PIPEWIRE_DEBUG="D" WIREPLUMBER_DEBUG="D" make run
-```
+    The daemon is started with:
 
-You might have to stop the pipewire service/socket that might have been
-started already, with:
+    ```bash
+    systemctl --user start pipewire.service pipewire.socket
+    ```
 
-```
-systemctl --user stop pipewire.service \
-                      pipewire.socket \
-                      pipewire-media-session.service \
-                      pipewire-pulse.service \
-                      pipewire-pulse.socket
-```
+    If you did not start the media-session in pipewire.conf, you will also need to start it like this:
 
-## Installing
+    ```bash
+    systemctl --user start pipewire-media-session.service
+    ```
 
-PipeWire comes with quite a bit of libraries and tools, run:
+    To make it start on system startup:
 
-```
-meson install -C builddir
-```
+    ```bash
+    systemctl --user enable pipewire-media-session.service
+    ```
 
-to install everything onto the system into the specified prefix.
-Depending on the configured installation prefix, the above command
-may need to be run with elevated privileges (e.g. with `sudo`).
-Some additional steps will have to be performed to integrate
-with the distribution as shown below.
+    You can write `enable --now` to start service immediately.
 
-### PipeWire daemon
+### ALSA Plugin
 
-A correctly installed PipeWire system should have a pipewire
-process, a pipewire-media-session (or alternative) and an (optional)
-pipewire-pulse process running. PipeWire is usually started as a
-systemd unit using socket activation or as a service.
+!!! desc "ALSA Plugin"
+    The ALSA plugin is usually installed in:
 
-Configuration of the PipeWire daemon can be found in
-`/usr/share/pipewire/pipewire.conf`. Please refer to the comments in the
-config file for more information about the configuration options.
+    On Fedora:
 
-The daemon is started with:
-```
-systemctl --user start pipewire.service pipewire.socket
-```
+    ```text
+    /usr/lib64/alsa-lib/libasound_module_pcm_pipewire.so
+    ```
 
-If you did not start the media-session in pipewire.conf, you will
-also need to start it like this:
-```
-systemctl --user start pipewire-media-session.service
-```
-To make it start on system startup:
-```
-systemctl --user enable pipewire-media-session.service
-```
-you can write ```enable --now``` to start service immediately.
+    On Ubuntu:
 
-### ALSA plugin
+    ```text
+    /usr/lib/x86_64-linux-gnu/alsa-lib/libasound_module_pcm_pipewire.so
+    ```
 
-The ALSA plugin is usually installed in:
+    There is also a config file installed in:
 
-On Fedora:
-```
-/usr/lib64/alsa-lib/libasound_module_pcm_pipewire.so
-```
-On Ubuntu:
-```
-/usr/lib/x86_64-linux-gnu/alsa-lib/libasound_module_pcm_pipewire.so
-```
+    ```text
+    /usr/share/alsa/alsa.conf.d/50-pipewire.conf
+    ```
 
-There is also a config file installed in:
+    The plugin will be picked up by alsa when the following files are in `/etc/alsa/conf.d/`:
 
-```
-/usr/share/alsa/alsa.conf.d/50-pipewire.conf
-```
+    ```text
+    /etc/alsa/conf.d/50-pipewire.conf -> /usr/share/alsa/alsa.conf.d/50-pipewire.conf
+    /etc/alsa/conf.d/99-pipewire-default.conf
+    ```
 
-The plugin will be picked up by alsa when the following files
-are in `/etc/alsa/conf.d/`:
+    With this setup, `aplay -l` should list a pipewire device that can be used as a regular alsa device for playback and record.
 
-```
-/etc/alsa/conf.d/50-pipewire.conf -> /usr/share/alsa/alsa.conf.d/50-pipewire.conf
-/etc/alsa/conf.d/99-pipewire-default.conf
-```
+### JACK Emulation
 
-With this setup, `aplay -l` should list a pipewire device that can be used as
-a regular alsa device for playback and record.
+!!! desc "JACK Emulation"
+    PipeWire reimplements the 3 libraries that JACK applications use to make them run on top of PipeWire.
 
-### JACK emulation
+    These libraries are found here:
 
-PipeWire reimplements the 3 libraries that JACK applications use to make
-them run on top of PipeWire.
+    ```text
+    /usr/lib64/pipewire-0.3/jack/libjacknet.so -> libjacknet.so.0
+    /usr/lib64/pipewire-0.3/jack/libjacknet.so.0 -> libjacknet.so.0.304.0
+    /usr/lib64/pipewire-0.3/jack/libjacknet.so.0.304.0
+    /usr/lib64/pipewire-0.3/jack/libjackserver.so -> libjackserver.so.0
+    /usr/lib64/pipewire-0.3/jack/libjackserver.so.0 -> libjackserver.so.0.304.0
+    /usr/lib64/pipewire-0.3/jack/libjackserver.so.0.304.0
+    /usr/lib64/pipewire-0.3/jack/libjack.so -> libjack.so.0
+    /usr/lib64/pipewire-0.3/jack/libjack.so.0 -> libjack.so.0.304.0
+    /usr/lib64/pipewire-0.3/jack/libjack.so.0.304.0
+    ```
 
-These libraries are found here:
+    The provided `pw-jack` script uses `LD_LIBRARY_PATH` to set the library search path to these replacement libraries. This allows you to run jack apps on both the real JACK server or on PipeWire with the script.
 
-```
-/usr/lib64/pipewire-0.3/jack/libjacknet.so -> libjacknet.so.0
-/usr/lib64/pipewire-0.3/jack/libjacknet.so.0 -> libjacknet.so.0.304.0
-/usr/lib64/pipewire-0.3/jack/libjacknet.so.0.304.0
-/usr/lib64/pipewire-0.3/jack/libjackserver.so -> libjackserver.so.0
-/usr/lib64/pipewire-0.3/jack/libjackserver.so.0 -> libjackserver.so.0.304.0
-/usr/lib64/pipewire-0.3/jack/libjackserver.so.0.304.0
-/usr/lib64/pipewire-0.3/jack/libjack.so -> libjack.so.0
-/usr/lib64/pipewire-0.3/jack/libjack.so.0 -> libjack.so.0.304.0
-/usr/lib64/pipewire-0.3/jack/libjack.so.0.304.0
+    It is also possible to completely replace the JACK libraries by adding a file `pipewire-jack-x86_64.conf` to `/etc/ld.so.conf.d/` with contents like:
 
-```
+    ```text
+    /usr/lib64/pipewire-0.3/jack/
+    ```
 
-The provided `pw-jack` script uses `LD_LIBRARY_PATH` to set the library
-search path to these replacement libraries. This allows you to run
-jack apps on both the real JACK server or on PipeWire with the script.
+    Note that when JACK is replaced by PipeWire, the SPA JACK plugin (installed in `/usr/lib64/spa-0.2/jack/libspa-jack.so`) is not useful anymore and distributions should make them conflict.
 
-It is also possible to completely replace the JACK libraries by adding
-a file `pipewire-jack-x86_64.conf` to `/etc/ld.so.conf.d/` with
-contents like:
+### PulseAudio Replacement
 
-```
-/usr/lib64/pipewire-0.3/jack/
-```
+!!! desc "PulseAudio Replacement"
+    PipeWire reimplements the PulseAudio server protocol as a small service that runs on top of PipeWire.
 
-Note that when JACK is replaced by PipeWire, the SPA JACK plugin (installed
-in `/usr/lib64/spa-0.2/jack/libspa-jack.so`) is not useful anymore and
-distributions should make them conflict.
+    The binary is normally placed here:
 
+    ```text
+    /usr/bin/pipewire-pulse
+    ```
 
-### PulseAudio replacement
+    The server can be started with provided systemd activation files or from PipeWire itself. (See `/usr/share/pipewire/pipewire.conf`)
 
-PipeWire reimplements the PulseAudio server protocol as a small service
-that runs on top of PipeWire.
+    ```bash
+    systemctl --user start pipewire-pulse.service pipewire-pulse.socket
+    ```
 
-The binary is normally placed here:
+    You can also start additional PulseAudio servers listening on other sockets with the `-a` option. See `pipewire-pulse -h` for more info.
 
-```
-/usr/bin/pipewire-pulse
-```
+### Uninstalling
 
-The server can be started with provided systemd activation files or
-from PipeWire itself. (See `/usr/share/pipewire/pipewire.conf`)
+!!! desc "Uninstalling"
+    To uninstall, run:
 
-```
-systemctl --user start pipewire-pulse.service pipewire-pulse.socket
-```
+    ```bash
+    ninja -C builddir uninstall
+    ```
 
-You can also start additional PulseAudio servers listening on other
-sockets with the `-a` option. See `pipewire-pulse -h` for more info.
-
-
-## Uninstalling
-
-To uninstall, run:
-
-```
-ninja -C builddir uninstall
-```
-
-Depending on the configured installation prefix, the above command
-may need to be run with elevated privileges (e.g. with `sudo`).
-
-Note that at the time of writing uninstallation only works with the
-same build directory that was used for installation. Meson stores the
-list of installed files in the build directory, and this list is
-necessary for uninstallation to work.
+    - Depending on the configured installation prefix, the above command may need to be run with elevated privileges (e.g. with `sudo`).
+    - Note that at the time of writing uninstallation only works with the same build directory that was used for installation.
+    - Meson stores the list of installed files in the build directory, and this list is necessary for uninstallation to work.
 
 
 | Name | License | Website | Description |

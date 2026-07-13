@@ -3626,18 +3626,18 @@ Citric Acid Cycle | 2 ATP ||
 
 ---
 
-### 🚀 Afridyne Systems: GitHub Pages Deployment Blueprint
+### 🚀 GitHub Deployment
 
 
-!!! desc
+!!! desc "Afridyne Systems: GitHub Pages Deployment"
 
     Follow this step-by-step guide to completely reset your repository and configure automated Markdown building via GitHub Actions.
     
 ---
 
-### Part 1: Organize Your Local Backup Directory
+### Local Backup Dir.
 
-!!! git "Local Project Root"
+!!! git "Part 1: Local Project Root"
 
     Ensure your local project root directory matches this exact structure. Note that files like `mathjax.js` must live inside the `docs/` subdirectory.
     
@@ -3658,29 +3658,32 @@ Citric Acid Cycle | 2 ATP ||
     
 ---
 
-### Part 2: Configuration & Asset Code Files
+### Asset Code Files
 
-###### 📂 File 1: `mkdocs.yml`
-
-!!! abstract "`mkdocs.yml`"
+!!! abstract "Part 2: Configuration & Asset Code Files 📂 File 1: `mkdocs.yml`"
 
     Place this in your **project root folder**. Make sure the `site_url` points to your project subfolder.
     
     ```yaml
-    site_url: https://github.io
-    site_name: Afridyne Systems Documentation
+    site_url: https://johnpiers.github.io/Afridyne-Systems
+    site_name: Afridyne Systems
     
     theme:
-      name: material  # Swap to 'materialx' if using the specific MaterialX package
+      name: materialx  # Swap to 'materialx' if using the specific MaterialX package
     
     extra_javascript:
       - javascripts/mathjax.js
-      - https://unpkg.com
+      - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+      - javascripts/expand-code.js
+      - javascripts/theme_extra.js
+      - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+      - javascripts/tablesort.js
+      - javascripts/iconsearch.js
     ```
     
-###### 📂 File 2: `docs/javascripts/mathjax.js`
+#### `mathjax.js`
 
-??? desc "`mathjax.js` `Click To See Code`"
+??? desc "📂 File 2:`docs/javascripts/mathjax.js` `Click To See Code`"
 
     Place this inside your **`docs/javascripts/`** directory. It contains the Material lifecycles and your specific user menu preferences.
 
@@ -3716,9 +3719,9 @@ Citric Acid Cycle | 2 ATP ||
     ```
 
 
-###### 📂 File 3: `.github/workflows/deploy.yml`
+#### `deploy.yml`
 
-??? desc "`deploy.yml` `Click To See Code`"
+??? desc "📂 File 3:`.github/workflows/deploy.yml` `Click To See Code`"
 
     Place this exactly in the subfolder path **`.github/workflows/`** relative to your project root. This manages your compiler.
     
@@ -3774,21 +3777,19 @@ Citric Acid Cycle | 2 ATP ||
 
 ---
 
-### Part 3: Clear and Recreate the Repository
+###  Delete Repo.
 
-#### Step 1: Nuke the old GitHub Repo
+!!! desc "Part 3: 📂Step 1: Delete old GitHub Repo"
 
-!!! desc "Nuke the old GitHub Repo"
-
-    1. Go to your repo at `https://github.com`.
+    1. Go to your repo at `https://johnpiers.github.io/Afridyne-Systems`.
     2. Click **Settings** (the gear icon on the top tab row).
     3. Scroll all the way down to the bottom **Danger Zone**.
     4. Click **Delete this repository**.
     5. Type out the required repository path confirmation string and authorize the deletion.
     
-#### Step 2: Create a Fresh Repository
+#### New Repo.
 
-!!! desc "Create a Fresh Repository"
+!!! desc "Step 2: Create a New Repository"
 
     1. On GitHub, click **New repository** (or go to `https://github.com`).
     2. Name it exactly: `Afridyne-Systems`.
@@ -3798,37 +3799,53 @@ Citric Acid Cycle | 2 ATP ||
     
 ---
 
-### Part 4: Push Your Backup Files (Terminal Actions)
+###  Push (Actions)
 
-!!! desc "Push Your Backup Files (Terminal Actions)"
+!!! desc "Part 4: Push Your Backup Files (Terminal Actions)"
 
     Open your terminal or command prompt, navigate into your clean local project backup root directory (`Afridyne-Systems/`), and run these commands to push your project files for the first time:
-    
-    ```bash
+        
     1. Initialize a clean git tree local tracker.
-       git init
     
+        ```bash
+        git init
+        ```
+        
     2. Add all local files (docs/, .github/, mkdocs.yml) into stage tracking.
-       git add
-    
+        
+        ```bash
+        git add
+        ```
+        
     3. Commit your changes.
-       git commit -m "Initial automated MkDocs structure setup"
     
+        ```bash
+        git commit -m "Initial automated MkDocs structure setup"
+        ```
+        
     4. Target the main default branch.
-       git branch -M main
     
+        ```bash
+        git branch -M main
+        ```
+        
     5. Link your local project directory to your new remote GitHub repository.
-       git remote add origin https://github.com.git
     
+        ```bash
+        git remote add origin https://github.com.git
+        ```
+        
     6. Push to main (this will automatically launch the GitHub Actions compiler!).
-       git push -u origin main
-    ```
+    
+        ```bash
+        git push -u origin main
+        ```
     
 ---
 
-### Part 5: One-Time GitHub Pages Setup (Web Dashboard)
+### GitHub Setup
 
-!!! desc "One-Time GitHub Pages Setup (Web Dashboard)"
+!!! desc "Part 5: One-Time GitHub Pages Setup (Web Dashboard)"
 
     Once you push your code, the GitHub Action workflow will compile your site and automatically generate a background branch named `gh-pages`. To activate the public URL route:
     
@@ -3843,8 +3860,8 @@ Citric Acid Cycle | 2 ATP ||
 ---
 ### Phase 1
 
-!!! desc ""
-    Phase 1: Overcoming the Pipeline Obstacles. This phase covers how you resolved the environment conflicts between your cutting-edge Arch Linux machine and GitHub's virtual runner environment.
+!!! desc "Phase 1: Overcoming the Pipeline Obstacles."
+    This phase covers how you resolved the environment conflicts between your cutting-edge Arch Linux machine and GitHub's virtual runner environment.
     
 ### 1. The Core Issue
 
@@ -3869,10 +3886,10 @@ Citric Acid Cycle | 2 ATP ||
 
 ### Phase 2
 
-!!! desc ""
-    Phase 2: Final Synchronization & Repository ProtectionThis phase details how you secured your project and synchronized your local workstation with the live cloud framework.
+!!! desc "Phase 2: Final Synchronization & Repository Protection."
+    This phase details how you secured your project and synchronized your local workstation with the live cloud framework.
     
-### 1. Intellectual Property Protection
+### 1. Protection
 
 !!! desc "Intellectual Property Protection"
 
@@ -3902,10 +3919,10 @@ Citric Acid Cycle | 2 ATP ||
 !!! info "Current System Status: Fully Synchronized"
     This reference covers the seamless sync workflow across your 4 active deployment legs:
     
-    1. 💻 **Working Site:** Local real-time engine (`http://127.0.0`)
+    1. 💻 **Working Site:** Local real-time engine (`http://127.0.0.1:8000/`)
     2. 🗂️ **Git Site:** Local synchronization hub (`/mnt/sdb/AfridyneSystems`)
-    3. 🚀 **Cloud Pipeline:** GitHub Actions Runner (`://github.com...`)
-    4. 🌐 **Live Website:** Public Production Front (`johnpiers.github.io/...`)
+    3. 🚀 **Cloud Pipeline:** GitHub Actions Runner (`https://github.com/johnpiers/Afridyne-Systems/actions`)
+    4. 🌐 **Live Website:** Public Production Front (`https://johnpiers.github.io/Afridyne-Systems/`)
 
 === "🔄 The 3-Step Update Workflow"
 
@@ -3955,7 +3972,7 @@ Citric Acid Cycle | 2 ATP ||
 
     | Package Name | Purpose / Functionality | Role in Ecosystem |
     | :--- | :--- | :--- |
-    | `mkdocs-materialx==10.1.7` | Primary Theme Fork | Handles total layout rendering & modern UI |
+    | `mkdocs-materialx==10.1.8` | Primary Theme Fork | Handles total layout rendering & modern UI |
     | `mkdocs==1.6.1` | Base Framework | Core static site engine |
     | `markdown==3.10.2` | Core Processor | Converts raw `.md` files into valid web pages |
     | `jinja2` | Template Engine | Generates underlying HTML document patterns |
@@ -4001,7 +4018,8 @@ Citric Acid Cycle | 2 ATP ||
     
         ---
     
-        Clean, highly formatted documentation layout utilizing standard theme structures.
+        Clean, highly formatted documentation layout utilizing standard theme
+        structures.
     
         [:octicons-arrow-right-24: Open Workspace Component](#)
     
@@ -4017,7 +4035,8 @@ Citric Acid Cycle | 2 ATP ||
     
         ---
     
-        Seamless interactive local indexing engine with deeply optimized search path layers.
+        Seamless interactive local indexing engine with deeply optimized search path
+        layers.
     
         [:octicons-arrow-right-24: Open Finder Control](#)
     
@@ -4028,20 +4047,24 @@ Citric Acid Cycle | 2 ATP ||
 
     ```markdown
     !!! danger "System Failure Point (Red Highlight)"
-        This block indicates critical pipeline errors, broken dependency names, or unresolvable path flags.
+        This block indicates critical pipeline errors, broken dependency names, or
+        unresolvable path flags.
 
     !!! bug "Visual or Syntax Mismatch (Orange Highlight)"
-        Use this specific container variant to document trailing file-extension typos or formatting glitches.
+        Use this specific container variant to document trailing file-extension typos
+        or formatting glitches.
 
     !!! quote "System Verbatim Output (Grey Border Accent)"
-        Perfect for framing exact code responses or tracebacks directly from terminal log dumps.
+        Perfect for framing exact code responses or tracebacks directly from terminal
+        log dumps.
     ```
 
 === "🎨 Inline Text Magic"
 
     ```markdown
     * Add crisp keyboard shortcut styling tags: ++ctrl+alt+del++
-    * Apply clean colored badges to text segments: {--Deletions look red--} and {++Insertions look green++}
+    * Apply clean colored badges to text segments: {--Deletions look red--} and
+      {++Insertions look green++}
     * Utilize precise inline styling markers: `#!yaml nav:` { .annotate }
     ```
 
@@ -4055,7 +4078,8 @@ Citric Acid Cycle | 2 ATP ||
     ```markdown
     ---
     title: Modern System Synchronization Architectures
-    description: A deep-dive exploration into aligning multi-leg local storage environments with automated cloud compilation builders.
+    description: A deep-dive exploration into aligning multi-leg local storage
+                 environments with automated cloud compilation builders.
     date: 2026-06-26
     authors: [johnpiers]
     categories:
@@ -4069,11 +4093,14 @@ Citric Acid Cycle | 2 ATP ||
 
     # Modern System Synchronization Architectures
 
-    When dealing with separate development environments, maintaining a strict tracking rhythm is paramount. Today we take a look at stabilizing active project trunks.
+    When dealing with separate development environments, maintaining a strict tracking
+    rhythm is paramount. Today we take a look at stabilizing active project trunks.
 
     <!-- more -->
 
-    Everything written below this explicit divider line acts as the main content body. Everything above it serves as the short summary text card displayed directly on your primary blog index page index layout!
+    Everything written below this explicit divider line acts as the main content body.
+    Everything above it serves as the short summary text card displayed directly on
+    your primary blog index page index layout!
 
     ### Key Discoveries
     * High-speed `uv` deployment execution cuts processing limits down instantly.
@@ -4135,8 +4162,10 @@ Citric Acid Cycle | 2 ATP ||
     Write standard, natural Markdown links. The native theme engine automatically scans the target page's title and top text blocks to render the popup layout:
     
     ```markdown
-    Make sure to activate your tracking parameters inside the core configuration file. 
-    You can easily verify the active nesting boundaries using the site's [SuperFences](#) module architecture.
+    Make sure to activate your tracking parameters inside the core configuration
+    file. 
+    You can easily verify the active nesting boundaries using the site's [SuperFences]
+    (#) module architecture.
     
     * Links targeting section headers work perfectly too: [Check Table Settings](#)
     ```
@@ -4195,4 +4224,179 @@ Citric Acid Cycle | 2 ATP ||
 | :----------------: |
 |       150.0        |
 |      or text       |
+
+### Ref: GreyStone Theme
+
+Reference: Fixing Broken/Tiny Nautilus Sidebar Icons (GreyStone Theme)
+
+### Issue Description
+
+!!! ex "Issue Description"
+
+    Modern GNOME/Nautilus (GTK4) requires specific symbolic variants (`-symbolic.svg`) to render sidebar icons properly. If these SVGs are malformed, misconfigured internally, or missing standard dimensions, GNOME fails to scale them, resulting in tiny dots or generic placeholders for folders like Documents, Pictures, and Videos.
+    
+### Solution
+
+!!! desc "Solution"
+
+    Override the faulty theme icons by symlinking standard, dark-optimized symbolic folder assets from the upstream dependency (`Papirus`) directly into the active theme paths, then refresh the system icon cache.
+    
+    
+    1. (Optional) Audit the theme's internal symbolic folder inventory 
+    
+        ```bash
+        find ~/.local/share/icons/GreyStone/ -name "*symbolic.svg" | grep -i "folder"
+        ```
+    
+    2. Create a backup subdirectory for the broken SVGs
+    
+        ```bash
+        mkdir -p ~/.local/share/icons/GreyStone/places/symbolic/backup
+        ```
+    
+    3. Move the faulty symbolic folder icons into the backup folder
+    
+        ```bash
+        mv ~/.local/share/icons/GreyStone/places/symbolic/folder-documents-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/
+        mv ~/.local/share/icons/GreyStone/places/symbolic/folder-pictures-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/
+        mv ~/.local/share/icons/GreyStone/places/symbolic/folder-videos-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/
+        ```
+    
+    4. Symlink working symbolic icons from Papirus to override GreyStone's versions
+    
+        ```bash
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-documents-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-documents-symbolic.svg
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-pictures-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-pictures-symbolic.svg
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-videos-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-videos-symbolic.svg
+        ```
+    
+    5. Rebuild the GTK icon cache to force system recognition:
+    
+        ```bash
+        gtk-update-icon-cache -f ~/.local/share/icons/GreyStone/
+        ```
+    
+    6. Kill all active Nautilus processes to force a clean GUI reload:
+    
+        ```bash
+        nautilus -q
+        ```
+    
+    Now you have a permanent blueprint saved whenever an icon update reverts your changes! Let me know if you want help generating:
+    
+    * A quick **automated Bash script variant** of this code that you can execute in one click.
+    * Custom **MaterialX admonition tags** (like notes or warnings) to make this log pop out visually on your site.
+    
+
+!!! ex "Sidebar Icon Fix"
+    Override faulty theme icons by symlinking dark-optimized symbolic folder assets from Papirus directly into active theme paths.
+
+    === "Step-by-Step Guide"
+
+        1. (Optional) Audit the theme's internal symbolic folder inventory:
+            ```bash
+            find ~/.local/share/icons/GreyStone/ -name "*symbolic.svg" | grep -i "folder"
+            ```
+
+        2. Create a backup subdirectory for the broken SVGs:
+            ```bash
+            mkdir -p ~/.local/share/icons/GreyStone/places/symbolic/backup
+            ```
+
+        3. Move the faulty symbolic folder icons into the backup folder:
+            ```bash
+            mv ~/.local/share/icons/GreyStone/places/symbolic/folder-documents-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/
+            mv ~/.local/share/icons/GreyStone/places/symbolic/folder-pictures-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/
+            mv ~/.local/share/icons/GreyStone/places/symbolic/folder-videos-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/
+            ```
+
+        4. Symlink working symbolic icons from Papirus:
+            ```bash
+            ln -s /usr/share/icons/Papirus/scalable/places/folder-documents-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-documents-symbolic.svg
+            ln -s /usr/share/icons/Papirus/scalable/places/folder-pictures-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-pictures-symbolic.svg
+            ln -s /usr/share/icons/Papirus/scalable/places/folder-videos-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-videos-symbolic.svg
+            ```
+
+        5. Rebuild the GTK icon cache:
+            ```bash
+            gtk-update-icon-cache -f ~/.local/share/icons/GreyStone/
+            ```
+
+        6. Kill all active Nautilus processes to force a clean GUI reload:
+            ```bash
+            nautilus -q
+            ```
+
+    === "Quick One-Liner Script"
+
+        ```bash
+        mkdir -p ~/.local/share/icons/GreyStone/places/symbolic/backup && \
+        mv ~/.local/share/icons/GreyStone/places/symbolic/folder-{documents,pictures,videos}-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/ 2>/dev/null; \
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-documents-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-documents-symbolic.svg && \
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-pictures-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-pictures-symbolic.svg && \
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-videos-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-videos-symbolic.svg && \
+        gtk-update-icon-cache -f ~/.local/share/icons/GreyStone/ && \
+        nautilus -q
+        ```
+
+    === "Fresh Install Blueprint"
+
+        ```bash
+        # 1. Download and extract the latest repository directly to the local icons folder
+        mkdir -p ~/.local/share/icons
+        curl -L https://github.com | tar -xz -C ~/.local/share/icons/
+        mv ~/.local/share/icons/GreyStone-main ~/.local/share/icons/GreyStone
+
+        # 2. Apply the missing symbolic folder fixes from Papirus
+        mkdir -p ~/.local/share/icons/GreyStone/places/symbolic/backup
+        mv ~/.local/share/icons/GreyStone/places/symbolic/folder-{documents,pictures,videos}-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/ 2>/dev/null
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-documents-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-documents-symbolic.svg
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-pictures-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-pictures-symbolic.svg
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-videos-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-videos-symbolic.svg
+
+        # 3. Clear caches and reload Nautilus
+        gtk-update-icon-cache -f ~/.local/share/icons/GreyStone/
+        nautilus -q
+        ```
+
+### Manual Installation
+
+!!! important "Fresh Manual Installation Blueprint"
+
+    If migrating to a new machine or rebuilding the local environment, fetch the repo directly and apply the symlink fixes in one go:
+    
+    1. Download and extract the latest repository directly to the local icons folder
+    
+        ```bash
+        mkdir -p ~/.local/share/icons
+        curl -L https://github.com | tar -xz -C ~/.local/share/icons/
+        mv ~/.local/share/icons/GreyStone-main ~/.local/share/icons/GreyStone
+        ```
+        
+    2. Apply the missing symbolic folder fixes from Papirus
+    
+        ```bash
+        mkdir -p ~/.local/share/icons/GreyStone/places/symbolic/backup
+        ```
+        
+        ```bash
+        mv ~/.local/share/icons/GreyStone/places/symbolic/folder-{documents,pictures,videos}-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/backup/ 2>/dev/null
+        ```
+        
+        ```bash
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-documents-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-documents-symbolic.svg
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-pictures-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-pictures-symbolic.svg
+        ln -s /usr/share/icons/Papirus/scalable/places/folder-videos-symbolic.svg ~/.local/share/icons/GreyStone/places/symbolic/folder-videos-symbolic.svg
+        ```
+        
+    3. Clear caches and reload Nautilus
+    
+        ```bash
+        gtk-update-icon-cache -f ~/.local/share/icons/GreyStone/
+        ```
+        
+        ```bash
+        nautilus -q
+        ```
+    
 
