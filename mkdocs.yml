@@ -135,7 +135,7 @@ plugins:
       enabled: !ENV [CI, false]
       cache: true
   - schema_reader
-  - material/typeset       # Added 'material/'
+  #- material/typeset       # Added 'material/'
   - caption:
       figure:
         enable: false
