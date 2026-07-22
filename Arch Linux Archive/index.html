@@ -1589,30 +1589,40 @@
 <h1 style="text-align: center;"> Arch Linux Archive</h1>
 
 <div class="admonition quote">
-<p class="admonition-title"> Arch Linux Archive</p>
+<p class="admonition-title">Arch Linux Archive</p>
 <p>The Arch Linux Archive (a.k.a. ALA), formerly known as Arch Linux Rollback Machine (a.k.a. ARM), stores official repositories snapshots, iso images and bootstrap tarballs across time.</p>
 </div>
-<p><b>You can use it to:</b></p>
+<div class="admonition desc">
+<p class="admonition-title">You can use it to:</p>
 <ul>
 <li>Downgrade to a previous version of one package (last version is broken, I want the previous one)</li>
 <li>Restore all your packages at a precise moment (my system is broken, I want to go back 2 months ago)</li>
 <li>Find a previous version of an ISO image</li>
 </ul>
 <p>Packages are only kept for a few years, afterwards they are moved to the Arch Linux Historical Archive on archive.org</p>
+</div>
 <h2 id="1-location">1. Location<a id="Location"></a><a id="1. Location"></a><a class="headerlink" href="#1-location" title="Permanent link">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Arch Linux Archive</p>
 <p>The Arch Linux Archive is available at <a href="https://archive.archlinux.org/">Arch Linux Archive</a> and <a href="https://gitlab.archlinux.org/archlinux/infrastructure/-/blob/master/docs/servers.md#archive-mirrors">mirrors</a> around the globe.</p>
 <p>The <a href="https://github.com/seblu/archivetools">source code</a> is also available for setting up your own mirror.</p>
+</div>
 <h2 id="2-directories">2. Directories<a id="Directories"></a><a id="2. Directories"></a><a class="headerlink" href="#2-directories" title="Permanent link">¶</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">3 Main Directories</p>
 <p>The Archive is split into 3 main directories detailed below.</p>
 <div class="admonition quote">
-<p class="admonition-title">3 Main Directories</p>
+<p class="admonition-title">Directories Structure</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>├── iso
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── packages
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└── repos
 </span></code></pre></div>
 </div>
+</div>
 <h4 id="21-repos">2.1 /repos<a id="/repos"></a><a id=".2Frepos"></a><a class="headerlink" href="#21-repos" title="Permanent link">¶</a></h4>
+<div class="admonition git">
 <p>The <a href="https://archive.archlinux.org/repos">repos</a> directory contains daily snapshots of official mirror organized by date like in the following example.</p>
+</div>
 <details class="quote">
 <summary>Index of /repos/</summary>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>repos
@@ -1665,7 +1675,9 @@
 </span></code></pre></div>
 </details>
 <h4 id="22-repos">2.2 /repos<a id="/packages"></a><a id=".2Fpackages"></a><a class="headerlink" href="#22-repos" title="Permanent link">¶</a></h4>
+<div class="admonition git">
 <p>The packages directory contains all versions of each package with their signatures. One directory by package and package directories are grouped by their first letter.</p>
+</div>
 <details class="quote">
 <summary>Packages Directory-Contains All v. of each Package</summary>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>packages
@@ -1687,7 +1699,9 @@
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>│   └── z
 </span></code></pre></div>
 </details>
+<div class="admonition git">
 <p>You can use the magic subdirectory<code><b>.all</b></code>to access all packages by their name. It acts as a flat directory containing all versions of every package.</p>
+</div>
 <details class="quote">
 <summary>"Magic Subdirectory" .all</summary>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>├── packages
@@ -1699,7 +1713,9 @@
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   │   └── ...
 </span></code></pre></div>
 </details>
+<div class="admonition example">
 <p>You can download the full package list (there are over a hundred thousand packages) as a compressed index: <a href="https://archive.archlinux.org/packages/.all/index.0.xz">index.0.xz</a></p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Curl Example-Download Full Package List</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>curl
@@ -1714,7 +1730,9 @@
 </span></code></pre></div>
 </div>
 <h4 id="23-iso">2.3 /iso<a id="/iso"></a><a id=".2Fiso"></a><a class="headerlink" href="#23-iso" title="Permanent link">¶</a></h4>
+<div class="admonition tip">
 <p>The <a href="https://archive.archlinux.org/iso/">iso</a> directory contains official ISO images and bootstrap tarballs sorted by release date.</p>
+</div>
 <details class="quote">
 <summary>Index of /iso/</summary>
 <div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>├──<span class="w"> </span><span class="m">2014</span>.09.03
@@ -1741,7 +1759,9 @@
 </div>
 <h2 id="3-frequently-asked-questions">3. Frequently Asked Questions<a id="Frequently_asked_questions"></a><a id="Frequently_asked_questions"></a><a class="headerlink" href="#3-frequently-asked-questions" title="Permanent link">¶</a></h2>
 <h4 id="31-how-to-downgrade-one-package">3.1 How to downgrade one package.<a id="How to downgrade one package."></a><a id=".3FHow to downgrade one package."></a><a class="headerlink" href="#31-how-to-downgrade-one-package" title="Permanent link">¶</a></h4>
+<div class="admonition abstract">
 <p>Find the package you want under <a href="https://wiki.archlinux.org/title/Arch_Linux_Archive#/packages">/packages</a> and let pacman fetch it for installation. For example:</p>
+</div>
 <div class="admonition quote">
 <p class="admonition-title">.pkg.tar.zst</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># pacman -U https://archive.archlinux.org/packages/&lt;i&gt;path/packagename&lt;/i&gt;.pkg.tar.zst
@@ -1755,7 +1775,10 @@
 </div>
 <p>See also <a href="https://wiki.archlinux.org/title/Downgrading_packages#Automation">Downgrading packages#Automation</a> for tools that simplify the process.</p>
 <h4 id="32-how-to-restore-all-packages-to-a-specific-date">3.2 How to restore all packages to a specific date.<a id="How to restore all packages to a specific date."></a><a id=".3FHow to restore all packages to a specific date."></a><a class="headerlink" href="#32-how-to-restore-all-packages-to-a-specific-date" title="Permanent link">¶</a></h4>
+<div class="admonition example">
+<p class="admonition-title"> Restore Package Versions</p>
 <p>To restore all packages to their version at a specific date, let us say 30 March 2014, you have to direct pacman to this date, by editing your /etc/pacman.conf and use the following server directive:</p>
+</div>
 <div class="admonition abstract">
 <p class="admonition-title">Restore Packages to Specific Date</p>
 <div class="language-markdown highlight"><span class="filename">Package Required</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[core]
@@ -1767,7 +1790,9 @@
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Server = https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 </span></code></pre></div>
 </div>
+<div class="admonition assumption">
 <p>or by replacing your <code>/etc/pacman.d/mirrorlist</code> with the following content:</p>
+</div>
 <div class="admonition abstract">
 <p class="admonition-title">Mirrorlist</p>
 <div class="language-markdown highlight"><span class="filename">/etc/pacman.d/mirrorlist</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="gu">##</span>
@@ -1793,31 +1818,59 @@
 <p>It is <a href="https://wiki.archlinux.org/title/Partial_upgrade">not safe</a> to mix Archive and up-to-date mirrors. In case of a download failure, you will fall-back on an upstream package and you will have packages not from the same epoch in the rest of the system.</p>
 </div>
 <h2 id="4-historical-archive">4. Historical Archive<a id="Historical Archive"></a><a id="Historical Archive"></a><a class="headerlink" href="#4-historical-archive" title="Permanent link">¶</a></h2>
+<div class="admonition deep-dive">
+<p class="admonition-title">Historical Archive</p>
 <p>Maintaining the Arch Linux Archive consumes significant amount of resources, so old packages are cleaned up from time to time.</p>
 <p>Before removing them, old packages are uploaded to a <a href="https://archive.org/details/archlinuxarchive">dedicated collection "Arch Linux Historical Archive" on archive.org</a>.</p>
 <p>The Historical Archive does not provide a way to access a "snapshot" of Arch packages at a given point in time. However, there is a redirection on archive.archlinux.org so that downloads for old packages are redirected to the Historical Archive on archive.org. There should be no visible impact from the user side, except from the fact that archive.org is generally quite slow for downloading.</p>
+</div>
 <h4 id="41-finding-packages-in-the-historical-archive">4.1 Finding packages in the Historical Archive.<a id="Finding packages in the Historical Archive."></a><a id=".4FFinding packages in the Historical Archive."></a><a class="headerlink" href="#41-finding-packages-in-the-historical-archive" title="Permanent link">¶</a></h4>
+<div class="admonition desc">
+<p class="admonition-title">Finding Packages</p>
 <p>The <strong>Arch Linux Historical Archive</strong> collection has an <a href="https://archive.org/details/archlinuxarchive">index of all packages:</a></p>
 <p>It is also possible to directly access a package by its <strong>identifier</strong>. The general pattern for identifiers is <em>archlinux_pkg_sanitized_package_name.</em></p>
 <p>To obtain the <em>sanitized</em> package name, simply replace any @, + or . character in the package name by an underscore _.</p>
 <p>For instance, the identifier for <a href="https://archlinux.org/packages/?name=lucene%2B%2B">lucene++</a> is archlinux_pkg_lucene__.</p>
 <p>You can then access the details page of a package via its <a href="https://archive.org/details/archlinux_pkg_lucene__">identifier</a>, for instance: <a href="https://archive.org/details/archlinux_pkg_lucene__">archlinux_pkg_lucene__</a>.</p>
 <p>It is also possible to run searches with the <a href="https://github.com/jjjake/internetarchive">archive.org Python client:</a></p>
+</div>
 <h4 id="42-downloading-packages-from-the-historical-archive">4.2 Downloading packages from the Historical Archive.<a id="Downloading packages from the Historical Archive."></a><a id=".4FDownloading packages from the Historical Archive."></a><a class="headerlink" href="#42-downloading-packages-from-the-historical-archive" title="Permanent link">¶</a></h4>
-<p>All available package versions (and their signature) can be accessed via the download page of a <a href="https://archive.org/download/archlinux_pkg_lucene__">package:</a>.</p>
+<div class="admonition recommendation">
+<p class="admonition-title">Downloading Packages Historical Archive</p>
+<ul>
+<li>
+<p><strong>All available package versions (and their signature) can be accessed via the download page of a <a href="https://archive.org/download/archlinux_pkg_lucene__">package:</a>.</strong></p>
+</li>
+<li>
 <p>To download, verify and install a package using <a href="https://wiki.archlinux.org/title/Pacman">pacman:</a></p>
-<p></p><div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># sudo pacman -U https://archive.org/download/archlinux_pkg_cjdns/</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>cjdns-20.5-1-x86_64.pkg.tar.zst
-</span></code></pre></div><br>
-Package verification is controlled by pacman's RemoteFileSigLevel option. Note that if you use pacman, you have to figure out the dependencies yourself.<p></p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># sudo pacman -U https://archive.org/download/archlinux_pkg_cjdns/cjdns-20.5-1-x86_64.pkg.tar.zst</span>
+</span></code></pre></div>
+<hr>
+<ul>
+<li>
+<p><strong>Package verification is controlled by pacman's RemoteFileSigLevel option. Note that if you use pacman, you have to figure out the dependencies yourself.</strong></p>
+</li>
+<li>
 <p>It is also possible to use the <a href="https://github.com/jjjake/internetarchive">archive.org Python client</a>.</p>
-<p>Download a specific version of a package:<br>
-</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>ia<span class="w"> </span>download<span class="w"> </span>archlinux_pkg_cjdns<span class="w"> </span>cjdns-20.5-1-x86_64.pkg.tar.zst<span class="o">{</span>,.sig<span class="o">}</span>
-</span></code></pre></div><br>
-Download all x86_64 versions of a package, with signatures:<br>
+</li>
+<li>
+<p>Download a specific version of a package:</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>ia<span class="w"> </span>download<span class="w"> </span>archlinux_pkg_cjdns<span class="w"> </span>cjdns-20.5-1-x86_64.pkg.tar.zst<span class="o">{</span>,.sig<span class="o">}</span>
+</span></code></pre></div>
+<hr>
+<ul>
+<li>Download all x86_64 versions of a package, with signatures:</li>
+</ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>ia<span class="w"> </span>download<span class="w"> </span>archlinux_pkg_cjdns<span class="w"> </span>--glob<span class="o">=</span><span class="s2">"*x86_64.pkg.tar.*"</span>
-</span></code></pre></div><p></p>
+</span></code></pre></div>
+</div>
 <h2 id="5-history">5. History<a id="History"></a><a id="History"></a><a class="headerlink" href="#5-history" title="Permanent link">¶</a></h2>
+<div class="admonition decision">
+<p class="admonition-title">History</p>
 <ul>
 <li>The original ARM (Archlinux Rollback Machine) was closed on 2013-08-18.<a href="https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360">[1]</a></li>
 <li>It was then hosted on <a href="https://seblu.net/">seblu.net</a> since 2013-08-31. </li>
@@ -1825,23 +1878,42 @@ Download all x86_64 versions of a package, with signatures:<br>
 <li>Moved to <a href="https://archive.archlinux.org/">archive.archlinux.org</a> on 2015-12-19.<a href="https://lists.archlinux.org/archives/list/arch-dev-public@lists.archlinux.org/message/WFG4Z3CIHOYSEGRP6PRD2WGW2YJB3TFN/">[2]</a></li>
 <li>Old packages from 2013-2016 uploaded to <a href="https://archive.org/details/archlinuxarchive">archive.org</a> on 2018-06-05.</li>
 </ul>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">$ systemd-cgtop</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>systemd-cgtop
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>-------------------------------------------------------------------------------------------------
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Control Group                            Tasks   %CPU   Memory  Input/s Output/s
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>user.slice                                 540  152,8     3.3G        -        -
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>user.slice/user-1000.slice                 540  152,8     3.3G        -        -
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>user.slice/u…000.slice/session-1.scope     425  149,5     3.1G        -        -
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>system.slice                                37      -   215.6M        -        -
+<div class="language-markdown no-copy highlight"><span class="filename">systemd-cgtop</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Control Group                            Tasks   %CPU   Memory  Input/s Output/s
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>user.slice                                 540  152,8     3.3G        -        -
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>user.slice/user-1000.slice                 540  152,8     3.3G        -        -
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>user.slice/u…000.slice/session-1.scope     425  149,5     3.1G        -        -
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>system.slice                                37      -   215.6M        -        -
 </span></code></pre></div>
+<details class="desc">
+<summary>Click to see code</summary>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>!!! warning "$ systemd-cgtop"
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    ``` { .markdown title="systemd-cgtop" .no-copy }
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    Control Group                            Tasks   %CPU   Memory  Input/s Output/s
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    user.slice                                 540  152,8     3.3G        -        -
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    user.slice/user-1000.slice                 540  152,8     3.3G        -        -
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    user.slice/u…000.slice/session-1.scope     425  149,5     3.1G        -        -
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    system.slice                                37      -   215.6M        -        -
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>    ```
+</span></code></pre></div>
+</details>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">$ systemd</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>systemd-cgtop
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>-------------------------------------------------------------------------------------------------
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Packages for common Linux
+<div class="language-markdown no-copy highlight"><span class="filename">systemd-cgtop</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Packages for common Linux
 </span></code></pre></div>
+<details class="desc">
+<summary>Click to see code</summary>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>!!! warning "$ systemd"
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    ``` { .markdown title="systemd-cgtop" .no-copy }
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    Packages for common Linux
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    ```
+</span></code></pre></div>
+</details>
 </div>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
@@ -1854,17 +1926,77 @@ Download all x86_64 versions of a package, with signatures:<br>
 </li>
 </ul>
 </div>
+<div class="admonition desc">
+<p class="admonition-title">Custom Admonition</p>
+<p><strong>Two custom admonitions of the same thing with a slight variation to the <code>markdown title and {.no-copy }</code> setting.</strong></p>
+</div>
 <div class="admonition pied-piper">
 <p class="admonition-title">Pied Piper</p>
-<div class="language-markdown highlight"><span class="filename">The last 3 special directories.</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a> NB: The last 3 special directories (last, week and month) which links repectively to
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a> the last synced repository, to the last Monday and to the first of the current month.
+<div class="language-markdown no-copy highlight"><span class="filename">rsync examples</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>• Here are some examples of how rsync can be used.
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>• To backup a home directory, which consists of large MS Word files and mail folders, a per-user
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a> cron job can be used that runs this each day:
 </span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>rsync<span class="w"> </span>-aiz<span class="w"> </span>.<span class="w"> </span>bkhost:backup/joe/
+</span></code></pre></div>
+<div class="language-markdown no-copy highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>• To move some files from a remote host to the local host, you could run:
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>rsync -aiv --remove-source-files rhost:/tmp/{file1,file2}.c ~/src/
+</span></code></pre></div>
+<details class="desc">
+<summary>Click to see code</summary>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>!!! pied-piper "Pied Piper"
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    ``` { .markdown title="rsync examples" .no-copy }
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    • Here are some examples of how rsync can be used.
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    • To backup a home directory, which consists of large MS Word files and mail folders, a per-user
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>     cron job can be used that runs this each day:
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="sb">    ```</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="sb">    ```bash</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="sb">    rsync -aiz . bkhost:backup/joe/</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="sb">    ```</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>    ```{ .markdown .no-copy }
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>    • To move some files from a remote host to the local host, you could run:
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="sb">    ```</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="sb">    ```html</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="sb">    rsync -aiv --remove-source-files rhost:/tmp/{file1,file2}.c ~/src/</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="sb">    ```</span>
+</span></code></pre></div>
+</details>
 </div>
-<div class="admonition note">
-<p class="admonition-title">The Title</p>
-<ul>
-<li>The content is correctly parsed because it's separated by blank lines from the raw HTML block tags.</li>
-</ul>
+<div class="admonition pied-piper">
+<p class="admonition-title">Pied Piper</p>
+<div class="language-markdown no-copy highlight"><span class="filename">rsync examples</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>• Here are some examples of how rsync can be used.
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>• To backup a home directory, which consists of large MS Word files and mail folders, a per-user
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a> cron job can be used that runs this each day:
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>rsync<span class="w"> </span>-aiz<span class="w"> </span>.<span class="w"> </span>bkhost:backup/joe/
+</span></code></pre></div>
+<p>• To move some files from a remote host to the local host, you could run:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>rsync -aiv --remove-source-files rhost:/tmp/{file1,file2}.c ~/src/
+</span></code></pre></div>
+<details class="desc">
+<summary>Click to see code</summary>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>!!! pied-piper "Pied Piper"
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    ``` { .markdown title="rsync examples" .no-copy }
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    • Here are some examples of how rsync can be used.
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    • To backup a home directory, which consists of large MS Word files and mail folders, a per-user
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>     cron job can be used that runs this each day:
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="sb">    ```</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="sb">    ```bash</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="sb">    rsync -aiz . bkhost:backup/joe/</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="sb">    ```</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>    • To move some files from a remote host to the local host, you could run:
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="sb">    ```html</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>    rsync -aiv --remove-source-files rhost:/tmp/{file1,file2}.c ~/src/
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="sb">    ```</span>
+</span></code></pre></div>
+</details>
 </div>
 
 

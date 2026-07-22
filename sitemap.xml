@@ -786,6 +786,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://example.com/blog/2026/04/05/what-mkdocs-20-means-for-your-documentation-projects/</loc>
+        <lastmod>2026-07-22</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://example.com/blog/2026/03/28/welcome-to-the-afridyne-blog/</loc>
         <lastmod>2026-07-22</lastmod>
         <changefreq>daily</changefreq>
