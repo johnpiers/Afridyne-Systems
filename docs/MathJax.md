@@ -1031,3 +1031,242 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
 !!! recommendation ""
     Solar spectral irradiance (watts per square metre per nanometre) above atmosphere (yellow) and at surface (red). Extreme UV and X-rays are produced (left of wavelength range) but comprise very small amounts of the Sun's total output power (area under the curve).
     
+<a href="https://www.mathjax.org" class="mathjax-badge">
+    <img title="Powered by MathJax"
+    src="https://www.mathjax.org/badge/mj_logo.png"
+    border="0" alt="Powered by MathJax" />
+</a>
+
+<H2 style="text-align: center;">The First Isomorphism Theorem</H2>
+<H3 style="text-align: center;">R. C. Daileda</H3> 
+
+??? desc "Misc Maths Fun! Click on the formulas to see the magic."
+    ### 1st Isomorphism Theorem {.toc-hidden-header}
+    <a href="https://www.mathjax.org">
+        <img title="Powered by MathJax"
+        src="https://www.mathjax.org/badge/badge.gif"
+        border="0" alt="Powered by MathJax" />
+    </a>
+    
+    The homomorphism $\color{#ff6b6b}{f}$ is injective if and only if its kernel is only the singleton set $\color{#f08c00}{e_G}$, because otherwise $\color{#cc5de8}{\exists}\, \color{#f08c00}{a},\color{#f08c00}{b}\color{#cc5de8}{\in} \color{#4dadf7}{G}$ with $\color{#f08c00}{a}\color{#cc5de8}{\neq} \color{#f08c00}{b}$ such that $\color{#ff6b6b}{f}(\color{#f08c00}{a})=\color{#ff6b6b}{f}(\color{#f08c00}{b})$.
+    
+    ---
+            
+       
+    Let $\color{#4dadf7}{G}$ be a group. For any $\color{#20c997}{H} \color{#cc5de8}{<} \color{#4dadf7}{G}$, the "reduction mod $\color{#20c997}{H}$" map
+
+    $$\begin{aligned}
+    \color{#ff6b6b}{\pi} : \color{#4dadf7}{G} &\to \color{#4dadf7}{G}/\color{#20c997}{H}, \\
+    \color{#f08c00}{a} &\mapsto \color{#f08c00}{a}\color{#20c997}{H},
+    \end{aligned}$$
+
+    which sends each element of $\color{#4dadf7}{G}$ to its coset in $\color{#4dadf7}{G}/\color{#20c997}{H}$ is called the natural surjection. When $\color{#20c997}{H} \color{#cc5de8}{\triangleleft} \color{#4dadf7}{G}$, we have:
+
+    $$\color{#ff6b6b}{\pi}(\color{#f08c00}{a}\color{#f08c00}{b}) = (\color{#f08c00}{a}\color{#f08c00}{b})\color{#20c997}{H} = (\color{#f08c00}{a}\color{#20c997}{H})(\color{#f08c00}{b}\color{#20c997}{H}) = \color{#ff6b6b}{\pi}(\color{#f08c00}{a})\color{#ff6b6b}{\pi}(\color{#f08c00}{b}),$$
+
+    for all $\color{#f08c00}{a}, \color{#f08c00}{b} \color{#cc5de8}{\in} \color{#4dadf7}{G}$. This means that $\color{#ff6b6b}{\pi}$ is actually a surjective homomorphism in this case, which we call the natural epimorphism. Since $\color{#20c997}{H}$ is the identity coset in $\color{#4dadf7}{G}/\color{#20c997}{H}$, notice that $\color{#f08c00}{a} \color{#cc5de8}{\in} \color{#20c997}{\ker \pi}$ if and only if:
+
+    $$\color{#f08c00}{a}\color{#20c997}{H} = \color{#ff6b6b}{\pi}(\color{#f08c00}{a}) = \color{#20c997}{H} \color{#cc5de8}{\iff} \color{#f08c00}{a} \color{#cc5de8}{\in} \color{#20c997}{H}.$$
+
+    Thus:
+
+    $$\color{#20c997}{\ker \pi} = \color{#20c997}{H}.$$
+
+    That is, every normal subgroup of $\color{#4dadf7}{G}$ is the kernel of a homomorphism with domain $\color{#4dadf7}{G}$. The converse is also true.
+    
+    **Lemma 1.** Let $\color{#ff6b6b}{f} : \color{#4dadf7}{G} \to \color{#20c997}{G'}$ be a homomorphism of groups. Then $\color{#20c997}{\ker f} \color{#cc5de8}{\triangleleft} \color{#4dadf7}{G}$.
+    
+    **Proof.** Let $\color{#f08c00}{x} \color{#cc5de8}{\in} \color{#4dadf7}{G}$ and let $\color{#f08c00}{a} \color{#cc5de8}{\in} \color{#20c997}{\ker f}$. Then $\color{#ff6b6b}{f}(\color{#f08c00}{a}) = \color{#f08c00}{e'}$ is the identity in $\color{#20c997}{G'}$ so that:
+    
+    $$\color{#ff6b6b}{f}(\color{#f08c00}{x}\color{#f08c00}{a}\color{#f08c00}{x}^{-1}) = \color{#ff6b6b}{f}(\color{#f08c00}{x})\color{#ff6b6b}{f}(\color{#f08c00}{a})\color{#ff6b6b}{f}(\color{#f08c00}{x})^{-1} = \color{#ff6b6b}{f}(\color{#f08c00}{x})\color{#f08c00}{e'}\color{#ff6b6b}{f}(\color{#f08c00}{x})^{-1} = \color{#ff6b6b}{f}(\color{#f08c00}{x})\color{#ff6b6b}{f}(\color{#f08c00}{x})^{-1} = \color{#f08c00}{e'},$$
+    
+    which shows that $\color{#f08c00}{x}\color{#f08c00}{a}\color{#f08c00}{x}^{-1} \color{#cc5de8}{\in} \color{#20c997}{\ker f}$.
+    
+    Since $\color{#f08c00}{a} \color{#cc5de8}{\in} \color{#20c997}{\ker f}$ was arbitrary, this proves:
+    
+    $$\color{#f08c00}{x}(\color{#20c997}{\ker f})\color{#f08c00}{x}^{-1} \color{#cc5de8}{\subseteq} \color{#20c997}{\ker f}.$$
+    
+    And since $\color{#f08c00}{x} \color{#cc5de8}{\in} \color{#4dadf7}{G}$ was arbitrary, this proves $\color{#20c997}{\ker f} \color{#cc5de8}{\triangleleft} \color{#4dadf7}{G}$. <span style="float: right">$\square$</span>
+    
+    Given a group $\color{#4dadf7}\mathbf{G}$ and a subgroup $\color{#20c997}\mathbf{H}$, Lemma 1 provides perhaps the easiest way to show that $\color{#20c997}\mathbf{H}$ is normal in $\color{#4dadf7}\mathbf{G}$: simply identify $\color{#20c997}\mathbf{H}$ as the kernel of a homomorphism $\color{#ff6b6b}{\mathbf{f}} : \color{#4dadf7}\mathbf{G} \to \color{#20c997}\mathbf{G'}$.
+    
+    There is actually a deeper connection between normal subgroups and kernels. Let $\color{#ff6b6b}{\mathbf{f}} : \color{#4dadf7}\mathbf{G} \to \color{#20c997}\mathbf{G'}$ be a group homomorphism. We have seen that $\color{#ff6b6b}{\mathbf{f}}$ is injective if and only if $\color{#20c997}\boldsymbol{\ker \mathbf{f}}$ is trivial. Until now this is the only real utility we’ve found for the kernel of a homomorphism.
+    
+    But when $\color{#20c997}\boldsymbol{\ker \mathbf{f}}$ is nontrivial it actually provides a precise measurement of the failure of the injectivity of $\color{#ff6b6b}{\mathbf{f}}$.
+    
+    To see why, for $\color{#f08c00}{\mathbf{a}}, \color{#f08c00}{\mathbf{b}} \in \color{#4dadf7}\mathbf{G}$ we define $\color{#f08c00}{\mathbf{a}} \color{#ff6b6b}\boldsymbol{\sim} \color{#f08c00}{\mathbf{b}}$ if and only if $\color{#ff6b6b}{\mathbf{f}}(\color{#f08c00}{\mathbf{a}}) = \color{#ff6b6b}{\mathbf{f}}(\color{#f08c00}{\mathbf{b}}).$ It is an easy exercise to see that $\color{#ff6b6b}\boldsymbol{\sim}$ is an equivalence relation on $\color{#4dadf7}\mathbf{G}$ (indeed, on the domain of any function between two sets). Since
+    
+    $$\color{#ff6b6b}{\mathbf{f}(\mathbf{a}) = \mathbf{f}(\mathbf{b})} \;\color{#cc5de8}{\iff}\; \color{#f08c00}{\mathbf{e}} \color{#ffffff}{=} \color{#ff6b6b}{\mathbf{f}(\mathbf{b})^{-1}\mathbf{f}(\mathbf{a}) = \mathbf{f}(\mathbf{b}^{-1}\mathbf{a})} \;\color{#cc5de8}{\iff}\; \color{#f08c00}{\mathbf{b}^{-1}\mathbf{a}} \color{#cc5de8}{\in} \color{#20c997}\boldsymbol{\ker \mathbf{f}} \;\color{#cc5de8}{\iff}\; \color{#f08c00}{\mathbf{a}} \color{#cc5de8}{\equiv} \color{#f08c00}{\mathbf{b}} \;\color{#cc5de8}{\pmod{\color{#20c997}\boldsymbol{\ker \mathbf{f}}}}$$
+    
+    the relation $\color{#ff6b6b}\boldsymbol{\sim}$ is just congruence modulo $\color{#20c997}\boldsymbol{\ker \mathbf{f}}.$ So the equivalence class of $\color{#f08c00}{\mathbf{a}} \in \color{#4dadf7}\mathbf{G}$ under $\color{#ff6b6b}\boldsymbol{\sim}$ is just the coset $\color{#f08c00}{\mathbf{a}}(\color{#20c997}\boldsymbol{\ker \mathbf{f}}):$
+    
+    <div class="eq-tagged" markdown>
+
+    $$\color{#f08c00}{\mathbf{a}}(\color{#20c997}\boldsymbol{\ker \mathbf{f}}) = \color{#cc5de8}{\{}\color{#f08c00}{\mathbf{b}} \color{#cc5de8}{\in} \color{#4dadf7}\mathbf{G} \;\color{#cc5de8}{\mid}\; \color{#ff6b6b}{\mathbf{f}(\mathbf{b}) = \mathbf{f}(\mathbf{a})}\color{#cc5de8}{\}}$$
+
+    <span class="eq-tag">(1)</span>
+
+    </div>
+    
+---
+
+### Part 1: Forward Direction (⟹)
+**Given:** $f: G \to H$ is a group homomorphism, and $f$ is injective.
+**To Prove:** $\ker(f) = \{1_G\}$ (i.e., $1_G$ is the only element that maps to $1_H$).
+
+| Statements | Reasons |
+| :--- | :--- |
+| 1. $f$ is a group homomorphism. | 1. Given |
+| 2. $f(1_G) = 1_H$ | 2. Property of group homomorphisms |
+| 3. $1_G \in \ker(f)$ | 3. Definition of kernel (from Statement 2) |
+| 4. $f$ is injective. | 4. Given |
+| 5. If $f(g) = f(1_G)$, then $g = 1_G$. | 5. Definition of an injective function |
+| 6. If $f(g) = 1_H$, then $g = 1_G$. | 6. Substitution (from Statement 2 into Statement 5) |
+| 7. $\ker(f) = \{1_G\}$ | 7. Direct conclusion from Statements 3 and 6 |
+
+---
+
+### Part 2: Backward Direction (⟸)
+**Given:** $f: G \to H$ is a group homomorphism, and $\ker(f) = \{1_G\}$.
+**To Prove:** $f$ is injective (i.e., if $f(g_1) = f(g_2)$, then $g_1 = g_2$).
+
+| Statements | Reasons |
+| :--- | :--- |
+| 1. $f$ is a group homomorphism. | 1. Given |
+| 2. $\ker(f) = \{1_G\}$ | 2. Given |
+| 3. Let $g_1, g_2 \in G$ such that $f(g_1) = f(g_2)$. | 3. Assumption for proving injectivity |
+| 4. $f(g_2) \cdot [f(g_1)]^{-1} = f(g_1) \cdot [f(g_1)]^{-1}$ | 4. Right-multiplication property of equality |
+| 5. $f(g_2) \cdot [f(g_1)]^{-1} = 1_H$ | 5. Inverse property of groups |
+| 6. $f(g_2) \cdot f(g_1^{-1}) = 1_H$ | 6. Homomorphism property of inverses: $[f(x)]^{-1} = f(x^{-1})$ |
+| 7. $f(g_2 g_1^{-1}) = 1_H$ | 7. Homomorphism property of operation preservation |
+| 8. $g_2 g_1^{-1} \in \ker(f)$ | 8. Definition of kernel |
+| 9. $g_2 g_1^{-1} = 1_G$ | 9. Substitution (from Statement 2 into Statement 8) |
+| 10. $(g_2 g_1^{-1}) \cdot g_1 = 1_G \cdot g_1$ | 10. Right-multiplication property of equality |
+| 11. $g_2 \cdot (g_1^{-1} g_1) = g_1$ | 11. Associative and identity properties of groups |
+| 12. $g_2 \cdot 1_G = g_1$ | 12. Inverse property of groups |
+| 13. $g_2 = g_1$ | 13. Identity property of groups |
+| 14. $f$ is injective. | 14. Direct conclusion from Statements 3 and 13 |
+
+### Phase 1: Well-Definedness
+**Goal:** Prove that the mapping $\bar{f}(a \ker f) = f(a)$ is independent of the choice of coset representative.
+
+| Statements | Reasons |
+| :--- | :--- |
+| 1. Let $a \ker f = b \ker f$. | 1. Assumption for checking well-definedness |
+| 2. $b^{-1}a \in \ker f$ | 2. Property of cosets ($xH = yH \iff y^{-1}x \in H$) |
+| 3. $f(b^{-1}a) = e'$ | 3. Definition of the kernel |
+| 4. $f(b)^{-1}f(a) = e'$ | 4. Homomorphism property ($f(b^{-1}) = f(b)^{-1}$) |
+| 5. $f(a) = f(b)$ | 5. Left-multiplying both sides by $f(b)$ |
+| 6. $\bar{f}(a \ker f) = \bar{f}(b \ker f)$ | 6. Definition of the mapping $\bar{f}$ |
+| 7. $\bar{f}$ is well-defined. | 7. Direct conclusion from Statements 1 and 6 |
+
+---
+
+### Phase 2: Homomorphism Property
+**Goal:** Prove that $\bar{f}$ preserves the group operation.
+
+| Statements | Reasons |
+| :--- | :--- |
+| 1. Let $a \ker f, b \ker f \in G/\ker f$. | 1. Selected elements from the quotient group domain |
+| 2. $(a \ker f)(b \ker f) = (ab) \ker f$ | 2. Definition of coset multiplication in quotient groups |
+| 3. $\bar{f}((a \ker f)(b \ker f)) = \bar{f}((ab) \ker f)$ | 3. Applying $\bar{f}$ to both sides |
+| 4. $\bar{f}((ab) \ker f) = f(ab)$ | 4. Definition of the mapping $\bar{f}$ |
+| 5. $f(ab) = f(a)f(b)$ | 5. Given that $f$ is a group homomorphism |
+| 6. $f(a)f(b) = \bar{f}(a \ker f)\bar{f}(b \ker f)$ | 6. Definition of the mapping $\bar{f}$ |
+| 7. $\bar{f}$ is a homomorphism. | 7. Transitive closure from Statements 3 through 6 |
+
+---
+
+### Phase 3: Injectivity
+**Goal:** Prove that the kernel of $\bar{f}$ is trivial, confirming it is a monomorphism.
+
+| Statements | Reasons |
+| :--- | :--- |
+| 1. Let $\bar{f}(a \ker f) = e'$. | 1. Assumption to determine the kernel of $\bar{f}$ |
+| 2. $f(a) = e'$ | 2. Definition of the mapping $\bar{f}$ |
+| 3. $a \in \ker f$ | 3. Definition of the kernel |
+| 4. $a \ker f = \ker f$ | 4. Absorptive property of cosets ($x \in H \iff xH = H$) |
+| 5. $\ker \bar{f} = \{\ker f\}$ | 5. The only element mapping to $e'$ is the identity coset |
+| 6. $\bar{f}$ is injective. | 6. A homomorphism is injective iff its kernel is trivial |
+
+---
+
+### Phase 4: Uniqueness and Commutativity
+**Goal:** Prove that $\bar{f}$ makes the diagram commute ($\bar{f} \circ \pi = f$) and that it is the unique homomorphism doing so.
+
+| Statements | Reasons |
+| :--- | :--- |
+| 1. Let $\pi: G \to G/\ker f$ be the natural surjection given by $\pi(a) = a \ker f$. | 1. Definition of the natural projection map |
+| 2. $(\bar{f} \circ \pi)(a) = \bar{f}(\pi(a)) = \bar{f}(a \ker f)$ | 2. Definition of function composition |
+| 3. $\bar{f}(a \ker f) = f(a)$ | 3. Definition of the mapping $\bar{f}$ |
+| 4. $\bar{f} \circ \pi = f$ | 4. Commutativity confirmed (from Statements 2 and 3) |
+| 5. Let $g: G/\ker f \to G'$ be any map such that $g \circ \pi = f$. | 5. Assumption for checking uniqueness |
+| 6. $g(a \ker f) = g(\pi(a)) = (g \circ \pi)(a)$ | 6. Defintion of function composition and projection |
+| 7. $(g \circ \pi)(a) = f(a) = \bar{f}(a \ker f)$ | 7. Substitution using Statement 5 and Statement 3 |
+| 8. $g = \bar{f}$ | 8. Direct conclusion showing $\bar{f}$ is completely unique |
+
+!!! deep-dive "Einstein's Challenge: The Path to Bell's Inequality"
+    Before Bell's inequality, Albert Einstein famously rejected the standard interpretation of quantum entanglement. Here is how his skepticism shaped physics history:
+    
+    * <span style="color:#4dadf7">**The EPR Paradox (1935):**</span> Einstein, Podolsky, and Rosen argued that quantum mechanics was incomplete.
+    * <span style="color:#ff6b6b">**Spooky Action:**</span> Measuring one entangled particle instantly determines the state of its distant partner.
+    * <span style="color:#cc5de8">**Instant Communication:**</span> Einstein argued this required faster-than-light "spooky action at a distance," violating relativity.
+    * <span style="color:#20c997">**Local Realism:**</span> He believed particles must hold definite, predetermined traits before any measurement occurs.
+    * <span style="color:#f08c00">**Hidden Variables:**</span> He proposed that undiscovered, local "hidden variables" already determined the outcomes inside
+      the particles.
+    * <span style="color:#22b8cf">**Bell's Decisive Test (1964):**</span> John Stewart Bell formulated his inequality specifically to test if Einstein's hidden variables existed.
+    
+    ---
+    
+    This historical clash directly set up the mathematical boundaries detailed in the deep-dive below.
+
+!!! deep-dive "Bell's Inequality"
+    ### Bell's Inequality (CHSH Variant)
+    In classical physics, any local hidden variable theory must satisfy the following inequality for the correlation of measurements between two distant detectors:
+
+    $$\color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b}}) - \color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b'}})\color{#cc5de8}{|} + \color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b}}) + \color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b'}})\color{#cc5de8}{|} \;\color{#cc5de8}{\le}\; \color{#f08c00}{2}$$
+
+    Where:
+    * $\color{#4dadf7}{\mathbf{a}}$ and $\color{#4dadf7}{\mathbf{a'}}$ are two different measurement settings for Detector A (Alice).
+    * $\color{#20c997}{\mathbf{b}}$ and $\color{#20c997}{\mathbf{b'}}$ are two different measurement settings for Detector B (Bob).
+    * $\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b}})$ is the expectation value (the correlation coefficient) of the joint measurements, ranging from $\color{#f08c00}{-1}$ to $\color{#f08c00}{+1}$.
+    #### The Quantum Violation
+    Quantum mechanics predicts that for perfectly entangled pairs (such as twin photons), specific choices of angles for $\color{#4dadf7}{\mathbf{a}}, \color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b}},$ and $\color{#20c997}{\mathbf{b'}}$ yield a maximum value known as the **Tsirelson bound**:
+
+    $$\color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b}}) - \color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b'}})\color{#cc5de8}{|} + \color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b}}) + \color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b'}})\color{#cc5de8}{|} \;\color{#cc5de8}{=}\; \color{#f08c00}{2\sqrt{2}} \;\color{#cc5de8}{\approx}\; \color{#f08c00}{2.828}$$
+
+    Because $\color{#f08c00}{2\sqrt{2}} \color{#cc5de8}{>} \color{#f08c00}{2}$, quantum mechanics mathematically violates Bell's inequality, proving that nature cannot be explained by local hidden variables.
+
+
+!!! deep-dive "Maximum Quantum Violation"
+    ### The Angles of Maximum Quantum Violation
+    To achieve the maximum violation of Bell's inequality, Detector A (Alice) and Detector B (Bob) must orient their measurement settings at specific, interlocking angles. 
+    Let the angles for Alice be $\color{#4dadf7}{a}$ and $\color{#4dadf7}{a'}$, and the angles for Bob be $\color{#20c997}{b}$ and $\color{#20c997}{b'}$. The ideal setup uses an offset of $\color{#f08c00}{22.5^\circ}$ between successive settings:
+    * **Alice's settings:** 
+      * $\color{#4dadf7}{a} \color{#cc5de8}{=} \color{#f08c00}{0^\circ}$
+      * $\color{#4dadf7}{a'} \color{#cc5de8}{=} \color{#f08c00}{45^\circ}$
+    * **Bob's settings:** 
+      * $\color{#20c997}{b} \color{#cc5de8}{=} \color{#f08c00}{22.5^\circ}$
+      * $\color{#20c997}{b'} \color{#cc5de8}{=} \color{#f08c00}{67.5^\circ}$
+    #### The Correlation Formula
+    According to quantum mechanics, the correlation $\color{#ff6b6b}{E}(\color{#4dadf7}{\theta_A}, \color{#20c997}{\theta_B})$ for a pair of entangled photons depends on the cosine of twice the angle difference between the detectors:
+
+    $$\color{#ff6b6b}{E}(\color{#4dadf7}{\theta_A}, \color{#20c997}{\theta_B}) = \cos(2(\color{#4dadf7}{\theta_A} - \color{#20c997}{\theta_B}))$$
+
+    #### Calculating the Violation
+    Plugging our specific angles into the CHSH inequality formula:
+
+    1. $\color{#ff6b6b}{E}(\color{#4dadf7}{a}, \color{#20c997}{b}) \color{#cc5de8}{=} \cos(2(\color{#f08c00}{0^\circ} - \color{#f08c00}{22.5^\circ})) \color{#cc5de8}{=} \cos(\color{#f08c00}{-45^\circ}) \color{#cc5de8}{=} \color{#f08c00}{\frac{\sqrt{2}}{2}}$
+    2. $\color{#ff6b6b}{E}(\color{#4dadf7}{a}, \color{#20c997}{b'}) \color{#cc5de8}{=} \cos(2(\color{#f08c00}{0^\circ} - \color{#f08c00}{67.5^\circ})) \color{#cc5de8}{=} \cos(\color{#f08c00}{-135^\circ}) \color{#cc5de8}{=} \color{#f08c00}{-\frac{\sqrt{2}}{2}}$
+    3. $\color{#ff6b6b}{E}(\color{#4dadf7}{a'}, \color{#20c997}{b}) \color{#cc5de8}{=} \cos(2(\color{#f08c00}{45^\circ} - \color{#f08c00}{22.5^\circ})) \color{#cc5de8}{=} \cos(\color{#f08c00}{45^\circ}) \color{#cc5de8}{=} \color{#f08c00}{\frac{\sqrt{2}}{2}}$
+    4. $\color{#ff6b6b}{E}(\color{#4dadf7}{a'}, \color{#20c997}{b'}) \color{#cc5de8}{=} \cos(2(\color{#f08c00}{45^\circ} - \color{#f08c00}{67.5^\circ})) \color{#cc5de8}{=} \cos(\color{#f08c00}{-45^\circ}) \color{#cc5de8}{=} \color{#f08c00}{\frac{\sqrt{2}}{2}}$
+
+    Now, we substitute these values into the left side of Bell's inequality:
+
+    $$\color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{a}, \color{#20c997}{b}) - \color{#ff6b6b}{E}(\color{#4dadf7}{a}, \color{#20c997}{b'})\color{#cc5de8}{|} + \color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{a'}, \color{#20c997}{b}) + \color{#ff6b6b}{E}(\color{#4dadf7}{a'}, \color{#20c997}{b'})\color{#cc5de8}{|}$$
+
+    $$\left| \color{#f08c00}{\frac{\sqrt{2}}{2}} - \left(\color{#f08c00}{-\frac{\sqrt{2}}{2}}\right) \right| + \left| \color{#f08c00}{\frac{\sqrt{2}}{2}} + \color{#f08c00}{\frac{\sqrt{2}}{2}} \right| \color{#cc5de8}{=} \color{#f08c00}{\sqrt{2}} + \color{#f08c00}{\sqrt{2}} \color{#cc5de8}{=} \color{#f08c00}{2\sqrt{2}} \color{#cc5de8}{\approx} \color{#f08c00}{2.828}$$
+
+    Because $\color{#f08c00}{2.828} \color{#cc5de8}{>} \color{#f08c00}{2}$, choosing these exact angles mathematically maximizes the proof that Einstein's local reality does not exist.
+    
+
