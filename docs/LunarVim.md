@@ -86,12 +86,12 @@ icon: material/alert-outline
 
 !!! git "Useful Documentation Links"
 
-    * [Official LunarVim Documentation](https://lunarvim.org) — The core manual for custom configuration profiles.
+    - [Official LunarVim Documentation](https://www.lunarvim.org/docs/installation) — The core manual for custom configuration profiles.
     
-    * [LunarVim Keybindings Guide](https://lunarvim.org) — Comprehensive map of every default keystroke available.
+    - [LunarVim Keybindings Guide](https://www.lunarvim.org/docs/features/core-plugins-list) — Comprehensive map of every default keystroke available.
     
-    * [Lazy.nvim GitHub Profile](https://github.com) — Understand how your newly installed plugin architecture coordinates packages.
+    - [Lazy.nvim GitHub Profile](https://github.com/folke/lazy.nvim) — Understand how your newly installed plugin architecture coordinates packages.
     
-    * [Marksman LSP Manual](https://github.com) — Learn about the advanced Markdown link, reference, and header completions active in your workspace.
+    - [Marksman LSP Manual](https://github.com/artempyanykh/marksman) — Learn about the advanced Markdown link, reference, and header completions active in your workspace.
     
 
