@@ -200,6 +200,7 @@ nav:
       - UV: UV.md
       - uv Main: uv_Main.md
   - Various Misc:
+      - LunarVim: LunarVim.md
       - Aurdex: Aurdex.md
       - Bash-Git: BashGit.md
       - Curl: EverythingCurl.md
