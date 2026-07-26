@@ -57,7 +57,7 @@ icon: material/alert-outline
     
 ### 🌐 Working with HTML
 
-!!! deep-dive  "🌐 Working with HTML"
+!!! deep-dive  "Working with HTML"
 
     * **Auto-Closing Tags:** Type an HTML tag like `<div>` and hit enter. The editor automatically generates `</div>` and balances your cursor in the middle.
     
@@ -65,7 +65,7 @@ icon: material/alert-outline
     
 ### 📉 Working with Markdown
 
-!!! grey "📉 Working with Markdown"
+!!! grey "Working with Markdown"
     * **Live Browser Preview:** When you have a `.md` file active, open the command line and run the plugin we added:
     
     ```vim
@@ -82,7 +82,7 @@ icon: material/alert-outline
     
 ---
 
-### 🔗 Useful Documentation Links
+### 🧭 Useful Documentation Links
 
 !!! git "Useful Documentation Links"
 
