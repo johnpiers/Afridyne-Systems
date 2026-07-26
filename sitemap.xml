@@ -6,6 +6,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://example.com/ALPM-Contributing/</loc>
+        <lastmod>2026-07-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://example.com/ALPM/</loc>
         <lastmod>2026-07-26</lastmod>
         <changefreq>daily</changefreq>
@@ -62,11 +67,6 @@
     </url>
     <url>
         <loc>https://example.com/Bypass/</loc>
-        <lastmod>2026-07-26</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://example.com/CONTRIBUTING/</loc>
         <lastmod>2026-07-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
