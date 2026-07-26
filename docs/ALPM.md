@@ -6,7 +6,7 @@ icon: material/arch
 
 <H1 style="text-align: center;"> Arch Linux Package Management [ALPM]</H1>
 
-[Go to: Contributing :fontawesome-solid-paper-plane:](CONTRIBUTING.md){ .md-button .md-button--custom }
+[Go to: Contributing :fontawesome-solid-paper-plane:](ALPM-Contributing.md){ .md-button .md-button--custom }
 
 
 !!! git "ALPM"
@@ -226,7 +226,7 @@ Currently the following software components are available:
 [alpm-types]: https://github.com/archlinux/alpm/tree/main/alpm-types
 [archlinux-keyring]: https://gitlab.archlinux.org/archlinux/archlinux-keyring
 [components]: #components
-[contribution guidelines]: CONTRIBUTING.md
+[contribution guidelines]: ALPM-Contributing.md
 [main signing keys]: https://archlinux.org/master-keys/
 [milestones]: https://gitlab.archlinux.org/archlinux/alpm/alpm/-/milestones
 [official announcement]: https://lists.archlinux.org/archives/list/arch-dev-public@lists.archlinux.org/thread/MZLH43574GGP7QQ7RKAAIRFT5LJPCEB4/
@@ -245,4 +245,4 @@ Currently the following software components are available:
     </ins>
 </h4>
 
-[Go to: Contributing :fontawesome-solid-paper-plane:](CONTRIBUTING.md){ .md-button .md-button--custom }
+[Go to: Contributing :fontawesome-solid-paper-plane:](ALPM-Contributing.md){ .md-button .md-button--custom }
