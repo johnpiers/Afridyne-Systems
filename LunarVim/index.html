@@ -1057,6 +1057,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#extra-settingsconfigurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Settings/Configurations
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1531,6 +1542,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#extra-settingsconfigurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Settings/Configurations
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1703,6 +1725,61 @@ Always make your custom tweaks inside <code>~/.config/lvim/config.lua</code>.</p
 <p><a href="https://github.com/artempyanykh/marksman">Marksman LSP Manual</a> — Learn about the advanced Markdown link, reference, and header completions active in your workspace.</p>
 </li>
 </ul>
+</div>
+<h3 id="extra-settingsconfigurations">Extra Settings/Configurations<a class="headerlink" href="#extra-settingsconfigurations" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Linux built in conveniance</p>
+<p>There is a standard Linux desktop feature called <code>.desktop</code>. Once it is  (It's an application launcher), created, it can be dragged or pinned from one of your file app managers Like <code>ArcMenu</code> or from Gnome's <code>Apps</code> onto your GNOME taskbar/dock exactly like Chrome, Firefox, or any of those others that you want quick acess to.</p>
+</div>
+<div class="admonition education">
+<p class="admonition-title">How to create it</p>
+<p>Below, how to do it , step by step.</p>
+<p>Creating a Custom Desktop Launcher to streamline terminal access for <code>lvim</code> <a href="https://www.lunarvim.org/">LunarVim</a>. You can also checkout their <a href="https://github.com/lunarvim/lunarvim">GitHub</a> instance.</p>
+</div>
+<div class="admonition recommendation">
+<p class="admonition-title">Step 1 — create the launcher file itself:</p>
+<div class="admonition desc">
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nano <span class="p">~</span><span class="sr">/.local/</span>share<span class="sr">/applications/</span><span class="k">lvim</span><span class="p">-</span>afridyne.desktop
+</span></code></pre></div>
+</div>
+</div>
+<div class="admonition recommendation">
+<p class="admonition-title">Paste this content in:</p>
+<div class="admonition desc">
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[Desktop Entry]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">Name</span><span class="o">=</span><span class="s">LVim Afridyne</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">Comment</span><span class="o">=</span><span class="s">Open LunarVim in the Afridyne Systems project</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="na">Exec</span><span class="o">=</span><span class="s">tilix -e bash -c "cd /home/johnpc/AfridyneSystems &amp;&amp; lvim"</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="na">Icon</span><span class="o">=</span><span class="s">utilities-terminal</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="na">Terminal</span><span class="o">=</span><span class="s">false</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="na">Type</span><span class="o">=</span><span class="s">Application</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="na">Categories</span><span class="o">=</span><span class="s">Development</span><span class="c1">;</span>
+</span></code></pre></div>
+</div>
+<p>Save and exit (Ctrl+O, Enter, Ctrl+X).</p>
+</div>
+<div class="admonition recommendation">
+<p class="admonition-title">Step 2 — System need to recognise the application:</p>
+<p>One needs to make sure the system recognizes it as a proper application. (Sometimes needed for it to show up cleanly in search/menus):</p>
+<div class="admonition desc">
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">update</span><span class="p">-</span>desktop<span class="p">-</span>database <span class="p">~</span><span class="sr">/.local/</span>share<span class="sr">/applications/</span>
+</span></code></pre></div>
+</div>
+</div>
+<div class="admonition recommendation">
+<p class="admonition-title">Step 3 — Create the launcher file itself:</p>
+<ul>
+<li>
+<p>Now to find it and pin it. This short tutorial is for <code>Arch Linux</code> using <code>Gnome Shell</code>. The basic procedure is the same for most of the popular distros out there. It's pretty much the same and if you struggle, there are a host of AI clients out there!</p>
+</li>
+<li>
+<p>If you're on Gnome press the Super Key (Windows key) to open Activities/search, then (This is what I chose for my <a href="https://gnunn1.github.io/tilix-web/">Tilix</a> <a href="https://github.com/gnunn1/tilix">terminal.</a>) and  type:</p>
+</li>
+</ul>
+<div class="admonition desc">
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>LVim Afridyne
+</span></code></pre></div>
+</div>
 </div>
 
 

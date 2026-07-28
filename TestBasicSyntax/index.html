@@ -2260,6 +2260,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#renaming-a-md-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renaming a .md File
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4104,6 +4115,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#renaming-a-md-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renaming a .md File
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4659,7 +4681,6 @@ from the raw HTML block tags.</p>
 <td>Windows</td>
 <td>yes</td>
 <td>Sixel</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -7569,7 +7590,7 @@ S_{ph-e} = \frac{V_{ph-ph} \cdot I_{ph-ph}}{\sqrt3 }
 <tbody>
 <tr>
 <td>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-141-1"><a id="__codelineno-141-1" name="__codelineno-141-1" href="#__codelineno-141-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-150-1"><a id="__codelineno-150-1" name="__codelineno-150-1" href="#__codelineno-150-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span>
 </span></code></pre></div>
 </td>
 <td>
@@ -7714,11 +7735,11 @@ S_{ph-e} = \frac{V_{ph-ph} \cdot I_{ph-ph}}{\sqrt3 }
 </tr>
 <tr>
 <td>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-142-1"><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a><span class="mf">.1</span> <span class="o">+</span> <span class="mf">.2</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-151-1"><a id="__codelineno-151-1" name="__codelineno-151-1" href="#__codelineno-151-1"></a><span class="mf">.1</span> <span class="o">+</span> <span class="mf">.2</span>
 </span></code></pre></div>
 </td>
 <td>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-143-1"><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a><span class="mf">.1</span> <span class="o">+</span> <span class="mf">.2</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-152-1"><a id="__codelineno-152-1" name="__codelineno-152-1" href="#__codelineno-152-1"></a><span class="mf">.1</span> <span class="o">+</span> <span class="mf">.2</span>
 </span></code></pre></div>
 </td>
 </tr>
@@ -8814,6 +8835,72 @@ S_{ph-e} = \frac{V_{ph-ph} \cdot I_{ph-ph}}{\sqrt3 }
 </li>
 </ol>
 </div>
+<div class="admonition ex"></div>
+<h3 id="renaming-a-md-file">Renaming a .md File<a class="headerlink" href="#renaming-a-md-file" title="Permanent link">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">General Pattern Renaming a .md file</p>
+<p>This is the general pattern for any "rename a file safely" job: find → read → search for references → confirm real vs. false matches → rename → fix references → test locally → deploy.</p>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Step 1. Finding a .md File</p>
+<p>Find where a suspicious file actually lives</p>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-141-1"><a id="__codelineno-141-1" name="__codelineno-141-1" href="#__codelineno-141-1"></a>find <span class="sr">/home/</span>johnpc<span class="sr">/AfridyneSystems/</span>docs <span class="p">-</span>iname contributing.md
+</span></code></pre></div>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Step 2.</p>
+<p>See what's inside it, to understand what it actually is:</p>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-142-1"><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a><span class="k">cat</span> <span class="sr">/home/</span>johnpc<span class="sr">/AfridyneSystems/</span>docs/CONTRIBUTING.md
+</span></code></pre></div>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Step 3.</p>
+<p>Check if anything references it by name, anywhere in the site:</p>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-143-1"><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a><span class="k">grep</span> <span class="p">-</span>rln <span class="s2">"CONTRIBUTING.md"</span> <span class="sr">/home/</span>johnpc<span class="sr">/AfridyneSystems/</span>docs<span class="sr">/ /</span>home<span class="sr">/johnpc/</span>AfridyneSystems/mkdocs.yml
+</span></code></pre></div>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Step 4.</p>
+<p>Look at the exact lines matched, not just filenames — separates real links from unrelated mentions</p>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-144-1"><a id="__codelineno-144-1" name="__codelineno-144-1" href="#__codelineno-144-1"></a><span class="k">grep</span> <span class="p">-</span><span class="k">n</span> <span class="s2">"CONTRIBUTING.md"</span> <span class="sr">/home/</span>johnpc<span class="sr">/AfridyneSystems/</span>docs<span class="sr">/ALPM.md /</span>home<span class="sr">/johnpc/</span>AfridyneSystems/mkdocs.yml
+</span></code></pre></div>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Step 5.</p>
+<p>Rename the file itself:</p>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-145-1"><a id="__codelineno-145-1" name="__codelineno-145-1" href="#__codelineno-145-1"></a>mv <span class="s2">"/home/johnpc/AfridyneSystems/docs/CONTRIBUTING.md"</span> <span class="s2">"/home/johnpc/AfridyneSystems/docs/ALPM-Contributing.md"</span>
+</span></code></pre></div>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Step 6.</p>
+<p>Fix every real reference to match the new name:</p>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-146-1"><a id="__codelineno-146-1" name="__codelineno-146-1" href="#__codelineno-146-1"></a>sed <span class="p">-</span><span class="k">i</span> <span class="s1">'s/CONTRIBUTING\.md/ALPM-Contributing.md/g'</span> <span class="sr">/home/</span>johnpc<span class="sr">/AfridyneSystems/</span>docs/ALPM.md
+</span></code></pre></div>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Step 7.</p>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-147-1"><a id="__codelineno-147-1" name="__codelineno-147-1" href="#__codelineno-147-1"></a>sed <span class="p">-</span><span class="k">i</span> <span class="s1">'s/^  CONTRIBUTING.md$/  ALPM-Contributing.md/'</span> <span class="sr">/home/</span>johnpc<span class="sr">/AfridyneSystems/</span>mkdocs.yml
+</span></code></pre></div>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Step 8.</p>
+<div class="admonition abstract">
+<p>Verify locally before trusting it</p>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-148-1"><a id="__codelineno-148-1" name="__codelineno-148-1" href="#__codelineno-148-1"></a>mkdocs serve <span class="p">--</span>clean
+</span></code></pre></div>
+</div>
+<div class="admonition desc">
+<p>Then manually click through the affected link in the browser</p>
+</div>
+<div class="admonition desc">
+<p>Deploy for real, once confirmed clean</p>
+</div>
+<div class="admonition desc">
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-149-1"><a id="__codelineno-149-1" name="__codelineno-149-1" href="#__codelineno-149-1"></a><span class="k">cd</span> <span class="p">~</span><span class="sr">/Deploy &amp;&amp; ./</span>deploy.<span class="k">sh</span>
+</span></code></pre></div>
+</div>
+</div>
+<div class="admonition ex"></div>
 
 
 
