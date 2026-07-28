@@ -95,3 +95,62 @@ icon: material/alert-outline
     - [Marksman LSP Manual](https://github.com/artempyanykh/marksman) — Learn about the advanced Markdown link, reference, and header completions active in your workspace.
     
 
+### Extra Settings/Configurations
+
+!!! desc "Linux built in conveniance"
+
+    There is a standard Linux desktop feature called `.desktop`. Once it is  (It's an application launcher), created, it can be dragged or pinned from one of your file app managers Like `ArcMenu` or from Gnome's `Apps` onto your GNOME taskbar/dock exactly like Chrome, Firefox, or any of those others that you want quick acess to.
+    
+!!! education "How to create it"
+    Below, how to do it , step by step.
+    
+    Creating a Custom Desktop Launcher to streamline terminal access for `lvim` [LunarVim](https://www.lunarvim.org/). You can also checkout their [GitHub](https://github.com/lunarvim/lunarvim) instance.
+    
+
+!!! recommendation "Step 1 — create the launcher file itself:"
+
+    !!!desc ""
+    
+        ```vim
+        nano ~/.local/share/applications/lvim-afridyne.desktop
+        ```
+        
+!!! recommendation "Paste this content in:"
+
+    !!!desc ""
+    
+        ```ini
+        [Desktop Entry]
+        Name=LVim Afridyne
+        Comment=Open LunarVim in the Afridyne Systems project
+        Exec=tilix -e bash -c "cd /home/johnpc/AfridyneSystems && lvim"
+        Icon=utilities-terminal
+        Terminal=false
+        Type=Application
+        Categories=Development;
+        ```
+    
+    Save and exit (Ctrl+O, Enter, Ctrl+X).
+    
+!!! recommendation "Step 2 — System need to recognise the application:"
+
+    One needs to make sure the system recognizes it as a proper application. (Sometimes needed for it to show up cleanly in search/menus):
+    
+    !!!desc ""
+    
+        ```vim
+        update-desktop-database ~/.local/share/applications/
+        ```
+    
+!!! recommendation "Step 3 — Create the launcher file itself:"
+    
+    - Now to find it and pin it. This short tutorial is for `Arch Linux` using `Gnome Shell`. The basic procedure is the same for most of the popular distros out there. It's pretty much the same and if you struggle, there are a host of AI clients out there!
+    
+    - If you're on Gnome press the Super Key (Windows key) to open Activities/search, then (This is what I chose for my [Tilix](https://gnunn1.github.io/tilix-web/) [terminal.](https://github.com/gnunn1/tilix)) and  type:
+    
+    !!! desc ""
+    
+        ```vim
+        LVim Afridyne
+        ```
+        

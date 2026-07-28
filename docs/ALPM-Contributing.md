@@ -11,7 +11,7 @@ icon: material/arch
     
     Development takes place at [Archlinux alpm](https://gitlab.archlinux.org/archlinux/alpm/alpm).
     
-[Back to: ALPM  :fontawesome-solid-paper-plane:](ALPM.md){ .md-button .md-button--custom }}
+[Back to: ALPM  :fontawesome-solid-paper-plane:](ALPM.md){ .md-button .md-button--custom }
 
 ## Writing Code
 

@@ -1104,4 +1104,30 @@ You can edit the zram-generator default configuration in `/etc/systemd/zram-gene
     - Gum by charm
     
 
-\[ y(0,t) = -a \sin(\omega t) \]
+!!! education "Et cetera"
+
+    The equation $\color{#FF5733}{\mathbf{y(0,t)}} = \color{#33FF57}{-a} \color{#3357FF}{\sin(} \color{#F39C12}{\omega} \color{#8E44AD}{t} \color{#3357FF}{)}$ defines a sinusoidal boundary condition or displacement at the spatial origin ($x = 0$) over time ($\color{#8E44AD}{\mathbf{t}}$), featuring an amplitude $\color{#33FF57}{\mathbf{a}}$, a negative sign indicating a phase inversion, and an angular frequency $\color{#F39C12}{\mathbf{\omega}}$.
+    
+    ---
+    
+    \[ \color{#FF5733}{y(0,t)} = \color{#33FF57}{-a} \color{#3357FF}{\sin(} \color{#F39C12}{\omega} \color{#8E44AD}{t} \color{#3357FF}{)} \]
+
+    ---
+
+    ### Parameter Breakdown
+    * **$\color{#FF5733}{\mathbf{y(0,t)}}$**: Transverse displacement at the spatial origin.
+    * **$\color{#33FF57}{\mathbf{-a}}$**: Inverted peak amplitude starting downward.
+    * **$\color{#3357FF}{\mathbf{\sin}}$**: The harmonic oscillation function.
+    * **$\color{#F39C12}{\mathbf{\omega}}$**: Angular frequency ($\color{#F39C12}{\mathbf{\omega}} = 2\pi f$).
+    * **$\color{#8E44AD}{\mathbf{t}}$**: Time elapsed during the cycle.
+
+
+!!! education "Et cetera"
+
+    The equation \(y(0,t) = -a \sin(\omega t)\) defines a sinusoidal boundary condition or displacement at the spatial origin (\(x = 0\)) over time (\(t\)), featuring an amplitude \(a\), a negative sign indicating a phase inversion, and an angular frequency \(\omega \).
+    
+    ---
+    
+    \[ y(0,t) = -a \sin(\omega t) \]
+    
+

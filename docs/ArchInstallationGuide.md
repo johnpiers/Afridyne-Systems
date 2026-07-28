@@ -442,30 +442,44 @@ I will make 2 partitions:
 
 !!! tip "Set Up The Language and tty Keyboard Map"
 
-    Edit `/etc/locale.gen` and uncomment the entries for your locales. Each entry represent a language and its formats for time, date, currency and other country related settings. By uncommenting we will mark the entry to be generated when the generate command will be issued, but note that it won't still be active. In my case I will uncomment ( ie: remove the # ) `en_US.UTF-8 UTF-8` and `it_IT.UTF-8 UTF-8` because I use English as a display language and Italian for date, time and other formats.
+    - Edit `/etc/locale.gen` and uncomment the entries for your locales.
+    - Each entry represent a language and its formats for time, date, currency and other country related settings.
+    - By uncommenting we will mark the entry to be generated when the generate command will be issued, but note that it won't still be active.
+    - In my case I will uncomment ( ie: remove the # ) `en_US.UTF-8 UTF-8` and `it_IT.UTF-8 UTF-8` because I use English as a display language and Italian for date, time and other formats.
     
-    ```Zsh
     To edit I will use vim, feel free to use nano instead.
+    
+    ```vim
     vim /etc/locale.gen
+    ```
     
     Now issue the generation of the locales
+    
+    ```vim
     locale-gen
     ```
     
     ---
     
-    Since the locale is generated but still not active, we will create the configuration file `/etc/locale.conf` and set the locale to the desired one, by setting the `LANG` variable accordingly. In my case I'll write `LANG=it_IT.UTF-8` to apply Italian settings to everything and then override only the display language to English by setting (on a new line) `LC_MESSAGES=en_US.UTF-8`. (if you want formats and language to stay the same **DON'T** set `LC_MESSAGES`). More on this [here](https://wiki.archlinux.org/title/Locale#Variables)
+    - Since the locale is generated but still not active, we will create the configuration file `/etc/locale.conf` and set the locale to the desired one, by setting the `LANG` variable accordingly.
     
-    ```Zsh
+    - In my case I'll write `LANG=it_IT.UTF-8` to apply Italian settings to everything and then override only the display language to English by setting (on a new line) `LC_MESSAGES=en_US.UTF-8`. (if you want formats and language to stay the same **DON'T** set `LC_MESSAGES`).
+    
+    - More on this [here](https://wiki.archlinux.org/title/Locale#Variables)
+    
+    ```vim
     touch /etc/locale.conf
+    ```
+    
+    ```vim
     vim /etc/locale.conf
     ```
     
     ---
     
-    Now to make the current keyboard layout permanent for tty sessions , create `/etc/vconsole.conf` and write `KEYMAP=your_key_map` substituting the keymap with the one previously set [here](#preliminary-steps). In my case `KEYMAP=it`
+    - Now to make the current keyboard layout permanent for tty sessions , create `/etc/vconsole.conf` and write `KEYMAP=your_key_map` substituting the keymap with the one previously set [here](#preliminary-steps). In my case `KEYMAP=it`
     
-    ```Zsh
+    ```vim
     vim /etc/vconsole.conf
     ```
     
@@ -473,12 +487,19 @@ I will make 2 partitions:
 
 !!! example "Hostname and Host Configuration"
 
-    ```Zsh
     Create /etc/hostname then choose and write the name of your pc in the first line. In my case I'll use Arch.
+    
+    ```vim
     touch /etc/hostname
+    ```
+    
+    ```vim
     vim /etc/hostname
+    ```
     
     Create the /etc/hosts file. This is very important because it will resolve the listed hostnames locally and not over Internet DNS.
+    
+    ```vim
     touch /etc/hosts
     ```
     
@@ -486,7 +507,8 @@ I will make 2 partitions:
     
     Write the following ip, hostname pairs inside /etc/hosts, replacing `Arch` with **YOUR** hostname:
     
-    ```
+    
+    ```vim
     127.0.0.1 localhost
     ::1 localhost
     127.0.1.1 Arch
@@ -494,8 +516,9 @@ I will make 2 partitions:
     
     ---
     
-    ```Zsh
-    Edit the file with the information above
+    Edit the file with the information above: ↑
+    
+    ```vim
     vim /etc/hosts
     ```
     
@@ -503,26 +526,31 @@ I will make 2 partitions:
 
 !!! quote "Root and Users"
 
-    ```Zsh
     Set up the root password
+    
+    ```vim
     passwd
+    ```
     
     Add a new user, in my case mjkstra.
-    -m creates the home dir automatically
-    -G adds the user to an initial list of groups, in this case wheel, the administration group. If you are on a Virtualbox VM and would like to enable shared folders between host and guest machine, then also add the group vboxsf besides wheel.
-    ```
+    
+    - m creates the home dir automatically
+    
+    - G adds the user to an initial list of groups, in this case wheel, the administration group. If you are on a Virtualbox VM and would like to enable shared folders between host and guest machine, then also add the group vboxsf besides wheel.
+    
+    ---
     
     **useradd -mG wheel mjkstra**
     **passwd mjkstra**
     
-    ```Zsh
-    The command below is a one line command that will open the /etc/sudoers file with your favourite editor.
-    You can choose a different editor than vim by changing the EDITOR variable
-    Once opened, you have to look for a line which says something like "Uncomment to let members of group wheel execute any action"
-    And uncomment exactly the line BELOW it, by removing the #. This will grant superuser priviledges to your user.
-    Why are we issuing this command instead of a simple vim /etc/sudoers ?
-    Because visudo does more than opening the editor, for example it locks the file from being edited simultaneously and
-    runs syntax checks to avoid committing an unreadable file.
+    - The command below is a one line command that will open the /etc/sudoers file with your favourite editor.
+    - You can choose a different editor than vim by changing the EDITOR variable.
+    - Once opened, you have to look for a line which says something like "Uncomment to let members of group wheel execute any action"
+    - And uncomment exactly the line BELOW it, by removing the #. This will grant superuser priviledges to your user.
+    - Why are we issuing this command instead of a simple vim /etc/sudoers ?
+    - Because visudo does more than opening the editor, for example it locks the file from being edited simultaneously and runs syntax checks to avoid committing an unreadable file.
+    
+    ```bash
     EDITOR=vim visudo
     ```
     
@@ -545,41 +573,54 @@ I will make 2 partitions:
     grub-mkconfig -o /boot/grub/grub.cfg
     ```
     
-## Unmount Everything and Reboot
+### Unmount Everything and Reboot
 
 !!! info "Unmount Everything and Reboot"
 
-    ```Zsh
-    Enable newtork manager before rebooting otherwise, you won't be able to connect
-    systemctl enable NetworkManager
+    - Enable newtork manager before rebooting otherwise, you won't be able to connect systemctl enable NetworkManager.
     
-    Exit from chroot
+    - Exit from chroot
+    
+    ```vim
     exit
+    ```
     
-    Unmount everything to check if the drive is busy
+    - Unmount everything to check if the drive is busy:
+    
+    ```vim
     umount -R /mnt
+    ```
     
-    Reboot the system and unplug the installation media
+    Reboot the system and unplug the installation media:
+    
+    ```vim
     reboot
+    ```
     
-    Now you'll be presented at the terminal. Log in with your user account, for me its "mjkstra".
+    - Now you'll be presented at the terminal. Log in with your user account, for me its "mjkstra".
     
-    Enable and start the time synchronization service
+    - Enable and start the time synchronization service:
+    
+    ```vim
     timedatectl set-ntp true
     ```
     
-## Automatic Snapshot Boot Entries Update  
+### Automatic Snapshot Boot Entries Update  
 
 !!! example "Automatic Snapshot Boot Entries Update"
 
-    Each time a system snapshot is taken with timeshift, it will be available for boot in the bootloader, however you need to manually regenerate the grub configuration, this can be avoided thanks to `grub-btrfs`, which can automatically update the grub boot entries.
+    - Each time a system snapshot is taken with timeshift, it will be available for boot in the bootloader, however you need to manually regenerate the grub configuration, this can be avoided thanks to **`grub-btrfs`**, which can automatically update the grub boot entries.
     
-    Edit the **`grub-btrfsd`** service and because I will rely on timeshift for snapshotting, I am going to replace `ExecStart=...` with `ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto`. If you don't use timeshift or prefer to manually update the entries then lookup [here](https://github.com/Antynea/grub-btrfs)
+    - Edit the **`grub-btrfsd`** service and because I will rely on timeshift for snapshotting, I am going to replace **`ExecStart=...`** with **`ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto`**. If you don't use timeshift or prefer to manually update the entries then lookup [here](https://github.com/Antynea/grub-btrfs)
     
-    ```Zsh
+    
+    ```vim
     sudo systemctl edit --full grub-btrfsd
+    ```
     
-    Enable grub-btrfsd service to run on boot
+    Enable grub-btrfsd service to run on boot:
+    
+    ```vim
     sudo systemctl enable grub-btrfsd
     ```
     
@@ -587,24 +628,28 @@ I will make 2 partitions:
 
 !!! warning "Virtualbox Support"
 
-    Follow these steps if you are running Arch on a Virtualbox VM.
-    This will enable features such as **clipboard sharing**, **shared folders** and **screen resolution tweaks**
+    - Follow these steps if you are running Arch on a Virtualbox VM.
+    - This will enable features such as **clipboard sharing**, **shared folders** and **screen resolution tweaks**
     
-    ```zsh
-    # Install the guest utils
+    **`Install the guest utils:`**
+    
+    ```vim
     sudo pacman -S virtualbox-guest-utils
+    ```
     
-    # Enable this service to automatically load the kernel modules
+    **`Enable this service to automatically load the kernel modules:`**
+    
+    ```vim
     sudo systemctl enable --now vboxservice.service
     ```
     
-    !!! note ""
+    !!! abstract ""
         The utils will only work after a reboot is performed.
-            
-    !!! warning ""
+        
+    !!! important ""
         The utils seem to only work in a graphical environment.
-
-## Aur Helper and Additional Packages Installation  
+        
+### Aur Helper and Additional Packages Installation  
 
 !!! info "Aur Helper and Additional Packages Installation"
 
@@ -617,76 +662,79 @@ I will make 2 partitions:
     !!! abstract "NOTE!"
         You can't execute makepkg as root, so you need to log in your main account. For me it's mjkstra.
         
-        ```Zsh
         Install yay
+        
+        ```vim
         sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd
         yay && makepkg -si
-        
-        Install "timeshift-autosnap", a configurable pacman hook which automatically makes snapshots before pacman upgrades.
-        yay -S timeshift-autosnap
         ```
         
-    Learn more about timeshift autosnap [here](https://gitlab.com/gobonja/timeshift-autosnap)
+        Install "timeshift-autosnap", a configurable pacman hook which automatically makes snapshots before pacman upgrades.
+        
+        ```vim
+        yay -S timeshift-autosnap
+        ```
     
-
-## Finalization
+    Learn more about timeshift autosnap [here:](https://gitlab.com/gobonja/timeshift-autosnap)
+    
+### Finalization
 
 !!! example "Finalization"
 
-    ```Zsh
     To complete the main/basic installation reboot the system:
+    
+    ```vim
     reboot
     ```
     
-    > After these steps you **should** be able to boot on your newly installed Arch Linux, if so congrats!
+    !!! decision "Boot to new system"
     
-    > The basic installation is complete and you could stop here, but if you want to to have a graphical session, you can continue reading the guide.
-    
-## Video Drivers
+        - After these steps you **should** be able to boot on your newly installed Arch Linux, if so congrats!
+        
+        - The basic installation is complete and you could stop here, but if you want to to have a graphical session, you can continue reading the guide.
+        
+### Video Drivers
 
 !!! example "Video Drivers"
 
-    In order to have the smoothest experience on a graphical environment, **Gaming included**, we first need to install video drivers. To help you choose which one you want or need, read [this section](https://wiki.archlinux.org/title/Xorg#Driver_installation) of the arch wiki.
+    - In order to have the smoothest experience on a graphical environment, **Gaming included**, we first need to install video drivers.
+    - To help you choose which one you want or need, read [this section](https://wiki.archlinux.org/title/Xorg#Driver_installation) of the arch wiki.
     
-    > Note: skip this section if you are on a Virtual Machine
+    - Note: skip this section if you are on a Virtual Machine:
     
-## Amd  
+### Amd  
 
 !!! example "AMD"
 
-    For this guide I'll install the [**AMDGPU** driver](https://wiki.archlinux.org/title/AMDGPU) which is the open source one and the recommended, but be aware that this works starting from the **GCN 3** architecture, which means that cards **before** RX 400 series are not supported. (I have an RX 5700 XT)
-    
-    ```Zsh
+    - For this guide I'll install the [**AMDGPU** driver](https://wiki.archlinux.org/title/AMDGPU) which is the open source one and the recommended, but be aware that this works starting from the **GCN 3** architecture, which means that cards **before** RX 400 series are not supported. (I have an RX 5700 XT)
     
     What are we installing?
-    mesa: DRI driver for 3D acceleration.
-    xf86-video-amdgpu: DDX driver for 2D acceleration in Xorg. I won't install
-    this, because I prefer the default kernel modesetting driver.
-    vulkan-radeon: vulkan support.
-    libva-mesa-driver: VA-API h/w video decoding support.
-    mesa-vdpau: VDPAU h/w accelerated video decoding support.
     
+    - mesa: DRI driver for 3D acceleration.
+    - xf86-video-amdgpu: DDX driver for 2D acceleration in Xorg.
+    - I won't install this, because I prefer the default kernel modesetting driver.
+    - vulkan-radeon: vulkan support.
+    - libva-mesa-driver: VA-API h/w video decoding support.
+    - mesa-vdpau: VDPAU h/w accelerated video decoding support
+    
+    ```vim
     sudo pacman -S mesa vulkan-radeon libva-mesa-driver mesa-vdpau
     ```
     
 ### 32 Bit Support
 
-!!! danger "32 Bit Support"
+!!! important "32 Bit Support"
 
-    If you want to add **32-bit** support, we need to enable the `multilib` repository on pacman: edit `/etc/pacman.conf` and uncomment the `[multilib]` section  (ie: remove the hashtag from each line of the section. Should be 2 lines). Now we can install the additional packages.
+    - If you want to add **32-bit** support, we need to enable the `multilib` repository on pacman: edit `/etc/pacman.conf` and uncomment the `[multilib]` section  (ie: remove the hashtag from each line of the section. Should be 2 lines). Now we can install the additional packages.
     
-    ```Zsh
-    Refresh and upgrade the system
-    yay
+    - Refresh and upgrade the system:
+    - Install 32bit support for **`mesa, vulkan, VA-API and VDPAU`**
     
-    Install 32bit support for mesa, vulkan, VA-API and VDPAU
-    ```
-    
-    ```Zsh
+    ```vim
     sudo pacman -S lib32-mesa lib32-vulkan-radeon lib32-libva-mesa-driver lib32-mesa-vdpau
     ```
     
-## Nvidia  
+### Nvidia  
 
 !!! warning "Nvidia"
 
@@ -697,21 +745,22 @@ I will make 2 partitions:
     
     The recommended is the proprietary one, however I won't explain further because I don't have an Nvidia card and the process for such cards is tricky unlike for AMD or Intel cards. Moreover for reason said before, I can't even test it.
     
-## Intel
+### Intel
 
 !!! tip "Intel"
 
-    Installation looks almost identical to the AMD one, but every time a package contains the `radeon` word substitute it with `intel`. However this does not stand for [h/w accelerated decoding](https://wiki.archlinux.org/title/Hardware_video_acceleration), and to be fair I would recommend reading [the wiki](https://wiki.archlinux.org/title/Intel_graphics#Installation) before doing anything.
+    - Installation looks almost identical to the AMD one, but every time a package contains the `radeon` word substitute it with `intel`.
+    -  However this does not stand for [h/w accelerated decoding](https://wiki.archlinux.org/title/Hardware_video_acceleration), and to be fair I would recommend reading [the wiki](https://wiki.archlinux.org/title/Intel_graphics#Installation) before doing anything.
     
-## Setting Up a Graphical Environment
+### Setting Up a Graphical Environment
 
 !!! pied-piper "Setting Up a Graphical Environment"
 
     I'll provide 2 options and a partial one for Gnome with an Arch wiki link.
     
-    1. **KDE-plasma**
-    2. **Hyprland**
-    3. **Gnome**
+    1. [**KDE-plasma**](https://wiki.archlinux.org/title/KDE)
+    2. [**Hyprland**](https://wiki.archlinux.org/title/Hyprland)
+    3. [**Gnome**](https://wiki.archlinux.org/title/GNOME)
     
     ---
     
@@ -729,80 +778,145 @@ I will make 2 partitions:
     
     - [Archlinux Wiki for GNOME desktop environment.](https://wiki.archlinux.org/title/GNOME)
     
-## Option 1: KDE-plasma
+### Option 1: KDE-plasma
 
 ??? tip "Option 1: KDE-plasma"
 
-    **KDE Plasma** is a very popular DE which comes bundled in many distributions. It supports both the older **Xorg** and the newer **Wayland** protocols. It's **user friendly**, **light** and it's also used on the Steam Deck, which makes it great for **gaming**. I'll provide the steps for a minimal installation and add some basic packages.
+    **KDE Plasma** is a very popular DE which comes bundled in many distributions. It supports both the older [**Xorg**](https://www.x.org/) and the newer [**Wayland**](https://wayland.freedesktop.org/) protocols. It's **user friendly**, **light** and it's also used on the [Steam Deck™](https://store.steampowered.com/steamdeck), which makes it great for **gaming**. I'll provide the steps for a minimal installation and add some basic packages.
     
-    ```Zsh
-    plasma-desktop: the barebones plasma environment.
-    plasma-pa: the KDE audio applet.
-    plasma-nm: the KDE network applet.
-    plasma-systemmonitor: the KDE task manager.
-    plasma-firewall: the KDE firewall.
-    plasma-browser-integration: cool stuff, it lets you manage things from your browser like media
-    currently played via the plasma environment. Make sure to install the related extension on
-    firefox (you will be prompted automatically upon boot).
-    kscreen: the KDE display configurator.
-    kwalletmanager: Manage secure vaults (Needed to store the passwords of local applications in an
-    encrypted format). This also installs kwallet as a dependency, so I don't need to specify it.
-    kwallet-pam: automatically unlocks secure vault upon login (without this, each time the wallet
-    gets queried it asks for your password to unlock it).
-    bluedevil: the KDE bluetooth manager.
-    powerdevil: the KDE power manager.
-    power-profiles-daemon: adds 3 power profiles selectable from powerdevil ( power saving, balanced, performance ). Make sure that its service is enabled and running (it should be).
-    kdeplasma-addons: some useful addons.
-    xdg-desktop-portal-kde: Integrates the plasma desktop in various windows like file pickers.
-    xwaylandvideobridge: exposes Wayland windows to XWayland-using screen sharing apps (useful when
-    screen sharing on discord, but also in other instances).
-    kde-gtk-config: the native settings integration to manage GTK theming.
-    breeze-gtk: the breeze GTK theme.
-    cups, print-manager: the CUPS print service and the KDE front-end.
-    konsole: the KDE terminal.
-    dolphin: the KDE file manager.
-    ffmpegthumbs: video thumbnailer for dolphin.
-    firefox: the web browser.
-    kate: the KDE text editor.
-    okular: the KDE pdf viewer.
-    gwenview: the KDE image viewer.
-    ark: the KDE archive manager.
-    pinta: a paint.net clone written in GTK.
-    spectacle: the KDE screenshot tool.
-    dragon: a simple KDE media player. A more advanced alternative based on libmpv is Haruna.
+    ```vim {.no-copy }
+    01. plasma-desktop: the barebones plasma environment.
+    
+    02. plasma-pa: the KDE audio applet.
+    
+    03. plasma-nm: the KDE network applet.
+    
+    04. plasma-systemmonitor: the KDE task manager.
+    
+    05. plasma-firewall: the KDE firewall.
+    
+    06. plasma-browser-integration: cool stuff, it lets you manage things from your browser like media
+        currently played via the plasma environment. Make sure to install the related extension on
+        firefox (you will be prompted automatically upon boot).
+    
+    07. kscreen: the KDE display configurator.
+    
+    08. kwalletmanager: Manage secure vaults (Needed to store the passwords of local applications
+        in an encrypted format). This also installs kwallet as a dependency, so I don't need to specify
+        it.
+    
+    09. kwallet-pam: automatically unlocks secure vault upon login (without this, each time the wallet
+        gets queried it asks for your password to unlock it).
+    
+    10. bluedevil: the KDE bluetooth manager.
+    
+    11. powerdevil: the KDE power manager.
+    
+    12. power-profiles-daemon: adds 3 power profiles selectable from powerdevil
+        (power saving, balanced, performance).
+        
+    13. Make sure that its service is enabled and running (it should be).
+    
+    14. kdeplasma-addons: some useful addons.
+        xdg-desktop-portal-kde: Integrates the plasma desktop in various windows like file pickers.
+        xwaylandvideobridge: exposes Wayland windows to XWayland-using screen sharing apps
+        (useful when screen sharing on discord, but also in other instances).
+    
+    15. kde-gtk-config: the native settings integration to manage GTK theming.
+    
+    16. breeze-gtk: the breeze GTK theme.
+    
+    17. cups, print-manager: the CUPS print service and the KDE front-end.
+    
+    18. konsole: the KDE terminal.
+    
+    19. dolphin: the KDE file manager.
+    
+    20. ffmpegthumbs: video thumbnailer for dolphin.
+    
+    21. Firefox: the web browser.
+    
+    22. kate: the KDE text editor.
+    
+    23. okular: the KDE pdf viewer.
+    
+    24. gwenview: the KDE image viewer.
+    
+    25. ark: the KDE archive manager.
+    
+    26. pinta: a paint.net clone written in GTK.
+    
+    27. spectacle: the KDE screenshot tool.
+    
+    28. dragon: a simple KDE media player. A more advanced alternative based on libmpv is Haruna.
     ```
     
-    ```Zsh
-    sudo pacman -S plasma-desktop plasma-pa plasma-nm plasma-systemmonitor plasma-firewall plasma-browser-integration kscreen kwalletmanager kwallet-pam bluedevil powerdevil power-profiles-daemon kdeplasma-addons xdg-desktop-portal-kde xwaylandvideobridge kde-gtk-config breeze-gtk cups print-manager konsole dolphin ffmpegthumbs firefox kate okular gwenview ark pinta spectacle dragon
+    ---
+    
+    - ***I have broken up the pacman installation instructions for the sake of brevity and so that you can see what's going on, an all in one string and it goes off the page!***
+    
+    ```vim
+    sudo pacman -S plasma-desktop plasma-pa plasma-nm plasma-systemmonitor plasma-firewall
     ```
     
-    Now don't reboot your system yet. If you want a display manager, which is generally recommended, head to the [related section](#adding-a-display-manager) in this guide and proceed from there otherwise you'll have to [manually configure](https://wiki.archlinux.org/title/KDE#From_the_console) and launch the graphical environment each time, which I would advise to avoid.
+    ```vim
+    sudo pacman - S plasma-browser-integration kscreen kwalletmanager kwallet-pam bluedevil
+    ```
     
+    ```vim
+    sudo pacman -S power-profiles-daemon kdeplasma-addons xdg-desktop-portal-kde kate
+    ```
+    
+    ```vim
+    sudo pacman -S kde-gtk-config breeze-gtk cups print-manager konsole dolphin ffmpegthumbs firefox 
+    ```
+    
+    ```vim
+    sudo pacman -S okular gwenview ark pinta spectacle dragon powerdevil xwaylandvideobridge
+    ```
+    
+    - ***Now don't reboot your system yet. If you want a display manager, which is generally recommended, head to the [related section](#adding-a-display-manager) in this guide and proceed from there otherwise you'll have to [manually configure](https://wiki.archlinux.org/title/KDE#From_the_console) and launch the graphical environment each time, which I would advise to avoid.***
+    
+### Option 2: Hyprland [[WIP]](https://github.com/hyprland-community/_hyprtheme-theme-wip)  
 
-### Option 2: Hyprland [WIP]  
-
-!!! tip "Option 2: Hyprland [WIP]"
+!!! tip "Hyprland [[WIP]](https://github.com/hyprland-community/_hyprtheme-theme-wip)"
 
     !!! abstract "Note!"
     
         Note: this section needs configuration and is basically empty, I don't know when and if I will expand it but at least you have a starting point.
         
-    **Hyprland** is a **tiling WM** that sticks to the wayland protocol. It looks incredible and it's one of the best Wayland WMs right now. It's based on **wlroots** the famous library used by Sway, the most mature Wayland WM there is. I don't know if I would recommend this to beginners because it's a totally different experience and it may not be better. Moreover it requires you to read the [wiki](https://wiki.hyprland.org/) for configuration but it also features a [master tutorial](https://wiki.hyprland.org/Getting-Started/Master-Tutorial). The good part is that even if it seems discouraging, it's actually an easy read because it is written beautifully.
+    - **Hyprland** is a **tiling WM** that sticks to the wayland protocol. It looks incredible and it's one of the best Wayland WMs right now.
+    - It's based on **wlroots** the famous library used by Sway, the most mature Wayland WM there is. I don't know if I would recommend this to beginners because it's a totally different experience and it may not be better.
+    - Moreover it requires you to read the [wiki](https://wiki.hyprland.org/) for configuration but it also features a [master tutorial](https://wiki.hyprland.org/Getting-Started/Master-Tutorial).
+    - The good part is that even if it seems discouraging, it's actually an easy read because it is written beautifully.
     
-    ```Zsh
-    Install hyprland from tagged releases and other utils:
-    swaylock: the lockscreen
-    wofi: the wayland version of rofi, an application launcher, extremely configurable
-    waybar: a status bar for wayland wm's
-    dolphin: a powerful file manager from KDE applications
-    alacritty: a beautiful and minimal terminal application, super configurable
-    pacman -S --needed hyprland swaylock wofi waybar dolphin alacritty
-    wlogout: a logout/shutdown menu
+    ---
     
-    yay -S wlogout
+    - **`Install hyprland from tagged releases and other utils:`**
+    
+    ```vim {.no-copy }
+    - swaylock: the lockscreen
+    - wofi: the wayland version of rofi, an application launcher, extremely configurable
+    - waybar: a status bar for wayland wm's
+    - dolphin: a powerful file manager from KDE applications
+    - alacritty: a beautiful and minimal terminal application, super configurable
     ```
     
-## Adding a Display Manager
+    !!! desc ""
+    
+        ```vim
+        sudo pacman -S --needed hyprland swaylock wofi waybar dolphin alacritty
+        ```
+        
+    - **`wlogout: a logout/shutdown menu:`**
+    
+    !!! desc ""
+    
+        ```vim
+        yay -S wlogout
+        ```
+        
+### Adding a Display Manager
 
 !!! tip "Adding a Display Manager"
 
@@ -836,7 +950,7 @@ I will make 2 partitions:
     reboot
     ```
     
-## Gaming
+### Gaming
 
 !!! tip "Gaming"
 
@@ -859,7 +973,7 @@ I will make 2 partitions:
     2. **Overclocking and monitoring software** (eg: CoreCtrl, Mangohud)
     3. **Custom kernels**
     
-## Gaming Clients
+### Gaming Clients
 
 !!! tip "Gaming Clients"
 
@@ -867,13 +981,13 @@ I will make 2 partitions:
     
     Install steam and flatpak:
     
-    ```Zsh
+    ```vim
     sudo pacman -S steam flatpak
     ```
     
     Install bottles through flatpak"
     
-    ```Zsh
+    ```vim
     flatpak install flathub com.usebottles.bottles
     ```
     
@@ -887,7 +1001,7 @@ I will make 2 partitions:
     
     Installation through yay: (AUR Helper)
     
-    ```Zsh
+    ```vim
     yay -S proton-ge-custom-bin
     ```
     
@@ -902,7 +1016,7 @@ I will make 2 partitions:
         
     Install gamemode:
     
-    ```Zsh
+    ```vim
     sudo pacman -S gamemode
     ```
     
@@ -919,7 +1033,7 @@ I will make 2 partitions:
     Install goverlay which includes mangohud as a dependency:
     
     
-    ```Zsh
+    ```vim
     sudo pacman -S goverlay
     ```
     
@@ -927,7 +1041,7 @@ I will make 2 partitions:
     
     To overclock your system, I would suggest installing [**corectrl**](https://gitlab.com/corectrl/corectrl) if you have an AMD Gpu or [**TuxClocker**](https://github.com/Lurkki14/tuxclocker) for NVIDIA.
     
-## Additional Notes
+### Additional Notes
 
 ??? abstract "Additional Notes - Click to open and read."
 

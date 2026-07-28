@@ -23,17 +23,8 @@ icon: material/arch
 
 <p><img src="https://github.com/murkl/arch-os/raw/main/docs/screenshots/installer.png"></p>
 
-<p><b>
-
 <b><a about="_blank" href="https://github.com/murkl/arch-os/blob/main/docs/DOCS.md">➜ More Screenshots</a></b>
 
-</b></p>
-<div class="admonition example"> 
-  <p class="admonition-title">Optimised for Gaming, Emulation, Audio & Development</p> 
-  <p style="text-align: justify;"> 
-    This project aims to provide a mostly automated, minimal and robust Arch Linux base (minimal tty core or desktop), along with an easy-to-use and fast properties-file-based installer with error handling. Install a minimal Arch Linux core with optional features such as GNOME Desktop with Graphics Driver, Automatic Housekeeping, Zen Kernel, Fancy Shell Enhancement, pre-installed Paru as AUR Helper, enabled MultiLib, Bootsplash, System Manager and some more...
-  </p>
-</div>
 <h2 style="text-align:center;">More Information</h2>
 
 <p>
@@ -51,57 +42,261 @@ icon: material/arch
 
 </div>
 
-## Core Features
+!!! ex "Optimised for Gaming, Emulation, Audio & Development"
 
-- [Minimal Arch Linux](DOCS.md#minimal-installation) (~150 packages)
-- [Zen Kernel](DOCS.md#advanced-installation) (configurable)
-- [Swap](DOCS.md#swap) with zram-generator (zstd)
-- [Sole OS](DOCS.md#partitions-layout)
-- BTRFS Snapshot Support (Snapper, OverlayFS)
-- All-in-One password (encryption, root & user)
-- Multilingual Support
-- Filesystem btrfs or ext4
-- Bootloader: grub or systemd (auto updated)
-- Silent Boot (optional)
-- Systemd OOM (out-of-memory killer)
-- Pacman parallel downloads & eyecandy (optional)
-- Network Manager
-- SSD Support (fstrim)
-- Microcode Support (Intel & AMD)
-- Disabled Watchdog (optional)
-- UEFI only supported
-- [More Information...](DOCS.md#technical-information)
+    - This project aims to provide a mostly automated, minimal and robust Arch Linux base (minimal tty core or desktop), along with an easy-to-use and fast properties-file-based installer with error handling. 
+    
+    - Install a minimal Arch Linux core with optional features such as GNOME Desktop with Graphics Driver, Automatic Housekeeping, Zen Kernel, Fancy Shell Enhancement, pre-installed Paru as AUR Helper, enabled MultiLib, Bootsplash, System Manager and some more...
+    
+### Core Features
 
-## Desktop Features
+<div class="grid cards cols-3" markdown>
 
-- [GNOME Desktop Environment](DOCS.md#recommendation) (optional with additional packages)
-- [Arch OS Slim Version](DOCS.md#example-installerconf) (GNOME Core Apps only)
-- [Graphics Driver](DOCS.md#install-graphics-driver-manually) (Mesa, Intel i915, NVIDIA, AMD, ATI)
-- [Pipewire Audio](DOCS.md#for-audiophiles) (Dolby Atmos supported)
-- Flatpak Support + Auto Update (GNOME Software)
-- Samba, Networking Protocol Libs, Git, Utils & Codecs included
-- GNOME Power Profiles Support (tuned-ppd)
-- VPN Support
-- Basic Fonts
-- Wayland optimized
-- Auto GNOME Login enabled
-- Printer Support (cups)
-- SSH Agent (gcr)
-- Gamemode preinstalled
-- No Xorg included
+-   <span style="color: #2094f3">:material-thumb-up:</span> **Minimal Arch Linux**
+    [:octicons-arrow-right-24: View Minimal-Installation](DOCS.md#minimal-installation){ .md-button style="border-color: #2094f3; color: #2094f3" }
 
-## Additional Features
+    Minimal Arch Linux Minimal-installation) (~150 packages).
 
-- [Arch OS Core Tweaks](DOCS.md#core-tweaks)
-- [Arch OS Bootsplash](https://github.com/murkl/plymouth-theme-arch-os)
-- [Arch OS System Manager](DOCS.md#arch-os-manager)
-- [Arch OS Shell Enhancement](DOCS.md#shell-enhancement)
-- [Arch OS Starship Theme](https://github.com/murkl/starship-theme-arch-os)
-- [Arch OS Automatic Housekeeping](DOCS.md#housekeeping)
-- [AUR Helper](DOCS.md#advanced-installation) (configurable)
-- [VM Support](DOCS.md#vm-support) (optional)
-- 32 Bit Support (Multilib)
-- Disk Encryption (LUKS2)
+-   <span style="color: #2094f3">:material-cog-sync:</span> **Zen Kernel Installation**
+    [:octicons-arrow-right-24: View Advanced-Installation](DOCS.md#advanced-installation){ .md-button style="border-color: #2094f3; color: #2094f3" }
+
+    Zen Kernel Advanced-Installation) (Configurable).
+
+-   <span style="color: #2094f3">:material-star-circle:</span> **Swap-zram-generator**
+    [:octicons-arrow-right-24: View Enhanced config](DOCS.md#swap){ .md-button style="border-color: #2094f3; color: #2094f3" }
+
+    Swap with zram-generator (zstd). Swap Enhanced config.
+
+-   <span style="color: #4caf50">:material-information-outline:</span> **Sole OS Partitions**
+    [:octicons-arrow-right-24: View: Sole OS-Layout](DOCS.md#partitions-layout){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+     The partition layout is seperated in two partitions.
+
+-   <span style="color: #4caf50">:material-information-outline:</span> **BTRFS Snapshot**
+    [:octicons-arrow-right-24: View Managing Snapshots](DOCS.md/#btrfs){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    BTRFS Snapshot Support (Snapper, OverlayFS)
+
+-   <span style="color: #4caf50">:material-information-outline:</span> **All-in-One password**
+    [:octicons-arrow-right-24: View Passwords/Security](https://wiki.archlinux.org/title/Users_and_groups){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+     All-in-One password (encryption, root & user)
+
+-   <span style="color: #ff9800">:material-xml:</span> **Multilingual Support**
+    [:octicons-arrow-right-24: View Multilingual Support](https://wiki.archlinux.org/title/Localization){ .md-button style="border-color: #ff9800; color: #ff9800" }
+
+    Localization (l10n) and internationalization (i18n).
+
+-   <span style="color: #ff9800">:material-heart:</span> **Filesystem Support**
+    [:octicons-arrow-right-24: View Filesystem btrfs/ext4](https://wiki.archlinux.org/title/File_systems){ .md-button style="border-color: #ff9800; color: #ff9800" }
+
+    Filesystem support for [btrfs](https://wiki.archlinux.org/title/Btrfs) or [ext4](https://wiki.archlinux.org/title/Ext4) support.
+
+-   <span style="color: #ff9800">:material-heart:</span> **Bootloader Systemd**
+    [:octicons-arrow-right-24: View Bootloader systemd](https://wiki.archlinux.org/title/Systemd){ .md-button style="border-color: #ff9800; color: #ff9800" }
+
+    Bootloader: [grub](https://wiki.archlinux.org/title/GRUB) or [systemd](https://wiki.archlinux.org/title/Systemd-boot) (auto updated)
+
+-   <span style="color: #9c27b0">:material-lifebuoy:</span> **Silent Boot**
+    [:octicons-arrow-right-24: View Silent Boot](https://wiki.archlinux.org/title/Silent_boot){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    Silent Boot (optional) configuration.
+
+-   <span style="color: #9c27b0">:material-memory:</span> **Systemd OOM**
+    [:octicons-arrow-right-24: View OOM Killer](https://wiki.archlinux.org/title/Improving_performance){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    Systemd OOM (out-of-memory killer) setup.
+
+-   <span style="color: #9c27b0">:material-download:</span> **Pacman Tweaks**
+    [:octicons-arrow-right-24: View Pacman](https://wiki.archlinux.org/title/Pacman){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    Pacman parallel downloads & [eyecandy](https://wiki.archlinux.org/title/Category:Eye_candy) (optional).
+
+-   <span style="color: #00bcd4">:material-lan:</span> **Network Manager**
+    [:octicons-arrow-right-24: View Networking](https://wiki.archlinux.org/title/NetworkManager){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    Network Manager configuration.
+
+-   <span style="color: #00bcd4">:material-harddisk:</span> **SSD Support**
+    [:octicons-arrow-right-24: View SSD Trim](https://wiki.archlinux.org/title/Solid_state_drive){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    SSD Support (fstrim) optimization.
+
+-   <span style="color: #00bcd4">:lucide-cpu:</span> **Microcode Support**
+    [:octicons-arrow-right-24: View Microcode](https://wiki.archlinux.org/title/Microcode){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    Microcode Support (Intel & AMD).
+
+-   <span style="color: #4caf50">:material-shield-alert:</span> **Disabled Watchdog**
+    [:octicons-arrow-right-24: View Watchdog](https://wiki.archlinux.org/title/Power_management#:~:text=Disabling%20NMI-,watchdog,-%5Bedit%20source){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    Disabled Watchdog (optional) power management.
+
+-   <span style="color: #4caf50">:material-check-circle-outline:</span> **UEFI Support**
+    [:octicons-arrow-right-24: View UEFI](DOCS.md){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    UEFI only supported (V).
+
+-   <span style="color: #4caf50">:material-information-outline:</span> **More Info**
+    [:octicons-arrow-right-24: View Details](DOCS.md#technical-information){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    [More Information...](DOCS.md#technical-information) about the system specs.
+
+
+</div>
+
+---
+
+### Desktop Features
+
+<div class="grid cards cols-3" markdown>
+
+-   <span style="color: #9c27b0">:material-monitor:</span> **GNOME Desktop**
+    [:octicons-arrow-right-24: View Recommendation](DOCS.md#recommendation){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    [GNOME Desktop Environment](DOCS.md#recommendation) (optional with additional packages)
+
+-   <span style="color: #9c27b0">:material-layers-outline:</span> **Arch OS Slim**
+    [:octicons-arrow-right-24: View Installer Config](DOCS.md#example-installerconf){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    [Arch OS Slim Version](DOCS.md#example-installerconf) (GNOME Core Apps only)
+
+-   <span style="color: #9c27b0">:material-video-input-component:</span> **Graphics Drivers**
+    [:octicons-arrow-right-24: View Drivers](DOCS.md#install-graphics-driver-manually){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    [Graphics Driver](DOCS.md#install-graphics-driver-manually) (Mesa, Intel i915, NVIDIA, AMD, ATI)
+
+-   <span style="color: #00bcd4">:material-volume-high:</span> **Pipewire Audio**
+    [:octicons-arrow-right-24: View Audio Setup](DOCS.md#for-audiophiles){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    [Pipewire Audio](DOCS.md#for-audiophiles) (Dolby Atmos supported)
+
+-   <span style="color: #00bcd4">:material-package-variant-closed:</span> **Flatpak Packages**
+    [:octicons-arrow-right-24: View Flatpak](https://archlinux.org){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    Flatpak Support + Auto Update (GNOME Software)
+
+-   <span style="color: #00bcd4">:material-folder-network:</span> **Samba & Protocols**
+    [:octicons-arrow-right-24: View Samba](https://archlinux.org){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    Samba, Networking Protocol Libs, Git, Utils & Codecs included
+
+-   <span style="color: #4caf50">:material-battery-charging:</span> **Power Profiles**
+    [:octicons-arrow-right-24: View Power](https://archlinux.org){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    GNOME Power Profiles Support (tuned-ppd)
+
+-   <span style="color: #4caf50">:material-lock-open-outline:</span> **VPN Support**
+    [:octicons-arrow-right-24: View VPN](https://archlinux.org){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    VPN Support configuration
+
+-   <span style="color: #4caf50">:octicons-typography-16:</span> **Basic Fonts**
+    [:octicons-arrow-right-24: View Fonts](https://archlinux.org){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    Basic Fonts documentation
+
+-   <span style="color: #3f51b5">:material-window-maximize:</span> **Wayland Engine**
+    [:octicons-arrow-right-24: View Wayland](https://archlinux.org){ .md-button style="border-color: #3f51b5; color: #3f51b5" }
+
+    Wayland optimized architecture
+
+-   <span style="color: #3f51b5">:material-login-variant:</span> **Auto Login**
+    [:octicons-arrow-right-24: View Login](https://archlinux.org){ .md-button style="border-color: #3f51b5; color: #3f51b5" }
+
+    Auto GNOME Login enabled
+
+-   <span style="color: #3f51b5">:material-printer:</span> **Printer Support**
+    [:octicons-arrow-right-24: View CUPS](https://archlinux.org){ .md-button style="border-color: #3f51b5; color: #3f51b5" }
+
+    Printer Support via cups
+
+-   <span style="color: #e91e63">:material-key:</span> **SSH Agent**
+    [:octicons-arrow-right-24: View SSH](https://archlinux.org){ .md-button style="border-color: #e91e63; color: #e91e63" }
+
+    SSH Agent managed by gcr
+
+-   <span style="color: #e91e63">:material-controller:</span> **Gamemode**
+    [:octicons-arrow-right-24: View Gamemode](https://archlinux.org){ .md-button style="border-color: #e91e63; color: #e91e63" }
+
+    Gamemode preinstalled for performance
+
+-   <span style="color: #e91e63">:material-text-box-remove-outline:</span> **No Xorg**
+    [:octicons-arrow-right-24: View Display](https://archlinux.org){ .md-button style="border-color: #e91e63; color: #e91e63" }
+
+    No Xorg display server included
+
+</div>
+
+---
+
+### Additional Features
+
+<div class="grid cards cols-3" markdown>
+
+-   <span style="color: #9c27b0">:material-tune:</span> **Core Tweaks**
+    [:octicons-arrow-right-24: View Tweaks](DOCS.md#core-tweaks){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    [Arch OS Core Tweaks](DOCS.md#core-tweaks) for system optimization.
+
+-   <span style="color: #9c27b0">:material-image:</span> **Bootsplash**
+    [:octicons-arrow-right-24: View Theme](https://github.com){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    [Arch OS Bootsplash](https://github.com) theme engine.
+
+-   <span style="color: #9c27b0">:material-shield-lock:</span> **System Manager**
+    [:octicons-arrow-right-24: View Manager](DOCS.md#arch-os-manager){ .md-button style="border-color: #9c27b0; color: #9c27b0" }
+
+    [Arch OS System Manager](DOCS.md#arch-os-manager) administration tools.
+
+-   <span style="color: #00bcd4">:octicons-terminal-16:</span> **Shell Upgrades**
+    [:octicons-arrow-right-24: View Shell](DOCS.md#shell-enhancement){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    [Arch OS Shell Enhancement](DOCS.md#shell-enhancement) configurations.
+
+-   <span style="color: #00bcd4">:material-rocket-launch:</span> **Starship Theme**
+    [:octicons-arrow-right-24: View Starship](https://github.com){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    [Arch OS Starship Theme](https://github.com) prompt layout.
+
+-   <span style="color: #00bcd4">:material-trash-can-outline:</span> **Housekeeping**
+    [:octicons-arrow-right-24: View Housekeeping](DOCS.md#housekeeping){ .md-button style="border-color: #00bcd4; color: #00bcd4" }
+
+    [Arch OS Automatic Housekeeping](DOCS.md#housekeeping) maintenance scripts.
+
+-   <span style="color: #4caf50">:material-package-variant:</span> **AUR Helper**
+    [:octicons-arrow-right-24: View AUR Setup](DOCS.md#advanced-installation){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    [AUR Helper](DOCS.md#advanced-installation) (configurable options).
+
+-   <span style="color: #4caf50">:material-server:</span> **VM Support**
+    [:octicons-arrow-right-24: View VM Info](DOCS.md#vm-support){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    [VM Support](DOCS.md#vm-support) (optional virtualization).
+
+-   <span style="color: #4caf50">:material-lightning-bolt:</span> **Kernel Tweaks**
+    [:octicons-arrow-right-24: View Kernel](https://archlinux.org){ .md-button style="border-color: #4caf50; color: #4caf50" }
+
+    Advanced kernel optimizations and power management.
+
+-   <span style="color: #e91e63">:material-shield-check:</span> **Security Policies**
+    [:octicons-arrow-right-24: View Security](https://archlinux.org){ .md-button style="border-color: #e91e63; color: #e91e63" }
+
+    Sandboxing and Sandbox Access Rule enhancements.
+
+-   <span style="color: #e91e63">:material-content-copy:</span> **32-Bit Support**
+    [:octicons-arrow-right-24: View Multilib](https://wiki.archlinux.org/title/Official_repositories#multilib:~:text=a%20lot%20more.-,multilib,-%5Bedit%20source){ .md-button style="border-color: #e91e63; color: #e91e63" }
+
+    32 Bit Support (Multilib package compatibility layers).
+
+-   <span style="color: #e91e63">:material-lock:</span> **Disk Encryption**
+    [:octicons-arrow-right-24: View Encryption](https://wiki.archlinux.org/title/Data-at-rest_encryption){ .md-button style="border-color: #e91e63; color: #e91e63" }
+
+    Disk Encryption via standard LUKS2 containers.
+
+</div>
+
+---
 
 ### Additional Packages (optional)
 
@@ -154,56 +349,78 @@ icon: material/arch
 
 </div>
 
-## Arch OS Installation
+###Arch OS Installation
 
-To install Arch OS, an internet connection is required, as many packages will be downloaded during the installation process.
+!!! desc "Arch OS Installation"
 
-### 1. Prepare bootable USB Device
+    To install Arch OS, an internet connection is required, as many packages will be downloaded during the installation process.
+    
+#### 1. Prepare bootable USB Device
 
-- Download latest Arch OS ISO from **[GitHub](https://github.com/murkl/arch-os/releases/latest)**
-  - Alternatively, download official Arch Linux ISO from **[archlinux.org](https://www.archlinux.org/download)** or **[archlinux.de](https://www.archlinux.de/download)**
-- Use **[Ventoy](https://www.ventoy.net/en/download.html)** or your prefered iso writer tool to create a bootable USB device
-- Alternatively (Linux only): **[➜ Arch OS Creator](https://github.com/murkl/arch-os-creator)**
+!!! recommendation "Prepare bootable USB Device"
 
-### 2. Configure BIOS / UEFI Settings
+    - Download latest Arch OS ISO from **[GitHub](https://github.com/murkl/arch-os/releases/latest)**
+    
+    - Alternatively, download official Arch Linux ISO from **[archlinux.org](https://www.archlinux.org/download)** or **[archlinux.de](https://www.archlinux.de/download)**
+    
+    - Use **[Ventoy](https://www.ventoy.net/en/download.html)** or your prefered iso writer tool to create a bootable USB device
+    
+    - Alternatively (Linux only): **[➜ Arch OS Creator](https://github.com/murkl/arch-os-creator)**
+    
+#### 2. Configure BIOS / UEFI Settings
 
-- Disable Secure Boot
-- Set Boot Mode to UEFI
+!!! recommendation "Configure BIOS / UEFI Settings"
 
-### 3. Boot from USB Device
+    - Disable Secure Boot
+    
+    - Set Boot Mode to UEFI
+    
+#### 3. Boot from USB Device
 
-- Load prefered keyboard layout (optional): `loadkeys de`
-- Connect to WLAN (optional): `iwctl station wlan0 connect 'SSID'`
-
+!!! recommendation "Boot from USB Device"
+    
+    - Load prefered keyboard layout (optional): `loadkeys de`
+    
+    - Connect to WLAN (optional): `iwctl station wlan0 connect 'SSID'`
+    
 #### 3.1. Run Arch OS Installer
 
-```
-curl -Ls bit.ly/arch-os | bash
-```
+!!! recommendation "Run Arch OS Installer"
 
-**Note:** _Cancel the Arch OS Installer with `Ctrl + c`. The properties will be restored upon the next execution._
+    ```vim
+    curl -Ls bit.ly/arch-os | bash
+    ```
+    
+!!! important "NOTE!"
 
+    **Note:** _Cancel the Arch OS Installer with `Ctrl + c`. The properties will be restored upon the next execution._
+    
 **[➜ See Advanced Installation](DOCS.md#advanced-installation)**
 
-## System Maintenance
+### System Maintenance
 
 <p><img src="https://github.com/murkl/arch-os/raw/main/docs/screenshots/manager_menu.png"></p>
 
-After installing Arch OS with the default properties preset, most maintenance tasks are performed automatically. However, the following steps must be executed manually on a regular basis:
+!!! abstract "System Maintenance"
 
-- Regularly upgrade your system packages (Pacman/AUR & Flatpak)
-- Regularly read the **[Arch Linux News](https://www.archlinux.org/news)** (preferably before upgrading your system)
-- Regularly check & merge new configurations with `pacdiff` (preferably after each system upgrade)
-- Consult the **[Arch Linux Wiki](https://wiki.archlinux.org)** (if you need help)
+    After installing Arch OS with the default properties preset, most maintenance tasks are performed automatically. However, the following steps must be executed manually on a regular basis:
+    
+    - Regularly upgrade your system packages (Pacman/AUR & Flatpak)
+    - Regularly read the **[Arch Linux News](https://www.archlinux.org/news)** (preferably before upgrading your system)
+    - Regularly check & merge new configurations with `pacdiff` (preferably after each system upgrade)
+    - Consult the **[Arch Linux Wiki](https://wiki.archlinux.org)** (if you need help)
+    
+    ---
+    
+    - To streamline this process, you can use the preinstalled **[➜ Arch OS System Manager](https://github.com/murkl/arch-os-manager)**
+    
+    - If you need to rescue your Arch OS in case of a crash, boot from an **[Arch ISO Device](#1-prepare-bootable-usb-device)** and start the **[➜ Arch OS Recovery](https://github.com/murkl/arch-os-recovery)** with:
 
-To streamline this process, you can use the preinstalled **[➜ Arch OS System Manager](https://github.com/murkl/arch-os-manager)**
-
-If you need to rescue your Arch OS in case of a crash, boot from an **[Arch ISO Device](#1-prepare-bootable-usb-device)** and start the **[➜ Arch OS Recovery](https://github.com/murkl/arch-os-recovery)** with:
-
-```
-curl -Ls bit.ly/arch-os-recovery | bash
-```
-
+    
+    ```vim
+    curl -Ls bit.ly/arch-os-recovery | bash
+    ```
+    
 <details>
 
 <summary><h2 style="display: inline;" id="screenshots">Screenshots</h2></summary>

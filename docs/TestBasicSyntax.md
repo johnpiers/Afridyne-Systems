@@ -447,11 +447,10 @@ HTML content
 | foot                  |  Wayland  |   yes         |   Sixel   |
 | DomTerm               |   Web     |   yes         |   Sixel   |
 | Yaft                  |   FB      |   yes         |   Sixel   |
-| iTerm2                |   Mac OS X|   yes         |   IIP     |
+| iTerm2                |   Mac OS X |   yes         |   IIP     |
 | mintty                | Windows   |   yes         |   Sixel   |
 | Windows Terminal  |   Windows     |   [in-progress](https://github.com/microsoft/terminal/issues/448) |   Sixel   |
-| [RLogin](http://nanno.dip.jp/softlib/man/rlogin/) | Windows | yes         |   Sixel   |   |
-
+| [RLogin](http://nanno.dip.jp/softlib/man/rlogin/) | Windows | yes         |   Sixel   |
 
 ## Internationalization and localization
 
@@ -4398,5 +4397,81 @@ Reference: Fixing Broken/Tiny Nautilus Sidebar Icons (GreyStone Theme)
         ```bash
         nautilus -q
         ```
-    
 
+!!! ex ""
+
+### Renaming a .md File
+
+!!! important "General Pattern Renaming a .md file"
+    This is the general pattern for any "rename a file safely" job: find → read → search for references → confirm real vs. false matches → rename → fix references → test locally → deploy.
+    
+!!! desc "Step 1. Finding a .md File"
+    Find where a suspicious file actually lives
+    
+    ```vim
+    find /home/johnpc/AfridyneSystems/docs -iname contributing.md
+    ```
+    
+!!! desc "Step 2."
+    See what's inside it, to understand what it actually is:
+    
+    ```vim
+    cat /home/johnpc/AfridyneSystems/docs/CONTRIBUTING.md
+    ```
+    
+!!! desc "Step 3."
+    Check if anything references it by name, anywhere in the site:
+    
+    ```vim
+    grep -rln "CONTRIBUTING.md" /home/johnpc/AfridyneSystems/docs/ /home/johnpc/AfridyneSystems/mkdocs.yml
+    ```
+    
+!!! desc "Step 4."
+    Look at the exact lines matched, not just filenames — separates real links from unrelated mentions
+    
+    ```vim
+    grep -n "CONTRIBUTING.md" /home/johnpc/AfridyneSystems/docs/ALPM.md /home/johnpc/AfridyneSystems/mkdocs.yml
+    ```
+    
+!!! desc "Step 5."
+    Rename the file itself:
+    
+    ```vim
+    mv "/home/johnpc/AfridyneSystems/docs/CONTRIBUTING.md" "/home/johnpc/AfridyneSystems/docs/ALPM-Contributing.md"
+    ```
+    
+!!! desc "Step 6."
+    Fix every real reference to match the new name:
+    
+    ```vim
+    sed -i 's/CONTRIBUTING\.md/ALPM-Contributing.md/g' /home/johnpc/AfridyneSystems/docs/ALPM.md
+    ```
+    
+!!! desc "Step 7."
+    
+    ```vim
+    sed -i 's/^  CONTRIBUTING.md$/  ALPM-Contributing.md/' /home/johnpc/AfridyneSystems/mkdocs.yml
+    ```
+
+!!! desc "Step 8."
+
+    !!! abstract ""
+        Verify locally before trusting it
+        
+        ```vim
+        mkdocs serve --clean
+        ```
+        
+    !!! desc ""
+        Then manually click through the affected link in the browser
+        
+    !!! desc ""
+        Deploy for real, once confirmed clean
+        
+    !!! desc ""
+        
+        ```vim
+        cd ~/Deploy && ./deploy.sh
+        ```
+        
+!!! ex ""
