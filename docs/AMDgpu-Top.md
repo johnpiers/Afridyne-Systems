@@ -7,63 +7,61 @@ icon: simple/amd
 
 ![](imgs/20260217-142756.png){ .center-image }
 
-<div style="display: flex; justify-content: center;">
-  <h2><a href="https://github.com/Umio-Yasuno/amdgpu_top"><b>AMDGPU/TOP</b></a></h2>
-</div>
+## [**AMDGPU/TOP**](https://github.com/Umio-Yasuno/amdgpu_top)
 
 `amdgpu_top` is tool that display AMD GPU utilization, like [umr](https://gitlab.freedesktop.org/tomstdenis/umr/) or [clbr/radeontop](https://github.com/clbr/radeontop) or [intel_gpu_top](https://gitlab.freedesktop.org/drm/igt-gpu-tools/-/blob/master/man/intel_gpu_top.rst).
+
 The tool displays information gathered from performance counters (GRBM, GRBM2), sensors, fdinfo, and AMDGPU driver.
 
-| Simple TUI<br>(like nvidia-smi, rocm-smi) | TUI | GUI |
-| :-: | :-: | :-: |
-| ![amdgpu_top Simple TUI](amdgpu_top-main/imgs/20260104-193331.png) | ![amdgpu_top TUI](amdgpu_top-main/imgs/20260104-193605.png) | ![amdgpu_top GUI mode](amdgpu_top-main/imgs/20260104-193745.png) |
+| Simple TUI<br>(like nvidia-smi, rocm-smi) | TUI (light) | TUI (dark) | GUI |
+| :-: | :-: | :-: | :-: |
+| ![amdgpu_top Simple TUI](amdgpu_top-main/imgs/20260104-193331.png) | ![amdgpu_top TUI light](amdgpu_top-main/imgs/20260104-193605.png) | ![amdgpu_top TUI dark](imgs/20260729-000937.png) | ![amdgpu_top GUI mode](amdgpu_top-main/imgs/20260104-193745.png) |
 
-<details>
 
-<summary><h2 style="display: inline;" id="screenshots">Simple TUI, TUI, GUI</h2></summary>
+??? recommendation "Simple TUI, TUI, GUI"
+    !!! git ""
+        TUI: Run SMI mode:
+        ```vim
+        amdgpu_top --smi
+        ```
+        !!! git ""
+        GUI Run GUI mode
+        ```vim
+        amdgpu_top --gui
+        ```
+        !!! git ""
+        TUI: Run TUI mode:
+        ```vim
+        amdgpu_top --dark
+        ```
+        !!! git ""
+        TUI: Run TUI mode:
+        ```vim
+        amdgpu_top
+        ```
+        
+    <span style="font-weight: bold; color: green;">Simple TUI.</span>
 
-<p>
-<span style="font-weight: bold; color: yellow;">SimpleTUI.</span>
-</p>
-<p style="text-align: justify;">
-Simple TUI (like nvidia-smi, rocm-smi).</p>
+    Simple TUI (like nvidia-smi, rocm-smi).
 
-<img src="/assets/SimpleTUI.png" alt="Description of the image">
-<div align="center">
+    ![Description of the image](assets/SimpleTUI.png)
 
-<p>
-<p style="text-align: justify;">
-<span style="font-weight: bold; color: yellow;">TUI.</span>
-</p>
-<p style="text-align: justify;">
-TUI (# Run SMI mode:
-amdgpu_top --smi)</p>
+    <span style="font-weight: bold; color: green;">TUI.</span>
 
- <img src="/assets/TUI.png" alt="Description of the image">
- <br />
- <p style="text-align: justify;">
- 
-<p>
-<p style="text-align: justify;">
-<span style="font-weight: bold; color: yellow;">GUI.</span>
-</p>
-<p style="text-align: justify;">
-GUI (# Run GUI mode
-amdgpu_top --gui)</p>
-<img src="/assets/GUI.png" alt="Description of the image">
-<br />
-<p style="text-align: justify;">
- 
-</div>
+    
+    ![Description of the image](assets/TUI.png)
 
-</details>
+    <span style="font-weight: bold; color: green;">GUI.</span>
+
+
+    ![Description of the image](assets/GUI.png)
 
 ##### Quick Links
 
  * [Usage](#usage)
  * [Options](#options)
  * [Commands for TUI](#commands-for-tui)
- * [Example of using JSON mode](#example-of-using-json-mode)
+ * [Example of using JSON mode](#example-using-json-mode)
  * [fdinfo description](#fdinfo-description)
  * [Installation](#installation)
  * [Packages](#packages)
@@ -90,7 +88,7 @@ amdgpu_top --gui)</p>
     
 #####  Usage
 
-!!! info "Usage"
+??? recommendation "Usage"
 
     ```bash {.no-copy}
     cargo run -- [options ..]
@@ -256,22 +254,21 @@ amdgpu_top --gui)</p>
 | M   | sort fdinfo by MediaEngine usage    |
 | R   | reverse sort                        |
 
-##### Example: Using  JSON Mode
+#### Example: Using  JSON Mode
 
-!!!pied-piper "Example: Using  JSON Mode"
+??? pied-piper "Example: Using  JSON Mode"
 
-    ```bash {.no-copy}
-    $ amdgpu_top --json | jq -c -r '(.devices[] |
+    ```vim
+    amdgpu_top --json | jq -c -r '(.devices[] |
     (.Info | .DeviceName + " (" + .PCI + "): ") +
-    ([.gpu_activity | to_entries[] | .key + ": " + (.value.value|tostring) + .value.unit] |
-    join(", ")))'
+    ([.gpu_activity | to_entries[] | .key + ": " + (.value.value|tostring) + .value.unit] | join(", ")))'
     ```
     
-##### Output
+#### Output
 
-!!! pied-piper "Output"
+??? pied-piper "Output"
 
-    ```bash {.no-copy}
+    ```vim {.no-copy}
     AMD Radeon RX 6600 (0000:03:00.0): GFX: 13%, MediaEngine: 0%, Memory: 4%
     AMD Radeon Graphics (0000:08:00.0): GFX: 0%, MediaEngine: 0%, Memory: null%
     AMD Radeon RX 6600 (0000:03:00.0): GFX: 15%, MediaEngine: 0%, Memory: 5%
@@ -282,55 +279,55 @@ amdgpu_top --gui)</p>
     ```
     
 ##### fdinfo Description
-!!! note "fdinfo Description"
+!!! recommendation "fdinfo Description"
 
     - fdinfo for the AMDGPU driver shows hardware IP usage per process.
     
 ##### VRAM
-!!! note "vram"
+!!! recommendation "vram"
 
     - GPU Memory.
     
 ##### GTT
-!!! note "GTT"
+!!! recommendation "GTT"
 
     - Graphics Translation Tables.
     
 ##### KFD
-!!! note "KFD"
+!!! recommendation "KFD"
 
     - The process of using the AMDKFD driver.
     
 #####GFX
-!!! note "GFX"
+!!! recommendation "GFX"
 
     - GFX engine.
     
 ##### Compute/COMP
-!!! note "Compute/COMP"
+!!! recommendation "Compute/COMP"
 
     - Compute engine.
     - The AMDKFD driver dose not track queues and does not show them in fdinfo.
     
 ##### DMA
-!!! note "DMA"
+!!! recommendation "DMA"
 
     - DMA/SDMA (System DMA) engine.
     
 ##### Decode/DEC
-!!! note "Decode/DEC"
+!!! recommendation "Decode/DEC"
 
     - Media decoder.
     - This is not show on VCN4 or later.
     
 ##### Encode/ENC
-!!! note "Encode/ENC"
+!!! recommendation "Encode/ENC"
 
     - Media encoder.
     - This is not show on VCN4 or later.
     
 ##### VCN, Media
-!!! note "VCN, Media"
+!!! recommendation "VCN, Media"
 
     - Media engine.
     - From VCN4, the encoding queue and decoding queue have been unified.
@@ -338,28 +335,30 @@ amdgpu_top --gui)</p>
     - This is the average of the video decoder/encoder and the JPEG decoder usage.
     
 ##### JPEG
-!!! note "JPEG"
+!!! recommendation "JPEG"
 
     - JPEG decoder.
     
 ##### VPE
-!!! note "VPE"
+!!! recommendation "VPE"
 
     - Video Processor Engine. ref: [Video Processor Engine (VPE)](https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/src/amd/vpelib/README.md?ref_type=heads)
     
 ##### VCN_Unified, VCNU
-!!! note "VCN_Unified, VCNU"
+!!! recommendation "VCN_Unified, VCNU"
 
     - The video decoder/encoder usage for VCN4.
     
-##### Installation
-##### Build From Source
-##### Without GUI
+#### Installation
+#### Build From Source
+#### Without GUI
 
 <div class="result" markdown>
 
 !!! info "Installation Packages"
 
+    #### packages {.toc-hidden-header}
+    
     * [Releases](https://github.com/Umio-Yasuno/amdgpu_top/releases/latest)
         * .deb (generated by [cargo-deb](https://github.com/kornelski/cargo-deb))
         * .rpm (generated by [cargo-generate-rpm](https://github.com/cat-in-136/cargo-generate-rpm))
@@ -391,29 +390,29 @@ amdgpu_top --gui)</p>
 
     ---
     
-    ??? danger "Without GUI"
+    ??? important "Without GUI"
 
         $ cargo install --locked --path . --no-default-features --features="tui"
     
 </div>
 
 #### Distribution Specific Instructions
-##### Debian/Ubuntu
+#### Debian/Ubuntu
 
-!!! warning "Debian/Ubuntu"
+!!! important "Debian/Ubuntu"
 
     ```
     $ sudo apt install libdrm-dev
     ```
     
-##### Fedora
-!!! warning "Fedora"
+#### Fedora
+!!! important "Fedora"
 
     ```
     $ sudo dnf install libdrm-devel
     ```
     
-##### Binary Size
+#### Binary Size
 
 | Features       | Size (stripped) |
 | :------------- | :-------------: |
@@ -423,7 +422,7 @@ amdgpu_top --gui)</p>
 | json, tui, gui | ~18M  |
 
 ##### References
-!!! info "References"
+??? instruction "References"
 
      * [Tom St Denis / umr · GitLab](https://gitlab.freedesktop.org/tomstdenis/umr/)
      * Mesa3D
@@ -442,7 +441,7 @@ amdgpu_top --gui)</p>
             * `/drivers/gpu/drm/amd/amdgpu/{cik,nv,vi,si,soc15,soc21}.c`
     
     
-##### Translations
+#### Translations
 !!! abstract "Translations"
 
     - `amdgpu_top` is using [cargo-i18n](https://github.com/kellpossible/cargo-i18n/) with [Project Fluent](https://projectfluent.org/) for translation.
@@ -450,15 +449,15 @@ amdgpu_top --gui)</p>
     - Please refer to [pop-os/popsicle](https://github.com/pop-os/popsicle#translators) for additional supported languages.
     
     
-##### Supported Languages
+#### Supported Languages
 !!! quote "Supported languages"
 
     * [en](amdgpu_top-main/crates/en/amdgpu_top_gui.ftl)
     * [ja (partial)](amdgpu_top-main/crates/ja/amdgpu_top_gui.ftl)
     * [ka](amdgpu_top-main/crates/ka/amdgpu_top_gui.ftl)
 
-##### Alternatives
-!!! pied-piper "Alternatives"
+#### Alternatives
+??? pied-piper "Alternatives"
 
     If `amdgpu_top` is not enough for you or you don't like it, try the following applications.
     
@@ -479,8 +478,8 @@ amdgpu_top --gui)</p>
         * [Getting to Know Your GPU: A Deep Dive into AMD SMI — ROCm Blogs](https://rocm.blogs.amd.com/software-tools-optimization/amd-smi-overview/README.html)
     
     
-##### Project Metadata
-!!! info "Project Metadata"
+#### Project Metadata
+!!! recommendation "Project Metadata"
 
     *   Read about the [AMDGPU_TOP Changelog](amdgpu_top-main/CHANGELOG.md)
     *   Read about the [LICENSE](amdgpu_top-main/LICENSE.md)
@@ -488,7 +487,7 @@ amdgpu_top --gui)</p>
     *   See the [XDNA](amdgpu_top-main/crates/README.md)
     
 
-!!! warning "Important!"
+!!! important "Important!"
 
     > [IMPORTANT]
     >
@@ -497,29 +496,37 @@ amdgpu_top --gui)</p>
     > - For example under the default settings you may end up with a 1GB cache for x86_64 and another 1GB cache fori386.
     
     
-!!! attention "Important!"
+!!! desc "Important!"
 
     - amdgpu_top is using cargo-i18n with Project Fluent for translation.
     
     - Please refer to pop-os/popsicle for additional supported languages.
     
-    ??? info "JSON mode."
-        $ amdgpu_top --json | jq -c -r '(.devices[] |
-           (.Info | .DeviceName + " (" + .PCI + "): ") +
-           ([.gpu_activity | to_entries[] | .key + ": " + (.value.value|tostring) + .value.unit] | join(", ")))'
-  
-
+    ??? recommendation "JSON mode."
+        ```vim
+        amdgpu_top --json | jq -c -r '(.devices[] |
+        (.Info | .DeviceName + " (" + .PCI + "): ") +
+        ([.gpu_activity | to_entries[] | .key + ": " + (.value.value|tostring) + .value.unit] | join(", ")))'
+        ```
+    
 !!! abstract "Various Installations!"
 
-    ```yaml {.no-copy}
-    $ cargo install amdgpu_top
+    ```vim
+    cargo install amdgpu_top
+    ```
+    
     or
-    $ git clone https://github.com/Umio-Yasuno/amdgpu_top
-    $ cd amdgpu_top
-    $ cargo install --locked --path
+    
+    ```vim
+    git clone https://github.com/Umio-Yasuno/amdgpu_top
+    cd amdgpu_top
+    cargo install --locked --path
     ```
 
-    ??? info "Without GUI"
-        $ cargo install --locked --path . --no-default-features --features="tui"
+    ??? recommendation "Without GUI"
+        ```vim
+        cargo install --locked --path . --no-default-features --features="tui"
+        ```
+
 
 

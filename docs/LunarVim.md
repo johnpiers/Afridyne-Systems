@@ -10,6 +10,8 @@ icon: material/alert-outline
 
 !!! desc "LunarVim"
 
+    ## 🧭 LunarVim {.toc-hidden-header}
+    
     LunarVim is a pre-configured IDE layer built on top of Neovim. It brings the power and speed of a terminal editor while providing modern features like code completion, file trees, and language analysis right out of the box.
     
     !!! important "The Golden Rule of LVIM Configuration"
@@ -95,7 +97,7 @@ icon: material/alert-outline
     - [Marksman LSP Manual](https://github.com/artempyanykh/marksman) — Learn about the advanced Markdown link, reference, and header completions active in your workspace.
     
 
-### Extra Settings/Configurations
+### 🌐 Extra Settings/Configurations
 
 !!! desc "Linux built in conveniance"
 
