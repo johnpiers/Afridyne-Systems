@@ -1459,3 +1459,7 @@ a.md-button.md-button--custom:hover,
     top: 50%;
     transform: translateY(-50%);
 }
+
+.center {
+  text-align: center;
+}
