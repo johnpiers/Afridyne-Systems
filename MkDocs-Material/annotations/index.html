@@ -1007,19 +1007,19 @@
   <a href="#using-annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using annotations
+        Using Annotations
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Using annotations">
+    <nav class="md-nav" aria-label="Using Annotations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#in-annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        in annotations
+        In Annotations
       
     </span>
   </a>
@@ -1030,7 +1030,7 @@
   <a href="#in-admonitions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        in admonitions
+        In Admonitions
       
     </span>
   </a>
@@ -1041,7 +1041,7 @@
   <a href="#in-content-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        in content tabs
+        In Content Tabs
       
     </span>
   </a>
@@ -1052,7 +1052,7 @@
   <a href="#in-everything-else" class="md-nav__link">
     <span class="md-ellipsis">
       
-        in everything else
+        In Everything Else
       
     </span>
   </a>
@@ -1164,42 +1164,41 @@ search</a> and click on the shortcode to copy it to your clipboard:</p>
 </ul>
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
-<h3 id="using-annotations">Using annotations<a class="headerlink" href="#using-annotations" title="Permanent link">¶</a></h3>
-<!-- md:version 9.2.0 -->
-<!-- md:flag experimental -->
-
-<p>Annotations consist of two parts: a marker, which can be placed anywhere in<br>
-a block marked with the <code>annotate</code> class, and content located in a list below<br>
-the block containing the marker:</p>
+<h3 id="using-annotations">Using Annotations<a class="headerlink" href="#using-annotations" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Using Annotations</p>
+<p>Annotations consist of two parts: a marker, which can be placed anywhere in a block marked with the <code>annotate</code> class, and content located in a list below the block containing the marker:</p>
 <div class="language-markdown highlight"><span class="filename">Text with annotations</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{ .annotate }
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">1.</span>  :man_raising_hand: I'm an annotation! I can contain <span class="sb">`code`</span>, __formatted
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">1.</span>  :man_raising_hand: I'm an annotation! I can contain <span class="sb">`code`</span>, __formatted 
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    text__, images, ... basically anything that can be expressed in Markdown.
 </span></code></pre></div>
-<div class="result">
+<div class="result" markdown="">
 <p class="annotate">Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.<br></p>
 <ol>
 <li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"> I'm an annotation! I can contain <code>code</code>, <strong>formatted<br>
     text</strong>, images, ... basically anything that can be written in Markdown.</li>
 </ol>
 </div>
-<p>Note that the <code>annotate</code> class must only be added to the outermost block. All<br>
-nested elements can use the same list to define annotations, except when<br>
-annotations are nested themselves.</p>
-<h4 id="in-annotations">in annotations<a class="headerlink" href="#in-annotations" title="Permanent link">¶</a></h4>
-<p>When <a href="../python-markdown-extensions/#superfences">SuperFences</a> is enabled, annotations can be nested inside annotations by<br>
-adding the <code>annotate</code> class to the list item hosting the annotation content,<br>
-repeating the process:</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Note</p>
+<p>Note that the <code>annotate</code> class must only be added to the outermost block. All nested elements can use the same list to define annotations, except when annotations are nested themselves.</p>
+</div>
+<h4 id="in-annotations">In Annotations<a class="headerlink" href="#in-annotations" title="Permanent link">¶</a></h4>
+<div class="admonition desc">
+<p class="admonition-title">In Annotations</p>
+<p>When <a href="../python-markdown-extensions/#superfences">SuperFences</a> is enabled, annotations can be nested inside annotations by adding the <code>annotate</code> class to the list item hosting the annotation content, repeating the process:</p>
 <div class="language-markdown highlight"><span class="filename">Text with nested annotations</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>{ .annotate }
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">1.</span>  :man_raising_hand: I'm an annotation! (1)
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    { .annotate }
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>{ .annotate }
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="k">1.</span>  :woman_raising_hand: I'm an annotation as well!
 </span></code></pre></div>
-<div class="result">
+<div class="result" markdown="">
 <p class="annotate">Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.<br></p>
 <ol>
 <li>
@@ -1210,49 +1209,48 @@ repeating the process:</p>
 </li>
 </ol>
 </div>
-<h4 id="in-admonitions">in admonitions<a class="headerlink" href="#in-admonitions" title="Permanent link">¶</a></h4>
-<p>The titles and bodies of <a href="../../admonitions/">admonitions</a> can also host annotations by adding the<br>
-<code>annotate</code> modifier after the type qualifier, which is similar to how<br>
-<a href="../../admonitions/#inline-blocks">inline blocks</a> work:</p>
+</div>
+<h4 id="in-admonitions">In Admonitions<a class="headerlink" href="#in-admonitions" title="Permanent link">¶</a></h4>
+<div class="admonition desc">
+<p class="admonition-title">In Admonitions</p>
+<p>The titles and bodies of <a href="../../admonitions/">admonitions</a> can also host annotations by adding the <code>annotate</code> modifier after the type qualifier, which is similar to how <a href="../../admonitions/#inline-blocks">inline blocks</a> work:</p>
 <div class="language-markdown highlight"><span class="filename">Admonition with annotations</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>!!! note annotate "Phasellus posuere in sem ut cursus (1)"
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    purus auctor massa, nec semper lorem quam in massa.
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">1.</span>  :man_raising_hand: I'm an annotation!
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">2.</span>  :woman_raising_hand: I'm an annotation as well!
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">1.</span>  :man_raising_hand: I'm an annotation!
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">2.</span>  :woman_raising_hand: I'm an annotation as well!
 </span></code></pre></div>
-<div class="result">
-<div class="admonition note annotate">
+<div class="result" markdown="">
+<div class="admonition abstract annotate">
 <p class="admonition-title">Phasellus posuere in sem ut cursus (1)</p>
-<p>Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et<br>
-euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo<br>
-purus auctor massa, nec semper lorem quam in massa.</p>
+<p>Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.</p>
 </div>
 <ol>
 <li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"> I'm an annotation!</li>
 <li><img alt="🙋‍♀️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64b-200d-2640-fe0f.svg" title=":woman_raising_hand:"> I'm an annotation as well!</li>
 </ol>
 </div>
-<h4 id="in-content-tabs">in content tabs<a class="headerlink" href="#in-content-tabs" title="Permanent link">¶</a></h4>
-<p>Content tabs can host annotations by adding the <code>annotate</code> class to the block<br>
-of a dedicated content tab (and not to the container, which is not supported):</p>
+</div>
+<h4 id="in-content-tabs">In Content Tabs<a class="headerlink" href="#in-content-tabs" title="Permanent link">¶</a></h4>
+<div class="admonition desc">
+<p class="admonition-title">In Content Tabs</p>
+<p>Content tabs can host annotations by adding the <code>annotate</code> class to the block of a dedicated content tab (and not to the container, which is not supported):</p>
 <div class="language-markdown highlight"><span class="filename">Content tabs with annotations</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>=== "Tab 1"
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    { .annotate }
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">1.</span>  :man_raising_hand: I'm an annotation!
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="k">1.</span> :man_raising_hand: I'm an annotation!
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>=== "Tab 2"
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    Phasellus posuere in sem ut cursus (1)
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    { .annotate }
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="k">1.</span>  :woman_raising_hand: I'm an annotation as well!
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="k">1.</span> :woman_raising_hand: I'm an annotation as well!
 </span></code></pre></div>
-<div class="result">
+<div class="result" markdown="">
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Tab 1</label><label for="__tabbed_1_2">Tab 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1270,11 +1268,11 @@ of a dedicated content tab (and not to the container, which is not supported):</
 </div>
 </div>
 </div>
-<h4 id="in-everything-else">in everything else<a class="headerlink" href="#in-everything-else" title="Permanent link">¶</a></h4>
-<p>The <a href="../python-markdown/#attribute-lists">Attribute Lists</a> extension is the key ingredient for adding annotations to<br>
-most elements, but it has some <a href="https://python-markdown.github.io/extensions/attr_list/#limitations">limitations</a>. However, it's always possible to<br>
-leverage the <a href="../python-markdown/#markdown-in-html">Markdown in HTML</a> extension to wrap arbitrary elements with a<br>
-<code>div</code> with the <code>annotate</code> class:</p>
+</div>
+<h4 id="in-everything-else">In Everything Else<a class="headerlink" href="#in-everything-else" title="Permanent link">¶</a></h4>
+<div class="admonition desc">
+<p class="admonition-title">In Everything Else</p>
+<p>The <a href="../python-markdown/#attribute-lists">Attribute Lists</a> extension is the key ingredient for adding annotations to most elements, but it has some <a href="https://python-markdown.github.io/extensions/attr_list/#limitations">limitations</a>. However, it's always possible to leverage the <a href="../python-markdown/#markdown-in-html">Markdown in HTML</a> extension to wrap arbitrary elements with a <code>div</code> with the <code>annotate</code> class:</p>
 <div class="language-html highlight"><span class="filename">HTML with annotations</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"annotate"</span> <span class="na">markdown</span><span class="p">&gt;</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>&gt; Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
@@ -1283,8 +1281,8 @@ leverage the <a href="../python-markdown/#markdown-in-html">Markdown in HTML</a>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>1.  :man_raising_hand: I'm an annotation!
 </span></code></pre></div>
-<div class="result">
-<div class="annotate">
+<p></p><div class="result" markdown=""><br>
+  <div class="annotate" markdown=""><p></p>
 <blockquote>
 <p>Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.</p>
 </blockquote>
@@ -1293,14 +1291,13 @@ leverage the <a href="../python-markdown/#markdown-in-html">Markdown in HTML</a>
 <li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"> I'm an annotation!</li>
 </ol>
 </div>
-<p>With this trick, annotations can also be added to blockquotes, lists, and many<br>
-other elements that are not supported by the <a href="../python-markdown/#attribute-lists">Attribute Lists</a> extension.<br>
-Furthermore, note that <a href="../code-blocks/#adding-annotations">code blocks follow different semantics</a>.</p>
+</div>
+<div class="admonition important">
+<p>With this trick, annotations can also be added to blockquotes, lists, and many other elements that are not supported by the <a href="../python-markdown/#attribute-lists">Attribute Lists</a> extension. Furthermore, note that <a href="../code-blocks/#adding-annotations">code blocks follow different  semantics</a>.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Known limitations</p>
-<p>Please note that annotations currently don't work in <a href="../data-tables/">data tables</a> as<br>
-reported in #3453, as data tables are scrollable elements and positioning<br>
-is very tricky to get right. This might be fixed in the future.</p>
+<p>Please note that annotations currently don't work in <a href="../data-tables/">data tables</a> as reported in #3453, as data tables are scrollable elements and positioning is very tricky to get right. This might be fixed in the future.</p>
 </div>
 
 
