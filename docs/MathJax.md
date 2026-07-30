@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/newlogo-nav
 ---
 
 ![](imgs/20260413-163945.png){ .center-image }

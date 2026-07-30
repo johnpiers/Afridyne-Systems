@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/newlogo-nav
 ---
 
 <div style="display: none;"><h1>Header</h1></div>
@@ -16,7 +16,7 @@ For full Documentation visit: [mkdocs.org](https://www.mkdocs.org).
 
 ---
 
-### Advanced Configuration
+### Advanced Configuration {: .center }
 
 !!! bug ""
     - Material for MkDocs comes with many configuration options.

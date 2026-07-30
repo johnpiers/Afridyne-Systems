@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/newlogo-nav
 ---
 
 <div style="display: none;"><h1>Header</h1></div>

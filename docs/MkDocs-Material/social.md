@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/newlogo-nav
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>

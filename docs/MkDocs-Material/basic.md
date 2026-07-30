@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/newlogo-nav
 ---
 
 ![](imgs/20260120-092653.png){: style="display: block; margin: 0 auto"}

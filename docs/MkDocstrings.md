@@ -8,8 +8,7 @@ caption:
   custom:
     enable: false
 
-
-icon: simple/materialformkdocs
+icon: material/newlogo-nav
 ---
 ![](imgs/20260412-135358.png){ .center-image }
 

@@ -86,7 +86,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   icon:
-    logo: logo      
+    logo: material/newlogo
 
 validation:
   anchors: ignore

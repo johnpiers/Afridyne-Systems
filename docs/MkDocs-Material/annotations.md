@@ -1,5 +1,5 @@
 ---
-icon: material/plus-circle
+icon: material/newlogo-nav
 ---
 ![](imgs/20260106-213312.png){ .center-image }
 <H1 style="text-align: center;">Annotations</H1>
