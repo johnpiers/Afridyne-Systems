@@ -79,175 +79,171 @@ icon: material/newlogo-nav
 
 ## Usage
 
-### Using annotations
+### Using Annotations
 
-<!-- md:version 9.2.0 -->
-<!-- md:flag experimental -->
+!!! desc "Using Annotations"
 
-Annotations consist of two parts: a marker, which can be placed anywhere in
-a block marked with the `annotate` class, and content located in a list below
-the block containing the marker:
-
-``` markdown title="Text with annotations"
-Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-{ .annotate }
-
-1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be expressed in Markdown.
-```
-
-<div class="result" markdown>
-
-Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-{ .annotate }
-
-1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be written in Markdown.
-
-</div>
-
-Note that the `annotate` class must only be added to the outermost block. All
-nested elements can use the same list to define annotations, except when
-annotations are nested themselves.
-
-#### in annotations
-
-When [SuperFences] is enabled, annotations can be nested inside annotations by
-adding the `annotate` class to the list item hosting the annotation content,
-repeating the process:
-
-``` markdown title="Text with nested annotations"
-Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-{ .annotate }
-
-1.  :man_raising_hand: I'm an annotation! (1)
+    Annotations consist of two parts: a marker, which can be placed anywhere in a block marked with the `annotate` class, and content located in a list below the block containing the marker:
+    
+    
+    ``` markdown title="Text with annotations"
+    Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
     { .annotate }
+    
+    1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted 
+        text__, images, ... basically anything that can be expressed in Markdown.
+    ```
+    
+    <div class="result" markdown>
+    
+    Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+    { .annotate }
+    
+    1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
+        text__, images, ... basically anything that can be written in Markdown.
+        
+    </div>
+    
+!!! important "Note"
+    Note that the `annotate` class must only be added to the outermost block. All nested elements can use the same list to define annotations, except when annotations are nested themselves.
+    
 
-    1.  :woman_raising_hand: I'm an annotation as well!
-```
+#### In Annotations
 
-<div class="result" markdown>
+!!! desc "In Annotations"
 
-Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-{ .annotate }
+    When [SuperFences] is enabled, annotations can be nested inside annotations by adding the `annotate` class to the list item hosting the annotation content, repeating the process:
+    
+    ``` markdown title="Text with nested annotations"
+    Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+    { .annotate }
+    
+    1.  :man_raising_hand: I'm an annotation! (1)
+    { .annotate }
+    
+        1.  :woman_raising_hand: I'm an annotation as well!
+    ```
+    
+    <div class="result" markdown>
+    
+    Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+    { .annotate }
+    
+    1.  :man_raising_hand: I'm an annotation! (1)
+        { .annotate style="margin-bottom: 0" }
 
-1.  :man_raising_hand: I'm an annotation! (1)
-    { .annotate style="margin-bottom: 0" }
+        1.  :woman_raising_hand: I'm an annotation as well!
+        
+    </div>
 
-    1.  :woman_raising_hand: I'm an annotation as well!
+#### In Admonitions
 
-</div>
+!!! desc "In Admonitions"
 
-#### in admonitions
+    The titles and bodies of [admonitions] can also host annotations by adding the `annotate` modifier after the type qualifier, which is similar to how [inline blocks] work:
+    
+    
+    ``` markdown title="Admonition with annotations"
+    !!! note annotate "Phasellus posuere in sem ut cursus (1)"
+    
+        Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+    
+    1.  :man_raising_hand: I'm an annotation!
+    2.  :woman_raising_hand: I'm an annotation as well!
+    ```
+    
+    <div class="result" markdown>
 
-The titles and bodies of [admonitions] can also host annotations by adding the
-`annotate` modifier after the type qualifier, which is similar to how
-[inline blocks] work:
-
-``` markdown title="Admonition with annotations"
-!!! note annotate "Phasellus posuere in sem ut cursus (1)"
-
-    Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et
-    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
-    purus auctor massa, nec semper lorem quam in massa.
-
-1.  :man_raising_hand: I'm an annotation!
-2.  :woman_raising_hand: I'm an annotation as well!
-```
-
-<div class="result" markdown>
-
-!!! note annotate "Phasellus posuere in sem ut cursus (1)"
-
-    Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et
-    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
-    purus auctor massa, nec semper lorem quam in massa.
-
-1.  :man_raising_hand: I'm an annotation!
-2.  :woman_raising_hand: I'm an annotation as well!
-
-</div>
+    !!! abstract annotate "Phasellus posuere in sem ut cursus (1)"
+        
+        Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+        
+        
+    1.  :man_raising_hand: I'm an annotation!
+    2.  :woman_raising_hand: I'm an annotation as well!
+        
+    </div>
 
   [admonitions]: ../admonitions.md
   [inline blocks]: ../admonitions.md#inline-blocks
 
-#### in content tabs
 
-Content tabs can host annotations by adding the `annotate` class to the block
-of a dedicated content tab (and not to the container, which is not supported):
+#### In Content Tabs
 
-``` markdown title="Content tabs with annotations"
-=== "Tab 1"
+!!! desc "In Content Tabs"
+    Content tabs can host annotations by adding the `annotate` class to the block of a dedicated content tab (and not to the container, which is not supported):
 
-    Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-    { .annotate }
+    ```markdown title="Content tabs with annotations"
+    === "Tab 1"
+
+        Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+        { .annotate }
+        
+            1. :man_raising_hand: I'm an annotation!
+
+    === "Tab 2"
+
+        Phasellus posuere in sem ut cursus (1)
+        { .annotate }
+        
+            1. :woman_raising_hand: I'm an annotation as well!
+    ```
+    
+
+    <div class="result" markdown>
+
+    === "Tab 1"
+
+        Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+        { .annotate }
+        
+        1. :man_raising_hand: I'm an annotation!
+
+    === "Tab 2"
+
+        Phasellus posuere in sem ut cursus (1)
+        { .annotate }
+        
+        1. :woman_raising_hand: I'm an annotation as well!
+
+    </div>
+
+
+#### In Everything Else
+
+!!! desc "In Everything Else"
+    The [Attribute Lists] extension is the key ingredient for adding annotations to most elements, but it has some [limitations]. However, it's always possible to leverage the [Markdown in HTML] extension to wrap arbitrary elements with a `div` with the `annotate` class:
+
+    ```html title="HTML with annotations"
+    <div class="annotate" markdown>
+
+    > Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+
+    </div>
+
+    1.  :man_raising_hand: I'm an annotation!
+    ```
+
+    <div class="result" markdown>
+      <div class="annotate" markdown>
+
+    > Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+
+      </div>
 
     1.  :man_raising_hand: I'm an annotation!
 
-=== "Tab 2"
+    </div>
 
-    Phasellus posuere in sem ut cursus (1)
-    { .annotate }
 
-    1.  :woman_raising_hand: I'm an annotation as well!
-```
-
-<div class="result" markdown>
-
-=== "Tab 1"
-
-    Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-    { .annotate }
-
-    1.  :man_raising_hand: I'm an annotation!
-
-=== "Tab 2"
-
-    Phasellus posuere in sem ut cursus (1)
-    { .annotate }
-
-    1.  :woman_raising_hand: I'm an annotation as well!
-
-</div>
-
-#### in everything else
-
-The [Attribute Lists] extension is the key ingredient for adding annotations to
-most elements, but it has some [limitations]. However, it's always possible to
-leverage the [Markdown in HTML] extension to wrap arbitrary elements with a
-`div` with the `annotate` class:
-
-```` html title="HTML with annotations"
-<div class="annotate" markdown>
-
-> Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-
-</div>
-
-1.  :man_raising_hand: I'm an annotation!
-````
-
-<div class="result" markdown>
-  <div class="annotate" markdown>
-
-> Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-
-  </div>
-
-1.  :man_raising_hand: I'm an annotation!
-
-</div>
-
-With this trick, annotations can also be added to blockquotes, lists, and many
-other elements that are not supported by the [Attribute Lists] extension.
-Furthermore, note that [code blocks follow different semantics].
-
+!!! important ""
+    With this trick, annotations can also be added to blockquotes, lists, and many other elements that are not supported by the [Attribute Lists] extension. Furthermore, note that [code blocks follow different  semantics].
+    
 !!! warning "Known limitations"
 
-    Please note that annotations currently don't work in [data tables] as
-    reported in #3453, as data tables are scrollable elements and positioning
-    is very tricky to get right. This might be fixed in the future.
+    Please note that annotations currently don't work in [data tables] as reported in #3453, as data tables are scrollable elements and positioning is very tricky to get right. This might be fixed in the future.
 
   [limitations]: https://python-markdown.github.io/extensions/attr_list/#limitations
   [code blocks follow different semantics]: code-blocks.md#adding-annotations
   [data tables]: data-tables.md
+

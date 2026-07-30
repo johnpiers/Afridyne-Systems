@@ -687,28 +687,75 @@ As of the end of August 2025, *wttr.in* handles 22-27 million queries per day fr
 
 ---
 
-The mathematical expression of the Second Law of Thermodynamics is often presented in terms of the change in entropy (\(\Delta S\)) for an isolated system or the universe. Here are examples of the MathJax code for common formulations of the Second Law: General Statement (Entropy of the Universe) The most common and general mathematical statement is that the total entropy of an isolated system (the universe) can never decrease. 
+!!! desc "Second Law of Thermodynamics"
 
-MathJax Code (inline):
-Renders as: $\Delta S_{\text{univ}} \ge 0$ 
-
----
-
-$$\Delta S_{\text{total}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \geq 0$$
-
----
-
-For a System and its Surroundings:
-The total entropy change is the sum of the changes in the system and the surroundings, which must be greater than or equal to zero. 
-
-MathJax Code (display mode):
-Renders as:  $\Delta S_{\text{total}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \geq 0$
----
-For any process, the change in entropy of a system is greater than or equal to the heat transfer (\(Q\)) divided by the absolute temperature (\(T\)). The equality holds for reversible processes, and the inequality for irreversible (real spontaneous) processes. 
-
-MathJax Code (inline)
-Renders as: $dS \ge \frac{\delta Q}{T}$
-
+    - The mathematical expression of the Second Law of Thermodynamics is often presented in terms of the change in entropy (\(\Delta S\)) for an isolated system or the universe.
+    
+    - Here are examples of the MathJax code for common formulations of the Second Law: General Statement (Entropy of the Universe) The most common and general mathematical statement is that the total entropy of an isolated system (the universe) can never decrease.
+    
+    ---
+    
+    MathJax Code (inline):
+    Renders as: $\Delta S_{\text{univ}} \ge 0$
+    
+    ---
+    
+    $$\Delta S_{\text{total}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \geq 0$$
+    
+    ---
+    
+    For a System and its Surroundings:
+    
+    The total entropy change is the sum of the changes in the system and the surroundings, which must be greater than or equal to zero.
+    
+    MathJax Code (display mode):
+    Renders as:  $\Delta S_{\text{total}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \geq 0$
+    
+    ---
+    
+    For any process, the change in entropy of a system is greater than or equal to the heat transfer (\(Q\)) divided by the absolute temperature (\(T\)). The equality holds for reversible processes, and the inequality for irreversible (real spontaneous) processes. 
+    
+    MathJax Code (inline)
+    Renders as: $dS \ge \frac{\delta Q}{T}$
+    
+    ??? deep-dive "Click to see Code"
+    
+        ```vim
+        !!! recommendation "Second Law of Thermodynamics"
+        
+            - The mathematical expression of the Second Law of Thermodynamics is often presented in terms of the change in entropy (\(\Delta S\)) for an isolated system or the universe.
+        
+            - Here are examples of the MathJax code for common formulations of the Second Law: General Statement (Entropy of the Universe) The most common and general mathematical statement is that the total entropy of an isolated system (the universe) can never decrease.
+                
+            ---
+        
+            MathJax Code (inline):
+        
+            Renders as: $\Delta S_{\text{univ}} \ge 0$
+        
+            ---
+        
+            $$\Delta S_{\text{total}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \geq 0$$
+        
+            ---
+        
+            For a System and its Surroundings:
+        
+            The total entropy change is the sum of the changes in the system and the surroundings, which must be greater than or equal to zero.
+        
+            MathJax Code (display mode):
+        
+            Renders as:  $\Delta S_{\text{total}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \geq 0$
+        
+            ---
+        
+            For any process, the change in entropy of a system is greater than or equal to the heat transfer (\(Q\)) divided by the absolute temperature (\(T\)). The equality holds for reversible processes, and the inequality for irreversible (real spontaneous) processes.
+        
+            MathJax Code (inline)
+        
+            Renders as: $dS \ge \frac{\delta Q}{T}$
+        ```
+        
 ---
 
 !!! desc "Probabilistic Models"

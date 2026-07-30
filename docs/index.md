@@ -444,4 +444,66 @@ By default, MkDocs uses the [MkDocs favicon](https://www.mkdocs.org/getting-star
 
 ---
 
+# Changing the logo and icons
 
+When installing Material for MkDocs, you immediately get access to _over 8,000 icons_ ready to be used for customization of specific parts of the theme and/or when writing your documentation in Markdown. Not enough? You can also add [additional icons] with minimal effort.
+
+  [additional icons]: #additional-icons
+
+## Configuration
+
+### Logo
+
+The logo can be changed to a user-provided image (any type, incl. `*.png` and `*.svg`) located in the `docs` folder, or to any icon bundled with the theme.
+Add the following lines to `mkdocs.yml`:
+
+=== ":octicons-image-16: Image"
+
+    ``` yaml
+    theme:
+      logo: material/newlogo
+    ```
+
+=== ":octicons-package-16: Icon, bundled"
+
+    ``` yaml
+    theme:
+      icon:
+        logo: material/newlogo # (1)!
+    ```
+
+    1.  Enter a few keywords to find the perfect icon using our [icon search] and click on the shortcode to copy it to your clipboard:
+
+        <div class="mdx-iconsearch" data-mdx-component="iconsearch">
+          <input class="md-input md-input--stretch mdx-iconsearch__input" placeholder="Search icon" data-mdx-component="iconsearch-query" value="material library" />
+          <div class="mdx-iconsearch-result" data-mdx-component="iconsearch-result" data-mdx-mode="file">
+            <div class="mdx-iconsearch-result__meta"></div>
+            <ol class="mdx-iconsearch-result__list"></ol>
+          </div>
+        </div>
+
+  [icon search]: https://github.com/squidfunk/mkdocs-material/blob/master/docs/reference/icons-emojis.md#search
+
+
+The logo can be changed to a user-provided image (any type, incl. `*.png` and `*.svg`) located in the `docs` folder, or to any icon bundled with the theme.
+
+The following is a complete list of customizable icons used by the theme:
+
+| Icon name    | Purpose                                                                       |
+|:-------------|:------------------------------------------------------------------------------|
+| `logo`       | See [Logo](#logo)                                                             |
+| `menu`       | Open drawer                                                                   |
+| `alternate`  | Change language                                                               |
+| `search`     | Search icon                                                                   |
+| `share`      | Share search                                                                  |
+| `close`      | Reset search, dismiss announcements                                           |
+| `top`        | Back-to-top button                                                            |
+| `edit`       | Edit current page                                                             |
+| `view`       | View page source                                                              |
+| `repo`       | Repository icon                                                               |
+| `admonition` | See [Admonition icons](https://github.com/squidfunk/mkdocs-material/blob/master/docs/reference/admonitions.md#admonition-icons)          |
+| `tag`        | See [Tag icons and identifiers](https://github.com/squidfunk/mkdocs-material/blob/master/docs/setup/setting-up-tags.md#tag-icons-and-identifiers) |
+| `previous`   | Previous page in footer, hide search on mobile                                |
+| `next`       | Next page in footer                                                           |
+
+  [Site icon support]: https://github.com/squidfunk/mkdocs-material/releases/tag/9.2.0
