@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/briefcase-arrow-left-right-outline
 ---
 
 ![](imgs/20260216-200251.png){.centre-image}
@@ -11,15 +11,41 @@ icon: simple/materialformkdocs
     Upgrade to the latest version with:
 
     ```
-    pip install --upgrade --force-reinstall mkdocs-material
+    uv pip install --upgrade --force-reinstall mkdocs-materialx
     ```
 
     Show the currently installed version with:
 
     ```
-    pip show mkdocs-material
+    uv pip show mkdocs-materialx
     ```
+    
+    ---
+    
+    [<img src="https://avatars.githubusercontent.com/u/115962839?s=48&amp;v=4" width="24" height="24" align="center"> **uv**](https://github.com/astral-sh/uv)
+    
+    [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?logo=discord&logoColor=white)](https://discord.gg/astral-sh)
+    
+    [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)[![image](https://img.shields.io/pypi/v/uv.svg)](https://pypi.python.org/pypi/uv)[![image](https://img.shields.io/pypi/l/uv.svg)](https://pypi.python.org/pypi/uv)[![image](https://img.shields.io/pypi/pyversions/uv.svg)](https://pypi.python.org/pypi/uv)[![Actions status](https://github.com/astral-sh/uv/actions/workflows/ci.yml/badge.svg)](https://github.com/astral-sh/uv/actions)
+    
+    - ***A single tool to replace pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more.***
+    
+    - ***Supports macOS, Linux, and Windows.***
+    
+## Upgrading from 9.x to 10.x
 
+!!! abstract "Upgrading from 9.x to 10.x"
+
+    Just update the theme name in mkdocs.yml to `materialx`:
+    
+    ``` yaml
+    theme:
+      name: materialx
+    ```
+    
+    !!! important "Note"
+        The theme name is **`materialx`**, not material. Everything else is the same as when using material.
+        
 ## Upgrading from 8.x to 9.x
 
 !!! desc "Upgrading from 8.x to 9.x"
@@ -30,7 +56,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`content.code.copy`"
 
-    #### `content.code.copy`
+    #### `content.code.copy` {.toc-hidden-header}
 
     The copy-to-clipboard buttons are now opt-in and can be enabled or disabled per block. If you wish to enable them for all code blocks, add the following lines to `mkdocs.yml`:
 
@@ -42,7 +68,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`content.action.*`"
 
-    #### `content.action.*`
+    #### `content.action.*` {.toc-hidden-header}
 
     A "view source" button can be shown next to the "edit this page" button, both of which must now be explicitly enabled. Add the following lines to `mkdocs.yml`:
 
@@ -55,7 +81,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`navigation.footer`"
 
-    #### `navigation.footer`
+    #### `navigation.footer` {.toc-hidden-header}
 
     The _previous_ and _next_ buttons in the footer are now opt-in. If you wish to keep them for your documentation, add the following lines to `mkdocs.yml`:
 
@@ -67,7 +93,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`theme.language`"
 
-    #### `theme.language`
+    #### `theme.language` {.toc-hidden-header}
 
     The Korean and Norwegian language codes were renamed, as they were non-standard:
 
@@ -76,7 +102,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`feedback.ratings`"
 
-    #### `feedback.ratings`
+    #### `feedback.ratings` {.toc-hidden-header}
 
     The old, nameless placeholders were removed (after being deprecated for several months). Make sure to switch to the new named placeholders `{title}` and `{url}`:
 
@@ -136,7 +162,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`pymdownx.tabbed`"
 
-    #### `pymdownx.tabbed`
+    #### `pymdownx.tabbed` {.toc-hidden-header}
     
     Support for the legacy style of the [Tabbed] extension was dropped in favor of the new, alternate implementation which has [better behavior on mobile viewports]:
 
@@ -160,7 +186,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`pymdownx.superfences`"
 
-    ### `pymdownx.superfences`
+    ### `pymdownx.superfences` {.toc-hidden-header}
 
     The `*-experimental` suffix must be removed from the [custom fence][SuperFences] class property, which is used to target code blocks to be rendered as [diagrams] using [Mermaid.js]:
 
@@ -192,7 +218,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`google_analytics`"
 
-    #### `google_analytics`
+    #### `google_analytics` {.toc-hidden-header}
 
     This option was [deprecated in MkDocs 1.2.0], as the implementation of a JavaScript-based analytics integration is the responsibility of a theme.
 
@@ -561,7 +587,7 @@ icon: simple/materialformkdocs
 
 !!! version-changed "`extra.version.method`"
 
-    ### `extra.version.method`
+    ### `extra.version.method` {.toc-hidden-header}
     
     The versioning method configuration was renamed to `extra.version.provider` to allow for different versioning strategies in the future:
     
@@ -873,7 +899,7 @@ icon: simple/materialformkdocs
     
 !!! desc "`theme.features`"
 
-    #### `theme.features`
+    #### `theme.features` {.toc-hidden-header}
     
     All feature flags that can be set from `mkdocs.yml`, like [tabs] and [instant loading], are now prefixed with the name of the component or function they apply to, e.g. `navigation.*`:
     
@@ -1193,7 +1219,7 @@ icon: simple/materialformkdocs
     
 !!! desc "`extra.repo_icon`"
 
-    - ### `extra.repo_icon`
+    - ### `extra.repo_icon` {.toc-hidden-header}
     
     - The repo icon configuration was centralized under `theme.icon.repo` and can now be set to any of the [icons bundled with the theme][icon integration]:
     
@@ -1214,7 +1240,7 @@ icon: simple/materialformkdocs
     
 !!! desc "`extra.search.*`"
 
-    #### `extra.search.*`
+    #### `extra.search.*` {.toc-hidden-header}
     Search is now configured as part of the [plugin options]. Note that the search languages must now be listed as an array of strings and the `tokenizer` was renamed to `separator`:
 
     === "5.x"
@@ -1241,7 +1267,7 @@ icon: simple/materialformkdocs
 
 !!! desc "`extra.social.*`"
 
-    ### `extra.social.*`
+    ### `extra.social.*` {.toc-hidden-header}
     Social links stayed in the same place, but the `type` key was renamed to `icon` in order to match the new way of specifying which icon to be used:
 
     === "5.x"

@@ -3,8 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const preElements = document.querySelectorAll(".md-typeset .tabbed-content .tabbed-block div.highlight > pre");
 
   preElements.forEach((preEl) => {
-    // Read the true line length directly from text nodes
-    const lineCount = preEl.textContent.split('\n').length;
+    // Count lines from a clone with annotation content stripped out, so
+    // Material's code-annotation tooltips (which get injected as
+    // descendants of the <pre>) never inflate the real line count.
+    const measuringClone = preEl.cloneNode(true);
+    measuringClone.querySelectorAll(".md-annotation, .md-tooltip").forEach((el) => el.remove());
+    const lineCount = measuringClone.textContent.split('\n').length;
 
     // Only apply layout truncation changes if it passes your 22-line ceiling
     if (lineCount > 22) {
@@ -25,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // 4. Generate your exact pill layout tracking button
       const btn = document.createElement("button");
       btn.innerHTML = `Expand remaining ${remainingLines} lines`;
-      
+
       // Layout structure remains hardcoded
       btn.style.display = "block";
       btn.style.margin = "20px auto 10px auto";
@@ -93,4 +97,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
