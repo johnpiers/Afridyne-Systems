@@ -18,7 +18,7 @@ icon: material/newlogo-nav
  
     Be wary that the below color names are case-sensitive. For example, `\color{olivegreen}` raises an "undefined color" error, but `\color{OliveGreen}` works fine. Table can be sorted by color name, by hue, by saturation, or by lightness.
     
-[Go to: Text Colour: UMCS :fontawesome-solid-paper-plane:](Ultimate%20Markdown%20Cheat%20Sheet.md/#text-color){ .md-button .md-button--custom }
+[Go to: Text Colour: UMCS :fontawesome-solid-paper-plane:](Ultimate-Markdown-Cheat-Sheet.md/#text-color){ .md-button .md-button--custom }
 
 [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
 
@@ -86,7 +86,7 @@ icon: material/newlogo-nav
 
 ---
 
-[Return to: Text Colour: UMCS :fontawesome-solid-paper-plane:](Ultimate%20Markdown%20Cheat%20Sheet.md/#text-color){ .md-button .md-button--custom }
+[Return to: Text Colour: UMCS :fontawesome-solid-paper-plane:](Ultimate-Markdown-Cheat-Sheet.md/#text-color){ .md-button .md-button--custom }
 
 ### HTML Code for Text Colour
 

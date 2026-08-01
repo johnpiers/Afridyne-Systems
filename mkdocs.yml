@@ -151,7 +151,7 @@ nav:
       - MaterialX-MkDocs: index.md
       - Get Started-MkDocs: about.md      
       - MkDocs Start Page: MkDocs-Material-Start.md
-      - Creating Your Site: rl.md
+      - Creating Your Site: Creating-Your-Site.md
       - Admonitions: admonitions.md
       - MkDocsCaption: Caption.md
       - MkDocstrings: MkDocstrings.md
@@ -166,8 +166,8 @@ nav:
   - Markdown:
       - Markdown: Markdown.md
       - CommonMarkSpec: CommonMarkSpec.md
-      - MD Cheat Sheet: Ultimate Markdown Cheat Sheet.md
-      - Markdown Guide: Markdown Guide.md
+      - Ultimate Cheat Sheet: Ultimate-Markdown-Cheat-Sheet.md
+      - Markdown Guide: Markdown-Guide.md
       - Awesome Markdown: marktext.md
       - VariousMarkdown: Various_HTML_Markdown.md
       - TestBasicSyntax: TestBasicSyntax.md

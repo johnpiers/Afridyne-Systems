@@ -1221,10 +1221,10 @@ Some other important footnote.[^2]
     ??? info "Click To See Code"
 
         ```md
-        [Example of a relative link](rl.md)
+        [Example of a relative link](Creating-Your-Site.md)
         ```
 
-    [Example of a relative link](rl.md)
+    [Example of a relative link](Creating-Your-Site.md)
 
 
 ## Auto

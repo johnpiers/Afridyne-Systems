@@ -181,7 +181,7 @@ The following settings are available:
 
 !!! info "Config-Enabled"
 
-    ### `Config-Enabled`
+    ### `Config-Enabled` {.toc-hidden-header}
 
     Use this setting to enable or disable the plugin when [building your project]. It's normally not necessary to specify this setting, but if you want to disable the plugin, use:
     
@@ -197,7 +197,7 @@ The following settings are available:
 
 !!! info "Blog_dir"
 
-    ### `Blog_dir` 
+    ### `Blog_dir` {.toc-hidden-header}
 
     Use this setting to change the path where your blog is located in the [`docs` directory][`mkdocs.docs_dir`]. The path is included in the generated URLs as a prefix for all posts and views. You can change it with:
 
@@ -223,7 +223,7 @@ The following settings are available:
 
 !!! info "Blog_toc"
 
-    ### `Blog_toc` 
+    ### `Blog_toc` {.toc-hidden-header}
 
     Use this setting to leverage the table of contents to display post titles in views. This might be useful, if your post excerpts are rather long. If you want to enable it, use:
 
@@ -240,7 +240,7 @@ The following settings are available for posts:
 
 !!! info "Post_dir"
 
-    ### `Post_dir`
+    ### `Post_dir` {.toc-hidden-header}
 
     Use this setting to change the folder where your posts are located. It's normally not necessary to change this setting, but if you want to rename the folder or change its file system location, use:
 
@@ -265,7 +265,7 @@ The following settings are available for posts:
 
 !!! info "Post_date_format"
 
-    ### `Post_date_format`
+    ### `Post_date_format` {.toc-hidden-header}
 
     Use this setting to change the date format of posts. This plugin uses [babel] to render dates in the configured [site language]. You can use [babel]'s [pattern syntax] or the following shortcodes:
 
@@ -312,7 +312,7 @@ The following settings are available for posts:
 
 !!! info "Post_url_date_format"
 
-    ### `Post_url_date_format`
+    ### `Post_url_date_format` {.toc-hidden-header}
 
     Use this setting to change the date format used in post URLs. The format string must adhere to [babel]'s [pattern syntax] and should not contain whitespace.
 
@@ -349,7 +349,7 @@ The following settings are available for posts:
 
 !!! info "Post_url_format"
 
-    ### `Post_url_format`
+    ### `Post_url_format` {.toc-hidden-header}
 
     Use this setting to change the format string that is used when generating post URLs. You can freely combine placeholders, and join them with slashes or other characters:
 
@@ -382,7 +382,7 @@ The following settings are available for posts:
 
 !!! info "Post_url_max_categories"
 
-    ### `url_max_categories`
+    ### `url_max_categories` {.toc-hidden-header}
 
     Use this setting to set an upper bound for the number of categories included in post URLs if the `categories` placeholder is part of [`post_url_format`]  [`config.post_url_format`] and the post defines categories:
 
@@ -402,7 +402,7 @@ The following settings are available for posts:
 
 !!! info "Post_slugify"
 
-    ### `Post_slugify`
+    ### `Post_slugify` {.toc-hidden-header}
 
     Use this setting to change the function for generating URL-compatible slugs from post titles. By default, the [`slugify`][pymdownx.slugs.slugify] function from [Python Markdown Extensions] is used as follows:
 
@@ -425,7 +425,7 @@ The following settings are available for posts:
 
 !!! info "Post_slugify_separator"
 
-    ### `slugify_separator`
+    ### `slugify_separator` {.toc-hidden-header}
 
     Use this setting to change the separator that is passed to the slugification function set as part of [`post_slugify`][`config.post_slugify`]. While the default is a hyphen, it can be set to any string, e.g., `_`:
 
@@ -437,7 +437,7 @@ The following settings are available for posts:
 
 !!! info "Post_excerpt"
 
-    ### `Post_excerpt`
+    ### `Post_excerpt` {.toc-hidden-header}
 
     By default, the plugin makes [post excerpts](setting-up-a-blog.md#adding-an-excerpt) optional. When a post doesn't define an excerpt, views include the entire post.
 
@@ -468,7 +468,7 @@ The following settings are available for posts:
 
 !!! info "Post_excerpt_max_authors"
 
-    ### `excerpt_max_authors`
+    ### `excerpt_max_authors` {.toc-hidden-header}
 
     Use this setting to set an upper bound for the number of authors rendered in post excerpts. While each post may be written by multiple authors, this setting allows to limit the display to just a few or even a single author, or disable authors in post excerpts:
 
@@ -495,7 +495,7 @@ The following settings are available for posts:
 
 !!! info "Excerpt_max_categories"
 
-    ### `max_categories`
+    ### `max_categories` {.toc-hidden-header}
 
     Use this setting to set an upper bound for the number of categories rendered in post excerpts. While each post may be assigned to multiple categories, this setting allows to limit the display to just a few or even a single category, or disable categories in post excerpts:
 
@@ -524,7 +524,7 @@ The following settings are available for posts:
 
 !!! info "Post_excerpt_separator"
 
-    ### `excerpt_separator` 
+    ### `excerpt_separator` {.toc-hidden-header}
 
     Use this setting to set the separator the plugin will look for in a post's content when generating post excerpts. All content __before__ the separator is considered to be part of the excerpt:
 
@@ -566,7 +566,7 @@ The following settings are available for posts:
 
 !!! info "Expected Words Per Minute"
 
-    ### `Readtime_wds_per_min`
+    ### `Readtime_wds_per_min` {.toc-hidden-header}
     
     Use this setting to change the number of words that a reader is expected to read per minute when computing the reading time of a post. If you want to fine-tune it, use:
     
@@ -590,7 +590,7 @@ The following settings are available for archive pages:
 
 !!! info "Setting Config.archive"
 
-    ### `Config.archive`
+    ### `Config.archive` {.toc-hidden-header}
 
     Use this setting to enable or disable archive pages. An archive page shows all posts for a specific interval (e.g. year, month, etc.) in reverse order. If you want to disable archive pages, use:
 
@@ -603,7 +603,7 @@ The following settings are available for archive pages:
 
 !!! info "Config.archive_name"
 
-    ### `Config.archive_name` 
+    ### `Config.archive_name` {.toc-hidden-header}
 
     Use this setting to change the title of the archive section the plugin adds to the navigation. If this setting is omitted, it's sourced from the translations. If you want to change it, use:
 
@@ -616,7 +616,7 @@ The following settings are available for archive pages:
 
 !!! info "Archive_date_format"
 
-    ### `Archive_date_format`
+    ### `Archive_date_format` {.toc-hidden-header}
 
     Use this setting to change the date format used for archive page titles. The format string must adhere to [babel]'s [pattern syntax]. Some popular choices:
 
@@ -642,7 +642,7 @@ The following settings are available for archive pages:
 
 !!! info "Archive_url_date_format"
 
-    ### `Archive_url_dd_format`
+    ### `Archive_url_dd_format` {.toc-hidden-header}
 
     Use this setting to change the date format used for archive page URLs. The format string must adhere to [babel]'s [pattern syntax] and should not contain whitespace. Some popular choices:
 
@@ -664,7 +664,7 @@ The following settings are available for archive pages:
 
 !!! info "Archive_url_format"
 
-    ### `Archive_url_format`
+    ### `Archive_url_format` {.toc-hidden-header}
 
     Use this setting to change the format string that is used when generating archive page URLs. You can freely combine placeholders, and join them with slashes or other characters:
 
@@ -693,7 +693,7 @@ The following settings are available for archive pages:
 
 !!! info "Archive_pagination"
 
-    ### `Archive_pagination`
+    ### `Archive_pagination` {.toc-hidden-header}
 
     Use this setting to enable or disable pagination for archive pages. The value of this setting is inherited from [`pagination`][`config.pagination`], unless it's explicitly set. To disable pagination, use:
 
@@ -705,7 +705,7 @@ The following settings are available for archive pages:
 
 !!! info "Arch._pagination_per_page"
 
-    ### `Arch._p_per_page`
+    ### `Arch._p_per_page` {.toc-hidden-header}
 
     Use this setting to change the number of posts rendered per archive page. The value of this setting is inherited from [`pagination_per_page`][`config.pagination_per_page`], unless it's explicitly set. To change it, use:
 
@@ -717,7 +717,7 @@ The following settings are available for archive pages:
 
 !!! info "Config.archive_toc"
 
-    ### `Config.archive_toc`
+    ### `Config.archive_toc` {.toc-hidden-header}
 
     Use this setting to leverage the table of contents to display post titles on all archive pages. The value of this setting is inherited from [`blog_toc`][`config.blog_toc`], unless it's explicitly set. To change it, use
 
@@ -734,7 +734,7 @@ The following settings are available for category pages:
 
 !!! info "Config.categories"
 
-    ### `Config.categories` 
+    ### `Config.categories` {.toc-hidden-header}
 
     Use this setting to enable or disable category pages. A category page shows all posts for a specific category in reverse chronological order. If you want to disable category pages, use:
 
@@ -758,7 +758,7 @@ The following settings are available for category pages:
 
 !!! info "Categories_url_format"
 
-    ### `Categories_url_format`
+    ### `Categories_url_format` {.toc-hidden-header}
 
     Use this setting to change the format string that is used when generating category page URLs. You can freely combine placeholders, and join them with slashes or other characters:
 
@@ -788,7 +788,7 @@ The following settings are available for category pages:
 
 !!! info "Config.categories_slugify"
 
-    ### `Conf.cats_slugify`
+    ### `Conf.cats_slugify` {.toc-hidden-header}
 
     Use this setting to change the function for generating URL-compatible slugs from categories. By default, the [`slugify`][pymdownx.slugs.slugify] function from [Python Markdown Extensions] is used as follows:
 
@@ -806,7 +806,7 @@ The default configuration is Unicode-aware and should produce good slugs for all
 
 !!! info "Cat_slugify_separator"
 
-    ### `Cat_slugify_separator`
+    ### `Cat_slugify_separator` {.toc-hidden-header}
 
     Use this setting to change the separator that is passed to the slugification function set as part of [`categories_slugify`][`config.categories_slugify`]. While the default is a hyphen, it can be set to any string, e.g., `_`:
 
@@ -821,7 +821,7 @@ The default configuration is Unicode-aware and should produce good slugs for all
 
 !!! info "Categories_sort_by"
 
-    ### `Categories_sort_by`
+    ### `Categories_sort_by` {.toc-hidden-header}
 
     Use this setting to specify a custom function for sorting categories. For example, if you want to sort categories by the number of posts they contain, use the following configuration:
 
@@ -836,7 +836,7 @@ The default configuration is Unicode-aware and should produce good slugs for all
 
 !!! info "Categories_sort_reverse"
 
-    ### `Cats_sort_reverse`
+    ### `Cats_sort_reverse` {.toc-hidden-header}
 
     Use this setting to reverse the order in which categories are sorted. By default, categories are sorted in ascending order, but you can reverse ordering as follows:
 
@@ -848,7 +848,7 @@ The default configuration is Unicode-aware and should produce good slugs for all
 
 !!! info "Categories_allowed"
 
-    ### `Categories_allowed`
+    ### `Categories_allowed` {.toc-hidden-header}
 
     The plugin allows to check categories against a predefined list, in order to catch typos or make sure that categories are not arbitrarily added. Specify the categories you want to allow with:
 
@@ -865,7 +865,7 @@ The default configuration is Unicode-aware and should produce good slugs for all
 
 !!! info "Categories_pagination"
 
-    ### `Categories_pagination`
+    ### `Categories_pagination` {.toc-hidden-header}
 
     Use this setting to enable or disable pagination for category pages. The value of this setting is inherited from [`pagination`][`config.pagination`], unless it's explicitly set. To disable pagination, use:
 
@@ -877,7 +877,7 @@ The default configuration is Unicode-aware and should produce good slugs for all
 
 !!! info "Cat_pagination_per_page"
 
-    ### `pagination_per_page`
+    ### `pagination_per_page` {.toc-hidden-header}
 
     Use this setting to change the number of posts rendered per category page. The
     value of this setting is inherited from [`pagination_per_page`]
@@ -891,7 +891,7 @@ The default configuration is Unicode-aware and should produce good slugs for all
 
 !!! info "Categories_toc"
 
-    ### `Categories_toc` 
+    ### `Categories_toc` {.toc-hidden-header}
 
     Use this setting to leverage the table of contents to display post titles on all category pages. The value of this setting is inherited from [`blog_toc`][`config.blog_toc`], unless it's explicitly set. To change it, use:
 
@@ -908,7 +908,7 @@ The following settings are available for authors:
 
 !!! info "Setting config.authors"
 
-    ### `config.authors`
+    ### `config.authors` {.toc-hidden-header}
 
     Use this setting to enable or disable post authors. If this setting is enabled, the plugin will look for a file named [`.authors.yml`][`config.authors_file`] and render authors in posts and views. Disable this behavior with:
 
@@ -921,7 +921,7 @@ The following settings are available for authors:
 
 !!! info "Config.authors_file"
 
-    ### `Config.authors_file`
+    ### `Config.authors_file` {.toc-hidden-header}
 
     Use this setting to change the path of the file where the author information for your posts resides. It's normally not necessary to change this setting, but if you need to, use:
 
@@ -963,7 +963,7 @@ The following settings are available for authors:
 
 !!! info "Config.authors_profiles"
 
-    ### `authors_profiles`
+    ### `authors_profiles` {.toc-hidden-header}
 
     Use this setting to enable or disable automatically generated author profiles. An author profile shows all posts by an author in reverse chronological order. You can enable author profiles with:
 
@@ -990,7 +990,7 @@ The following settings are available for authors:
 
 !!! info "Auth._profiles_url_format"
 
-    ### `_profiles_url_format`
+    ### `_profiles_url_format` {.toc-hidden-header}
 
     Use this setting to change the format string that is used when generating author profile URLs. You can freely combine placeholders, and join them with slashes or other characters:
 
@@ -1022,7 +1022,7 @@ The following settings are available for authors:
 
 !!! info "Auth._profiles_pagination"
 
-    ### `_profiles_pagination`
+    ### `_profiles_pagination` {.toc-hidden-header}
 
     Use this setting to enable or disable pagination for author profiles. The value of this setting is inherited from [`pagination`][`config.pagination`], unless it's explicitly set. To disable pagination, use:
 
@@ -1034,7 +1034,7 @@ The following settings are available for authors:
 
 !!! info "Pro._pagination_per_page"
 
-    ### `_pagination_per_page`
+    ### `_pagination_per_page` {.toc-hidden-header}
 
     Use this setting to change the number of posts rendered per archive page. The value of this setting is inherited from [`pagination_per_page`][`config.pagination_per_page`], unless it's explicitly set. To change it, use:
 
@@ -1046,7 +1046,7 @@ The following settings are available for authors:
 
 !!! info "Authors_profiles_toc"
 
-    ### `Authors_profiles_toc`
+    ### `Authors_profiles_toc` {.toc-hidden-header}
 
     Use this setting to leverage the table of contents to display post titles on all author profiles. The value of this setting is inherited from [`blog_toc`][`config.blog_toc`], unless it's explicitly set. To change it, use:
 
@@ -1063,7 +1063,7 @@ The following settings are available for pagination:
 
 !!! info "Setting config.pagination"
 
-    ### `Setting config.pagination`
+    ### `Setting config.pagination` {.toc-hidden-header}
 
     Use this setting to enable or disable pagination in views – generated pages that show posts or subsets of posts in reverse chronological order. If you want to disable pagination, use:
 
@@ -1075,7 +1075,7 @@ The following settings are available for pagination:
 
 !!! info "Pagination_per_page"
 
-    ### `Pagination_per_page`
+    ### `Pagination_per_page` {.toc-hidden-header}
 
     Use this setting to change the number of posts rendered per page. If you have rather long post excerpts, it can be a good idea to reduce the number of posts per page:
 
@@ -1088,7 +1088,7 @@ The following settings are available for pagination:
 
 !!! info "Pagination_url_format"
 
-    ### `Pagination_url_format`
+    ### `Pagination_url_format` {.toc-hidden-header}
 
     Use this setting to change the format string that is used when generating paginated view URLs. You can freely combine placeholders, and join them with slashes or other characters:
 
@@ -1115,7 +1115,7 @@ The following settings are available for pagination:
 
 !!! info "Pagination_format"
 
-    ### `Pagination_format`
+    ### `Pagination_format` {.toc-hidden-header}
 
     The plugin uses the [paginate] module to generate the pagination markup using a special syntax. Use this setting to customize how pagination is constructed. Some popular choices:
 
@@ -1165,7 +1165,7 @@ The following settings are available for pagination:
 
 !!! info "Pagination_if_single_page"
 
-    ### `_if_single_page`
+    ### `_if_single_page` {.toc-hidden-header}Setting meta.readtime
 
     Use this setting to control whether pagination should be automatically disabled when the view only consists of a single page. If you want to always render pagination, use:
 
@@ -1177,7 +1177,7 @@ The following settings are available for pagination:
 
 !!! info "Pagination_keep_content"
 
-    ### `_keep_content`
+    ### `_keep_content` {.toc-hidden-header}
 
     Use this setting to enable or disable persistence of content, i.e., if paginated views should also display the content of their containing view. If you want to enable this behavior, use:
 
@@ -1194,7 +1194,7 @@ The following settings are available for drafts:
 
 !!! info "Setting config.draft"
 
-    ### `Setting config.draft`
+    ### `Setting config.draft` {.toc-hidden-header}
 
     Rendering [draft posts][`meta.draft`] can be useful in deploy previews. Use this setting to specify whether the plugin should include posts marked as drafts when [building your project]:
 
@@ -1216,7 +1216,7 @@ The following settings are available for drafts:
 
 !!! info "Config.draft_on_serve"
 
-    ### `Config.draft_on_serve`
+    ### `Config.draft_on_serve` {.toc-hidden-header}
 
     Use this setting to control whether the plugin should include posts marked as drafts when [previewing your site]. If you don't wish to include draft posts when previewing, use:
 
@@ -1231,7 +1231,7 @@ The following settings are available for drafts:
 
 !!! info "Draft_if_future_date"
 
-    ### `Draft_if_future_date`
+    ### `Draft_if_future_date` {.toc-hidden-header}
 
     The plugin can automatically mark posts with future dates as drafts. When the date is past today, the post is automatically included when [building your project], unless explicitly marked as draft:
 
@@ -1252,7 +1252,7 @@ The following settings are available for drafts:
 
 !!! info "Setting meta.authors"
 
-    ### `Setting meta.authors`
+    ### `Setting meta.authors` {.toc-hidden-header}
 
     Use this property to associate a post with [authors] by providing a list of identifiers as defined in the [`authors_file`][`config.authors_file`]. If an author can't be resolved, the plugin will terminate with an error:
 
@@ -1274,7 +1274,7 @@ The following settings are available for drafts:
 
 !!! info "Setting meta.categories"
 
-    ### `Setting meta.categories`
+    ### `Setting meta.categories` {.toc-hidden-header}
 
     Use this property to associate a post with one or more [categories][category], making the post a part of the generated category page. Categories are defined as a list of strings (whitespaces are allowed):
 
@@ -1294,7 +1294,7 @@ The following settings are available for drafts:
 
 !!! info "Setting meta.date"
 
-    ### `Setting meta.date`
+    ### `Setting meta.date` {.toc-hidden-header}
 
     Use this property to specify a post's date. Note that this property is required, which means the build fails when it's not set. Additional dates can be set by using a slightly different syntax:
 
@@ -1352,7 +1352,7 @@ The following settings are available for drafts:
 
 !!! info "Setting meta.draft"
 
-    ### `Setting meta.draft`
+    ### `Setting meta.draft` {.toc-hidden-header}
 
     Use this property to mark a post as draft. The plugin allows to include or exclude posts marked as drafts when [building your project] using the [`draft`][`config.draft`] setting. Mark a post as draft with:
 
@@ -1367,7 +1367,7 @@ The following settings are available for drafts:
 
 !!! info "Setting meta.pin"
 
-    ### `Setting meta.pin` 
+    ### `Setting meta.pin` {.toc-hidden-header}
 
     Use this property to pin a post to the top of a view. In case multiple posts are pinned, the pinned posts are sorted by descending order and appear before all other posts. Pin a post with:
 
@@ -1383,7 +1383,7 @@ The following settings are available for drafts:
 
 !!! info "Setting meta.links"
 
-    ### `Setting meta.links` 
+    ### `Setting meta.links` {.toc-hidden-header}
 
     Use this property to define a list of links that are rendered in the sidebar of a post. The property follows the same syntax as [`nav`][`mkdocs.nav`] in `mkdocs.yml`, supporting sections and even anchors:
 
@@ -1438,7 +1438,7 @@ The following settings are available for drafts:
 
 !!! info "Setting meta.readtime"
 
-    ### `Setting meta.readtime`
+    ### `Setting meta.readtime` {.toc-hidden-header}
 
     Use this property to explicitly set the reading time of a post in minutes. When [`post_readtime`][`config.post_readtime`] is enabled, the plugin computes the reading time of a post, which can be overridden with:
 
@@ -1453,7 +1453,7 @@ The following settings are available for drafts:
 
 !!! info "Setting meta.slug"
 
-    ### `Setting meta.slug` 
+    ### `Setting meta.slug` {.toc-hidden-header}
 
     Use this property to explicitly set the slug of a post. By default, the slug of a post is automatically computed by the [`post_slugify`][`config.post_slugify`] function from the post's title, which can be overridden with:
 
@@ -1473,9 +1473,8 @@ The following settings are available for drafts:
 
     When setting up your blog or migrating from another blog framework, you might discover that you're missing specific functionality – we're happy to consider adding it to the plugin! You can [open a discussion] to ask a question, or create a [change request] on our [issue tracker], so we can find out if it might be a good fit for the plugin.
 
-  [open a discussion]: https://github.com/squidfunk/mkdocs-material/discussions
+  [open a discussion]: https://github.com/jaywhj/mkdocs-materialx/discussions
   [change request]: requesting-a-change.md
-  [issue tracker]: https://github.com/squidfunk/mkdocs-material/issues
-config.post_dir
+  [issue tracker]: https://github.com/jaywhj/mkdocs-materialx/issues
 
  [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }

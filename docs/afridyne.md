@@ -2,7 +2,7 @@
 icon: material/newlogo-nav
 ---
 
-![](imgs/20260511-034321.png)
+![](imgs/20260511-034321.png){: style="display: block; margin: 0 auto"}
 
 <h1 align="center">Afridyne Systems (PTY) Ltd</h1>
 <h3 align="center">Our Service Is The Difference</h3>

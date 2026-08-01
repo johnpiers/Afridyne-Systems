@@ -4521,4 +4521,13 @@ Reference: Fixing Broken/Tiny Nautilus Sidebar Icons (GreyStone Theme)
         cd ~/Deploy && ./deploy.sh
         ```
         
-!!! ex ""
+```mermaid
+graph TD
+A["Sagittarius A* (supermassive black hole)"] --> B["Orbit of Star S62"]
+B --> C["Periapsis (closest approach): 17.8 AU\n(AU = Astronomical Units, 1 AU ≈ Earth-Sun distance)"]
+B --> D["Apoapsis (farthest distance): 1,462.2 AU\n(AU = Astronomical Units, 1 AU ≈ Earth-Sun distance)"]
+style A fill:#7a7878,stroke:#948686,stroke-width:4px
+style B fill:#4d6aa1,stroke:#747474,stroke-width:2px
+style C fill:#f05b5b,stroke:#000,stroke-width:2px
+style D fill:#4d964d,stroke:#000,stroke-width:2px
+```
