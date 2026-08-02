@@ -5,9 +5,14 @@ icon: octicons/markdown-16
 ![Markdown Logo](images/markdown-mark.svg#only-light){ .center-image }
 ![Markdown Logo](images/markdown-mark-white.svg#only-dark){ .center-image }
 
-<H1 style="text-align: center;"> Awesome Markdown</H1>
+<div align="center">
+<a href="https://github.com/mundimark/awesome-markdown"" title="Return to the main page"><h1>Awesome Markdown</h></a>
+ </div>
 
-### Getting Started
+---
+
+#### Getting Started: Awesome Markdown [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+
 
 !!! desc "Getting Started"
     An overview of Markdown, how it works, and what you can do with it.
@@ -54,7 +59,8 @@ icon: octicons/markdown-16
     
     ---
 
-    ![Dillinger Markdown editor](https://mdg.imgix.net/assets/images/dillinger.png)
+    [![Dillinger Markdown editor](imgs/20260801-125002.png)](https://dillinger.io/)
+    <H4 style="text-align: center;"> Click Image: `Dillinger Markdown Editor.`</H4>
     
     ---
 
@@ -72,11 +78,15 @@ icon: octicons/markdown-16
 
     Markdown applications use something called a *Markdown processor* (also commonly referred to as a “parser” or an “implementation”) to take the Markdown-formatted text and output it to HTML format. At that point, your document can be viewed in a web browser or combined with a style sheet and printed. You can see a visual representation of this process below.
 
-    !!! note "Technical Note"
+    !!! recommendation "Technical Note"
 
         The Markdown application and processor are two separate components. For the sake of brevity, I've combined them into one element ("Markdown app") in the figure below.
 
-    ![The Markdown Process](https://mdg.imgix.net/assets/images/markdown-flowchart.png)
+   
+    [![The Markdown Process](imgs/20260801-143309.png)](https://tiiny.host/blog/what-is-md-file/)
+    <H4 style="text-align: center;"> The Markdown Process</H4>
+    
+    ### [The Markdown Process](https://tiiny.host/blog/what-is-md-file/)
 
     To summarize, this is a four-part process:
 
@@ -450,5 +460,4 @@ _Email-style writing for the web by John Gruber and Aaron Swartz_
 !!! success "Book Publishing Services"
     *   **Softcover.io** ([:octocat:](https://github.com/softcover/softcover)) – Command-line publishing by Michael Hartl.
     *   **GitBook.com** – Write and publish books with Markdown and Git.
-
 

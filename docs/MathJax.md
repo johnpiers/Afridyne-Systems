@@ -1269,4 +1269,16 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
 
     Because $\color{#f08c00}{2.828} \color{#cc5de8}{>} \color{#f08c00}{2}$, choosing these exact angles mathematically maximizes the proof that Einstein's local reality does not exist.
     
-
+!!! desc ""
+    - In 1947, General Mills launched one of the most audacious cereal premiums ever: the Lone Ranger Atomic Bomb Ring, offered through Kix for just 15 cents and a box top.
+    
+    - The ring’s “bomb” chamber housed a tiny [***spinthariscope***](https://en.wikipedia.org/wiki/Spinthariscope), a real scientific device featuring a minuscule amount of radioactive Polonium-210 (an alpha emitter with a 138-day half-life) positioned against a zinc sulfide screen.
+    
+    - In a darkened room, children could remove the red tailfin and peer through the lens to witness brilliant flashes of light as alpha particles struck the screen, marketed as watching “atoms splitting” in action.
+    
+    - The quantity was too small for external harm and alpha particles can’t penetrate skin.
+    
+    - $^{210}_{84}\text{Po} \rightarrow ^{206}_{82}\text{Pb} + ^{4}_{2}\text{He} + \text{Energy}$
+    
+    - $\color{#F282B4}{^{210}_{84}\text{Po}} \rightarrow \color{#00B0F0}{^{206}_{82}\text{Pb}} + \color{#00A99A}{^{4}_{2}\text{He}} + \color{magenta}{\text{Energy}}$
+    

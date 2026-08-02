@@ -1048,7 +1048,7 @@ uv's documentation is available at [UV Docs](https://docs.astral.sh/uv).
     
 !!! note "🎨 Extensive Theme Support"
 
-    Create visually appealing documentation, with a wide choice of [built-in](https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes) and [third-party](https://www.sphinx-doc.org/en/master/usage/theming.html#third-party-themes) HTML themes and the ability to customize or [create new themes](http://127.0.0.1:8000/Various_HTML_Markdown/development/html_themes/index.html#extension-html-theme).
+    Create visually appealing documentation, with a wide choice of [built-in](https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes) and [third-party](https://www.sphinx-doc.org/en/master/usage/theming.html#third-party-themes) HTML themes and the ability to customize or [create new themes](https://www.sphinx-doc.org/en/master/development/html_themes/index.html#extension-html-theme).
     
 !!! note "🔌 Fully Extensible"
 
