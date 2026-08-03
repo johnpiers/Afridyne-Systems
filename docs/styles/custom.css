@@ -1465,3 +1465,11 @@ a.md-button.md-button--custom:hover,
 }
 
 
+[data-md-color-scheme="slate"] .markmap-foreign,
+[data-md-color-scheme="slate"] .markmap-foreign div {
+  color: var(--md-default-fg-color) !important;
+}
+
+[data-md-color-scheme="slate"] .markmap-foreign mark {
+  color: #1a1a1a !important;
+}

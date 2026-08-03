@@ -93,6 +93,8 @@ validation:
 
 plugins:
   - search
+  - drawio:
+      darkmode: true
   - materialx/blog:         # Added 'material/'
       blog_dir: blog
       post_url_format: "{date}/{slug}"

@@ -688,3 +688,152 @@ __Are you missing something? Please [open a discussion] and let us know!__
   [open a discussion]: https://github.com/squidfunk/mkdocs-material/discussions/new
 
 [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+
+---
+
+### Graphics & Charts
+
+???+ tip "[mkdocs-glightbox][glightbox] - click to open the image as a lightbox"
+
+    ![](../assets/assets/screenshots/social-cards-layer-icon-circles.png)
+
+???+ tip "[diagram][drawio] - embed interactive drawio diagrams in documents"
+
+    === "Rendering"
+
+        ![](../assets/images/mkdocs.drawio)
+
+
+    === "Usage"
+
+        ```markdown
+        <!-- Add a drawio file like a normal image -->
+        
+        ![](../assets/images/mkdocs.drawio)
+
+        ```
+
+???+ tip "[mkdocs-mermaid2-plugin][mermaid2] - renders mermaid text into diagrams (built-in)"
+
+    === "Rendering"
+
+        ```mermaid
+        %%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
+        flowchart LR
+            A(1.Front Matter)
+            B(2.Cache File)
+            C(3.Git Timestamp)
+            D(4.File Timestamp)
+            A -.Creation date.-> B -.-> C -.-> D
+            A -.Last updated.-> C
+        ```
+
+    === "Usage"
+
+        ````
+        ```mermaid
+        %%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
+        flowchart LR
+            A(1.Front Matter)
+            B(2.Cache File)
+            C(3.Git Timestamp)
+            D(4.File Timestamp)
+            A -.Creation date.-> B -.-> C -.-> D
+            A -.Last updated.-> C
+        ```
+        ````
+
+---
+
+??? tip "[mkdocs-markmap][markmap] - create interactive mind maps from markdown and embed them in documents"
+
+    **Usage**: use `markmap` fence blocks to enclose markdown content
+
+    ````` md { data-download }
+    ````markmap
+
+    ## Mind Map
+
+    ### Fence Block Enclosure
+
+    - That's great. Anything
+
+    ### Formatting and Lists
+
+    - **strong** ~~del~~ *italic* ==highlight==
+    - `inline code`
+    - [x] checkbox
+    - Katex: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+
+    ### Code block
+
+    ```js
+    for (let i = 0; i < 5; i++) {
+        console.log("value", i);
+    }
+    ```
+
+    ### Table block
+
+    | Header1 | Header2 |
+    | --- | --- |
+    | item 1 | 1\. one<br /> 2\. two |
+
+    ### Image
+
+    ![](/Afridyne-Systems/assets/favicon.png)
+
+    ````
+    `````
+
+<style>
+  svg.markmap {
+    width: 100%;
+    height: 360px;
+  }
+</style>
+<script src="https://unpkg.com/markmap-autoloader/dist/index.js"></script>
+
+<div class="markmap">
+<script type="text/template">
+
+## Mind Map
+
+### Fence Block Enclosure 
+
+- That's great. Anything
+
+### Formatting and Lists
+
+- **strong** ~~del~~ *italic* ==highlight==
+- `inline code`
+- [x] checkbox
+- KaTeX: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+
+### Code block
+
+```js
+for (let i = 0; i < 5; i++) {
+    console.log("value", i);
+}
+```
+
+### Table block
+
+| Header1 | Header2 |
+| --- | --- |
+| item 1 | 1\. one<br /> 2\. two |
+
+### Image
+
+![](../../assets/newlogo.svg)
+
+</script>
+</div>
+
+  [glightbox]: https://github.com/blueswen/mkdocs-glightbox
+  [drawio]: https://github.com/tuunit/mkdocs-drawio
+  [markmap]: https://github.com/markmap/mkdocs-markmap
+  [mermaid2]: https://github.com/fralau/mkdocs-mermaid2-plugin
+  
+  
