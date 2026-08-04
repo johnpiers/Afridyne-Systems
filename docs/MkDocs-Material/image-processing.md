@@ -40,51 +40,53 @@ icon: simple/materialformkdocs
     [Cairo Graphics] is a graphics library and dependency of [Pillow], which Material for MkDocs makes use of for generating [social cards] and performing [image optimization]. See the following section which explains how to install [Cairo Graphics] and its dependencies on your system:
     
 
+!!! recommendation "Cairo Graphics"
 
-=== ":material-apple: macOS"
+    === ":material-apple: macOS"
 
-    Make sure [Homebrew] is installed, which is a modern package manager for macOS. Next, use the following command to install all necessary dependencies:
-
-    ```
-    brew install cairo freetype libffi libjpeg libpng zlib
-    ```
-
-=== ":fontawesome-brands-windows: Windows"
-
-    The easiest way to get up and running with the [Cairo Graphics] library is by installing it via [MSYS2], which is a software distribution and building platform for Windows. Run the following command inside of a MSYS2 shell:
-
-    ```
-    pacman -S mingw-w64-ucrt-x86_64-cairo
-    ```
-
-    MSYS2 provides the Cairo Graphics library in several different environments. The above command uses the [UCRT64] environment, as recommended by the MSYS2 developers.
-
-=== ":material-linux: Linux"
-
-    There are several package managers for Linux with varying availability per distribution. The [installation guide] explains how to install the [Cairo Graphics] library for your distribution:
-
-    === ":material-ubuntu: Ubuntu"
+        Make sure [Homebrew] is installed, which is a modern package manager for macOS. Next, use the following command to install all necessary dependencies:
 
         ```
-        apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+        brew install cairo freetype libffi libjpeg libpng zlib
         ```
 
-    === ":material-fedora: Fedora"
+    === ":fontawesome-brands-windows: Windows"
+
+        The easiest way to get up and running with the [Cairo Graphics] library is by installing it via [MSYS2], which is a software distribution and building platform for Windows. Run the following command inside of a MSYS2 shell:
 
         ```
-        yum install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel
+        pacman -S mingw-w64-ucrt-x86_64-cairo
         ```
 
-    === ":fontawesome-brands-suse: openSUSE"
+        MSYS2 provides the Cairo Graphics library in several different environments. The above command uses the [UCRT64] environment, as recommended by the MSYS2 developers.
 
-        ```
-        zypper install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel
-        ```
+    === ":material-linux: Linux"
 
-The following environments come with a preinstalled version of [Cairo Graphics]:
+        There are several package managers for Linux with varying availability per distribution. The [installation guide] explains how to install the [Cairo Graphics] library for your distribution:
 
-- [x] No installation needed in [Docker image]
-- [x] No installation needed in [GitHub Actions] (Ubuntu)
+        === ":material-ubuntu: Ubuntu"
+
+            ```
+            apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+            ```
+
+        === ":material-fedora: Fedora"
+
+            ```
+            yum install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel
+            ```
+
+        === ":fontawesome-brands-suse: openSUSE"
+
+            ```
+            zypper install cairo-devel freetype-devel libffi-devel libjpeg-devel libpng-devel zlib-devel
+            ```
+
+    The following environments come with a preinstalled version of [Cairo Graphics]:
+
+    - [x] No installation needed in [Docker image]
+    - [x] No installation needed in [GitHub Actions] (Ubuntu)
+
 
   [Cairo Graphics]: https://www.cairographics.org/
   [Homebrew]: https://brew.sh/
@@ -96,45 +98,48 @@ The following environments come with a preinstalled version of [Cairo Graphics]:
 
 ### pngquant
 
-[pngquant] is an excellent library for lossy PNG compression, and a direct
-dependency of the [built-in optimize plugin]. See the following section which
-explains how to install [pngquant] system:
+!!! recommendation "pngquant"
 
-=== ":material-apple: macOS"
+    [pngquant] is an excellent library for lossy PNG compression, and a direct
+    dependency of the [built-in optimize plugin]. See the following section which
+    explains how to install [pngquant] system:
 
-    Make sure [Homebrew] is installed, which is a modern package manager for
-    macOS. Next, use the following command to install all necessary
-    dependencies:
+    === ":material-apple: macOS"
 
-    ```
-    brew install pngquant
-    ```
+        Make sure [Homebrew] is installed, which is a modern package manager for
+        macOS. Next, use the following command to install all necessary
+        dependencies:
 
-=== ":fontawesome-brands-windows: Windows"
+        ```
+        brew install pngquant
+        ```
 
-    The easiest way to get [pngquant] is by installing it via [MSYS2], which is
-    a software distribution and building platform for Windows. Run the following
-    command inside of a MSYS2 shell:
+    === ":fontawesome-brands-windows: Windows"
 
-    ```
-    pacman -S mingw-w64-ucrt-x86_64-pngquant
-    ```
+        The easiest way to get [pngquant] is by installing it via [MSYS2], which is
+        a software distribution and building platform for Windows. Run the following
+        command inside of a MSYS2 shell:
 
-=== ":material-linux: Linux"
+        ```
+        pacman -S mingw-w64-ucrt-x86_64-pngquant
+        ```
 
-    All popular Linux distributions, regardless of package manager, should
-    allow to install [pngquant] with the bundled package manager. For example,
-    on Ubuntu, [pngquant] can be installed with:
+    === ":material-linux: Linux"
 
-    ```
-    apt-get install pngquant
-    ```
+        All popular Linux distributions, regardless of package manager, should
+        allow to install [pngquant] with the bundled package manager. For example,
+        on Ubuntu, [pngquant] can be installed with:
 
-    The same is true for `yum` and `zypper`.
+        ```
+        apt-get install pngquant
+        ```
 
-The following environments come with a preinstalled version of [pngquant]:
+        The same is true for `yum` and `zypper`.
 
-- [x] No installation needed in [Docker image]
+    The following environments come with a preinstalled version of [pngquant]:
+
+    - [x] No installation needed in [Docker image]
+
 
   [pngquant]: https://pngquant.org/
   [built-in optimize plugin]: optimize.md
@@ -144,110 +149,95 @@ The following environments come with a preinstalled version of [pngquant]:
 
 ### Cairo library was not found
 
-After following the installation guide above it may happen that you still get
-the following error:
+!!! recommendation "Cairo Library Not Found"
 
-```bash
-no library called "cairo-2" was found
-no library called "cairo" was found
-no library called "libcairo-2" was found
-cannot load library 'libcairo.so.2': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo.so.2'
-cannot load library 'libcairo.2.dylib': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo.2.dylib'
-cannot load library 'libcairo-2.dll': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo-2.dll'
-```
-
-This means that the [`cairosvg`][PyPi CairoSVG] package was installed, but the
-underlying [`cairocffi`][PyPi CairoCFFI] dependency couldn't [find][cffi-dopen]
-the installed library. Depending on the operating system the library lookup
-process is different:
-
-!!! tip
-    Before proceeding remember to fully restart any open Terminal windows, and
-    their parent hosts like IDEs to reload any environmental variables, which
-    were altered during the installation process. This might be the quick fix.
-
-=== ":material-apple: macOS"
-
-    On macOS the library lookup checks inside paths defined in [dyld][osx-dyld].
-    Additionally each library `name` is checked in [three variants][find-library-macOS]
-    with the `libname.dylib`, `name.dylib` and `name.framework/name` format.
-
-    [Homebrew] should set every needed variable to point at the installed
-    library directory, but if that didn't happen, you can use the debug script
-    below to see what paths are looked up.
-
-    A [known workaround][cffi-issue] is to add the Homebrew lib path directly
-    before running MkDocs:
+    After following the installation guide above it may happen that you still get the following error:
 
     ```bash
-    export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+    no library called "cairo-2" was found
+    no library called "cairo" was found
+    no library called "libcairo-2" was found
+    cannot load library 'libcairo.so.2': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo.so.2'
+    cannot load library 'libcairo.2.dylib': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo.2.dylib'
+    cannot load library 'libcairo-2.dll': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libcairo-2.dll'
     ```
 
-    View source code of [cairo-lookup-macos.py]
+    This means that the [`cairosvg`][PyPi CairoSVG] package was installed, but the underlying [`cairocffi`][PyPi CairoCFFI] dependency couldn't [find][cffi-dopen] the installed library. Depending on the operating system the library lookup process is different:
 
-    ```bash title="Python Debug macOS Script"
-    curl "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-macos.py" | python -
-    ```
 
-=== ":fontawesome-brands-windows: Windows"
+!!! tip "Tip"
+    Before proceeding remember to fully restart any open Terminal windows, and their parent hosts like IDEs to reload any environmental variables, which were altered during the installation process. This might be the quick fix.
+    
+!!! recommendation "Cairo Checks"
 
-    On Windows the library lookup checks inside the paths defined in the
-    environmental `PATH` variable. Additionally each library `name` is checked
-    in [two variants][find-library-Windows] with the `name` and `name.dll` format.
+    === ":material-apple: macOS"
 
-    The default binary and shared library path for the [UCRT64] environment of
-    [MSYS2], in which the packages were installed using the above commands, is:
+        On macOS the library lookup checks inside paths defined in [dyld][osx-dyld]. Additionally each library `name` is checked in [three variants][find-library-macOS] with the `libname.dylib`, `name.dylib` and `name.framework/name` format.
 
-    ```powershell
-    C:\msys64\ucrt64\bin
-    ```
+        [Homebrew] should set every needed variable to point at the installed library directory, but if that didn't happen, you can use the debug script below to see what paths are looked up.
+        
+        A [known workaround][cffi-issue] is to add the Homebrew lib path directly before running MkDocs:
 
-    Use the debug script below to check if the path is included. If it isn't then:
+        ```bash
+        export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+        ```
 
-    1. Press ++windows+r++.
-    2. Run the `SystemPropertiesAdvanced` applet.
-    3. Select "Environmental Variables" at the bottom.
-    4. Add the whole path to the above directory to your `Path` variable.
-    5. Click OK on all open windows to apply changes.
-    6. Fully restart any open Terminal windows and their parent hosts like IDEs.
+        View source code of [cairo-lookup-macos.py]
 
-    ```powershell title="You can also list paths using PowerShell"
-    $env:Path -split ';'
-    ```
+        ```bash title="Python Debug macOS Script"
+        curl "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-macos.py" | python -
+        ```
 
-    View source code of [cairo-lookup-windows.py]
+    === ":fontawesome-brands-windows: Windows"
 
-    ```powershell title="PowerShell - Python Debug Windows Script"
-    (Invoke-WebRequest "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-windows.py").Content | python -
-    ```
+        On Windows the library lookup checks inside the paths defined in the environmental `PATH` variable. Additionally each library `name` is checked in [two variants][find-library-Windows] with the `name` and `name.dll` format.
+        
+        The default binary and shared library path for the [UCRT64] environment of [MSYS2], in which the packages were installed using the above commands, is:
+        
 
-=== ":material-linux: Linux"
+        ```powershell
+        C:\msys64\ucrt64\bin
+        ```
 
-    On Linux the library lookup can [differ greatly][find-library-Linux] and is
-    dependent from the installed distribution. For tested Ubuntu and Manjaro
-    systems Python runs shell commands to check which libraries are available in
-    [`ldconfig`][ubuntu-ldconfig], in the [`gcc`][ubuntu-gcc]/`cc` compiler, and
-    in [`ld`][ubuntu-ld].
+        Use the debug script below to check if the path is included. If it isn't then:
 
-    You can extend the `LD_LIBRARY_PATH` environmental variable with an absolute
-    path to a library directory containing `libcairo.so` etc. Run this directly
-    before MkDocs:
+        1. Press ++windows+r++.
+        2. Run the `SystemPropertiesAdvanced` applet.
+        3. Select "Environmental Variables" at the bottom.
+        4. Add the whole path to the above directory to your `Path` variable.
+        5. Click OK on all open windows to apply changes.
+        6. Fully restart any open Terminal windows and their parent hosts like IDEs.
 
-    ```bash
-    export LD_LIBRARY_PATH=/absolute/path/to/lib:$LD_LIBRARY_PATH
-    ```
+        ```powershell title="You can also list paths using PowerShell"
+        \$env:Path -split ';'
+        ```
 
-    You can also modify the `/etc/ld.so.conf` file.
+        View source code of [cairo-lookup-windows.py]
 
-    The Python script below shows, which function is being run to find installed
-    libraries. You can check the source to find out what specific commands are
-    executed on your system during library lookup.
+        ```powershell title="PowerShell - Python Debug Windows Script"
+        (Invoke-WebRequest "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-windows.py").Content | python -
+        ```
 
-    View source code of [cairo-lookup-linux.py]
+    === ":material-linux: Linux"
 
-    ```bash title="Python Debug Linux Script"
-    curl "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-linux.py" | python -
-    ```
+        On Linux the library lookup can [differ greatly][find-library-Linux] and is dependent from the installed distribution. For tested Ubuntu and Manjaro systems Python runs shell commands to check which libraries are available in [`ldconfig`][ubuntu-ldconfig], in the [`gcc`][ubuntu-gcc]/`cc` compiler, and in [`ld`][ubuntu-ld].
+        
+        You can extend the `LD_LIBRARY_PATH` environmental variable with an absolute path to a library directory containing `libcairo.so` etc. Run this directly before MkDocs:
+        
+
+        ```bash
+        export LD_LIBRARY_PATH=/absolute/path/to/lib:\$LD_LIBRARY_PATH
+        ```
+
+        You can also modify the `/etc/ld.so.conf` file.
+
+        The Python script below shows, which function is being run to find installed libraries. You can check the source to find out what specific commands are executed on your system during library lookup.
+
+        View source code of [cairo-lookup-linux.py]
+
+        ```bash title="Python Debug Linux Script"
+        curl "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/includes/debug/cairo-lookup-linux.py" | python -
+        ```
 
   [PyPi CairoSVG]: https://pypi.org/project/CairoSVG
   [PyPi CairoCFFI]: https://pypi.org/project/CairoCFFI

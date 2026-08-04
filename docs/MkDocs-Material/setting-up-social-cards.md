@@ -763,7 +763,7 @@ __Are you missing something? Please [open a discussion] and let us know!__
     - **strong** ~~del~~ *italic* ==highlight==
     - `inline code`
     - [x] checkbox
-    - Katex: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+    - KaTeX: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
 
     ### Code block
 
@@ -781,7 +781,7 @@ __Are you missing something? Please [open a discussion] and let us know!__
 
     ### Image
 
-    ![](/Afridyne-Systems/assets/favicon.png)
+    ![](../../assets/newlogo.svg)
 
     ````
     `````

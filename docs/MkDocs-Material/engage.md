@@ -56,9 +56,9 @@ An easy way to create an RSS feed for your blog is to use the [MkDocs RSS Plugin
     ```
 
     You may also want to try your feed with a feed reader. There are various desktop and mobile apps as well as online services. Of course, to use the latter you will need to deploy your project somewhere that is accessible to them.
-
-This minimal configuration should work well if you have not made any changes to the default configuration of the blog plugin. For more information on adapting the feed to your needs, see [the RSS plugin's documentation].
-
+    
+    This minimal configuration should work well if you have not made any changes to the default configuration of the blog plugin. For more information on adapting the feed to your needs, see [the RSS plugin's documentation].
+    
 [the RSS plugin's documentation]: https://guts.github.io/mkdocs-rss-plugin/
 
 ## Social Media Buttons
@@ -69,7 +69,7 @@ Social media buttons can serve two purposes: to allow your readers to navigate t
 
 Links to social media profiles a usually provided in the footer of pages and Material for MkDocs makes this easy. All you need to do is to provide the necessary links and define the icons to use.
 
-!!! example "Adding social media profile links"
+???+ex "Adding social media profile links"
 
     Add an `extra` section to your `mkdocs.yml` and, within it, a `social` section to contain a list of link definitions. These consist of the logo to use and the link to the profile.
 
@@ -122,7 +122,7 @@ Adding buttons that let people share your content on social media is a bit more 
     - Only when someone clicks a share button will there be interactions with those companies' servers.
     
 
-!!! example "Add Share Buttons"
+???+example "Add Share Buttons"
 
     1. In order to add the share buttons, you can add a hook that appends buttons for sharing the current page.
 
@@ -172,32 +172,39 @@ Adding buttons that let people share your content on social media is a bit more 
 
 ## <u>__Add a Discussion System__</u>
 
-- __Allowing__ your readers to comment on your posts is a great way of receiving feedback, learning something, as well as giving readers the opportunity to discuss the content and the topic it is about.
+!!! recommendation "Discussion System"
 
-- __There__ are plenty of discussion system out there and you will need to consider your audience when choosing one appropriate for your blog. Likewise, you will also need to consider existing commitments to communication channels.
- 
-- __If__ you are a heavy user Slack, for example, you may have a string preference for this system. Consider that when you add a communication channel, you will need to be prepared to use it regularly and to moderate discussions.
-
+    - __Allowing__ your readers to comment on your posts is a great way of receiving feedback, learning something, as well as giving readers the opportunity to discuss the content and the topic it is about.
+    
+    - __There__ are plenty of discussion system out there and you will need to consider your audience when choosing one appropriate for your blog. Likewise, you will also need to consider existing commitments to communication channels.
+    
+    - __If__ you are a heavy user Slack, for example, you may have a string preference for this system. Consider that when you add a communication channel, you will need to be prepared to use it regularly and to moderate discussions.
+    
 ### Giscus Integration
 
-In this tutorial, we will be using [Giscus] because it is free, open source, and uses [GitHub Discussions] as a backend. Because a lot of users of Material for MkDocs use GitHub, this seems like an obvious choice.
-
-[Giscus]: https://giscus.app/
-[GitHub Discussions]: https://docs.github.com/en/discussions
-
-To add Giscus to your blog you will need to go through a number of steps:
-
-1. Create a GitHub repository if there is not already one
-2. Turn on discussions and install the [Giscus app]
-3. Configure the code needed to embed Giscus into your blog
-4. Add the code to your MkDocs project
-
-[Giscus app]: https://github.com/apps/giscus
-
-You may want to create a test repository for this tutorial that you can scrap later on. The instructions below assume that you are user "example" and that you create a repository "giscus-test." The repository will need to be public for people to be able to use the discussions.
-
-In the instructions given below, you will need to replace at least the username but also the repository name if you chose another name such as when you want to work directly on an existing repository.
-
+!!! abstract "Giscus Integration"
+    In this tutorial, we will be using [Giscus] because it is free, open source, and uses [GitHub Discussions] as a backend. Because a lot of users of Material for MkDocs use GitHub, this seems like an obvious choice.
+    
+    [Giscus]: https://giscus.app/
+    [GitHub Discussions]: https://docs.github.com/en/discussions
+    
+    ---
+    
+    To add Giscus to your blog you will need to go through a number of steps:
+    
+    1. Create a GitHub repository if there is not already one
+    2. Turn on discussions and install the [Giscus app]
+    3. Configure the code needed to embed Giscus into your blog
+    4. Add the code to your MkDocs project
+    
+    [Giscus app]: https://github.com/apps/giscus
+    
+    ---
+    
+    - You may want to create a test repository for this tutorial that you can scrap later on. The instructions below assume that you are user "example" and that you create a repository "giscus-test." The repository will need to be public for people to be able to use the discussions.
+    
+    - In the instructions given below, you will need to replace at least the username but also the repository name if you chose another name such as when you want to work directly on an existing repository.
+    
 !!! example "Turn on Discussions and Install the Giscus App"
 
     __Once__ the repository is set up, go to its settings page and find `Features` in the `General` section. Tick the checkbox for `Discussions`. You will see that `Discussions` appears in the top navigation for the repository. If you are using a live repository then you may want to add some minimal content to the discussions section at this point and come back to the tutorial.
@@ -212,26 +219,28 @@ In the instructions given below, you will need to replace at least the username 
     4. You will end up on the `Applications` page in your settings, where you
        can control the Gicsus app and uninstall it if so desired.
 
-__That is all the preparation you will need for the repository. Next, it is time to generate a piece of code that embeds Giscus in your site. The resulting code snippet will look something like this:__
 
-```html
-<script src="https://giscus.app/client.js"
-        data-repo="<username>/<repository>"
-        data-repo-id="..."
-        data-category="Announcements"
-        data-category-id="..."
-        data-mapping="title"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
-```
+???+desc "Enmbedding Giscus"
+    __That is all the preparation you will need for the repository. Next, it is time to generate a piece of code that embeds Giscus in your site. The resulting code snippet will look something like this:__
+    
+    ```html
+    <script src="https://giscus.app/client.js"
+            data-repo="<username>/<repository>"
+            data-repo-id="..."
+            data-category="Announcements"
+            data-category-id="..."
+            data-mapping="title"
+            data-strict="1"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="preferred_color_scheme"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+    </script>
+    ```
 
 !!! example "Configure the Code Needed to Embed Giscus into your Blog"
 
