@@ -1116,14 +1116,14 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -s http://localhost:8000/feed_rss_created.xml | xmllint --format -
 </span></code></pre></div>
 <p>You may also want to try your feed with a feed reader. There are various desktop and mobile apps as well as online services. Of course, to use the latter you will need to deploy your project somewhere that is accessible to them.</p>
-</div>
 <p>This minimal configuration should work well if you have not made any changes to the default configuration of the blog plugin. For more information on adapting the feed to your needs, see <a href="https://guts.github.io/mkdocs-rss-plugin/">the RSS plugin's documentation</a>.</p>
+</div>
 <h2 id="social-media-buttons">Social Media Buttons<a class="headerlink" href="#social-media-buttons" title="Permanent link">¶</a></h2>
 <p>Social media buttons can serve two purposes: to allow your readers to navigate to your social media profiles or to share content you have published via their own accounts.</p>
 <h3 id="profile-links">Profile Links<a class="headerlink" href="#profile-links" title="Permanent link">¶</a></h3>
 <p>Links to social media profiles a usually provided in the footer of pages and Material for MkDocs makes this easy. All you need to do is to provide the necessary links and define the icons to use.</p>
-<div class="admonition example">
-<p class="admonition-title">Adding social media profile links</p>
+<details class="ex" open="open">
+<summary>Adding social media profile links</summary>
 <p>Add an <code>extra</code> section to your <code>mkdocs.yml</code> and, within it, a <code>social</code> section to contain a list of link definitions. These consist of the logo to use and the link to the profile.</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">extra</span><span class="p">:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">social</span><span class="p">:</span>
@@ -1155,7 +1155,7 @@
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">contact us</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/contact</span>
 </span></code></pre></div>
-</div>
+</details>
 <h3 id="share-and-like-buttons">Share and Like Buttons<a class="headerlink" href="#share-and-like-buttons" title="Permanent link">¶</a></h3>
 <p>Adding buttons that let people share your content on social media is a bit more involved, which is why there are companies offering components for this.</p>
 <div class="admonition tip">
@@ -1173,8 +1173,8 @@
 <li>Only when someone clicks a share button will there be interactions with those companies' servers.</li>
 </ul>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Add Share Buttons</p>
+<details class="example" open="open">
+<summary>Add Share Buttons</summary>
 <ol>
 <li>
 <p>In order to add the share buttons, you can add a hook that appends buttons for sharing the current page.</p>
@@ -1220,8 +1220,10 @@
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="nt">emoji_index</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.twemoji</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="nt">emoji_generator</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.to_svg</span>
 </span></code></pre></div>
-</div>
+</details>
 <h2 id="add-a-discussion-system"><u><strong>Add a Discussion System</strong></u><a class="headerlink" href="#add-a-discussion-system" title="Permanent link">¶</a></h2>
+<div class="admonition recommendation">
+<p class="admonition-title">Discussion System</p>
 <ul>
 <li>
 <p><strong>Allowing</strong> your readers to comment on your posts is a great way of receiving feedback, learning something, as well as giving readers the opportunity to discuss the content and the topic it is about.</p>
@@ -1233,8 +1235,12 @@
 <p><strong>If</strong> you are a heavy user Slack, for example, you may have a string preference for this system. Consider that when you add a communication channel, you will need to be prepared to use it regularly and to moderate discussions.</p>
 </li>
 </ul>
+</div>
 <h3 id="giscus-integration">Giscus Integration<a class="headerlink" href="#giscus-integration" title="Permanent link">¶</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">Giscus Integration</p>
 <p>In this tutorial, we will be using <a href="https://giscus.app/">Giscus</a> because it is free, open source, and uses <a href="https://docs.github.com/en/discussions">GitHub Discussions</a> as a backend. Because a lot of users of Material for MkDocs use GitHub, this seems like an obvious choice.</p>
+<hr>
 <p>To add Giscus to your blog you will need to go through a number of steps:</p>
 <ol>
 <li>Create a GitHub repository if there is not already one</li>
@@ -1242,8 +1248,16 @@
 <li>Configure the code needed to embed Giscus into your blog</li>
 <li>Add the code to your MkDocs project</li>
 </ol>
+<hr>
+<ul>
+<li>
 <p>You may want to create a test repository for this tutorial that you can scrap later on. The instructions below assume that you are user "example" and that you create a repository "giscus-test." The repository will need to be public for people to be able to use the discussions.</p>
+</li>
+<li>
 <p>In the instructions given below, you will need to replace at least the username but also the repository name if you chose another name such as when you want to work directly on an existing repository.</p>
+</li>
+</ul>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Turn on Discussions and Install the Giscus App</p>
 <p><strong>Once</strong> the repository is set up, go to its settings page and find <code>Features</code> in the <code>General</code> section. Tick the checkbox for <code>Discussions</code>. You will see that <code>Discussions</code> appears in the top navigation for the repository. If you are using a live repository then you may want to add some minimal content to the discussions section at this point and come back to the tutorial.</p>
@@ -1258,6 +1272,8 @@
    can control the Gicsus app and uninstall it if so desired.</li>
 </ol>
 </div>
+<details class="desc" open="open">
+<summary>Enmbedding Giscus</summary>
 <p><strong>That is all the preparation you will need for the repository. Next, it is time to generate a piece of code that embeds Giscus in your site. The resulting code snippet will look something like this:</strong></p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://giscus.app/client.js"</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        <span class="na">data-repo</span><span class="o">=</span><span class="s">"&lt;username&gt;/&lt;repository&gt;"</span>
@@ -1276,6 +1292,7 @@
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        <span class="na">async</span><span class="p">&gt;</span>
 </span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Configure the Code Needed to Embed Giscus into your Blog</p>
 <p>Go to the <a href="https://giscus.app/">Giscus homepage</a> and configure the embedding code. There are a number of settings:</p>
