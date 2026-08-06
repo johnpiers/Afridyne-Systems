@@ -836,4 +836,119 @@ for (let i = 0; i < 5; i++) {
   [markmap]: https://github.com/markmap/mkdocs-markmap
   [mermaid2]: https://github.com/fralau/mkdocs-mermaid2-plugin
   
-  
+---
+
+<div class="markmap">
+<svg style="width: 100%; height: 360px; display: block;"></svg>
+<script type="text/template">
+
+# Root
+## Branch 1
+* Branchlet 1a
+* Branchlet 1b
+## Branch 2
+* Branchlet 2a
+* Branchlet 2b
+
+
+</script>
+</div>
+
+
+---
+
+
+<div class="markmap">
+<svg style="width: 100%; height: 360px; display: block;"></svg>
+<script type="text/template">
+
+# Project Management
+## Planning
+- Scope Definition
+- Resource Allocation
+## Execution
+- Frontend Development
+- Backend API
+- Database Setup
+## Monitoring
+- Weekly Sprints
+- KPI Tracking
+
+</script>
+</div>
+
+
+---
+
+<div class="markmap">
+<svg style="width: 100%; height: 360px; display: block;"></svg>
+<script type="text/template">
+
+# Marketing Campaign
+## Channels
+- **Social Media**
+  - [Instagram Updates](https://instagram.com)
+  - _X (Twitter) Threads_
+- **Email Newsletters**
+  - Weekly Digests
+  - Product Launches
+
+
+</script>
+</div>
+
+---
+
+
+!!! desc ""
+
+    ```markmap
+    # Root
+    ## Branch 1
+    * Branchlet 1a
+    * Branchlet 1b
+    ## Branch 2
+    * Branchlet 2a
+    * Branchlet 2b
+    ```
+
+
+---
+
+
+!!! desc ""
+
+    ```markmap
+    # Project Management
+    ## Planning
+    - Scope Definition
+    - Resource Allocation
+    ## Execution
+    - Frontend Development
+    - Backend API
+    - Database Setup
+    ## Monitoring
+    - Weekly Sprints
+    - KPI Tracking
+    ```
+
+!!! desc ""
+
+    ```markmap
+    # Marketing Campaign
+    ## Channels
+    - **Social Media**
+      - [Instagram Updates](https://instagram.com)
+      - _X (Twitter) Threads_
+    - **Email Newsletters**
+      - Weekly Digests
+      - Product Launches
+    ```
+
+
+
+
+
+
+
+
