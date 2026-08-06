@@ -32,7 +32,7 @@
           <link rel="icon" href="../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
@@ -396,7 +396,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -2219,9 +2219,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -2238,7 +2236,6 @@
 
 <div style="display: none;"><h1>Header</h1>
 </div>
-
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260217-142756.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20260217-142756.png"></a></p>
 <h2 id="amdgputop"><a href="https://github.com/Umio-Yasuno/amdgpu_top"><strong>AMDGPU/TOP</strong></a><a class="headerlink" href="#amdgputop" title="Permanent link">¶</a></h2>
 <p><code>amdgpu_top</code> is tool that display AMD GPU utilization, like <a href="https://gitlab.freedesktop.org/tomstdenis/umr/">umr</a> or <a href="https://github.com/clbr/radeontop">clbr/radeontop</a> or <a href="https://gitlab.freedesktop.org/drm/igt-gpu-tools/-/blob/master/man/intel_gpu_top.rst">intel_gpu_top</a>.</p>
@@ -2265,19 +2262,19 @@
 <summary>Simple TUI, TUI, GUI</summary>
 <div class="admonition git">
 <p>TUI: Run SMI mode:<br>
-</p><div class="language-vim highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>amdgpu_top <span class="p">--</span>smi
+</p><div class="language-vim highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>amdgpu_top <span class="p">--</span>smi
 </span></code></pre></div><p></p>
 <div class="admonition git"></div>
 <p>GUI Run GUI mode<br>
-</p><div class="language-vim highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>amdgpu_top <span class="p">--</span><span class="k">gui</span>
+</p><div class="language-vim highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>amdgpu_top <span class="p">--</span><span class="k">gui</span>
 </span></code></pre></div><p></p>
 <div class="admonition git"></div>
 <p>TUI: Run TUI mode:<br>
-</p><div class="language-vim highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>amdgpu_top <span class="p">--</span><span class="nb">dark</span>
+</p><div class="language-vim highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>amdgpu_top <span class="p">--</span><span class="nb">dark</span>
 </span></code></pre></div><p></p>
 <div class="admonition git"></div>
 <p>TUI: Run TUI mode:<br>
-</p><div class="language-vim highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>amdgpu_top
+</p><div class="language-vim highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>amdgpu_top
 </span></code></pre></div><p></p>
 </div>
 <p><span style="font-weight: bold; color: green;">Simple TUI.</span></p>
@@ -2324,131 +2321,131 @@
 <h5 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h5>
 <details class="recommendation">
 <summary>Usage</summary>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cargo<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span><span class="o">[</span>options<span class="w"> </span>..<span class="o">]</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># or</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>amdgpu_top<span class="w"> </span><span class="o">[</span>options<span class="w"> </span>..<span class="o">]</span>
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>cargo<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span><span class="o">[</span>options<span class="w"> </span>..<span class="o">]</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1"># or</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>amdgpu_top<span class="w"> </span><span class="o">[</span>options<span class="w"> </span>..<span class="o">]</span>
 </span></code></pre></div>
 <hr>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Run TUI mode</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>amdgpu_top
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Run GUI mode</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>amdgpu_top<span class="w"> </span>--gui
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Run SMI mode</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>amdgpu_top<span class="w"> </span>--smi
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Dump AMDGPU info</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>amdgpu_top<span class="w"> </span>-d
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1"># Dump AMDGPU info and gpu_metrics</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>amdgpu_top<span class="w"> </span>-d<span class="w"> </span>-gm
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Run TUI mode</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>amdgpu_top
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># Run GUI mode</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>amdgpu_top<span class="w"> </span>--gui
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c1"># Run SMI mode</span>
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>amdgpu_top<span class="w"> </span>--smi
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="c1"># Dump AMDGPU info</span>
+</span><span id="__span-5-11"><a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a>amdgpu_top<span class="w"> </span>-d
+</span><span id="__span-5-12"><a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="c1"># Dump AMDGPU info and gpu_metrics</span>
+</span><span id="__span-5-14"><a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a>amdgpu_top<span class="w"> </span>-d<span class="w"> </span>-gm
 </span></code></pre></div>
 <hr>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Dump AMDGPU info and pp_table</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>amdgpu_top<span class="w"> </span>-d<span class="w"> </span>--pp-table
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Dump AMDGPU info in JSON format</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>amdgpu_top<span class="w"> </span>-d<span class="w"> </span>--json
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Dump DRM info</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>amdgpu_top<span class="w"> </span>--drm-info
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># Decode gpu_metrics file</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>amdgpu_top<span class="w"> </span>--decode-gm<span class="w"> </span>&lt;path&gt;
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># Decode gpu_metrics file and output in JSON format</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>amdgpu_top<span class="w"> </span>--json<span class="w"> </span>--decode-gm<span class="w"> </span>&lt;path&gt;
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># Dump AMDGPU info and pp_table</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>amdgpu_top<span class="w"> </span>-d<span class="w"> </span>--pp-table
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1"># Dump AMDGPU info in JSON format</span>
+</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>amdgpu_top<span class="w"> </span>-d<span class="w"> </span>--json
+</span><span id="__span-6-6"><a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="c1"># Dump DRM info</span>
+</span><span id="__span-6-8"><a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>amdgpu_top<span class="w"> </span>--drm-info
+</span><span id="__span-6-9"><a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="c1"># Decode gpu_metrics file</span>
+</span><span id="__span-6-11"><a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a>amdgpu_top<span class="w"> </span>--decode-gm<span class="w"> </span>&lt;path&gt;
+</span><span id="__span-6-12"><a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="c1"># Decode gpu_metrics file and output in JSON format</span>
+</span><span id="__span-6-14"><a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a>amdgpu_top<span class="w"> </span>--json<span class="w"> </span>--decode-gm<span class="w"> </span>&lt;path&gt;
 </span></code></pre></div>
 </details>
 <h5 id="options">Options<a class="headerlink" href="#options" title="Permanent link">¶</a></h5>
 <details class="pied-piper">
 <summary>Options</summary>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>FLAGS:
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>-d,<span class="w"> </span>--dump
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Dump<span class="w"> </span>AMDGPU<span class="w"> </span>info.<span class="w"> </span><span class="o">(</span>Specifications,<span class="w"> </span>VRAM,<span class="w"> </span>PCI,<span class="w"> </span>ResizableBAR,<span class="w"> </span>VBIOS,<span class="w"> </span>Video<span class="w"> </span>caps<span class="o">)</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>This<span class="w"> </span>option<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>combined<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s2">"-J"</span><span class="w"> </span>option.
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>--list
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>Display<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>AMDGPU<span class="w"> </span>devices.
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>-J,<span class="w"> </span>--json
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>Output<span class="w"> </span>JSON<span class="w"> </span>formatted<span class="w"> </span>data.<span class="w"> </span>This<span class="w"> </span>option<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>combined<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s2">"-d"</span><span class="w"> </span>option.
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>--gui
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>Launch<span class="w"> </span>GUI<span class="w"> </span>mode.
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>--smi
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>Launch<span class="w"> </span>Simple<span class="w"> </span>TUI<span class="w"> </span>mode.<span class="w"> </span><span class="o">(</span>like<span class="w"> </span>nvidia-smi,<span class="w"> </span>rocm-smi<span class="o">)</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>-p,<span class="w"> </span>--process
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>Dump<span class="w"> </span>All<span class="w"> </span>GPU<span class="w"> </span>processes<span class="w"> </span>and<span class="w"> </span>memory<span class="w"> </span>usage<span class="w"> </span>per<span class="w"> </span>process.
-</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>--apu,<span class="w"> </span>--select-apu
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>Select<span class="w"> </span>APU<span class="w"> </span>instance.
-</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>--single,<span class="w"> </span>--single-gpu
-</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
-</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>Display<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>selected<span class="w"> </span>APU/GPU
-</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>--no-pc
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>FLAGS:
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>-d,<span class="w"> </span>--dump
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>Dump<span class="w"> </span>AMDGPU<span class="w"> </span>info.<span class="w"> </span><span class="o">(</span>Specifications,<span class="w"> </span>VRAM,<span class="w"> </span>PCI,<span class="w"> </span>ResizableBAR,<span class="w"> </span>VBIOS,<span class="w"> </span>Video<span class="w"> </span>caps<span class="o">)</span>
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>This<span class="w"> </span>option<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>combined<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s2">"-J"</span><span class="w"> </span>option.
+</span><span id="__span-7-7"><a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>--list
+</span><span id="__span-7-8"><a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a>Display<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>AMDGPU<span class="w"> </span>devices.
+</span><span id="__span-7-10"><a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a>-J,<span class="w"> </span>--json
+</span><span id="__span-7-11"><a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a>
+</span><span id="__span-7-12"><a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a>Output<span class="w"> </span>JSON<span class="w"> </span>formatted<span class="w"> </span>data.<span class="w"> </span>This<span class="w"> </span>option<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>combined<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s2">"-d"</span><span class="w"> </span>option.
+</span><span id="__span-7-13"><a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a>--gui
+</span><span id="__span-7-14"><a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a>Launch<span class="w"> </span>GUI<span class="w"> </span>mode.
+</span><span id="__span-7-16"><a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a>--smi
+</span><span id="__span-7-17"><a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a>
+</span><span id="__span-7-18"><a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a>Launch<span class="w"> </span>Simple<span class="w"> </span>TUI<span class="w"> </span>mode.<span class="w"> </span><span class="o">(</span>like<span class="w"> </span>nvidia-smi,<span class="w"> </span>rocm-smi<span class="o">)</span>
+</span><span id="__span-7-19"><a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a>-p,<span class="w"> </span>--process
+</span><span id="__span-7-20"><a href="#__codelineno-7-20" id="__codelineno-7-20" name="__codelineno-7-20"></a>
+</span><span id="__span-7-21"><a href="#__codelineno-7-21" id="__codelineno-7-21" name="__codelineno-7-21"></a>Dump<span class="w"> </span>All<span class="w"> </span>GPU<span class="w"> </span>processes<span class="w"> </span>and<span class="w"> </span>memory<span class="w"> </span>usage<span class="w"> </span>per<span class="w"> </span>process.
+</span><span id="__span-7-22"><a href="#__codelineno-7-22" id="__codelineno-7-22" name="__codelineno-7-22"></a>--apu,<span class="w"> </span>--select-apu
+</span><span id="__span-7-23"><a href="#__codelineno-7-23" id="__codelineno-7-23" name="__codelineno-7-23"></a>
+</span><span id="__span-7-24"><a href="#__codelineno-7-24" id="__codelineno-7-24" name="__codelineno-7-24"></a>Select<span class="w"> </span>APU<span class="w"> </span>instance.
+</span><span id="__span-7-25"><a href="#__codelineno-7-25" id="__codelineno-7-25" name="__codelineno-7-25"></a>--single,<span class="w"> </span>--single-gpu
+</span><span id="__span-7-26"><a href="#__codelineno-7-26" id="__codelineno-7-26" name="__codelineno-7-26"></a>
+</span><span id="__span-7-27"><a href="#__codelineno-7-27" id="__codelineno-7-27" name="__codelineno-7-27"></a>Display<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>selected<span class="w"> </span>APU/GPU
+</span><span id="__span-7-28"><a href="#__codelineno-7-28" id="__codelineno-7-28" name="__codelineno-7-28"></a>--no-pc
 </span></code></pre></div>
 <hr>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>The<span class="w"> </span>application<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span><span class="nb">read</span><span class="w"> </span>the<span class="w"> </span>performance<span class="w"> </span>counter<span class="w"> </span><span class="o">(</span>GRBM,<span class="w"> </span>GRBM2<span class="w"> </span><span class="k">if</span><span class="w"> </span>this<span class="w"> </span>flag<span class="w"> </span>is<span class="w"> </span>set.
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Reading<span class="w"> </span>the<span class="w"> </span>performance<span class="w"> </span>counter<span class="w"> </span>may<span class="w"> </span>deactivate<span class="w"> </span>the<span class="w"> </span>power<span class="w"> </span>saving<span class="w"> </span>feature<span class="w"> </span>of<span class="w"> </span>APU/GPU.
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>-gm,<span class="w"> </span>--gpu_metrics,<span class="w"> </span>--gpu-metrics
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Dump<span class="w"> </span>gpu_metrics<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>AMD<span class="w"> </span>GPUs.<span class="w"> </span>https://www.kernel.org/doc/html/latest/gpu/amdgpu/thermal.html#gpu-metrics
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>--pp_table,<span class="w"> </span>--pp-table
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Dump<span class="w"> </span>pp_table<span class="w"> </span>from<span class="w"> </span>sysfs<span class="w"> </span>and<span class="w"> </span>VBIOS<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>AMD<span class="w"> </span>GPUs.<span class="w"> </span><span class="o">(</span>only<span class="w"> </span>support<span class="w"> </span>Navi1x<span class="w"> </span>and<span class="w"> </span>Navi2x,<span class="w"> </span>Navi3x<span class="o">)</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>--drm_info,<span class="w"> </span>--drm-info
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>Dump<span class="w"> </span>DRM<span class="w"> </span>info.<span class="w"> </span>Inspired<span class="w"> </span>by<span class="w"> </span>https://gitlab.freedesktop.org/emersion/drm_info.
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>--xdna
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>Dump<span class="w"> </span>XDNA<span class="w"> </span>NPU<span class="w"> </span>info.
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>--dark,<span class="w"> </span>--dark-mode
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>Set<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>dark<span class="w"> </span>mode.<span class="w"> </span><span class="o">(</span>TUI/GUI<span class="o">)</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>--light,<span class="w"> </span>--light-mode
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>Set<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>light<span class="w"> </span>mode.<span class="w"> </span><span class="o">(</span>TUI/GUI<span class="o">)</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>--gl,<span class="w"> </span>--opengl
-</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
-</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>Use<span class="w"> </span>OpenGL<span class="w"> </span>API<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>GUI<span class="w"> </span>backend.
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>--vk,<span class="w"> </span>--vulkan
-</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
-</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>Use<span class="w"> </span>Vulkan<span class="w"> </span>API<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>GUI<span class="w"> </span>backend,<span class="w"> </span>and<span class="w"> </span>use<span class="w"> </span>APU/iGPU<span class="w"> </span><span class="k">for</span><span class="w"> </span>GUI<span class="w"> </span>rendering<span class="w"> </span><span class="k">if</span><span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>available.
-</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>-V,<span class="w"> </span>--version
-</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>
-</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>Print<span class="w"> </span>version<span class="w"> </span>information.
-</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>-h,<span class="w"> </span>--help
-</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>
-</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>Print<span class="w"> </span><span class="nb">help</span><span class="w"> </span>information.
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>The<span class="w"> </span>application<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span><span class="nb">read</span><span class="w"> </span>the<span class="w"> </span>performance<span class="w"> </span>counter<span class="w"> </span><span class="o">(</span>GRBM,<span class="w"> </span>GRBM2<span class="w"> </span><span class="k">if</span><span class="w"> </span>this<span class="w"> </span>flag<span class="w"> </span>is<span class="w"> </span>set.
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>Reading<span class="w"> </span>the<span class="w"> </span>performance<span class="w"> </span>counter<span class="w"> </span>may<span class="w"> </span>deactivate<span class="w"> </span>the<span class="w"> </span>power<span class="w"> </span>saving<span class="w"> </span>feature<span class="w"> </span>of<span class="w"> </span>APU/GPU.
+</span><span id="__span-8-4"><a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>-gm,<span class="w"> </span>--gpu_metrics,<span class="w"> </span>--gpu-metrics
+</span><span id="__span-8-5"><a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a>Dump<span class="w"> </span>gpu_metrics<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>AMD<span class="w"> </span>GPUs.<span class="w"> </span>https://www.kernel.org/doc/html/latest/gpu/amdgpu/thermal.html#gpu-metrics
+</span><span id="__span-8-7"><a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a>--pp_table,<span class="w"> </span>--pp-table
+</span><span id="__span-8-8"><a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a>Dump<span class="w"> </span>pp_table<span class="w"> </span>from<span class="w"> </span>sysfs<span class="w"> </span>and<span class="w"> </span>VBIOS<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>AMD<span class="w"> </span>GPUs.<span class="w"> </span><span class="o">(</span>only<span class="w"> </span>support<span class="w"> </span>Navi1x<span class="w"> </span>and<span class="w"> </span>Navi2x,<span class="w"> </span>Navi3x<span class="o">)</span>
+</span><span id="__span-8-10"><a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a>--drm_info,<span class="w"> </span>--drm-info
+</span><span id="__span-8-11"><a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a>Dump<span class="w"> </span>DRM<span class="w"> </span>info.<span class="w"> </span>Inspired<span class="w"> </span>by<span class="w"> </span>https://gitlab.freedesktop.org/emersion/drm_info.
+</span><span id="__span-8-13"><a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a>--xdna
+</span><span id="__span-8-14"><a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a>Dump<span class="w"> </span>XDNA<span class="w"> </span>NPU<span class="w"> </span>info.
+</span><span id="__span-8-16"><a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a>--dark,<span class="w"> </span>--dark-mode
+</span><span id="__span-8-17"><a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a>
+</span><span id="__span-8-18"><a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a>Set<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>dark<span class="w"> </span>mode.<span class="w"> </span><span class="o">(</span>TUI/GUI<span class="o">)</span>
+</span><span id="__span-8-19"><a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a>--light,<span class="w"> </span>--light-mode
+</span><span id="__span-8-20"><a href="#__codelineno-8-20" id="__codelineno-8-20" name="__codelineno-8-20"></a>
+</span><span id="__span-8-21"><a href="#__codelineno-8-21" id="__codelineno-8-21" name="__codelineno-8-21"></a>Set<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>light<span class="w"> </span>mode.<span class="w"> </span><span class="o">(</span>TUI/GUI<span class="o">)</span>
+</span><span id="__span-8-22"><a href="#__codelineno-8-22" id="__codelineno-8-22" name="__codelineno-8-22"></a>--gl,<span class="w"> </span>--opengl
+</span><span id="__span-8-23"><a href="#__codelineno-8-23" id="__codelineno-8-23" name="__codelineno-8-23"></a>
+</span><span id="__span-8-24"><a href="#__codelineno-8-24" id="__codelineno-8-24" name="__codelineno-8-24"></a>Use<span class="w"> </span>OpenGL<span class="w"> </span>API<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>GUI<span class="w"> </span>backend.
+</span><span id="__span-8-25"><a href="#__codelineno-8-25" id="__codelineno-8-25" name="__codelineno-8-25"></a>--vk,<span class="w"> </span>--vulkan
+</span><span id="__span-8-26"><a href="#__codelineno-8-26" id="__codelineno-8-26" name="__codelineno-8-26"></a>
+</span><span id="__span-8-27"><a href="#__codelineno-8-27" id="__codelineno-8-27" name="__codelineno-8-27"></a>Use<span class="w"> </span>Vulkan<span class="w"> </span>API<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>GUI<span class="w"> </span>backend,<span class="w"> </span>and<span class="w"> </span>use<span class="w"> </span>APU/iGPU<span class="w"> </span><span class="k">for</span><span class="w"> </span>GUI<span class="w"> </span>rendering<span class="w"> </span><span class="k">if</span><span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>available.
+</span><span id="__span-8-28"><a href="#__codelineno-8-28" id="__codelineno-8-28" name="__codelineno-8-28"></a>-V,<span class="w"> </span>--version
+</span><span id="__span-8-29"><a href="#__codelineno-8-29" id="__codelineno-8-29" name="__codelineno-8-29"></a>
+</span><span id="__span-8-30"><a href="#__codelineno-8-30" id="__codelineno-8-30" name="__codelineno-8-30"></a>Print<span class="w"> </span>version<span class="w"> </span>information.
+</span><span id="__span-8-31"><a href="#__codelineno-8-31" id="__codelineno-8-31" name="__codelineno-8-31"></a>-h,<span class="w"> </span>--help
+</span><span id="__span-8-32"><a href="#__codelineno-8-32" id="__codelineno-8-32" name="__codelineno-8-32"></a>
+</span><span id="__span-8-33"><a href="#__codelineno-8-33" id="__codelineno-8-33" name="__codelineno-8-33"></a>Print<span class="w"> </span><span class="nb">help</span><span class="w"> </span>information.
 </span></code></pre></div>
 <hr>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>OPTIONS:
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>-i<span class="w"> </span>&lt;usize&gt;
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Select<span class="w"> </span>GPU<span class="w"> </span>instance.
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>--pci<span class="w"> </span>&lt;String&gt;
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Specifying<span class="w"> </span>PCI<span class="w"> </span>path.<span class="w"> </span><span class="o">(</span>domain:bus:dev.func<span class="o">)</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>-s<span class="w"> </span>&lt;u64&gt;,<span class="w"> </span>-s<span class="w"> </span>&lt;u64&gt;ms
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>Refresh<span class="w"> </span>period<span class="w"> </span><span class="o">(</span>interval<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>milliseconds<span class="w"> </span><span class="k">for</span><span class="w"> </span>JSON<span class="w"> </span>mode.<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>1000ms<span class="o">)</span><span class="w"> </span>-n<span class="w"> </span>&lt;u32&gt;
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>Specifies<span class="w"> </span>the<span class="w"> </span>maximum<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>iteration<span class="w"> </span><span class="k">for</span><span class="w"> </span>JSON<span class="w"> </span>mode.<span class="w"> </span>If<span class="w"> </span><span class="m">0</span><span class="w"> </span>is<span class="w"> </span>specified,<span class="w"> </span>it<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>an<span class="w"> </span>infinite<span class="w"> </span>loop.<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">0</span><span class="o">)</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>-u<span class="w"> </span>&lt;u64&gt;,<span class="w"> </span>--update-process-index<span class="w"> </span>&lt;u64&gt;
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>Update<span class="w"> </span>interval<span class="w"> </span><span class="k">in</span><span class="w"> </span>seconds<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>process<span class="w"> </span>index<span class="w"> </span><span class="k">for</span><span class="w"> </span>fdinfo.<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>5s<span class="w"> </span>--json_fifo,<span class="w"> </span>--json-fifo<span class="w"> </span>&lt;String&gt;
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>Output<span class="w"> </span>JSON<span class="w"> </span>formatted<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span>FIFO<span class="w"> </span><span class="o">(</span>named<span class="w"> </span>pipe<span class="o">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>other<span class="w"> </span>application<span class="w"> </span>and<span class="w"> </span>scripts.
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>--decode-gm<span class="w"> </span>&lt;Path&gt;,<span class="w"> </span>--decode-gpu-metrics<span class="w"> </span>&lt;Path&gt;
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
-</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>Decode<span class="w"> </span>the<span class="w"> </span>specified<span class="w"> </span>gpu_metrics<span class="w"> </span>file.
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>OPTIONS:
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>-i<span class="w"> </span>&lt;usize&gt;
+</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>Select<span class="w"> </span>GPU<span class="w"> </span>instance.
+</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>--pci<span class="w"> </span>&lt;String&gt;
+</span><span id="__span-9-6"><a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a>Specifying<span class="w"> </span>PCI<span class="w"> </span>path.<span class="w"> </span><span class="o">(</span>domain:bus:dev.func<span class="o">)</span>
+</span><span id="__span-9-8"><a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a>-s<span class="w"> </span>&lt;u64&gt;,<span class="w"> </span>-s<span class="w"> </span>&lt;u64&gt;ms
+</span><span id="__span-9-9"><a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a>Refresh<span class="w"> </span>period<span class="w"> </span><span class="o">(</span>interval<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>milliseconds<span class="w"> </span><span class="k">for</span><span class="w"> </span>JSON<span class="w"> </span>mode.<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>1000ms<span class="o">)</span><span class="w"> </span>-n<span class="w"> </span>&lt;u32&gt;
+</span><span id="__span-9-11"><a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a>Specifies<span class="w"> </span>the<span class="w"> </span>maximum<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>iteration<span class="w"> </span><span class="k">for</span><span class="w"> </span>JSON<span class="w"> </span>mode.<span class="w"> </span>If<span class="w"> </span><span class="m">0</span><span class="w"> </span>is<span class="w"> </span>specified,<span class="w"> </span>it<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>an<span class="w"> </span>infinite<span class="w"> </span>loop.<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+</span><span id="__span-9-13"><a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a>-u<span class="w"> </span>&lt;u64&gt;,<span class="w"> </span>--update-process-index<span class="w"> </span>&lt;u64&gt;
+</span><span id="__span-9-14"><a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a>
+</span><span id="__span-9-15"><a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a>Update<span class="w"> </span>interval<span class="w"> </span><span class="k">in</span><span class="w"> </span>seconds<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>process<span class="w"> </span>index<span class="w"> </span><span class="k">for</span><span class="w"> </span>fdinfo.<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>5s<span class="w"> </span>--json_fifo,<span class="w"> </span>--json-fifo<span class="w"> </span>&lt;String&gt;
+</span><span id="__span-9-16"><a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a>
+</span><span id="__span-9-17"><a href="#__codelineno-9-17" id="__codelineno-9-17" name="__codelineno-9-17"></a>Output<span class="w"> </span>JSON<span class="w"> </span>formatted<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span>FIFO<span class="w"> </span><span class="o">(</span>named<span class="w"> </span>pipe<span class="o">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>other<span class="w"> </span>application<span class="w"> </span>and<span class="w"> </span>scripts.
+</span><span id="__span-9-18"><a href="#__codelineno-9-18" id="__codelineno-9-18" name="__codelineno-9-18"></a>--decode-gm<span class="w"> </span>&lt;Path&gt;,<span class="w"> </span>--decode-gpu-metrics<span class="w"> </span>&lt;Path&gt;
+</span><span id="__span-9-19"><a href="#__codelineno-9-19" id="__codelineno-9-19" name="__codelineno-9-19"></a>
+</span><span id="__span-9-20"><a href="#__codelineno-9-20" id="__codelineno-9-20" name="__codelineno-9-20"></a>Decode<span class="w"> </span>the<span class="w"> </span>specified<span class="w"> </span>gpu_metrics<span class="w"> </span>file.
 </span></code></pre></div>
 </details>
 <h3 id="commands-for-tui">Commands for TUI<a class="headerlink" href="#commands-for-tui" title="Permanent link">¶</a></h3>
@@ -2517,21 +2514,21 @@
 <h4 id="example-using-json-mode">Example: Using  JSON Mode<a class="headerlink" href="#example-using-json-mode" title="Permanent link">¶</a></h4>
 <details class="pied-piper">
 <summary>Example: Using  JSON Mode</summary>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>amdgpu_top <span class="p">--</span>json <span class="p">|</span> jq <span class="p">-</span><span class="k">c</span> <span class="p">-</span><span class="k">r</span> '<span class="p">(</span>.devices[] <span class="p">|</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">(</span>.Info <span class="p">|</span> .DeviceName <span class="p">+</span> <span class="s2">" ("</span> <span class="p">+</span> .PCI <span class="p">+</span> <span class="s2">"): "</span><span class="p">)</span> <span class="p">+</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">(</span>[.gpu_activity <span class="p">|</span> to_entries[] <span class="p">|</span> .<span class="nb">key</span> <span class="p">+</span> <span class="s2">": "</span> <span class="p">+</span> <span class="p">(</span>.value.value<span class="p">|</span>tostring<span class="p">)</span> <span class="p">+</span> .value.unit] <span class="p">|</span> <span class="k">join</span><span class="p">(</span><span class="s2">", "</span><span class="p">)))</span>'
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>amdgpu_top <span class="p">--</span>json <span class="p">|</span> jq <span class="p">-</span><span class="k">c</span> <span class="p">-</span><span class="k">r</span> '<span class="p">(</span>.devices[] <span class="p">|</span>
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">(</span>.Info <span class="p">|</span> .DeviceName <span class="p">+</span> <span class="s2">" ("</span> <span class="p">+</span> .PCI <span class="p">+</span> <span class="s2">"): "</span><span class="p">)</span> <span class="p">+</span>
+</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="p">(</span>[.gpu_activity <span class="p">|</span> to_entries[] <span class="p">|</span> .<span class="nb">key</span> <span class="p">+</span> <span class="s2">": "</span> <span class="p">+</span> <span class="p">(</span>.value.value<span class="p">|</span>tostring<span class="p">)</span> <span class="p">+</span> .value.unit] <span class="p">|</span> <span class="k">join</span><span class="p">(</span><span class="s2">", "</span><span class="p">)))</span>'
 </span></code></pre></div>
 </details>
 <h4 id="output">Output<a class="headerlink" href="#output" title="Permanent link">¶</a></h4>
 <details class="pied-piper">
 <summary>Output</summary>
-<div class="language-vim no-copy highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>AMD Radeon RX <span class="m">6600</span> <span class="p">(</span><span class="m">0000</span>:<span class="m">03</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">13</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: <span class="m">4</span>%
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>AMD Radeon Graphics <span class="p">(</span><span class="m">0000</span>:<span class="m">08</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">0</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: null%
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>AMD Radeon RX <span class="m">6600</span> <span class="p">(</span><span class="m">0000</span>:<span class="m">03</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">15</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: <span class="m">5</span>%
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>AMD Radeon Graphics <span class="p">(</span><span class="m">0000</span>:<span class="m">08</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">0</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: null%
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>AMD Radeon RX <span class="m">6600</span> <span class="p">(</span><span class="m">0000</span>:<span class="m">03</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">3</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: <span class="m">2</span>%
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>AMD Radeon Graphics <span class="p">(</span><span class="m">0000</span>:<span class="m">08</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">0</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: null%
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>...
+<div class="language-vim no-copy highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>AMD Radeon RX <span class="m">6600</span> <span class="p">(</span><span class="m">0000</span>:<span class="m">03</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">13</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: <span class="m">4</span>%
+</span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>AMD Radeon Graphics <span class="p">(</span><span class="m">0000</span>:<span class="m">08</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">0</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: null%
+</span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>AMD Radeon RX <span class="m">6600</span> <span class="p">(</span><span class="m">0000</span>:<span class="m">03</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">15</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: <span class="m">5</span>%
+</span><span id="__span-11-4"><a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>AMD Radeon Graphics <span class="p">(</span><span class="m">0000</span>:<span class="m">08</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">0</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: null%
+</span><span id="__span-11-5"><a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>AMD Radeon RX <span class="m">6600</span> <span class="p">(</span><span class="m">0000</span>:<span class="m">03</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">3</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: <span class="m">2</span>%
+</span><span id="__span-11-6"><a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>AMD Radeon Graphics <span class="p">(</span><span class="m">0000</span>:<span class="m">08</span>:<span class="m">00</span>.<span class="m">0</span><span class="p">)</span>: GFX: <span class="m">0</span>%<span class="p">,</span> MediaEngine: <span class="m">0</span>%<span class="p">,</span> Memory: null%
+</span><span id="__span-11-7"><a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>...
 </span></code></pre></div>
 </details>
 <h5 id="fdinfo-description">fdinfo Description<a class="headerlink" href="#fdinfo-description" title="Permanent link">¶</a></h5>
@@ -2666,13 +2663,13 @@
 <hr>
 <div class="admonition pied-piper">
 <p class="admonition-title">Build From Source</p>
-<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>cargo<span class="w"> </span>install<span class="w"> </span>amdgpu_top
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># or</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Umio-Yasuno/amdgpu_top
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>amdgpu_top
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>$<span class="w"> </span>cargo<span class="w"> </span>install<span class="w"> </span>--locked<span class="w"> </span>--path.
+<div class="language-bash no-copy highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>$<span class="w"> </span>cargo<span class="w"> </span>install<span class="w"> </span>amdgpu_top
+</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="c1"># or</span>
+</span><span id="__span-12-4"><a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Umio-Yasuno/amdgpu_top
+</span><span id="__span-12-6"><a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>amdgpu_top
+</span><span id="__span-12-7"><a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a>$<span class="w"> </span>cargo<span class="w"> </span>install<span class="w"> </span>--locked<span class="w"> </span>--path.
 </span></code></pre></div>
 </div>
 <hr>
@@ -2686,13 +2683,13 @@
 <h4 id="debianubuntu">Debian/Ubuntu<a class="headerlink" href="#debianubuntu" title="Permanent link">¶</a></h4>
 <div class="admonition important">
 <p class="admonition-title">Debian/Ubuntu</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$ sudo apt install libdrm-dev
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>$ sudo apt install libdrm-dev
 </span></code></pre></div>
 </div>
 <h4 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">¶</a></h4>
 <div class="admonition important">
 <p class="admonition-title">Fedora</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ sudo dnf install libdrm-devel
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>$ sudo dnf install libdrm-devel
 </span></code></pre></div>
 </div>
 <h4 id="binary-size">Binary Size<a class="headerlink" href="#binary-size" title="Permanent link">¶</a></h4>
@@ -2844,24 +2841,24 @@
 </ul>
 <details class="recommendation">
 <summary>JSON mode.</summary>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>amdgpu_top <span class="p">--</span>json <span class="p">|</span> jq <span class="p">-</span><span class="k">c</span> <span class="p">-</span><span class="k">r</span> '<span class="p">(</span>.devices[] <span class="p">|</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">(</span>.Info <span class="p">|</span> .DeviceName <span class="p">+</span> <span class="s2">" ("</span> <span class="p">+</span> .PCI <span class="p">+</span> <span class="s2">"): "</span><span class="p">)</span> <span class="p">+</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">(</span>[.gpu_activity <span class="p">|</span> to_entries[] <span class="p">|</span> .<span class="nb">key</span> <span class="p">+</span> <span class="s2">": "</span> <span class="p">+</span> <span class="p">(</span>.value.value<span class="p">|</span>tostring<span class="p">)</span> <span class="p">+</span> .value.unit] <span class="p">|</span> <span class="k">join</span><span class="p">(</span><span class="s2">", "</span><span class="p">)))</span>'
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>amdgpu_top <span class="p">--</span>json <span class="p">|</span> jq <span class="p">-</span><span class="k">c</span> <span class="p">-</span><span class="k">r</span> '<span class="p">(</span>.devices[] <span class="p">|</span>
+</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="p">(</span>.Info <span class="p">|</span> .DeviceName <span class="p">+</span> <span class="s2">" ("</span> <span class="p">+</span> .PCI <span class="p">+</span> <span class="s2">"): "</span><span class="p">)</span> <span class="p">+</span>
+</span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="p">(</span>[.gpu_activity <span class="p">|</span> to_entries[] <span class="p">|</span> .<span class="nb">key</span> <span class="p">+</span> <span class="s2">": "</span> <span class="p">+</span> <span class="p">(</span>.value.value<span class="p">|</span>tostring<span class="p">)</span> <span class="p">+</span> .value.unit] <span class="p">|</span> <span class="k">join</span><span class="p">(</span><span class="s2">", "</span><span class="p">)))</span>'
 </span></code></pre></div>
 </details>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Various Installations!</p>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>cargo install amdgpu_top
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>cargo install amdgpu_top
 </span></code></pre></div>
 <p>or</p>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git clone https:<span class="sr">//</span>github.<span class="k">com</span><span class="sr">/Umio-Yasuno/</span>amdgpu_top
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">cd</span> amdgpu_top
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>cargo install <span class="p">--</span>locked <span class="p">--</span><span class="nb">path</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>git clone https:<span class="sr">//</span>github.<span class="k">com</span><span class="sr">/Umio-Yasuno/</span>amdgpu_top
+</span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="k">cd</span> amdgpu_top
+</span><span id="__span-17-3"><a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>cargo install <span class="p">--</span>locked <span class="p">--</span><span class="nb">path</span>
 </span></code></pre></div>
 <details class="recommendation">
 <summary>Without GUI</summary>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>cargo install <span class="p">--</span>locked <span class="p">--</span><span class="nb">path</span> . <span class="p">--</span>no<span class="p">-</span>default<span class="p">-</span>features <span class="p">--</span>features<span class="p">=</span><span class="s2">"tui"</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>cargo install <span class="p">--</span>locked <span class="p">--</span><span class="nb">path</span> . <span class="p">--</span>no<span class="p">-</span>default<span class="p">-</span>features <span class="p">--</span>features<span class="p">=</span><span class="s2">"tui"</span>
 </span></code></pre></div>
 </details>
 </div>
@@ -3060,19 +3057,20 @@
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../js/markmap-d3.js"></script>
+      
+        <script src="../js/markmap-lib.js"></script>
+      
+        <script src="../js/markmap-view.js"></script>
+      
+        <script src="../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

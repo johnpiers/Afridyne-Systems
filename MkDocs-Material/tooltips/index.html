@@ -28,7 +28,7 @@
           <link rel="icon" href="../../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -392,7 +392,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1054,9 +1054,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1072,7 +1070,6 @@
 
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260316-231142.png" data-desc-position="bottom"><img alt="" src="../imgs/20260316-231142.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;"> Tooltips</h1>
-
 <div class="admonition info">
 <p>Technical documentation often incurs the usage of many acronyms, which may need additional explanation, especially for new user of your project. For these matters, Material for MkDocs uses a combination of Markdown extensions to enable site-wide glossaries.</p>
 </div>
@@ -1080,28 +1077,28 @@
 <div class="admonition pied-piper">
 <p class="admonition-title">Configuration</p>
 <p>This configuration enables abbreviations and allows to build a simple project-wide glossary, sourcing definitions from a central location. Add the following line to <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abbr</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.snippets</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abbr</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.snippets</span>
 </span></code></pre></div>
 </div>
 <p>See additional configuration options:</p>
 <div class="grid cards cols-3">
 <ul>
 <li>
-<p><span style="color: #009688"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.64 21.97a.99.99 0 0 1-1.33-.47l-2.18-4.74-2.51 2.02c-.17.14-.38.22-.62.22a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1c.24 0 .47.09.64.23l.01-.01 11.49 9.64a1.001 1.001 0 0 1-.44 1.75l-3.16.62 2.2 4.73c.26.5.02 1.09-.48 1.32z"></path></svg></span></span> <strong>Abbreviations</strong><br>
-<a class="md-button" href="../python-markdown/#abbreviations" style="border-color: #009688; color: #009688"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> View Abbreviations</a></p>
+<p><span style="color: #009688"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.64 21.97a.99.99 0 0 1-1.33-.47l-2.18-4.74-2.51 2.02c-.17.14-.38.22-.62.22a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1c.24 0 .47.09.64.23l.01-.01 11.49 9.64a1.001 1.001 0 0 1-.44 1.75l-3.16.62 2.2 4.73c.26.5.02 1.09-.48 1.32z"></path></svg></span></span> <strong>Abbreviations</strong><br>
+<a class="md-button" href="../python-markdown/#abbreviations" style="border-color: #009688; color: #009688"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> View Abbreviations</a></p>
 <p>The Extension adds the ability to add a small tooltip to an element.</p>
 </li>
 <li>
-<p><span style="color: #66c0f4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.85 6.74q.015 0 0 0M21.28 8.6c-.43-1.05-1.32-2.18-2.01-2.54.56 1.11.89 2.22 1.02 3.04v.02c-1.13-2.82-3.05-3.96-4.62-6.44-.08-.12-.17-.25-.24-.38-.04-.07-.07-.14-.11-.21-.06-.13-.12-.26-.15-.4 0-.01-.01-.02-.02-.02h-.03c-2.22 1.3-3.15 3.59-3.38 5.04-.69.04-1.37.21-1.99.51-.12.05-.17.19-.13.31.05.14.21.21.34.15.54-.26 1.14-.41 1.74-.45h.05c.08-.01.17-.01.25-.01.5-.01.97.06 1.44.2l.06.02c.1.02.17.06.25.06.05.04.11.06.16.08l.14.06c.07.03.14.06.2.09.03.02.06.03.09.05.07.04.16.07.2.11.04.02.08.05.12.07.73.45 1.34 1.07 1.75 1.81-.53-.37-1.49-.74-2.41-.58 3.6 1.81 2.63 8-2.36 7.76-.44-.01-.88-.1-1.3-.25-.1-.03-.2-.07-.29-.12-.05-.02-.12-.05-.17-.08-1.23-.63-2.24-1.82-2.38-3.27 0 0 .5-1.73 3.33-1.73.31 0 1.17-.86 1.2-1.1 0-.09-1.74-.78-2.42-1.45-.37-.36-.54-.53-.69-.66-.08-.07-.17-.13-.26-.19a4.63 4.63 0 0 1-.03-2.45C7.6 6.12 6.8 6.86 6.22 7.5c-.4-.5-.37-2.15-.35-2.5-.01 0-.3.16-.33.18-.35.25-.68.53-.98.82-.35.37-.66.74-.94 1.14-.62.91-1.12 1.95-1.34 3.04 0 .01-.1.41-.17.92l-.03.23c-.02.17-.04.32-.08.58v.41c0 5.53 4.5 10.01 10 10.01 4.97 0 9.08-3.59 9.88-8.33.02-.11.03-.24.05-.37.2-1.72-.02-3.52-.65-5.03"></path></svg></span></span> <strong>Attribute Lists</strong><br>
-<a class="md-button" href="../python-markdown/#attribute-lists" style="border-color: #66c0f4; color: #66c0f4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> View Attribute Lists</a></p>
+<p><span style="color: #66c0f4"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.85 6.74q.015 0 0 0M21.28 8.6c-.43-1.05-1.32-2.18-2.01-2.54.56 1.11.89 2.22 1.02 3.04v.02c-1.13-2.82-3.05-3.96-4.62-6.44-.08-.12-.17-.25-.24-.38-.04-.07-.07-.14-.11-.21-.06-.13-.12-.26-.15-.4 0-.01-.01-.02-.02-.02h-.03c-2.22 1.3-3.15 3.59-3.38 5.04-.69.04-1.37.21-1.99.51-.12.05-.17.19-.13.31.05.14.21.21.34.15.54-.26 1.14-.41 1.74-.45h.05c.08-.01.17-.01.25-.01.5-.01.97.06 1.44.2l.06.02c.1.02.17.06.25.06.05.04.11.06.16.08l.14.06c.07.03.14.06.2.09.03.02.06.03.09.05.07.04.16.07.2.11.04.02.08.05.12.07.73.45 1.34 1.07 1.75 1.81-.53-.37-1.49-.74-2.41-.58 3.6 1.81 2.63 8-2.36 7.76-.44-.01-.88-.1-1.3-.25-.1-.03-.2-.07-.29-.12-.05-.02-.12-.05-.17-.08-1.23-.63-2.24-1.82-2.38-3.27 0 0 .5-1.73 3.33-1.73.31 0 1.17-.86 1.2-1.1 0-.09-1.74-.78-2.42-1.45-.37-.36-.54-.53-.69-.66-.08-.07-.17-.13-.26-.19a4.63 4.63 0 0 1-.03-2.45C7.6 6.12 6.8 6.86 6.22 7.5c-.4-.5-.37-2.15-.35-2.5-.01 0-.3.16-.33.18-.35.25-.68.53-.98.82-.35.37-.66.74-.94 1.14-.62.91-1.12 1.95-1.34 3.04 0 .01-.1.41-.17.92l-.03.23c-.02.17-.04.32-.08.58v.41c0 5.53 4.5 10.01 10 10.01 4.97 0 9.08-3.59 9.88-8.33.02-.11.03-.24.05-.37.2-1.72-.02-3.52-.65-5.03"></path></svg></span></span> <strong>Attribute Lists</strong><br>
+<a class="md-button" href="../python-markdown/#attribute-lists" style="border-color: #66c0f4; color: #66c0f4"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> View Attribute Lists</a></p>
 <p>Allows <abbr title="Hyper Text Markup Language">HTML</abbr> attributes &amp; CSS classes to almost every MD inline &amp; block-level element.</p>
 </li>
 <li>
-<p><span style="color: #4caf50"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5A2.5 2.5 0 0 0 10.5 1 2.5 2.5 0 0 0 8 3.5V5H4a2 2 0 0 0-2 2v3.8h1.5c1.5 0 2.7 1.2 2.7 2.7S5 16.2 3.5 16.2H2V20a2 2 0 0 0 2 2h3.8v-1.5c0-1.5 1.2-2.7 2.7-2.7s2.7 1.2 2.7 2.7V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg></span></span> <strong>Snippets</strong><br>
-<a class="md-button" href="../python-markdown-extensions/#snippets" style="border-color: #4caf50; color: #4caf50"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> View Snippets</a></p>
+<p><span style="color: #4caf50"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5A2.5 2.5 0 0 0 10.5 1 2.5 2.5 0 0 0 8 3.5V5H4a2 2 0 0 0-2 2v3.8h1.5c1.5 0 2.7 1.2 2.7 2.7S5 16.2 3.5 16.2H2V20a2 2 0 0 0 2 2h3.8v-1.5c0-1.5 1.2-2.7 2.7-2.7s2.7 1.2 2.7 2.7V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg></span></span> <strong>Snippets</strong><br>
+<a class="md-button" href="../python-markdown-extensions/#snippets" style="border-color: #4caf50; color: #4caf50"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> View Snippets</a></p>
 <p>The extension adds the ability to embed content from arbitrary files into a document.</p>
 </li>
 </ul>
@@ -1109,14 +1106,13 @@
 <h3 id="improved-tooltips">Improved Tooltips<a class="headerlink" href="#improved-tooltips" title="Permanent link">¶</a></h3>
 <!-- md:version 9.5.0 -->
 <!-- md:flag experimental -->
-
 <div class="admonition info">
 <p class="admonition-title">Improved Tooltips</p>
 <p>When improved tooltips are enabled, Material for MkDocs replaces the browser's rendering logic for <code>title</code> attribute with beautiful little tooltips.<br>
 Add the following lines to <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">theme</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.tooltips</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.tooltips</span>
 </span></code></pre></div>
 </div>
 <p>Now, tooltips will be rendered for the following elements:</p>
@@ -1130,16 +1126,16 @@ Add the following lines to <code>mkdocs.yml</code>:</p>
 <div class="admonition info">
 <p class="admonition-title">Adding Tooltips</p>
 <p>The <a href="https://daringfireball.net/projects/markdown/syntax#link">Markdown syntax</a> allows to specify a <code>title</code> for each link, which will render as a beautiful tooltip when <a href="#improved-tooltips">improved tooltips</a> are enabled. Add a tooltip to a link with the following lines:</p>
-<div class="language-markdown highlight"><span class="filename">Link with tooltip, inline syntax</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[<span class="nt">Hover me</span>](<span class="na">https://example.com "I'm a tooltip!"</span>)
+<div class="language-markdown highlight"><span class="filename">Link with tooltip, inline syntax</span><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>[<span class="nt">Hover me</span>](<span class="na">https://example.com "I'm a tooltip!"</span>)
 </span></code></pre></div>
 </div>
 <div class="result">
-<p><span style="color: #00b8d4; font-size: 0.9rem; vertical-align: middle;"> <span class="twemoji" title="Come visit us for all your needs!"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"></path></svg></span></span> <a href="https://afridyne.co.za" title="Afridyne Systems, our service is the difference!">Afridyne Systems</a></p>
+<p><span style="color: #00b8d4; font-size: 0.9rem; vertical-align: middle;"> <span class="twemoji" title="Come visit us for all your needs!"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"></path></svg></span></span> <a href="https://afridyne.co.za" title="Afridyne Systems, our service is the difference!">Afridyne Systems</a></p>
 </div>
 <div class="admonition info">
 <p>Tooltips can also be added to link references:</p>
-<div class="language-markdown highlight"><span class="filename">Link with tooltip, reference syntax</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[<span class="nt">Hover me</span>][<span class="nl">example</span>]
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[<span class="nl">example</span>]: <span class="na">https://example.com "I'm a tooltip!"</span>
+<div class="language-markdown highlight"><span class="filename">Link with tooltip, reference syntax</span><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>[<span class="nt">Hover me</span>][<span class="nl">example</span>]
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>[<span class="nl">example</span>]: <span class="na">https://example.com "I'm a tooltip!"</span>
 </span></code></pre></div>
 </div>
 <div class="result">
@@ -1148,19 +1144,19 @@ Add the following lines to <code>mkdocs.yml</code>:</p>
 <div class="admonition info">
 <p class="admonition-title">Other Elements</p>
 <p>For all other elements, a <code>title</code> can be added by using the <a href="http://127.0.0.1:8000/MkDocs-Material/python-markdown/#attribute-lists">Attribute Lists</a> extension:</p>
-<div class="language-markdown highlight"><span class="filename">Icon with tooltip</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>:material-information-outline:{ title="Important information" }
+<div class="language-markdown highlight"><span class="filename">Icon with tooltip</span><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>:material-information-outline:{ title="Important information" }
 </span></code></pre></div>
 </div>
 <div class="result">
-<p><span style="color: #00b8d4; font-size: 0.9rem; vertical-align: middle;"> <span class="twemoji" title="Come visit us for all your needs!"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"></path></svg></span></span></p>
+<p><span style="color: #00b8d4; font-size: 0.9rem; vertical-align: middle;"> <span class="twemoji" title="Come visit us for all your needs!"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"></path></svg></span></span></p>
 </div>
 <h3 id="adding-abbreviations">Adding Abbreviations<a class="headerlink" href="#adding-abbreviations" title="Permanent link">¶</a></h3>
 <div class="admonition quote">
 <p>Abbreviations can be defined by using a special syntax similar to URLs and <a href="../footnotes/">footnotes</a>, starting with a <code>*</code> and immediately followed by the term or acronym to be associated in square brackets:</p>
-<div class="language-markdown highlight"><span class="filename">Text with abbreviations</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>The HTML specification is maintained by the W3C.
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>*[HTML]: Hyper Text Markup Language
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>*[W3C]: World Wide Web Consortium
+<div class="language-markdown highlight"><span class="filename">Text with abbreviations</span><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>The HTML specification is maintained by the W3C.
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>*[HTML]: Hyper Text Markup Language
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>*[W3C]: World Wide Web Consortium
 </span></code></pre></div>
 </div>
 <div class="result">
@@ -1169,18 +1165,18 @@ Add the following lines to <code>mkdocs.yml</code>:</p>
 <h3 id="adding-a-glossary">Adding a Glossary<a class="headerlink" href="#adding-a-glossary" title="Permanent link">¶</a></h3>
 <p>The [Snippets] extension can be used to implement a simple glossary by moving all abbreviations in a dedicated file<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, and <a href="https://facelessuser.github.io/pymdown-extensions/extensions/snippets/#auto-append-snippets">auto-append</a> this file to all pages with the following configuration:</p>
 <div class="admonition quote">
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>includes/abbreviations.md</code></label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>includes/abbreviations.md</code></label><label for="__tabbed_1_2"><span class="twemoji"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"></path></svg></span> <code>mkdocs.yml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>*[HTML]: Hyper Text Markup Language
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>*[W3C]: World Wide Web Consortium
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>*[HTML]: Hyper Text Markup Language
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>*[W3C]: World Wide Web Consortium
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.snippets</span><span class="p">:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">auto_append</span><span class="p">:</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">includes/abbreviations.md</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.snippets</span><span class="p">:</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">      </span><span class="nt">auto_append</span><span class="p">:</span>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">includes/abbreviations.md</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1191,8 +1187,8 @@ Add the following lines to <code>mkdocs.yml</code>:</p>
 <p>When using a dedicated file outside of the <code>docs</code> folder, add the parent directory to the list<br>
 of <code>watch</code> folders so that when the glossary file is updated, the project is automatically<br>
 reloaded when running <code>mkdocs serve</code>.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">watch</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">includes</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">watch</span><span class="p">:</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">includes</span>
 </span></code></pre></div>
 </div>
 <div class="footnote">
@@ -1360,19 +1356,20 @@ reloaded when running <code>mkdocs serve</code>.</p>
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "../..", "bundleUrl": "../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../js/markmap-d3.js"></script>
+      
+        <script src="../../js/markmap-lib.js"></script>
+      
+        <script src="../../js/markmap-view.js"></script>
+      
+        <script src="../../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

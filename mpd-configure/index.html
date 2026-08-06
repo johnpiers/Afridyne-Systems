@@ -32,7 +32,7 @@
           <link rel="icon" href="../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
@@ -396,7 +396,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1645,9 +1645,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1659,15 +1657,14 @@
                   
 
 <div style="display: none;">
-  <h1>Header</h1>
+<h1>Header</h1>
 </div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260102-150121.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20260102-150121.png"></a></p>
 <center><h2>MPD-configure</h2></center>
-
 <div class="admonition pied-piper">
 <p><a href="https://gitlab.com/sonida/mpd-configure/-/blob/master/README.md?ref_type=heads"><strong>README.md</strong></a></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Layout: post.
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Title: README for mpd-configure.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>Layout: post.
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>Title: README for mpd-configure.
 </span></code></pre></div>
 <p><a href="https://gitlab.com/sonida/mpd-configure#readme-for-mpd-configure"><strong>README for mpd-configure</strong></a></p>
 </div>
@@ -1692,33 +1689,33 @@
 <div class="admonition desc">
 <p class="admonition-title">Getting The Script</p>
 <p>The latest stable version of the script may be cloned from gitlab using&nbsp;<code>git</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git clone https://gitlab.com/sonida/mpd-configure.git
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>git clone https://gitlab.com/sonida/mpd-configure.git
 </span></code></pre></div>
 <p>Using git has the added benefit that updating the script to the latest version is as easy as:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>## cd /path/to/git-clone
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git pull
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>## cd /path/to/git-clone
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>git pull
 </span></code></pre></div>
 <p>Alternatively,&nbsp;<a href="https://www.musicpd.org/download.html">the tarball of the current stable master</a>&nbsp;can be downloaded and unpacked in the current directory using&nbsp;<code>wget</code>&nbsp;and&nbsp;<code>tar</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>wget https://www.musicpd.org/download/mpd/0.23/mpd-0.23.12.tar.xz | tar --strip-components=1 -zxf -
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>wget https://www.musicpd.org/download/mpd/0.23/mpd-0.23.12.tar.xz | tar --strip-components=1 -zxf -
 </span></code></pre></div>
 </div>
 <h3 id="running-the-script"><a href="https://gitlab.com/sonida/mpd-configure#running-the-script"></a>Running the Script<a class="headerlink" href="#running-the-script" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Running The Script</p>
 <p>Run the script with default settings to display the contents of the resulting mpd configuration file:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bash mpd-configure
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>bash mpd-configure
 </span></code></pre></div>
 </div>
 <h3 id="storing-the-output-of-the-script-in-a-file"><a href="https://gitlab.com/sonida/mpd-configure#storing-the-output-of-the-script-in-a-file"></a>Storing the Output of the Script in a File<a class="headerlink" href="#storing-the-output-of-the-script-in-a-file" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title"><code>Storing Output of Script in a File</code></p>
 <p>The output of the scripts can simply be redirected to a file (in this example&nbsp;<code>mympd.conf</code>):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bash mpd-configure &gt; mympd.conf
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>bash mpd-configure &gt; mympd.conf
 </span></code></pre></div>
 <p>Although the same may be achieved by using the&nbsp;<code>-o</code>&nbsp;or&nbsp;<code>--output</code>&nbsp;command line parameters or setting&nbsp;<code>CONF_MPD_CONFFILE</code>&nbsp;on the command line. This has the benefit that the script detects if the target file exists, in which case the user is prompted to overwrite it, while making an automated&nbsp;<em>backup</em>&nbsp;of the original file:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>bash mpd-configure -o "mympd.conf"
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a># or:
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>CONF_MPD_CONFFILE="mympd.conf" ./mpd-configure
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>bash mpd-configure -o "mympd.conf"
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a># or:
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>CONF_MPD_CONFFILE="mympd.conf" ./mpd-configure
 </span></code></pre></div>
 </div>
 <h3 id="more-advanced-usage-example"><a href="https://gitlab.com/sonida/mpd-configure#more-advanced-usage-example"></a>More Advanced Usage Example<a class="headerlink" href="#more-advanced-usage-example" title="Permanent link">¶</a></h3>
@@ -1726,7 +1723,7 @@
 <p class="admonition-title">More Advanced Usage Example</p>
 <p>Additional setting are available using environment variables or using the file&nbsp;<a href="https://gitlab.com/sonida/mpd-configure/-/blob/master/mpd-configure.conf"><code>./mpd-configure.conf</code></a>&nbsp;and configuration snippet files in the&nbsp;<a href="https://gitlab.com/sonida/mpd-configure/-/tree/master/confs-available"><code>./confs-available/</code></a>&nbsp;directory.</p>
 <p>For example to specify&nbsp;<code>CONF_MPD_MUSICDIR</code>&nbsp;which sets the&nbsp;<code>music_directory</code>&nbsp;and saving the resulting mpd configuration file in&nbsp;<code>mympd.conf</code>, use:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>CONF_MPD_MUSICDIR="/srv/media/music" ./mpd-configure -o "/etc/mpd.conf"
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>CONF_MPD_MUSICDIR="/srv/media/music" ./mpd-configure -o "/etc/mpd.conf"
 </span></code></pre></div>
 <p>By default&nbsp;<code>mpd-configure</code>&nbsp;prompts the user to overwrite the specified file if it exists, and makes a backup of it.</p>
 </div>
@@ -1734,10 +1731,10 @@
 <div class="admonition desc">
 <p class="admonition-title">Fully Automated Usage Example</p>
 <p>A fully automated example which does not prompt the user (<code>-n</code>), uses the first available USB Audio Class interface (<code>-l u</code>) and sets some paths, while creating a backup of the original&nbsp;<code>/etc/mpd.conf</code>&nbsp;in case it exists:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>CONF_MPD_MUSICDIR="/srv/media/music" CONF_MPD_HOMEDIR="/var/lib/mpd" \ bash mpd-configure -l u -n -o "/etc/mpd.conf"
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>CONF_MPD_MUSICDIR="/srv/media/music" CONF_MPD_HOMEDIR="/var/lib/mpd" \ bash mpd-configure -l u -n -o "/etc/mpd.conf"
 </span></code></pre></div>
 <p>To see all available command line options run the script with&nbsp;<code>-h</code>&nbsp;or&nbsp;<code>--help</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bash mpd-configure -h
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>bash mpd-configure -h
 </span></code></pre></div>
 <p>Also see</p>
 <ul>
@@ -1758,36 +1755,36 @@
 <p class="admonition-title">Background</p>
 <p>Music Player Daemon (MPD) is a flexible, powerful, server-side application for playing music. Through plugins and libraries it can play a variety of sound files while being controlled by its network protocol. See the article.&nbsp;<a href="https://readthedocs.io">How to turn Music Player Daemon (mpd) into an audiophile music player</a>.</p>
 <p>It does this by creating a proper formatted&nbsp;<code>audio_output</code>&nbsp;configuration snippet for mpd's&nbsp;<a href="http://musicpd.org">alsa audio output plugin</a>&nbsp;using the sound cards hardware address and turning all options off which might cause mpd to alter the incoming sound. For example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>## start processing `01_output-audio-alsa.conf'
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>audio_output {
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        type             "alsa"
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        name             "Peachtree 24/192 USB X - USB Audio"
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        device           "hw:1,0"
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        auto_resample    "no"
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        auto_format      "no"
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        auto_channels    "no"
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>}
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>replaygain                 "off"
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>mixer_type                 "none"
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>## done processing
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>## start processing `01_output-audio-alsa.conf'
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>audio_output {
+</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>        type             "alsa"
+</span><span id="__span-10-4"><a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>        name             "Peachtree 24/192 USB X - USB Audio"
+</span><span id="__span-10-5"><a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>        device           "hw:1,0"
+</span><span id="__span-10-6"><a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>        auto_resample    "no"
+</span><span id="__span-10-7"><a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a>        auto_format      "no"
+</span><span id="__span-10-8"><a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a>        auto_channels    "no"
+</span><span id="__span-10-9"><a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a>}
+</span><span id="__span-10-10"><a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a>replaygain                 "off"
+</span><span id="__span-10-11"><a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a>mixer_type                 "none"
+</span><span id="__span-10-12"><a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a>## done processing
 </span></code></pre></div>
 </div>
 <h2 id="detailed-usage-instructions"><a href="https://gitlab.com/sonida/mpd-configure#detailed-usage-instructions"></a>Detailed Usage Instructions<a class="headerlink" href="#detailed-usage-instructions" title="Permanent link">¶</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">Detailed Usage Instructions</p>
 <p>After creating a mpd configuration file,&nbsp;<code>mpd</code>&nbsp;can be told to use this configuration file with:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mpd ./mpd.conf
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>mpd ./mpd.conf
 </span></code></pre></div>
 <p>To use the generated configuration file system wide, it can be copied to the system wide mpd configuration file when you want to run&nbsp;<code>mpd</code>&nbsp;as a system daemon:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo bash mpd-configure -o "/etc/mpd.conf"
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo systemctl restart mpd
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>sudo bash mpd-configure -o "/etc/mpd.conf"
+</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>sudo systemctl restart mpd
 </span></code></pre></div>
 </div>
 <h2 id="more-complex-usage"><a href="https://gitlab.com/sonida/mpd-configure#more-complex-usage"></a>More Complex Usage<a class="headerlink" href="#more-complex-usage" title="Permanent link">¶</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">More Complex Usage</p>
 <p>For debugging or testing purposes one may set the&nbsp;<code>INCLUDE_COMMENTS</code>&nbsp;and/or&nbsp;<code>DEBUG</code>&nbsp;parameters through the&nbsp;<code>mpd-configure.conf</code>&nbsp;file or on the command line, eg:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>DEBUG="True" INCLUDE_COMMENTS="True" bash mpd-configure
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>DEBUG="True" INCLUDE_COMMENTS="True" bash mpd-configure
 </span></code></pre></div>
 <p>In dynamic environments in which hardware may be altered each boot, connected to whatever USB DAC, the script could be put in a logon script or systemd service file.</p>
 </div>
@@ -1804,18 +1801,18 @@
 <p class="admonition-title"><code>Usage from within another bash or sh script</code></p>
 <p>The bash script&nbsp;<a href="https://gitlab.com/sonida/mpd-configure/-/blob/master/examples/bash-example.sh">./examples/bash-example.sh</a>&nbsp;demonstrates the way alsa-capabilities can be used from another bash script.</p>
 <p>This demo script returns the monitoring file of the file specified as an argument:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash examples/bash-example.sh hw:1,0
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>bash examples/bash-example.sh hw:1,0
 </span></code></pre></div>
 <p>Result:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>the audio card with alsa hardware address hw:1,0 can be monitored with:
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>/proc/asound/card1/stream0
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>the audio card with alsa hardware address hw:1,0 can be monitored with:
+</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>/proc/asound/card1/stream0
 </span></code></pre></div>
 </div>
 <h3 id="usage-from-within-python"><a href="https://gitlab.com/sonida/mpd-configure#usage-from-within-python"></a>Usage from within Python<a class="headerlink" href="#usage-from-within-python" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title"><code>Usage from within Python</code></p>
 <p>Assuming your in the&nbsp;<code>mpd-configure</code>&nbsp;directory, run:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>python examples/get-interfaces.py
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>python examples/get-interfaces.py
 </span></code></pre></div>
 <p>The python script&nbsp;<a href="https://gitlab.com/sonida/mpd-configure/-/blob/master/examples/get-interfaces.py">./examples/get-interfaces.py</a>&nbsp;uses a helper bash script (<a href="https://gitlab.com/sonida/mpd-configure/-/blob/master/examples/get-interfaces-for-python.sh">./examples/get-interfaces-for-python.sh</a>), which in turn sources&nbsp;<code>alsa-capabilities</code>.</p>
 </div>
@@ -1823,10 +1820,10 @@
 <div class="admonition desc">
 <p class="admonition-title"><code>LTSP-specific Auto Logon Sample</code></p>
 <p>For my LTPS-environments the script directory can be copied to the home directory of the auto logon user specified in&nbsp;<code>/var/lib/tftpboot/ltsp/i386/lts.conf</code>. It's&nbsp;<code>~/.profile</code>&nbsp;should be edited to run the script and start&nbsp;<code>mpd</code>&nbsp;using the script generated&nbsp;<code>~/.mpd/mpd.conf</code>, ie:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>mpd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nv">CONF_MPD_MUSICDIR</span><span class="o">=</span><span class="s2">"/srv/media/music"</span><span class="w"> </span><span class="nv">CONF_MPD_HOMEDIR</span><span class="o">=</span><span class="s2">"/var/lib/mpd"</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>bash<span class="w"> </span>~/mpd-configure/mpd-configure<span class="w"> </span>-l<span class="w"> </span>usb<span class="w"> </span>-n<span class="w"> </span>-q<span class="w"> </span>--nobackup<span class="w"> </span>-o<span class="w"> </span><span class="s2">"~/.mpd/mpd.conf"</span><span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>systemctl<span class="w"> </span>start<span class="w"> </span>mpd
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>mpd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="nv">CONF_MPD_MUSICDIR</span><span class="o">=</span><span class="s2">"/srv/media/music"</span><span class="w"> </span><span class="nv">CONF_MPD_HOMEDIR</span><span class="o">=</span><span class="s2">"/var/lib/mpd"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-3"><a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>bash<span class="w"> </span>~/mpd-configure/mpd-configure<span class="w"> </span>-l<span class="w"> </span>usb<span class="w"> </span>-n<span class="w"> </span>-q<span class="w"> </span>--nobackup<span class="w"> </span>-o<span class="w"> </span><span class="s2">"~/.mpd/mpd.conf"</span><span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-4"><a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>systemctl<span class="w"> </span>start<span class="w"> </span>mpd
 </span></code></pre></div>
 </div>
 <h2 id="preferences"><a href="https://gitlab.com/sonida/mpd-configure#preferences"></a>Preferences<a class="headerlink" href="#preferences" title="Permanent link">¶</a></h2>
@@ -1852,7 +1849,7 @@
 <ul>
 <li>commented out: don't write to a file (Default). One may redirect the output of the script using:</li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>bash<span class="w"> </span>mpd-configure<span class="w"> </span>&gt;<span class="w"> </span>/path/to/mpd.conf
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>bash<span class="w"> </span>mpd-configure<span class="w"> </span>&gt;<span class="w"> </span>/path/to/mpd.conf
 </span></code></pre></div>
 <ul>
 <li><code>/path/to/mpd.conf</code>: use the path specified.</li>
@@ -1872,18 +1869,18 @@
 <li>commented out (or empty ""): do not limit the interfaces that will be found.</li>
 </ul>
 <p><code>LIMIT_INTERFACE_FILTER</code>&nbsp;The available output devices (after filtering with&nbsp;<code>LIMIT_INTERFACE_TYPE</code>&nbsp;when applicable) may be further limited using a regular expression (which thus is case sensentive) which should match the output of:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">LANG</span><span class="o">=</span>C<span class="w"> </span>aplay<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>^card
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="nv">LANG</span><span class="o">=</span>C<span class="w"> </span>aplay<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>^card
 </span></code></pre></div>
 <p>If for example the output is like this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>card 0: MID [HDA Intel MID], device 0: HDMI 0 [HDMI 0]
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>card 1: receiv [Pink Faun USB 32/384 USB receiv], device 0: USB Audio [USB Audio]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>card 0: MID [HDA Intel MID], device 0: HDMI 0 [HDMI 0]
+</span><span id="__span-20-2"><a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>card 1: receiv [Pink Faun USB 32/384 USB receiv], device 0: USB Audio [USB Audio]
 </span></code></pre></div>
 <p>... you could use one of the following values to match the&nbsp;<em>second</em>&nbsp;line (which in this example matches the alsa&nbsp;<code>hw:1,1</code>&nbsp;interface, eg. the second interface of the second sound card):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>"USB Audio"
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>"[uU][sS][bB] \w+ "
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>"USB Audio"
+</span><span id="__span-21-2"><a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>"[uU][sS][bB] \w+ "
 </span></code></pre></div>
 <p>but not</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>"USB audio"
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>"USB audio"
 </span></code></pre></div>
 <p>Possible values:</p>
 <ul>
@@ -2129,19 +2126,20 @@
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../js/markmap-d3.js"></script>
+      
+        <script src="../js/markmap-lib.js"></script>
+      
+        <script src="../js/markmap-view.js"></script>
+      
+        <script src="../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

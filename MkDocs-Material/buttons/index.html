@@ -28,7 +28,7 @@
           <link rel="icon" href="../../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -392,7 +392,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1043,9 +1043,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1061,12 +1059,11 @@
 
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260106-224604.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20260106-224604.png"></a></p>
 <h1 style="text-align: center;">Buttons</h1>
-
 <p>Material for MkDocs provides dedicated styles for primary and secondary buttons that can be added to any link, <code>label</code> or <code>button</code> element. This is especially useful for documents or landing pages with dedicated <em>call-to-actions</em>.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
 <p>This configuration allows to add attributes to all inline- and block-level elements with a simple syntax, turning any link into a button. Add the following lines to <code>mkdocs.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span>
 </span></code></pre></div>
 <p>See additional configuration options:</p>
 <ul>
@@ -1075,24 +1072,24 @@
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
 <h3 id="adding-buttons">Adding buttons<a class="headerlink" href="#adding-buttons" title="Permanent link">¶</a></h3>
 <p>In order to render a link as a button, suffix it with curly braces and add the<code>.md-button</code> class selector to it. The button will receive the selected <a href="../changing-the-colors/#primary-color">primary color</a> and <a href="../changing-the-colors/#accent-color">accent color</a> if active.</p>
-<div class="language-markdown highlight"><span class="filename">Button</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[<span class="nt">Subscribe to our newsletter</span>](<span class="na">#</span>){ .md-button }
+<div class="language-markdown highlight"><span class="filename">Button</span><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>[<span class="nt">Subscribe to our newsletter</span>](<span class="na">#</span>){ .md-button }
 </span></code></pre></div>
 <div class="result">
 <p><a class="md-button" href="javascript:alert$.next(&quot;Demo&quot;)">Subscribe to our newsletter</a></p>
 </div>
 <h3 id="adding-primary-buttons">Adding primary buttons<a class="headerlink" href="#adding-primary-buttons" title="Permanent link">¶</a></h3>
 <p>If you want to display a filled, primary button (like on the [landing page] of Material for MkDocs), add both, the <code>.md-button</code> and <code>.md-button--primary</code> CSS class selectors.</p>
-<div class="language-markdown highlight"><span class="filename">Button, primary</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[<span class="nt">Subscribe to our newsletter</span>](<span class="na">#</span>){ .md-button .md-button--primary }
+<div class="language-markdown highlight"><span class="filename">Button, primary</span><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>[<span class="nt">Subscribe to our newsletter</span>](<span class="na">#</span>){ .md-button .md-button--primary }
 </span></code></pre></div>
 <div class="result">
 <p><a class="md-button md-button--primary" href="javascript:alert$.next(&quot;Demo&quot;)">Subscribe to our newsletter</a></p>
 </div>
 <h3 id="adding-icon-buttons">Adding icon buttons<a class="headerlink" href="#adding-icon-buttons" title="Permanent link">¶</a></h3>
 <p>Of course, icons can be added to all types of buttons by using the <a href="../icons-emojis/#using-icons">icon syntax</a> together with any valid icon shortcode, which can be easily found with a few keystrokes through our <a href="../icons-emojis/#search">icon search</a>.</p>
-<div class="language-markdown highlight"><span class="filename">Button with icon</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[<span class="nt">Send :fontawesome-solid-paper-plane:</span>](<span class="na">#</span>){ .md-button }
+<div class="language-markdown highlight"><span class="filename">Button with icon</span><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>[<span class="nt">Send :fontawesome-solid-paper-plane:</span>](<span class="na">#</span>){ .md-button }
 </span></code></pre></div>
 <div class="result">
-<p><a class="md-button" href="javascript:alert$.next(&quot;Demo&quot;)">Send <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"></path></svg></span></a></p>
+<p><a class="md-button" href="javascript:alert$.next(&quot;Demo&quot;)">Send <span class="twemoji"><svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"></path></svg></span></a></p>
 </div>
 
 
@@ -1251,19 +1248,20 @@
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "../..", "bundleUrl": "../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../js/markmap-d3.js"></script>
+      
+        <script src="../../js/markmap-lib.js"></script>
+      
+        <script src="../../js/markmap-view.js"></script>
+      
+        <script src="../../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

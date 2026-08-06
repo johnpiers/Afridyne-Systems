@@ -32,7 +32,7 @@
           <link rel="icon" href="../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
@@ -396,7 +396,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1821,9 +1821,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1835,10 +1833,8 @@
                   
 
 <div style="display: none;"><h1>Header</h1></div>
-
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260301-042755.png" data-desc-position="bottom"><img alt="" src="../imgs/20260301-042755.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;">systemd</h1>
-
 <div class="admonition tip">
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260301-040203.png" data-desc-position="bottom"><img alt="" src="../imgs/20260301-040203.png" style="display: block; margin: 0 auto"></a></p>
 <p></p><h2 style="text-align: center;"><b>System and Service Manager</b></h2><p></p>
@@ -1922,7 +1918,6 @@
     }
   }
 </style>
-
 <table class="wikitable">
 <tbody><tr>
 <th>Action</th>
@@ -2014,7 +2009,6 @@
 <td class="action"><b>Unmask</b> a unit</td>
 <td><code>systemctl unmask <i>unit</i></code> as root</td>
 <td></td></tr></tbody></table>
-
 <h5 id="the-systemd-repository-architecture">The systemd Repository Architecture<a class="headerlink" href="#the-systemd-repository-architecture" title="Permanent link">¶</a></h5>
 <h5 id="code-map">Code Map<a class="headerlink" href="#code-map" title="Permanent link">¶</a></h5>
 <div class="admonition abstract">
@@ -2096,21 +2090,21 @@
 <p class="admonition-title">Implementing Unit Settings</p>
 <p>The system and session manager supports a large number of unit settings.</p>
 <p>These can generally be configured in three ways:</p>
-<div class="language-html no-copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    1. Via textual, INI-style configuration files called *unit* *files*
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    2. Via D-Bus messages to the manager
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    3. Via the `systemd-run` and `systemctl set-property` commands
+<div class="language-html no-copy highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>    1. Via textual, INI-style configuration files called *unit* *files*
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    2. Via D-Bus messages to the manager
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    3. Via the `systemd-run` and `systemctl set-property` commands
 </span></code></pre></div>
 <p>From a user's perspective, the third is a wrapper for the second.</p>
 <hr>
 <p>To implement a new unit setting, it is necessary to support all three input methods:</p>
-<div class="language-html no-copy highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    1. *unit* *files* are parsed in `src/core/load-fragment.c`, with many simple and fixed-type unit
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>       settings being parsed by common helpers, with the definition in the generator file
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>       `src/core/load-fragment-gperf.gperf.in`
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    2. D-Bus messages are defined and parsed in `src/core/dbus-*.c`
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    3. `systemd-run` and `systemctl set-property` do client-side parsing and translation into D-Bus
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        messages in `src/shared/bus-unit-util.c`
+<div class="language-html no-copy highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>    1. *unit* *files* are parsed in `src/core/load-fragment.c`, with many simple and fixed-type unit
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>       settings being parsed by common helpers, with the definition in the generator file
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>       `src/core/load-fragment-gperf.gperf.in`
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>    2. D-Bus messages are defined and parsed in `src/core/dbus-*.c`
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>    3. `systemd-run` and `systemctl set-property` do client-side parsing and translation into D-Bus
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>        messages in `src/shared/bus-unit-util.c`
 </span></code></pre></div>
 <p>So that they are exercised by the fuzzing CI, new unit settings should also be listed in the text files under <code>test/fuzz/fuzz-unit-file/</code>.</p>
 </div>
@@ -2421,19 +2415,20 @@ Some of these files are updated automatically, some are filled by contributors.<
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../js/markmap-d3.js"></script>
+      
+        <script src="../js/markmap-lib.js"></script>
+      
+        <script src="../js/markmap-view.js"></script>
+      
+        <script src="../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

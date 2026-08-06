@@ -32,7 +32,7 @@
           <link rel="icon" href="../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
@@ -396,7 +396,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1852,9 +1852,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1869,12 +1867,10 @@
                   
 
 <div style="display: none;">
-  <h1>Header</h1>
+<h1>Header</h1>
 </div>
-
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260413-161721.png" data-desc-position="bottom"><img alt="" src="../imgs/20260413-161721.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;"> Getting Started with MkDocs</h1>
-
 <div class="admonition quote">
 <p class="admonition-title">An introductory tutorial!</p>
 <p>An introductory tutorial!</p>
@@ -1885,7 +1881,7 @@
 <div class="admonition info">
 <p class="admonition-title">Installation.</p>
 <p>To install MkDocs, run the following command from the command line:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
 </span></code></pre></div>
 <p>For more details, see the&nbsp;<a href="https://www.mkdocs.org/user-guide/installation/">Installation Guide</a>.</p>
 </div>
@@ -1893,19 +1889,19 @@
 <div class="admonition info">
 <p class="admonition-title">Creating a New Project</p>
 <p>Getting started is super easy. To create a new project, run the following command from the command line:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdocs<span class="w"> </span>new<span class="w"> </span>my-project
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>my-project
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>mkdocs<span class="w"> </span>new<span class="w"> </span>my-project
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>my-project
 </span></code></pre></div>
 <p>Take a moment to review the initial project that has been created for you.</p>
 <p><a href="https://www.mkdocs.org/img/initial-layout.png">The initial MkDocs layout</a></p>
 <p>There's a single configuration file named&nbsp;<code>mkdocs.yml</code>, and a folder named&nbsp;<code>docs</code>&nbsp;that will contain your documentation source files (<code>docs</code>&nbsp;is the default value for the&nbsp;<a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir">docs_dir</a>&nbsp;configuration setting). Right now the&nbsp;<code>docs</code>&nbsp;folder just contains a single documentation page, named&nbsp;<code>index.md</code>.</p>
 <p>MkDocs comes with a built-in dev-server that lets you preview your documentation as you work on it. Make sure you're in the same directory as the&nbsp;<code>mkdocs.yml</code>&nbsp;configuration file, and then start the server by running the&nbsp;<code>mkdocs serve</code>&nbsp;command:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>mkdocs<span class="w"> </span>serve
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">INFO    -  Building documentation...</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">INFO    -  Cleaning site directory</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">INFO    -  Documentation built in 0.22 seconds</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">INFO    -  [15:50:43] Watching paths for changes: 'docs', 'mkdocs.yml'</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="gp">$ </span>mkdocs<span class="w"> </span>serve
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="go">INFO    -  Building documentation...</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="go">INFO    -  Cleaning site directory</span>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="go">INFO    -  Documentation built in 0.22 seconds</span>
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="go">INFO    -  [15:50:43] Watching paths for changes: 'docs', 'mkdocs.yml'</span>
+</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="go">INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/</span>
 </span></code></pre></div>
 <p>Open up&nbsp;<a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>&nbsp;in your browser, and you'll see the default home page being displayed:</p>
 </div>
@@ -1915,7 +1911,7 @@
 <p>The dev-server also supports auto-reloading, and will rebuild your documentation whenever anything in the configuration file, documentation directory, or theme directory changes.</p>
 <p>Open the <code>docs/index.md</code> document in your text editor of choice, change the initial heading to <code>MkLorum</code>, and save your changes. Your browser will auto-reload and you should see your updated documentation immediately.</p>
 <p>Now try editing the configuration file: <code>mkdocs.yml</code>. Change the <a href="https://www.mkdocs.org/user-guide/configuration/#site_name"><code>site_name</code></a> setting to <code>MkLorum</code> and save the file.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
 </span></code></pre></div>
 <p>Your browser should immediately reload, and you'll see your new site name take effect.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.mkdocs.org/img/site-name.png" data-desc-position="bottom"><img alt="The site_name setting" src="https://www.mkdocs.org/img/site-name.png"></a></p>
@@ -1928,14 +1924,14 @@
 <div class="admonition info">
 <p class="admonition-title">Building the Site Structure</p>
 <p>Now add a second page to your documentation:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span><span class="s1">'https://jaspervdj.be/lorem-markdownum/markdown.txt'</span><span class="w"> </span>&gt;<span class="w"> </span>docs/about.md
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>curl<span class="w"> </span><span class="s1">'https://jaspervdj.be/lorem-markdownum/markdown.txt'</span><span class="w"> </span>&gt;<span class="w"> </span>docs/about.md
 </span></code></pre></div>
 <p>As our documentation site will include some navigation headers, you may want to edit the configuration file and add some information about the order, title, and nesting of each page in the navigation header by adding a <a href="https://www.mkdocs.org/user-guide/configuration/#nav"><code>nav</code></a> setting:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">nav</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">bash</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash.md</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">bash</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash.md</span>
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Navigation Result</p>
@@ -1952,11 +1948,11 @@
 <div class="admonition info">
 <p class="admonition-title">Changing the Look and Feel</p>
 <p>Now change the configuration file to alter how the documentation is displayed by changing the theme. Edit the <code>mkdocs.yml</code> file and add a <a href="https://www.mkdocs.org/user-guide/configuration/#theme"><code>theme</code></a> setting:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">nav</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readthedocs</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about.md</span>
+</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readthedocs</span>
 </span></code></pre></div>
 <div class="admonition success">
 <p class="admonition-title">Theme Updated</p>
@@ -1973,18 +1969,18 @@
 <div class="admonition info">
 <p class="admonition-title">Building The Site</p>
 <p>That's looking good. You're ready to deploy the first pass of your <code>MkLorum</code> documentation. First build the documentation:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdocs<span class="w"> </span>build
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>mkdocs<span class="w"> </span>build
 </span></code></pre></div>
 <p>This will create a new directory, named <code>site</code>. Take a look inside the directory:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>ls<span class="w"> </span>site
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">about  fonts  index.html  license  search.html</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">css    img    js          mkdocs   sitemap.xml</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="gp">$ </span>ls<span class="w"> </span>site
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="go">about  fonts  index.html  license  search.html</span>
+</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="go">css    img    js          mkdocs   sitemap.xml</span>
 </span></code></pre></div>
 <p>Notice that your source documentation has been output as two HTML files named <code>index.html</code> and <code>about/index.html</code>. You also have various other media that's been copied into the <code>site</code> directory as part of the documentation theme. You even have a <code>sitemap.xml</code> file and <code>mkdocs/search_index.json</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Source Control Best Practices</p>
 <p>If you're using source code control such as <code>git</code> you probably don't want to check your documentation builds into the repository. Add a line containing <code>site/</code> to your <code>.gitignore</code> file.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"site/"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"site/"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
 </span></code></pre></div>
 <p>If you're using another source code control tool you'll want to check its documentation on how to ignore specific directories.</p>
 </div>
@@ -1993,12 +1989,12 @@
 <div class="admonition info">
 <p class="admonition-title">Other Commands and Options</p>
 <p>There are various other commands and options available. For a complete list of commands, use the <code>--help</code> flag:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdocs<span class="w"> </span>--help
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>mkdocs<span class="w"> </span>--help
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Command-Specific Help</p>
 <p>To view a list of options available on a given command, use the <code>--help</code> flag with that command. For example, to get a list of all options available for the <code>build</code> command run the following:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--help
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--help
 </span></code></pre></div>
 </div>
 </div>
@@ -2078,24 +2074,24 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Debian/Ubuntu</label><label for="__tabbed_1_2">Fedora</label><label for="__tabbed_1_3">Arch Linux</label><label for="__tabbed_1_4">macOS (Homebrew)</label><label for="__tabbed_1_5">Windows (CLI)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mercurial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mercurial
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>mercurial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>$<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>mercurial
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>mercurial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>$<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>mercurial
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>mercurial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>mercurial
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>Using the <code>winget</code> package manager:<br>
-</p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">PS</span><span class="p">&gt;</span> <span class="n">winget</span> <span class="n">install</span> <span class="n">Mercurial</span><span class="p">.</span><span class="n">Mercurial</span> <span class="n">-e</span>
+</p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">PS</span><span class="p">&gt;</span> <span class="n">winget</span> <span class="n">install</span> <span class="n">Mercurial</span><span class="p">.</span><span class="n">Mercurial</span> <span class="n">-e</span>
 </span></code></pre></div><p></p>
 </div>
 </div>
@@ -2105,15 +2101,15 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Debian/Ubuntu</label><label for="__tabbed_2_2">Fedora</label><label for="__tabbed_2_3">macOS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>git
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>$<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>git
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>git
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>git
 </span></code></pre></div>
 </div>
 </div>
@@ -2314,19 +2310,20 @@
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../js/markmap-d3.js"></script>
+      
+        <script src="../js/markmap-lib.js"></script>
+      
+        <script src="../js/markmap-view.js"></script>
+      
+        <script src="../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

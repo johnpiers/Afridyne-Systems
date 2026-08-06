@@ -32,7 +32,7 @@
           <link rel="icon" href="../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
@@ -396,7 +396,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1625,9 +1625,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1639,14 +1637,12 @@
                   
 
 <div style="display: none;">
-  <h1>Header</h1>
+<h1>Header</h1>
 </div>
-
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20251231-210314.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20251231-210314.png"></a></p>
 <div style="display: flex; justify-content: center;">
-  <h2><a href="https://wiki.archlinux.org/title/Music_Player_Daemon/"><b>Music Player Daemon</b></a></h2>
+<h2><a href="https://wiki.archlinux.org/title/Music_Player_Daemon/"><b>Music Player Daemon</b></a></h2>
 </div>
-
 <div class="admonition abstract">
 <p class="admonition-title">Music Player Daemon</p>
 <p><strong><a href="https://www.musicpd.org/">MPD</a></strong>&nbsp;(music player daemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database, all while using very few resources. In order to interface with it, a separate <a href="https://wiki.archlinux.org/title/Music_Player_Daemon#Clients">client</a>&nbsp;is needed.</p>
@@ -1691,47 +1687,47 @@
 <p><strong>Configure location of files, directories</strong></p>
 <p>In user mode, the configuration is read from&nbsp;<code>$XDG_CONFIG_HOME/mpd/mpd.conf</code>. We will assume here&nbsp;<code>$XDG_CONFIG_HOME</code>&nbsp;equals the&nbsp;<a href="https://specifications.freedesktop.org/basedir-spec/latest/">default</a>&nbsp;of&nbsp;<code>~/.config</code>.</p>
 <p>To build the user configuration, the&nbsp;<a href="https://raw.githubusercontent.com/MusicPlayerDaemon/MPD/master/doc/mpdconf.example">MPD configuration example</a>&nbsp;included in the package is a good starting point, copy it using the following lines:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/mpd*
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/mpd*
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cp<span class="w"> </span>/usr/share/doc/mpd/mpdconf.example<span class="w"> </span>~/.config/mpd/mpd.conf*
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>cp<span class="w"> </span>/usr/share/doc/mpd/mpdconf.example<span class="w"> </span>~/.config/mpd/mpd.conf*
 </span></code></pre></div>
 <hr>
 <p>A good practice is to use this newly created&nbsp;<code>~/.config/mpd/</code>&nbsp;directory to store, together with the configuration file, other MPD related files like the database or the playlists. The user must have read write access to this directory.</p>
 <p>Then edit the configuration file in order to specify the required and optional files and directories:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>~/.config/mpd/mpd.conf*
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>~/.config/mpd/mpd.conf*
 </span></code></pre></div>
 </div>
 <h6 id="recommended-database-location">Recommended Database Location<a class="headerlink" href="#recommended-database-location" title="Permanent link">¶</a></h6>
 <div class="admonition assumption">
 <p class="admonition-title">Recommended Location for Database</p>
-<div class="language-nginx highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">db_file</span><span class="w"> </span><span class="s">"~/.config/mpd/database"</span>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">db_file</span><span class="w"> </span><span class="s">"~/.config/mpd/database"</span>
 </span></code></pre></div>
 <p>If running mpd using systemd, delete this line to log directly to systemd.</p>
-<div class="language-nginx highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">log_file</span><span class="w"> </span><span class="s">"syslog"</span>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">log_file</span><span class="w"> </span><span class="s">"syslog"</span>
 </span></code></pre></div>
 <p>The music directory is by default the XDG directory, uncomment to amend and choose a different directory.</p>
-<div class="language-nginx highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">music_directory</span><span class="w"> </span><span class="s">"~/music"</span>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">music_directory</span><span class="w"> </span><span class="s">"~/music"</span>
 </span></code></pre></div>
 <p>Uncomment to refresh the database whenever files in the music_directory are changed.</p>
-<div class="language-nginx highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">auto_update</span><span class="w"> </span><span class="s">"yes"</span>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">auto_update</span><span class="w"> </span><span class="s">"yes"</span>
 </span></code></pre></div>
 <p>Uncomment to enable the functionalities:</p>
-<div class="language-nginx highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">playlist_directory</span><span class="w"> </span><span class="s">"~/.config/mpd/playlists"</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="s">pid_file</span><span class="w"> </span><span class="s">"~/.config/mpd/pid"</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="s">state_file</span><span class="w"> </span><span class="s">"~/.local/state/mpd/state"</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="s">sticker_file</span><span class="w"> </span><span class="s">"~/.config/mpd/sticker.sql"</span>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">playlist_directory</span><span class="w"> </span><span class="s">"~/.config/mpd/playlists"</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="s">pid_file</span><span class="w"> </span><span class="s">"~/.config/mpd/pid"</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="s">state_file</span><span class="w"> </span><span class="s">"~/.local/state/mpd/state"</span>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="s">sticker_file</span><span class="w"> </span><span class="s">"~/.config/mpd/sticker.sql"</span>
 </span></code></pre></div>
 <p>If playlists are enabled in the configuration, the specified playlist directory must be created:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mkdir<span class="w"> </span>~/.config/mpd/playlists
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>mkdir<span class="w"> </span>~/.config/mpd/playlists
 </span></code></pre></div>
 <p>If&nbsp;<code>state_file</code>&nbsp;is set, the specified directory must be created:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.local/state/mpd
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.local/state/mpd
 </span></code></pre></div>
 <p>MPD can now be started (an optional custom location for the configuration file can be specified):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mpd<span class="w"> </span><span class="o">[</span>config_file<span class="o">]</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>mpd<span class="w"> </span><span class="o">[</span>config_file<span class="o">]</span>
 </span></code></pre></div>
 <p>In order to build the database file, MPD must scan into the&nbsp;<code>music_directory</code>&nbsp;defined above. To request this task, one of the MPD&nbsp;<a href="https://wiki.archlinux.org/title/Music_Player_Daemon#Clients">clients</a>&nbsp;must be used. For example with&nbsp;<em>mpc</em>&nbsp;the command is:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mpc<span class="w"> </span>update
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>mpc<span class="w"> </span>update
 </span></code></pre></div>
 <p>or alternatively one can set the option&nbsp;<code>auto_update</code>&nbsp;to&nbsp;<code>"yes"</code>&nbsp;in the configuration to refresh the database whenever files are changed in&nbsp;<code>music_directory</code>.</p>
 </div>
@@ -1741,29 +1737,29 @@
 <p>If <a href="https://wiki.archlinux.org/title/ALSA" title="ALSA">ALSA</a> is used, <strong>autodetection</strong> of the default device should work out of the box without any particular setting. </p>
 <p>If not, the syntax for ALSA audio output definition is provided thereafter; the required <code>name</code> parameter specifies a unique name for the audio output. The exact device as displayed using <code>aplay --list-pcm</code> from the package <a href="https://archlinux.org/packages/?name=alsa-utils">alsa-utils</a> can optionally be indicated with the <code>device</code> option.</p>
 <p><code>~/.config/mpd/mpd.conf</code><br>
-</p><div class="language-nginx highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">audio_output</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kn">type</span><span class="w">          </span><span class="s">"alsa"</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="s">name</span><span class="w">          </span><span class="s">"ALSA</span><span class="w"> </span><span class="s">sound</span><span class="w"> </span><span class="s">card"</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="c1"># Optional</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="c1">#device       "iec958:CARD=Intel,DEV=0"</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="c1">#mixer_control "PCM"</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="err">}</span>
+</p><div class="language-nginx highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">audio_output</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="kn">type</span><span class="w">          </span><span class="s">"alsa"</span>
+</span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">    </span><span class="s">name</span><span class="w">          </span><span class="s">"ALSA</span><span class="w"> </span><span class="s">sound</span><span class="w"> </span><span class="s">card"</span>
+</span><span id="__span-12-4"><a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="c1"># Optional</span>
+</span><span id="__span-12-5"><a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="c1">#device       "iec958:CARD=Intel,DEV=0"</span>
+</span><span id="__span-12-6"><a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="c1">#mixer_control "PCM"</span>
+</span><span id="__span-12-7"><a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="err">}</span>
 </span></code></pre></div><p></p>
 <hr>
 <p><strong>Users of <a href="https://wiki.archlinux.org/title/PulseAudio" title="PulseAudio">PulseAudio</a> will need to make the following modification:</strong></p>
 <p><code>~/.config/mpd/mpd.conf</code><br>
-</p><div class="language-nginx highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">audio_output</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="kn">type</span><span class="w">          </span><span class="s">"pulse"</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="s">name</span><span class="w">          </span><span class="s">"pulse</span><span class="w"> </span><span class="s">audio"</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="err">}</span>
+</p><div class="language-nginx highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">audio_output</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="kn">type</span><span class="w">          </span><span class="s">"pulse"</span>
+</span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="s">name</span><span class="w">          </span><span class="s">"pulse</span><span class="w"> </span><span class="s">audio"</span>
+</span><span id="__span-13-4"><a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="err">}</span>
 </span></code></pre></div><p></p>
 <hr>
 <p><strong>Output with <a href="https://wiki.archlinux.org/title/PipeWire" title="PipeWire">PipeWire</a> can also be configured:</strong></p>
 <p><code>~/.config/mpd/mpd.conf</code><br>
-</p><div class="language-nginx highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">audio_output</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="kn">type</span><span class="w">          </span><span class="s">"pipewire"</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="s">name</span><span class="w">          </span><span class="s">"PipeWire</span><span class="w"> </span><span class="s">Sound</span><span class="w"> </span><span class="s">Server"</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="err">}</span>
+</p><div class="language-nginx highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">audio_output</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="kn">type</span><span class="w">          </span><span class="s">"pipewire"</span>
+</span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="s">name</span><span class="w">          </span><span class="s">"PipeWire</span><span class="w"> </span><span class="s">Sound</span><span class="w"> </span><span class="s">Server"</span>
+</span><span id="__span-14-4"><a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="err">}</span>
 </span></code></pre></div><p></p>
 </div>
 <h4 id="autostart-with-systemd">Autostart with Systemd<a class="headerlink" href="#autostart-with-systemd" title="Permanent link">¶</a></h4>
@@ -1776,7 +1772,7 @@
 <h6 id="autostart-on-tty-login">Autostart on tty login<a class="headerlink" href="#autostart-on-tty-login" title="Permanent link">¶</a></h6>
 <p>To start MPD on login, add the following to <code>~/.profile</code> or another <a href="https://wiki.archlinux.org/title/Autostarting" title="Autostarting">autostart file</a>:</p>
 <h6 id="mpd-daemon-start-if-no-other-user-instance-exists">MPD daemon start (<em>if no other user instance exists</em>)<a class="headerlink" href="#mpd-daemon-start-if-no-other-user-instance-exists" title="Permanent link">¶</a></h6>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-s<span class="w"> </span>~/.config/mpd/pid<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mpd
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-s<span class="w"> </span>~/.config/mpd/pid<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mpd
 </span></code></pre></div>
 </div>
 <h4 id="scripted-configuration">Scripted Configuration<a class="headerlink" href="#scripted-configuration" title="Permanent link">¶</a></h4>
@@ -1802,11 +1798,11 @@
 <li>Switch to the <a href="https://wiki.archlinux.org/title/Music_Player_Daemon#Per-user_configuration">#Per-user configuration</a> mode instead.</li>
 <li>Add the <code>mpd</code> user to the user's group and grant group execute permission to the user directory. This way the <code>mpd</code> user has permission to open the user directory:</li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Run this command to add the user:</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>gpasswd<span class="w"> </span>-a<span class="w"> </span>mpd<span class="w"> </span>user_group_name
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Set permissions on the user home directory:</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>chmod<span class="w"> </span><span class="m">710</span><span class="w"> </span>/home/user_directory
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># Run this command to add the user:</span>
+</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>gpasswd<span class="w"> </span>-a<span class="w"> </span>mpd<span class="w"> </span>user_group_name
+</span><span id="__span-16-3"><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="c1"># Set permissions on the user home directory:</span>
+</span><span id="__span-16-5"><a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a>chmod<span class="w"> </span><span class="m">710</span><span class="w"> </span>/home/user_directory
 </span></code></pre></div>
 <ul>
 <li>Store the music collection in a different path, either:<ul>
@@ -1854,11 +1850,11 @@
 <p>The method described in <a href="https://wiki.archlinux.org/title/Music_Player_Daemon#Running_an_Icecast_server">#Running an Icecast server</a> works, but at least in theory could lead to issues with the database, when both MPD instances try to write to the same database file concurrently. </p>
 <p>MPD has a <a href="https://www.musicpd.org/doc/user/advanced_config.html#satellite">satellite mode</a> where one instance can receive the database from an already running MPD instance.</p>
 <p>In your <code>config-icecast</code> add this, where host and port reflect your primary MPD server:</p>
-<div class="language-nginx highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">database</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="kn">plugin</span><span class="w"> </span><span class="s">"proxy"</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="s">host</span><span class="w">   </span><span class="s">"localhost"</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="s">port</span><span class="w">   </span><span class="s">"6600"</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="err">}</span>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">database</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">    </span><span class="kn">plugin</span><span class="w"> </span><span class="s">"proxy"</span>
+</span><span id="__span-17-3"><a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w">    </span><span class="s">host</span><span class="w">   </span><span class="s">"localhost"</span>
+</span><span id="__span-17-4"><a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">    </span><span class="s">port</span><span class="w">   </span><span class="s">"6600"</span>
+</span><span id="__span-17-5"><a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="err">}</span>
 </span></code></pre></div>
 </div>
 
@@ -2056,19 +2052,20 @@
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../js/markmap-d3.js"></script>
+      
+        <script src="../js/markmap-lib.js"></script>
+      
+        <script src="../js/markmap-view.js"></script>
+      
+        <script src="../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

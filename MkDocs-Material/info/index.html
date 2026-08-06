@@ -28,7 +28,7 @@
           <link rel="icon" href="../../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -392,7 +392,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1149,9 +1149,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1167,7 +1165,6 @@
 
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260219-080140.png" data-desc-position="bottom"><img alt="" src="../imgs/20260219-080140.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;">Built-in info plugin</h1>
-
 <h3 id="info-plugin">info Plugin<a class="headerlink" href="#info-plugin" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Info Plugin</p>
@@ -1197,12 +1194,11 @@
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
 <!-- md:version 9.0.0 -->
 <!-- md:plugin [info] – built-in -->
-
 <div class="admonition info">
 <p class="admonition-title">Configuration</p>
 <p>In order to get started with the built-in info plugin, just add the following lines to <code>mkdocs.yml</code>, and quickly <a href="../creating-a-reproduction/">create a minimal reproduction</a> to share with us, the maintainers:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
 </span></code></pre></div>
 <p>The info plugin is built into Material for MkDocs and doesn't need to be installed.</p>
 </div>
@@ -1214,8 +1210,8 @@
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.enabled</p>
 <h4 id="configenabled"><code>config.enabled</code><a class="headerlink" href="#configenabled" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
 </span></code></pre></div>
 </div>
 <h5 id="available-settings">Available Settings<a class="headerlink" href="#available-settings" title="Permanent link">¶</a></h5>
@@ -1230,16 +1226,16 @@
 <p>It's normally not necessary to specify this setting, but if you want to disable the plugin, use:</p>
 </li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </span></code></pre></div>
 </div>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.enabled_on_serve</p>
 <h4 id="enabled_on_serve"><code>enabled_on_serve</code><a class="headerlink" href="#enabled_on_serve" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.6<span class="w"> </span>--&gt;
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">false</span><span class="sb">`</span><span class="w"> </span>--&gt;
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.6<span class="w"> </span>--&gt;
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">false</span><span class="sb">`</span><span class="w"> </span>--&gt;
 </span></code></pre></div>
 </div>
 <h5 id="previewing-your-site">Previewing your Site<a class="headerlink" href="#previewing-your-site" title="Permanent link">¶</a></h5>
@@ -1249,9 +1245,9 @@
 <ul>
 <li>Use this setting to control whether the plugin should be enabled when <a href="../creating-your-site/#previewing-as-you-write">previewing your site</a>. It's normally not necessary to specify this setting, but if you want to change this behavior, use:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="nt">enabled_on_serve</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">      </span><span class="nt">enabled_on_serve</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </span></code></pre></div>
 <ul>
 <li>This setting streamlines the process of creating and inspecting minimal reproductions, as it allows to quickly iterate on the reproduction without having to disable the plugin first.</li>
@@ -1261,8 +1257,8 @@
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.archive</p>
 <h4 id="configarchive"><code>config.archive</code><a class="headerlink" href="#configarchive" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
 </span></code></pre></div>
 </div>
 <div class="admonition desc">
@@ -1270,17 +1266,17 @@
 <ul>
 <li>Use this setting to control whether the plugin should create a <code>.zip</code> file from the project or exit after the version check. This setting is solely intended for debugging the plugin itself:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="nt">archive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">      </span><span class="nt">archive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </span></code></pre></div>
 </div>
 <hr>
 <div class="admonition recommendation">
 <p class="admonition-title">Setting config.archive_stop_on_violation</p>
 <h4 id="stop_on_violation"><code>stop_on_violation</code><a class="headerlink" href="#stop_on_violation" title="Permanent link">¶</a></h4>
-<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>&lt;!--<span class="w"> </span>md:version<span class="w"> </span><span class="m">9</span>.0.0<span class="w"> </span>--&gt;
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>&lt;!--<span class="w"> </span>md:default<span class="w"> </span><span class="sb">`</span><span class="nb">true</span><span class="sb">`</span><span class="w"> </span>--&gt;
 </span></code></pre></div>
 </div>
 <div class="admonition important">
@@ -1288,9 +1284,9 @@
 <ul>
 <li>Use this setting to control whether the plugin should stop creating the <code>.zip</code> file when one of the <a href="#how-it-works">requirements</a> is not satisfied. This setting must only be used when <a href="../reporting-a-bug/">reporting a bug</a> that is related to a customization <a href="?q=%22extends+base%22">explicitly mentioned in our documentation</a>. You can change it with:</li>
 </ul>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">plugins</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="nt">archive_stop_on_violation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">info</span><span class="p">:</span>
+</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">      </span><span class="nt">archive_stop_on_violation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </span></code></pre></div>
 <ul>
 <li>If you're using this setting when <a href="../reporting-a-bug/">reporting a bug</a>, please explain why you think it is necessary to include customizations. If you're unsure, please ask us first by <a href="https://github.com/squidfunk/mkdocs-material/discussions">creating a discussion</a>.</li>
@@ -1453,19 +1449,20 @@
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "../..", "bundleUrl": "../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../js/markmap-d3.js"></script>
+      
+        <script src="../../js/markmap-lib.js"></script>
+      
+        <script src="../../js/markmap-view.js"></script>
+      
+        <script src="../../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

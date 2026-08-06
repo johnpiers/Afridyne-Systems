@@ -29,7 +29,7 @@
           <link rel="icon" href="../../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -37,7 +37,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -397,7 +397,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1081,9 +1081,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1098,10 +1096,8 @@
                   
 
 <div style="display: none;"><h1>Header</h1></div>
-
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260517-220739.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/20260517-220739.png"></a></p>
 <h3 style="text-align: center;">How We're Transforming Material for MkDocs.</h3>
-
 <div class="admonition deep-dive">
 <p class="admonition-title">Feature Changes and Zenzical</p>
 <p><strong>We are working on an amazing set of features which has required some behind-the-scenes work we are now ready to share in a series of posts. Here, we give an overview of our goals, features in the making, things that kept us up at night, and our commitment to Open Source.</strong></p>
@@ -1150,7 +1146,7 @@
 <hr>
 <p>To address these challenges, we've embarked on developing a new search system from first principles that not only matches but already exceeds the capabilities of Lunr.js. Built from the ground up, this system is faster, more compact, and most importantly: modular. It is based on a growing core evolving around two core concepts we isolated to be essential – engines and plugins – allowing for flexible configuration and assembly of components like text indexing, vector embeddings, filtering, ranking, highlighting, and more. Every part of it can be replaced or extended, enabling users to tailor the search system to their specific needs.</p>
 <p>Our new search system, which we will release as a separate MIT-licensed Open Source project, is designed to handle a wide range of scenarios — from small blogs to large documentation projects. Of course, it supports offline use and integrates seamlessly with both client and server environments. The advanced ranking system provides fine-tuned control, and integration with third-party services is now more straightforward.</p>
-<p><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.637 2.363zl1.676.335c.09.018.164.084.19.173a.25.25 0 0 1-.062.249l-1.373 1.374a.88.88 0 0 1-.619.256H12.31L9.45 7.611A1.5 1.5 0 1 1 6.5 8a1.5 1.5 0 0 1 1.889-1.449l2.861-2.862V2.552c0-.232.092-.455.256-.619L12.88.559a.25.25 0 0 1 .249-.062c.089.026.155.1.173.19Z"></path><path d="M2 8a6 6 0 1 0 11.769-1.656.751.751 0 1 1 1.442-.413 7.502 7.502 0 0 1-12.513 7.371A7.501 7.501 0 0 1 10.069.789a.75.75 0 0 1-.413 1.442A6 6 0 0 0 2 8"></path><path d="M5 8a3.002 3.002 0 0 0 4.699 2.476 3 3 0 0 0 1.28-2.827.748.748 0 0 1 1.045-.782.75.75 0 0 1 .445.61A4.5 4.5 0 1 1 8.516 3.53a.75.75 0 1 1-.17 1.49A3 3 0 0 0 5 8"></path></svg></span> Goal – Empower users to quickly find the information they need while freeing authors from managing external services, by providing a search system that adapts to diverse content types.</strong></p>
+<p><strong><span class="twemoji"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.637 2.363zl1.676.335c.09.018.164.084.19.173a.25.25 0 0 1-.062.249l-1.373 1.374a.88.88 0 0 1-.619.256H12.31L9.45 7.611A1.5 1.5 0 1 1 6.5 8a1.5 1.5 0 0 1 1.889-1.449l2.861-2.862V2.552c0-.232.092-.455.256-.619L12.88.559a.25.25 0 0 1 .249-.062c.089.026.155.1.173.19Z"></path><path d="M2 8a6 6 0 1 0 11.769-1.656.751.751 0 1 1 1.442-.413 7.502 7.502 0 0 1-12.513 7.371A7.501 7.501 0 0 1 10.069.789a.75.75 0 0 1-.413 1.442A6 6 0 0 0 2 8"></path><path d="M5 8a3.002 3.002 0 0 0 4.699 2.476 3 3 0 0 0 1.28-2.827.748.748 0 0 1 1.045-.782.75.75 0 0 1 .445.61A4.5 4.5 0 1 1 8.516 3.53a.75.75 0 1 1-.17 1.49A3 3 0 0 0 5 8"></path></svg></span> Goal – Empower users to quickly find the information they need while freeing authors from managing external services, by providing a search system that adapts to diverse content types.</strong></p>
 <p>You might wonder why it's not yet available. The process of developing this system from scratch and uncovering its potential has led us to re-evaluate core concepts of Material for MkDocs. As a result, we've decided to postpone the release of the new search system to integrate it into the broader update that we've started to work on. If you keep on reading, you'll learn about further reasons why we've decided to follow this approach.</p>
 <p>We're excited to share more details about this update in one of the next posts in this series.</p>
 </div>
@@ -1159,7 +1155,7 @@
 <p class="admonition-title">Translations and Versioning</p>
 <p>Supporting multi-language sites in MkDocs is the <a href="https://github.com/squidfunk/mkdocs-material/discussions/2346">most requested feature on our discussion board</a> and in conversations with users, yet it presents significant challenges, as MkDocs does not natively support it. The same applies to versioning, which also involves synchronisation of multi-project builds. While the MkDocs ecosystem has developed <a href="https://github.com/mkdocs/catalog?tab=readme-ov-file#-site-building-site-management">various plugins and tools</a> to address these issues, there is still substantial untapped potential. We began exploring these areas but quickly encountered problems that hindered our progress.</p>
 <p>As you may know, our initial effort involved the <a href="../projects/">projects plugin</a> that aims to extend MkDocs to add support for multi-project environments as a solid foundation to support multi-language sites and versioning. Unfortunately, we encountered significant challenges due to MkDocs' internal architecture and design constraints, which we're working actively on resolving.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
-<p><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.637 2.363zl1.676.335c.09.018.164.084.19.173a.25.25 0 0 1-.062.249l-1.373 1.374a.88.88 0 0 1-.619.256H12.31L9.45 7.611A1.5 1.5 0 1 1 6.5 8a1.5 1.5 0 0 1 1.889-1.449l2.861-2.862V2.552c0-.232.092-.455.256-.619L12.88.559a.25.25 0 0 1 .249-.062c.089.026.155.1.173.19Z"></path><path d="M2 8a6 6 0 1 0 11.769-1.656.751.751 0 1 1 1.442-.413 7.502 7.502 0 0 1-12.513 7.371A7.501 7.501 0 0 1 10.069.789a.75.75 0 0 1-.413 1.442A6 6 0 0 0 2 8"></path><path d="M5 8a3.002 3.002 0 0 0 4.699 2.476 3 3 0 0 0 1.28-2.827.748.748 0 0 1 1.045-.782.75.75 0 0 1 .445.61A4.5 4.5 0 1 1 8.516 3.53a.75.75 0 1 1-.17 1.49A3 3 0 0 0 5 8"></path></svg></span> Goal – Enable scaling documentation to any size or team structure by offering seamless methods for integrating multiple documentation projects, whether they involve different languages, versions, or distinct sections of an overall body of work.</strong></p>
+<p><strong><span class="twemoji"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.637 2.363zl1.676.335c.09.018.164.084.19.173a.25.25 0 0 1-.062.249l-1.373 1.374a.88.88 0 0 1-.619.256H12.31L9.45 7.611A1.5 1.5 0 1 1 6.5 8a1.5 1.5 0 0 1 1.889-1.449l2.861-2.862V2.552c0-.232.092-.455.256-.619L12.88.559a.25.25 0 0 1 .249-.062c.089.026.155.1.173.19Z"></path><path d="M2 8a6 6 0 1 0 11.769-1.656.751.751 0 1 1 1.442-.413 7.502 7.502 0 0 1-12.513 7.371A7.501 7.501 0 0 1 10.069.789a.75.75 0 0 1-.413 1.442A6 6 0 0 0 2 8"></path><path d="M5 8a3.002 3.002 0 0 0 4.699 2.476 3 3 0 0 0 1.28-2.827.748.748 0 0 1 1.045-.782.75.75 0 0 1 .445.61A4.5 4.5 0 1 1 8.516 3.53a.75.75 0 1 1-.17 1.49A3 3 0 0 0 5 8"></path></svg></span> Goal – Enable scaling documentation to any size or team structure by offering seamless methods for integrating multiple documentation projects, whether they involve different languages, versions, or distinct sections of an overall body of work.</strong></p>
 <p>As a result, we are developing a new approach to offer a more comprehensive and robust solution for both multi-language support and versioning. This new approach also intersects with adjacent functionalities like search, as many of our users are interested in <a href="https://github.com/squidfunk/mkdocs-material/issues/5230">federated search</a> capabilities that combine results from multiple documentation sites into a unified search interface. Overcoming this challenge is one of the major hurdles we need to address before releasing the new search system.</p>
 </div>
 <h3 id="editing-and-collaboration">Editing and Collaboration.<a class="headerlink" href="#editing-and-collaboration" title="Permanent link">¶</a></h3>
@@ -1169,14 +1165,14 @@
 <hr>
 <p>This brings us to collaboration, which wasn't initially on our list of priorities. However, throughout 2024, conversations with various organizations and maintainers of popular Open Source projects highlighted a frequent request for enhanced collaboration features. Many users expressed a need for capabilities that would allow non-technical team members to suggest and make changes to the documentation. We're genuinely grateful for this feedback, as it has come at a pivotal time. We recognize the need to streamline tracking and discussing changes, as well as to facilitate drive-by contributions.</p>
 <hr>
-<p><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.637 2.363zl1.676.335c.09.018.164.084.19.173a.25.25 0 0 1-.062.249l-1.373 1.374a.88.88 0 0 1-.619.256H12.31L9.45 7.611A1.5 1.5 0 1 1 6.5 8a1.5 1.5 0 0 1 1.889-1.449l2.861-2.862V2.552c0-.232.092-.455.256-.619L12.88.559a.25.25 0 0 1 .249-.062c.089.026.155.1.173.19Z"></path><path d="M2 8a6 6 0 1 0 11.769-1.656.751.751 0 1 1 1.442-.413 7.502 7.502 0 0 1-12.513 7.371A7.501 7.501 0 0 1 10.069.789a.75.75 0 0 1-.413 1.442A6 6 0 0 0 2 8"></path><path d="M5 8a3.002 3.002 0 0 0 4.699 2.476 3 3 0 0 0 1.28-2.827.748.748 0 0 1 1.045-.782.75.75 0 0 1 .445.61A4.5 4.5 0 1 1 8.516 3.53a.75.75 0 1 1-.17 1.49A3 3 0 0 0 5 8"></path></svg></span> Goal – Everyone, regardless of their technical skill level, can easily work on and improve the documentation and contribute to a growing corpus of knowledge.</strong><sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
+<p><strong><span class="twemoji"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.637 2.363zl1.676.335c.09.018.164.084.19.173a.25.25 0 0 1-.062.249l-1.373 1.374a.88.88 0 0 1-.619.256H12.31L9.45 7.611A1.5 1.5 0 1 1 6.5 8a1.5 1.5 0 0 1 1.889-1.449l2.861-2.862V2.552c0-.232.092-.455.256-.619L12.88.559a.25.25 0 0 1 .249-.062c.089.026.155.1.173.19Z"></path><path d="M2 8a6 6 0 1 0 11.769-1.656.751.751 0 1 1 1.442-.413 7.502 7.502 0 0 1-12.513 7.371A7.501 7.501 0 0 1 10.069.789a.75.75 0 0 1-.413 1.442A6 6 0 0 0 2 8"></path><path d="M5 8a3.002 3.002 0 0 0 4.699 2.476 3 3 0 0 0 1.28-2.827.748.748 0 0 1 1.045-.782.75.75 0 0 1 .445.61A4.5 4.5 0 1 1 8.516 3.53a.75.75 0 1 1-.17 1.49A3 3 0 0 0 5 8"></path></svg></span> Goal – Everyone, regardless of their technical skill level, can easily work on and improve the documentation and contribute to a growing corpus of knowledge.</strong><sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
 </div>
 <h3 id="large-language-models-llms">Large Language Models (LLM's)<a class="headerlink" href="#large-language-models-llms" title="Permanent link">¶</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Large Language Models (LLM's)</p>
 <p>Almost a year ago, we introduced an <a href="https://github.com/squidfunk/mkdocs-material/discussions/6240">experimental chatbot</a> on our documentation site. It quickly became one of the most anticipated features, with users requesting the ability to deploy similar functionality on their own sites, underscoring the growing demand for interactive documentation tools. However, we found that adding to the myriad of existing chat solutions and simply building another thin wrapper on top of ChatGPT is nonsense.</p>
 <hr>
-<p><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.637 2.363zl1.676.335c.09.018.164.084.19.173a.25.25 0 0 1-.062.249l-1.373 1.374a.88.88 0 0 1-.619.256H12.31L9.45 7.611A1.5 1.5 0 1 1 6.5 8a1.5 1.5 0 0 1 1.889-1.449l2.861-2.862V2.552c0-.232.092-.455.256-.619L12.88.559a.25.25 0 0 1 .249-.062c.089.026.155.1.173.19Z"></path><path d="M2 8a6 6 0 1 0 11.769-1.656.751.751 0 1 1 1.442-.413 7.502 7.502 0 0 1-12.513 7.371A7.501 7.501 0 0 1 10.069.789a.75.75 0 0 1-.413 1.442A6 6 0 0 0 2 8"></path><path d="M5 8a3.002 3.002 0 0 0 4.699 2.476 3 3 0 0 0 1.28-2.827.748.748 0 0 1 1.045-.782.75.75 0 0 1 .445.61A4.5 4.5 0 1 1 8.516 3.53a.75.75 0 1 1-.17 1.49A3 3 0 0 0 5 8"></path></svg></span> Goal – We're envisioning creating a unified interface that seamlessly integrates advanced search, chat, and summarization features, providing an interactive documentation experience.</strong></p>
+<p><strong><span class="twemoji"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.637 2.363zl1.676.335c.09.018.164.084.19.173a.25.25 0 0 1-.062.249l-1.373 1.374a.88.88 0 0 1-.619.256H12.31L9.45 7.611A1.5 1.5 0 1 1 6.5 8a1.5 1.5 0 0 1 1.889-1.449l2.861-2.862V2.552c0-.232.092-.455.256-.619L12.88.559a.25.25 0 0 1 .249-.062c.089.026.155.1.173.19Z"></path><path d="M2 8a6 6 0 1 0 11.769-1.656.751.751 0 1 1 1.442-.413 7.502 7.502 0 0 1-12.513 7.371A7.501 7.501 0 0 1 10.069.789a.75.75 0 0 1-.413 1.442A6 6 0 0 0 2 8"></path><path d="M5 8a3.002 3.002 0 0 0 4.699 2.476 3 3 0 0 0 1.28-2.827.748.748 0 0 1 1.045-.782.75.75 0 0 1 .445.61A4.5 4.5 0 1 1 8.516 3.53a.75.75 0 1 1-.17 1.49A3 3 0 0 0 5 8"></path></svg></span> Goal – We're envisioning creating a unified interface that seamlessly integrates advanced search, chat, and summarization features, providing an interactive documentation experience.</strong></p>
 <hr>
 <p>As we delved into this ambitious project, we gained valuable insights from user feedback. Users began interacting with the chatbot in their native languages, an outcome we hadn't anticipated given that our documentation is in English.</p>
 <p>Remarkably (or obviously to those that work on LLMs year round), the chatbot responded in the same language. This ability of LLMs is one of the genuinely exciting features of these machine learning models as it has the potential to improve the accessibility of the documentation. However, while we employed state-of-the-art RAG methodologies, the results were mixed, and occasional hallucinations surfaced.</p>
@@ -1213,7 +1209,7 @@
 </ul>
 <hr>
 <p>Stay tuned for updates as we continue to build on our progress and explore new possibilities. We're excited about the future and look forward to sharing more with you as we advance.</p>
-<p><em>Martin, Alex and Kathi</em> <span class="twemoji mdx-heart mdx-insiders"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 20.408c-.492.308-.903.546-1.192.709q-.23.129-.463.252h-.002a.75.75 0 0 1-.686 0 17 17 0 0 1-.465-.252 31 31 0 0 1-4.803-3.34C3.8 15.572 1 12.331 1 8.513 1 5.052 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262A31 31 0 0 1 14 20.408"></path></svg></span></p>
+<p><em>Martin, Alex and Kathi</em> <span class="twemoji mdx-heart mdx-insiders"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20.408c-.492.308-.903.546-1.192.709q-.23.129-.463.252h-.002a.75.75 0 0 1-.686 0 17 17 0 0 1-.465-.252 31 31 0 0 1-4.803-3.34C3.8 15.572 1 12.331 1 8.513 1 5.052 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262A31 31 0 0 1 14 20.408"></path></svg></span></p>
 </div>
 <div class="footnote">
 <hr>
@@ -1410,19 +1406,20 @@
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "../..", "bundleUrl": "../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../js/markmap-d3.js"></script>
+      
+        <script src="../../js/markmap-lib.js"></script>
+      
+        <script src="../../js/markmap-view.js"></script>
+      
+        <script src="../../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

@@ -32,7 +32,7 @@
           <link rel="icon" href="../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
@@ -396,7 +396,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1587,9 +1587,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1602,7 +1600,6 @@
 
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260102-005324.png" data-desc-position="bottom"><img alt="" src="../imgs/20260102-005324.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;"> PipeWire</h1>
-
 <div class="admonition abstract">
 <p class="admonition-title"><a href="https://pipewire.org">PipeWire</a> is a server and user space API to deal with multimedia pipelines. This includes:</p>
 <ul>
@@ -1662,7 +1659,7 @@
 <div class="admonition desc">
 <p class="admonition-title">Using tools</p>
 <p><code>pw-cat</code> can be used to play and record audio and midi. Use <code>pw-cat -h</code> to get some more help. There are some aliases like <code>pw-play</code> and <code>pw-record</code> to make things easier:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="se">\$</span><span class="w"> </span>pw-play<span class="w"> </span>/home/wim/data/01.<span class="se">\ </span>Firepower.wav
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="se">\$</span><span class="w"> </span>pw-play<span class="w"> </span>/home/wim/data/01.<span class="se">\ </span>Firepower.wav
 </span></code></pre></div>
 </div>
 <h3 id="running-jack-applications">Running JACK Applications<a class="headerlink" href="#running-jack-applications" title="Permanent link">¶</a></h3>
@@ -1670,11 +1667,11 @@
 <p class="admonition-title">Running JACK applications</p>
 <p>Depending on how the system was configured, you can either run PipeWire and JACK side-by-side or have PipeWire take over the functionality of JACK completely.</p>
 <p>In dual mode, JACK apps will by default use the JACK server. To direct a JACK app to PipeWire, you can use the <code>pw-jack</code> script like this:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="se">\$</span><span class="w"> </span>pw-jack<span class="w"> </span>&lt;appname&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="se">\$</span><span class="w"> </span>pw-jack<span class="w"> </span>&lt;appname&gt;
 </span></code></pre></div>
 <p>If you replaced JACK with PipeWire completely, <code>pw-jack</code> does not have any effect and can be omitted.</p>
 <p>JACK applications will automatically use the buffer-size chosen by the server. You can force a maximum buffer size (latency) by setting the <code>PIPEWIRE_LATENCY</code> environment variable like so:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">PIPEWIRE_LATENCY</span><span class="o">=</span><span class="m">128</span>/48000<span class="w"> </span>jack_simple_client
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nv">PIPEWIRE_LATENCY</span><span class="o">=</span><span class="m">128</span>/48000<span class="w"> </span>jack_simple_client
 </span></code></pre></div>
 <p>Requests the <code>jack_simple_client</code> to run with a buffer of 128 or less samples.</p>
 </div>
@@ -1684,10 +1681,10 @@
 <p>PipeWire can run a PulseAudio compatible replacement server. You can't use both servers at the same time. Usually your package manager will make the server conflict so that you can only install one or the other.</p>
 <p>PulseAudio applications still use the regular PulseAudio client libraries and you don't need to do anything else than change the server implementation.</p>
 <p>A successful swap of the server can be verified by checking the output of:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pactl<span class="w"> </span>info
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>pactl<span class="w"> </span>info
 </span></code></pre></div>
 <p>It should include the string:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Server Name: PulseAudio (on PipeWire 0.3.x)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>Server Name: PulseAudio (on PipeWire 0.3.x)
 </span></code></pre></div>
 <p>You can use <code>pavucontrol</code> to change profiles and ports, change volumes or redirect streams, just like with <strong>PulseAudio</strong>.</p>
 </div>
@@ -1695,7 +1692,7 @@
 <div class="admonition desc">
 <p class="admonition-title">Running ALSA Applications</p>
 <p>If the PipeWire alsa module is installed, it can be seen with</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="se">\$</span><span class="w"> </span>aplay<span class="w"> </span>-L
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="se">\$</span><span class="w"> </span>aplay<span class="w"> </span>-L
 </span></code></pre></div>
 <p>ALSA applications can then use the <code>pipewire:</code> device to use PipeWire as the audio system.</p>
 </div>
@@ -1704,13 +1701,13 @@
 <p class="admonition-title">Running GStreamer Applications</p>
 <p>PipeWire includes 2 GStreamer elements called <code>pipewiresrc</code> and<br>
 <code>pipewiresink</code>. They can be used in pipelines such as this:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="se">\$</span><span class="w"> </span>gst-launch-1.0<span class="w"> </span>pipewiresrc<span class="w"> </span>!<span class="w"> </span>videoconvert<span class="w"> </span>!<span class="w"> </span>autovideosink
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="se">\$</span><span class="w"> </span>gst-launch-1.0<span class="w"> </span>pipewiresrc<span class="w"> </span>!<span class="w"> </span>videoconvert<span class="w"> </span>!<span class="w"> </span>autovideosink
 </span></code></pre></div>
 <p>Or to play a beeping sound:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="se">\$</span><span class="w"> </span>gst-launch-1.0<span class="w"> </span>audiotestsrc<span class="w"> </span>!<span class="w"> </span>pipewiresink
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="se">\$</span><span class="w"> </span>gst-launch-1.0<span class="w"> </span>audiotestsrc<span class="w"> </span>!<span class="w"> </span>pipewiresink
 </span></code></pre></div>
 <p>PipeWire provides a device monitor as well so that</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="se">\$</span><span class="w"> </span>gst-device-monitor-1.0
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="se">\$</span><span class="w"> </span>gst-device-monitor-1.0
 </span></code></pre></div>
 <p>Shows the PipeWire devices and applications like cheese will automatically use the PipeWire video source when possible.</p>
 </div>
@@ -1736,16 +1733,16 @@
 <p class="admonition-title">Building</p>
 <p>Via Flatpak:</p>
 <p>If you don't have the flathub repo in your remote-list for flatpak you will need to add that first:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="se">\$</span><span class="w"> </span>flatpak<span class="w"> </span>remote-add<span class="w"> </span>--if-not-exists<span class="w"> </span>flathub<span class="w"> </span>https://flathub.org/repo/flathub.flatpakrepo
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="se">\$</span><span class="w"> </span>flatpak<span class="w"> </span>remote-add<span class="w"> </span>--if-not-exists<span class="w"> </span>flathub<span class="w"> </span>https://flathub.org/repo/flathub.flatpakrepo
 </span></code></pre></div>
 <p>Then install the required flatpak platform and SDK, if you dont have them already:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="se">\$</span><span class="w"> </span>flatpak<span class="w"> </span>install<span class="w"> </span>org.gnome.<span class="o">{</span>Platform,Sdk<span class="o">}</span>//45<span class="w"> </span>org.freedesktop.Sdk.Extension.rust-stable//23.08<span class="w"> </span>org.freedesktop.Sdk.Extension.llvm16//23.08
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="se">\$</span><span class="w"> </span>flatpak<span class="w"> </span>install<span class="w"> </span>org.gnome.<span class="o">{</span>Platform,Sdk<span class="o">}</span>//45<span class="w"> </span>org.freedesktop.Sdk.Extension.rust-stable//23.08<span class="w"> </span>org.freedesktop.Sdk.Extension.llvm16//23.08
 </span></code></pre></div>
 <p>To compile and install as a flatpak, clone the project, change to the project directory, and run:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="se">\$</span><span class="w"> </span>flatpak-builder<span class="w"> </span>--install<span class="w"> </span>flatpak-build/<span class="w"> </span>build-aux/org.pipewire.Helvum.json
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="se">\$</span><span class="w"> </span>flatpak-builder<span class="w"> </span>--install<span class="w"> </span>flatpak-build/<span class="w"> </span>build-aux/org.pipewire.Helvum.json
 </span></code></pre></div>
 <p>You can then run the app via:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="se">\$</span><span class="w"> </span>flatpak<span class="w"> </span>run<span class="w"> </span>org.pipewire.Helvum
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="se">\$</span><span class="w"> </span>flatpak<span class="w"> </span>run<span class="w"> </span>org.pipewire.Helvum
 </span></code></pre></div>
 </div>
 <div class="admonition desc">
@@ -1758,9 +1755,9 @@
 <li><code>libadwaita-1</code> and <code>libpipewire-0.3</code> development packages and their dependencies</li>
 </ul>
 <p>To compile and install, run:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>setup<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>compile
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>install
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>setup<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>compile
+</span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>install
 </span></code></pre></div>
 <p>In the repository root.</p>
 <p>This will install the compiled project files into <code>/usr/local</code>.</p>
@@ -1786,7 +1783,7 @@ See LICENSE for more information.</p>
 </ul>
 <hr>
 <p>There is a more complicated tool to inspect the state of the server with <code>pw-cli</code>. This tool can be used interactively or it can execute single commands like this to get the server information:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="se">\$</span><span class="w"> </span>pw-cli<span class="w"> </span>info<span class="w"> </span><span class="m">0</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="se">\$</span><span class="w"> </span>pw-cli<span class="w"> </span>info<span class="w"> </span><span class="m">0</span>
 </span></code></pre></div>
 </div>
 <h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">¶</a></h3>
@@ -1823,19 +1820,19 @@ See LICENSE for more information.</p>
 <p>PipeWire uses a build tool called <a href="https://mesonbuild.com"><em>Meson</em></a> as a basis for its build process.  It's a tool with some resemblance to Autotools and CMake. Meson again generates build files for a lower level build tool called <a href="https://ninja-build.org/"><em>Ninja</em></a>, working in about the same level of abstraction as more familiar GNU Make does.</p>
 <p>Meson uses a user-specified build directory and all files produced by Meson are in that build directory. This build directory will be called <code>builddir</code> in this document.</p>
 <p>Generate the build files for Ninja:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>setup<span class="w"> </span>builddir
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>setup<span class="w"> </span>builddir
 </span></code></pre></div>
 <hr>
 <p>For distribution-specific build dependencies, please check our <a href="https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/.gitlab-ci.yml">CI pipeline</a>(search for <code>FDO_DISTRIBUTION_PACKAGES</code>). Note that some dependencies are optional and depend on options passed to meson.</p>
 <p>Once this is done, the next step is to review the build options:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>configure<span class="w"> </span>builddir
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>configure<span class="w"> </span>builddir
 </span></code></pre></div>
 <p>Define the installation prefix:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>configure<span class="w"> </span>builddir<span class="w"> </span>-Dprefix<span class="o">=</span>/usr<span class="w"> </span><span class="c1"># Default: /usr/local</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>configure<span class="w"> </span>builddir<span class="w"> </span>-Dprefix<span class="o">=</span>/usr<span class="w"> </span><span class="c1"># Default: /usr/local</span>
 </span></code></pre></div>
 <p>PipeWire specific build options are listed in the "Project options" section. They are defined in <code>meson_options.txt</code>.</p>
 <p>Finally, invoke the build:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>compile<span class="w"> </span>-C<span class="w"> </span>builddir
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="se">\$</span><span class="w"> </span>meson<span class="w"> </span>compile<span class="w"> </span>-C<span class="w"> </span>builddir
 </span></code></pre></div>
 <p>Just to avoid any confusion: <code>autogen.sh</code> is a script invoked by <em>Jhbuild</em>, which orchestrates multi-component builds.</p>
 </div>
@@ -1843,30 +1840,30 @@ See LICENSE for more information.</p>
 <div class="admonition desc">
 <p class="admonition-title">Running</p>
 <p>If you want to run PipeWire without installing it on your system, there is a script that you can run. This puts you in an environment in which PipeWire can be run from the build directory, and ALSA, PulseAudio and JACK applications will use the PipeWire emulation libraries automatically in this environment. You can get into this environment with:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="se">\$</span><span class="w"> </span>./pw-uninstalled.sh<span class="w"> </span>-b<span class="w"> </span>builddir
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="se">\$</span><span class="w"> </span>./pw-uninstalled.sh<span class="w"> </span>-b<span class="w"> </span>builddir
 </span></code></pre></div>
 <p>In most cases you would want to run the default pipewire daemon. Look below for how to make this daemon start automatically using systemd. If you want to run pipewire from the build directory, you can do this by doing:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">cd</span><span class="w"> </span>builddir/
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>make<span class="w"> </span>run
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nb">cd</span><span class="w"> </span>builddir/
+</span><span id="__span-20-2"><a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>make<span class="w"> </span>run
 </span></code></pre></div>
 <p>This will use the default config file to configure and start the daemon. The default config will also start <code>pipewire-media-session</code>, a default example media session and <code>pipewire-pulse</code>, a PulseAudio compatible server.</p>
 <p>You can also enable more debugging with the <code>PIPEWIRE_DEBUG</code> and <code>WIREPLUMBER_DEBUG</code> environment variables like so:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">cd</span><span class="w"> </span>builddir/
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">PIPEWIRE_DEBUG</span><span class="o">=</span><span class="s2">"D"</span><span class="w"> </span><span class="nv">WIREPLUMBER_DEBUG</span><span class="o">=</span><span class="s2">"D"</span><span class="w"> </span>make<span class="w"> </span>run
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nb">cd</span><span class="w"> </span>builddir/
+</span><span id="__span-21-2"><a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="nv">PIPEWIRE_DEBUG</span><span class="o">=</span><span class="s2">"D"</span><span class="w"> </span><span class="nv">WIREPLUMBER_DEBUG</span><span class="o">=</span><span class="s2">"D"</span><span class="w"> </span>make<span class="w"> </span>run
 </span></code></pre></div>
 <p>You might have to stop the pipewire service/socket that might have been started already, with:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span>stop<span class="w"> </span>pipewire.service<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">                      </span>pipewire.socket<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">                      </span>pipewire-media-session.service<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">                      </span>pipewire-pulse.service<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">                      </span>pipewire-pulse.socket
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span>stop<span class="w"> </span>pipewire.service<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-2"><a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">                      </span>pipewire.socket<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-3"><a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">                      </span>pipewire-media-session.service<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-4"><a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">                      </span>pipewire-pulse.service<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-5"><a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">                      </span>pipewire-pulse.socket
 </span></code></pre></div>
 </div>
 <h3 id="installing">Installing<a class="headerlink" href="#installing" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Installing</p>
 <p>PipeWire comes with quite a bit of libraries and tools, run:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>meson<span class="w"> </span>install<span class="w"> </span>-C<span class="w"> </span>builddir
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>meson<span class="w"> </span>install<span class="w"> </span>-C<span class="w"> </span>builddir
 </span></code></pre></div>
 <ul>
 <li>To install everything onto the system into the specified prefix. Depending on the configured installation prefix, the above command may need to be run with elevated privileges (e.g. with <code>sudo</code>).</li>
@@ -1881,13 +1878,13 @@ See LICENSE for more information.</p>
 <li>Configuration of the PipeWire daemon can be found in <code>/usr/share/pipewire/pipewire.conf</code>. Please refer to the comments in the config file for more information about the configuration options.</li>
 </ul>
 <p>The daemon is started with:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>pipewire.service<span class="w"> </span>pipewire.socket
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>pipewire.service<span class="w"> </span>pipewire.socket
 </span></code></pre></div>
 <p>If you did not start the media-session in pipewire.conf, you will also need to start it like this:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>pipewire-media-session.service
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>pipewire-media-session.service
 </span></code></pre></div>
 <p>To make it start on system startup:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pipewire-media-session.service
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pipewire-media-session.service
 </span></code></pre></div>
 <p>You can write <code>enable --now</code> to start service immediately.</p>
 </div>
@@ -1896,17 +1893,17 @@ See LICENSE for more information.</p>
 <p class="admonition-title">ALSA Plugin</p>
 <p>The ALSA plugin is usually installed in:</p>
 <p>On Fedora:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>/usr/lib64/alsa-lib/libasound_module_pcm_pipewire.so
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a>/usr/lib64/alsa-lib/libasound_module_pcm_pipewire.so
 </span></code></pre></div>
 <p>On Ubuntu:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>/usr/lib/x86_64-linux-gnu/alsa-lib/libasound_module_pcm_pipewire.so
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a>/usr/lib/x86_64-linux-gnu/alsa-lib/libasound_module_pcm_pipewire.so
 </span></code></pre></div>
 <p>There is also a config file installed in:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/usr/share/alsa/alsa.conf.d/50-pipewire.conf
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a>/usr/share/alsa/alsa.conf.d/50-pipewire.conf
 </span></code></pre></div>
 <p>The plugin will be picked up by alsa when the following files are in <code>/etc/alsa/conf.d/</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>/etc/alsa/conf.d/50-pipewire.conf -&gt; /usr/share/alsa/alsa.conf.d/50-pipewire.conf
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>/etc/alsa/conf.d/99-pipewire-default.conf
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a>/etc/alsa/conf.d/50-pipewire.conf -&gt; /usr/share/alsa/alsa.conf.d/50-pipewire.conf
+</span><span id="__span-30-2"><a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a>/etc/alsa/conf.d/99-pipewire-default.conf
 </span></code></pre></div>
 <p>With this setup, <code>aplay -l</code> should list a pipewire device that can be used as a regular alsa device for playback and record.</p>
 </div>
@@ -1915,19 +1912,19 @@ See LICENSE for more information.</p>
 <p class="admonition-title">JACK Emulation</p>
 <p>PipeWire reimplements the 3 libraries that JACK applications use to make them run on top of PipeWire.</p>
 <p>These libraries are found here:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>/usr/lib64/pipewire-0.3/jack/libjacknet.so -&gt; libjacknet.so.0
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>/usr/lib64/pipewire-0.3/jack/libjacknet.so.0 -&gt; libjacknet.so.0.304.0
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>/usr/lib64/pipewire-0.3/jack/libjacknet.so.0.304.0
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>/usr/lib64/pipewire-0.3/jack/libjackserver.so -&gt; libjackserver.so.0
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>/usr/lib64/pipewire-0.3/jack/libjackserver.so.0 -&gt; libjackserver.so.0.304.0
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>/usr/lib64/pipewire-0.3/jack/libjackserver.so.0.304.0
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>/usr/lib64/pipewire-0.3/jack/libjack.so -&gt; libjack.so.0
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>/usr/lib64/pipewire-0.3/jack/libjack.so.0 -&gt; libjack.so.0.304.0
-</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>/usr/lib64/pipewire-0.3/jack/libjack.so.0.304.0
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a>/usr/lib64/pipewire-0.3/jack/libjacknet.so -&gt; libjacknet.so.0
+</span><span id="__span-31-2"><a href="#__codelineno-31-2" id="__codelineno-31-2" name="__codelineno-31-2"></a>/usr/lib64/pipewire-0.3/jack/libjacknet.so.0 -&gt; libjacknet.so.0.304.0
+</span><span id="__span-31-3"><a href="#__codelineno-31-3" id="__codelineno-31-3" name="__codelineno-31-3"></a>/usr/lib64/pipewire-0.3/jack/libjacknet.so.0.304.0
+</span><span id="__span-31-4"><a href="#__codelineno-31-4" id="__codelineno-31-4" name="__codelineno-31-4"></a>/usr/lib64/pipewire-0.3/jack/libjackserver.so -&gt; libjackserver.so.0
+</span><span id="__span-31-5"><a href="#__codelineno-31-5" id="__codelineno-31-5" name="__codelineno-31-5"></a>/usr/lib64/pipewire-0.3/jack/libjackserver.so.0 -&gt; libjackserver.so.0.304.0
+</span><span id="__span-31-6"><a href="#__codelineno-31-6" id="__codelineno-31-6" name="__codelineno-31-6"></a>/usr/lib64/pipewire-0.3/jack/libjackserver.so.0.304.0
+</span><span id="__span-31-7"><a href="#__codelineno-31-7" id="__codelineno-31-7" name="__codelineno-31-7"></a>/usr/lib64/pipewire-0.3/jack/libjack.so -&gt; libjack.so.0
+</span><span id="__span-31-8"><a href="#__codelineno-31-8" id="__codelineno-31-8" name="__codelineno-31-8"></a>/usr/lib64/pipewire-0.3/jack/libjack.so.0 -&gt; libjack.so.0.304.0
+</span><span id="__span-31-9"><a href="#__codelineno-31-9" id="__codelineno-31-9" name="__codelineno-31-9"></a>/usr/lib64/pipewire-0.3/jack/libjack.so.0.304.0
 </span></code></pre></div>
 <p>The provided <code>pw-jack</code> script uses <code>LD_LIBRARY_PATH</code> to set the library search path to these replacement libraries. This allows you to run jack apps on both the real JACK server or on PipeWire with the script.</p>
 <p>It is also possible to completely replace the JACK libraries by adding a file <code>pipewire-jack-x86_64.conf</code> to <code>/etc/ld.so.conf.d/</code> with contents like:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>/usr/lib64/pipewire-0.3/jack/
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a>/usr/lib64/pipewire-0.3/jack/
 </span></code></pre></div>
 <p>Note that when JACK is replaced by PipeWire, the SPA JACK plugin (installed in <code>/usr/lib64/spa-0.2/jack/libspa-jack.so</code>) is not useful anymore and distributions should make them conflict.</p>
 </div>
@@ -1936,10 +1933,10 @@ See LICENSE for more information.</p>
 <p class="admonition-title">PulseAudio Replacement</p>
 <p>PipeWire reimplements the PulseAudio server protocol as a small service that runs on top of PipeWire.</p>
 <p>The binary is normally placed here:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>/usr/bin/pipewire-pulse
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a>/usr/bin/pipewire-pulse
 </span></code></pre></div>
 <p>The server can be started with provided systemd activation files or from PipeWire itself. (See <code>/usr/share/pipewire/pipewire.conf</code>)</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>pipewire-pulse.service<span class="w"> </span>pipewire-pulse.socket
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>pipewire-pulse.service<span class="w"> </span>pipewire-pulse.socket
 </span></code></pre></div>
 <p>You can also start additional PulseAudio servers listening on other sockets with the <code>-a</code> option. See <code>pipewire-pulse -h</code> for more info.</p>
 </div>
@@ -1947,7 +1944,7 @@ See LICENSE for more information.</p>
 <div class="admonition desc">
 <p class="admonition-title">Uninstalling</p>
 <p>To uninstall, run:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>ninja<span class="w"> </span>-C<span class="w"> </span>builddir<span class="w"> </span>uninstall
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a>ninja<span class="w"> </span>-C<span class="w"> </span>builddir<span class="w"> </span>uninstall
 </span></code></pre></div>
 <ul>
 <li>Depending on the configured installation prefix, the above command may need to be run with elevated privileges (e.g. with <code>sudo</code>).</li>
@@ -2252,19 +2249,20 @@ See LICENSE for more information.</p>
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../js/markmap-d3.js"></script>
+      
+        <script src="../js/markmap-lib.js"></script>
+      
+        <script src="../js/markmap-view.js"></script>
+      
+        <script src="../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

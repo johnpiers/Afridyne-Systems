@@ -32,7 +32,7 @@
           <link rel="icon" href="../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
@@ -396,7 +396,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1897,9 +1897,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1911,15 +1909,12 @@
                   
 
 <div style="display: none;"><h1>Header</h1></div>
-
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260724-153731.png" data-desc-position="bottom"><img alt="" src="../imgs/20260724-153731.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;"><ins>lua-guide</ins></h1>
-
 <hr>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260724-143441.png" data-desc-position="bottom"><img alt="" src="../imgs/20260724-143441.png" style="display: block; margin: 0 auto"></a></p>
 <h2 style="text-align: center;"><ins>NVIM REFERENCE MANUAL</ins></h2>
 <h3 style="text-align: center;"><ins>Guide to using Lua in Nvim</ins></h3>
-
 <div class="admonition desc">
 <p class="admonition-title">Introduction <em>lua-guide</em></p>
 <h3 class="toc-hidden-header" id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h3>
@@ -1955,35 +1950,35 @@
 <p class="admonition-title"><a href="https://neovim.io/doc/user/lua-guide/#lua-guide-using-Lua"><em>lua-guide-using-Lua</em></a></p>
 <p>To run Lua code from the Nvim command line, use the <a href="https://neovim.io/doc/user/lua/#%3Alua">:lua</a> command:</p>
 <div class="admonition abstract">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">:</span><span class="k">lua</span> print<span class="p">(</span><span class="s2">"Hello!"</span><span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">:</span><span class="k">lua</span> print<span class="p">(</span><span class="s2">"Hello!"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <p>Note: each <a href="https://neovim.io/doc/user/lua/#%3Alua">:lua</a> command has its own scope and variables declared with the local keyword are not accessible outside of the command. This won't work:</p>
 <div class="admonition abstract">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">:</span><span class="k">lua</span> local foo <span class="p">=</span> <span class="m">1</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">:</span><span class="k">lua</span> print<span class="p">(</span>foo<span class="p">)</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c">"prints "nil" instead of "1"</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">:</span><span class="k">lua</span> local foo <span class="p">=</span> <span class="m">1</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">:</span><span class="k">lua</span> print<span class="p">(</span>foo<span class="p">)</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c">"prints "nil" instead of "1"</span>
 </span></code></pre></div>
 </div>
 <p>You can also use <code>:lua=</code>, which is equivalent to <code>:lua vim.print(...)</code>, to conveniently check the value of a variable or a table:</p>
 <div class="admonition quote">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">:</span><span class="k">lua</span> <span class="p">=</span>package
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">:</span><span class="k">lua</span> <span class="p">=</span>package
 </span></code></pre></div>
 </div>
 <p>To run a Lua script in an external file, you can use the <a href="https://neovim.io/doc/user/repeat/#%3Asource">:source</a> command exactly like for a Vimscript file:</p>
 <div class="admonition abstract">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">:</span>source <span class="p">~</span><span class="sr">/programs/</span>baz/myluafile.<span class="k">lua</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">:</span>source <span class="p">~</span><span class="sr">/programs/</span>baz/myluafile.<span class="k">lua</span>
 </span></code></pre></div>
 </div>
 <p>Finally, you can include Lua code in a Vimscript file by putting it inside a <a href="https://neovim.io/doc/user/lua/#%3Alua-heredoc">:lua-heredoc</a> block:</p>
 <div class="admonition abstract">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">lua</span> <span class="p">&lt;&lt;</span> EOF
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  local tbl <span class="p">=</span> {<span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span>}
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  <span class="k">for</span> <span class="k">k</span><span class="p">,</span> <span class="k">v</span> <span class="k">in</span> ipairs<span class="p">(</span>tbl<span class="p">)</span> <span class="k">do</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    print<span class="p">(</span><span class="k">v</span><span class="p">)</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  <span class="k">end</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>EOF
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">lua</span> <span class="p">&lt;&lt;</span> EOF
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>  local tbl <span class="p">=</span> {<span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span>}
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>  <span class="k">for</span> <span class="k">k</span><span class="p">,</span> <span class="k">v</span> <span class="k">in</span> ipairs<span class="p">(</span>tbl<span class="p">)</span> <span class="k">do</span>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>    print<span class="p">(</span><span class="k">v</span><span class="p">)</span>
+</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>  <span class="k">end</span>
+</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>EOF
 </span></code></pre></div>
 </div>
 </div>
@@ -1992,17 +1987,17 @@
 <div class="admonition recommendation">
 <p class="admonition-title"><a href="https://neovim.io/doc/user/lua-guide/#lua-guide-interrupt"><em>lua-guide-interrupt</em></a></p>
 <p>Lua cannot normally be interrupted by <a href="https://neovim.io/doc/user/various/#CTRL-C">CTRL-C</a> (Lua does not implicitly "yield" to Nvim). To allow the user to interrupt potentially slow loops, periodically call <a href="https://neovim.io/doc/user/lua/#vim.wait()">vim.wait()</a>. Passing <code>interval=0</code> skips the dummy timer setup, minimizing per-call overhead in a tight loop:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>while true do
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  -- ...work...
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  local _, code = vim.wait(0, nil, 0)
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  if code == -2 then -- CTRL-C.
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    break
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>  end
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>end
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>while true do
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>  -- ...work...
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>  local _, code = vim.wait(0, nil, 0)
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>  if code == -2 then -- CTRL-C.
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>    break
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>  end
+</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a>end
 </span></code></pre></div>
 </div>
 <hr>
@@ -2019,23 +2014,23 @@
 <p class="admonition-title"><a href="https://neovim.io/doc/user/lua-guide/#lua-guide-modules"><em>lua-guide-modules</em></a></p>
 <p>If you want to load Lua files on demand, you can place them in the <code>lua/</code> directory in your <a href="https://neovim.io/doc/user/options/#" title="runtimepath">'runtimepath'</a> and load them with <code>require</code>. (This is the Lua equivalent of Vimscript's <a href="https://neovim.io/doc/user/userfunc/#autoload">autoload</a> mechanism.)</p>
 <p>Let's assume you have the following directory structure:</p>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> <strong>~/.config/nvim</strong><br>
-├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> after/<br>
-├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> ftplugin/<br>
-├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> lua/<br>
-│&nbsp;&nbsp;&nbsp;├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 5A8.5 8.5 0 0 0 2 13.5a8.5 8.5 0 0 0 8.5 8.5 8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 10.5 5m3 8a2.5 2.5 0 0 1-2.5-2.5A2.5 2.5 0 0 1 13.5 8a2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5m6-11A2.5 2.5 0 0 0 17 4.5 2.5 2.5 0 0 0 19.5 7 2.5 2.5 0 0 0 22 4.5 2.5 2.5 0 0 0 19.5 2"></path></svg></span> myluamodule.lua<br>
-│&nbsp;&nbsp;&nbsp;└── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> other_modules/<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 5A8.5 8.5 0 0 0 2 13.5a8.5 8.5 0 0 0 8.5 8.5 8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 10.5 5m3 8a2.5 2.5 0 0 1-2.5-2.5A2.5 2.5 0 0 1 13.5 8a2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5m6-11A2.5 2.5 0 0 0 17 4.5 2.5 2.5 0 0 0 19.5 7 2.5 2.5 0 0 0 22 4.5 2.5 2.5 0 0 0 19.5 2"></path></svg></span> anothermodule.lua<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 5A8.5 8.5 0 0 0 2 13.5a8.5 8.5 0 0 0 8.5 8.5 8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 10.5 5m3 8a2.5 2.5 0 0 1-2.5-2.5A2.5 2.5 0 0 1 13.5 8a2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5m6-11A2.5 2.5 0 0 0 17 4.5 2.5 2.5 0 0 0 19.5 7 2.5 2.5 0 0 0 22 4.5 2.5 2.5 0 0 0 19.5 2"></path></svg></span> init.lua<br>
-├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> plugin/<br>
-├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> syntax/<br>
-└── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-2 12c-.25 0-.46-.18-.5-.42l-.37-2.65c-.63-.25-1.17-.59-1.69-.99l-2.49 1.01c-.22.08-.49 0-.61-.22l-2-3.46a.493.493 0 0 1 .12-.64l2.11-1.66L4.5 12l.07-1-2.11-1.63a.493.493 0 0 1-.12-.64l2-3.46c.12-.22.39-.31.61-.22l2.49 1c.52-.39 1.06-.73 1.69-.98l.37-2.65c.04-.24.25-.42.5-.42h4c.25 0 .46.18.5.42l.37 2.65c.63.25 1.17.59 1.69.98l2.49-1c.22-.09.49 0 .61.22l2 3.46c.13.22.07.49-.12.64L19.43 11l.07 1-.07 1 2.11 1.63c.19.15.25.42.12.64l-2 3.46c-.12.22-.39.31-.61.22l-2.49-1c-.52.39-1.06.73-1.69.98l-.37 2.65c-.04.24-.25.42-.5.42zm1.25-18-.37 2.61c-1.2.25-2.26.89-3.03 1.78L5.44 7.35l-.75 1.3L6.8 10.2a5.55 5.55 0 0 0 0 3.6l-2.12 1.56.75 1.3 2.43-1.04c.77.88 1.82 1.52 3.01 1.76l.37 2.62h1.52l.37-2.61c1.19-.25 2.24-.89 3.01-1.77l2.43 1.04.75-1.3-2.12-1.55c.4-1.17.4-2.44 0-3.61l2.11-1.55-.75-1.3-2.41 1.04a5.42 5.42 0 0 0-3.03-1.77L12.75 4z"></path></svg></span> init.vim</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> <strong>~/.config/nvim</strong><br>
+├── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> after/<br>
+├── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> ftplugin/<br>
+├── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> lua/<br>
+│&nbsp;&nbsp;&nbsp;├── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5A8.5 8.5 0 0 0 2 13.5a8.5 8.5 0 0 0 8.5 8.5 8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 10.5 5m3 8a2.5 2.5 0 0 1-2.5-2.5A2.5 2.5 0 0 1 13.5 8a2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5m6-11A2.5 2.5 0 0 0 17 4.5 2.5 2.5 0 0 0 19.5 7 2.5 2.5 0 0 0 22 4.5 2.5 2.5 0 0 0 19.5 2"></path></svg></span> myluamodule.lua<br>
+│&nbsp;&nbsp;&nbsp;└── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> other_modules/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5A8.5 8.5 0 0 0 2 13.5a8.5 8.5 0 0 0 8.5 8.5 8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 10.5 5m3 8a2.5 2.5 0 0 1-2.5-2.5A2.5 2.5 0 0 1 13.5 8a2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5m6-11A2.5 2.5 0 0 0 17 4.5 2.5 2.5 0 0 0 19.5 7 2.5 2.5 0 0 0 22 4.5 2.5 2.5 0 0 0 19.5 2"></path></svg></span> anothermodule.lua<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5A8.5 8.5 0 0 0 2 13.5a8.5 8.5 0 0 0 8.5 8.5 8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 10.5 5m3 8a2.5 2.5 0 0 1-2.5-2.5A2.5 2.5 0 0 1 13.5 8a2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5m6-11A2.5 2.5 0 0 0 17 4.5 2.5 2.5 0 0 0 19.5 7 2.5 2.5 0 0 0 22 4.5 2.5 2.5 0 0 0 19.5 2"></path></svg></span> init.lua<br>
+├── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> plugin/<br>
+├── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"></path></svg></span> syntax/<br>
+└── <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-2 12c-.25 0-.46-.18-.5-.42l-.37-2.65c-.63-.25-1.17-.59-1.69-.99l-2.49 1.01c-.22.08-.49 0-.61-.22l-2-3.46a.493.493 0 0 1 .12-.64l2.11-1.66L4.5 12l.07-1-2.11-1.63a.493.493 0 0 1-.12-.64l2-3.46c.12-.22.39-.31.61-.22l2.49 1c.52-.39 1.06-.73 1.69-.98l.37-2.65c.04-.24.25-.42.5-.42h4c.25 0 .46.18.5.42l.37 2.65c.63.25 1.17.59 1.69.98l2.49-1c.22-.09.49 0 .61.22l2 3.46c.13.22.07.49-.12.64L19.43 11l.07 1-.07 1 2.11 1.63c.19.15.25.42.12.64l-2 3.46c-.12.22-.39.31-.61.22l-2.49-1c-.52.39-1.06.73-1.69.98l-.37 2.65c-.04.24-.25.42-.5.42zm1.25-18-.37 2.61c-1.2.25-2.26.89-3.03 1.78L5.44 7.35l-.75 1.3L6.8 10.2a5.55 5.55 0 0 0 0 3.6l-2.12 1.56.75 1.3 2.43-1.04c.77.88 1.82 1.52 3.01 1.76l.37 2.62h1.52l.37-2.61c1.19-.25 2.24-.89 3.01-1.77l2.43 1.04.75-1.3-2.12-1.55c.4-1.17.4-2.44 0-3.61l2.11-1.55-.75-1.3-2.41 1.04a5.42 5.42 0 0 0-3.03-1.77L12.75 4z"></path></svg></span> init.vim</p>
 </div>
 <h4 id="then-the-following-lua-code-will-load-myluamodulelua">Then the following Lua code will load: <code>myluamodule.lua</code><a class="headerlink" href="#then-the-following-lua-code-will-load-myluamodulelua" title="Permanent link">¶</a></h4>
 <div class="admonition desc">
 <p class="admonition-title"><em><code>myluamodule.lua</code></em></p>
 <div class="admonition abstract">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>require<span class="p">(</span><span class="s2">"myluamodule"</span><span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>require<span class="p">(</span><span class="s2">"myluamodule"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <hr>
@@ -2043,11 +2038,11 @@
 <p>Note the absence of a <code>.lua</code> extension.</p>
 <p>Similarly, loading <code>other_modules/anothermodule.lua</code> is done via</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>require<span class="p">(</span><span class="s1">'other_modules/anothermodule'</span><span class="p">)</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">--</span> or
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>require<span class="p">(</span><span class="s1">'other_modules.anothermodule'</span><span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>require<span class="p">(</span><span class="s1">'other_modules/anothermodule'</span><span class="p">)</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="p">--</span> or
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>require<span class="p">(</span><span class="s1">'other_modules.anothermodule'</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2056,7 +2051,7 @@
 <p>Note how "submodules" are just subdirectories; the <code>.</code> is equivalent to the path separator <code>/</code> (even on Windows).</p>
 <p>A folder containing an |init.lua| file can be required directly, without having to specify the name of the file:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>require<span class="p">(</span><span class="s1">'other_modules'</span><span class="p">)</span> <span class="p">--</span> loads other_modules/init.<span class="k">lua</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>require<span class="p">(</span><span class="s1">'other_modules'</span><span class="p">)</span> <span class="p">--</span> loads other_modules/init.<span class="k">lua</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2066,17 +2061,17 @@
 <div class="admonition abstract">
 <p>Requiring a nonexistent module or a module which contains syntax errors aborts the currently executing script. <code>pcall()</code> may be used to catch such errors. The following example tries to load the <code>module_with_error</code> and only calls one of its functions if this succeeds and prints an error message otherwise:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>local ok<span class="p">,</span> mymod <span class="p">=</span> pcall<span class="p">(</span>require<span class="p">,</span> <span class="s1">'module_with_error'</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">if</span> not ok then
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  print<span class="p">(</span><span class="s2">"Module had an error"</span><span class="p">)</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">else</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  mymod.func<span class="p">()</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">end</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>local ok<span class="p">,</span> mymod <span class="p">=</span> pcall<span class="p">(</span>require<span class="p">,</span> <span class="s1">'module_with_error'</span><span class="p">)</span>
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">if</span> not ok then
+</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>  print<span class="p">(</span><span class="s2">"Module had an error"</span><span class="p">)</span>
+</span><span id="__span-9-6"><a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="k">else</span>
+</span><span id="__span-9-8"><a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>  mymod.func<span class="p">()</span>
+</span><span id="__span-9-10"><a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="k">end</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2084,8 +2079,8 @@
 <div class="admonition abstract">
 <p>In contrast to <a href="https://neovim.io/doc/user/repeat/#%3Asource">:source</a>, <a href="https://neovim.io/doc/user/luaref/#require()">require()</a> not only searches through all <code>lua/</code> directories under 'runtimepath', it also caches the module on first use. Calling <code>require()</code> a second time will therefore <em>not</em> execute the script again and instead return the cached file. To rerun the file, you need to remove it from the cache manually first:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>package.loaded[<span class="s1">'myluamodule'</span>] <span class="p">=</span> nil
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>require<span class="p">(</span><span class="s1">'myluamodule'</span><span class="p">)</span>    <span class="p">--</span> read and execute the module again from disk
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>package.loaded[<span class="s1">'myluamodule'</span>] <span class="p">=</span> nil
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>require<span class="p">(</span><span class="s1">'myluamodule'</span><span class="p">)</span>    <span class="p">--</span> read and execute the module again from disk
 </span></code></pre></div>
 </div>
 </div>
@@ -2107,31 +2102,31 @@
 <div class="admonition abstract">
 <p>To run an arbitrary Vim command from Lua, pass it as a string to |vim.cmd()|:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">vim</span>.cmd<span class="p">(</span><span class="s2">"colorscheme habamax"</span><span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">vim</span>.cmd<span class="p">(</span><span class="s2">"colorscheme habamax"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Note that special characters will need to be escaped with backslashes:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">vim</span>.cmd<span class="p">(</span><span class="s2">"%s/\\Vfoo/bar/g"</span><span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">vim</span>.cmd<span class="p">(</span><span class="s2">"%s/\\Vfoo/bar/g"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>An alternative is to use a literal string (see <a href="https://neovim.io/doc/user/luaref/#lua-literal">lua-literal</a>) delimited by double brackets <code>[[ ]]</code> as in:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">vim</span>.cmd<span class="p">(</span>[[%s<span class="sr">/\Vfoo/</span>bar/<span class="k">g</span>]]<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">vim</span>.cmd<span class="p">(</span>[[%s<span class="sr">/\Vfoo/</span>bar/<span class="k">g</span>]]<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Another benefit of using literal strings is that they can be multiple lines; this allows you to pass multiple commands to a single call of |vim.cmd()|:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">vim</span>.cmd<span class="p">(</span>[[
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  <span class="nb">highlight</span> Error guibg<span class="p">=</span><span class="k">red</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  <span class="nb">highlight</span> link Warning Error
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>]]<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">vim</span>.cmd<span class="p">(</span>[[
+</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>  <span class="nb">highlight</span> Error guibg<span class="p">=</span><span class="k">red</span>
+</span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>  <span class="nb">highlight</span> link Warning Error
+</span><span id="__span-14-4"><a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>]]<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2139,11 +2134,11 @@
 <p>This is the converse of<a href="https://neovim.io/doc/user/lua/#%3Alua-heredoc">: lua-heredoc</a> and allows you to include Vimscript code in your <code>init.lua.</code></p>
 <p>If you want to build your Vim command programmatically, the following form can be useful (all these are equivalent to the corresponding line above):</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">vim</span>.cmd.<span class="k">colorscheme</span><span class="p">(</span><span class="s2">"habamax"</span><span class="p">)</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">vim</span>.cmd.<span class="nb">highlight</span><span class="p">(</span>{ <span class="s2">"Error"</span><span class="p">,</span> <span class="s2">"guibg=red"</span> }<span class="p">)</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">vim</span>.cmd.<span class="nb">highlight</span><span class="p">(</span>{ <span class="s2">"link"</span><span class="p">,</span> <span class="s2">"Warning"</span><span class="p">,</span> <span class="s2">"Error"</span> }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">vim</span>.cmd.<span class="k">colorscheme</span><span class="p">(</span><span class="s2">"habamax"</span><span class="p">)</span>
+</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="k">vim</span>.cmd.<span class="nb">highlight</span><span class="p">(</span>{ <span class="s2">"Error"</span><span class="p">,</span> <span class="s2">"guibg=red"</span> }<span class="p">)</span>
+</span><span id="__span-15-4"><a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="k">vim</span>.cmd.<span class="nb">highlight</span><span class="p">(</span>{ <span class="s2">"link"</span><span class="p">,</span> <span class="s2">"Warning"</span><span class="p">,</span> <span class="s2">"Error"</span> }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2154,17 +2149,17 @@
 <div class="admonition abstract">
 <p>Use <a href="https://neovim.io/doc/user/lua/#vim.fn">vim.fn</a> to call Vimscript functions from Lua. Data types between Lua and Vimscript are automatically converted:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>print<span class="p">(</span><span class="k">vim</span>.fn.printf<span class="p">(</span><span class="s1">'Hello from %s'</span><span class="p">,</span> <span class="s1">'Lua'</span><span class="p">))</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>local reversed_list <span class="p">=</span> <span class="k">vim</span>.fn.reverse<span class="p">(</span>{ <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span> }<span class="p">)</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">vim</span>.print<span class="p">(</span>reversed_list<span class="p">)</span> <span class="p">--</span> { <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"a"</span> }
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>local <span class="k">function</span> print_stdout<span class="p">(</span>chan_id<span class="p">,</span> data<span class="p">,</span> name<span class="p">)</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>  print<span class="p">(</span>data[<span class="m">1</span>]<span class="p">)</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="k">end</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="k">vim</span>.fn.jobstart<span class="p">(</span><span class="s1">'ls'</span><span class="p">,</span> { on_stdout <span class="p">=</span> print_stdout }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>print<span class="p">(</span><span class="k">vim</span>.fn.printf<span class="p">(</span><span class="s1">'Hello from %s'</span><span class="p">,</span> <span class="s1">'Lua'</span><span class="p">))</span>
+</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a>local reversed_list <span class="p">=</span> <span class="k">vim</span>.fn.reverse<span class="p">(</span>{ <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span> }<span class="p">)</span>
+</span><span id="__span-16-5"><a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="k">vim</span>.print<span class="p">(</span>reversed_list<span class="p">)</span> <span class="p">--</span> { <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"a"</span> }
+</span><span id="__span-16-6"><a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a>local <span class="k">function</span> print_stdout<span class="p">(</span>chan_id<span class="p">,</span> data<span class="p">,</span> name<span class="p">)</span>
+</span><span id="__span-16-8"><a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a>  print<span class="p">(</span>data[<span class="m">1</span>]<span class="p">)</span>
+</span><span id="__span-16-9"><a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="k">end</span>
+</span><span id="__span-16-10"><a href="#__codelineno-16-10" id="__codelineno-16-10" name="__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a href="#__codelineno-16-11" id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="k">vim</span>.fn.jobstart<span class="p">(</span><span class="s1">'ls'</span><span class="p">,</span> { on_stdout <span class="p">=</span> print_stdout }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2172,7 +2167,7 @@
 <p>This works for both <a href="https://neovim.io/doc/user/vimfn/#vimscript-functions">vimscript-functions</a> and <a href="https://neovim.io/doc/user/vimeval/#user-function">user-function</a>s.</p>
 <p>Note that hashes (<code>#</code>) are not valid characters for identifiers in Lua, so, e.g., |autoload| functions have to be called with this syntax:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">vim</span>.fn[<span class="s1">'my#autoload#function'</span>]<span class="p">()</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">vim</span>.fn[<span class="s1">'my#autoload#function'</span>]<span class="p">()</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2194,64 +2189,64 @@
 <div class="admonition abstract">
 <p>Data types are converted automatically. For example:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">vim</span>.<span class="k">g</span>.some_global_variable <span class="p">=</span> {
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    key1 <span class="p">=</span> <span class="s2">"value"</span><span class="p">,</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    key2 <span class="p">=</span> <span class="m">300</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>}
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">vim</span>.print<span class="p">(</span><span class="k">vim</span>.<span class="k">g</span>.some_global_variable<span class="p">)</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="p">--&gt;</span> { key1 <span class="p">=</span> <span class="s2">"value"</span><span class="p">,</span> key2 <span class="p">=</span> <span class="m">300</span> }
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">vim</span>.<span class="k">g</span>.some_global_variable <span class="p">=</span> {
+</span><span id="__span-18-2"><a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>    key1 <span class="p">=</span> <span class="s2">"value"</span><span class="p">,</span>
+</span><span id="__span-18-3"><a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>    key2 <span class="p">=</span> <span class="m">300</span>
+</span><span id="__span-18-4"><a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>}
+</span><span id="__span-18-5"><a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="k">vim</span>.print<span class="p">(</span><span class="k">vim</span>.<span class="k">g</span>.some_global_variable<span class="p">)</span>
+</span><span id="__span-18-8"><a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a>
+</span><span id="__span-18-9"><a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="p">--&gt;</span> { key1 <span class="p">=</span> <span class="s2">"value"</span><span class="p">,</span> key2 <span class="p">=</span> <span class="m">300</span> }
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>You can target specific buffers (via number), windows (via |window-ID|), or tabpages by indexing the wrappers:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">vim</span>.<span class="k">b</span>[<span class="m">2</span>].myvar <span class="p">=</span> <span class="m">1</span>               <span class="p">--</span> <span class="k">set</span> myvar <span class="k">for</span> buffer <span class="k">number</span> <span class="m">2</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">vim</span>.<span class="k">w</span>[<span class="m">1005</span>].myothervar <span class="p">=</span> true    <span class="p">--</span> <span class="k">set</span> myothervar <span class="k">for</span> <span class="nb">window</span> ID <span class="m">1005</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">vim</span>.<span class="k">b</span>[<span class="m">2</span>].myvar <span class="p">=</span> <span class="m">1</span>               <span class="p">--</span> <span class="k">set</span> myvar <span class="k">for</span> buffer <span class="k">number</span> <span class="m">2</span>
+</span><span id="__span-19-2"><a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="k">vim</span>.<span class="k">w</span>[<span class="m">1005</span>].myothervar <span class="p">=</span> true    <span class="p">--</span> <span class="k">set</span> myothervar <span class="k">for</span> <span class="nb">window</span> ID <span class="m">1005</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Some variable names may contain characters that cannot be used for identifiers in Lua. You can still manipulate these variables by using the syntax</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">vim</span>.<span class="k">g</span>[<span class="s1">'my#variable'</span>] <span class="p">=</span> <span class="m">1</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">vim</span>.<span class="k">g</span>[<span class="s1">'my#variable'</span>] <span class="p">=</span> <span class="m">1</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Note that you cannot directly change fields of array variables. This won't work:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">vim</span>.<span class="k">g</span>.some_global_variable.key2 <span class="p">=</span> <span class="m">400</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">vim</span>.print<span class="p">(</span><span class="k">vim</span>.<span class="k">g</span>.some_global_variable<span class="p">)</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p">--&gt;</span> { key1 <span class="p">=</span> <span class="s2">"value"</span><span class="p">,</span> key2 <span class="p">=</span> <span class="m">300</span> }
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">vim</span>.<span class="k">g</span>.some_global_variable.key2 <span class="p">=</span> <span class="m">400</span>
+</span><span id="__span-21-2"><a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="k">vim</span>.print<span class="p">(</span><span class="k">vim</span>.<span class="k">g</span>.some_global_variable<span class="p">)</span>
+</span><span id="__span-21-4"><a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="p">--&gt;</span> { key1 <span class="p">=</span> <span class="s2">"value"</span><span class="p">,</span> key2 <span class="p">=</span> <span class="m">300</span> }
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Instead, you need to create an intermediate Lua table and change this:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>local temp_table <span class="p">=</span> <span class="k">vim</span>.<span class="k">g</span>.some_global_variable
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>temp_table.key2 <span class="p">=</span> <span class="m">400</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="k">vim</span>.<span class="k">g</span>.some_global_variable <span class="p">=</span> temp_table
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="k">vim</span>.print<span class="p">(</span><span class="k">vim</span>.<span class="k">g</span>.some_global_variable<span class="p">)</span>
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="p">--&gt;</span> { key1 <span class="p">=</span> <span class="s2">"value"</span><span class="p">,</span> key2 <span class="p">=</span> <span class="m">400</span> }
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-22-1"><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>local temp_table <span class="p">=</span> <span class="k">vim</span>.<span class="k">g</span>.some_global_variable
+</span><span id="__span-22-2"><a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a>temp_table.key2 <span class="p">=</span> <span class="m">400</span>
+</span><span id="__span-22-4"><a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a>
+</span><span id="__span-22-5"><a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="k">vim</span>.<span class="k">g</span>.some_global_variable <span class="p">=</span> temp_table
+</span><span id="__span-22-6"><a href="#__codelineno-22-6" id="__codelineno-22-6" name="__codelineno-22-6"></a>
+</span><span id="__span-22-7"><a href="#__codelineno-22-7" id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="k">vim</span>.print<span class="p">(</span><span class="k">vim</span>.<span class="k">g</span>.some_global_variable<span class="p">)</span>
+</span><span id="__span-22-8"><a href="#__codelineno-22-8" id="__codelineno-22-8" name="__codelineno-22-8"></a>
+</span><span id="__span-22-9"><a href="#__codelineno-22-9" id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="p">--&gt;</span> { key1 <span class="p">=</span> <span class="s2">"value"</span><span class="p">,</span> key2 <span class="p">=</span> <span class="m">400</span> }
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>To delete a variable, simply set it to <code>nil</code>:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">vim</span>.<span class="k">g</span>.myvar <span class="p">=</span> nil
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-23-1"><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">vim</span>.<span class="k">g</span>.myvar <span class="p">=</span> nil
 </span></code></pre></div>
 </div>
 </div>
@@ -2274,68 +2269,68 @@
 <div class="admonition abstract">
 <p>For example, the Vimscript commands:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">set</span> <span class="nb">smarttab</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">set</span> <span class="nb">nosmarttab</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-24-1"><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">set</span> <span class="nb">smarttab</span>
+</span><span id="__span-24-2"><a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">set</span> <span class="nb">nosmarttab</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Are equivalent to:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">smarttab</span> <span class="p">=</span> true
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">smarttab</span> <span class="p">=</span> false
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-25-1"><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">smarttab</span> <span class="p">=</span> true
+</span><span id="__span-25-2"><a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a>
+</span><span id="__span-25-3"><a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">smarttab</span> <span class="p">=</span> false
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>In particular, they allow an easy way to working with list-like, map-like, and set-like options through Lua tables: Instead of:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">set</span> <span class="nb">wildignore</span><span class="p">=</span>*.<span class="k">o</span><span class="p">,</span>*.<span class="k">a</span><span class="p">,</span>__pycache__
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">set</span> <span class="nb">listchars</span><span class="p">=</span>space:_<span class="p">,</span><span class="k">tab</span>:<span class="p">&gt;~</span>
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">set</span> <span class="nb">formatoptions</span><span class="p">=</span>njt
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-26-1"><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">set</span> <span class="nb">wildignore</span><span class="p">=</span>*.<span class="k">o</span><span class="p">,</span>*.<span class="k">a</span><span class="p">,</span>__pycache__
+</span><span id="__span-26-2"><a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>
+</span><span id="__span-26-3"><a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="k">set</span> <span class="nb">listchars</span><span class="p">=</span>space:_<span class="p">,</span><span class="k">tab</span>:<span class="p">&gt;~</span>
+</span><span id="__span-26-4"><a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a>
+</span><span id="__span-26-5"><a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="k">set</span> <span class="nb">formatoptions</span><span class="p">=</span>njt
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>You can use:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">wildignore</span> <span class="p">=</span> { <span class="s1">'*.o'</span><span class="p">,</span> <span class="s1">'*.a'</span><span class="p">,</span> <span class="s1">'__pycache__'</span> }
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">listchars</span> <span class="p">=</span> { space <span class="p">=</span> <span class="s1">'_'</span><span class="p">,</span> <span class="k">tab</span> <span class="p">=</span> <span class="s1">'&gt;~'</span> }
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">formatoptions</span> <span class="p">=</span> { <span class="k">n</span> <span class="p">=</span> true<span class="p">,</span> <span class="k">j</span> <span class="p">=</span> true<span class="p">,</span> <span class="k">t</span> <span class="p">=</span> true }
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-27-1"><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">wildignore</span> <span class="p">=</span> { <span class="s1">'*.o'</span><span class="p">,</span> <span class="s1">'*.a'</span><span class="p">,</span> <span class="s1">'__pycache__'</span> }
+</span><span id="__span-27-2"><a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a>
+</span><span id="__span-27-3"><a href="#__codelineno-27-3" id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">listchars</span> <span class="p">=</span> { space <span class="p">=</span> <span class="s1">'_'</span><span class="p">,</span> <span class="k">tab</span> <span class="p">=</span> <span class="s1">'&gt;~'</span> }
+</span><span id="__span-27-4"><a href="#__codelineno-27-4" id="__codelineno-27-4" name="__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a href="#__codelineno-27-5" id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">formatoptions</span> <span class="p">=</span> { <span class="k">n</span> <span class="p">=</span> true<span class="p">,</span> <span class="k">j</span> <span class="p">=</span> true<span class="p">,</span> <span class="k">t</span> <span class="p">=</span> true }
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>These wrappers also come with methods that work similarly to their <a href="https://neovim.io/doc/user/options/#%3Aset%2B%3D">:set+=</a>, <a href="https://neovim.io/doc/user/options/#%3Aset%5E%3D">:set^=</a> and <a href="https://neovim.io/doc/user/options/#%3Aset-%3D">:set-=</a> counterparts in Vimscript:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">shortmess</span>:append<span class="p">(</span>{ I <span class="p">=</span> true }<span class="p">)</span>
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">wildignore</span>:prepend<span class="p">(</span><span class="s1">'*.o'</span><span class="p">)</span>
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
-</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">whichwrap</span>:remove<span class="p">(</span>{ <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'s'</span> }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-28-1"><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">shortmess</span>:append<span class="p">(</span>{ I <span class="p">=</span> true }<span class="p">)</span>
+</span><span id="__span-28-2"><a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a>
+</span><span id="__span-28-3"><a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">wildignore</span>:prepend<span class="p">(</span><span class="s1">'*.o'</span><span class="p">)</span>
+</span><span id="__span-28-4"><a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a>
+</span><span id="__span-28-5"><a href="#__codelineno-28-5" id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">whichwrap</span>:remove<span class="p">(</span>{ <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'s'</span> }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>The price to pay is that you cannot access the option values directly but must use <a href="https://neovim.io/doc/user/lua/#vim.opt%3Aget()">vim.opt:get()</a>:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">smarttab</span><span class="p">)</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="p">--&gt;</span> {...} <span class="p">(</span>big table<span class="p">)</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">smarttab</span>:get<span class="p">())</span>
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
-</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="p">--&gt;</span> false
-</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
-</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="k">vim</span>.print<span class="p">(</span><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">listchars</span>:get<span class="p">())</span>
-</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
-</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="p">--&gt;</span> { space <span class="p">=</span> <span class="s1">'_'</span><span class="p">,</span> <span class="k">tab</span> <span class="p">=</span> <span class="s1">'&gt;~'</span> }
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-29-1"><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">smarttab</span><span class="p">)</span>
+</span><span id="__span-29-2"><a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a>
+</span><span id="__span-29-3"><a href="#__codelineno-29-3" id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="p">--&gt;</span> {...} <span class="p">(</span>big table<span class="p">)</span>
+</span><span id="__span-29-4"><a href="#__codelineno-29-4" id="__codelineno-29-4" name="__codelineno-29-4"></a>
+</span><span id="__span-29-5"><a href="#__codelineno-29-5" id="__codelineno-29-5" name="__codelineno-29-5"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">smarttab</span>:get<span class="p">())</span>
+</span><span id="__span-29-6"><a href="#__codelineno-29-6" id="__codelineno-29-6" name="__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a href="#__codelineno-29-7" id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="p">--&gt;</span> false
+</span><span id="__span-29-8"><a href="#__codelineno-29-8" id="__codelineno-29-8" name="__codelineno-29-8"></a>
+</span><span id="__span-29-9"><a href="#__codelineno-29-9" id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="k">vim</span>.print<span class="p">(</span><span class="k">vim</span>.<span class="k">opt</span>.<span class="nb">listchars</span>:get<span class="p">())</span>
+</span><span id="__span-29-10"><a href="#__codelineno-29-10" id="__codelineno-29-10" name="__codelineno-29-10"></a>
+</span><span id="__span-29-11"><a href="#__codelineno-29-11" id="__codelineno-29-11" name="__codelineno-29-11"></a><span class="p">--&gt;</span> { space <span class="p">=</span> <span class="s1">'_'</span><span class="p">,</span> <span class="k">tab</span> <span class="p">=</span> <span class="s1">'&gt;~'</span> }
 </span></code></pre></div>
 </div>
 </div>
@@ -2352,46 +2347,46 @@
 <div class="admonition abstract">
 <p>For example:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">smarttab</span> <span class="p">=</span> false <span class="p">--</span> :<span class="k">set</span> <span class="nb">nosmarttab</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">smarttab</span><span class="p">)</span>
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
-</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">--&gt;</span> false
-</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
-</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">listchars</span> <span class="p">=</span> <span class="s1">'space:_,tab:&gt;~'</span> <span class="p">--</span> :<span class="k">set</span> <span class="nb">listchars</span><span class="p">=</span><span class="s1">'space:_,tab:&gt;~'</span>
-</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
-</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">listchars</span><span class="p">)</span>
-</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>
-</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="p">--&gt;</span> <span class="s1">'space:_,tab:&gt;~'</span>
-</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>
-</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">isfname</span> <span class="p">=</span> <span class="k">vim</span>.<span class="k">o</span>.<span class="nb">isfname</span> .. <span class="s1">',@-@'</span> <span class="p">--</span> :<span class="k">set</span> <span class="nb">isfname</span><span class="p">+=</span>@<span class="p">-</span>@
-</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>
-</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">isfname</span><span class="p">)</span>
-</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>
-</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="p">--&gt;</span> <span class="s1">'@,48-57,/,.,-,_,+,,,#,$,%,~,=,@-@'</span>
-</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>
-</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a><span class="k">vim</span>.<span class="k">bo</span>.<span class="nb">shiftwidth</span> <span class="p">=</span> <span class="m">4</span> <span class="p">--</span> :<span class="k">setlocal</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span>
-</span><span id="__span-30-20"><a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>
-</span><span id="__span-30-21"><a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">bo</span>.<span class="nb">shiftwidth</span><span class="p">)</span>
-</span><span id="__span-30-22"><a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a>
-</span><span id="__span-30-23"><a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a><span class="p">--&gt;</span> <span class="m">4</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-30-1"><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">smarttab</span> <span class="p">=</span> false <span class="p">--</span> :<span class="k">set</span> <span class="nb">nosmarttab</span>
+</span><span id="__span-30-2"><a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a>
+</span><span id="__span-30-3"><a href="#__codelineno-30-3" id="__codelineno-30-3" name="__codelineno-30-3"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">smarttab</span><span class="p">)</span>
+</span><span id="__span-30-4"><a href="#__codelineno-30-4" id="__codelineno-30-4" name="__codelineno-30-4"></a>
+</span><span id="__span-30-5"><a href="#__codelineno-30-5" id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="p">--&gt;</span> false
+</span><span id="__span-30-6"><a href="#__codelineno-30-6" id="__codelineno-30-6" name="__codelineno-30-6"></a>
+</span><span id="__span-30-7"><a href="#__codelineno-30-7" id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">listchars</span> <span class="p">=</span> <span class="s1">'space:_,tab:&gt;~'</span> <span class="p">--</span> :<span class="k">set</span> <span class="nb">listchars</span><span class="p">=</span><span class="s1">'space:_,tab:&gt;~'</span>
+</span><span id="__span-30-8"><a href="#__codelineno-30-8" id="__codelineno-30-8" name="__codelineno-30-8"></a>
+</span><span id="__span-30-9"><a href="#__codelineno-30-9" id="__codelineno-30-9" name="__codelineno-30-9"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">listchars</span><span class="p">)</span>
+</span><span id="__span-30-10"><a href="#__codelineno-30-10" id="__codelineno-30-10" name="__codelineno-30-10"></a>
+</span><span id="__span-30-11"><a href="#__codelineno-30-11" id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="p">--&gt;</span> <span class="s1">'space:_,tab:&gt;~'</span>
+</span><span id="__span-30-12"><a href="#__codelineno-30-12" id="__codelineno-30-12" name="__codelineno-30-12"></a>
+</span><span id="__span-30-13"><a href="#__codelineno-30-13" id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">isfname</span> <span class="p">=</span> <span class="k">vim</span>.<span class="k">o</span>.<span class="nb">isfname</span> .. <span class="s1">',@-@'</span> <span class="p">--</span> :<span class="k">set</span> <span class="nb">isfname</span><span class="p">+=</span>@<span class="p">-</span>@
+</span><span id="__span-30-14"><a href="#__codelineno-30-14" id="__codelineno-30-14" name="__codelineno-30-14"></a>
+</span><span id="__span-30-15"><a href="#__codelineno-30-15" id="__codelineno-30-15" name="__codelineno-30-15"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">o</span>.<span class="nb">isfname</span><span class="p">)</span>
+</span><span id="__span-30-16"><a href="#__codelineno-30-16" id="__codelineno-30-16" name="__codelineno-30-16"></a>
+</span><span id="__span-30-17"><a href="#__codelineno-30-17" id="__codelineno-30-17" name="__codelineno-30-17"></a><span class="p">--&gt;</span> <span class="s1">'@,48-57,/,.,-,_,+,,,#,$,%,~,=,@-@'</span>
+</span><span id="__span-30-18"><a href="#__codelineno-30-18" id="__codelineno-30-18" name="__codelineno-30-18"></a>
+</span><span id="__span-30-19"><a href="#__codelineno-30-19" id="__codelineno-30-19" name="__codelineno-30-19"></a><span class="k">vim</span>.<span class="k">bo</span>.<span class="nb">shiftwidth</span> <span class="p">=</span> <span class="m">4</span> <span class="p">--</span> :<span class="k">setlocal</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span>
+</span><span id="__span-30-20"><a href="#__codelineno-30-20" id="__codelineno-30-20" name="__codelineno-30-20"></a>
+</span><span id="__span-30-21"><a href="#__codelineno-30-21" id="__codelineno-30-21" name="__codelineno-30-21"></a>print<span class="p">(</span><span class="k">vim</span>.<span class="k">bo</span>.<span class="nb">shiftwidth</span><span class="p">)</span>
+</span><span id="__span-30-22"><a href="#__codelineno-30-22" id="__codelineno-30-22" name="__codelineno-30-22"></a>
+</span><span id="__span-30-23"><a href="#__codelineno-30-23" id="__codelineno-30-23" name="__codelineno-30-23"></a><span class="p">--&gt;</span> <span class="m">4</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Just like variables, you can specify a buffer number or <a href="https://neovim.io/doc/user/windows/#window-ID">window-ID</a> for buffer and window options, respectively. If no number is given, the current buffer or window is used:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">vim</span>.<span class="k">bo</span>[<span class="m">4</span>].<span class="nb">expandtab</span> <span class="p">=</span> true  <span class="p">--</span> sets <span class="nb">expandtab</span> <span class="k">to</span> true <span class="k">in</span> buffer <span class="m">4</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="k">vim</span>.wo.<span class="k">number</span> <span class="p">=</span> true        <span class="p">--</span> sets <span class="k">number</span> <span class="k">to</span> true <span class="k">in</span> current <span class="nb">window</span>
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="k">vim</span>.wo[<span class="m">0</span>].<span class="k">number</span> <span class="p">=</span> true     <span class="p">--</span> same <span class="k">as</span> <span class="k">above</span>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="k">vim</span>.wo[<span class="m">0</span>].<span class="k">number</span> <span class="p">=</span> true     <span class="p">--</span> sets <span class="k">number</span> <span class="k">to</span> true <span class="k">in</span> current buffer
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
-</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>                            <span class="p">--</span> <span class="k">in</span> current <span class="nb">window</span> <span class="k">only</span>
-</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>
-</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>print<span class="p">(</span><span class="k">vim</span>.wo[].<span class="k">number</span><span class="p">)</span>      <span class="p">--&gt;</span> true
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-31-1"><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">vim</span>.<span class="k">bo</span>[<span class="m">4</span>].<span class="nb">expandtab</span> <span class="p">=</span> true  <span class="p">--</span> sets <span class="nb">expandtab</span> <span class="k">to</span> true <span class="k">in</span> buffer <span class="m">4</span>
+</span><span id="__span-31-2"><a href="#__codelineno-31-2" id="__codelineno-31-2" name="__codelineno-31-2"></a>
+</span><span id="__span-31-3"><a href="#__codelineno-31-3" id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="k">vim</span>.wo.<span class="k">number</span> <span class="p">=</span> true        <span class="p">--</span> sets <span class="k">number</span> <span class="k">to</span> true <span class="k">in</span> current <span class="nb">window</span>
+</span><span id="__span-31-4"><a href="#__codelineno-31-4" id="__codelineno-31-4" name="__codelineno-31-4"></a>
+</span><span id="__span-31-5"><a href="#__codelineno-31-5" id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="k">vim</span>.wo[<span class="m">0</span>].<span class="k">number</span> <span class="p">=</span> true     <span class="p">--</span> same <span class="k">as</span> <span class="k">above</span>
+</span><span id="__span-31-6"><a href="#__codelineno-31-6" id="__codelineno-31-6" name="__codelineno-31-6"></a>
+</span><span id="__span-31-7"><a href="#__codelineno-31-7" id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="k">vim</span>.wo[<span class="m">0</span>].<span class="k">number</span> <span class="p">=</span> true     <span class="p">--</span> sets <span class="k">number</span> <span class="k">to</span> true <span class="k">in</span> current buffer
+</span><span id="__span-31-8"><a href="#__codelineno-31-8" id="__codelineno-31-8" name="__codelineno-31-8"></a>
+</span><span id="__span-31-9"><a href="#__codelineno-31-9" id="__codelineno-31-9" name="__codelineno-31-9"></a>                            <span class="p">--</span> <span class="k">in</span> current <span class="nb">window</span> <span class="k">only</span>
+</span><span id="__span-31-10"><a href="#__codelineno-31-10" id="__codelineno-31-10" name="__codelineno-31-10"></a>
+</span><span id="__span-31-11"><a href="#__codelineno-31-11" id="__codelineno-31-11" name="__codelineno-31-11"></a>print<span class="p">(</span><span class="k">vim</span>.wo[].<span class="k">number</span><span class="p">)</span>      <span class="p">--&gt;</span> true
 </span></code></pre></div>
 </div>
 </div>
@@ -2419,35 +2414,35 @@
 <p>• {rhs} is either a string with a Vim command or a Lua function that should be executed when the {lhs} is entered.  An empty string is equivalent to <a href="https://neovim.io/doc/user/intro/#%3CNop%3E"><nop></nop></a>, which disables a key.</p>
 <div class="admonition desc">
 <p>Examples:</p>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">--</span> Normal <span class="k">mode</span> mapping <span class="k">for</span> Vim command
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex1'</span><span class="p">,</span> <span class="s1">'&lt;cmd&gt;echo "Example 1"&lt;cr&gt;'</span><span class="p">)</span>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
-</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="p">--</span> Normal and Command<span class="p">-</span>line <span class="k">mode</span> mapping <span class="k">for</span> Vim command
-</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
-</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span>{<span class="s1">'n'</span><span class="p">,</span> <span class="s1">'c'</span>}<span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex2'</span><span class="p">,</span> <span class="s1">'&lt;cmd&gt;echo "Example 2"&lt;cr&gt;'</span><span class="p">)</span>
-</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
-</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="p">--</span> Normal <span class="k">mode</span> mapping <span class="k">for</span> Lua <span class="k">function</span>
-</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>
-</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex3'</span><span class="p">,</span> <span class="k">vim</span>.treesitter.<span class="k">start</span><span class="p">)</span>
-</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>
-</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="p">--</span> Normal <span class="k">mode</span> mapping <span class="k">for</span> Lua <span class="k">function</span> with arguments
-</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>
-</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex4'</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s1">'Example 4'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-32-1"><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="p">--</span> Normal <span class="k">mode</span> mapping <span class="k">for</span> Vim command
+</span><span id="__span-32-2"><a href="#__codelineno-32-2" id="__codelineno-32-2" name="__codelineno-32-2"></a>
+</span><span id="__span-32-3"><a href="#__codelineno-32-3" id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex1'</span><span class="p">,</span> <span class="s1">'&lt;cmd&gt;echo "Example 1"&lt;cr&gt;'</span><span class="p">)</span>
+</span><span id="__span-32-4"><a href="#__codelineno-32-4" id="__codelineno-32-4" name="__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a href="#__codelineno-32-5" id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="p">--</span> Normal and Command<span class="p">-</span>line <span class="k">mode</span> mapping <span class="k">for</span> Vim command
+</span><span id="__span-32-6"><a href="#__codelineno-32-6" id="__codelineno-32-6" name="__codelineno-32-6"></a>
+</span><span id="__span-32-7"><a href="#__codelineno-32-7" id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span>{<span class="s1">'n'</span><span class="p">,</span> <span class="s1">'c'</span>}<span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex2'</span><span class="p">,</span> <span class="s1">'&lt;cmd&gt;echo "Example 2"&lt;cr&gt;'</span><span class="p">)</span>
+</span><span id="__span-32-8"><a href="#__codelineno-32-8" id="__codelineno-32-8" name="__codelineno-32-8"></a>
+</span><span id="__span-32-9"><a href="#__codelineno-32-9" id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="p">--</span> Normal <span class="k">mode</span> mapping <span class="k">for</span> Lua <span class="k">function</span>
+</span><span id="__span-32-10"><a href="#__codelineno-32-10" id="__codelineno-32-10" name="__codelineno-32-10"></a>
+</span><span id="__span-32-11"><a href="#__codelineno-32-11" id="__codelineno-32-11" name="__codelineno-32-11"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex3'</span><span class="p">,</span> <span class="k">vim</span>.treesitter.<span class="k">start</span><span class="p">)</span>
+</span><span id="__span-32-12"><a href="#__codelineno-32-12" id="__codelineno-32-12" name="__codelineno-32-12"></a>
+</span><span id="__span-32-13"><a href="#__codelineno-32-13" id="__codelineno-32-13" name="__codelineno-32-13"></a><span class="p">--</span> Normal <span class="k">mode</span> mapping <span class="k">for</span> Lua <span class="k">function</span> with arguments
+</span><span id="__span-32-14"><a href="#__codelineno-32-14" id="__codelineno-32-14" name="__codelineno-32-14"></a>
+</span><span id="__span-32-15"><a href="#__codelineno-32-15" id="__codelineno-32-15" name="__codelineno-32-15"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex4'</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s1">'Example 4'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>You can map functions from Lua modules via:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-33-1"><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Note that this loads the plugin at the time the mapping is defined. If you want to defer the loading to the time when the mapping is executed (as for <a href="https://neovim.io/doc/user/userfunc/#autoload">autoload</a> functions), wrap it in <code>function() end</code>:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl2'</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">()</span> <span class="k">end</span><span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-34-1"><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl2'</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">()</span> <span class="k">end</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2455,60 +2450,60 @@
 <p>The fourth, optional, argument is a table with keys that modify the behavior of the mapping such as those from <a href="https://neovim.io/doc/user/map/#%3Amap-arguments">:map-arguments</a>. The following are the most useful options:</p>
 <p>• <code>buf</code>: If given, only set the mapping for the buffer with the specified number; <code>0</code> or <code>true</code> means the current buffer.</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">--</span> <span class="k">set</span> mapping <span class="k">for</span> the current buffer
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">,</span> { <span class="k">buf</span> <span class="p">=</span> <span class="m">0</span> }<span class="p">)</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="p">--</span> <span class="k">set</span> mapping <span class="k">for</span> the buffer <span class="k">number</span> <span class="m">4</span>
-</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
-</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">,</span> { <span class="k">buf</span> <span class="p">=</span> <span class="m">4</span> }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-35-1"><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="p">--</span> <span class="k">set</span> mapping <span class="k">for</span> the current buffer
+</span><span id="__span-35-2"><a href="#__codelineno-35-2" id="__codelineno-35-2" name="__codelineno-35-2"></a>
+</span><span id="__span-35-3"><a href="#__codelineno-35-3" id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">,</span> { <span class="k">buf</span> <span class="p">=</span> <span class="m">0</span> }<span class="p">)</span>
+</span><span id="__span-35-4"><a href="#__codelineno-35-4" id="__codelineno-35-4" name="__codelineno-35-4"></a>
+</span><span id="__span-35-5"><a href="#__codelineno-35-5" id="__codelineno-35-5" name="__codelineno-35-5"></a><span class="p">--</span> <span class="k">set</span> mapping <span class="k">for</span> the buffer <span class="k">number</span> <span class="m">4</span>
+</span><span id="__span-35-6"><a href="#__codelineno-35-6" id="__codelineno-35-6" name="__codelineno-35-6"></a>
+</span><span id="__span-35-7"><a href="#__codelineno-35-7" id="__codelineno-35-7" name="__codelineno-35-7"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">,</span> { <span class="k">buf</span> <span class="p">=</span> <span class="m">4</span> }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>• <code>silent</code>: If set to <code>true</code>, suppress output such as error messages.</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">,</span> { <span class="k">silent</span> <span class="p">=</span> true }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-36-1"><a href="#__codelineno-36-1" id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">,</span> { <span class="k">silent</span> <span class="p">=</span> true }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>• <code>expr</code>: If set to <code>true</code>, do not execute the {rhs} but use the return value as input. Special <a href="https://neovim.io/doc/user/intro/#keycodes">keycodes</a> are converted automatically. For example, the following mapping replaces <down> with <c-n> in the popupmenu only:</c-n></down></p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'&lt;down&gt;'</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>  <span class="k">if</span> <span class="k">vim</span>.fn.pumvisible<span class="p">()</span> <span class="p">==</span> <span class="m">1</span> then <span class="k">return</span> <span class="s1">'&lt;c-n&gt;'</span> <span class="k">end</span>
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>  <span class="k">return</span> <span class="s1">'&lt;down&gt;'</span>
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
-</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="k">end</span><span class="p">,</span> { expr <span class="p">=</span> true }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-37-1"><a href="#__codelineno-37-1" id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'&lt;down&gt;'</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+</span><span id="__span-37-2"><a href="#__codelineno-37-2" id="__codelineno-37-2" name="__codelineno-37-2"></a>
+</span><span id="__span-37-3"><a href="#__codelineno-37-3" id="__codelineno-37-3" name="__codelineno-37-3"></a>  <span class="k">if</span> <span class="k">vim</span>.fn.pumvisible<span class="p">()</span> <span class="p">==</span> <span class="m">1</span> then <span class="k">return</span> <span class="s1">'&lt;c-n&gt;'</span> <span class="k">end</span>
+</span><span id="__span-37-4"><a href="#__codelineno-37-4" id="__codelineno-37-4" name="__codelineno-37-4"></a>
+</span><span id="__span-37-5"><a href="#__codelineno-37-5" id="__codelineno-37-5" name="__codelineno-37-5"></a>  <span class="k">return</span> <span class="s1">'&lt;down&gt;'</span>
+</span><span id="__span-37-6"><a href="#__codelineno-37-6" id="__codelineno-37-6" name="__codelineno-37-6"></a>
+</span><span id="__span-37-7"><a href="#__codelineno-37-7" id="__codelineno-37-7" name="__codelineno-37-7"></a><span class="k">end</span><span class="p">,</span> { expr <span class="p">=</span> true }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p><code>desc</code>: A string that is shown when listing mappings with, e.g., <a href="https://neovim.io/doc/user/map/#%3Amap">:map</a>. This is useful since Lua functions as {rhs} are otherwise only listed as <code>Lua: &lt;number&gt; &lt;source file&gt;:&lt;line&gt;</code>. Plugins should therefore always use this for mappings they create.</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">,</span>
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>  { desc <span class="p">=</span> <span class="s1">'Execute action from plugin'</span> }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-38-1"><a href="#__codelineno-38-1" id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;pl1'</span><span class="p">,</span> require<span class="p">(</span><span class="s1">'plugin'</span><span class="p">)</span>.action<span class="p">,</span>
+</span><span id="__span-38-2"><a href="#__codelineno-38-2" id="__codelineno-38-2" name="__codelineno-38-2"></a>
+</span><span id="__span-38-3"><a href="#__codelineno-38-3" id="__codelineno-38-3" name="__codelineno-38-3"></a>  { desc <span class="p">=</span> <span class="s1">'Execute action from plugin'</span> }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>• <code>remap</code>: By default, all mappings are nonrecursive (i.e., <a href="https://neovim.io/doc/user/lua/#vim.keymap.set()">vim.keymap.set()</a> behaves like <a href="https://neovim.io/doc/user/map/#%3Anoremap">:noremap</a>). If the {rhs} is itself a mapping that should be executed, set <code>remap = true</code>: </p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex1'</span><span class="p">,</span> <span class="s1">'&lt;cmd&gt;echo "Example 1"&lt;cr&gt;'</span><span class="p">)</span>
-</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="p">--</span> add <span class="k">a</span> shorter mapping
-</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>
-</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex1'</span><span class="p">,</span> { <span class="nb">remap</span> <span class="p">=</span> true }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-39-1"><a href="#__codelineno-39-1" id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex1'</span><span class="p">,</span> <span class="s1">'&lt;cmd&gt;echo "Example 1"&lt;cr&gt;'</span><span class="p">)</span>
+</span><span id="__span-39-2"><a href="#__codelineno-39-2" id="__codelineno-39-2" name="__codelineno-39-2"></a>
+</span><span id="__span-39-3"><a href="#__codelineno-39-3" id="__codelineno-39-3" name="__codelineno-39-3"></a><span class="p">--</span> add <span class="k">a</span> shorter mapping
+</span><span id="__span-39-4"><a href="#__codelineno-39-4" id="__codelineno-39-4" name="__codelineno-39-4"></a>
+</span><span id="__span-39-5"><a href="#__codelineno-39-5" id="__codelineno-39-5" name="__codelineno-39-5"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex1'</span><span class="p">,</span> { <span class="nb">remap</span> <span class="p">=</span> true }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Note: <a href="https://neovim.io/doc/user/map/#%3CPlug%3E"><plug></plug></a> mappings are always expanded even with the default <code>remap = false</code>:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'[%'</span><span class="p">,</span> <span class="s1">'&lt;Plug&gt;(MatchitNormalMultiBackward)'</span><span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-40-1"><a href="#__codelineno-40-1" id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'[%'</span><span class="p">,</span> <span class="s1">'&lt;Plug&gt;(MatchitNormalMultiBackward)'</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2519,9 +2514,9 @@
 <div class="admonition abstract">
 <p>A specific mapping can be removed with |vim.keymap.del()|:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">del</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex1'</span><span class="p">)</span>
-</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">del</span><span class="p">(</span>{<span class="s1">'n'</span><span class="p">,</span> <span class="s1">'c'</span>}<span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex2'</span><span class="p">,</span> { <span class="k">buf</span> <span class="p">=</span> <span class="m">0</span> }<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-41-1"><a href="#__codelineno-41-1" id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">del</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex1'</span><span class="p">)</span>
+</span><span id="__span-41-2"><a href="#__codelineno-41-2" id="__codelineno-41-2" name="__codelineno-41-2"></a>
+</span><span id="__span-41-3"><a href="#__codelineno-41-3" id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">del</span><span class="p">(</span>{<span class="s1">'n'</span><span class="p">,</span> <span class="s1">'c'</span>}<span class="p">,</span> <span class="s1">'&lt;Leader&gt;ex2'</span><span class="p">,</span> { <span class="k">buf</span> <span class="p">=</span> <span class="m">0</span> }<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2556,30 +2551,30 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
 <div class="admonition abstract">
 <p>Examples:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span>{<span class="s2">"BufEnter"</span><span class="p">,</span> <span class="s2">"BufWinEnter"</span>}<span class="p">,</span> {
-</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>  pattern <span class="p">=</span> {<span class="s2">"*.c"</span><span class="p">,</span> <span class="s2">"*.h"</span>}<span class="p">,</span>
-</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>  command <span class="p">=</span> <span class="s2">"echo 'Entering a C or C++ file'"</span><span class="p">,</span>
-</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>}<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-42-1"><a href="#__codelineno-42-1" id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span>{<span class="s2">"BufEnter"</span><span class="p">,</span> <span class="s2">"BufWinEnter"</span>}<span class="p">,</span> {
+</span><span id="__span-42-2"><a href="#__codelineno-42-2" id="__codelineno-42-2" name="__codelineno-42-2"></a>  pattern <span class="p">=</span> {<span class="s2">"*.c"</span><span class="p">,</span> <span class="s2">"*.h"</span>}<span class="p">,</span>
+</span><span id="__span-42-3"><a href="#__codelineno-42-3" id="__codelineno-42-3" name="__codelineno-42-3"></a>  command <span class="p">=</span> <span class="s2">"echo 'Entering a C or C++ file'"</span><span class="p">,</span>
+</span><span id="__span-42-4"><a href="#__codelineno-42-4" id="__codelineno-42-4" name="__codelineno-42-4"></a>}<span class="p">)</span>
 </span></code></pre></div>
 </div>
 <hr>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="p">--</span> Same autocommand written with <span class="k">a</span> Lua <span class="k">function</span> instead
-</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
-</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span>{<span class="s2">"BufEnter"</span><span class="p">,</span> <span class="s2">"BufWinEnter"</span>}<span class="p">,</span> {
-</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>  pattern <span class="p">=</span> {<span class="s2">"*.c"</span><span class="p">,</span> <span class="s2">"*.h"</span>}<span class="p">,</span>
-</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s2">"Entering a C or C++ file"</span><span class="p">)</span> <span class="k">end</span><span class="p">,</span>
-</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>}<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-43-1"><a href="#__codelineno-43-1" id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="p">--</span> Same autocommand written with <span class="k">a</span> Lua <span class="k">function</span> instead
+</span><span id="__span-43-2"><a href="#__codelineno-43-2" id="__codelineno-43-2" name="__codelineno-43-2"></a>
+</span><span id="__span-43-3"><a href="#__codelineno-43-3" id="__codelineno-43-3" name="__codelineno-43-3"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span>{<span class="s2">"BufEnter"</span><span class="p">,</span> <span class="s2">"BufWinEnter"</span>}<span class="p">,</span> {
+</span><span id="__span-43-4"><a href="#__codelineno-43-4" id="__codelineno-43-4" name="__codelineno-43-4"></a>  pattern <span class="p">=</span> {<span class="s2">"*.c"</span><span class="p">,</span> <span class="s2">"*.h"</span>}<span class="p">,</span>
+</span><span id="__span-43-5"><a href="#__codelineno-43-5" id="__codelineno-43-5" name="__codelineno-43-5"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s2">"Entering a C or C++ file"</span><span class="p">)</span> <span class="k">end</span><span class="p">,</span>
+</span><span id="__span-43-6"><a href="#__codelineno-43-6" id="__codelineno-43-6" name="__codelineno-43-6"></a>}<span class="p">)</span>
 </span></code></pre></div>
 </div>
 <hr>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="p">--</span> <span class="nb">User</span> <span class="nb">event</span> triggered by MyPlugin
-</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
-</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s2">"User"</span><span class="p">,</span> {
-</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>  pattern <span class="p">=</span> <span class="s2">"MyPlugin"</span><span class="p">,</span>
-</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s2">"My Plugin Works!"</span><span class="p">)</span> <span class="k">end</span><span class="p">,</span>
-</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>}<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-44-1"><a href="#__codelineno-44-1" id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="p">--</span> <span class="nb">User</span> <span class="nb">event</span> triggered by MyPlugin
+</span><span id="__span-44-2"><a href="#__codelineno-44-2" id="__codelineno-44-2" name="__codelineno-44-2"></a>
+</span><span id="__span-44-3"><a href="#__codelineno-44-3" id="__codelineno-44-3" name="__codelineno-44-3"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s2">"User"</span><span class="p">,</span> {
+</span><span id="__span-44-4"><a href="#__codelineno-44-4" id="__codelineno-44-4" name="__codelineno-44-4"></a>  pattern <span class="p">=</span> <span class="s2">"MyPlugin"</span><span class="p">,</span>
+</span><span id="__span-44-5"><a href="#__codelineno-44-5" id="__codelineno-44-5" name="__codelineno-44-5"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s2">"My Plugin Works!"</span><span class="p">)</span> <span class="k">end</span><span class="p">,</span>
+</span><span id="__span-44-6"><a href="#__codelineno-44-6" id="__codelineno-44-6" name="__codelineno-44-6"></a>}<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2591,22 +2586,22 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
 <p>• <code>data</code>:  a table with other relevant data that is passed for some events</p>
 <div class="admonition desc">
 <p>For example, this allows you to set buffer-local mappings for some filetypes:</p>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s2">"FileType"</span><span class="p">,</span> {
-</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>  pattern <span class="p">=</span> <span class="s2">"lua"</span><span class="p">,</span>
-</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">(</span>ev<span class="p">)</span>
-</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'K'</span><span class="p">,</span> <span class="k">vim</span>.<span class="nb">lsp</span>.<span class="k">buf</span>.hover<span class="p">,</span> { <span class="k">buf</span> <span class="p">=</span> ev.<span class="k">buf</span> }<span class="p">)</span>
-</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="k">end</span>
-</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>}<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-45-1"><a href="#__codelineno-45-1" id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s2">"FileType"</span><span class="p">,</span> {
+</span><span id="__span-45-2"><a href="#__codelineno-45-2" id="__codelineno-45-2" name="__codelineno-45-2"></a>  pattern <span class="p">=</span> <span class="s2">"lua"</span><span class="p">,</span>
+</span><span id="__span-45-3"><a href="#__codelineno-45-3" id="__codelineno-45-3" name="__codelineno-45-3"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">(</span>ev<span class="p">)</span>
+</span><span id="__span-45-4"><a href="#__codelineno-45-4" id="__codelineno-45-4" name="__codelineno-45-4"></a><span class="k">vim</span>.<span class="nb">keymap</span>.<span class="k">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'K'</span><span class="p">,</span> <span class="k">vim</span>.<span class="nb">lsp</span>.<span class="k">buf</span>.hover<span class="p">,</span> { <span class="k">buf</span> <span class="p">=</span> ev.<span class="k">buf</span> }<span class="p">)</span>
+</span><span id="__span-45-5"><a href="#__codelineno-45-5" id="__codelineno-45-5" name="__codelineno-45-5"></a><span class="k">end</span>
+</span><span id="__span-45-6"><a href="#__codelineno-45-6" id="__codelineno-45-6" name="__codelineno-45-6"></a>}<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>This means that if your callback itself takes an (even optional) argument, you must wrap it in <code>function() end</code> to avoid an error:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s1">'TextYankPost'</span><span class="p">,</span> {
-</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>
-</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> <span class="k">vim</span>.<span class="nb">hl</span>.hl_op<span class="p">()</span> <span class="k">end</span>
-</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>}<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-46-1"><a href="#__codelineno-46-1" id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s1">'TextYankPost'</span><span class="p">,</span> {
+</span><span id="__span-46-2"><a href="#__codelineno-46-2" id="__codelineno-46-2" name="__codelineno-46-2"></a>
+</span><span id="__span-46-3"><a href="#__codelineno-46-3" id="__codelineno-46-3" name="__codelineno-46-3"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> <span class="k">vim</span>.<span class="nb">hl</span>.hl_op<span class="p">()</span> <span class="k">end</span>
+</span><span id="__span-46-4"><a href="#__codelineno-46-4" id="__codelineno-46-4" name="__codelineno-46-4"></a>}<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2614,32 +2609,32 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
 <p>(Since unused arguments can be omitted in Lua function definitions, this is equivalent to <code>function(args) ... end</code>.)</p>
 <p>Instead of using a pattern, you can create a buffer-local autocommand (see <a href="https://neovim.io/doc/user/autocmd/#autocmd-buflocal">autocmd-buflocal</a>) with <code>buffer</code>; in this case, <code>pattern</code> cannot be used:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="p">--</span> <span class="k">set</span> autocommand <span class="k">for</span> current buffer
-</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>
-</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s2">"CursorHold"</span><span class="p">,</span> {
-</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>  buffer <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
-</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s2">"hold"</span><span class="p">)</span> <span class="k">end</span><span class="p">,</span>
-</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>}<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-47-1"><a href="#__codelineno-47-1" id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="p">--</span> <span class="k">set</span> autocommand <span class="k">for</span> current buffer
+</span><span id="__span-47-2"><a href="#__codelineno-47-2" id="__codelineno-47-2" name="__codelineno-47-2"></a>
+</span><span id="__span-47-3"><a href="#__codelineno-47-3" id="__codelineno-47-3" name="__codelineno-47-3"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s2">"CursorHold"</span><span class="p">,</span> {
+</span><span id="__span-47-4"><a href="#__codelineno-47-4" id="__codelineno-47-4" name="__codelineno-47-4"></a>  buffer <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+</span><span id="__span-47-5"><a href="#__codelineno-47-5" id="__codelineno-47-5" name="__codelineno-47-5"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s2">"hold"</span><span class="p">)</span> <span class="k">end</span><span class="p">,</span>
+</span><span id="__span-47-6"><a href="#__codelineno-47-6" id="__codelineno-47-6" name="__codelineno-47-6"></a>}<span class="p">)</span>
 </span></code></pre></div>
 </div>
 <hr>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="p">--</span> <span class="k">set</span> autocommand <span class="k">for</span> buffer <span class="k">number</span> <span class="m">33</span>
-</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>
-</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s2">"CursorHold"</span><span class="p">,</span> {
-</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>  buffer <span class="p">=</span> <span class="m">33</span><span class="p">,</span>
-</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s2">"hold"</span><span class="p">)</span> <span class="k">end</span><span class="p">,</span>
-</span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>}<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-48-1"><a href="#__codelineno-48-1" id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="p">--</span> <span class="k">set</span> autocommand <span class="k">for</span> buffer <span class="k">number</span> <span class="m">33</span>
+</span><span id="__span-48-2"><a href="#__codelineno-48-2" id="__codelineno-48-2" name="__codelineno-48-2"></a>
+</span><span id="__span-48-3"><a href="#__codelineno-48-3" id="__codelineno-48-3" name="__codelineno-48-3"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s2">"CursorHold"</span><span class="p">,</span> {
+</span><span id="__span-48-4"><a href="#__codelineno-48-4" id="__codelineno-48-4" name="__codelineno-48-4"></a>  buffer <span class="p">=</span> <span class="m">33</span><span class="p">,</span>
+</span><span id="__span-48-5"><a href="#__codelineno-48-5" id="__codelineno-48-5" name="__codelineno-48-5"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> print<span class="p">(</span><span class="s2">"hold"</span><span class="p">)</span> <span class="k">end</span><span class="p">,</span>
+</span><span id="__span-48-6"><a href="#__codelineno-48-6" id="__codelineno-48-6" name="__codelineno-48-6"></a>}<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Similarly to mappings, you can (and should) add a description using <code>desc</code>:</p>
 <div class="admonition desc">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s1">'TextYankPost'</span><span class="p">,</span> {
-</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> <span class="k">vim</span>.<span class="nb">hl</span>.hl_op<span class="p">()</span> <span class="k">end</span><span class="p">,</span>
-</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>  desc <span class="p">=</span> <span class="s2">"Briefly highlight yanked text"</span>
-</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>}<span class="p">)</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-49-1"><a href="#__codelineno-49-1" id="__codelineno-49-1" name="__codelineno-49-1"></a><span class="k">vim</span>.api.nvim_create_autocmd<span class="p">(</span><span class="s1">'TextYankPost'</span><span class="p">,</span> {
+</span><span id="__span-49-2"><a href="#__codelineno-49-2" id="__codelineno-49-2" name="__codelineno-49-2"></a>  callback <span class="p">=</span> <span class="k">function</span><span class="p">()</span> <span class="k">vim</span>.<span class="nb">hl</span>.hl_op<span class="p">()</span> <span class="k">end</span><span class="p">,</span>
+</span><span id="__span-49-3"><a href="#__codelineno-49-3" id="__codelineno-49-3" name="__codelineno-49-3"></a>  desc <span class="p">=</span> <span class="s2">"Briefly highlight yanked text"</span>
+</span><span id="__span-49-4"><a href="#__codelineno-49-4" id="__codelineno-49-4" name="__codelineno-49-4"></a>}<span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2655,59 +2650,59 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
 <p>Groups can be created with <code>vim.api.</code>|nvim_create_augroup()|. This function takes two mandatory arguments: a string with the name of a group and a table determining whether the group should be cleared (i.e., all grouped autocommands removed) if it already exists. The function returns a number that is the internal identifier of the group. Groups can be specified either by this identifier or by the name (but only if the group has been created first).</p>
 <div class="admonition desc">
 <p>For example, a common Vimscript pattern for autocommands defined in files that may be reloaded is:</p>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>augroup vimrc
-</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>
-</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="c">  " Remove all vimrc autocommands</span>
-</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>
-</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>  autocmd<span class="p">!</span>
-</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>
-</span><span id="__span-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>  <span class="k">au</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.html <span class="k">set</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span>
-</span><span id="__span-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a>
-</span><span id="__span-50-9"><a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a>  <span class="k">au</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.html <span class="k">set</span> <span class="nb">expandtab</span>
-</span><span id="__span-50-10"><a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a>
-</span><span id="__span-50-11"><a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a>augroup END
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-50-1"><a href="#__codelineno-50-1" id="__codelineno-50-1" name="__codelineno-50-1"></a>augroup vimrc
+</span><span id="__span-50-2"><a href="#__codelineno-50-2" id="__codelineno-50-2" name="__codelineno-50-2"></a>
+</span><span id="__span-50-3"><a href="#__codelineno-50-3" id="__codelineno-50-3" name="__codelineno-50-3"></a><span class="c">  " Remove all vimrc autocommands</span>
+</span><span id="__span-50-4"><a href="#__codelineno-50-4" id="__codelineno-50-4" name="__codelineno-50-4"></a>
+</span><span id="__span-50-5"><a href="#__codelineno-50-5" id="__codelineno-50-5" name="__codelineno-50-5"></a>  autocmd<span class="p">!</span>
+</span><span id="__span-50-6"><a href="#__codelineno-50-6" id="__codelineno-50-6" name="__codelineno-50-6"></a>
+</span><span id="__span-50-7"><a href="#__codelineno-50-7" id="__codelineno-50-7" name="__codelineno-50-7"></a>  <span class="k">au</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.html <span class="k">set</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span>
+</span><span id="__span-50-8"><a href="#__codelineno-50-8" id="__codelineno-50-8" name="__codelineno-50-8"></a>
+</span><span id="__span-50-9"><a href="#__codelineno-50-9" id="__codelineno-50-9" name="__codelineno-50-9"></a>  <span class="k">au</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.html <span class="k">set</span> <span class="nb">expandtab</span>
+</span><span id="__span-50-10"><a href="#__codelineno-50-10" id="__codelineno-50-10" name="__codelineno-50-10"></a>
+</span><span id="__span-50-11"><a href="#__codelineno-50-11" id="__codelineno-50-11" name="__codelineno-50-11"></a>augroup END
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>This is equivalent to the following Lua code:</p>
 <div class="admonition desc">
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">mygroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_augroup</span><span class="p">(</span><span class="s1">'vimrc'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">clear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">})</span>
-</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>
-</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_autocmd</span><span class="p">({</span><span class="w"> </span><span class="s1">'BufNewFile'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BufRead'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>
-</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="w">  </span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'*.html'</span><span class="p">,</span>
-</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="w">  </span><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mygroup</span><span class="p">,</span>
-</span><span id="__span-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="w">  </span><span class="nv">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'set shiftwidth=4'</span><span class="p">,</span>
-</span><span id="__span-51-8"><a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a>
-</span><span id="__span-51-9"><a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a><span class="p">})</span>
-</span><span id="__span-51-10"><a id="__codelineno-51-10" name="__codelineno-51-10" href="#__codelineno-51-10"></a>
-</span><span id="__span-51-11"><a id="__codelineno-51-11" name="__codelineno-51-11" href="#__codelineno-51-11"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_autocmd</span><span class="p">({</span><span class="w"> </span><span class="s1">'BufNewFile'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BufRead'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-51-12"><a id="__codelineno-51-12" name="__codelineno-51-12" href="#__codelineno-51-12"></a>
-</span><span id="__span-51-13"><a id="__codelineno-51-13" name="__codelineno-51-13" href="#__codelineno-51-13"></a><span class="w">  </span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'*.html'</span><span class="p">,</span>
-</span><span id="__span-51-14"><a id="__codelineno-51-14" name="__codelineno-51-14" href="#__codelineno-51-14"></a>
-</span><span id="__span-51-15"><a id="__codelineno-51-15" name="__codelineno-51-15" href="#__codelineno-51-15"></a><span class="w">  </span><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'vimrc'</span><span class="p">,</span><span class="w">  </span><span class="c1">-- equivalent to group=mygroup</span>
-</span><span id="__span-51-16"><a id="__codelineno-51-16" name="__codelineno-51-16" href="#__codelineno-51-16"></a>
-</span><span id="__span-51-17"><a id="__codelineno-51-17" name="__codelineno-51-17" href="#__codelineno-51-17"></a><span class="nv">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'set expandtab'</span><span class="p">,</span>
-</span><span id="__span-51-18"><a id="__codelineno-51-18" name="__codelineno-51-18" href="#__codelineno-51-18"></a>
-</span><span id="__span-51-19"><a id="__codelineno-51-19" name="__codelineno-51-19" href="#__codelineno-51-19"></a><span class="p">})</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-51-1"><a href="#__codelineno-51-1" id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">mygroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_augroup</span><span class="p">(</span><span class="s1">'vimrc'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">clear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-51-2"><a href="#__codelineno-51-2" id="__codelineno-51-2" name="__codelineno-51-2"></a>
+</span><span id="__span-51-3"><a href="#__codelineno-51-3" id="__codelineno-51-3" name="__codelineno-51-3"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_autocmd</span><span class="p">({</span><span class="w"> </span><span class="s1">'BufNewFile'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BufRead'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-51-4"><a href="#__codelineno-51-4" id="__codelineno-51-4" name="__codelineno-51-4"></a>
+</span><span id="__span-51-5"><a href="#__codelineno-51-5" id="__codelineno-51-5" name="__codelineno-51-5"></a><span class="w">  </span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'*.html'</span><span class="p">,</span>
+</span><span id="__span-51-6"><a href="#__codelineno-51-6" id="__codelineno-51-6" name="__codelineno-51-6"></a><span class="w">  </span><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mygroup</span><span class="p">,</span>
+</span><span id="__span-51-7"><a href="#__codelineno-51-7" id="__codelineno-51-7" name="__codelineno-51-7"></a><span class="w">  </span><span class="nv">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'set shiftwidth=4'</span><span class="p">,</span>
+</span><span id="__span-51-8"><a href="#__codelineno-51-8" id="__codelineno-51-8" name="__codelineno-51-8"></a>
+</span><span id="__span-51-9"><a href="#__codelineno-51-9" id="__codelineno-51-9" name="__codelineno-51-9"></a><span class="p">})</span>
+</span><span id="__span-51-10"><a href="#__codelineno-51-10" id="__codelineno-51-10" name="__codelineno-51-10"></a>
+</span><span id="__span-51-11"><a href="#__codelineno-51-11" id="__codelineno-51-11" name="__codelineno-51-11"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_autocmd</span><span class="p">({</span><span class="w"> </span><span class="s1">'BufNewFile'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BufRead'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-51-12"><a href="#__codelineno-51-12" id="__codelineno-51-12" name="__codelineno-51-12"></a>
+</span><span id="__span-51-13"><a href="#__codelineno-51-13" id="__codelineno-51-13" name="__codelineno-51-13"></a><span class="w">  </span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'*.html'</span><span class="p">,</span>
+</span><span id="__span-51-14"><a href="#__codelineno-51-14" id="__codelineno-51-14" name="__codelineno-51-14"></a>
+</span><span id="__span-51-15"><a href="#__codelineno-51-15" id="__codelineno-51-15" name="__codelineno-51-15"></a><span class="w">  </span><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'vimrc'</span><span class="p">,</span><span class="w">  </span><span class="c1">-- equivalent to group=mygroup</span>
+</span><span id="__span-51-16"><a href="#__codelineno-51-16" id="__codelineno-51-16" name="__codelineno-51-16"></a>
+</span><span id="__span-51-17"><a href="#__codelineno-51-17" id="__codelineno-51-17" name="__codelineno-51-17"></a><span class="nv">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'set expandtab'</span><span class="p">,</span>
+</span><span id="__span-51-18"><a href="#__codelineno-51-18" id="__codelineno-51-18" name="__codelineno-51-18"></a>
+</span><span id="__span-51-19"><a href="#__codelineno-51-19" id="__codelineno-51-19" name="__codelineno-51-19"></a><span class="p">})</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Autocommand groups are unique for a given name, so you can reuse them, e.g., in a different file:</p>
 <div class="admonition desc">
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">mygroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_augroup</span><span class="p">(</span><span class="s1">'vimrc'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">clear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
-</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
-</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_autocmd</span><span class="p">({</span><span class="w"> </span><span class="s1">'BufNewFile'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BufRead'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>
-</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a><span class="w">  </span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'*.c'</span><span class="p">,</span>
-</span><span id="__span-52-6"><a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>
-</span><span id="__span-52-7"><a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a><span class="w">  </span><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mygroup</span><span class="p">,</span>
-</span><span id="__span-52-8"><a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a>
-</span><span id="__span-52-9"><a id="__codelineno-52-9" name="__codelineno-52-9" href="#__codelineno-52-9"></a><span class="w">  </span><span class="nv">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'set noexpandtab'</span><span class="p">,</span>
-</span><span id="__span-52-10"><a id="__codelineno-52-10" name="__codelineno-52-10" href="#__codelineno-52-10"></a>
-</span><span id="__span-52-11"><a id="__codelineno-52-11" name="__codelineno-52-11" href="#__codelineno-52-11"></a><span class="p">})</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-52-1"><a href="#__codelineno-52-1" id="__codelineno-52-1" name="__codelineno-52-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">mygroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_augroup</span><span class="p">(</span><span class="s1">'vimrc'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">clear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-52-2"><a href="#__codelineno-52-2" id="__codelineno-52-2" name="__codelineno-52-2"></a>
+</span><span id="__span-52-3"><a href="#__codelineno-52-3" id="__codelineno-52-3" name="__codelineno-52-3"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_autocmd</span><span class="p">({</span><span class="w"> </span><span class="s1">'BufNewFile'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BufRead'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-52-4"><a href="#__codelineno-52-4" id="__codelineno-52-4" name="__codelineno-52-4"></a>
+</span><span id="__span-52-5"><a href="#__codelineno-52-5" id="__codelineno-52-5" name="__codelineno-52-5"></a><span class="w">  </span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'*.c'</span><span class="p">,</span>
+</span><span id="__span-52-6"><a href="#__codelineno-52-6" id="__codelineno-52-6" name="__codelineno-52-6"></a>
+</span><span id="__span-52-7"><a href="#__codelineno-52-7" id="__codelineno-52-7" name="__codelineno-52-7"></a><span class="w">  </span><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mygroup</span><span class="p">,</span>
+</span><span id="__span-52-8"><a href="#__codelineno-52-8" id="__codelineno-52-8" name="__codelineno-52-8"></a>
+</span><span id="__span-52-9"><a href="#__codelineno-52-9" id="__codelineno-52-9" name="__codelineno-52-9"></a><span class="w">  </span><span class="nv">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'set noexpandtab'</span><span class="p">,</span>
+</span><span id="__span-52-10"><a href="#__codelineno-52-10" id="__codelineno-52-10" name="__codelineno-52-10"></a>
+</span><span id="__span-52-11"><a href="#__codelineno-52-11" id="__codelineno-52-11" name="__codelineno-52-11"></a><span class="p">})</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2719,24 +2714,24 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
 <p>You can use <code>vim.api.</code>|nvim_clear_autocmds()| to remove autocommands. This function takes a single mandatory argument that is a table of keys describing the autocommands that are to be removed:</p>
 </div>
 <div class="admonition desc">
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="c1">-- Delete all BufEnter and InsertLeave autocommands</span>
-</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>
-</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_clear_autocmds</span><span class="p">({</span><span class="nv">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">"BufEnter"</span><span class="p">,</span><span class="w"> </span><span class="s2">"InsertLeave"</span><span class="p">}})</span>
-</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>
-</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>
-</span><span id="__span-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a><span class="c1">-- Delete all autocommands that uses "*.py" pattern</span>
-</span><span id="__span-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a>
-</span><span id="__span-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_clear_autocmds</span><span class="p">({</span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"*.py"</span><span class="p">})</span>
-</span><span id="__span-53-9"><a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>
-</span><span id="__span-53-10"><a id="__codelineno-53-10" name="__codelineno-53-10" href="#__codelineno-53-10"></a>
-</span><span id="__span-53-11"><a id="__codelineno-53-11" name="__codelineno-53-11" href="#__codelineno-53-11"></a><span class="c1">-- Delete all autocommands in group "scala"</span>
-</span><span id="__span-53-12"><a id="__codelineno-53-12" name="__codelineno-53-12" href="#__codelineno-53-12"></a>
-</span><span id="__span-53-13"><a id="__codelineno-53-13" name="__codelineno-53-13" href="#__codelineno-53-13"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_clear_autocmds</span><span class="p">({</span><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"scala"</span><span class="p">})</span>
-</span><span id="__span-53-14"><a id="__codelineno-53-14" name="__codelineno-53-14" href="#__codelineno-53-14"></a>
-</span><span id="__span-53-15"><a id="__codelineno-53-15" name="__codelineno-53-15" href="#__codelineno-53-15"></a>
-</span><span id="__span-53-16"><a id="__codelineno-53-16" name="__codelineno-53-16" href="#__codelineno-53-16"></a><span class="c1">-- Delete all ColorScheme autocommands in current buffer</span>
-</span><span id="__span-53-17"><a id="__codelineno-53-17" name="__codelineno-53-17" href="#__codelineno-53-17"></a>
-</span><span id="__span-53-18"><a id="__codelineno-53-18" name="__codelineno-53-18" href="#__codelineno-53-18"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_clear_autocmds</span><span class="p">({</span><span class="nv">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ColorScheme"</span><span class="p">,</span><span class="w"> </span><span class="nv">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">})</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-53-1"><a href="#__codelineno-53-1" id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="c1">-- Delete all BufEnter and InsertLeave autocommands</span>
+</span><span id="__span-53-2"><a href="#__codelineno-53-2" id="__codelineno-53-2" name="__codelineno-53-2"></a>
+</span><span id="__span-53-3"><a href="#__codelineno-53-3" id="__codelineno-53-3" name="__codelineno-53-3"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_clear_autocmds</span><span class="p">({</span><span class="nv">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">"BufEnter"</span><span class="p">,</span><span class="w"> </span><span class="s2">"InsertLeave"</span><span class="p">}})</span>
+</span><span id="__span-53-4"><a href="#__codelineno-53-4" id="__codelineno-53-4" name="__codelineno-53-4"></a>
+</span><span id="__span-53-5"><a href="#__codelineno-53-5" id="__codelineno-53-5" name="__codelineno-53-5"></a>
+</span><span id="__span-53-6"><a href="#__codelineno-53-6" id="__codelineno-53-6" name="__codelineno-53-6"></a><span class="c1">-- Delete all autocommands that uses "*.py" pattern</span>
+</span><span id="__span-53-7"><a href="#__codelineno-53-7" id="__codelineno-53-7" name="__codelineno-53-7"></a>
+</span><span id="__span-53-8"><a href="#__codelineno-53-8" id="__codelineno-53-8" name="__codelineno-53-8"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_clear_autocmds</span><span class="p">({</span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"*.py"</span><span class="p">})</span>
+</span><span id="__span-53-9"><a href="#__codelineno-53-9" id="__codelineno-53-9" name="__codelineno-53-9"></a>
+</span><span id="__span-53-10"><a href="#__codelineno-53-10" id="__codelineno-53-10" name="__codelineno-53-10"></a>
+</span><span id="__span-53-11"><a href="#__codelineno-53-11" id="__codelineno-53-11" name="__codelineno-53-11"></a><span class="c1">-- Delete all autocommands in group "scala"</span>
+</span><span id="__span-53-12"><a href="#__codelineno-53-12" id="__codelineno-53-12" name="__codelineno-53-12"></a>
+</span><span id="__span-53-13"><a href="#__codelineno-53-13" id="__codelineno-53-13" name="__codelineno-53-13"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_clear_autocmds</span><span class="p">({</span><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"scala"</span><span class="p">})</span>
+</span><span id="__span-53-14"><a href="#__codelineno-53-14" id="__codelineno-53-14" name="__codelineno-53-14"></a>
+</span><span id="__span-53-15"><a href="#__codelineno-53-15" id="__codelineno-53-15" name="__codelineno-53-15"></a>
+</span><span id="__span-53-16"><a href="#__codelineno-53-16" id="__codelineno-53-16" name="__codelineno-53-16"></a><span class="c1">-- Delete all ColorScheme autocommands in current buffer</span>
+</span><span id="__span-53-17"><a href="#__codelineno-53-17" id="__codelineno-53-17" name="__codelineno-53-17"></a>
+</span><span id="__span-53-18"><a href="#__codelineno-53-18" id="__codelineno-53-18" name="__codelineno-53-18"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_clear_autocmds</span><span class="p">({</span><span class="nv">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ColorScheme"</span><span class="p">,</span><span class="w"> </span><span class="nv">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">})</span>
 </span></code></pre></div>
 </div>
 <div class="admonition abstract">
@@ -2763,11 +2758,11 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
 <p>• a table with <a href="https://neovim.io/doc/user/map/#command-attributes">command-attributes</a>; in addition, it can contain the keys <code>desc</code> (a string describing the command); <code>force</code> (set to <code>false</code> to avoid replacing an already existing command with the same name), and <code>preview</code> (a  Lua function that is used for <a href="https://neovim.io/doc/user/map/#%3Acommand-preview">:command-preview</a>).</p>
 <div class="admonition desc">
 <p>Example:</p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_user_command</span><span class="p">(</span><span class="s1">'Test'</span><span class="p">,</span><span class="w"> </span><span class="s1">'echo "It works!"'</span><span class="p">)</span>
-</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>
-</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="nv">vim</span><span class="p">.</span><span class="py">cmd</span><span class="p">.</span><span class="nf">Test</span><span class="p">()</span>
-</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>
-</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="c1">--&gt; It works!</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-54-1"><a href="#__codelineno-54-1" id="__codelineno-54-1" name="__codelineno-54-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_user_command</span><span class="p">(</span><span class="s1">'Test'</span><span class="p">,</span><span class="w"> </span><span class="s1">'echo "It works!"'</span><span class="p">)</span>
+</span><span id="__span-54-2"><a href="#__codelineno-54-2" id="__codelineno-54-2" name="__codelineno-54-2"></a>
+</span><span id="__span-54-3"><a href="#__codelineno-54-3" id="__codelineno-54-3" name="__codelineno-54-3"></a><span class="nv">vim</span><span class="p">.</span><span class="py">cmd</span><span class="p">.</span><span class="nf">Test</span><span class="p">()</span>
+</span><span id="__span-54-4"><a href="#__codelineno-54-4" id="__codelineno-54-4" name="__codelineno-54-4"></a>
+</span><span id="__span-54-5"><a href="#__codelineno-54-5" id="__codelineno-54-5" name="__codelineno-54-5"></a><span class="c1">--&gt; It works!</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2784,59 +2779,59 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
 • <code>smods</code>: a table containing the command modifiers (see <a href="https://neovim.io/doc/user/map/#%3Cmods%3E"><code>&lt;mods&gt;</code></a>)</p>
 <div class="admonition desc">
 <p>For example:</p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_user_command</span><span class="p">(</span><span class="s1">'Upper'</span><span class="p">,</span>
-</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>
-</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="w">  </span><span class="kr">function</span><span class="p">(</span><span class="nv">opts</span><span class="p">)</span>
-</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>
-</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">string.upper</span><span class="p">(</span><span class="nv">opts</span><span class="p">.</span><span class="py">fargs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>
-</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a><span class="w">  </span><span class="kr">end</span><span class="p">,</span>
-</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>
-</span><span id="__span-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nv">nargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">})</span>
-</span><span id="__span-55-10"><a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a>
-</span><span id="__span-55-11"><a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a><span class="nv">vim</span><span class="p">.</span><span class="py">cmd</span><span class="p">.</span><span class="nf">Upper</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
-</span><span id="__span-55-12"><a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a>
-</span><span id="__span-55-13"><a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a><span class="c1">--&gt; FOO</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-55-1"><a href="#__codelineno-55-1" id="__codelineno-55-1" name="__codelineno-55-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_user_command</span><span class="p">(</span><span class="s1">'Upper'</span><span class="p">,</span>
+</span><span id="__span-55-2"><a href="#__codelineno-55-2" id="__codelineno-55-2" name="__codelineno-55-2"></a>
+</span><span id="__span-55-3"><a href="#__codelineno-55-3" id="__codelineno-55-3" name="__codelineno-55-3"></a><span class="w">  </span><span class="kr">function</span><span class="p">(</span><span class="nv">opts</span><span class="p">)</span>
+</span><span id="__span-55-4"><a href="#__codelineno-55-4" id="__codelineno-55-4" name="__codelineno-55-4"></a>
+</span><span id="__span-55-5"><a href="#__codelineno-55-5" id="__codelineno-55-5" name="__codelineno-55-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">string.upper</span><span class="p">(</span><span class="nv">opts</span><span class="p">.</span><span class="py">fargs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</span><span id="__span-55-6"><a href="#__codelineno-55-6" id="__codelineno-55-6" name="__codelineno-55-6"></a>
+</span><span id="__span-55-7"><a href="#__codelineno-55-7" id="__codelineno-55-7" name="__codelineno-55-7"></a><span class="w">  </span><span class="kr">end</span><span class="p">,</span>
+</span><span id="__span-55-8"><a href="#__codelineno-55-8" id="__codelineno-55-8" name="__codelineno-55-8"></a>
+</span><span id="__span-55-9"><a href="#__codelineno-55-9" id="__codelineno-55-9" name="__codelineno-55-9"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nv">nargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-55-10"><a href="#__codelineno-55-10" id="__codelineno-55-10" name="__codelineno-55-10"></a>
+</span><span id="__span-55-11"><a href="#__codelineno-55-11" id="__codelineno-55-11" name="__codelineno-55-11"></a><span class="nv">vim</span><span class="p">.</span><span class="py">cmd</span><span class="p">.</span><span class="nf">Upper</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
+</span><span id="__span-55-12"><a href="#__codelineno-55-12" id="__codelineno-55-12" name="__codelineno-55-12"></a>
+</span><span id="__span-55-13"><a href="#__codelineno-55-13" id="__codelineno-55-13" name="__codelineno-55-13"></a><span class="c1">--&gt; FOO</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>The <code>complete</code> attribute can take a Lua function in addition to the attributes listed in <a href="https://neovim.io/doc/user/map/#%3Acommand-complete">:command-complete</a>.</p>
 <div class="admonition desc">
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_user_command</span><span class="p">(</span><span class="s1">'Upper'</span><span class="p">,</span>
-</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>
-</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a><span class="w">  </span><span class="kr">function</span><span class="p">(</span><span class="nv">opts</span><span class="p">)</span>
-</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>
-</span><span id="__span-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">string.upper</span><span class="p">(</span><span class="nv">opts</span><span class="p">.</span><span class="py">fargs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</span><span id="__span-56-6"><a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>
-</span><span id="__span-56-7"><a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a><span class="w">  </span><span class="kr">end</span><span class="p">,</span>
-</span><span id="__span-56-8"><a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a>
-</span><span id="__span-56-9"><a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nv">nargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-56-10"><a id="__codelineno-56-10" name="__codelineno-56-10" href="#__codelineno-56-10"></a>
-</span><span id="__span-56-11"><a id="__codelineno-56-11" name="__codelineno-56-11" href="#__codelineno-56-11"></a><span class="w">    </span><span class="nv">complete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">ArgLead</span><span class="p">,</span><span class="w"> </span><span class="nv">CmdLine</span><span class="p">,</span><span class="w"> </span><span class="nv">CursorPos</span><span class="p">)</span>
-</span><span id="__span-56-12"><a id="__codelineno-56-12" name="__codelineno-56-12" href="#__codelineno-56-12"></a>
-</span><span id="__span-56-13"><a id="__codelineno-56-13" name="__codelineno-56-13" href="#__codelineno-56-13"></a><span class="w">      </span><span class="c1">-- return completion candidates as a list-like table</span>
-</span><span id="__span-56-14"><a id="__codelineno-56-14" name="__codelineno-56-14" href="#__codelineno-56-14"></a>
-</span><span id="__span-56-15"><a id="__codelineno-56-15" name="__codelineno-56-15" href="#__codelineno-56-15"></a><span class="w">      </span><span class="kr">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"baz"</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-56-16"><a id="__codelineno-56-16" name="__codelineno-56-16" href="#__codelineno-56-16"></a>
-</span><span id="__span-56-17"><a id="__codelineno-56-17" name="__codelineno-56-17" href="#__codelineno-56-17"></a><span class="w">    </span><span class="kr">end</span><span class="p">,</span>
-</span><span id="__span-56-18"><a id="__codelineno-56-18" name="__codelineno-56-18" href="#__codelineno-56-18"></a>
-</span><span id="__span-56-19"><a id="__codelineno-56-19" name="__codelineno-56-19" href="#__codelineno-56-19"></a><span class="p">})</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-56-1"><a href="#__codelineno-56-1" id="__codelineno-56-1" name="__codelineno-56-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_user_command</span><span class="p">(</span><span class="s1">'Upper'</span><span class="p">,</span>
+</span><span id="__span-56-2"><a href="#__codelineno-56-2" id="__codelineno-56-2" name="__codelineno-56-2"></a>
+</span><span id="__span-56-3"><a href="#__codelineno-56-3" id="__codelineno-56-3" name="__codelineno-56-3"></a><span class="w">  </span><span class="kr">function</span><span class="p">(</span><span class="nv">opts</span><span class="p">)</span>
+</span><span id="__span-56-4"><a href="#__codelineno-56-4" id="__codelineno-56-4" name="__codelineno-56-4"></a>
+</span><span id="__span-56-5"><a href="#__codelineno-56-5" id="__codelineno-56-5" name="__codelineno-56-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">string.upper</span><span class="p">(</span><span class="nv">opts</span><span class="p">.</span><span class="py">fargs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</span><span id="__span-56-6"><a href="#__codelineno-56-6" id="__codelineno-56-6" name="__codelineno-56-6"></a>
+</span><span id="__span-56-7"><a href="#__codelineno-56-7" id="__codelineno-56-7" name="__codelineno-56-7"></a><span class="w">  </span><span class="kr">end</span><span class="p">,</span>
+</span><span id="__span-56-8"><a href="#__codelineno-56-8" id="__codelineno-56-8" name="__codelineno-56-8"></a>
+</span><span id="__span-56-9"><a href="#__codelineno-56-9" id="__codelineno-56-9" name="__codelineno-56-9"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nv">nargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-56-10"><a href="#__codelineno-56-10" id="__codelineno-56-10" name="__codelineno-56-10"></a>
+</span><span id="__span-56-11"><a href="#__codelineno-56-11" id="__codelineno-56-11" name="__codelineno-56-11"></a><span class="w">    </span><span class="nv">complete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">ArgLead</span><span class="p">,</span><span class="w"> </span><span class="nv">CmdLine</span><span class="p">,</span><span class="w"> </span><span class="nv">CursorPos</span><span class="p">)</span>
+</span><span id="__span-56-12"><a href="#__codelineno-56-12" id="__codelineno-56-12" name="__codelineno-56-12"></a>
+</span><span id="__span-56-13"><a href="#__codelineno-56-13" id="__codelineno-56-13" name="__codelineno-56-13"></a><span class="w">      </span><span class="c1">-- return completion candidates as a list-like table</span>
+</span><span id="__span-56-14"><a href="#__codelineno-56-14" id="__codelineno-56-14" name="__codelineno-56-14"></a>
+</span><span id="__span-56-15"><a href="#__codelineno-56-15" id="__codelineno-56-15" name="__codelineno-56-15"></a><span class="w">      </span><span class="kr">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"baz"</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-56-16"><a href="#__codelineno-56-16" id="__codelineno-56-16" name="__codelineno-56-16"></a>
+</span><span id="__span-56-17"><a href="#__codelineno-56-17" id="__codelineno-56-17" name="__codelineno-56-17"></a><span class="w">    </span><span class="kr">end</span><span class="p">,</span>
+</span><span id="__span-56-18"><a href="#__codelineno-56-18" id="__codelineno-56-18" name="__codelineno-56-18"></a>
+</span><span id="__span-56-19"><a href="#__codelineno-56-19" id="__codelineno-56-19" name="__codelineno-56-19"></a><span class="p">})</span>
 </span></code></pre></div>
 </div>
 </div>
 <div class="admonition abstract">
 <p>Buffer-local user commands are created with <code>vim.api.</code><a href="https://neovim.io/doc/user/api/#nvim_buf_create_user_command()">nvim_buf_create_user_command()</a>. Here the first argument is the buffer number (<code>0</code> being the current buffer); the remaining arguments are the same as for <a href="https://neovim.io/doc/user/api/#nvim_create_user_command()">nvim_create_user_command()</a>:</p>
 <div class="admonition desc">
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_buf_create_user_command</span><span class="p">(,</span><span class="w"> </span><span class="s1">'Upper'</span><span class="p">,</span>
-</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>
-</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="w">  </span><span class="kr">function</span><span class="p">(</span><span class="nv">opts</span><span class="p">)</span>
-</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>
-</span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="nb">string.upper</span><span class="p">(</span><span class="nv">opts</span><span class="p">.</span><span class="py">fargs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</span><span id="__span-57-6"><a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>
-</span><span id="__span-57-7"><a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a><span class="kr">end</span><span class="p">,</span>
-</span><span id="__span-57-8"><a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>
-</span><span id="__span-57-9"><a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a><span class="p">{</span><span class="w"> </span><span class="nv">nargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">})</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-57-1"><a href="#__codelineno-57-1" id="__codelineno-57-1" name="__codelineno-57-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_buf_create_user_command</span><span class="p">(,</span><span class="w"> </span><span class="s1">'Upper'</span><span class="p">,</span>
+</span><span id="__span-57-2"><a href="#__codelineno-57-2" id="__codelineno-57-2" name="__codelineno-57-2"></a>
+</span><span id="__span-57-3"><a href="#__codelineno-57-3" id="__codelineno-57-3" name="__codelineno-57-3"></a><span class="w">  </span><span class="kr">function</span><span class="p">(</span><span class="nv">opts</span><span class="p">)</span>
+</span><span id="__span-57-4"><a href="#__codelineno-57-4" id="__codelineno-57-4" name="__codelineno-57-4"></a>
+</span><span id="__span-57-5"><a href="#__codelineno-57-5" id="__codelineno-57-5" name="__codelineno-57-5"></a><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="nb">string.upper</span><span class="p">(</span><span class="nv">opts</span><span class="p">.</span><span class="py">fargs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</span><span id="__span-57-6"><a href="#__codelineno-57-6" id="__codelineno-57-6" name="__codelineno-57-6"></a>
+</span><span id="__span-57-7"><a href="#__codelineno-57-7" id="__codelineno-57-7" name="__codelineno-57-7"></a><span class="kr">end</span><span class="p">,</span>
+</span><span id="__span-57-8"><a href="#__codelineno-57-8" id="__codelineno-57-8" name="__codelineno-57-8"></a>
+</span><span id="__span-57-9"><a href="#__codelineno-57-9" id="__codelineno-57-9" name="__codelineno-57-9"></a><span class="p">{</span><span class="w"> </span><span class="nv">nargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">})</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2847,13 +2842,13 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
 <div class="admonition abstract">
 <p>User commands can be deleted with <code>vim.api.</code><a href="https://neovim.io/doc/user/api/#nvim_del_user_command()">nvim_del_user_command()</a>. The only argument is the name of the command:</p>
 <div class="admonition desc"></div>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_del_user_command</span><span class="p">(</span><span class="s1">'Upper'</span><span class="p">)</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-58-1"><a href="#__codelineno-58-1" id="__codelineno-58-1" name="__codelineno-58-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_del_user_command</span><span class="p">(</span><span class="s1">'Upper'</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <div class="admonition abstract">
 <p>To delete buffer-local user commands use <code>vim.api.</code><a href="https://neovim.io/doc/user/api/#nvim_buf_del_user_command()">nvim_buf_del_user_command()</a>. Here the first argument is the buffer number (<code>0</code> being the current buffer), and second is command name:</p>
 <div class="admonition desc"></div>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_buf_del_user_command</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">'Upper'</span><span class="p">)</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-59-1"><a href="#__codelineno-59-1" id="__codelineno-59-1" name="__codelineno-59-1"></a><span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_buf_del_user_command</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">'Upper'</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -3062,19 +3057,20 @@ Note: Environment variable like <code>$HOME</code> and <code>~</code> are not au
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../js/markmap-d3.js"></script>
+      
+        <script src="../js/markmap-lib.js"></script>
+      
+        <script src="../js/markmap-view.js"></script>
+      
+        <script src="../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

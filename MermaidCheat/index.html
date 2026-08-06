@@ -28,7 +28,7 @@
           <link rel="icon" href="../assets/favicon.png">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
@@ -392,7 +392,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0">
-        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -1081,9 +1081,7 @@
 
 
               
-              
-              
-              <article class="md-content__inner md-typeset" data-pagefind-body="">
+              <article class="md-content__inner md-typeset">
                 
   <div class="custom-nav-return" style="margin-bottom: 20px;">
     
@@ -1098,12 +1096,10 @@
                   
 
 <div style="display: none;">
-  <h1>Header</h1>
+<h1>Header</h1>
 </div>
-
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260207-235216.png" data-desc-position="bottom"><img alt="" src="../imgs/20260207-235216.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;">MkDocs-Material: Mermaid &amp; Admonition Guide</h1>
-
 <h5 id="1-the-pied-piper-admonition-block">1. The "Pied Piper" Admonition Block<a class="headerlink" href="#1-the-pied-piper-admonition-block" title="Permanent link">¶</a></h5>
 <p>To wrap a Mermaid diagram in a custom admonition box, use the following structure. <br>
 <strong>Crucial:</strong> The content inside must be indented by exactly <strong>4 spaces</strong>.</p>
@@ -1126,17 +1122,17 @@ style D fill:#4d964d,stroke:#000,stroke-width:2px</code></pre>
 <div class="admonition info">
 <p class="admonition-title">CSS Centering</p>
 <p>Add this to your <code>custom.css</code> (or <code>extra.css</code>) to automatically center all diagrams site-wide without needing the <code>&lt;div&gt;</code> tags every time.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">/* Center all Mermaid diagrams on the site */</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">.</span><span class="nc">mermaid</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c">/* Center all Mermaid diagrams on the site */</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">.</span><span class="nc">mermaid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">/* Optional: Add spacing inside admonition boxes */</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">.</span><span class="nc">admonition</span><span class="w"> </span><span class="p">.</span><span class="nc">mermaid</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c">/* Optional: Add spacing inside admonition boxes */</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">.</span><span class="nc">admonition</span><span class="w"> </span><span class="p">.</span><span class="nc">mermaid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr>
 <h5 id="step-1-configuration">STEP 1: CONFIGURATION<a class="headerlink" href="#step-1-configuration" title="Permanent link">¶</a></h5>
@@ -1144,24 +1140,24 @@ style D fill:#4d964d,stroke:#000,stroke-width:2px</code></pre>
 <ul>
 <li>Configuration (mkdocs.yml)</li>
 </ul>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">theme</span><span class="o">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="nt">material</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">theme</span><span class="o">:</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="nt">material</span>
 </span></code></pre></div>
 <hr>
 <ul>
 <li>I'm useing <code>styles/custom.css</code> under extra-css!</li>
 </ul>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">extra_css</span><span class="o">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">styles</span><span class="o">/</span><span class="nt">custom</span><span class="p">.</span><span class="nc">css</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">extra_css</span><span class="o">:</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">styles</span><span class="o">/</span><span class="nt">custom</span><span class="p">.</span><span class="nc">css</span>
 </span></code></pre></div>
 <hr>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">markdown_extensions</span><span class="o">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">pymdownx</span><span class="p">.</span><span class="nc">superfences</span><span class="o">:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="nt">custom_fences</span><span class="o">:</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="nt">-</span><span class="w"> </span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="nt">mermaid</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">          </span><span class="nt">class</span><span class="o">:</span><span class="w"> </span><span class="nt">mermaid</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">          </span><span class="nt">format</span><span class="o">:</span><span class="w"> </span><span class="o">!!</span><span class="nt">python</span><span class="o">/</span><span class="nt">name</span><span class="p">:</span><span class="nd">pymdownx</span><span class="p">.</span><span class="nc">superfences</span><span class="p">.</span><span class="nc">fence_code_format</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">admonition</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">markdown_extensions</span><span class="o">:</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">pymdownx</span><span class="p">.</span><span class="nc">superfences</span><span class="o">:</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">      </span><span class="nt">custom_fences</span><span class="o">:</span>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="nt">-</span><span class="w"> </span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="nt">mermaid</span>
+</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">          </span><span class="nt">class</span><span class="o">:</span><span class="w"> </span><span class="nt">mermaid</span>
+</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">          </span><span class="nt">format</span><span class="o">:</span><span class="w"> </span><span class="o">!!</span><span class="nt">python</span><span class="o">/</span><span class="nt">name</span><span class="p">:</span><span class="nd">pymdownx</span><span class="p">.</span><span class="nc">superfences</span><span class="p">.</span><span class="nc">fence_code_format</span>
+</span><span id="__span-4-7"><a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">  </span><span class="nt">-</span><span class="w"> </span><span class="nt">admonition</span>
 </span></code></pre></div>
 </div>
 <h5 id="step-2-how-to-save-as-a-clean-pdf">Step 2: How to save as a clean PDF<a class="headerlink" href="#step-2-how-to-save-as-a-clean-pdf" title="Permanent link">¶</a></h5>
@@ -1225,28 +1221,28 @@ This is a purple box with a rocket icon!</p>
 <ol>
 <li>
 <p><strong>The "Micro-Update" Method:</strong> If we are working on a long project (like your cheat-sheet), feel free to ask me to provide updates in smaller, bite-sized sections. It’s easier to copy-paste as we go!<br>
-   </p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
+</p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
 </li>
 <li>
 <p><strong>The Resume Command:</strong><br>
 <strong>A:</strong> If a response hangs or vanishes mid-sentence, just type "Continue from [last line]".<br>
 <strong>B:</strong> I can usually pick up the thread right where we left off.<br>
-   </p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
+</p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
 </li>
 <li>
 <p><strong>Version Control:</strong><br>
 <strong>A:</strong> Whenever we hit a milestone, I can give you a "Clean Export" version of everything we've covered so you have a fresh master copy to save.<br>
-   </p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
+</p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
 </li>
 <li>
 <p><strong>Handy Tools for your Cheat-Sheet:</strong><br>
 <strong>A: Backup &amp; Sync:</strong><br>
 <strong>B:</strong> If you are using Obsidian, check out the Obsidian Git plugin to automatically back up your notes so nothing gets lost.<br>
-   </p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
+</p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
 </li>
 <li>
 <p><strong>Note Organisation:</strong> Use the Periodic Notes plugin to keep track of when you added specific tips to your sheet.<br>
-   </p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
+</p><hr style="border: none; border-top: 1px solid #7c4dff; opacity: 0.3; margin: 15px 0;"><p></p>
 </li>
 <li>
 <p><strong>CSS Troubleshooting:</strong> If your custom colors aren't showing up, the Obsidian Forum is the best place to find specific CSS fixes for different themes.</p>
@@ -1314,12 +1310,12 @@ This is a purple box with a rocket icon!</p>
 <div class="admonition info">
 <p class="admonition-title">Mermaid Colours</p>
 <p>If you ever want to override Mermaid colors in mkdocs-material, you can add custom CSS:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/* In your mkdocs.yml, under extra_css: */
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>.mermaid .node rect {
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    fill: #f9f !important;
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    stroke: #333 !important;
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>/* In your mkdocs.yml, under extra_css: */
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>.mermaid .node rect {
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>    fill: #f9f !important;
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>    stroke: #333 !important;
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>}
 </span></code></pre></div>
 </div>
 
@@ -1479,19 +1475,20 @@ This is a purple box with a rocket icon!</p>
     
       
       
-      
-      
-        
-        
-          
-          
-        
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "search.share", "navigation.path", "navigation.top", "navigation.footer", "content.tooltips", "navigation.tracking", "navigation.prune", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
-      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../js/markmap-d3.js"></script>
+      
+        <script src="../js/markmap-lib.js"></script>
+      
+        <script src="../js/markmap-view.js"></script>
+      
+        <script src="../javascripts/markmap-resize-fix.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

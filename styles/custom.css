@@ -1464,6 +1464,9 @@ a.md-button.md-button--custom:hover,
   text-align: center;
 }
 
+/* ==========================================================================
+   FIX ORIGINAL DARK MODE RENDERING
+   ========================================================================== */
 
 [data-md-color-scheme="slate"] .markmap-foreign,
 [data-md-color-scheme="slate"] .markmap-foreign div {
@@ -1472,4 +1475,76 @@ a.md-button.md-button--custom:hover,
 
 [data-md-color-scheme="slate"] .markmap-foreign mark {
   color: #1a1a1a !important;
+}
+
+
+/* ==========================================================================
+   RESTORE WORKING SELECTOR COMBINATION
+   ========================================================================== */
+
+/* Style the standard markdown fence containers cleanly */
+.md-content pre code.language-markmap,
+.md-content .markmap,
+.md-typeset div.language-markmap {
+  width: 100% !important;
+  height: 380px !important; /* Locks the spacing beautifully */
+  background-color: #1e1e24 !important;
+  border: 1px solid #33333e !important;
+  border-radius: 6px !important;
+  margin-bottom: 2rem !important;
+  display: block !important;
+}
+
+
+/* ==========================================================================
+   ADD LIGHT MODE THEME PROTECTION
+   ========================================================================== */
+
+/* Automatically switch background and border colors in light mode */
+[data-md-color-scheme="default"] .md-content pre code.language-markmap,
+[data-md-color-scheme="default"] .md-content .markmap,
+[data-md-color-scheme="default"] .md-typeset div.language-markmap {
+  background-color: var(--md-code-bg-color) !important;
+  border: 1px solid var(--md-default-fg-color--lightest) !important;
+}
+
+/* Force text labels to go dark in light mode */
+[data-md-color-scheme="default"] .markmap-foreign,
+[data-md-color-scheme="default"] .markmap-foreign div {
+  color: var(--md-default-fg-color) !important;
+}
+
+
+/* Safe boundary anchor for the footer layout elements */
+.md-footer {
+  position: relative;
+  z-index: 100;
+  clear: both;
+}
+
+
+/* Shift the entire inner container area downwards away from the top edge */
+.md-typeset div.language-markmap,
+.md-typeset .admonition .markmap {
+  margin-top: 1.5rem !important; /* Physically pushes the box down */
+}
+
+/* Ensure the inner SVG canvas stays locked and flat inside that box
+   (covers both the plain fence case and the admonition-nested case) */
+.md-typeset svg.markmap,
+.md-typeset .admonition svg.markmap {
+  position: relative !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+/* Obliterate the glowing faux-borders, outlines, and shadow lines completely */
+.md-typeset div.language-markmap,
+.md-typeset .admonition .markmap {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding-top: 0 !important;
 }
