@@ -1,4 +1,4 @@
-mkdocs-materialx==10.1.8
+mkdocs-materialx==10.2.0
 mkdocs==1.6.1
 markdown==3.10.2
 jinja2
@@ -20,3 +20,5 @@ mkdocs-minify-plugin
 pillow
 cairosvg
 mkdocs-caption
+mkdocs-drawio==1.16.3
+mkdocs-markmap==2.5.2
