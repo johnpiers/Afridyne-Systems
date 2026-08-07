@@ -21,11 +21,13 @@ window.MathJax = {
   }
 };
 
-document$.subscribe(() => { 
-  MathJax.startup.output.clearCache()
-  MathJax.typesetClear()
-  MathJax.texReset()
-  MathJax.typesetPromise()
+document$.subscribe(() => {
+  if (window.MathJax && MathJax.startup && MathJax.startup.output) {
+    MathJax.startup.output.clearCache()
+    MathJax.typesetClear()
+    MathJax.texReset()
+    MathJax.typesetPromise()
+  }
 })
 
 
