@@ -786,47 +786,116 @@ __Are you missing something? Please [open a discussion] and let us know!__
     ````
     `````
 
-!!! desc ""
-    ````markmap
+<style>
+  svg.markmap {
+    width: 100%;
+    height: 360px;
+  }
+</style>
+<script src="https://unpkg.com/markmap-autoloader/dist/index.js"></script>
 
-    ## Mind Map
+<div class="markmap">
+<script type="text/template">
 
-    ### Fence Block Enclosure 
+## Mind Map
 
-    - That's great. Anything
+### Fence Block Enclosure 
 
-    ### Formatting and Lists
+- That's great. Anything
 
-    - **strong** ~~del~~ *italic* ==highlight==
-    - `inline code`
-    - [x] checkbox
-    - KaTeX: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+### Formatting and Lists
 
-    ### Code block
+- **strong** ~~del~~ *italic* ==highlight==
+- `inline code`
+- [x] checkbox
+- KaTeX: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
 
-    ```js
-    for (let i = 0; i < 5; i++) {
-        console.log("value", i);
-    }
-    ```
+### Code block
 
-    ### Table block
+```js
+for (let i = 0; i < 5; i++) {
+    console.log("value", i);
+}
+```
 
-    | Header1 | Header2 |
-    | --- | --- |
-    | item 1 | 1\. one<br /> 2\. two |
+### Table block
 
-    ### Image
+| Header1 | Header2 |
+| --- | --- |
+| item 1 | 1\. one<br /> 2\. two |
 
-    ![](../../assets/newlogo.svg)
+### Image
 
-    ````
+![](../../assets/newlogo.svg)
+
+</script>
+</div>
 
   [glightbox]: https://github.com/blueswen/mkdocs-glightbox
   [drawio]: https://github.com/tuunit/mkdocs-drawio
   [markmap]: https://github.com/markmap/mkdocs-markmap
   [mermaid2]: https://github.com/fralau/mkdocs-mermaid2-plugin
   
+---
+
+<div class="markmap">
+<svg style="width: 100%; height: 360px; display: block;"></svg>
+<script type="text/template">
+
+# Root
+## Branch 1
+* Branchlet 1a
+* Branchlet 1b
+## Branch 2
+* Branchlet 2a
+* Branchlet 2b
+
+
+</script>
+</div>
+
+
+---
+
+
+<div class="markmap">
+<svg style="width: 100%; height: 360px; display: block;"></svg>
+<script type="text/template">
+
+# Project Management
+## Planning
+- Scope Definition
+- Resource Allocation
+## Execution
+- Frontend Development
+- Backend API
+- Database Setup
+## Monitoring
+- Weekly Sprints
+- KPI Tracking
+
+</script>
+</div>
+
+
+---
+
+<div class="markmap">
+<svg style="width: 100%; height: 360px; display: block;"></svg>
+<script type="text/template">
+
+# Marketing Campaign
+## Channels
+- **Social Media**
+  - [Instagram Updates](https://instagram.com)
+  - _X (Twitter) Threads_
+- **Email Newsletters**
+  - Weekly Digests
+  - Product Launches
+
+
+</script>
+</div>
 
 ---
 
