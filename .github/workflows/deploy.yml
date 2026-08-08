@@ -37,6 +37,11 @@ jobs:
           uv pip install --system --upgrade pip
           uv pip install --system -r requirements.txt
 
+      - name: Apply mkdocs-markmap patch (click-to-expand, scroll-zoom fix)
+        run: |
+          PKG_DIR=$(python3 -c "import mkdocs_markmap, os; print(os.path.dirname(mkdocs_markmap.__file__))")
+          cp patches/mkdocs-markmap.js "$PKG_DIR/static_files/mkdocs-markmap.js"
+
       - run: mkdocs build --clean
       
       - run: sed -i 's|/assets/local_icons/|/Afridyne-Systems/assets/local_icons/|g' site/search/search_index.json site/assets/javascripts/*.js 2>/dev/null || true
