@@ -713,7 +713,7 @@ __Are you missing something? Please [open a discussion] and let us know!__
 
         ```
 
-???+ tip "[mkdocs-mermaid2-plugin][mermaid2] - renders mermaid text into diagrams (built-in)"
+???+ tip "[mkdocs-mermaid-plugin][mermaid] - renders mermaid text into diagrams (built-in)"
 
     === "Rendering"
 
@@ -826,7 +826,7 @@ __Are you missing something? Please [open a discussion] and let us know!__
   [drawio]: https://github.com/tuunit/mkdocs-drawio
   [markmap]: https://github.com/markmap/mkdocs-markmap
   [mermaid2]: https://github.com/fralau/mkdocs-mermaid2-plugin
-  
+  [mermaid]: https://github.com/mermaid-js/mermaid
 
 ---
 
@@ -877,8 +877,24 @@ __Are you missing something? Please [open a discussion] and let us know!__
     ```
 
 
+???+ important "[diagram][drawio] - 5c Marketing Analysis"
 
+    ![](../assets/images/5c-marketing-analysis.drawio)
+    
+???+ decision "[diagram][drawio] - embed interactive drawio diagrams in documents"
 
+    ![](../assets/images/business-model-canvas-table.drawio)
+    
+
+!!! instruction ""
+
+    ![](../assets/images/rack-diagram-simple-server.drawio)
+
+!!! recommendation ""
+
+    
+    ![](../assets/images/wiring.drawio)
+    
 
 
 
