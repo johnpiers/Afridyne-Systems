@@ -275,45 +275,97 @@ An extremely fast Python package and project manager, written in Rust.
 
 ### Various Misc
 
-~~~
+1. First ordered list item
+2. Another item
+    * Unordered sub-list.
+3. Actual numbers don't matter, just that it's a number
+    1. Ordered sub-list
+    2. Second ordered sub-item
+4. And another item.
 
-blank line before
-blank line after
+    You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-~~~
+    To have a line break without a paragraph, you will need to use two trailing spaces.
+    Note that this line is separate, but within the same paragraph.
+    (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
-1.  List item
+<!-- -->
 
-    Not an indented code block, but a second paragraph
-    in the list item
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
 
-~~~~
-This is a code block, fenced-style
-~~~~
+#### Lists
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.html #example-1}
-<p>paragraph <b>emphasis</b>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+??? desc "Click to see Code for Lists."
 
-Some markdown content here.
+    ```markdown
+    1. First ordered list item
+    2. Another item
+        * Unordered sub-list.
+    3. Actual numbers don't matter, just that it's a number
+        1.Ordered sub-list
+            1. Ordered sub-list
+    4. And another item.
+
+        You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+
+        To have a line break without a paragraph, you will need to use two trailing spaces.  
+        Note that this line is separate, but within the same paragraph.  
+        (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+
+    * Unordered list can use asterisks
+    - Or minuses
+    + Or pluses
+    ```
+
+!!! desc "Lists."
+
+    1. First ordered list item
+    2. Another item
+        * Unordered sub-list.
+    3. Actual numbers don't matter, just that it's a number
+        1. Ordered sub-list (Will automatically render as i.)
+            1. ordered sub-item
+            1. ordered sub-item
+            1. ordered sub-item
+        2. Second ordered sub-item (Will automatically render as ii.)
+            1. ordered sub-item
+            1. ordered sub-item
+    4. And another item.
+
+        You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+
+        To have a line break without a paragraph, you will need to use two trailing spaces.  
+        Note that this line is separate, but within the same paragraph.
+        (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+
+    ---
+
+    * Unordered list can use asterisks
+    - Or minuses
+    + Or pluses
 
 <div class="custom-class">
 HTML content
 </div>
 
+Press ++ctrl+alt+delete++ to log in.
+
 !!! warning "Admonition after HTML"
     This should work with proper spacing.
 
 <!-- md:option type:bug -->
-!!! bug "Bug"
+!!! important "Important"
 
-        Admonitions, also known as <em>call-outs</em>, are an excellent choice for including side content without significantly interrupting the document flow. Material for MkDocs provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.
+        Admonitions, also known as <em>call-outs</em>, are an excellent choice for including side content
+        without significantly interrupting document flow. Material for MkDocs provides several different
+        types of admonitions and allows for the inclusion and nesting of arbitrary content.
         
 <!-- md:option type:q -->
 !!! quote "Quote"
 
-    Admonitions, also known as <em>call-outs</em>, are an excellent choice for including side content without significantly
-    interrupting the document flow. Material for MkDocs provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.
+    Admonitions, also known as <em>call-outs</em>, are an excellent choice for including side content without significantly interrupting the document flow. Material for MkDocs provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.
 
 
 !!! pied-piper "Pied Piper"
@@ -321,15 +373,13 @@ HTML content
     ``` markdown title="The last 3 special directories."
 
 
-    NB: The last 3 special directories (last, week and month) which links repectively
-    to the last synced repository, to the last Monday and to the first of the current month.
+    NB: The last 3 special directories (last, week and month) which links repectively to the last synced repository, to the last Monday and to the first of the current month.
     ```
 
 
-!!! bug "The Title"
+!!! education "The Title"
 
-    The content is correctly parsed because it's separated by blank lines
-    from the raw HTML block tags.
+    The content is correctly parsed because it's separated by blank lines from the raw HTML block tags.
     
 
 
@@ -347,7 +397,7 @@ HTML content
 | aur | rsvndump | [0.6.2-1](https://aur.archlinux.org/packages?O=0&K=rsvndump) | Remote Subversion repository dump. |
 | [aur](https://aur.archlinux.org/#) | aurvote-utils-git | [1.1.0.r7.g3e82548-1](https://aur.archlinux.org/packages?O=0&K=aurvote-utils-git) | A set of utilities for managing AUR votes |
 
-!!! bug "Note."
+!!! recommendation "Note."
     If the ESP is not mounted to `/boot`, make sure to not rely on the [systemd automount mechanism](https://wiki.archlinux.org/title/Fstab#Automount_with_systemd) (including that of [systemd-gpt-auto-generator](https://wiki.archlinux.org/title/Systemd#GPT_partition_automounting)) during kernel upgrades. Always mount it manually prior to any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on the ESP.
 
     Alternatively [preload the required kernel modules on boot](https://wiki.archlinux.org/title/Kernel_module#systemd), e.g.:
@@ -452,15 +502,16 @@ HTML content
 | Windows Terminal  |   Windows     |   [in-progress](https://github.com/microsoft/terminal/issues/448) |   Sixel   |
 | [RLogin](http://nanno.dip.jp/softlib/man/rlogin/) | Windows | yes         |   Sixel   |
 
-## Internationalization and localization
+## Internationalization and Localization
 
-wttr.in supports multilingual locations names that can be specified in any language in the world
-(it may be surprising, but many locations in the world don't have an English name).
+!!! desc "Internationalization and Localization"
 
-The query string should be specified in Unicode (hex-encoded or not). Spaces in the query string
-must be replaced with `+`:
+    wttr.in supports multilingual locations names that can be specified in any language in the world (it may be surprising, but many locations in the world don't have an English name).
 
-    $ curl wttr.in/станция+Восток
+    The query string should be specified in Unicode (hex-encoded or not). Spaces in the query string must be replaced with `+`:
+
+    ```vim
+    \$ curl wttr.in/станция+Восток
     Weather report: станция Восток
 
                    Overcast
@@ -468,8 +519,10 @@ must be replaced with `+`:
        .-(    ).   ↑ 23 km/h
       (___.__)__)  15 km
                    0.0 mm
+    ```
 
-The language used for the output (except the location name) does not depend on the input language and it is either English (by default) or the preferred language of the browser (if the query was issued from a browser) that is specified in the query headers (`Accept-Language`).
+    The language used for the output (except the location name) does not depend on the input language and it is either English (by default) or the preferred language of the browser (if the query was issued from a browser) that is specified in the query headers (`Accept-Language`).
+
 
 
 ## wttr.in usage stats
@@ -2710,7 +2763,7 @@ To use the font inside office suites with proper connecting lines, append the ma
     Covers basics of setting up a blog, including post metadata. (20 min)
 
 -   <span style="color: #d93026">:material-cog:</span> **Nav, Pgn, et al. Authors**
-    [:octicons-arrow-right-24: View Config](https://squidfunk.github.io/mkdocs-material/tutorials/blogs/navigation/){ .md-button style="border-color: #d93026; color: #d93026" }
+    [:octicons-arrow-right-24: View Config](https://github.com/jaywhj/mkdocs-materialx/blob/main/docs/tutorials/blogs/navigation.md){ .md-button style="border-color: #d93026; color: #d93026" }
 
     Describes how to make it easier for your readers to find content. (30 min)
 

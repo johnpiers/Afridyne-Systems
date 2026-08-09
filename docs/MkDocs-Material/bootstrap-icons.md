@@ -1,12 +1,13 @@
 ---
+title: Bootstrap Icons
 icon: simple/materialformkdocs
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>Bootstrap Icons</h1></div>
 
 <div class="hover-tooltip-wrapper">
   <a href="https://getbootstrap.com/">
-    <img src="imgs/20260516-173953.png" class="center-image" alt="Bootstrap logo" width="200" height="165">
+    <img src="../imgs/20260516-173953.png" class="center-image" alt="Bootstrap logo" width="200" height="165">
   </a>
   <span class="hover-tooltip-text">Click to visit GetBootstrap.com</span>
 </div>
@@ -29,7 +30,7 @@ icon: simple/materialformkdocs
 
 <div class="hover-tooltip-wrapper">
   <a href="https://icons.getbootstrap.com/">
-    <img src="imgs/20260516-172540.png" class="center-image" alt="Bootstrap Icons preview">
+    <img src="../imgs/20260516-172540.png" class="center-image" alt="Bootstrap Icons preview">
   </a>
   <span class="hover-tooltip-text">Click to explore full icon library</span>
 </div>
