@@ -1548,3 +1548,24 @@ a.md-button.md-button--custom:hover,
   outline: none !important;
   padding-top: 0 !important;
 }
+
+
+/* 1. Tier 2: Lowercase Roman numerals */
+.md-typeset ol ol {
+    list-style-type: lower-roman;
+    padding-left: 1.5rem;
+}
+
+/* 2. Tier 3: Lowercase alphabetic letters */
+.md-typeset ol ol ol {
+    list-style-type: lower-alpha;
+    padding-left: 1.5rem;
+}
+
+/* 3. Keep nested unordered lists as solid dots */
+.md-typeset ul ul,
+.md-typeset ol ul,
+.md-typeset ul ol {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
