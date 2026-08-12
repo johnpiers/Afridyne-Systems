@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Target the raw pre element blocks residing inside your content tab tracks
-  const preElements = document.querySelectorAll(".md-typeset .tabbed-content .tabbed-block div.highlight > pre");
+  // Target raw pre elements inside highlighted code blocks, both tabbed and standalone
+  const preElements = document.querySelectorAll(".md-typeset div.highlight > pre");
 
   preElements.forEach((preEl) => {
+    // Skip any code block that lives inside a footnote
+    if (preEl.closest(".footnote")) return;
+
     // Count lines from a clone with annotation content stripped out, so
     // Material's code-annotation tooltips (which get injected as
     // descendants of the <pre>) never inflate the real line count.

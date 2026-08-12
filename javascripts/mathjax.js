@@ -1,7 +1,7 @@
 window.MathJax = {
   tex: {
-    inlineMath: [["\\(", "\\)"], ["$", "$"]],
-    displayMath: [["\\[", "\\]"], ["$$", "$$"]],
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
     processEscapes: true,
     processEnvironments: true,
     packages: {'[+]': ['color']}
@@ -10,7 +10,7 @@ window.MathJax = {
     load: ['[tex]/color']
   },
   options: {
-    ignoreHtmlClass: ".*",
+    ignoreHtmlClass: ".*|",
     processHtmlClass: "arithmatex",
     menuOptions: {
       settings: {
@@ -29,9 +29,3 @@ document$.subscribe(() => {
     MathJax.typesetPromise()
   }
 })
-
-
-
-
-
-

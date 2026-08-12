@@ -1569,3 +1569,10 @@ a.md-button.md-button--custom:hover,
     list-style-type: disc;
     padding-left: 1.5rem;
 }
+
+
+/* Custom class to boost specific text blocks on the fly */
+.bright-large {
+    font-size: 1.15em !important; /* Makes it slightly larger than normal text */
+    color: var(--md-default-fg-color--strong) !important; /* Forces the theme's maximum text brightness */
+}
