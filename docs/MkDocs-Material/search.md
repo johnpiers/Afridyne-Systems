@@ -1,428 +1,541 @@
 ---
+status: new
 title: Built-in search plugin
-icon: material/magnify
+icon: lucide/search
 ---
+
+
 ![](imgs/20260130-135343.png){: style="display: block; margin: 0 auto"}
-<H1 style="text-align: center;">Built-in Search Plugin</H1>
 
+# Built-in Search Plugin
 
-The search plugin adds a search bar to the header, allowing users to search your
-documentation. It's powered by [lunr.js], a lightweight full-text search engine
-for the browser, elimininating the need for external services, and even works
-when building [offline-capable documentation].
+!!! version-added "Built-in Search Plugin"
 
-  [lunr.js]: https://lunrjs.com/
-  [offline-capable documentation]: building-for-offline-usage.md
-
+    MaterialX `10.2.0` fully refactors the search module with a brand-new architecture, greatly improving **search quality** and **indexing efficiency**.
+    
+    It supports multi-provider mode, chunked indexing, on-demand loading, index compression, multilingual search and cross-domain search. It is suitable for various complex scenarios and large-scale sites, and can handle sites with more than 100,000 pages.
+    
+    [Pagefind]{target="_blank"} is the default provider. You may switch back to the original [Lunr]{target="_blank"} when using it in an [offline]{target="_blank"} environment (opened via the `file://` protocol).
+    
+  [Pagefind]: https://pagefind.app/
+  [Lunr]: https://lunrjs.com/
+  [offline]: offline.md
+  
 ## Objective
 
 ### How it works
 
-The plugin scans the generated HTML and builds a search index from all pages and
-sections by extracting the section titles and contents. It preserves some inline
-formatting like code blocks and lists, but removes all other formatting, so the
-search index is as small as possible.
+!!! instruction "How it works!"
 
-When a user visits your site, the search index is shipped to the browser,
-indexed with [lunr.js] and made available for fast and simple querying – no
-server needed. This ensures that the search index is always up to date with
-your documentation, yielding accurate results.
-
-### When to use it
-
-It's generally recommended to use the plugin, as interactive search functionality
-is a vital part of every good documentation. Additionally, the plugin integrates
-perfectly with several of the other [built-in plugins] that Material for MkDocs
-offers:
-
-<div class="grid cards" markdown>
-
--   :material-connection: &nbsp; __[Built-in offline plugin][offline]__
-
-    ---
-
-    The offline plugin adds support for building offline-capable documentation,
-    so you can distribute the [`site` directory][`mkdocs.site_dir`] as a `.zip`
-    file that can be downloaded.
-
-    ---
-
-    __Your documentation can work without connectivity to the internet__
-
--   :material-file-tree: &nbsp; __[Built-in meta plugin][meta]__
-
-    ---
-
-    The meta plugin makes it easy to [boost][`meta.search.boost`] specific
-    sections in search results or to [exclude][`meta.search.exclude`] them
-    entirely from being indexed, giving more granular control over search.
-
-    ---
-
-    __Simpler organization and management of search in different subsections__
-
-</div>
-
-  [offline]: offline.md
-  [meta]: meta.md
-  
-
+    The plugin builds the selected provider's index after MkDocs has rendered the site. The frontend loads that provider through a common integration and renders the results with MaterialX's built-in search interface.
+    
+    Pagefind scans the generated HTML and writes a chunked index beside the site. At search time, the browser loads only the chunks and result data needed for the current query. Lunr writes `search_index.json`, then constructs and queries its in-memory index in a Web Worker.
+    
 ## Configuration
 
-<!-- md:version 9.0.0 -->
-<!-- md:plugin [search] – built-in -->
+!!! recommendation "Configuration"
+    The search plugin is built into MaterialX and doesn't need to be installed. Add [***search***{.bright-large}] to the ***`plugins`***{.bright-large} list to enable it (pagefind is the default provider):
+    
+    ``` yaml
+    plugins:
+      - search
+    ```
+    
+  [***search***{.bright-large}]: https://jaywhj.github.io/mkdocs-materialx/plugins/search.html#built-in-search-plugin
 
-As with all [built-in plugins], getting started with the search plugin is
-straightforward. Just add the following lines to `mkdocs.yml`, and your users
-will be able to search your documentation:
+### Configuration structure
 
-``` yaml
-plugins:
-  - search
-```
+The example below demonstrates the provider-based structure and available options, **all of which are optional**.
 
-The search plugin is built into Material for MkDocs and doesn't need to be
-installed.
-
-  [search]: search.md
-  
-
-### General
-
-The following settings are available:
-
----
-
-#### <!-- md:setting config.enabled -->
-
-<!-- md:version 9.3.2 -->
-<!-- md:default `true` -->
-
-Use this setting to enable or disable the plugin when [building your project].
-It's normally not necessary to specify this setting, but if you want to disable
-the plugin, use:
 
 ``` yaml
 plugins:
   - search:
-      enabled: false
+      provider: pagefind # pagefind (default) or lunr
+
+      pagefind:
+        # Index configuration
+        include_characters: ._
+        keep_index_url: true
+        exclude_selectors:
+          - .md-banner
+        # output_subdir: search
+        # logfile: pagefind.log
+
+        # Browser Search API configuration
+        options:
+          excerptLength: 30
+          exactDiacritics: false
+          ranking:
+            termFrequency: 1.0
+            termSimilarity: 1.0
+            pageLength: 0.75
+            termSaturation: 1.4
+            diacriticSimilarity: 0.8
+            metaWeights:
+              title: 5.0
+
+      lunr:
+        lang:
+          - en
+        separator: '[\s\-]+'
+        pipeline:
+          - stemmer
+          - stopWordFilter
+          - trimmer
+        # jieba_dict: dict.txt
+        # jieba_dict_user: user_dict.txt
 ```
 
-  [building your project]: creating-your-site.md#building-your-site
+### Provider
 
-### Search
+!!! desc "Provider"
 
-The following settings are available for search:
+    Use this setting to select the search provider:
 
----
+    === "Pagefind"
 
-#### <!-- md:setting config.lang -->
+        ``` yaml
+        plugins:
+          - search:
+              provider: pagefind
+        ```
 
-<!-- md:version 9.0.0 -->
-<!-- md:default computed -->
+    === "Lunr"
 
-Use this setting to specify the language of the search index, enabling [stemming]
-support for other languages than English. The default value is automatically
-computed from the [site language], but can be explicitly set to another language
-or even multiple languages with:
+        ``` yaml
+        plugins:
+          - search:
+              provider: lunr
+        ```
 
-=== "Set language"
+    [Pagefind]{target="_blank"} is the default provider. You may switch back to the original [Lunr]{target="_blank"} when using it in an [offline]{target="_blank"} environment (opened via the `file://` protocol).
+
+
+## Pagefind
+
+!!! desc "Pagefind"
+
+    Pagefind is a static search library designed around a small initial payload and on-demand index loading. MaterialX integrates `pagefind[extended]` with specific support for Chinese and Japanese.
+
+
+### Features
+
+!!! desc "Features"
+
+    - **High-quality search results**: It matches keywords comprehensively by combining multiple metrics including term similarity, term saturation, term frequency, page length, diacritics, as well as weights for content and metadata, delivering more accurate and comprehensive search results
+
+    - **High performance for large sites**: It implements chunked indexing and on-demand loading mechanisms. Regardless of the total number of pages on the site, only index chunks relevant to search keywords are loaded into memory instead of the entire index, which greatly boosts search performance
+
+    - **Multilingual search**: It automatically detects page languages and generates corresponding chunked indexes for all supported languages
+
+    - **Cross-domain multi-site search**: It can be configured to search across multiple sites and merge results and filters into a single response
+
+
+### Index configuration
+
+Configure indexing options directly under the `pagefind` level:
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| `exclude_selectors` | `nav`, `footer` | CSS selectors and their descendants to omit from indexing |
+| `include_characters` | `._` | Punctuation preserved as searchable characters |
+| `keep_index_url` | `true` | Keep `index.html` at the end of result URLs |
+| `logfile` | none | Also write logs to a file; relative paths are resolved inside `output_subdir` |
+| `options` | `{}` | Browser Search API configuration, described in the next section |
+
+!!! desc ""
+    MaterialX marks the main content with `data-pagefind-body` and manages the index input, output, and result URL format. Other Pagefind index options remain available for advanced use, see Pagefind's [index configuration]{target="_blank"}.
+    
+  [index configuration]: https://pagefind.app/docs/config-options/
+
+### Search API configuration
+
+Configure the browser Search API options directly under the `pagefind.options` level:
+
+| Option | Default | Description |
+| --- | --- | --- |
+| `excerptLength` | `30` | Maximum target length for generated result excerpts |
+| `exactDiacritics` | `false` | Treat accented and unaccented characters as distinct |
+| `ranking` | Pagefind defaults | Tune result ranking with the parameters below |
+
+!!! desc ""
+    MaterialX manages bundle routing, result URLs, and highlighting. The complete upstream option set remains available for special cases in Pagefind's [Search API configuration]{target="_blank"}.
+    
+The options for `ranking` are as follows:
+
+| Ranking option | Default | Purpose |
+| --- | --- | --- |
+| `termFrequency` | `1.0` | Balance term frequency against weighted term count |
+| `termSimilarity` | `1.0` | Prefer indexed terms whose length is closer to the query |
+| `pageLength` | `0.75` | Control how strongly shorter-than-average pages are favored |
+| `termSaturation` | `1.4` | Control how quickly repeated terms stop increasing relevance |
+| `diacriticSimilarity` | `0.8` | Boost exact diacritic matches when normalization is enabled |
+| `metaWeights` | `title: 5.0` | Weight matches in title or custom metadata fields |
+
+For value ranges and the remaining controls, see Pagefind's [ranking documentation]{target="_blank"}.
+
+  [Search API configuration]: https://pagefind.app/docs/search-config/
+  [ranking documentation]: https://pagefind.app/docs/ranking/
+
+### Excluding Content
+
+#### Excluding an Entire Page
+
+!!! desc "Excluding an Entire Page"
+
+    Use `search.exclude` in the Markdown front matter to remove a complete page and
+    all of its sections from the Pagefind index:
+
+    ``` yaml
+    ---
+    search:
+      exclude: true
+    ---
+
+    # Page title
+    ...
+    ```
+
+!!! desc "Meta Plugin"
+
+    The [meta] plugin can apply the same property to every page in a folder:
+
+    ``` yaml title=".meta.yml"
+    search:
+      exclude: true
+    ```
+
+  [meta]: meta.md
+
+
+#### Excluding certain types of elements
+
+!!! desc "Excluding certain types of elements"
+
+    Use `exclude_selectors` for elements that should be ignored throughout the site, such as a custom banner or generated utility block:
 
     ``` yaml
     plugins:
       - search:
-          lang: en
+          pagefind:
+            exclude_selectors:
+              - .md-banner
+              - .generated-example
     ```
 
-=== "Add further languages"
+    The matched element and all of its children are excluded.
 
-    ``` yaml
-    plugins:
-      - search:
-          lang: # (1)!
-            - en
-            - de
+#### Excluding part of a page
+
+!!! desc "Excluding part of a page"
+
+    Use Pagefind's `data-pagefind-ignore` attribute to exclude part of a document. For a complete section, wrap the heading and its content in an HTML container:
+
+    ``` html
+    <div data-pagefind-ignore markdown>
+
+    ## Internal notes
+
+    This complete section is excluded from Pagefind.
+
+    </div>
     ```
 
-    1.  Be aware that including support for further languages increases the
-        base JavaScript payload by around 20kb and by another 15-30kb per
-        language, all before `gzip`.
+
+  [Attribute Lists]: python-markdown.md#attribute-lists
+
+### Other Pagefind Features
+
+!!! desc "Other Pagefind Features"
+
+    Pagefind also supports metadata, filters, sorting, content weighting, custom records, and search across multiple sites. These are upstream Pagefind capabilities; some require custom templates, indexing code, or frontend code beyond MaterialX's built-in integration. See the [Pagefind]{target="_blank"} documentation and [multisite search]{target="_blank"} guide for the complete workflows.
+    
+  [multisite search]:https://pagefind.app/docs/multisite/
+
+## Lunr
+
+!!! desc "Lunr"
+    Lunr builds one JSON search index and loads it into a Web Worker in the browser. It is less efficient for very large sites than Pagefind, but remains the right provider when a generated site must work without an HTTP server.
+    
+### Language
+
+!!! desc "Setting config.lang"
+
+    Use this setting to specify the language of the search index, enabling [stemming] support for languages other than English. The default is computed from the [site language], but can be set to one or multiple languages:
+
+    === "Set language"
+
+        ``` yaml
+        plugins:
+          - search:
+              provider: lunr
+              lunr:
+                lang: en
+        ```
+
+    === "Add further languages"
+
+        ``` yaml
+        plugins:
+          - search:
+              provider: lunr
+              lunr:
+                lang: # (1)!
+                  - en
+                  - de
+        ```
+
+        1.  Including more languages increases the base JavaScript payload by around 20kb and by another 15-30kb per language, all before
+         `gzip`.
+
 
   [stemming]: https://en.wikipedia.org/wiki/Stemming
   [site language]: changing-the-language.md#site-language
   [lunr languages]: https://github.com/MihaiValentin/lunr-languages
 
-Language support is provided by [lunr languages], a collection of
-language-specific stemmers and stop words for [lunr.js] maintained by the
-Open Source community.
+!!! desc "Language Support"
 
----
+    Language support is provided by [lunr languages], a collection of language-specific stemmers and stop words for Lunr maintained by the Open Source community.
 
-The following languages are currently supported by [lunr languages]:
+    ??? education "Languages"
 
-<div class="mdx-columns" markdown>
+        The following languages are currently supported by [lunr languages]:
 
-- `ar` – Arabic
-- `da` – Danish
-- `de` – German
-- `du` – Dutch
-- `en` – English
-- `es` – Spanish
-- `fi` – Finnish
-- `fr` – French
-- `hi` – Hindi
-- `hu` – Hungarian
-- `hy` – Armenian
-- `it` – Italian
-- `ja` – Japanese
-- `kn` - Kannada
-- `ko` – Korean
-- `no` – Norwegian
-- `pt` – Portuguese
-- `ro` – Romanian
-- `ru` – Russian
-- `sa` – Sanskrit
-- `sv` – Swedish
-- `ta` – Tamil
-- `te` – Telugu
-- `th` – Thai
-- `tr` – Turkish
-- `vi` – Vietnamese
-- `zh` – Chinese
+        <div class="mdx-columns" markdown>
 
-</div>
+        - `ar` – Arabic
+        - `da` – Danish
+        - `de` – German
+        - `du` – Dutch
+        - `en` – English
+        - `es` – Spanish
+        - `fi` – Finnish
+        - `fr` – French
+        - `hi` – Hindi
+        - `hu` – Hungarian
+        - `hy` – Armenian
+        - `it` – Italian
+        - `ja` – Japanese
+        - `kn` – Kannada
+        - `ko` – Korean
+        - `no` – Norwegian
+        - `pt` – Portuguese
+        - `ro` – Romanian
+        - `ru` – Russian
+        - `sa` – Sanskrit
+        - `sv` – Swedish
+        - `ta` – Tamil
+        - `te` – Telugu
+        - `th` – Thai
+        - `tr` – Turkish
+        - `vi` – Vietnamese
+        - `zh` – Chinese
 
-If [lunr languages] doesn't provide support for the selected [site language],
-the plugin falls back to another language that yields the best stemming results.
-If you discover that the search results are not satisfactory, you can contribute
-to [lunr languages] by adding support for your language.
+        </div>
 
----
+    If [lunr languages] doesn't support the selected [site language], the plugin falls back to the language that is expected to yield the best stemming results.
 
-#### <!-- md:setting config.separator -->
 
-<!-- md:version 9.0.0 -->
-<!-- md:default computed -->
+### Tokenization
 
-Use this setting to specify the separator used to split words when building the
-search index on the client side. The default value is automatically computed
-from the [site language], but can also be explicitly set to another value with:
+!!! desc "Tokenization"
 
-``` yaml
-plugins:
-  - search:
-      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-```
+    Use this setting to specify the separator used to split words when building the search index. The default is computed from the [site language], but can be set explicitly:
 
-Separators support [positive and negative lookahead assertions], which allows
-for rather complex expressions that yield precise control over how words are
-split when building the search index.
-
-Broken into its parts, this separator induces the following behavior:
-
-=== "Special characters"
-
-    ```
-    [\s\-,:!=\[\]()"/]+
+    ``` yaml
+    plugins:
+      - search:
+          provider: lunr
+          lunr:
+            separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
     ```
 
-    The first part of the expression inserts token boundaries for each
-    document before and after whitespace, hyphens, commas, brackets and
-    other special characters. If several of those special characters are
-    adjacent, they are treated as one.
+    Separators support [positive and negative lookahead assertions], allowing precise control over how words are split.
 
-=== "Case changes"
+    Broken into its parts, this separator induces the following behavior:
 
-    ```
-    (?!\b)(?=[A-Z][a-z])
-    ```
+    === "Special characters"
 
-    Many programming languages have naming conventions like `PascalCase` or
-    `camelCase`. By adding this subexpression to the separator,
-    [words are split at case changes], tokenizing the word `PascalCase`
-    into `Pascal` and `Case`.
+        ```
+        [\s\-,:!=\[\]()"/]+
+        ```
 
-=== "Version strings"
+        This inserts token boundaries before and after whitespace, hyphens, commas, brackets, and other special characters. Adjacent separators are treated as one.
 
-    ```
-    \.(?!\d)
-    ```
+    === "Case changes"
 
-    When adding `.` to the separator, version strings like `1.2.3` are split
-    into `1`, `2` and `3`, which makes them undiscoverable via search. When
-    using this subexpression, a small lookahead is introduced which will
-    [preserve version strings] and keep them discoverable.
+        ```
+        (?!\b)(?=[A-Z][a-z])
+        ```
 
-=== "HTML/XML tags"
+        This splits programming identifiers at case changes, tokenizing
+        `PascalCase` into `Pascal` and `Case`.
 
-    ```
-    &[lg]t;
-    ```
+    === "Version strings"
 
-    If your documentation includes HTML/XML code examples, you may want to allow
-    users to find [specific tag names]. Unfortunately, the `<` and `>` control
-    characters are encoded in code blocks as `&lt;` and `&gt;`. Adding this
-    subexpression to the separator allows for just that.
+        ```
+        \.(?!\d)
+        ```
+
+        The negative lookahead prevents version strings like `1.2.3` from being split into separate numbers and keeps them discoverable.
+
+    === "HTML/XML tags"
+
+        ```
+        &[lg]t;
+        ```
+
+        This accounts for `<` and `>` being encoded as `&lt;` and `&gt;` in code
+        blocks, allowing users to search for tag names.
+
 
   [positive and negative lookahead assertions]: https://www.regular-expressions.info/lookaround.html
-  [words are split at case changes]: ?q=searchHighlight
-  [preserve version strings]: ?q=9.0.0
-  [specific tag names]: ?q=script
 
----
+### Pipeline
 
-#### <!-- md:setting config.pipeline -->
+!!! desc "Pipeline"
 
-<!-- md:version 9.0.0 -->
-<!-- md:default computed -->
-<!-- md:flag experimental -->
+    Use this setting to specify the [pipeline functions] that filter and expand tokens after tokenization and before adding them to the index. The default is computed from the [site language]:
 
-Use this setting to specify the [pipeline functions] that are used to filter and
-expand tokens after tokenizing them with the [`separator`][`config.separator`] and
-before adding them to the search index. The default value is automatically
-computed from the [site language], but can also be explicitly set with:
+    ``` yaml
+    plugins:
+      - search:
+          provider: lunr
+          lunr:
+            pipeline:
+              - stemmer
+              - stopWordFilter
+              - trimmer
+    ```
 
-``` yaml
-plugins:
-  - search:
-      pipeline:
-        - stemmer
-        - stopWordFilter
-        - trimmer
-```
+    The following pipeline functions can be used:
 
-The following pipeline functions can be used:
+    - `stemmer` – Stem tokens to their root form, e.g. `running` to `run`
+    - `stopWordFilter` – Filter common words such as `a` and `the`
+    - `trimmer` – Trim whitespace from tokens
 
-- `stemmer` – Stem tokens to their root form, e.g. `running` to `run`
-- `stopWordFilter` – Filter common words according, e.g. `a`, `the`, etc.
-- `trimmer` – Trim whitespace from tokens
 
   [pipeline functions]: https://lunrjs.com/guides/customising.html#pipeline-functions
 
 ### Segmentation
 
-The plugin supports text segmentation of Chinese via [jieba], a popular
-Chinese text segmentation library. Other languages like Japanese and Korean are
-currently segmented on the client side, but we're considering to move this
-functionality into the plugin in the future.
+!!! desc "Segmentation"
 
-The following settings are available for segmentation:
+    The plugin supports Chinese text segmentation with [jieba]. Japanese and
+    Korean are segmented on the client side when Lunr is selected.
 
-  [jieba]: https://pypi.org/project/jieba/
+    [jieba]: https://pypi.org
 
----
+    Use this setting to specify a [custom dictionary] for [jieba], replacing its
+    default dictionary:
 
-#### <!-- md:setting config.jieba_dict -->
+    ``` yaml
+    plugins:
+      - search:
+          provider: lunr
+          lunr:
+            jieba_dict: dict.txt
+    ```
 
-<!-- md:version 9.2.0 -->
-<!-- md:default none -->
-<!-- md:flag experimental -->
+    The following dictionaries are provided by [jieba]:
 
-Use this setting to specify a [custom dictionary] to be used by [jieba] for
-segmenting text, replacing the default dictionary. [jieba] comes with
-several dictionaries, which can be used with:
+    - [dict.txt.small] – 占用内存较小的词典文件
+    - [dict.txt.big] – 支持繁体分词更好的词典文件
 
-``` yaml
-plugins:
-  - search:
-      jieba_dict: dict.txt
-```
+    The path is resolved from the project root directory.
 
-The following dictionaries are provided by [jieba]:
-
-- [dict.txt.small] – 占用内存较小的词典文件
-- [dict.txt.big] – 支持繁体分词更好的词典文件
-
-The provided path is resolved from the root directory.
 
   [custom dictionary]: https://github.com/fxsjy/jieba#%E5%85%B6%E4%BB%96%E8%AF%8D%E5%85%B8
   [dict.txt.small]: https://github.com/fxsjy/jieba/raw/master/extra_dict/dict.txt.small
   [dict.txt.big]: https://github.com/fxsjy/jieba/raw/master/extra_dict/dict.txt.big
 
----
 
-#### <!-- md:setting config.jieba_dict_user -->
+!!! desc "Add User Dictionary to [jieba](https://pypi.org/project/jieba/)"
 
-<!-- md:version 9.2.0 -->
-<!-- md:default none -->
-<!-- md:flag experimental -->
+    Use this setting to add a [user dictionary] to [jieba](https://pypi.org/project/jieba/) without replacing the default dictionary. User dictionaries are useful for product names, technical terms, and other site-specific vocabulary:
 
-Use this setting to specify an additional [user dictionary] to be used by
-[jieba] for segmenting text, augmenting the default dictionary. User
-dictionaries are ideal for tuning the segmenter:
+    ``` yaml
+    plugins:
+      - search:
+          provider: lunr
+          lunr:
+            jieba_dict_user: user_dict.txt
+    ```
 
-``` yaml
-plugins:
-  - search:
-      jieba_dict_user: user_dict.txt
-```
+    The path is resolved from the project root directory.
 
-The provided path is resolved from the root directory.
 
   [user dictionary]: https://github.com/fxsjy/jieba#%E8%BD%BD%E5%85%A5%E8%AF%8D%E5%85%B8
 
-## Usage
+### Excluding sections and blocks
+
+!!! desc "Excluding sections and blocks"
+
+    When [Attribute Lists] is enabled, a section can be excluded from the Lunr index by adding `data-search-exclude` to its heading. The heading and all content up to the next heading of the same or higher level are omitted:
+
+    ``` markdown
+    # Page title
+
+    ## Public section
+
+    This content is included.
+
+    ## Internal section { data-search-exclude }
+
+    This complete section is excluded from Lunr.
+    ```
+
+    Add the same attribute after an inline or block-level element to exclude only that element:
+
+    ``` markdown
+    This paragraph is included.
+
+    This paragraph is excluded.
+    { data-search-exclude }
+    ```
+
 
 ### Metadata
 
-The following properties are available:
+!!! desc "Metadata"
 
----
+    Use this property to increase or decrease the relevance of a page in Lunr results. Values above `1` rank a page up and values below `1` rank it down:
 
-#### <!-- md:setting meta.search.boost -->
+    === ":material-arrow-up-circle: Rank up"
 
-<!-- md:version 8.3.0 -->
-<!-- md:flag metadata -->
-<!-- md:default none -->
+        ``` yaml
+        ---
+        search:
+          boost: 2 # (1)!
+        ---
 
-Use this property to increase or decrease the relevance of a page in the search
-results, giving more weight to them. Use values above `1` to rank up and values
-below `1` to rank down:
+        # Page title
+        ...
+        ```
 
-=== ":material-arrow-up-circle: Rank up"
+        1.  When boosting pages, always start with low values.
+
+    === ":material-arrow-down-circle: Rank down"
+
+        ``` yaml
+        ---
+        search:
+          boost: 0.5
+        ---
+
+        # Page title
+        ...
+        ```
+
+    Use this property to exclude a page and all of its subsections from the Lunr index. The Pagefind provider recognizes the same property:
 
     ``` yaml
     ---
     search:
-      boost: 2 # (1)!
+      exclude: true
     ---
 
     # Page title
     ...
     ```
-
-    1.  When boosting pages, always start with low values.
-
-=== ":material-arrow-down-circle: Rank down"
-
-    ``` yaml
-    ---
-    search:
-      boost: 0.5
-    ---
-
-    # Page title
-    ...
-    ```
-
----
-
-#### <!-- md:setting meta.search.exclude -->
-
-<!-- md:version 9.0.0 -->
-<!-- md:flag metadata -->
-<!-- md:default none -->
-
-Use this property to exclude a page from the search results. Note that this will
-not only remove the page, but also all subsections of the page from the search
-results:
-
-``` yaml
----
-search:
-  exclude: true
----
-
-# Page title
-...
-```

@@ -955,6 +955,7 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
 !!! info "Core Concept"
 
     ### Solar Irradiance and Illuminance Models {.toc-hidden-header}
+    ***Solar Irradiance and Illuminance Models***{.bright-large} 
     
     Solar radiation levels are not static. They fluctuate based on Earth's position in its elliptical orbit and the thickness of the atmosphere the light must penetrate.
 
@@ -962,7 +963,8 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
 
 !!! info "Extraterrestrial Solar Irradiance ($G_0$)"
 
-    ### Solar Irradiance ($G_0$) {.toc-hidden-header} 
+    ### Solar Irradiance {.toc-hidden-header} 
+    ***Solar Irradiance ($G_0$)***{.bright-large}
     
     The base formula calculates **extraterrestrial solar irradiance**, representing the intensity of the Sun's energy hitting the top of Earth's atmosphere on any specific day of the year.
 
@@ -971,6 +973,7 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
     \end{flalign*}$$
 
     #### Technical Specifications {.toc-hidden-header}
+    ***Technical Specifications***{.bright-large}
 
     1. $\color{#20c997}\boldsymbol{E}_{\mathbf{ext}}$: Extraterrestrial radiation flux measured in watts per square meter $\color{#4dadf7}\mathbf{W/m²}$.
     2. $\color{#ff6b6b}\boldsymbol{E}_{\mathbf{sc}}$: The canonical Solar Constant, typically valued at $\color{#4dadf7}\mathbf{\approx 1361.5 \text{ W/m²}}$ or $\color{#4dadf7}\mathbf{\approx 1367 \text{ W/m²}}$.
@@ -990,6 +993,7 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
 !!! ex "Ground-Level Solar Illuminance"
 
     ### Solar Illuminance {.toc-hidden-header}
+    ***Solar Illuminance***{.bright-large}
 
      - To calculate the actual amount of sunlight reaching the ground, we swap from irradiance (energy) to illuminance (visible brightness) and account for atmospheric filtering. The solar illuminance constant $\color{#ff6b6b}\boldsymbol{E}_{\mathbf{sc}}$ in this model is equal to ${\color{#4dadf7}{128 \times 10^3 \text{ lux}}} = {\color{#ffd43b}{128,000 \text{ lux}}}$.
 
@@ -1000,19 +1004,23 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
     \end{flalign*}$$
     
 !!! desc "Atmospheric Attenuation Variables"
-    #### Attenuation Variables {.toc-hidden-header}
+    ### Attenuation Variables {.toc-hidden-header}
+    ***Attenuation Variables***{.bright-large}
+    
     * **$\color{#4dadf7}\boldsymbol{E}_{\mathbf{dn}}$:** The final Direct Normal Illuminance reaching a surface on the ground, measured in lux.
     * **$\color{#20c997}\boldsymbol{E}_{\mathbf{ext}}$:** The orbital-corrected extraterrestrial illuminance entering the upper atmosphere.
     * **${\color{#ffd43b}{e}}$:** Euler's constant (${\color{#ffd43b}{\approx 2.718}}$), acting as the mathematical base for natural exponential decay.
     * **${\color{#ff6b6b}{\mathbf{c}}}$:** The atmospheric extinction coefficient. This describes air clarity; clean, crisp skies have a low value, while humid, dusty, or smoggy skies have a high value.
     * **${\color{#cc5de8}{\mathbf{m}}}$:** The relative optical airmass. This dictates the physical volume of air the light beams must pass through before reaching the ground.
     !!! warning "Airmass Mechanics"
+        ***Airmass Mechanics***{.bright-large}
         The value of ${\color{#cc5de8}{\mathbf{m}}}$ is entirely dependent on the sun's position in the sky:
         * When the sun is directly overhead (at zenith), the light takes the shortest path straight down, meaning ${\color{#cc5de8}{\mathbf{m} = 1}}$.
         * As the sun moves lower toward the horizon, the sunlight must travel sideways through a dramatically thicker layer of the atmosphere (${\color{#cc5de8}{\mathbf{m} > 1}}$).
 
 !!! recommendation "Summary of Environmental Loss"
     #### Environmental Loss {.toc-hidden-header}
+    ***Environmental Loss***{.bright-large}
     The filtering term ${\color{#ff6b6b}{e^{-\mathbf{cm}}}}$ scales down the incoming light. While raw space sunlight $\color{#20c997}\boldsymbol{E}_{\mathbf{ext}}$ hovers around ${\color{#20c997}{128,000 \text{ lux}}}$, standard atmospheric scattering and absorption under a clear sky typically brings that number down to roughly ${\color{#4dadf7}{100,000 \text{ lux}}}$ at sea level.
 
 ---
@@ -1042,6 +1050,7 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
 
 ??? desc "Misc Maths Fun! Click on the formulas to see the magic."
     ### 1st Isomorphism Theorem {.toc-hidden-header}
+    ***1st Isomorphism Theorem***{.bright-large}
     <a href="https://www.mathjax.org">
         <img title="Powered by MathJax"
         src="https://www.mathjax.org/badge/badge.gif"
@@ -1055,10 +1064,10 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
        
     Let $\color{#4dadf7}{G}$ be a group. For any $\color{#20c997}{H} \color{#cc5de8}{<} \color{#4dadf7}{G}$, the "reduction mod $\color{#20c997}{H}$" map
 
-    $$\begin{aligned}
+    $$\begin{flalign*}
     \color{#ff6b6b}{\pi} : \color{#4dadf7}{G} &\to \color{#4dadf7}{G}/\color{#20c997}{H}, \\
-    \color{#f08c00}{a} &\mapsto \color{#f08c00}{a}\color{#20c997}{H},
-    \end{aligned}$$
+    \color{#f08c00}{a} &\mapsto \color{#f08c00}{a}\color{#20c997}{H}, &&
+    \end{flalign*}$$
 
     which sends each element of $\color{#4dadf7}{G}$ to its coset in $\color{#4dadf7}{G}/\color{#20c997}{H}$ is called the natural surjection. When $\color{#20c997}{H} \color{#cc5de8}{\triangleleft} \color{#4dadf7}{G}$, we have:
 
@@ -1206,6 +1215,8 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
 | 8. $g = \bar{f}$ | 8. Direct conclusion showing $\bar{f}$ is completely unique |
 
 !!! deep-dive "Einstein's Challenge: The Path to Bell's Inequality"
+    ### Einstein's Challenge {.toc-hidden-header}
+    ***Einstein's Challenge: The Path to Bell's Inequality***{.bright-large}
     Before Bell's inequality, Albert Einstein famously rejected the standard interpretation of quantum entanglement. Here is how his skepticism shaped physics history:
     
     * <span style="color:#4dadf7">**The EPR Paradox (1935):**</span> Einstein, Podolsky, and Rosen argued that quantum mechanics was incomplete.
@@ -1221,25 +1232,37 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
     This historical clash directly set up the mathematical boundaries detailed in the deep-dive below.
 
 !!! deep-dive "Bell's Inequality"
-    ### Bell's Inequality (CHSH Variant)
+    ### Bell's Inequality {.toc-hidden-header}
+    ***Bell's Inequality (CHSH Variant)***{.bright-large}
+        
     In classical physics, any local hidden variable theory must satisfy the following inequality for the correlation of measurements between two distant detectors:
 
     $$\color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b}}) - \color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b'}})\color{#cc5de8}{|} + \color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b}}) + \color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b'}})\color{#cc5de8}{|} \;\color{#cc5de8}{\le}\; \color{#f08c00}{2}$$
 
-    Where:
+    **Where:**
     * $\color{#4dadf7}{\mathbf{a}}$ and $\color{#4dadf7}{\mathbf{a'}}$ are two different measurement settings for Detector A (Alice).
     * $\color{#20c997}{\mathbf{b}}$ and $\color{#20c997}{\mathbf{b'}}$ are two different measurement settings for Detector B (Bob).
     * $\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b}})$ is the expectation value (the correlation coefficient) of the joint measurements, ranging from $\color{#f08c00}{-1}$ to $\color{#f08c00}{+1}$.
-    #### The Quantum Violation
+    
+    #### The Quantum Violation {.toc-hidden-header}
+    ***The Quantum Violation***
     Quantum mechanics predicts that for perfectly entangled pairs (such as twin photons), specific choices of angles for $\color{#4dadf7}{\mathbf{a}}, \color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b}},$ and $\color{#20c997}{\mathbf{b'}}$ yield a maximum value known as the **Tsirelson bound**:
 
     $$\color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b}}) - \color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a}}, \color{#20c997}{\mathbf{b'}})\color{#cc5de8}{|} + \color{#cc5de8}{|}\color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b}}) + \color{#ff6b6b}{E}(\color{#4dadf7}{\mathbf{a'}}, \color{#20c997}{\mathbf{b'}})\color{#cc5de8}{|} \;\color{#cc5de8}{=}\; \color{#f08c00}{2\sqrt{2}} \;\color{#cc5de8}{\approx}\; \color{#f08c00}{2.828}$$
 
     Because $\color{#f08c00}{2\sqrt{2}} \color{#cc5de8}{>} \color{#f08c00}{2}$, quantum mechanics mathematically violates Bell's inequality, proving that nature cannot be explained by local hidden variables.
 
-
+    !!! recommendation "From Theory to Experiment"
+        Bell's inequality wasn't just a mathematical curiosity — it was designed to be tested. The first experimental evidence of a violation came from <span style="color:#4dadf7">**Freedman and Clauser**</span> in <span style="color:#f08c00">**1972**</span>, and a decade later <span style="color:#4dadf7">**Alain Aspect**</span>'s <span style="color:#f08c00">**1982**</span> experiments closed several of the remaining loopholes, giving much stronger confirmation that entanglement really does violate the classical bound.
+        
+        This experimental line of work — extended further by <span style="color:#4dadf7">**John Clauser**</span>, <span style="color:#4dadf7">**Alain Aspect**</span>, and <span style="color:#4dadf7">**Anton Zeilinger**</span> — earned the three of them the <span style="color:#f08c00">**2022 Nobel Prize in Physics**</span>, cementing Bell test violations as one of the most rigorously confirmed results in modern physics.
+        
+    
 !!! deep-dive "Maximum Quantum Violation"
-    ### The Angles of Maximum Quantum Violation
+    ### Maximum Quantum Violation {.toc-hidden-header}
+    #### The Angles of Maximum Quantum Violation {.toc-hidden-header}
+    ***The Angles of Maximum Quantum Violation.***
+    
     To achieve the maximum violation of Bell's inequality, Detector A (Alice) and Detector B (Bob) must orient their measurement settings at specific, interlocking angles. 
     Let the angles for Alice be $\color{#4dadf7}{a}$ and $\color{#4dadf7}{a'}$, and the angles for Bob be $\color{#20c997}{b}$ and $\color{#20c997}{b'}$. The ideal setup uses an offset of $\color{#f08c00}{22.5^\circ}$ between successive settings:
     * **Alice's settings:** 
@@ -1248,12 +1271,19 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
     * **Bob's settings:** 
       * $\color{#20c997}{b} \color{#cc5de8}{=} \color{#f08c00}{22.5^\circ}$
       * $\color{#20c997}{b'} \color{#cc5de8}{=} \color{#f08c00}{67.5^\circ}$
-    #### The Correlation Formula
+    
+    #### The Correlation Formula {.toc-hidden-header}
+    
+    ***The Correlation Formula***
+    
     According to quantum mechanics, the correlation $\color{#ff6b6b}{E}(\color{#4dadf7}{\theta_A}, \color{#20c997}{\theta_B})$ for a pair of entangled photons depends on the cosine of twice the angle difference between the detectors:
 
     $$\color{#ff6b6b}{E}(\color{#4dadf7}{\theta_A}, \color{#20c997}{\theta_B}) = \cos(2(\color{#4dadf7}{\theta_A} - \color{#20c997}{\theta_B}))$$
 
-    #### Calculating the Violation
+    #### Calculating the Violation {.toc-hidden-header}
+    
+    ***Calculating the Violation.***
+    
     Plugging our specific angles into the CHSH inequality formula:
 
     1. $\color{#ff6b6b}{E}(\color{#4dadf7}{a}, \color{#20c997}{b}) \color{#cc5de8}{=} \cos(2(\color{#f08c00}{0^\circ} - \color{#f08c00}{22.5^\circ})) \color{#cc5de8}{=} \cos(\color{#f08c00}{-45^\circ}) \color{#cc5de8}{=} \color{#f08c00}{\frac{\sqrt{2}}{2}}$
@@ -1269,6 +1299,177 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
 
     Because $\color{#f08c00}{2.828} \color{#cc5de8}{>} \color{#f08c00}{2}$, choosing these exact angles mathematically maximizes the proof that Einstein's local reality does not exist.
     
+!!! deep-dive "Deep Dive: BFSS & IKKT Matrix Formulations"
+
+    ## BFSS & IKKT Matrix Formulations {.toc-hidden-header}
+    
+    ### 1. The BFSS Model (M-Theory in Lightcone Gauge) {.toc-hidden-header}
+    ***1. The BFSS Model (M-Theory in Lightcone Gauge)***{.bright-large}
+    
+    The BFSS model establishes that the non-perturbative degrees of freedom of M-theory are uncompactified $D0$-branes. In the infinite momentum frame ($P^+ \to \infty$), the theory reduces to a $U(N)$ Super Yang-Mills quantum mechanics in $1+0$ dimensions.
+
+    #### The Complete BFSS Hamiltonian {.toc-hidden-header}
+    ***The Complete BFSS Hamiltonian***{.bright-large}
+    
+    Derived from the matrix Lagrangian via Legendre transformation, the quantum mechanical Hamiltonian governs the dynamics of nine $N \times N$ spatial matrices $\color{#20b2aa}{X^i}$ and their canonical conjugate momenta $\color{#4da6ff}{P^i} = \frac{1}{R}\dot{X}^i$:
+
+    $$\color{#ee82ee}{H_{\text{BFSS}}} = R \;\text{Tr} \left( \frac{1}{2} \sum_{i=1}^9 (\color{#4da6ff}{P^i})^2 - \frac{1}{4} \sum_{i,j=1}^9 [\color{#20b2aa}{X^i}, \color{#20b2aa}{X^j}]^2 + \color{#dda0dd}{\bar{\Psi}} \sum_{i=1}^9 \gamma_i [\color{#20b2aa}{X^i}, \color{#dda0dd}{\Psi}] \right)$$
+
+    #### Large-$N$ Limit and Continuous Membrane Emergence {.toc-hidden-header}
+    ***Large-$N$ Limit and Continuous Membrane Emergence***{.bright-large}
+    
+    In the $N \to \infty$ limit, the discrete matrix commutators map to continuous Poisson brackets on a 2-dimensional worldvolume topology $\Sigma$ (the M2-brane membrane configuration):
+
+    $$\lim_{N \to \infty} (-iN) [\color{#20b2aa}{X^i}, \color{#20b2aa}{X^j}] = \{\color{#20b2aa}{X^i}(\sigma_1, \sigma_2), \color{#20b2aa}{X^j}(\sigma_1, \sigma_2)\}_{\text{P.B.}} = \frac{\partial \color{#20b2aa}{X^i}}{\partial \sigma_1}\frac{\partial \color{#20b2aa}{X^j}}{\partial \sigma_2} - \frac{\partial \color{#20b2aa}{X^i}}{\partial \sigma_2}\frac{\partial \color{#20b2aa}{X^j}}{\partial \sigma_1}$$
+
+    ---
+
+    ### 2. The IKKT Model (Emergent Spacetime & Type IIB) {.toc-hidden-header}
+    ***2. The IKKT Model (Emergent Spacetime & Type IIB)***{.bright-large}
+    
+    Unlike BFSS, the IKKT model lacks a fundamental time parameter. It is a strictly 0-dimensional statistical/quantum mechanical system where time and space emerge on equal footing from the eigenvalue distributions of the matrices.
+
+    #### Lorentzian vs. Euclidean Action Signatures {.toc-hidden-header}
+    ***Lorentzian vs. Euclidean Action Signatures***{.bright-large}
+    
+    The path integral behavior changes drastically depending on the chosen global metric signature. The structural transformation is governed by the switch in the bosonic commutator footprint:
+
+    * **Euclidean Signature Action ($A_0 \to iA_{10}$):**
+      $\color{#4da6ff}{S_{\text{E}}} = -\frac{1}{g^2} \text{Tr} \left( \frac{1}{4} \sum_{\mu,\nu=1}^{10} [\color{#20b2aa}{A_\mu}, \color{#20b2aa}{A_\nu}]^2 + \frac{1}{2} \color{#dda0dd}{\bar{\Psi}} \sum_{\mu=1}^{10} \Gamma^\mu [\color{#20b2aa}{A_\mu}, \color{#dda0dd}{\Psi}] \right)$
+
+    * **Lorentzian Signature Action (Physical Spacetime):**
+      $\color{#4da6ff}{S_{\text{L}}} = \frac{1}{g^2} \text{Tr} \left( -\frac{1}{2} [\color{#20b2aa}{A_0}, \color{#20b2aa}{A_i}]^2 + \frac{1}{4} [\color{#20b2aa}{A_i}, \color{#20b2aa}{A_j}]^2 + \frac{1}{2} \color{#dda0dd}{\bar{\Psi}} \Gamma^0 [\color{#20b2aa}{A_0}, \color{#dda0dd}{\Psi}] + \frac{1}{2} \color{#dda0dd}{\bar{\Psi}} \sum_{i=1}^9 \Gamma^i [\color{#20b2aa}{X^i}, \color{#dda0dd}{\Psi}] \right)$
+
+    #### Extraction of the Emergent Spacetime Metric {.toc-hidden-header}
+    ***Extraction of the Emergent Spacetime Metric***{.bright-large}
+    
+    Smooth geometric space manifests by analyzing the expectation values of the matrix blocks. An effective local spacetime metric $\color{#ff6666}{g_{\mu\nu}(x)}$ is extracted using the non-commutative coordinates defined by the components of $\color{#20b2aa}{A_\mu}$:
+
+    $$\color{#ff6666}{g^{\mu\nu}(x)} \sim \lim_{N \to \infty} \left\langle \frac{1}{N} \text{Tr} \left( \phi(x) [\color{#20b2aa}{A^\mu}, \color{#20b2aa}{A_\lambda}][\color{#20b2aa}{A^\nu}, \color{#20b2aa}{A^\lambda}] \right) \right\rangle$$
+
+    Where $\phi(x)$ is a localized state checking scale structures in the matrix eigenvalue space.
+
+    ---
+
+    ### 3. Gauge Invariant Observables (Wilson Loops) {.toc-hidden-header}
+    ***3. Gauge Invariant Observables (Wilson Loops)***{.bright-large}
+    
+    To probe physical geometry and find graviton scattering states without referencing coordinate frames, gauge-invariant operators must be mapped out. 
+
+    The primary non-local observable in IKKT is the generalized **Wilson Loop**, defined via an exponentiated source field $k^\mu$:
+
+    $$\color{#ffcc00}{W(k)} = \text{Tr} \left( \exp \left( i \sum_{\mu=0}^9 \color{#ffb366}{k^\mu} \color{#20b2aa}{A_\mu} \right) \right)$$
+
+    In the continuum limit, expanding $\color{#ffcc00}{W(k)}$ in powers of $\color{#ffb366}{k^\mu}$ yields a complete set of local operators corresponding to off-shell supergravity fields, establishing the exact link back to 10D and 11D effective field actions.
+    
+!!! recommendation "M-Theory & Matrix Theory Foundations"
+    ### M-Theory & Matrix Theory Foundations {.toc-hidden-header}
+    ***M-Theory & Matrix Theory Foundations***{.bright-large}
+    
+    M-Theory is the unifying framework of all five consistent ten-dimensional superstring theories and eleven-dimensional supergravity, linked by dualities like S-duality and T-duality, with low-energy dynamics governed by 11-dimensional supergravity and fundamental excitations including 2-branes and 5-branes.
+
+    #### 11-Dimensional Supergravity Action {.toc-hidden-header}
+    ***11-Dimensional Supergravity Action***{.bright-large}
+    
+    The low-energy effective field theory of M-theory is 11-dimensional supergravity. Its bosonic sector includes the metric $\color{#20b2aa}{g_{\mu\nu}}$ and a 3-form gauge field $\color{#33cc33}{C_3}$ with a 4-form field strength $\color{#ffcc00}{G_4} = d\color{#33cc33}{C_3}$.
+
+    $$\begin{flalign*}
+    \color{#4da6ff}{S_{11}} = \frac{1}{2\kappa_{11}^2} \int d^{11}x \sqrt{-g} \left( \color{#ff6666}{R} - \frac{1}{2} |\color{#ffcc00}{G_4}|^2 \right) - \frac{1}{6} \int \color{#33cc33}{C_3} \wedge \color{#ffcc00}{G_4} \wedge \color{#ffcc00}{G_4} &&
+    \end{flalign*}$$
+
+    Where:
+    * **Action:** $\color{#4da6ff}{S_{11}}$ is the 11D Supergravity Action.
+    * **Curvature:** $\color{#ff6666}{R}$ is the Ricci scalar curvature.
+    * **Field Strength:** $\color{#ffcc00}{G_4}$ is the 4-form field strength defined as $\color{#ffcc00}{G_4} = d\color{#33cc33}{C_3}$.
+    * **Potential:** $\color{#33cc33}{C_3}$ is the 3-form gauge potential.
+
+    #### Brane Tensions {.toc-hidden-header}
+    ***Brane Tensions***{.bright-large}
+    
+    M-theory contains dynamical extended objects called branes. The fundamental membrane is the M2-brane, and its magnetic dual is the M5-brane. Their tensions depend on the 11D Planck length $\color{#cc99ff}{l_p}$:
+
+    * **M2-Brane Tension:**
+    
+    $$\begin{flalign*}
+    \color{#ffb366}{T_{M2}} = \frac{1}{(2\pi)^2 \color{#cc99ff}{l_p}^3} &&
+     \end{flalign*}$$
+
+    * **M5-Brane Tension:**
+    
+    $$\begin{flalign*}
+    \color{#ff80df}{T_{M5}} = \frac{1}{(2\pi)^5 \color{#cc99ff}{l_p}^6} &&
+     \end{flalign*}$$
+
+    #### Compactification to Type IIA String Theory {.toc-hidden-header}
+    ***Compactification to Type IIA String Theory***{.bright-large}
+    
+    Compactifying M-theory on a circle $\color{#f08c00}{S^1}$ of radius $\color{#f08c00}{R_{10}} = \color{#e0cda9}{g_s} \color{#cc99ff}{l_s}$ yields Type IIA string theory. The 11D metric splits into the 10D metric $\color{#20b2aa}{g_{\mu\nu}^{(10)}}$, a graviphoton gauge field $\color{#4da6ff}{A_\mu}$, and the dilaton $\color{#00fa9a}{\phi}$:
+
+    $$\begin{flalign*}
+    ds_{11}^2 = e^{-2\color{#00fa9a}{\phi}/3} g_{\mu\nu}^{(10)} dx^\mu dx^\nu + e^{4\color{#00fa9a}{\phi}/3} \left( dx^{10} + A_\mu dx^\mu \right)^2 &&
+    \end{flalign*}$$
+
+    The string coupling constant $\color{#e0cda9}{g_s}$ is directly related to the radius of the 11th dimension:
+
+    $$\begin{flalign*}
+    \color{#e0cda9}{g_s} = e^{\langle \color{#00fa9a}{\phi} \rangle} = \left( \frac{R_{10}}{l_s} \right)^{3/2} &&
+    \end{flalign*}$$
+
+    #### Matrix Theory (BFSS Model) Formulations {.toc-hidden-header}
+    ***Matrix Theory (BFSS Model) Formulations***{.bright-large}
+    
+    The BFSS Matrix Theory describes M-theory in the infinite momentum frame as the quantum mechanics of $N \times N$ Hermitian matrices. The variables are nine spatial matrices $\color{#20b2aa}{X^i}$ ($i=1, \dots, 9$) and their fermionic superpartners $\color{#dda0dd}{\Psi}$.
+
+    * **BFSS Matrix Model Lagrangian:**
+
+    $\color{#ee82ee}{L} = \text{Tr} \left( \frac{1}{2R}\sum_{i=1}^9 \color{#4da6ff}{\dot{X}^i}^2 + \frac{R}{4} \sum_{i,j=1}^9 [\color{#20b2aa}{X^i}, \color{#20b2aa}{X^j}]^2 + i \color{#dda0dd}{\Psi}^T \color{#4da6ff}{\dot{\Psi}} - R\color{#dda0dd}{\Psi}^T \sum_{i=1}^9 \gamma_i [\color{#20b2aa}{X^i}, \color{#dda0dd}{\Psi}] \right)$
+    
+    * **Gauss Constraint (Matrix Gauge Invariance):**
+
+    $$\begin{flalign*}
+    \color{#ee82ee}\sum_{i=1}^9 [\color{#20b2aa}{X^i}, \color{#4da6ff}{\dot{X}^i}] - \frac{i}{2} \{\color{#dda0dd}{\Psi}, \color{#dda0dd}{\Psi}^T\} = \color{#ff6666}{0} &&
+    \end{flalign*}$$
+
+    * **Supersymmetry Generators (Supercharges):**
+
+    $$\begin{flalign*}
+    \color{#ffb366}{Q} = \text{Tr} \left( \sum_{i=1}^9 \color{#4da6ff}{\dot{X}^i} \gamma_i \color{#dda0dd}{\Psi} + \frac{i}{2} \sum_{i,j=1}^9 [\color{#20b2aa}{X^i}, \color{#20b2aa}{X^j}] \gamma_{ij} \color{#dda0dd}{\Psi} \right) &&
+    \end{flalign*}$$
+
+!!! recommendation "IKKT Matrix Model (Type IIB Matrix Theory)"
+    ### IKKT Matrix Model (Type IIB Theory {.toc-hidden-header}
+    
+    The IKKT Matrix Model (Ishibashi, Kawai, Kitazawa, and Tsuchiya) is a non-perturbative formulation of **Type IIB Superstring Theory**, providing a dual perspective to the BFSS model (which describes M-Theory). Unlike the quantum-mechanical BFSS model, IKKT is a **zero-dimensional matrix model** where spacetime coordinates themselves emerge dynamically from eigenvalues of large $\color{#20b2aa}N \times N$ matrices.
+
+    #### The IKKT Action {.toc-hidden-header}
+    ***The IKKT Action***{.bright-large}
+    
+    The action is composed of a bosonic commutator term and a fermionic inner product:
+
+    $$\color{#4da6ff}{S_{\text{IKKT}}} = -\frac{1}{4g^2} \text{Tr} \left( \sum_{\mu,\nu=0}^9 [\color{#20b2aa}{A_\mu}, \color{#20b2aa}{A_\nu}]^2 \right) - \frac{1}{2g^2} \text{Tr} \left( \color{#dda0dd}{\bar{\Psi}} \sum_{\mu=0}^9 \Gamma^\mu [\color{#20b2aa}{A_\mu}, \color{#dda0dd}{\Psi}] \right)$$
+
+    Where:
+    * **Action:** $\color{#4da6ff}{S_{\text{IKKT}}}$ is the total Euclidean or Lorentzian IKKT action.
+    * **Coordinates:** $\color{#20b2aa}{A_\mu}$ represents ten $\color{#20b2aa}N \times N$ Hermitian matrices ($\color{#20b2aa}\mu = 0, \dots, 9$) representing spacetime points.
+    * **Fermions:** $\color{#dda0dd}{\Psi}$ is a 10D Majorana-Weyl fermionic matrix superpartner.
+    * **Coupling:** $\color{#4da6ff}g$ is the matrix coupling constant.
+
+    #### Relationship and Duality to BFSS (M-Theory) {.toc-hidden-header}
+    ***Relationship and Duality to BFSS (M-Theory)***{.bright-large}
+    
+    The IKKT model can be directly related to the BFSS model derived previously via dimensional reduction and regularization:
+    
+    * **Dimensional Reduction:** By recovering time dependence, the BFSS model's Lagrangian can be seen as a 1D version of the 0D IKKT structure.
+    
+    * **The T-Duality Link:** While the BFSS model computes the discrete lightcone quantization of M-Theory (Type IIA limit), IKKT represents the configuration space of Type IIB string theory via a lattice-free matrix regularization of the worldsheet action.
+
+    #### Equations of Motion {.toc-hidden-header}
+    ***Equations of Motion***{.bright-large}
+    
+    Varying the IKKT action with respect to the bosonic coordinates yields the classical matrix field equations:
+
+    $$\sum_{\nu=0}^9 [\color{#20b2aa}{A^\nu}, [\color{#20b2aa}{A_\mu}, \color{#20b2aa}{A_\nu}]] + \frac{1}{2} \{\color{#dda0dd}{\bar{\Psi}}, \Gamma_\mu \color{#dda0dd}{\Psi}\} = \color{#ff6666}{0}$$
+
 !!! desc ""
     - In 1947, General Mills launched one of the most audacious cereal premiums ever: the Lone Ranger Atomic Bomb Ring, offered through Kix for just 15 cents and a box top.
     

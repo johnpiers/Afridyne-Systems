@@ -323,21 +323,19 @@ extra_javascript:
   # - https://unpkg.com/markmap-view@0.18/dist/browser/index.js
   - javascripts/markmap-resize-fix.js
   - javascripts/mathjax.js
-  - javascripts/expand-code.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/expand-code.js
+  - javascripts/theme_extra.js
+  - javascripts/tablesort.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/iconsearch.js
   # Future Reference (MathJax Toggles):
   # https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - javascripts/theme_extra.js
   # Future Reference (KaTeX Toggles):
   # javascripts/katex.js
   # https://unpkg.com/katex@0/dist/katex.min.js
   # https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   # https://unpkg.com/tablesort@5.3.0/dist/sorts/tablesort.number.min.js
-  - javascripts/tablesort.js
-  - javascripts/iconsearch.js
-
-
 
 extra:
   social:
