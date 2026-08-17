@@ -49,6 +49,7 @@ theme:
   analytics: {gtag: 'G-274394082'}
   features:
     - search.highlight
+    - navigation.tabs
     - search.share
     - navigation.path
     - navigation.top
@@ -99,7 +100,15 @@ plugins:
       view_version: ''
   - drawio:
       darkmode: true
-  - materialx/blog:         # Added 'material/'
+  - document-dates:
+      show_created: false
+      show_updated: true
+      position: top            # Display position: top(after title) bottom(end of document), default: top
+      type: date               # Date type: date datetime timeago, default: date
+      exclude:                 # List of excluded files (support unix shell-style wildcards)
+        - blog/*               # Example: exclude all files in blog folder, including subfolders
+        - '*/index.md'         # Example: exclude all index.md files in any subfolders
+  - materialx/blog:            # Added 'material/'
       blog_dir: blog
       post_url_format: "{date}/{slug}"
       authors_file: "{blog}/.authors.yml"
@@ -142,7 +151,7 @@ plugins:
   - materialx/optimize:     # Added 'material/'
       enabled: !ENV [CI, false]
       cache: true
-  - schema_reader
+  #- schema_reader
   #- material/typeset       # Added 'material/'
   - caption:
       figure:
@@ -156,6 +165,7 @@ plugins:
 nav:
   - MaterialX-MkDocs:
       - MaterialX-MkDocs: index.md
+      - Recent-updates: adding-recent-updates-module.md
       - Get Started-MkDocs: about.md      
       - MkDocs Start Page: MkDocs-Material-Start.md
       - Creating Your Site: Creating-Your-Site.md
@@ -249,13 +259,20 @@ markdown_extensions:
       separator: " ＋ "
   - pymdownx.superfences:
       #preserve_tabs: true
+      #relaxed_headers: true # DOESN'T APPEAR TO BE DOING ANYTHING?
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format # NATIVE INSTANT PARSER
+        #- name: critic-source
+        #  class: highlight
+        #  format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true
+      #slugify: !!python/object/apply:pymdownx.slugs.slugify  # TEST SETTING NOT SURE WHAT THIS IS DOING?
+      #  kwds:
+      #    case: lower
   - pymdownx.details
   - pymdownx.snippets
   - md_in_html

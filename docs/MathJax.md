@@ -1,5 +1,6 @@
 ---
 icon: material/newlogo-nav
+created: 2025-01-15 10:30:00
 ---
 
 ![](imgs/20260413-163945.png){ .center-image }

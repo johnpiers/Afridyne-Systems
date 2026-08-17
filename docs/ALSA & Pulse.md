@@ -1,5 +1,6 @@
 ---
 icon: material/music-circle-outline
+created: 2025-01-15 10:30:00
 ---
 
 ![Local image](assets/pulse.png){: style="display: block; margin: 0 auto"}

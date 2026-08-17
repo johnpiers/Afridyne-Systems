@@ -1,5 +1,6 @@
 ---
 icon: simple/amd
+created: 2026-04-15 10:30:00
 
 title: Linux GTK/WebKit Nothing Renders Checklist
 description: A 2-minute diagnostic and troubleshooting tree for WebKitWebProcess crashes and Mesa/AMD rendering issues on Arch Linux.

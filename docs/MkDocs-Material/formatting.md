@@ -38,27 +38,29 @@ icon: simple/materialformkdocs
   [Caret, Mark & Tilde]: python-markdown-extensions.md#caret-mark-tilde
   [Keys]: python-markdown-extensions.md#keys
 
-## Usage
 
-### Highlighting Changes
+#### Highlighting Changes
 
-!!! Info "Highlighting Changes"
+When [Critic](../MkDocs-Material/python-markdown-extensions.md/#critic) is enabled, [Critic Markup](https://github.com) can be used, which adds the ability to highlight suggested changes, as well as add inline comments to a document:
 
-    When [Critic] is enabled, [Critic Markup] can be used, which adds the ability to highlight suggested changes, as well as add inline comments to a document:
-    
-    ``` title="Text with Suggested Changes"
-    Text can be {--deleted--} and replacement text {++added++}. This can also be combined into {~~one~>a single~~} 
-    operation. {==Highlighting==} is also possible {>>and comments can be added inline<<}.
-    
-    {==
-    
-    Formatting can also be applied to blocks by putting the opening and closing tags on separate lines
-    and adding new lines between the tags and the content.
-    
-    ==}
-    ```
-    
-   
+<div class="highlight"><span class="filename">Text with suggested changes</span><pre><code>Text can be {<span></span>--deleted--} and replacement text {<span></span>++added++}. This can also be combined into {<span></span>~~one~>a single~~} operation. {<span></span>==Highlighting==} is also possible {<span></span>>>and comments can be added inline<<}.
+
+{<span></span>==
+
+Formatting can also be applied to blocks by putting the opening and closing tags on separate lines and adding new lines between the tags and the content.
+
+==}</code></pre></div>
+
+#### Rendered (Highlighting) Markdown 
+
+Text can be {--deleted--} and replacement text {++added++}. This can also be combined into {~~one~>a single~~} operation. {==Highlighting==} is also possible {>>and comments can be added inline<<}.
+
+{==
+
+Formatting can also be applied to blocks by putting the opening and closing tags on separate lines and adding new lines between the tags and the content.
+
+==}
+
 <div class="result" markdown>
 
 !!! Info " This Is The Rendered HTML"
@@ -70,7 +72,7 @@ icon: simple/materialformkdocs
 </div>
 
 
-### Highlighting Text
+### ♑ Highlighting Text
 
 !!! abstract "Highlighting Text"
 
@@ -137,3 +139,4 @@ icon: simple/materialformkdocs
     </div>
     
   [Python Markdown Extensions]: https://facelessuser.github.io/pymdown-extensions/extensions/keys/#extendingmodifying-key-map-index
+

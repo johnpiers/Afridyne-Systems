@@ -1,5 +1,11 @@
 ---
 icon: simple/materialformkdocs
+
+tags:
+  - License
+  - SimpleWeather
+  - GNU GENERAL PUBLIC LICENSE
+  - Version 3, 29 June 2007
 ---
 
 ![](imgs/20260616-045918.png)

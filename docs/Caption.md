@@ -1,5 +1,6 @@
 ---
 icon: material/newlogo-nav
+created: 2025-01-15 10:30:00
 ---
 
 ![](imgs/20260412-145600.png){ .center-image }
@@ -236,4 +237,4 @@ icon: material/newlogo-nav
 !!! info "Supported Markdown Extensions"
     Furthermore, see the list of supported [Markdown extensions] that are natively integrated with Material for MkDocs.
     
-[Markdown extensions]: https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
+[Markdown extensions]: https://jaywhj.github.io/mkdocs-materialx/setup/extensions/python-markdown-extensions

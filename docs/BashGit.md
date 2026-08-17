@@ -1,5 +1,6 @@
 ---
 icon: octicons/pulse-24
+created: 2025-01-15 10:30:00
 ---
 
 ![Local image](./images/bash.png){: style="display: block; margin: 0 auto"}

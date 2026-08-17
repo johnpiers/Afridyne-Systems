@@ -184,8 +184,7 @@ For value ranges and the remaining controls, see Pagefind's [ranking documentati
 
 !!! desc "Excluding an Entire Page"
 
-    Use `search.exclude` in the Markdown front matter to remove a complete page and
-    all of its sections from the Pagefind index:
+    Use `search.exclude` in the Markdown front matter to remove a complete page and all of its sections from the Pagefind index:
 
     ``` yaml
     ---
@@ -422,13 +421,9 @@ For value ranges and the remaining controls, see Pagefind's [ranking documentati
 
 !!! desc "Segmentation"
 
-    The plugin supports Chinese text segmentation with [jieba]. Japanese and
-    Korean are segmented on the client side when Lunr is selected.
+    The plugin supports Chinese text segmentation with [jieba](https://pypi.org/project/jieba/). Japanese and Korean are segmented on the client side when Lunr is selected.
 
-    [jieba]: https://pypi.org
-
-    Use this setting to specify a [custom dictionary] for [jieba], replacing its
-    default dictionary:
+    Use this setting to specify a [custom dictionary] for [jieba](https://pypi.org/project/jieba/), replacing its default dictionary:
 
     ``` yaml
     plugins:

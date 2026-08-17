@@ -2,7 +2,7 @@
 icon: simple/materialformkdocs
 ---
 
-![](imgs/20260308-113147.png){ .center-image }
+![](imgs/20260817-044827.png){ .center-image }
 
 <H1 style="text-align: center;"> Config</H1>
 
@@ -115,3 +115,26 @@ uses the alt text as a caption. (Only available for figures) |
         ...
         ```
     
+---
+
+### Highlighting Changes
+
+When [Critic](../MkDocs-Material/python-markdown-extensions.md/#critic) is enabled, [Critic Markup](https://github.com) can be used, which adds the ability to ==highlight== suggested changes, as well as add inline comments to a document:
+
+<div class="highlight"><span class="filename">Text with suggested changes</span><pre><code>Text can be {<span></span>--deleted--} and replacement text {<span></span>++added++}. This can also be combined into {<span></span>~~one~>a single~~} operation. {<span></span>==Highlighting==} is also possible {<span></span>>>and comments can be added inline<<}.
+
+{<span></span>==
+
+Formatting can also be applied to blocks by putting the opening and closing tags on separate lines and adding new lines between the tags and the content.
+
+==}</code></pre></div>
+
+
+Text can be {--deleted--} and replacement text {++added++}. This can also be combined into {~~one~>a single~~} operation. {==Highlighting==} is also possible {>>and comments can be added inline<<}.
+
+{==
+
+Formatting can also be applied to blocks by putting the opening and closing tags on separate lines and adding new lines between the tags and the content.
+
+==}
+

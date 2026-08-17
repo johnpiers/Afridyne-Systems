@@ -1,5 +1,6 @@
 ---
 icon: material/microsoft-windows-classic
+created: 2025-01-15 10:30:00
 ---
 
 ![](imgs/20260712-025255.png){: style="display: block; margin: 0 auto"}
