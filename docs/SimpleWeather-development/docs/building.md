@@ -1,16 +1,21 @@
 ---
-icon: material/weather-night
-
 tags:
   - Building
   - SimpleWeather
   - Testing
   - Build extension
+
+authors:
+  - Afridyne
+  - "John Piers Cilliers <https://avatars.githubusercontent.com/u/1306639?s=400&v=4>"
+  - SimpleWeather
+  - "Roman Lefler <https://github.com/romanlefler/SimpleWeather/blob/development/AUTHORS>"
+
+icon: material/weather-night
 ---
 
-
 ![](imgs/20260116-175131.png){: style="display: block; margin: 0 auto"}
-<H1 style="text-align: center;"> Building</H1>
+<H1 style="text-align: center;"> Building - SimpleWeather</H1>
 
 
 ## Testing
@@ -56,5 +61,4 @@ tags:
     ```shell
     make clean
     ```
-    
 

@@ -1,11 +1,17 @@
 ---
-icon: material/weather-night
-
 tags:
   - Source Code Guide
   - SimpleWeather
   - source
   - Style
+
+authors:
+  - Afridyne
+  - "John Piers Cilliers <https://avatars.githubusercontent.com/u/1306639?s=400&v=4>"
+  - SimpleWeather
+  - "Roman Lefler <https://github.com/romanlefler/SimpleWeather/blob/development/AUTHORS>"
+
+icon: material/weather-night
 ---
 
 ![](imgs/20260116-175131.png){: style="display: block; margin: 0 auto"}
@@ -47,7 +53,7 @@ tags:
     - There are many errors that can happen, so the caller should be prepared to do something on an error. Note that if `e instanceof Gio.ResolverError`, then it can be assumed to mean that the system has no Internet.
       
 
-# Style
+## Style
 
 !!! quote "Imports"
 

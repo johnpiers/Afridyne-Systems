@@ -1,17 +1,23 @@
 ---
-icon: simple/materialformkdocs
-
 tags:
   - Themes
   - SimpleWeather
-  - Classes
-  - “Attributes”
+  - correct classes
+  - widgets
+
+authors:
+  - Afridyne
+  - "John Piers Cilliers <https://avatars.githubusercontent.com/u/1306639?s=400&v=4>"
+  - SimpleWeather
+  - "Roman Lefler <https://github.com/romanlefler/SimpleWeather/blob/development/AUTHORS>"
+
+icon: material/weather-night
 ---
 
 ![Dark Theme](imgs/theme.png){:style="display: block; margin: 0 auto"}
-<H1 style="text-align: center;"> Themes</H1>
+<H1 style="text-align: center;"> Themes - SimpleWeather</H1>
 
-<H2 style="text-align: center;"> Themes are done by dynamically adding the correct classes onto widgets for the chosen theme.</H2>
+<H4 style="text-align: center;"> Themes are done by dynamically adding the correct classes onto widgets for the chosen theme.</H4>
 
 ## Files and Naming
 

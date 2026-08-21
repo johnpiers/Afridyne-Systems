@@ -10,25 +10,27 @@ icon: material/newlogo-nav
 <H1 style="text-align: center;"> <u>Handlers</u></H1>
 
 
-##### Handlers
+### Handlers
 !!!info "Handlers"
 
     - A handler is what makes it possible to collect and render documentation for a particular language.
     
 
-##### Available Handlers
+### Available Handlers
 
-- [C](https://mkdocstrings.github.io/c/){ .external }
-- [Crystal](https://mkdocstrings.github.io/crystal/){ .external }
-- [GitHub Actions](https://watermarkhu.nl/mkdocstrings-github/){ .external }
-- [Python](https://mkdocstrings.github.io/python/){ .external }
-- [Python (Legacy)](https://mkdocstrings.github.io/python-legacy/){ .external }
-- [MATLAB](https://watermarkhu.nl/mkdocstrings-matlab/){ .external }
-- [Shell](https://mkdocstrings.github.io/shell/){ .external }
-- [TypeScript](https://mkdocstrings.github.io/typescript/){ .external }
-- [VBA](https://pypi.org/project/mkdocstrings-vba/){ .external }
+!!! deep-dive "Available Handlers"
 
-##### About the Python Handlers
+    - [C](https://mkdocstrings.github.io/c/){ .external }
+    - [Crystal](https://mkdocstrings.github.io/crystal/){ .external }
+    - [GitHub Actions](https://watermarkhu.nl/mkdocstrings-github/){ .external }
+    - [Python](https://mkdocstrings.github.io/python/){ .external }
+    - [Python (Legacy)](https://mkdocstrings.github.io/python-legacy/){ .external }
+    - [MATLAB](https://watermarkhu.nl/mkdocstrings-matlab/){ .external }
+    - [Shell](https://mkdocstrings.github.io/shell/){ .external }
+    - [TypeScript](https://mkdocstrings.github.io/typescript/){ .external }
+    - [VBA](https://pypi.org/project/mkdocstrings-vba/){ .external }
+    
+#### About the Python Handlers
 !!! example " Python Handlers"
 
     Since version 0.18, a new Python handler is available. It is based on [Griffe](https://github.com/mkdocstrings/griffe), which is an improved version of [pytkdocs](https://github.com/mkdocstrings/pytkdocs).

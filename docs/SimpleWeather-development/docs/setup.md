@@ -1,4 +1,16 @@
 ---
+tags:
+  - Set Up
+  - SimpleWeather
+  - Development
+  - Set Up For Dev
+
+authors:
+  - Afridyne
+  - "John Piers Cilliers <https://avatars.githubusercontent.com/u/1306639?s=400&v=4>"
+  - SimpleWeather
+  - "Roman Lefler <https://github.com/romanlefler/SimpleWeather/blob/development/AUTHORS>"
+
 icon: material/weather-night
 ---
 

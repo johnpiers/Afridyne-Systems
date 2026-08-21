@@ -2701,18 +2701,18 @@ s3}
 
 ---
 
-# 🖋️ Playwrite AR Guides (Arch Linux System Integration)
+### 🖋️ Playwrite AR Guides (Arch Linux System Integration)
 
 A summary documentation page tracking the installation, filesystem diagnostics, and OpenType rendering features for the **Playwrite AR Guides** typeface.
 
-## 📋 Quick Status Summary
+### 📋 Quick Status Summary
 * **Package Source:** Upstream Google Fonts / TypeTogether GitHub repository.
 * **Installation Scope:** Local User (`~/.local/share/fonts/PlaywriteARGuides-Regular.ttf`).
 * **System Integrity:** Verified. System-wide `fc-cache` anomalies (`looped directory detected`) are identified as safe, superficial Fontconfig engine duplication warnings. Fonts are caching successfully.
 
 ---
 
-## 🔍 System Verification & Diagnostics
+###  🔍 System Verification & Diagnostics
 
 ### 1. Confirm Font Recognition
 To verify that the system successfully registers and indexes the font family, run:
@@ -2728,7 +2728,7 @@ If `fc-cache -fv` outputs `skipping, looped directory detected` errors for `/usr
 
 ---
 
-## 🛠️ Enabling Cursive Connections (OpenType Features)
+### 🛠️ Enabling Cursive Connections (OpenType Features)
 
 Because Playwrite is a highly specialized primary school education font, it relies heavily on **OpenType feature tags** to dynamically link letters together into seamless cursive scripts. Without these features enabled, letters will appear disconnected.
 

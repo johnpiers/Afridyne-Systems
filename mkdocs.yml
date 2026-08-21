@@ -31,6 +31,7 @@ theme:
   custom_dir: overrides
   icon:
     annotation: material/arrow-right-circle
+    logo: material/newlogo
   topbar_style: glass
   favicon: assets/favicon.png  # Path relative to your 'docs' folder
   #mermaid:
@@ -54,9 +55,10 @@ theme:
     - navigation.path
     - navigation.top
     - navigation.footer
+    - navigation.sections
     - content.tooltips
     - navigation.tracking
-    - navigation.prune
+    #- navigation.prune
     - search.suggest
     - content.code.collapse
     - content.code.copy
@@ -66,7 +68,6 @@ theme:
     - content.action.view
     - toc.follow
     - header.autohide
-
 
   palette: 
     - scheme: default
@@ -86,8 +87,6 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  icon:
-    logo: material/newlogo
 
 validation:
   anchors: ignore
@@ -127,9 +126,6 @@ plugins:
       plugins:
         - minify:
             minify_html: !ENV [DEPLOY, false]
-  - social:
-      cards_layout_options:
-        background_color: "#00A2E3"
   #- mermaid2
   #- mermaid2:
   #    arguments:
@@ -148,6 +144,8 @@ plugins:
       enabled: !ENV [OFFLINE, false]
   - materialx/social:       # Added 'material/'
       enabled: !ENV [CI, true]
+      cards_layout_options:
+        background_color: "#00A2E3"
   - materialx/optimize:     # Added 'material/'
       enabled: !ENV [CI, false]
       cache: true
@@ -259,7 +257,6 @@ markdown_extensions:
       separator: " ＋ "
   - pymdownx.superfences:
       #preserve_tabs: true
-      #relaxed_headers: true # DOESN'T APPEAR TO BE DOING ANYTHING?
       custom_fences:
         - name: mermaid
           class: mermaid
@@ -301,7 +298,7 @@ markdown_extensions:
       clickable_checkbox: true
   - mkdocs-click
 
-  
+
   
          
 # Use not_in_nav to hide these pages from the sidebar, 
@@ -312,7 +309,10 @@ not_in_nav: |
   MkDocsCaption/**
   Mkdocstrings/**
   amdgpu_top-main/**
-  man.amdgpu_top.md
+  CriticMarkup.md
+  Iconsearch-fix.md
+  Suspend-Router-Freeze.md
+  man-amdgpu-top.md
   SearchBetterFasterSmallerBlogPost.md
   S62.md
   MermaidCheat.md
@@ -344,7 +344,6 @@ extra_javascript:
   - javascripts/expand-code.js
   - javascripts/theme_extra.js
   - javascripts/tablesort.js
-  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/iconsearch.js
   # Future Reference (MathJax Toggles):
   # https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -364,19 +363,3 @@ extra:
   article_nav_top: true
   article_nav_bottom: true
   version: v1.0.5
-  analytics: 
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >- 
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
-

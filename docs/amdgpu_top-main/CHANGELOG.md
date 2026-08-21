@@ -1,19 +1,16 @@
 ---
-# This tells MkDocs to ignore the 'caption' features for this page
-caption:
-  figure:
-    enable: false
-  table:
-    enable: false
-  custom:
-    enable: false
-    
+tags:
+  - AMDgpu_Top
+  - AMD Ryzen™
+  - XDNA
+  - Changelog 0.11.0
     
 icon: simple/amd
 ---
 
 Back to: [amdgpu_Top Main Page](../AMDgpu-Top.md)
 
+# Changelog 0.11.0 (2025-09-02) AMDgpu_Top
 
 !!! bug "Changelog 0.11.0 (2025-09-02)"
 

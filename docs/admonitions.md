@@ -29,11 +29,11 @@ created: 2025-01-15 10:30:00
     
     See additional configuration options:
     
-    <kbd> <br> [Python-Markdown-Extensions](http://127.0.0.1:8000/MkDocs-Material/python-markdown-extensions/) ↗️ <br> </kbd>
+    <kbd> <br> [Python-Markdown-Extensions](MkDocs-Material/python-markdown-extensions.md){data-preview} ↗️ <br> </kbd>
     
-    - [Admonitions]
-    - [Details]
-    - [SuperFences]
+    - [Admonitions]{data-preview}
+    - [Details]{data-preview}
+    - [SuperFences]{data-preview}
     
 ### Admonition Icons
 
@@ -59,7 +59,7 @@ created: 2025-01-15 10:30:00
 
 Please refer to the new, more powerful and flexible configuration: [Custom icons and colors](https://github.com/jaywhj/mkdocs-materialx/blob/main/docs/reference/admonitions.md#custom-icons-and-colors).
 
-Icons can be any icon (search → (1)) bundled with the theme, or [custom icon]{target="_blank"}.
+Icons can be any icon (search → (1)) bundled with the theme, or [custom icon]{target="_blank" data-preview}.
 { .annotate }
 
 1.  Enter a few keywords to find the perfect icon using our [icon search] and click on the shortcode to copy it to your clipboard:
@@ -148,7 +148,7 @@ In previous versions, admonitions had a slightly different appearance.
     
 !!! desc "Restoring Classic Appearance"
 
-    If you want to restore this appearance, add the following CSS to an [additional style sheet]:
+    If you want to restore this appearance, add the following CSS to an [additional style sheet](MkDocs-Material/customization.md/#adding-assets-plus-css){ data-preview }
     
     <style>
       .md-typeset .admonition.classic {
@@ -180,13 +180,13 @@ In previous versions, admonitions had a slightly different appearance.
 
 #### Prior to version 10.0.6
 
-!!! classic2 "Note"
+!!! recomendation "Note"
 
     Use a tip or note to provide optional information or helpful advice, like an alternative way of doing something.
 
 !!! desc "Classic2"
 
-    If you want to restore this appearance, add the following CSS to an [additional style sheet]:
+    If you want to restore this appearance, add the following CSS to an [additional style sheet](MkDocs-Material/customization.md/#adding-assets-plus-css){ data-preview }:
 
     <style>
       .md-typeset .admonition.classic2 {
@@ -217,7 +217,7 @@ In previous versions, admonitions had a slightly different appearance.
 ## Usage
 
 !!! desc "Usage"
-    Admonitions follow a simple syntax: a block starts with `!!!`, followed by a single keyword used as a [type qualifier]. The content of the block follows on the next line, indented by four spaces:
+    Admonitions follow a simple syntax: a block starts with `!!!`, followed by a single keyword used as a [type qualifier]{ data-preview }. The content of the block follows on the next line, indented by four spaces:
 
     ??? desc "Click to see code"
         ``` markdown title="Admonition"
@@ -291,7 +291,7 @@ In previous versions, admonitions had a slightly different appearance.
 ### Removing the Title
 
 !!! desc "Removing the Title"
-    Similar to [changing the title], the icon and title can be omitted entirely by adding an empty string directly after the type qualifier. Note that this will not work for [collapsible blocks]:
+    Similar to [changing the title]{ data-preview }, the icon and title can be omitted entirely by adding an empty string directly after the type qualifier. Note that this will not work for [collapsible blocks]{ data-preview }:
 
     ??? desc "Click to see code"
         ``` markdown title="Admonition without title"
@@ -315,7 +315,7 @@ In previous versions, admonitions had a slightly different appearance.
 ### Collapsible Blocks
 
 !!! desc "Collapsible Blocks"
-    When [Details] is enabled and an admonition block is started with `???` instead
+    When [Details]{ data-preview } is enabled and an admonition block is started with `???` instead
     of `!!!`, the admonition is rendered as an expandable block with a small toggle
     on the right side:
 
@@ -589,7 +589,7 @@ You can configure the icon and color for each built-in admonition type, and also
 
     </div>
 
-Icons can be any icon (search → (1)) bundled with the theme, or [custom icon]{target="_blank"}.
+Icons can be any icon (search → (1)) bundled with the theme, or [custom icon]{target="_blank" data-preview}.
 { .annotate }
 
 1.  Enter a few keywords to find the perfect icon using our [icon search] and click on the shortcode to copy it to your clipboard:
@@ -666,7 +666,7 @@ Icons can be any icon (search → (1)) bundled with the theme, or [custom icon]{
   
 ### Custom Admonitions
 
-If you want to add a custom admonition type, all you need is a color and an `*.svg` icon. Copy the icon's code from the [`.icons`][custom icons] folder and add the following CSS to an [additional style sheet]:
+If you want to add a custom admonition type, all you need is a color and an `*.svg` icon. Copy the icon's code from the [`.icons`][custom icons] folder and add the following CSS to an [additional style sheet]{ data-preview }.
 
 <style>
   :root {
@@ -743,7 +743,7 @@ After applying the customization, you can use the custom admonition type:
     </div>
 
   [custom icons]: https://github.com/squidfunk/mkdocs-material/tree/master/material/templates/.icons
-  [additional style sheet]: MkDocs-Material/customization.md#additional-css
+  [additional style sheet]: MkDocs-Material/customization.md#adding-assets-plus-css
 
 
 !!! ex "Structure Example"
@@ -919,7 +919,7 @@ After applying the customization, you can use the custom admonition type:
 
   [custom icons]: https://github.com/jaywhj/mkdocs-materialx/tree/main/material/templates/.icons
 
-Icons can be any icon (search → (1)) bundled with the theme, or [custom icon]{target="_blank"}.
+Icons can be any icon (search → (1)) bundled with the theme, or [custom icon]{target="_blank" data-preview}.
 { .annotate }
 
 1.  Enter a few keywords to find the perfect icon using our [icon search] and click on the shortcode to copy it to your clipboard:

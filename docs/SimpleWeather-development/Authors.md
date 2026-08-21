@@ -1,18 +1,27 @@
 ---
-icon: material/weather-night
-
 tags:
   - Authors
   - SimpleWeather
+  - SimpleWeather Documentation
   - Roman Lefler
   - Davide Murtas
+
+authors:
+  - Afridyne
+  - "John Piers Cilliers <https://avatars.githubusercontent.com/u/1306639?s=400&v=4>"
+  - SimpleWeather
+  - "Roman Lefler <https://github.com/romanlefler/SimpleWeather/blob/development/AUTHORS>"
+
+icon: material/weather-night
 ---
 
 ### Maintainer/Programmer: Roman Lefler
 #### SimpleWeather Documentation
 
-!!! deep-dive "Contributors: Davide Murtas"
+!!! deep-dive "Contributors:"
 
+    Contributors: Davide Murtas, miyou379, Grzegorz Szymaszek, Frank Dana
+    
     01. Brazilian Portuguese (Português do Brasil): Alzemand
     02. Bulgarian (български език): Lyubomir Vasilev
     03. Chinese (中文): know-nothing-but-123, JiaoxianDu

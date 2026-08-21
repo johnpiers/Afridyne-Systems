@@ -1,5 +1,5 @@
 ---
-# This tells MkDocs to ignore the 'caption' features for this page
+#### This tells MkDocs to ignore the 'caption' features for this page
 caption:
   figure:
     enable: false
@@ -24,18 +24,30 @@ icon: material/newlogo-nav
 !!! quote ""
     Automatic documentation from sources, for [MkDocs](https://www.mkdocs.org/). Project documentation with Markdown.
     
+
 !!! quote "**Sunsetting Gitter** and Related Links."
 
-    Come have a chat or ask questions on our [Gitter channel](https://gitter.im/mkdocstrings/community). [Sunsetting Gitter](http://127.0.0.1:8000/MkDocs-Material/sunsetting-gitter/): Towards Efficient Community Engagement. **Go to**: [Handlers Documentation](http://127.0.0.1:8000/Mkdocstrings/handlers/#handlers) **Go to**: [Theming Documentation](http://127.0.0.1:8000/Mkdocstrings/theming/) **Go to**: [Usage Documentation](http://127.0.0.1:8000/Mkdocstrings/usage/)
+    ### Sunsetting Gitter and Related Links {.toc-hidden-header}
+    
+    Come have a chat or ask questions on our [Gitter channel](https://gitter.im/mkdocstrings/community). [Sunsetting Gitter](MkDocs-Material/sunsetting-gitter.md): Towards Efficient Community Engagement. **Go to**: [Handlers Documentation](Mkdocstrings/handlers.md#handlers) **Go to**: [Theming Documentation](Mkdocstrings/theming.md) **Go to**: [Usage Documentation](Mkdocstrings/usage.md)
     
 ---
 
-!!! info "MkDocstrings extra Documentation"
-
-    Go to: [MkDocstrings Handlers](Mkdocstrings/handlers.md)
-    Go to: [MkDocstrings Theming](Mkdocstrings/theming.md)
-    Go to: [MkDocstrings Usage](Mkdocstrings/usage.md)
+!!! recommendation "MkDocstrings extra Documentation"
     
+---
+
+[👉 MkDocstrings-Handlers :fontawesome-solid-paper-plane:](Mkdocstrings/handlers.md/#available-handlers){ .md-button .md-button--custom data-preview }
+
+---
+
+[👉 MkDocstrings-Theming :fontawesome-solid-paper-plane:](Mkdocstrings/theming.md/#themes){ .md-button .md-button--custom data-preview }
+
+---
+
+[👉 MkDocstrings-Usage :fontawesome-solid-paper-plane:](Mkdocstrings/usage.md/#special-expressions){ .md-button .md-button--custom data-preview }
+
+---
 
 **[Features](#features)** - **[Installation](#installation)** - **[Quick usage](#quick-usage)**
 

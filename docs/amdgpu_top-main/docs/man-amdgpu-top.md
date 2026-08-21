@@ -1,12 +1,9 @@
 ---
-# This tells MkDocs to ignore the 'caption' features for this page
-caption:
-  figure:
-    enable: false
-  table:
-    enable: false
-  custom:
-    enable: false
+tags:
+  - AMDgpu_Top
+  - AMD Ryzen™
+  - Man Page
+  - Man AMDgpu Top
     
 icon: simple/amd
 ---
@@ -14,32 +11,28 @@ icon: simple/amd
 ![AMD Ryzen™ man amdgpu_top](https://www.amd.com/content/dam/amd/en/images/logos/products/2833999-ryzen-ai-software-logo-banner-developer.jpg)
 <H1 style="text-align: center;"><u>Man AMDgpu Top</u></H1>
 
-
-<!-- pandoc man-amdgpu-top.md -s -t man -o amdgpu_top.1 -->
-
 Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)
 
-##### Name
+#### Name
 !!! danger ""
     - amdgpu_top - Tool to displays AMDGPU usage.
     
-##### Synopsis
+#### Synopsis
 !!! danger ""
     - *amdgpu_top* [*OPTIONS*]
     
-##### Description
+#### Description
 
 !!! pied-piper "Description"
-
     - *amdgpu_top* is tool that display AMD GPU utilization, like *umr* [^1] or *clbr/radeontop* [^2]  or *intel_gpu_top* [^3] .
     
     - The tool displays information gathered from performance counters (GRBM, GRBM2), sensors, fdinfo, and AMDGPU driver.
     
-[^1]: <https://gitlab.freedesktop.org/tomstdenis/umr/>
-[^2]: <https://github.com/clbr/radeontop>
-[^3]: <https://gitlab.freedesktop.org/drm/igt-gpu-tools/-/blob/master/man/intel_gpu_top.rst>
+[^1]: [Debugger](https://gitlab.freedesktop.org/tomstdenis/umr/) — User Mode Register Debugger for AMDGPU Hardware. Copyright (c) 2025 AMD Inc.
+[^2]: [RadeonTop](https://github.com/clbr/radeontop) — View your GPU utilization, both for the total activity percent and individual blocks.
+[^3]: [intel_gpu_top](https://gitlab.freedesktop.org/drm/igt-gpu-tools/-/blob/master/man/intel_gpu_top.rst) — Display a top-like summary of Intel GPU usage.
 
-##### Examples
+#### Examples
 
 !!! info "Devices"
 
@@ -65,15 +58,14 @@ Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)
     $ amdgpu_top --pci "0000:01:00.0"
     ```
     
-##### Options
+#### Options
 
 ??? example "Options"
 
     1.
     
     ---
-    
-    
+        
     **\-i** *`<usize>`*
     :   Select GPU instance.
 
@@ -97,16 +89,13 @@ Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)
 
     **\-\-apu**, **\-\-select-apu**
     :   Select APU instance.
-    
-        
+            
     ---
-    
-    
+        
     2.
     
     ---
-    
-    
+        
     **\-\-single**, **\-\-single-gpu**
     :   Display only the selected GPU/APU.
 
@@ -130,16 +119,13 @@ Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)
 
     **\-\-light**, **\-\-light-mode**
     :   Set to the light mode. (TUI/GUI)
-    
-    
+        
     ---
-    
-    
+        
     3.
     
     ---
-    
-    
+        
     **\-\-hide-fdinfo**
     :   Hide fdinfo panel and launch. (TUI)
 
@@ -160,17 +146,13 @@ Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)
 
     **\-J**, **\-\-json**
     :   Output JSON formatted data.  This option can be combined with the "-d" option.
-    
-    
-    
+            
     ---
         
     4.
         
     ---
-    
-    
-    
+        
     **\-\-gui**
     :   Launch GUI mode.
 
@@ -184,7 +166,7 @@ Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)
     :   Print help information.
     
     
-##### COMMANDS FOR TUI MODE
+#### COMMANDS FOR TUI MODE
 
 | key |                                     |
 | :-- | :---------------------------------- |
@@ -199,48 +181,48 @@ Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)
 | M   | sort fdinfo by MediaEngine usage    |
 | R   | reverse sort for fdinfo             |
 
-##### FDINFO DESCRIPTION
+#### FDINFO DESCRIPTION
 !!! quote ""
     - fdinfo for the AMDGPU driver shows hardware IP usage per process.
     
-##### VRAM
+#### VRAM
 
-##### GTT
+#### GTT
 !!! quote ""
     - Graphics Translation Tables.
     
-##### KFD
+#### KFD
 !!! quote ""
     The process of using the AMDKFD driver.
     
-##### GFX
+#### GFX
 !!! quote ""
     GFX engine.
     
-##### Compute/COMP
+#### Compute/COMP
 !!! quote ""
    
     - Compute engine.
     
     - The AMDKFD driver does not track queues and does not show them in fdinfo.
    
-##### DMA
+#### DMA
 !!! quote ""
     - DMA/SDMA (System DMA) engine.
     
-##### Decode/DEC
+#### Decode/DEC
 !!! quote ""
     - Media decoder.
     
     - This is not show on RDNA 4.
     
-##### Encode/ENC
+#### Encode/ENC
 !!! quote ""
     - Media encoder.
     
     - This is not show on RDNA 4.
     
-##### VCN, Media
+#### VCN, Media
 !!! quote ""
     - Media engine.
     
@@ -248,19 +230,18 @@ Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)
     
     - The AMDGPU driver handles both decoding and encoding as contexts for the encoding engine.
     
-##### JPEG
+#### JPEG
 !!! quote ""
     - JPEG decoder.
     
-##### VPE
+#### VPE
 !!! quote ""
     - Video Processor Engine.
     
     - Ref: [Video Processor Engine](https://gitlab.freedesktop.org/mesa/mesa/-/blob/main/src/amd/vpelib/README.md)
     
-##### BUGS
+#### BUGS
 !!! quote ""
     - Ref: [amdgpu_top: Issues](https://github.com/Umio-Yasuno/amdgpu_top/issues)
     
-
 Back to: [AMDgpu-Top Main Page](../../AMDgpu-Top.md)

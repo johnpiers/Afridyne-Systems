@@ -1,12 +1,15 @@
 ---
-# This tells MkDocs to ignore the 'caption' features for this page
-caption:
-  figure:
-    enable: false
-  table:
-    enable: false
-  custom:
-    enable: false
+tags:
+  - GNOME shell
+  - SimpleWeather
+  - extension
+  - viewing the weather
+
+authors:
+  - Afridyne
+  - "John Piers Cilliers <https://avatars.githubusercontent.com/u/1306639?s=400&v=4>"
+  - SimpleWeather
+  - "Roman Lefler <https://github.com/romanlefler/SimpleWeather/blob/development/AUTHORS>"
 
 icon: material/weather-night
 ---

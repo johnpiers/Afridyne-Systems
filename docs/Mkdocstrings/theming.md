@@ -7,21 +7,24 @@ icon: material/newlogo-nav
 <H1 style="text-align: center;">Theming</H1>
 
 
-##### Themes
+### Themes
+
 !!! pied-piper "*mkdocstrings*"
 
+    ### MkDocstrings {.toc-hidden-header}
+    
     - *mkdocstrings* can support multiple MkDocs themes. It currently supports the *[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)* theme and, partially, the built-in MkDocs and ReadTheDocs themes.
     
     ---
     - Each handler can fallback to a particular theme when the user selected theme is not supported. For example, the Python handler will fallback to the *Material for MkDocs* templates.
     
 
-##### Customization
+#### Customization
 !!! info "Customization"
 
     There is some degree of customization possible in *mkdocstrings*. First, you can write custom templates to override the theme templates. Second, the provided templates make use of CSS classes, so you can tweak the look and feel with extra CSS rules.
     
-##### Templates
+#### Templates
 
 !!! info "Templates"
 
@@ -78,7 +81,7 @@ icon: material/newlogo-nav
     - The [Python Handler:](https://mkdocstrings.github.io/python/usage/customization/#templates)
     
 
-##### Debugging
+#### Debugging
 
 !!! pied-piper "Debugging"
 
@@ -102,7 +105,7 @@ icon: material/newlogo-nav
     - the Python handler: https://mkdocstrings.github.io/python/usage/customization/#css-classes
     
 
-##### Syntax Highlighting
+#### Syntax Highlighting
 !!! abstract "Syntax Highlighting"
 
     - Code blocks that occur in the docstring of an item inserted with *mkdocstrings*, as well as code blocks (such as *Source code*) that *mkdocstrings* inserts itself, are syntax-highlighted according to the same rules as other normal code blocks in your document.
@@ -121,5 +124,3 @@ icon: material/newlogo-nav
     
     - Long story short, you probably should add `pymdownx.highlight` to your `markdown_extensions`, and then use `.doc-contents .highlight` as the CSS selector in case you want to change something about *mkdocstrings'* code blocks specifically.
     
-
-

@@ -2142,3 +2142,114 @@ $R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_
     MathJax Code (inline)
 
     Renders as: $dS \ge \frac{\delta Q}{T}$
+    
+
+## Practical Diagrams
+
+!!! recommendation "Practical Diagrams"
+    - There are a few diagrams that we feel do not work well for us, and we thought it useful to share why. The main reason is that a few of the diagrams are a bit impractical to use due to sizing and scaling issues. While there may be a way to massage them to work, we have not currently invested any time in workarounds for these diagrams.
+    
+    - Some of the less practical examples may work better if they were pre-rendered and included as an image instead. This seems to be what Mermaid does in their own documents.
+    
+---
+
+Flowcharts
+
+```mermaid
+graph TD
+    A[Hard] -->|Text| B(Round)
+    B --> C{Decision}
+    C -->|One| D[Result 1]
+    C -->|Two| E[Result 2]
+```
+
+---
+
+Sequence Diagrams
+
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+```
+
+---
+
+Class Diagrams
+
+```mermaid
+classDiagram
+    Class01 <|-- AveryLongClass : Cool
+    Class03 *-- Class04
+    Class05 o-- Class06
+    Class07 .. Class08
+    Class09 --> C2 : Where am i?
+    Class09 --* C3
+    Class09 --|> Class07
+    Class07 : equals()
+    Class07 : Object[] elementData
+    Class01 : size()
+    Class01 : int chimp
+    Class01 : int gorilla
+    Class08 <--> C2: Cool label
+```
+
+---
+
+Entity Relationships
+
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+```
+
+---
+
+State Diagrams
+
+```mermaid
+stateDiagram
+    [*] --> First
+    First --> Second
+    First --> Third
+
+    state First {
+        [*] --> fir
+        fir --> [*]
+    }
+    state Second {
+        [*] --> sec
+        sec --> [*]
+    }
+    state Third {
+        [*] --> thi
+        thi --> [*]
+    }
+```
+
+---
+
+Pie
+
+```mermaid
+pie
+    title Key elements in Product X
+    "Calcium" : 42.96
+    "Potassium" : 50.05
+    "Magnesium" : 10.01
+    "Iron" :  5
+```
+
+---
+
+

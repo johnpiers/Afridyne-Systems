@@ -1,12 +1,9 @@
 ---
-# This tells MkDocs to ignore the 'caption' features for this page
-caption:
-  figure:
-    enable: false
-  table:
-    enable: false
-  custom:
-    enable: false
+tags:
+  - AMDgpu_Top
+  - AMD Ryzen™
+  - MIT License
+  - Umio Yasuno
     
 icon: simple/amd
 ---
@@ -14,6 +11,7 @@ icon: simple/amd
 
 ![Local image](assets/AMD.jpg){ .center-image }
 
+# MIT License - AMDgpu_Top
 
 !!! quote "MIT License"
 
