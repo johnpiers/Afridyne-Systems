@@ -3007,7 +3007,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-21"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-21T17:22:21+00:00">2026-08-21</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-22"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-22T02:04:00+00:00">2026-08-22</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <div style="display: none;"><h1>CriticMarkup</h1></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260821-151644.png" data-desc-position="bottom"><img alt="" src="../imgs/20260821-151644.png" style="display: block; margin: 0 auto"></a></p>
 <h2 style="text-align: center;">Case Study: Solving the CriticMarkup Code Block Conflict in MkDocs</h2>
@@ -3025,7 +3025,7 @@
 <p>It corrupted the strings copied to the clipboard by stripping trailing sequential symbols (e.g., matching <code>{&lt;span&gt;&lt;/span&gt;--deleted--}</code> into a broken <code>{&lt;span&gt;&lt;/span&gt;--deleted-}</code>).</p>
 </li>
 <li>
-<p>Standard Markdown fences (<code>`text</code>), backslash escaping (<code>\</code>), external text file snippets (<code>--8&lt;pre&gt;&lt;code&gt;</code>) combined with an empty <code>&lt;span&gt;&lt;/span&gt;</code> tag inserted directly between the opening bracket and the syntax character.</p>
+<p>Standard Markdown fences (<code>```text</code>), backslash escaping (<code>\</code>), and external text file snippets (<code>--8&lt;span&gt;&lt;/span&gt;&lt;--</code>) all fail because Critic processes the raw characters before standard layout engines can shield them.</p>
 </li>
 </ul>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text with suggested changes&lt;/span&gt;&lt;pre&gt;&lt;code&gt;Text can be {&lt;span&gt;&lt;/span&gt;--deleted--} and replacement text {&lt;span&gt;&lt;/span&gt;++added++}. This can also be combined into {&lt;span&gt;&lt;/span&gt;~~one~&gt;a single~~} operation. {&lt;span&gt;&lt;/span&gt;==Highlighting==} is also possible {&lt;span&gt;&lt;/span&gt;&gt;&gt;and comments can be added inline&lt;&lt;}.
@@ -3037,6 +3037,17 @@
 </span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>==}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 </span></code></pre></div>
 </div>
+<div class="highlight"><span class="filename">Text with suggested changes</span><pre><code>Text can be {<span></span>--deleted--} and replacement text {<span></span>++added++}. This can also be combined into {<span></span>~~one~&gt;a single~~} operation. {<span></span>==Highlighting==} is also possible {<span></span>&gt;&gt;and comments can be added inline&lt;&lt;}.
+
+{<span></span>==
+
+Formatting can also be applied to blocks by putting the opening and closing tags on separate lines and adding new lines between the tags and the content.
+
+==}</code></pre></div>
+<p>Text can be <del class="critic">deleted</del> and replacement text <ins class="critic">added</ins>. This can also be combined into <del class="critic">one</del><ins class="critic">a single</ins> operation. <mark class="critic">Highlighting</mark> is also possible <span class="critic comment">and comments can be added inline</span>.</p>
+<mark class="critic block">
+<p>Formatting can also be applied to blocks by putting the opening and closing tags on separate lines and adding new lines between the tags and the content.</p>
+</mark>
 <h3 id="why-this-architecture-works-flawlessly">Why This Architecture Works Flawlessly<a class="headerlink" href="#why-this-architecture-works-flawlessly" title="Permanent link">¶</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Why This Architecture Works Flawlessly</p>
