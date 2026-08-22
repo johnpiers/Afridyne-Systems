@@ -1,10 +1,17 @@
 ---
+tags:
+  - MaterialX
+  - Afridyne Systems™
+  - Advanced Configuration
+  - MkDocs
+  - About Getting Started
+  - Getting Started with MkDocs
+
 icon: material/newlogo-nav
-created: 2025-01-15 10:30:00
 ---
 
 <div style="display: none;">
-  <h1>Header</h1>
+  <h1>about</h1>
 </div>
 
 ![](imgs/20260413-161721.png){: style="display: block; margin: 0 auto"}

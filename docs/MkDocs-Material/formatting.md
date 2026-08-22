@@ -1,4 +1,8 @@
 ---
+tags:
+  - Formatting
+  - Highlighting Changes
+
 icon: simple/materialformkdocs
 ---
 

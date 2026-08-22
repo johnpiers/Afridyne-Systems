@@ -1,6 +1,7 @@
 ---
 tags:
   - Arch Linux Suspend
+  - Network
   - Reyee Router Freeze
   - Troubleshooting
   - NetworkManager
@@ -9,7 +10,7 @@ tags:
 icon: material/router-network-wireless
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>Suspend-Router-Freeze </h1></div>
 
 ![](imgs/20260821-021336.png){: style="display: block; margin: 0 auto"}
 

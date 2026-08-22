@@ -4,7 +4,7 @@ created: 2025-01-15 10:30:00
 ---
 
 <div style="display: none;">
-  <h1>Header</h1>
+  <h1>ArchInstall</h1>
 </div>
 
 ![Local image](./images/logo.png){: style="display: block; margin: 0 auto"}

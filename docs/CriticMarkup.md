@@ -30,7 +30,7 @@ icon: material/computer-desktop-repair-icon
     
     * It corrupted the strings copied to the clipboard by stripping trailing sequential symbols (e.g., matching `{<span></span>--deleted--}` into a broken `{<span></span>--deleted-}`).
     
-    * Standard Markdown fences (`` `text ``), backslash escaping (`\`), external text file snippets (`--8<pre><code>`) combined with an empty `<span></span>` tag inserted directly between the opening bracket and the syntax character.
+    * Standard Markdown fences (` ```text `), backslash escaping (`\`), and external text file snippets (`--8<span></span><--`) all fail because Critic processes the raw characters before standard layout engines can shield them.
     
     ```markdown
     <div class="highlight"><span class="filename">Text with suggested changes</span><pre><code>Text can be {<span></span>--deleted--} and replacement text {<span></span>++added++}. This can also be combined into {<span></span>~~one~>a single~~} operation. {<span></span>==Highlighting==} is also possible {<span></span>>>and comments can be added inline<<}.
@@ -41,6 +41,22 @@ icon: material/computer-desktop-repair-icon
     
     ==}</code></pre></div>
     ```
+
+<div class="highlight"><span class="filename">Text with suggested changes</span><pre><code>Text can be {<span></span>--deleted--} and replacement text {<span></span>++added++}. This can also be combined into {<span></span>~~one~>a single~~} operation. {<span></span>==Highlighting==} is also possible {<span></span>>>and comments can be added inline<<}.
+
+{<span></span>==
+
+Formatting can also be applied to blocks by putting the opening and closing tags on separate lines and adding new lines between the tags and the content.
+
+==}</code></pre></div>
+
+Text can be {--deleted--} and replacement text {++added++}. This can also be combined into {~~one~>a single~~} operation. {==Highlighting==} is also possible {>>and comments can be added inline<<}.
+
+{==
+
+Formatting can also be applied to blocks by putting the opening and closing tags on separate lines and adding new lines between the tags and the content.
+
+==}
 
 ### Why This Architecture Works Flawlessly
 
@@ -53,4 +69,3 @@ icon: material/computer-desktop-repair-icon
     3. **Pristine Clipboard Copies:** Because the span structure has no visible text properties, the clipboard copies the 100% correct raw markdown characters with both symbols perfectly intact.
     
     4. **Natural Execution:** When a user copies code out of that box and inserts it out in the open on a Critic-enabled site, it natively lights up into clean, visual deletions, additions, and paragraph blocks.
-

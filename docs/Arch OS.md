@@ -1,7 +1,16 @@
 ---
+tags:
+  - Arch OS Installer
+  - Step by step
+  - Core Features
+  - Troubleshooting
+  - Arch OS Installation
+  - Arch Additional Packages
+
 icon: material/arch
-created: 2025-01-15 10:30:00
 ---
+
+<div style="display: none;"><h1>Arch OS</h1></div>
 
 <h1 align="center">
   <img src="https://github.com/murkl/arch-os/raw/main/docs/logo.svg" width="150" height="150">

@@ -1,9 +1,18 @@
 ---
+tags:
+  - GElectrical
+  - Schematic capture
+  - Pandapower network
+  - Troubleshooting
+  - network
+  - GTK3 
+
+
 icon: material/meter-electric-outline
 ---
 
 <div style="display: none;">
-  <h1>Header</h1>
+  <h1>GElectrical</h1>
 </div>
 
 ![Markdown Logo](assets/gelectricaldark1.png#only-dark){ .center-image }
