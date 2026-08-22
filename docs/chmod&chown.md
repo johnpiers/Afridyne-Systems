@@ -3,7 +3,7 @@ icon: simple/files
 ---
 
 <div style="display: none;">
-  <h1>Header</h1>
+  <h1>chmod-chown</h1>
 </div>
 
 ![](imgs/20260103-033715.png){ .center-image }

@@ -5,7 +5,7 @@ icon: simple/curl
 
 ---
 <div style="display: none;">
-  <h1>Header</h1>
+  <h1>Everything curl</h1>
 </div>
 ---
 Check out our [<b>Everything curl://</b>](https://everything.curl.dev/) for more information.

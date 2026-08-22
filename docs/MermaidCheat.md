@@ -3,7 +3,7 @@ icon: material/tag-text
 ---
 
 <div style="display: none;">
-  <h1>Header</h1>
+  <h1>Mermaid & Admonition</h1>
 </div>
 
 

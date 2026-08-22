@@ -3,7 +3,7 @@ icon: material/music-circle-outline
 ---
 
 <div style="display: none;">
-  <h1>Header</h1>
+  <h1>MPD-configure</h1>
 </div>
 ![](imgs/20260102-150121.png){: .center-image}
 

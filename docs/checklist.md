@@ -12,7 +12,7 @@ search:
     - white screen
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>GTK/WebKit</h1></div>
 
 ![](imgs/20260607-114046.png){ .center-image }
 

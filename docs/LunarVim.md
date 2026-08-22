@@ -2,7 +2,7 @@
 icon: material/alert-outline
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>LunarVim</h1></div>
 
 ![](imgs/20260723-212259.png){: style="display: block; margin: 0 auto"}
 
@@ -156,3 +156,4 @@ icon: material/alert-outline
         LVim Afridyne
         ```
         
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sFA9kX-Ud_c?si=oUHd1llnRsuYA8yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

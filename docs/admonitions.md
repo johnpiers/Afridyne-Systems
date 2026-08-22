@@ -3,7 +3,7 @@ icon: material/newlogo-nav
 created: 2025-01-15 10:30:00
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>Admonitions</h1></div>
 
 ![](imgs/20260412-130931.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;"><ins>Admonitions</ins></H1>

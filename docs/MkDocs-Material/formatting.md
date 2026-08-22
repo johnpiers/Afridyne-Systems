@@ -75,6 +75,30 @@ Formatting can also be applied to blocks by putting the opening and closing tags
 
 </div>
 
+### Highlighting Changes (Incorrect Method)
+
+!!! desc "Highlighting Changes (Incorrect Method)"
+
+    The same block of code below, but without the `<div class="highlight"><span class="filename">` wrapper and without the `{<span></span>--` protection that blinds `pymdownx.critic`, demonstrates the failure mode directly. Left as a plain fenced code block, Critic's preprocessor reads and renders the syntax before the fence has any chance to shield it — the "raw" content shown below is already fully processed.
+
+    This defeats the entire purpose of the code box. A copy button is pointless if the text it copies isn't the raw syntax the reader actually needs — they'd have to manually retype the correct source from scratch, which is precisely the problem this case study set out to solve.
+
+    Note: the specific corruption observed wasn't a single character dropping from the closing tag as first suspected during troubleshooting — Critic actually consumed forward past the missing closer, collapsing "deleted" and the entire next clause together before the run finally terminated.
+
+    When [Critic] is enabled, [Critic Markup] can be used, which adds the ability to highlight suggested changes, as well as add inline comments to a document:
+
+``` title="Text with suggested changes"
+    Text can be {--deleted--} and replacement text {++added++}. This can also be combined into
+    {~~one~>a single~~} operation. {==Highlighting==} is also possible and
+    {>>comments can be added inline<<}.
+    {==
+    Formatting can also be applied to blocks by putting the opening and closing
+    tags on separate lines and adding new lines between the tags and the content.
+    ==}
+```
+
+[Critic]:https://github.com/jaywhj/mkdocs-materialx/blob/main/docs/setup/extensions/python-markdown-extensions.md#critic
+[Critic Markup]:https://github.com/CriticMarkup/CriticMarkup-toolkit
 
 ### ♑ Highlighting Text
 

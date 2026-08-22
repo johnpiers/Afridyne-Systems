@@ -2,7 +2,7 @@
 icon: simple/materialformkdocs
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>lua-guide</h1></div>
 
 ![](imgs/20260724-153731.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;"><ins>lua-guide</ins></H1>

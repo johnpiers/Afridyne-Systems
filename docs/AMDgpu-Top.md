@@ -1,9 +1,14 @@
 ---
+tags:
+  - amdgpu_top
+  - Simple TUI
+  - TUI (dark)
+  - GUI
+
 icon: simple/amd
-created: 2025-01-15 10:30:00
 ---
 
-<div style="display: none;"><h1>Header</h1>
+<div style="display: none;"><h1>AMDGPU/TOP</h1>
 </div>
 
 ![](imgs/20260217-142756.png){ .center-image }

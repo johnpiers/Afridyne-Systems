@@ -3,7 +3,7 @@ tags:
   - MaterialX
   - Afridyne Systems™
   - Advanced Configuration
-  - MkDocs
+  - Main page
   - About Getting Started
   - Getting Started with MkDocs
 

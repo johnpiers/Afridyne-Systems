@@ -2,7 +2,7 @@
 icon: material/newlogo-nav
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>Afridyne Systems™</h1></div>
 
 ![](imgs/20260412-141925.png){: style="display: block; margin: 0 auto"}
 

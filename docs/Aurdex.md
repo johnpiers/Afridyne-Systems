@@ -3,7 +3,7 @@ icon: material/alert-outline
 created: 2025-01-15 10:30:00
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>Aurdex TUI</h1></div>
 
 ![](imgs/20260228-175823.png){: style="display: block; margin: 0 auto"}
 
