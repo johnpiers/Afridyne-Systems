@@ -32,6 +32,8 @@
 /* 26. RESET ARROWS FOR ALL STANDARD AND CUSTOM ADMONITIONS: FIX        */
 /*27a. CriticMarkup Highlighting: LIGHT MODE SETTINGS                   */
 /*27b. CriticMarkup Highlighting: DARK MODE SETTINGS                    */
+/* 28. Specific Styling-CriticMarkup Highlight Block Elements-Dark Mode */
+/* 29. Syntax Highlighter - Gapless Character Tracking & Font Override  */
 /* ==================================================================== */
 
 
@@ -1601,11 +1603,35 @@ a.md-button.md-button--custom:hover,
   --md-typeset-mark-color: #ffd875; 
 }
 
+
+/* ==========================================================================
+   28. Specific Styling-CriticMarkup Highlight Block Elements-Dark Mode
+   ========================================================================== */
+
 /* Specific styling for CriticMarkup highlight block elements in dark mode */
 [data-md-color-scheme="slate"] .md-typeset mark, 
 [data-md-color-scheme="slate"] .critic.highlight { 
   background-color: #3b321d; /* Subtle dark gold tint */ 
   color: #e6ba63;             /* Clear, readable gold text */ 
   border-left-color: #e6ba63; /* Optional block indicator tint */
+}
+
+
+/* ==========================================================================
+   29. Syntax Highlighter - Gapless Character Tracking & Font Override
+   ========================================================================== */
+   
+/* 1. Force tight character tracking and ligatures inside code blocks */
+code, pre, .codehilite, .highlight {
+    font-variant-ligatures: normal !important;
+    -webkit-font-feature-settings: "liga" on, "calt" on !important;
+    font-feature-settings: "liga" on, "calt" on !important;
+    letter-spacing: -0.07em !important;
+}
+
+/* 2. Force the use of a monospace font that naturally handles the tighter layout */
+.md-typeset pre code, 
+.md-typeset pre code span {
+    font-family: "JetBrains Mono", "Fira Code", monospace !important;
 }
 
