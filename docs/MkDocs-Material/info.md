@@ -13,7 +13,7 @@ icon: simple/materialformkdocs
     The info plugin is a utility that is solely intended to create self-contained [minimal reproductions] as `.zip` files when [reporting bugs] or proposing [change requests], making communication between us maintainers and you much easier, as we have a common ground to work on.
     
 
-  [minimal reproductions]: creating-a-reproduction.md
+  [minimal reproductions]: ../creating-a-reproduction.md
   [reporting bugs]: reporting-a-bug.md
   [change requests]: requesting-a-change.md
 
@@ -59,7 +59,7 @@ icon: simple/materialformkdocs
     
 
   [info]: info.md
-  [create a minimal reproduction]: creating-a-reproduction.md
+  [create a minimal reproduction]: ../creating-a-reproduction.md
 
 ##### General
 

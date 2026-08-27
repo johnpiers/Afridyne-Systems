@@ -1,5 +1,5 @@
 ---
-icon: material/newlogo-nav
+icon: material/newspaper-variant-outline
 title: Afridyne Blog
 ---
 

@@ -1224,7 +1224,7 @@ Some other important footnote.[^2]
         [Example of a relative link](Creating-Your-Site.md)
         ```
 
-    [Example of a relative link](Creating-Your-Site.md)
+    [Example of a relative link](MkDocs-Material/creating-your-site.md)
 
 
 ## Auto

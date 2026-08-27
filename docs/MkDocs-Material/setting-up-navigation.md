@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: lucide/panel-left
 ---
 
 ![](imgs/20260130-134909.png){: style="display: block; margin: 0 auto"}
@@ -7,7 +7,7 @@ icon: simple/materialformkdocs
 
 !!! pied-piper "Clear and Concise Navigation Structures"
 
-    - A clear and concise navigation structure is an important aspect of good project documentation. Material for MkDocs provides a multitude of options to configure the behavior of navigational elements, including [tabs] and [sections], and one of its flagship features: [instant loading].
+    - A clear and concise navigation structure is an important aspect of good project documentation. MaterialX for MkDocs provides a multitude of options to configure the behavior of navigational elements, including [tabs] and [sections], and one of its flagship features: [instant loading].
     
   [tabs]: #navigation-tabs
   [sections]: #navigation-sections
@@ -37,17 +37,18 @@ icon: simple/materialformkdocs
         - navigation.instant
     ```
     
-    The resulting page is parsed and injected and all event handlers and components are rebound automatically, i.e., __Material for MkDocs now behaves like a Single Page Application__. Now, the search index survives navigation, which is especially useful for large documentation sites.
+    The resulting page is parsed and injected and all event handlers and components are rebound automatically, i.e., __MaterialX for MkDocs now behaves like a Single Page Application__. Now, the search index survives navigation, which is especially useful for large documentation sites.
     
-!!! info "The [`site_url`][`mkdocs.site_url`] setting must be set"
+!!! info "The [`site_url`][mkdocs.site_url] setting must be set"
 
-    Note that you must set [`site_url`][`mkdocs.site_url`] when using instant navigation, as instant navigation relies on the generated `sitemap.xml` which will be empty if this setting is omitted. Example:
+    Note that you must set [`site_url`][mkdocs.site_url] when using instant navigation, as instant navigation relies on the generated `sitemap.xml` which will be empty if this setting is omitted. Example:
 
     ``` yaml
     site_url: https://example.com
     ```
 
   [XHR]: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+  [mkdocs.site_url]: https://www.mkdocs.org/user-guide/configuration/#site_url
 
 #### Instant Prefetching
 
@@ -161,9 +162,9 @@ icon: simple/materialformkdocs
         - navigation.instant.preview
     ```
     
-!!! info "The [`site_url`][`mkdocs.site_url`] setting must be set"
+!!! info "The [`site_url`][mkdocs.site_url] setting must be set"
 
-    Note that you must set [`site_url`][`mkdocs.site_url`] when using instant previews, as instant previews rely on the generated `sitemap.xml` which will be empty if this setting is omitted. Example:
+    Note that you must set [`site_url`][mkdocs.site_url] when using instant previews, as instant previews rely on the generated `sitemap.xml` which will be empty if this setting is omitted. Example:
 
     ``` yaml
     site_url: https://example.com

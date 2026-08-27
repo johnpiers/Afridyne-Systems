@@ -163,42 +163,77 @@ plugins:
 nav:
   - MaterialX-MkDocs:
       - MaterialX-MkDocs: index.md
-      - Recent-updates: adding-recent-updates-module.md
-      - Get Started-MkDocs: about.md      
       - MkDocs Start Page: MkDocs-Material-Start.md
-      - Creating Your Site: Creating-Your-Site.md
-      - Admonitions: admonitions.md
+      - Get Started-MkDocs: about.md
       - MkDocsCaption: Caption.md
       - MkDocstrings: MkDocstrings.md
-      - Text Colour/MathJax: MathJax.md      
       - Icon & Emoji Database: database.md
-      - Afridyne: afridyne.md
+      - Text Colour/MathJax: MathJax.md
+
+  - Get started:
+    - Differences: differences.md
+    - Installation: installation.md
+    - Create your site: MkDocs-Material/creating-your-site.md
+
+  - Setup:
+    - Overview: MkDocs-Material/setup.md
+    - Logo and icons: MkDocs-Material/changing-the-logo-and-icons.md
+    - Colours: MkDocs-Material/changing-the-colors.md
+    - Fonts: MkDocs-Material/changing-the-fonts.md
+    - Language: MkDocs-Material/changing-the-language.md
+    - Navigation: MkDocs-Material/setting-up-navigation.md
+    - Date & authors: MkDocs-Material/adding-document-dates-authors.md
+    - Recent-updates: adding-recent-updates-module.md
+    - Repository: MkDocs-Material/adding-a-git-repository.md
+
+
+  - Plugins:
+    - Recommendation: MkDocs-Material/plugin-recommendation.md
+    - Built-in plugins:
+      - Date: MkDocs-Material/date-author.md
+      - Steps: steps.md
+      - Search: MkDocs-Material/search.md
       - Blog Config: MkDocs-Material/blog.md
-      - Social Config: MkDocs-Material/social.md
-      
-  - Afridyne Blog: blog/index.md
+      - Social: MkDocs-Material/social.md
+      - Social cards: MkDocs-Material/setting-up-social-cards.md
   
-  - Markdown:
-      - Markdown: Markdown.md
-      - CommonMarkSpec: CommonMarkSpec.md
-      - Ultimate Cheat Sheet: Ultimate-Markdown-Cheat-Sheet.md
-      - Markdown Guide: Markdown-Guide.md
-      - Awesome Markdown: marktext.md
-      - Various Markdown: Various-HTML-Markdown.md
-      - Test Basic Syntax: TestBasicSyntax.md
-  - Weather:
-      - Stormy: Stormy.md
-      - SimpleWeather: SimpleWeather.md
+  - Authoring:
+    - Overview: authoringindex.md
+    - Admonitions: admonitions.md
+    - Annotations: MkDocs-Material/annotations.md
+    - Steps: steps.md
+    - Code Blocks: MkDocs-Material/code-blocks.md
+
+  - System:
+    - Changelog:
+      - changelogindex.md
+      - How to upgrade: MkDocs-Material/upgrade.md
+    - Description:
+      - Conventions: MkDocs-Material/conventions.md
+      - Browser support: browser-support.md
+      - License: license.md
+    - Contributing:
+      - Contributing: contributingindex.md
+      - Reporting a bug: MkDocs-Material/reporting-a-bug.md
+      - Reporting a docs issue: reporting-a-docs-issue.md
+      - Requesting a change: MkDocs-Material/requesting-a-change.md
+      - Adding translations: adding-translations.md
+      - Making a pull request: making-a-pull-request.md
+      - Asking a question: https://github.com/jaywhj/mkdocs-materialx/discussions
+      - Creating a reproduction: creating-a-reproduction.md
+
+  - Afridyne Blog: blog/index.md
+    
   - Media:
       - MPD Configure: mpd-configure.md
       - ALSA & Pulse: ALSA & Pulse.md
       - Pipewire: Pipewire.md
       - Pulse Code Modulation: PCM.md
       - Music Player Daemon: Music-Player-Daemon.md
-  - ncmpcpp:
-      - ncmpcpp: ncmpcpp.md
-      - ncmpcpp++: Mpd-Mpc.md
-      - Keys Nav ncmpcpp: Keys_Movement_ncmpcpp.md
+      - ncmpcpp:
+        - ncmpcpp: ncmpcpp.md
+        - ncmpcpp++: Mpd-Mpc.md
+        - Keys Nav ncmpcpp: Keys_Movement_ncmpcpp.md
   - Arch Linux:
       - Overview: DOCS.md
       - OS Guide: Arch OS.md
@@ -208,12 +243,10 @@ nav:
       - BBCode: Arch-BBCode.md
       - Archive: Arch Linux Archive.md
       - ALPM: ALPM.md
-  - Microsoft:
-      - OFGB: OFGB.md
-      - MS Account Bypass: Bypass.md
-  - uv Pip:
-      - UV: UV.md
-      - uv Main: uv_Main.md
+      - Microsoft:
+        - OFGB: OFGB.md
+        - MS Account Bypass: Bypass.md
+  
   - Various Misc:
       - LunarVim: LunarVim.md
       - Lua in Nvim: lua-guide.md
@@ -226,7 +259,22 @@ nav:
       - GPU Top: AMDgpu-Top.md
       - Badblocks: badblocks.md
       - Systemd: systemd.md
+      - Afridyne: afridyne.md
       - AMD Checklist: checklist.md
+      - Markdown:
+        - Markdown: Markdown.md
+        - CommonMarkSpec: CommonMarkSpec.md
+        - Ultimate Cheat Sheet: Ultimate-Markdown-Cheat-Sheet.md
+        - Markdown Guide: Markdown-Guide.md
+        - Awesome Markdown: marktext.md
+        - Various Markdown: Various-HTML-Markdown.md
+        - Test Basic Syntax: TestBasicSyntax.md
+      - Weather:
+        - Stormy: Stormy.md
+        - SimpleWeather: SimpleWeather.md
+      - uv Pip:
+        - UV: UV.md
+        - uv Main: uv_Main.md
 
 # --------------------------------------------------
 # MARKDOWN EXTENSIONS MOVED TO CORRECT LOCATION HERE
@@ -316,7 +364,7 @@ not_in_nav: |
   SearchBetterFasterSmallerBlogPost.md
   S62.md
   MermaidCheat.md
-  UV_Style/STYLE.md
+  uv-Style/uv-style.md
   ALPM-Contributing.md
   contributing.md
   auto-sync.md

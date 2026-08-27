@@ -10,7 +10,7 @@ icon: material/translate
 
 !!! desc ""
 
-    Material for MkDocs supports internationalization (i18n) and provides translations for template variables and labels in 60+ languages. Additionally, the site search can be configured to use a language-specific stemmer, if available.
+    MaterialX for MkDocs supports internationalization (i18n) and provides translations for template variables and labels in 60+ languages. Additionally, the site search can be configured to use a language-specific stemmer, if available.
     
 ## Configuration
 
@@ -34,6 +34,53 @@ icon: material/translate
     create one project in a subfolder per language, and then use the
     [language selector] to interlink those projects.
     
+The following languages are supported:
+
+| Language | Code | Language | Code |
+|---|---|---|---|
+| 🇿🇦 Afrikaans | `af` | 🇮🇳 Kannada | `kn` |
+| 🇦🇱 Albanian | `sq` | 🇰🇷 Korean | `ko` |
+| 🇦🇪 Arabic | `ar` | 🇮🇶 Kurdish (Sorani) | `ku-IQ` |
+| 🇦🇲 Armenian | `hy` | 🇱🇻 Latvian | `lv` |
+| 🇦🇿 Azerbaijani | `az` | 🇱🇹 Lithuanian | `lt` |
+| 🇲🇾 Bahasa Malaysia | `ms` | 🇱🇺 Luxembourgish | `lb` |
+| 🇪🇸 Basque | `eu` | 🇲🇰 Macedonian | `mk` |
+| 🇧🇾 Belarusian | `be` | 🇲🇳 Mongolian | `mn` |
+| 🇧🇩 Bengali (Bangla) | `bn` | 🇳🇴 Norwegian Bokmål | `nb` |
+| 🇧🇬 Bulgarian | `bg` | 🇳🇴 Norwegian Nynorsk | `nn` |
+| 🇲🇲 Burmese | `my` | 🇮🇷 Persian (Farsi) | `fa` |
+| 🇪🇸 Catalan | `ca` | 🇵🇱 Polish | `pl` |
+| 🇨🇳 Chinese (Simplified) | `zh` | 🇵🇹 Portuguese | `pt` |
+| 🇨🇳 Chinese (Traditional) | `zh-Hant` | 🇧🇷 Portuguese (Brazilian) | `pt-BR` |
+| 🇹🇼 Chinese (Traditional, Taiwan) | `zh-TW` | 🇷🇴 Romanian | `ro` |
+| 🇭🇷 Croatian | `hr` | 🇷🇺 Russian | `ru` |
+| 🇨🇿 Czech | `cs` | 🇮🇳 Sanskrit | `sa` |
+| 🇩🇰 Danish | `da` | 🇷🇸 Serbian | `sr` |
+| 🇳🇱 Dutch | `nl` | 🇷🇸 Serbo-Croatian | `sh` |
+| 🇺🇸 English | `en` | 🇱🇰 Sinhalese | `si` |
+| 🇪🇺 Esperanto | `eo` | 🇸🇰 Slovak | `sk` |
+| 🇪🇪 Estonian | `et` | 🇸🇮 Slovenian | `sl` |
+| 🇫🇮 Finnish | `fi` | 🇪🇸 Spanish | `es` |
+| 🇫🇷 French | `fr` | 🇸🇪 Swedish | `sv` |
+| 🇪🇸 Galician | `gl` | 🇵🇭 Tagalog (Filipino) | `tl` |
+| 🇬🇪 Georgian | `ka` | 🇮🇳 Tamil | `ta` |
+| 🇩🇪 German | `de` | 🇮🇳 Telugu | `te` |
+| 🇬🇷 Greek | `el` | 🇹🇭 Thai | `th` |
+| 🇮🇱 Hebrew | `he` | 🇹🇷 Turkish | `tr` |
+| 🇮🇳 Hindi | `hi` | 🇺🇦 Ukrainian | `uk` |
+| 🇭🇺 Hungarian | `hu` | 🇵🇰 Urdu | `ur` |
+| 🇮🇸 Icelandic | `is` | 🇺🇿 Uzbek | `uz` |
+| 🇮🇩 Indonesian | `id` | 🇻🇳 Vietnamese | `vi` |
+| 🇮🇹 Italian | `it` | 🏴 Welsh | `cy` |
+| 🇯🇵 Japanese | `ja` | | |
+
+Note that some languages will produce unreadable anchor links due to the way
+the default slug function works. Consider using a [Unicode-aware slug function].
+
+  [single language per document]: https://www.w3.org/International/questions/qa-html-language-declarations.en#attributes
+  [language selector]: #site-language-selector
+  [Unicode-aware slug function]: extensions/python-markdown.md#+toc.slugify
+
 [Go to: Sphinx-Immaterial  :fontawesome-solid-paper-plane:](https://sphinx-immaterial.readthedocs.io/en/stable/index.html#){ .md-button .md-button--custom }
 
 [Go to: Supported Languages.  :fontawesome-solid-paper-plane:](https://jaywhj.github.io/mkdocs-materialx/setup/changing-the-language.html?h#site-language){ .md-button .md-button--custom }
@@ -178,6 +225,9 @@ icon: material/translate
   [list of available languages]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/partials/languages/
 
 ---
+
+[translations]: https://github.com/jaywhj/mkdocs-materialx/blob/main/src/templates/partials/languages/
+  [list of available languages]: https://github.com/jaywhj/mkdocs-materialx/blob/main/src/templates/partials/languages/
 
 
 [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }

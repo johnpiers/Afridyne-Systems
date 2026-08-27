@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/format-text
 ---
 
 ![](imgs/20260106-230934.png){ .center-image }
@@ -9,7 +9,7 @@ icon: simple/materialformkdocs
 
 !!! desc "Changing the Typeface"
 
-    - Material for MkDocs makes it easy to change the typeface of your project documentation, as it directly integrates with [Google Fonts].
+    - MaterialX for MkDocs makes it easy to change the typeface of your project documentation, as it directly integrates with [Google Fonts].
     
     - Alternatively, fonts can be custom-loaded if self-hosting is preferred for data privacy reasons or another destination should be used.
     

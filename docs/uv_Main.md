@@ -451,7 +451,7 @@ Additionally, the command line reference documentation can be viewed with `uv he
 
 !!! ex "How should I stylize uv?"
 
-    Just "uv", please. See the [style guide](UV_Style/STYLE.md) for details.
+    Just "uv", please. See the [style guide](uv-Style/uv-style.md) for details.
     
 ## Acknowledgements
 

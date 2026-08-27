@@ -1,5 +1,5 @@
 ---
-icon: material/newlogo-nav
+icon: material/source-fork
 ---
 
 ![](imgs/20260106-211931.png){ .center-image }
@@ -11,7 +11,7 @@ icon: material/newlogo-nav
 
     ### Add Git Repo
     
-    If your documentation is related to source code, Material for MkDocs provides the ability to display information to the project's repository as part of the static site, including stars and forks. Furthermore, the [date of last update and creation], as well as [contributors] can be shown.
+    If your documentation is related to source code, MateriaXl for MkDocs provides the ability to display information to the project's repository as part of the static site, including stars and forks. Furthermore, the [date of last update and creation], as well as [contributors] can be shown.
     
 ## Configuration
 

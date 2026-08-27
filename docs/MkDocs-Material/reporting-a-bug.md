@@ -1,13 +1,9 @@
----
-icon: simple/materialformkdocs
----
-
 ![](imgs/20260220-011501.png){ .center-image }
 <H1 style="text-align: center;">Bug Reports</H1>
 
 !!! quote ""
 
-    Material for MkDocs is an actively maintained project that we constantly strive to improve. With a project of this size and complexity, bugs may occur. If you think you have discovered a bug, you can help us by submitting an issue in our public [issue tracker], following this guide.
+    MaterialX for MkDocs is an actively maintained project that we constantly strive to improve. With a project of this size and complexity, bugs may occur. If you think you have discovered a bug, you can help us by submitting an issue in our public [issue tracker], following this guide.
     
   [issue tracker]: https://github.com/squidfunk/mkdocs-material/issues
 
@@ -219,7 +215,7 @@ A minimal reproduction is at the heart of every well-written bug report, as it a
     - **Additionally, there are many non-technical users of Material for MkDocs that have trouble creating repo's.**
     
     
-  [Create reproduction]: creating-a-reproduction.md
+  [Create reproduction]: ../creating-a-reproduction.md
   [built-in info plugin]: info.md
 
 ### Steps to Reproduce.

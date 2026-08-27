@@ -1,8 +1,10 @@
 ---
-icon: simple/materialformkdocs
+icon: material/folder-plus-outline
 ---
 
-![](imgs/20260109-172148.png){ .center-image }
+
+![](../imgs/20260413-165714.png){ .center-image }
+
 <H1 style="text-align: center;">Creating Your Site</H1>
 
 !!! desc "After Installation"
@@ -236,6 +238,227 @@ Material for MkDocs comes with many configuration options. The setup section exp
   [Building for offline usage]: building-for-offline-usage.md
   [Building an optimized site]: building-an-optimized-site.md
   
+
+### Configuration Template
+
+If you find it tedious to configure them one by one, you can use the configuration template that this site uses itself to lower the barrier to entry.
+
+Download mkdocs.yml and replace the personalized parts in the template with your own, and leave all other options unchanged.
+
+```yaml { title="mkdocs.yaml" data-download }
+#---- 1. Site config ----
+
+site_name: MaterialX
+site_url: https://jaywhj.github.io/mkdocs-materialx/
+site_author: Aaron Wang
+site_description: >-
+  Born for documents, yet beyond documents. 
+  Accessible to everyone, extremely easy to use. 
+  Modern, lightweight, customizable, responsive.
+
+repo_name: jaywhj/mkdocs-materialx
+repo_url: https://github.com/jaywhj/mkdocs-materialx
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2016 - 2026 Aaron Wang
+
+extra:
+  status:
+    new: Recently updated
+    deprecated: Deprecated
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jaywhj
+      name: GitHub
+    - icon: material/email
+      link: mailto:junewhj@qq.com
+      name: Email
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/cvTfge4AUy
+      name: Discord
+
+
+#---- 2. Page tree ----
+
+use_directory_urls: false
+exclude_docs: |
+  archives/
+#  /drafts/
+# not_in_nav: |
+#   /tutorials/**/*.md
+
+nav:
+  - Home: index.md
+  - Get started:
+    - Differences: differences.md
+    - Installation: installation.md
+  - Setup:
+    - setup/index.md
+    - Colors: setup/changing-the-colors.md
+    - Extensions:
+      - setup/extensions/index.md
+      - Markdown: setup/extensions/python-markdown.md
+
+
+
+#---- 3. Theme ----
+
+theme:
+  name: materialx
+  custom_dir: material/overrides
+  code:
+    fold:
+      enabled: true
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.action.agents
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    - content.footnote.tooltips
+    - content.tooltips
+
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.top
+    # - navigation.tracking
+    # - navigation.expand
+    # - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.footer
+
+    - search.highlight
+    - search.share
+    - search.suggest
+
+    - toc.follow
+    # - toc.integrate
+
+  # topbar_style: primary   # glass primary accent
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: cyan
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  language: en
+  font: false
+  favicon: octicons/milestone-24
+  icon:
+    logo: logo
+  admonition:
+    git:
+      icon: simple/git
+      color: '#f34f29'
+    copyright:
+      icon: material/copyright
+      color: '#2b9b9b'
+    heart:
+      icon: octicons/heart-24
+      color: '#9b2b9b'
+    lyrics:
+      icon: material/microphone
+      color: '#2b2b9b'
+    soundcloud:
+      icon: simple/soundcloud
+      color: '#ff7700'
+
+
+#---- 4. Plugins ----
+
+plugins:
+  # - blog
+  # - tags
+  - offline
+  - search
+  - glightbox
+
+  - document-dates:
+      type: timeago
+      exclude: ['index.md', 'license.md', '*/index.md', 'blog/*']
+      recently-updated:
+        limit: 10
+        exclude: ['index.md', 'blog/*']
+
+
+
+#---- 5. Extensions ----
+
+markdown_extensions:
+  - nl2br
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      toc_depth: 4
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      # linenums: true
+      # linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      relaxed_headers: true
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  # - material.extensions.code_download
+
+
+
+#---- 6. ----
+
+# extra_javascript:
+#   - javascripts/extra.js
+# extra_css:
+#   - stylesheets/extra.css
+```
 
 ## Templates
 

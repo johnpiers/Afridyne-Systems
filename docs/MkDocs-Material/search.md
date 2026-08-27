@@ -2,6 +2,11 @@
 status: new
 title: Built-in search plugin
 icon: lucide/search
+
+tags:
+  - Built-in Search Plugin
+  - Pagefind
+  - MaterialX `10.2.0` refactors
 ---
 
 

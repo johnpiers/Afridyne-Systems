@@ -20,7 +20,7 @@ icon: material/newlogo-nav
 
 ## Installation
 
-Back to: MkDocs [Creating Your Site](Creating-Your-Site.md)
+Back to: MkDocs [Creating Your Site](MkDocs-Material/creating-your-site.md)
 
 ### With pip <small>recommended</small>. { #with-pip data-toc-label="With pip" }
 

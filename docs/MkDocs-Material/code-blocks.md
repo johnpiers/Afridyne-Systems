@@ -1,10 +1,12 @@
 ---
 icon: material/code-json
+status: new
 ---
+
 ![](imgs/20260107-190859.png){ .center-image }
 <H1 style="text-align: center;">Code Blocks</H1>
 
-Code blocks and examples are an essential part of technical project documentation. Material for MkDocs provides different ways to set up syntax highlighting for code blocks, either during build time using [Pygments] or during runtime using a JavaScript syntax highlighter.
+Code Blocks and examples are an essential part of technical project documentation. MaterialX for MkDocs provides different ways to set up syntax highlighting for code blocks, either during build time using [Pygments] or during runtime using a JavaScript syntax highlighter.
 
   [Pygments]: https://pygments.org
 
@@ -37,7 +39,7 @@ See additional configuration options:
   [SuperFences]: python-markdown-extensions.md#superfences
   [Snippets]: python-markdown-extensions.md#snippets
 
-### Code copy button
+### Code Copy Button
 
 <!-- md:version 9.0.0 -->
 <!-- md:feature -->
@@ -103,6 +105,195 @@ theme:
 
   [line highlighting]: #highlighting-specific-lines
 
+### Code Download Button
+
+<!-- md:version 10.1.5 -->
+<!-- md:feature -->
+
+Code blocks can include a download button that supports blobs, URLs, and local file downloads.
+
+#### Enable button
+
+Add the `data-download` attribute to the fence block header to enable download:
+
+=== "Blob"
+
+    ```` yaml { hl_lines="1" data-download="blob" }
+    ``` yaml { data-download="blob" }
+
+    markdown_extensions:
+      - material.extensions.code_download
+    ```
+    ````
+
+=== "Local File"
+
+    ```` yaml { hl_lines="1" data-download="../assets/mkdocs.yml" }
+    ``` yaml { data-download="assets/xxx.yaml" }
+
+    markdown_extensions:
+      - material.extensions.code_download
+    ```
+    ````
+
+=== "URL"
+
+    ```` yaml { hl_lines="1" data-download="https://jaywhj.github.io/mkdocs-materialx/assets/mkdocs.yml" }
+    ``` yaml { data-download="https://example.com/xxx.yaml" }  # (1)!
+
+    markdown_extensions:
+      - material.extensions.code_download
+    ```
+    ````
+
+    1.  Note: Cross-origin downloads may fall back to page redirection
+     due to browser permission restrictions.
+
+The filename is determined by the following priority:
+
+  1. Original filename
+  2. `<title>.<lang>`
+  3. `download.<lang>` or `<title>.text`
+  4. `download.text`
+
+!!! warning "Note"
+
+    If you need to add more attributes such as `title`, `hl_lines`, and `linenums` in the fence block header, follow the standard [attr_list]{target="_blank"} syntax - **wrap all attributes inside `{ }`**:
+
+    ```` yaml
+    ``` yaml { title="config.yaml" data-download="blob" }
+    # Code block content
+    ```
+    ````
+
+    Or enable the Enhanced Extension below.
+
+#### Enhanced extension
+
+This project upstream dependencies - [attr_list]{target="_blank"} from Python-Markdown and [superfences]{target="_blank"} from PyMdown Extensions, 
+the standard way to add attributes is to **wrap all attributes inside { }**.
+
+Previously, attributes such as `title`, `hl_lines`, and `linenums` could be used without curly braces because PyMdown added special compatibility handling exclusively for these three attributes.
+
+If you want to use this simplified syntax for **all custom attributes**, you can enable the following extension:
+
+``` yaml
+markdown_extensions:
+  - material.extensions.code_download
+```
+
+This extension supports:
+
+- Attributes defined via attr_list syntax: `{ .class key=value }`
+- Attributes declared directly in fence info strings: `linenos=true`
+- Mixed combination of the two formats: `linenos=true { .class key=value }`
+
+For example, the following formats are all supported:
+
+```` yaml
+``` data-download # (1)!
+``` data-download="blob"
+``` py data-download
+``` py title="title" data-download="blob"
+``` py title="title" data-download="blob" .no-copy
+
+``` py { data-download="blob" }
+``` py { title="title0 linenums="10" hl_lines="2" data-download }
+
+``` py title="title1" { data-download="blob" }
+``` py title="title2" { data-download hl_lines="2" } linenums="20"
+``` py title="title3" { data-download } { hl_lines="2" } linenums="30"
+````
+
+1.  Equivalent to `data-download="blob"`
+
+  [attr_list]: https://python-markdown.github.io/extensions/attr_list/
+  [superfences]: https://facelessuser.github.io/pymdown-extensions/extensions/superfences/#injecting-classes-ids-and-attributes
+
+### Code collapse & expand
+
+<!-- md:version 10.1.6 -->
+<!-- md:feature -->
+
+When an article contains long code blocks, you can enable automatic code folding to improve the overall reading experience:
+
+``` yaml { hl_lines="3-5" }
+theme:
+  name: materialx
+  code:
+    fold:
+      enabled: true
+```
+
+The default value is `false`, code folding is enabled when set to `true`, and all code blocks exceeding **15** lines (the default threshold) will be automatically folded.
+
+#### Change default threshold
+
+If you want to change the default folding threshold (15 lines), you can configure it via `code.fold.lines`.
+
+``` yaml { hl_lines="6" }
+theme:
+  name: materialx
+  code:
+    fold:
+      enabled: true
+      lines: 15
+```
+
+#### Set individual threshold
+
+If you want to set a custom folding threshold for a specific code block, you can use the `data-fold` attribute in the fence block header:
+
+```` yaml { hl_lines="1" data-fold="10" }
+``` yaml { data-fold="10" }
+theme:
+  admonition:
+    git:
+      icon: simple/git
+      color: '#f34f29'
+    copyright:
+      icon: material/copyright
+      color: '#2b9b9b'
+    heart:
+      icon: octicons/heart-24
+      color: '#9b2b9b'
+    lyrics:
+      icon: material/microphone
+      color: '#2b2b9b'
+    soundcloud:
+      icon: simple/soundcloud
+      color: '#ff7700'
+```
+````
+
+In this case, this code block uses a threshold of 10 lines, while others remain at the default value.
+
+#### Disable folding for specific blocks
+
+If you want to disable folding for a specific code block that exceeds the threshold, set `data-fold` to `0` in its fence block header:
+
+```` yaml { hl_lines="1" data-fold="0" }
+``` yaml { data-fold="0" }
+theme:
+  admonition:
+    git:
+      icon: simple/git
+      color: '#f34f29'
+    copyright:
+      icon: material/copyright
+      color: '#2b9b9b'
+    heart:
+      icon: octicons/heart-24
+      color: '#9b2b9b'
+    lyrics:
+      icon: material/microphone
+      color: '#2b2b9b'
+    soundcloud:
+      icon: simple/soundcloud
+      color: '#ff7700'
+```
+````
+
 ### Code Annotations
 
 <!-- md:version 8.0.0 -->
@@ -116,7 +307,7 @@ theme:
     - content.code.annotate # (1)!
 ```
 
-1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__,
+1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted  text__,
  images, ... basically anything that can be written in Markdown.
 
 ??? info "Enabling code annotations for a specific code block"
@@ -148,11 +339,10 @@ extra:
     json: [.s2] # (1)!
 ```
 
-1.  [`.s2`][s2] is the name of the lexeme that [Pygments] generates for
-    double-quoted strings. If you want to use a code annotation in
-    another lexeme than a comment, inspect the code block and
-    determine which lexeme needs to be added to the list of additional
-    selectors.
+1.  [`.s2`][s2] is the name of the lexeme that [Pygments] generates for 
+double-quoted strings. If you want to use a code annotation in
+another lexeme than a comment, inspect the code block and
+determine which lexeme needs to be added to the list of additional selectors.
 
     __Important__: Code annotations cannot be split between lexemes.
 
@@ -164,10 +354,11 @@ Now, code annotations can be used from within strings in JSON:
 }
 ```
 
-1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__, images, ... basically anything that can be written in Markdown.
+1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted
+    text__, images, ... basically anything that can be written in Markdown.
 
   [placed in comments]: #adding-annotations
-  [s2]: https://github.com/squidfunk/mkdocs-material/blob/87d5ca487b9d9ab95c41ee72813149d214048693/src/assets/stylesheets/main/extensions/pymdownx/_highlight.scss#L45
+  [s2]: https://github.com/jaywhj/mkdocs-materialx/blob/87d5ca487b9d9ab95c41ee72813149d214048693/src/assets/stylesheets/main/extensions/pymdownx/_highlight.scss#L45
 
 ## Usage
 
@@ -220,7 +411,7 @@ def bubble_sort(items):
 Code annotations can be placed anywhere in a code block where a comment for the language of the block can be placed, e.g. for JavaScript in `#!js // ...` and `#!js /* ... */`, for YAML in `#!yaml # ...`, etc.[^1]:
 
   [^1]:
-    Code annotations require syntax highlighting with [Pygments] – they're currently not compatible with JavaScript syntax highlighters, or languages that do not have comments in their grammar. However, we're actively working on supporting alternate ways of defining code annotations, allowing to  always place code annotations at the end of lines.
+    Code annotations require syntax highlighting with [Pygments] – they're currently not compatible with JavaScript syntax highlighters, or languages that do not have comments in their grammar. However, we're actively working on supporting alternate ways of defining code annotations, allowing to always place code annotations at the end of lines.
 
 ```` markdown title="Code block with annotation"
 ``` yaml
@@ -241,18 +432,18 @@ theme:
     - content.code.annotate # (1)
 ```
 
-1.  :man_raising_hand: I'm a code annotation! I can contain `code`,  __formatted
-    text__, images, ... basically anything that can be written in
-    Markdown.
+1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted
+    text__, images, ... basically anything that can be written in Markdown.
 
 </div>
 
-#### Stripping Comments
+#### Stripping comments
 
 <!-- md:version 8.5.0 -->
 <!-- md:flag experimental -->
 
-If you wish to strip the comment characters surrounding a code annotation, simply add an `!` after the closing parenthesis of the code annotation:
+If you wish to strip the comment characters surrounding a code annotation,
+simply add an `!` after the closing parenthesis of the code annotation:
 
 ```` markdown title="Code block with annotation, stripped"
 ``` yaml
@@ -274,7 +465,7 @@ If you wish to strip the comment characters surrounding a code annotation, simpl
 
 Note that this only allows for a single code annotation to be rendered per comment. If you want to add multiple code annotations, comments cannot be stripped for technical reasons.
 
-### Adding Line Numbers
+### Adding line numbers
 
 Line numbers can be added to a code block by using the `linenums="<start>"` option directly after the shortcode, whereas `<start>` represents the starting line number. A code block can start from a line number other than `1`, which allows to split large code blocks for readability:
 
@@ -300,7 +491,7 @@ def bubble_sort(items):
 
 </div>
 
-### Highlighting Specific Lines
+### Highlighting specific lines
 
 Specific lines can be highlighted by passing the line numbers to the `hl_lines` argument placed right after the language shortcode. Note that line counts start at `1`, regardless of the starting line number specified as part of [`linenums`][Adding line numbers]:
 
@@ -354,7 +545,7 @@ Specific lines can be highlighted by passing the line numbers to the `hl_lines` 
 
   [Adding line numbers]: #adding-line-numbers
 
-### Highlighting Inline Code Blocks
+### Highlighting inline code blocks
 
 When [InlineHilite] is enabled, syntax highlighting can be applied to inline code blocks by prefixing them with a shebang, i.e. `#!`, directly followed by the corresponding [language shortcode][list of available lexers].
 
@@ -368,13 +559,13 @@ The `#!python range()` function is used to generate a sequence of numbers.
 
 </div>
 
-### Embedding External Files
+### Embedding external files
 
-When [Snippets] is enabled, content from other files (including source files) can be embedded by using the [`--8<--` notation][Snippets notation] directly from within a code block:
+When [Snippets] is enabled, content from other files (including source files) can be embedded by using the [`-8<-` notation][Snippets notation] directly from within a code block:
 
 ```` markdown title="Code block with external content"
 ``` title=".browserslistrc"
-;--8<-- ".browserslistrc"
+;-8<- ".browserslistrc"
 ```
 ````
 
@@ -392,7 +583,7 @@ last 4 years
 
 ### Custom Syntax Theme
 
-If [Pygments] is used, Material for MkDocs provides the [styles for code blocks] [colors], which are built with a custom and well-balanced palette that works equally well for both [color schemes]:
+If [Pygments] is used, MaterialX for MkDocs provides the [styles for code blocks] [colors], which are built with a custom and well-balanced palette that works equally well for both [color schemes]:
 
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-hl-number-color) " } `--md-code-hl-number-color`
 - :material-checkbox-blank-circle:{ style="color: var(--md-code-hl-special-color) " } `--md-code-hl-special-color`

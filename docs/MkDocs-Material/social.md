@@ -1,5 +1,6 @@
 ---
-icon: material/newlogo-nav
+title: Built-in social plugin
+icon: fontawesome/regular/share-square
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>

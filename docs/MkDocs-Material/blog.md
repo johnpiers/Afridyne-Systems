@@ -1,5 +1,6 @@
 ---
-icon: material/newlogo-nav
+title: Built-in blog plugin
+icon: material/newspaper-variant-outline
 ---
 
 ![](imgs/20260413-172545.png){: style="display: block; margin: 0 auto"}

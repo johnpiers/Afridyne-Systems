@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: lucide/palette
 ---
 
 ![](imgs/20260106-230709.png){ .center-image }

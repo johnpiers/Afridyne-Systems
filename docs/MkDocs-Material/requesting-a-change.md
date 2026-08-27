@@ -1,6 +1,4 @@
----
-icon: simple/materialformkdocs
----
+
 
 <div style="display: none;"><h1>Header</h1></div>
 

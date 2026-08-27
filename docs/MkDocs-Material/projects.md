@@ -79,7 +79,7 @@ status: deprecated
     When you want to create a multi-language project, or have a very large existing project, you might consider using the plugin, as it makes managing, editing and building more comfortable.
     
   [examples]: https://github.com/mkdocs-material/examples
-  [creating a reproduction]: creating-a-reproduction.md
+  [creating a reproduction]: ../creating-a-reproduction.md
 
 ## Configuration
 
