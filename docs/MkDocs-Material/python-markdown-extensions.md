@@ -1,11 +1,11 @@
 ---
-icon: simple/materialformkdocs
+icon: octicons/package-dependencies-24
 ---
 
 ![](imgs/20260115-154058.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Python Markdown Extensions</H1>
 
-!!! abstract "Important"
+!!! abstract "Python Markdown Extensions"
 
     The [Python Markdown Extensions] package is an excellent collection of additional extensions perfectly suited for advanced technical writing. Material for MkDocs lists this package as an explicit dependency, so it's automatically installed with a supported version.</p>
     

@@ -1,13 +1,13 @@
 ---
-icon: simple/materialformkdocs
+icon: lucide/panel-top
 ---
 
 ![](imgs/20260323-225056.png){: style="display: block; margin: 0 auto"}
 
 <H1 style="text-align: center;">Setting Up the Header</H1>
 
-!!! quote ""
-    Material for MkDocs' header can be customized to show an announcement bar that disappears upon scrolling, and provides some options for further configuration. It also includes the [search bar] and a place to display your project's [git repository], as explained in those dedicated guides.
+!!! quote "Setting up the header"
+    MaterialX for MkDocs' header can be customized to show an announcement bar that disappears upon scrolling, and provides some options for further configuration. It also includes the [search bar] and a place to display your project's [git repository], as explained in those dedicated guides.
     
   [search bar]: setting-up-site-search.md
   [git repository]: adding-a-git-repository.md

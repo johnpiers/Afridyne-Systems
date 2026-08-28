@@ -1,14 +1,15 @@
 ---
-icon: simple/materialformkdocs
+title: Built-in tags plugin
+icon: material/tag-text-outline
 ---
 
 ![](imgs/20260131-032001.png){: style="display: block; margin: 0 auto"}
 
-![Local image](../imgs/20251230-175207.png){: style="display: block; margin: 0 auto"}
-
 <H1 style="text-align: center;"><u>Built-in Tags Plugin</u></H1>
 
-!!! desc "Tags Plugin"
+
+!!! desc "Built-in tags plugin"
+
     The tags plugin adds first-class support for categorizing pages with the use of tags, adding the possibility to group related pages and make them discoverable via search and dedicated tags indexes. If your documentation is large, tags can help to discover relevant information faster.
     
  [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
@@ -19,6 +20,7 @@ icon: simple/materialformkdocs
 ### How It Works
 
 !!! info "How It Works"
+
     The plugin scans all pages for the [`tags`][`meta.tags`] metadata property and generates a tags index, which is an inverted list of tags and the pages they appear on. The tags index can be located anywhere in the [`nav`][`mkdocs.nav`], allowing for maximum flexibility when adding tags to your project.
     
 ### When To Use It
@@ -51,6 +53,8 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
   [meta]: meta.md
   [blog]: blog.md
+  [built-in plugins]: plugin-recommendation.md
+  
   
 
 ## Configuration

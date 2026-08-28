@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/view-grid-plus-outline
 ---
 
 ![](imgs/20260506-154932.png)
@@ -8,7 +8,7 @@ icon: simple/materialformkdocs
 
 !!! tldr "Grids"
 
-    Material for MkDocs makes it easy to arrange sections into grids, grouping blocks that convey similar meaning or are of equal importance. Grids are just perfect for building index pages that show a brief overview of a large section of your documentation.
+    MaterialX for MkDocs makes it easy to arrange sections into grids, grouping blocks that convey similar meaning or are of equal importance. Grids are just perfect for building index pages that show a brief overview of a large section of your documentation.
     
 ## Configuration
 

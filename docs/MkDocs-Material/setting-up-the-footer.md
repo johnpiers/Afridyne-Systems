@@ -1,12 +1,12 @@
 ---
-icon: simple/materialformkdocs
+icon: lucide/panel-bottom
 ---
 
 
 ![](imgs/20260222-073920.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Setting up the Footer</H1>
  
-!!! quote ""
+!!! quote "Setting up the footer"
 
     The footer of your project documentation is a great place to add links to websites or platforms you or your company are using as additional marketing channels, e.g. :fontawesome-brands-mastodon:{ style="color: #5A4CE0" } or :fontawesome-brands-youtube:{ style="color: #EE0F0F" }, which you can easily configure via `mkdocs.yml`.
     

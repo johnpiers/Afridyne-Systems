@@ -2,10 +2,11 @@
 title: Built-in meta plugin
 icon: material/file-tree
 ---
+
 ![](imgs/20260812-171636.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Built-in Meta Plugin</H1>
 
-!!! version-added "Meta Plugin"
+!!! version-added "Built-in meta plugin"
 
     The meta plugin solves the problem of setting metadata (front matter) for all pages in a folder, i.e., a subsection of your project, which is particularly useful to ensure that a certain subset of pages features specific tags, uses a custom template, or is attributed to an author..
 

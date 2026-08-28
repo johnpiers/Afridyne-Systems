@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/image-sync-outline
 ---
 
 ![](imgs/20260413-215505.png){: style="display: block; margin: 0 auto"}
@@ -13,6 +13,7 @@ icon: simple/materialformkdocs
     
 
 
+  [built-in plugins]: plugin-recommendation.md
   [social]: social.md
   [social cards]: setting-up-social-cards.md
   [optimize]: optimize.md

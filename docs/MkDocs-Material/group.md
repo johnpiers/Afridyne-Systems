@@ -1,12 +1,12 @@
 ---
 title: Built-in group plugin
-icon: simple/materialformkdocs
+icon: material/format-list-group
 ---
 
 ![](imgs/20260208-132510.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;"> Built-in Group Plugin</H1>
 
-!!! info "Group Plugin"
+!!! info "Built-in group plugin"
 
     The group plugin allows to group plugins into logical units to conditionally enable or disable them for specific environments with the use of [environment variables][`mkdocs.env`], e.g., to only enable a subset of plugins when [building your project] during continuous integration (CI). 
   [building your project]: creating-your-site.md#building-your-site

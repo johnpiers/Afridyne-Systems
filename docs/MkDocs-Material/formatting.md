@@ -3,7 +3,7 @@ tags:
   - Formatting
   - Highlighting Changes
 
-icon: simple/materialformkdocs
+icon: material/format-font
 ---
 
 ![](imgs/20260106-224255.png){ .center-image }
@@ -11,7 +11,7 @@ icon: simple/materialformkdocs
 
 !!! quote "Material Support"
 
-    Material for MkDocs provides support for several HTML elements that can be used to highlight sections of a document or apply specific formatting.
+    MaterialX for MkDocs provides support for several HTML elements that can be used to highlight sections of a document or apply specific formatting.
     
     Additionally, [Critic Markup] is supported, adding the ability to display suggested changes for a document.
     

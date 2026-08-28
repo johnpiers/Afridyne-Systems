@@ -55,7 +55,6 @@ icon: octicons/image-24
                   <option value="emojis">Emojis</option>
                 </select>
               </div>
-              
               <!-- Content Results Area Box -->
               <div class="mdx-iconsearch-result" data-mdx-component="iconsearch-result">
                 <ol class="mdx-iconsearch-result__list"></ol>

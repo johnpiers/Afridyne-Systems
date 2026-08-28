@@ -1,6 +1,6 @@
 ---
-icon: material/newlogo-nav
-created: 2025-01-15 10:30:00
+status: new
+icon: material/alert-outline
 ---
 
 <div style="display: none;"><h1>Admonitions</h1></div>

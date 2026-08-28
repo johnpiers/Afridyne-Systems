@@ -1,5 +1,5 @@
 ---
-icon: material/newlogo-nav
+icon: material/emoticon-happy-outline
 ---
 
 ![](imgs/20260601-163710.png){ .center-image }

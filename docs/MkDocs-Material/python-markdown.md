@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: octicons/package-24
 ---
 
 ![](imgs/20260527-013713.png){ .center-image }

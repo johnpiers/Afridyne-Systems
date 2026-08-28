@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/graph-outline
 ---
 
 ![](imgs/20260306-163301.png){: style="display: block; margin: 0 auto"}

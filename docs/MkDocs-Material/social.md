@@ -50,7 +50,7 @@ icon: fontawesome/regular/share-square
 
     ---
 
-    Even more interestingly, the plugin can be combined with other built-in plugins that Material for MkDocs offers, in order to create sophisticated build pipelines tailored to your project:
+    Even more interestingly, the plugin can be combined with other built-in plugins that MaterialX for MkDocs offers, in order to create sophisticated build pipelines tailored to your project:
     
 
 <div class="grid cards" markdown>
@@ -99,7 +99,7 @@ icon: fontawesome/regular/share-square
     
     ---
     
-    The social plugin is built into Material for MkDocs and doesn't need to be installed.
+    The social plugin is built into MaterialX for MkDocs and doesn't need to be installed.
     
 However, in order to generate social card images, it's necessary to install the dependencies for [image processing], if they're not already available on your system. The linked guide includes instructions for several operating systems and mentions some alternative environments.
 
@@ -173,7 +173,7 @@ The following settings are available:
     
     ---
 
-    - The social plugin is built into Material for MkDocs and doesn't need to be installed.
+    - The social plugin is built into MaterialX for MkDocs and doesn't need to be installed.
     
 
 

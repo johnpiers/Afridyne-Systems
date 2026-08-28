@@ -1,11 +1,11 @@
 ---
-icon: simple/materialformkdocs
+icon: material/newspaper-variant-outline
 ---
 
 ![](imgs/20260127-233856.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;"> Setting Up a Blog</H1>
 
-!!! quote ""
+!!! quote "Setting up a blog"
 
     Material for MkDocs makes it very easy to build a blog, either as a sidecar to your documentation or standalone. Focus on your content while the engine does all the heavy lifting, automatically generating [archive] and [category] indexes, [post slugs], configurable [pagination] and more.
     

@@ -1,11 +1,11 @@
 ---
-icon: simple/materialformkdocs
+icon: material/tab
 ---
 
 ![](imgs/20260107-215138.png){ .center-image }
 <H1 style="text-align: center;">Content Tabs</H1>
 
-Sometimes, it's desirable to group alternative content under different tabs, e.g. when describing how to access an API from different languages or environments. Material for MkDocs allows for beautiful and functional tabs, grouping code blocks and other content.
+Sometimes, it's desirable to group alternative content under different tabs, e.g. when describing how to access an API from different languages or environments. MaterialX for MkDocs allows for beautiful and functional tabs, grouping code blocks and other content.
 
 ## Configuration
 

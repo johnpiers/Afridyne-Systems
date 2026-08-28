@@ -166,14 +166,15 @@ nav:
       - MkDocs Start Page: MkDocs-Material-Start.md
       - Get Started-MkDocs: about.md
       - MkDocsCaption: Caption.md
-      - MkDocstrings: MkDocstrings.md
-      - Icon & Emoji Database: database.md
+      - MkDocstrings: MkDocstrings.md      
       - Text Colour/MathJax: MathJax.md
 
   - Get started:
     - Differences: differences.md
     - Installation: installation.md
     - Create your site: MkDocs-Material/creating-your-site.md
+    - Publish your site: MkDocs-Material/publishing-your-site.md
+    - Customization: MkDocs-Material/customization.md
 
   - Setup:
     - Overview: MkDocs-Material/setup.md
@@ -185,17 +186,39 @@ nav:
     - Date & authors: MkDocs-Material/adding-document-dates-authors.md
     - Recent-updates: adding-recent-updates-module.md
     - Repository: MkDocs-Material/adding-a-git-repository.md
+    - Site search: MkDocs-Material/setting-up-site-search.md
+    - Site analytics: MkDocs-Material/setting-up-site-analytics.md
+    - Social cards: MkDocs-Material/setting-up-social-cards.md
+    - Tags: MkDocs-Material/setting-up-tags.md
+    - Header: MkDocs-Material/setting-up-the-header.md
+    - Footer: MkDocs-Material/setting-up-the-footer.md
+    - Comment system: MkDocs-Material/adding-a-comment-system.md
+    - Versioning: MkDocs-Material/setting-up-versioning.md
+    - Data privacy: MkDocs-Material/ensuring-data-privacy.md
+    - Blog: MkDocs-Material/setting-up-a-blog.md
+    - Extensions:
+      - Extensions: extensionsindex.md 
+      - Markdown: MkDocs-Material/python-markdown.md
+      - Markdown Extensions: MkDocs-Material/python-markdown-extensions.md
+
 
 
   - Plugins:
     - Recommendation: MkDocs-Material/plugin-recommendation.md
     - Built-in plugins:
       - Date: MkDocs-Material/date-author.md
-      - Steps: steps.md
-      - Search: MkDocs-Material/search.md
-      - Blog Config: MkDocs-Material/blog.md
+      - Tags: MkDocs-Material/tags.md
+      - Blog: MkDocs-Material/blog.md
+      - Meta: MkDocs-Material/meta.md
+      - Search: MkDocs-Material/search.md      
       - Social: MkDocs-Material/social.md
-      - Social cards: MkDocs-Material/setting-up-social-cards.md
+      - Offline: MkDocs-Material/offline.md
+      - Optimize: MkDocs-Material/optimize.md
+      - Group: MkDocs-Material/group.md
+      - Info: MkDocs-Material/info.md
+    - Requirements:
+      - Image processing: MkDocs-Material/image-processing.md
+      - Caching: MkDocs-Material/caching.md
   
   - Authoring:
     - Overview: authoringindex.md
@@ -203,6 +226,20 @@ nav:
     - Annotations: MkDocs-Material/annotations.md
     - Steps: steps.md
     - Code Blocks: MkDocs-Material/code-blocks.md
+    - Content tabs: MkDocs-Material/content-tabs.md
+    - Data tables: MkDocs-Material/data-tables.md
+    - Diagrams: MkDocs-Material/diagrams.md
+    - Footnotes: MkDocs-Material/footnotes.md
+    - Formatting: MkDocs-Material/formatting.md
+    - Grids: MkDocs-Material/grids.md
+    - Icons, Emojis: MkDocs-Material/icons-emojis.md
+    - Icon & Emoji Database: database.md
+    - Buttons: MkDocs-Material/buttons.md
+    - Images: MkDocs-Material/images.md
+    - Lists: MkDocs-Material/lists.md
+    - Math: MkDocs-Material/math.md
+    - Tooltips: MkDocs-Material/tooltips.md
+
 
   - System:
     - Changelog:

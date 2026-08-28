@@ -1,6 +1,7 @@
 ---
-icon: simple/materialformkdocs
+icon: material/chart-box-outline
 ---
+
 
 ![](imgs/20260323-221020.png){ .center-image }
 

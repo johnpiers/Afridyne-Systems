@@ -5,7 +5,7 @@ icon: material/database-outline
 ![](imgs/20260106-224743.png){ .center-image }
 <H1 style="text-align: center;">Caching</H1>
 
-!!! quote ""
+!!! quote "Caching"
 
     Some of the [built-in plugins] implement intelligent caching mechanisms, which massively speed up consecutive builds by reducing the amount of work that needs to be done. This guide explains how to configure caching in different environments.
     

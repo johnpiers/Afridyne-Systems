@@ -1,12 +1,12 @@
 ---
-icon: simple/materialformkdocs
+icon: octicons/versions-24
 ---
 
 ![](imgs/20260127-112306.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Setting Up Versioning</H1>
 
-!!! quote "Versioning across Material for MkDocs"
-    - Material for MkDocs makes it easy to deploy multiple versions of your project documentation by integrating with external utilities that add those capabilities to MkDocs, i.e. [mike].
+!!! quote "Setting up versioning"
+    - MaterialX for MkDocs makes it easy to deploy multiple versions of your project documentation by integrating with external utilities that add those capabilities to MkDocs, i.e. [mike].
     
     - When deploying a new version, older versions of your documentation remain untouched.
     

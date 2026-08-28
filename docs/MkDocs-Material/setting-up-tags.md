@@ -1,14 +1,14 @@
 ---
-icon: simple/materialformkdocs
+icon: octicons/tag-24
 ---
 
 ![](imgs/20260216-210630.png){ .center-image }
 
 <H1 style="text-align: center;">Setting up Tags</H1>
 
-!!! pied-piper "MkDocs-Material Tags"
+!!! pied-piper "Setting up tags"
      
-    Material for MkDocs adds first-class support for categorizing pages with tags, which adds the possibility to group related pages and make them discoverable via search and a dedicated [tags index]. If your documentation is large, tags can help to discover relevant information faster.</p>
+    MaterialX for MkDocs adds first-class support for categorizing pages with tags, which adds the possibility to group related pages and make them discoverable via search and a dedicated [tags index]. If your documentation is large, tags can help to discover relevant information faster.</p>
 
   [tags index]: #adding-a-tags-index
 

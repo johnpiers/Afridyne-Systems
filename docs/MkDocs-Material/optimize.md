@@ -1,12 +1,12 @@
 ---
 title: Built-in optimize plugin
-icon: simple/materialformkdocs
+icon: material/bike-fast
 ---
 
 ![](imgs/20260125-183325.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Built-in Optimize Plugin</H1>
 
-!!! quote ""
+!!! quote "Built-in optimize plugin"
 
     - The optimize plugin automatically identifies and optimizes all media files when [building your project] by using common compression and conversion techniques.
     

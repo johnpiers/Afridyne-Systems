@@ -1,6 +1,6 @@
 ---
 title: Built-in offline plugin
-icon: simple/materialformkdocs
+icon: lucide/wifi-off
 ---
 
 ![](imgs/20260125-190142.png){: style="display: block; margin: 0 auto"}

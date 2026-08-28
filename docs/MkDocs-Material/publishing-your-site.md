@@ -1,15 +1,21 @@
 ---
-icon: simple/materialformkdocs
+icon: lucide/cloud-upload
 ---
 
 ![](imgs/20260225-095150.png){ .center-image }
 <H1 style="text-align: center;">Publishing Your Site</H1>
 
-!!! abstract "Hosting in a Git Repo"
+!!! abstract "Publishing your site"
 
-    The great thing about hosting project documentation in a `git` repository is the ability to deploy it automatically when new changes are pushed. MkDocs makes this ridiculously simple.
+    You can choose either **automatic** mode or **manual** mode, depending on your scenario. Both are very simple to operate.
     
-#### GitHub Pages
+## Automatic - Via Workflow
+
+!!! info "Automatic - Via Workflow"
+
+    Many cloud servers support automatic deployment via workflows, which greatly simplifies the deployment process, you only need to push your source documents to a cloud repository to complete automatic deployment.
+    
+### GitHub Pages
 
 !!! info " GitHub Pages"
 
@@ -17,46 +23,45 @@ icon: simple/materialformkdocs
     
     - It's free of charge and pretty easy to set up.
     
-  [GitHub Pages]: https://pages.github.com/
-
-### With GitHub Actions
-
-??? info "With [GitHub Actions]"
-
-    Using [GitHub Actions] you can automate the deployment of your project documentation. At the root of your repository, create a new GitHub Actions workflow, e.g. `.github/workflows/ci.yml`, and copy and paste the following contents:
-
-    ``` yaml
-    name: ci # (1)!
-    on:
-      push:
-        branches:
-          - master # (2)!
-          - main
-    permissions:
-      contents: write
-    jobs:
-      deploy:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v4
-          - name: Configure Git Credentials
-            run: |
-              git config user.name github-actions[bot]
-              git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          - uses: actions/setup-python@v5
-            with:
-              python-version: 3.x
-          - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV # (3)!
-          - uses: actions/cache@v4
-            with:
-              key: mkdocs-material-${{ env.cache_id }}
-              path: ~/.cache # (4)!
-              restore-keys: |
-                mkdocs-material-
-          - run: pip install mkdocs-material # (5)!
-          - run: mkdocs gh-deploy --force
-    ```
-
+   [GitHub Pages]: https://pages.github.com/
+    
+    ??? ex "With [GitHub Actions]"
+    
+        Using [GitHub Actions] you can automate the deployment of your project documentation. At the root of your repository, create a new GitHub Actions workflow, e.g. `.github/workflows/ci.yml`, and copy and paste the following contents:
+            
+        
+        ``` yaml
+        name: ci # (1)!
+        on:
+          push:
+            branches:
+              - master # (2)!
+              - main
+        permissions:
+          contents: write
+        jobs:
+          deploy:
+            runs-on: ubuntu-latest
+            steps:
+              - uses: actions/checkout@v4
+              - name: Configure Git Credentials
+                run: |
+                  git config user.name github-actions[bot]
+                  git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+              - uses: actions/setup-python@v5
+                with:
+                  python-version: 3.x
+              - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV # (3)!
+              - uses: actions/cache@v4
+                with:
+                  key: mkdocs-materialx-${{ env.cache_id }}
+                  path: ~/.cache # (4)!
+                  restore-keys: |
+                    mkdocs-materialx-
+              - run: pip install mkdocs-materialx # (5)!
+              - run: mkdocs gh-deploy --force
+        ```
+    
     1.  You can change the name to your liking.
 
     2.  At some point, GitHub renamed `master` to `main`. If your default branch
@@ -71,7 +76,7 @@ icon: simple/materialformkdocs
 
         You can read the [manual page] to learn more about the formatting options of the `date` command.
 
-    4.  Some Material for MkDocs plugins use [caching] to speed up repeated
+    4.  Some MaterialX for MkDocs plugins use [caching] to speed up repeated
         builds, and store the results in the `~/.cache` directory.
 
     5.  This is the place to install further [MkDocs plugins] or Markdown
@@ -79,12 +84,10 @@ icon: simple/materialformkdocs
 
         ``` sh
         pip install \
-          mkdocs-material \
+          mkdocs-materialx \
           mkdocs-awesome-pages-plugin \
           ...
         ```
-
-
 !!! quote ""
 
     - Now, when a new commit is pushed to either the `master` or `main` branches, the static site is automatically built and deployed. Push your changes to see the workflow in action.
@@ -112,25 +115,37 @@ icon: simple/materialformkdocs
   [caching]: caching.md
   [MkDocs documentation]: https://www.mkdocs.org/user-guide/deploying-your-docs/#custom-domains
 
-### With MkDocs
+## Manual Deployment
 
-!!! info "With MkDocs"
+!!! info "Manual Deployment"
 
-    - If you prefer to deploy your project documentation manually, you can just invoke the following command from the directory containing the `mkdocs.yml` file:
+    - If you want to deploy your site **without uploading source documents** to a cloud repository (for sensitive documentation), you can instead upload only your locally built HTML site (`site/`) to a cloud server. The process is very straightforward.
     
-    ```
-    mkdocs gh-deploy --force
-    ```
+### GitHub Pages
+
+!!! info "GitHub Pages"
+
+    Navigate to your project directory in the terminal and run the following commands. No prior build is required - the commands will automatically build and upload your site:
     
-    ---
     
-    - This will build your documentation and deploy it to a branch `gh-pages` in your repository. See [this overview in the MkDocs documentation] for more information.
+    === "MkDocs"
     
-    - For a description of the arguments, see [the documentation for the command].
+        ```
+        mkdocs gh-deploy --force
+        ```
+        
+    === "ProperDocs"
     
+        ```
+        properdocs gh-deploy --force
+        ```
+        
+This will build your documentation and deploy it to a branch `gh-pages` in your repository. See [this overview in the MkDocs documentation] for more information. For a description of the arguments, see [the documentation for the command].
 
   [this overview in the MkDocs documentation]: https://www.mkdocs.org/user-guide/deploying-your-docs/#project-pages
   [the documentation for the command]: https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
+
+ ---
 
 ## GitLab Pages
 
@@ -142,12 +157,12 @@ icon: simple/materialformkdocs
     
     ---
 
-    ``` yaml
+    ``` yaml { title=".gitlab-ci.yml" data-download }
     pages:
       stage: deploy
       image: python:latest
       script:
-        - pip install mkdocs-material
+        - pip install mkdocs-materialx
         - mkdocs build --site-dir public
       cache:
         key: ${CI_COMMIT_REF_SLUG}
@@ -160,7 +175,7 @@ icon: simple/materialformkdocs
         - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     ```
 
-    1.  Some Material for MkDocs plugins use [caching] to speed up repeated builds, and store the results in the `~/.cache` directory.
+    1.  Some MaterialX for MkDocs plugins use [caching] to speed up repeated builds, and store the results in the `~/.cache` directory.
 
 ---
 
@@ -192,9 +207,9 @@ icon: simple/materialformkdocs
 
 ---
 
-!!! info "Other"
+!!! info "Other Platforms"
 
-    Since we can't cover all possible platforms, we rely on community contributed guides that explain how to deploy websites built with Material for MkDocs to other providers:
+    In the server dashboard of your chosen platform, select file upload deployment, then select and upload the project's `site` directory.
     
     
     ---
@@ -207,6 +222,12 @@ icon: simple/materialformkdocs
     - [:simple-scaleway: Scaleway][Scaleway]
     
     </div>
+    
+#### Netlify
+
+The manual deployment interface for Netlify is shown below:
+
+![netlify-manual](../imgs/netlify-manual.png)
     
 
   [GitLab Pages]: https://gitlab.com/pages

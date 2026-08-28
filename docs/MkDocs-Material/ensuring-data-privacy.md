@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: octicons/lock-24
 ---
 
 ![](imgs/20260109-183634.png){ .center-image }
@@ -7,7 +7,7 @@ icon: simple/materialformkdocs
 
 [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
 
-!!! quote ""
+!!! quote "Ensuring data privacy"
 
     Material for MkDocs makes compliance with data privacy regulations very easy, as it offers a native [cookie consent] solution to seek explicit consent from users before setting up [analytics]. Additionally, external assets can be automatically downloaded for [self-hosting].
     

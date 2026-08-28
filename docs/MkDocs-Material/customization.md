@@ -1,13 +1,13 @@
 ---
-icon: simple/materialformkdocs
+icon: octicons/gear-24
 ---
 
 ![](imgs/20260119-183758.png){ .center-image }
 <H1 style="text-align: center;"><u>Customization</u></H1>
 
-!!! important "Important"
+!!! important "Customization"
     
-    Project documentation is as diverse as the projects themselves and Material for MkDocs is a great starting point for making it look beautiful. However, as you write your documentation, you may reach a point where small adjustments are necessary to preserve your brand's style.
+    Project documentation is as diverse as the projects themselves and MaterialX for MkDocs is a great starting point for making it look beautiful. However, as you write your documentation, you may reach a point where small adjustments are necessary to preserve your brand's style.
     
 
 ### Adding Assets Plus CSS
@@ -34,6 +34,7 @@ icon: simple/materialformkdocs
     ```
 
 ### Additional JavaScript
+
 !!! abstract "Additional JavaScript "
 
     If you want to integrate another syntax highlighter or add some custom logic to your theme, create a new JavaScript file in the `docs` directory:
@@ -231,7 +232,7 @@ The following template blocks are provided by the theme:
 
 !!! desc "Theme Development"
 
-    Material for MkDocs is built on top of [TypeScript], [RxJS] and [SASS], and uses a lean, custom build process to put everything together.[^1] If you want to make more fundamental changes, it may be necessary to make the adjustments directly in the source of the theme and recompile it.
+    MaterialX for MkDocs is built on top of [TypeScript], [RxJS] and [SASS], and uses a lean, custom build process to put everything together.[^1] If you want to make more fundamental changes, it may be necessary to make the adjustments directly in the source of the theme and recompile it.
     
     [^1]:
     Prior to <!-- md:version 7.0.0 --> the build was based on Webpack, resulting in occasional broken builds due to incompatibilities with loaders and plugins. Therefore, we decided to swap Webpack for a leaner solution which is now based on [RxJS] as the application itself. This allowed for the pruning of more than 500 dependencies (~30% less).
@@ -333,7 +334,7 @@ The following template blocks are provided by the theme:
     ```
 
     1.  While this command will build all theme files, it will skip the over-
-    rides used in Material for MkDocs' own documentation which are
+    rides used in MaterialX for MkDocs' own documentation which are
     not distributed with the theme. If you forked the theme and want
     to build the overrides as well, e.g. before submitting a PR with
     changes, use:

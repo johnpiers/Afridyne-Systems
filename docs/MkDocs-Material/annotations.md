@@ -1,6 +1,7 @@
 ---
-icon: material/newlogo-nav
+icon: material/information-outline
 ---
+
 ![](imgs/20260106-213312.png){ .center-image }
 <H1 style="text-align: center;">Annotations</H1>
 

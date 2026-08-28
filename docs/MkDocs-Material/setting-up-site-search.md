@@ -1,5 +1,8 @@
 ---
-icon: simple/materialformkdocs
+status: new
+icon: octicons/search-24
+search:
+  boost: 1.05
 ---
 
 ![](imgs/20260323-210417.png){: style="display: block; margin: 0 auto"}
@@ -8,10 +11,17 @@ icon: simple/materialformkdocs
 # Setting Up Site Search
 
 !!! quote ""
-    Material for MkDocs provides an excellent client-side search implementation, omitting the need for the integration of third-party services, which might not be compliant with privacy regulations. Moreover, search even works [offline], allowing users to download your documentation.
+    MaterialX `10.2.0` fully refactors the search module with a brand-new architecture, greatly improving **search quality** and **indexing efficiency**.
     
-  [offline]: building-for-offline-usage.md
-
+    It supports multi-provider mode, chunked indexing, on-demand loading, index compression, multilingual search and cross-domain search. It is suitable for various complex scenarios and large-scale sites, and can handle sites with more than 100,000 pages.
+    
+    [Pagefind]{target="_blank"} is the default provider. You may switch back to the original [Lunr]{target="_blank"} when using it in an [offline]{target="_blank"} environment (opened via the `file://` protocol).
+    
+  [Pagefind]: https://pagefind.app/
+  [Lunr]: https://lunrjs.com/
+  [offline]: offline.md
+    
+    
 
 [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
 

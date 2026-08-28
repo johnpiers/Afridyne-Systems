@@ -1,15 +1,15 @@
 ---
-icon: simple/materialformkdocs
+icon: material/emoticon-happy-outline
 ---
 
-<div style="display: none;"><h1>Header</h1></div>
+<div style="display: none;"><h1>Icons-Emojis</h1></div>
 
 ![](imgs/20260107-040557.png){ .center-image }
 <H1 style="text-align: center;">Icons-Emojis</H1>
 
 !!! desc "Icons-Emojis"
 
-    One of the best features of Material for MkDocs is the possibility to use [more than 10,000 ==icons==][icon search] and thousands of emojis in your project documentation with practically zero additional effort. Moreover, [==custom icons== can be added][custom icons can be added] and used in `mkdocs.yml`, documents and templates.
+    One of the best features of MaterialX for MkDocs is the possibility to use [more than 10,000 ==icons==][icon search] and thousands of emojis in your project documentation with practically zero additional effort. Moreover, [==custom icons== can be added][custom icons can be added] and used in `mkdocs.yml`, documents and templates.
 
   [icon search]: https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
   [custom icons can be added]: changing-the-logo-and-icons.md#additional-icons

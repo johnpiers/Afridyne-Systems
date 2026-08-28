@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/square-root
 ---
 
 ![](imgs/20260115-234940.png){: style="display: block; margin: 0 auto"}
@@ -7,7 +7,7 @@ icon: simple/materialformkdocs
 
 !!! abstract "[MathJax] and [KaTeX]"
 
-     [MathJax] and [KaTeX] are two popular libraries for displaying mathematical content in browsers. Although both libraries offer similar functionality, they use different syntaxes and have different configuration options. This documentation site provides information on how to integrate them with Material for MkDocs easily.
+     [MathJax] and [KaTeX] are two popular libraries for displaying mathematical content in browsers. Although both libraries offer similar functionality, they use different syntaxes and have different configuration options. This documentation site provides information on how to integrate them with MateriaXl for MkDocs easily.
     
 
   [MathJax]: https://www.mathjax.org/

@@ -1,14 +1,13 @@
 ---
 title: Built-in info plugin
-icon: simple/materialformkdocs
----
+icon: material/folder-information-outline
+--- 
 
 ![](imgs/20260219-080140.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Built-in info plugin</H1>
 
-### info Plugin
 
-!!! desc "Info Plugin"
+!!! desc "Built-in info plugin"
 
     The info plugin is a utility that is solely intended to create self-contained [minimal reproductions] as `.zip` files when [reporting bugs] or proposing [change requests], making communication between us maintainers and you much easier, as we have a common ground to work on.
     

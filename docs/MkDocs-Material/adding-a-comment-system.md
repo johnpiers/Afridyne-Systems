@@ -1,5 +1,5 @@
 ---
-icon: material/newlogo-nav
+icon: material/comment-edit-outline
 ---
 
 ![](imgs/20260106-211524.png){ .center-image }
@@ -7,9 +7,9 @@ icon: material/newlogo-nav
 
  [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
 
-!!! quote "Theme Extension"
+!!! quote "Adding a comment system"
 
-    Material for MkDocs allows to easily add the third-party comment system of your choice to the footer of any page by using [theme extension]. As an example, we'll be integrating 📡 [Giscus], which is Open Source, free, and uses GitHub discussions as a backend.
+    MaterialX for MkDocs allows to easily add the third-party comment system of your choice to the footer of any page by using [theme extension]. As an example, we'll be integrating 📡 [Giscus], which is Open Source, free, and uses GitHub discussions as a backend.
     
 
   [Giscus]: https://giscus.app/

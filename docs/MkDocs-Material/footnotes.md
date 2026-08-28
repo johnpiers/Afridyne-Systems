@@ -7,7 +7,7 @@ icon: material/format-align-bottom
 
 !!! desc "Footnotes"
 
-    Footnotes are a great way to add supplemental or additional information to a specific word, phrase or sentence without interrupting the flow of a document. Material for MkDocs provides the ability to define, reference and render footnotes.
+    Footnotes are a great way to add supplemental or additional information to a specific word, phrase or sentence without interrupting the flow of a document. MaterialX for MkDocs provides the ability to define, reference and render footnotes.
     
 ## Configuration
 

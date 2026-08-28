@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/image-frame
 ---
 
 ![](imgs/20260128-210336.png){: style="display: block; margin: 0 auto"}
@@ -7,7 +7,7 @@ icon: simple/materialformkdocs
 
 !!! pied-piper "Images part of Markdown Core Syntax"
 
-    While images are first-class citizens of Markdown and part of the core syntax, it can be difficult to work with them. Material for MkDocs makes working with images more comfortable, providing styles for image alignment and image captions.
+    While images are first-class citizens of Markdown and part of the core syntax, it can be difficult to work with them. MaterialX for MkDocs makes working with images more comfortable, providing styles for image alignment and image captions.
 
 ## Configuration
 

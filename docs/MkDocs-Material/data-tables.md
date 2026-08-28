@@ -2,12 +2,13 @@
 icon: material/table-edit
 ---
 
+
 ![](imgs/20260114-231248.png){: style="display: block; margin: 0 auto"}
 
 <H1 style="text-align: center;"> Data Tables</H1>
 
 !!! desc "Data Tables"
-    MateriaXl for MkDocs defines default styles for data tables – an excellent way of rendering tabular data in project documentation. Furthermore, customizations like [sortable tables] can be achieved with a third-party library and some [additional JavaScript].
+    MaterialX for MkDocs defines default styles for data tables – an excellent way of rendering tabular data in project documentation. Furthermore, customizations like [sortable tables] can be achieved with a third-party library and some [additional JavaScript].
     
   [sortable tables]: #sortable-tables
   [additional JavaScript]: customization.md#additional-javascript

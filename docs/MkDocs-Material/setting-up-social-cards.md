@@ -5,7 +5,7 @@ icon: octicons/share-android-24
 ![](imgs/20260222-073243.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Setting up Social Cards</H1>
  
-!!! pied-piper "Social Cards"
+!!! pied-piper "Setting up social cards"
 
     Material for MkDocs can automatically create beautiful social cards for your documentation, which appear as link previews on social media platforms. You can select from several [pre-designed layouts][default layouts] or create [custom layouts] to match your unique style and branding.
     

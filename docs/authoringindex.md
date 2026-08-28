@@ -1,9 +1,6 @@
 # Authoring
 
-MaterialX for MkDocs is packed with many great features that make technical
-writing a joyful activity. This section of the documentation explains how to set up
-a page, and showcases all available specimen that can be used directly from
-within Markdown files.
+MaterialX for MkDocs is packed with many great features that make technical writing a joyful activity. This section of the documentation explains how to set up a page, and showcases all available specimen that can be used directly from within Markdown files.
 
 ## Configuration
 
@@ -11,10 +8,7 @@ within Markdown files.
 
 ### Setting the page `title`
 
-Each page has a designated title, which is used in the navigation sidebar, for
-[social cards] and in other places. While MkDocs attempts to automatically
-determine the title of a page in a [four step process], the title can also be
-explicitly set with the front matter `title` property:
+Each page has a designated title, which is used in the navigation sidebar, for [social cards] and in other places. While MkDocs attempts to automatically determine the title of a page in a [four step process], the title can also be explicitly set with the front matter `title` property:
 
 ``` yaml
 ---
@@ -25,10 +19,7 @@ title: Lorem ipsum dolor sit amet # (1)!
 ...
 ```
 
-1.  This line sets the [`title`][title] inside the HTML document's
-    [`head`][head] for the generated page to the given value. Note that the
-    site title, which is set via [`site_name`][site_name], is appended with a
-    dash.
+1.  This line sets the [`title`][title] inside the HTML document's [`head`][head] for the generated page to the given value. Note that the site title, which is set via [`site_name`][site_name], is appended with a dash.
 
   [social cards]: MkDocs-Material/setting-up-social-cards.md
   [four step process]: https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
@@ -38,10 +29,7 @@ title: Lorem ipsum dolor sit amet # (1)!
 
 ### Setting the page `description`
 
-A Markdown file can include a description that is added to the `meta` tags of
-a page, and is also used for [social cards]. It's a good idea to set a
-[`site_description`][site_description] in `mkdocs.yml` as a fallback value if
-the author does not explicitly define a description for a Markdown file:
+A Markdown file can include a description that is added to the `meta` tags of a page, and is also used for [social cards]. It's a good idea to set a [`site_description`][site_description] in `mkdocs.yml` as a fallback value if the author does not explicitly define a description for a Markdown file:
 
 ``` yaml
 ---
@@ -52,8 +40,7 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor. # (1)!
 ...
 ```
 
-1.  This line sets the `meta` tag containing the description inside the
-    document `head` for the current page to the provided value.
+1.  This line sets the `meta` tag containing the description inside the document `head` for the current page to the provided value.
 
   [site_description]: https://www.mkdocs.org/user-guide/configuration/#site_description
 
@@ -62,10 +49,7 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor. # (1)!
 <!-- md:version 9.2.0 -->
 <!-- md:flag experimental -->
 
-An icon can be assigned to each page, which is then rendered as part of the
-navigation sidebar, as well as [navigation tabs], if enabled. Use the front
-matter `icon` property to reference an icon, adding the following lines at the
-top of a Markdown file:
+An icon can be assigned to each page, which is then rendered as part of the navigation sidebar, as well as [navigation tabs], if enabled. Use the front matter `icon` property to reference an icon, adding the following lines at the top of a Markdown file:
 
 ``` yaml
 ---
@@ -96,9 +80,7 @@ icon: material/emoticon-happy # (1)!
 <!-- md:flag experimental -->
 <!-- md:example page-status -->
 
-A status can be assigned to each page, which is then displayed as part of the
-navigation sidebar. First, associate a status identifier with a description by
-adding the following to `mkdocs.yml`:
+A status can be assigned to each page, which is then displayed as part of the navigation sidebar. First, associate a status identifier with a description by adding the following to `mkdocs.yml`:
 
 ``` yaml
 extra:
@@ -106,9 +88,7 @@ extra:
     <identifier>: <description> # (1)!
 ```
 
-1.  The identifier can only include alphanumeric characters, as well as dashes
-    and underscores. For example, if you have a status `Recently updated`, you can
-    set `new` as an identifier:
+1.  The identifier can only include alphanumeric characters, as well as dashes and underscores. For example, if you have a status `Recently updated`, you can set `new` as an identifier:
 
     ``` yaml
     extra:
@@ -116,9 +96,7 @@ extra:
         new: Recently updated
     ```
 
-The page status can now be set with the front matter `status` property. For
-example, you can mark a page as `new` with the following lines at the top of a
-Markdown file:
+The page status can now be set with the front matter `status` property. For example, you can mark a page as `new` with the following lines at the top of a Markdown file:
 
 ``` yaml
 ---
@@ -136,9 +114,7 @@ The following status identifiers are already defined:
 
 #### Custom page status
 
-You can define a custom page status this way but if you want it to
-have an icon other than the default one you need to also configure
-that in your `extra.css`.
+You can define a custom page status this way but if you want it to have an icon other than the default one you need to also configure that in your `extra.css`.
 
 ``` css title="extra.css"
 :root {
@@ -156,9 +132,7 @@ that in your `extra.css`.
 <!-- md:version 9.6.0 -->
 <!-- md:flag experimental -->
 
-Each page can define a subtitle, which is then rendered below the title as part
-of the navigation sidebar by using the front matter `subtitle` property, and
-adding the following lines:
+Each page can define a subtitle, which is then rendered below the title as part of the navigation sidebar by using the front matter `subtitle` property, and adding the following lines:
 
 ``` yaml
 ---
@@ -171,9 +145,7 @@ subtitle: Nullam urna elit, malesuada eget finibus ut, ac tortor
 
 ### Setting the page `template`
 
-If you're using [theme extension] and created a new page template in the
-`overrides` directory, you can enable it for a specific page. Add the following
-lines at the top of a Markdown file:
+If you're using [theme extension] and created a new page template in the `overrides` directory, you can enable it for a specific page. Add the following lines at the top of a Markdown file:
 
 ``` yaml
 ---
@@ -186,9 +158,7 @@ template: custom.html
 
 ??? question "How to set a page template for an entire folder?"
 
-    With the help of the [built-in meta plugin], you can set a custom template
-    for an entire section and all nested pages, by creating a `.meta.yml` file
-    in the corresponding folder with the following content:
+    With the help of the [built-in meta plugin], you can set a custom template for an entire section and all nested pages, by creating a `.meta.yml` file in the corresponding folder with the following content:
 
     ``` yaml
     template: custom.html
@@ -203,9 +173,7 @@ template: custom.html
 
 #### :material-check-all: on all pages
 
-In order to add custom `meta` tags to your document, you can [extend the theme
-][theme extension] and [override the `extrahead` block][overriding blocks],
-e.g. to add indexing policies for search engines via the `robots` property:
+In order to add custom `meta` tags to your document, you can [extend the theme ][theme extension] and [override the `extrahead` block][overriding blocks], e.g. to add indexing policies for search engines via the `robots` property:
 
 ``` html
 {% extends "base.html" %}
@@ -219,9 +187,7 @@ e.g. to add indexing policies for search engines via the `robots` property:
 
 #### :material-check: on a single page
 
-If you want to set a `meta` tag on a single page, or want to set different
-values for different pages, you can use the `page.meta` object inside your
-template override, e.g.:
+If you want to set a `meta` tag on a single page, or want to set different values for different pages, you can use the `page.meta` object inside your template override, e.g.:
 
 ``` html
 {% extends "base.html" %}
@@ -235,9 +201,7 @@ template override, e.g.:
 {% endblock %}
 ```
 
-You can now use `robots` exactly like [`title`][title] and
-[`description`][description] to set values. Note that in this case, the
-template defines an `else` branch, which would set a default if none was given.
+You can now use `robots` exactly like [`title`][title] and [`description`][description] to set values. Note that in this case, the template defines an `else` branch, which would set a default if none was given.
 
   [title]: #setting-the-page-title
   [description]: #setting-the-page-description
