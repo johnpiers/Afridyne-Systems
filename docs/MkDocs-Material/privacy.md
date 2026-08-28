@@ -1,23 +1,26 @@
 ---
 title: Built-in privacy plugin
-icon: material/shield-account
+icon: material/shield-account-outline
 ---
+
+
 ![](imgs/20260413-163051.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Built-in Privacy Plugin</H1>
 
-!!! abstract "Privacy Plugin"
+!!! abstract "Built-in privacy plugin"
 
     - The privacy plugin offers a streamlined solution for automatically self-hosting external assets.
     
     - With just a single line of configuration, the plugin can automatically identify and download external assets, making GDPR compliance as effortless as it can possibly be.
     
     
-
 ## Objective
+
+### How it works
 
 !!! example "How It Works"
 
-    - The plugin scans the generated HTML for external assets, i.e., scripts, style sheets, images, and web fonts, downloads them, stores them in the [`site` directory][`mkdocs.site_dir`] and replaces all references with links to the downloaded copies for effortless self-hosting. For example:
+    - The plugin scans the generated HTML for external assets, i.e., scripts, style sheets, images, and web fonts, downloads them, stores them in the [`site` directory][mkdocs.site_dir] and replaces all references with links to the downloaded copies for effortless self-hosting. For example:
 
     ```html
     <script src="https://example.com/script.js"></script>
@@ -38,6 +41,7 @@ icon: material/shield-account
     There are some [limitations].
     
 
+  [mkdocs.site_dir]: https://www.mkdocs.org/user-guide/configuration/#site_url
   [preconnect]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preconnect
   [limitations]: #limitations
 
@@ -46,12 +50,12 @@ icon: material/shield-account
 
 !!! success "2018 European GDPR"
 
-    The plugin was developed to make compliance with the 2018 European __General Data Protection Regulation__ (GDPR) as simple as possible, while retaining the flexibility and power that Material for MkDocs offers, like for example its tight integration with [Google Fonts].
+    The plugin was developed to make compliance with the 2018 European __General Data Protection Regulation__ (GDPR) as simple as possible, while retaining the flexibility and power that MaterialX for MkDocs offers, like for example its tight integration with [Google Fonts].
     
-    But, that's only the start. For example, if your project includes a lot of images, enabling the plugin allows to move them outside of your repository, as the plugin will automatically download and store them in the [`site` directory][`mkdocs.site_dir`] when [building your project].
+    But, that's only the start. For example, if your project includes a lot of images, enabling the plugin allows to move them outside of your repository, as the plugin will automatically download and store them in the [`site` directory][mkdocs.site_dir] when [building your project].
     
 
-Even more interestingly, the plugin can be combined with other built-in plugins that Material for MkDocs offers, in order to create sophisticated build pipelines tailored to your project:
+Even more interestingly, the plugin can be combined with other built-in plugins that MaterialX for MkDocs offers, in order to create sophisticated build pipelines tailored to your project:
 
 <div class="grid cards" markdown>
 
@@ -72,7 +76,7 @@ Even more interestingly, the plugin can be combined with other built-in plugins 
     ---
 
     The offline plugin adds support for building [offline-capable documentation],
-    so you can distribute the [`site` directory][`mkdocs.site_dir`] as a `.zip`
+    so you can distribute the [`site` directory][mkdocs.site_dir] as a `.zip`
     file that can be downloaded.
 
     ---
@@ -89,11 +93,6 @@ Even more interestingly, the plugin can be combined with other built-in plugins 
 
 ## Configuration
 
-<!-- md:version 9.5.0 -->
-<!-- md:plugin [privacy] – built-in -->
-<!-- md:flag multiple -->
-<!-- md:flag experimental -->
-
 As with all [built-in plugins], getting started with the privacy plugin is straightforward. Just add the following lines to `mkdocs.yml`, and start effortlessly self-hosting external assets:
 
 ``` yaml
@@ -101,7 +100,7 @@ plugins:
   - privacy
 ```
 
-The privacy plugin is built into Material for MkDocs and doesn't need to be installed.
+The privacy plugin is built into MaterialX for MkDocs and doesn't need to be installed.
 
   [privacy]: privacy.md
   
@@ -112,10 +111,6 @@ The following settings are available:
 
 ---
 
-#### <!-- md:setting config.enabled -->
-
-<!-- md:version 9.5.0 -->
-<!-- md:default `true` -->
 
 Use this setting to enable or disable the plugin when [building your project]. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable][`mkdocs.env`] in `mkdocs.yml`:
 
@@ -128,11 +123,6 @@ plugins:
 This configuration enables the plugin only during continuous integration (CI).
 
 ---
-
-#### <!-- md:setting config.concurrency -->
-
-<!-- md:version 9.5.0 -->
-<!-- md:default available CPUs - 1 -->
 
 With more CPUs available, the plugin can do more work in parallel, and thus complete handling of external assets faster. If you want to disable concurrent processing completely, use:
 
@@ -154,11 +144,6 @@ The following settings are available for caching:
 
 ---
 
-#### <!-- md:setting config.cache -->
-
-<!-- md:version 9.5.0 -->
-<!-- md:default `true` -->
-
 Use this setting to instruct the plugin to bypass the cache, in order to re-schedule downloads for all external assets, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:
 
 ``` yaml
@@ -168,11 +153,6 @@ plugins:
 ```
 
 ---
-
-#### <!-- md:setting config.cache_dir -->
-
-<!-- md:version 9.5.0 -->
-<!-- md:default `.cache/plugin/privacy` -->
 
 It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where downloaded copies are cached. If you want to change it, use:
 
@@ -192,11 +172,6 @@ The following settings are available for logging:
 
 ---
 
-#### <!-- md:setting config.log -->
-
-<!-- md:version 9.7.0 -->
-<!-- md:default `true` -->
-
 Use this setting to control whether the plugin should display log messages when building your site. While not being recommended, you can disable logging with:
 
 ``` yaml
@@ -207,12 +182,7 @@ plugins:
 
 ---
 
-#### <!-- md:setting config.log_level -->
-
-<!-- md:version 9.7.0 -->
-<!-- md:default `info` -->
-
-Use this setting to control the log level that the plugin should employ when encountering errors, which requires that the [`log`][`config.log`] setting is enabled. The following log levels are available:
+Use this setting to control the log level that the plugin should employ when encountering errors, which requires that the [`log`][config.log] setting is enabled. The following log levels are available:
 
 === "`error`"
 
@@ -232,7 +202,7 @@ Use this setting to control the log level that the plugin should employ when enc
           log_level: warn
     ```
 
-    Errors and warnings are reported, terminating the build in [`strict`][`mkdocs.strict`] mode. This includes warnings when symlinks cannot be created due to a lack of permissions on Windows systems (#6550).
+    Errors and warnings are reported, terminating the build in [`strict`][mkdocs.strict] mode. This includes warnings when symlinks cannot be created due to a lack of permissions on Windows systems ([#6550]).
 
 === "`info`"
 
@@ -254,16 +224,15 @@ Use this setting to control the log level that the plugin should employ when enc
 
     All messages are reported, including debug messages, if and only if MkDocs was started with the `--verbose` flag. Note that this will print a lot of messages and is only useful for debugging.
 
+[mkdocs.strict]: https://www.mkdocs.org/user-guide/configuration/#strict
+[config.log]: https://jaywhj.github.io/mkdocs-materialx/plugins/privacy.html#config.log
+[#6550]: https://github.com/squidfunk/mkdocs-material/issues/6550
+
 ### External assets
 
 The following settings are available for external assets:
 
 ---
-
-#### <!-- md:setting config.assets -->
-
-<!-- md:version 9.5.0 -->
-<!-- md:default `true` -->
 
 Use this setting to control whether the plugin should download external assets. If you only want the plugin to process [external links], you can disable handling of external assets with:
 
@@ -277,11 +246,6 @@ plugins:
 
 ---
 
-#### <!-- md:setting config.assets_fetch -->
-
-<!-- md:version 9.5.0 -->
-<!-- md:default `true` -->
-
 Use this setting to control whether the plugin should downloads or only report external assets when they're encountered. If you already self-host all external assets, this setting can be used as a safety net to detect links to external assets placed by the author in pages:
 
 ``` yaml
@@ -292,12 +256,7 @@ plugins:
 
 ---
 
-#### <!-- md:setting config.assets_fetch_dir -->
-
-<!-- md:version 9.5.0 -->
-<!-- md:default `assets/external` -->
-
-It is normally not necessary to specify this setting, except for when you want to change the path within the [`site` directory][`mkdocs.site_dir`] where external assets are stored. If you want to change it, use:
+It is normally not necessary to specify this setting, except for when you want to change the path within the [`site` directory][mkdocs.site_dir] where external assets are stored. If you want to change it, use:
 
 ``` yaml
 plugins:
@@ -305,15 +264,9 @@ plugins:
       assets_fetch_dir: my/custom/dir
 ```
 
-This configuration stores the downloaded copies at `my/custom/dir` in the
-[`site` directory][`mkdocs.site_dir`].
+This configuration stores the downloaded copies at `my/custom/dir` in the [`site` directory][mkdocs.site_dir].
 
 ---
-
-#### <!-- md:setting config.assets_include -->
-
-<!-- md:version 9.7.0 -->
-<!-- md:default none -->
 
 Use this setting to enable downloading of external assets for specific origins, e.g., when using [multiple instances] of the plugin to fine-tune processing of external assets for different origins:
 
@@ -325,11 +278,6 @@ plugins:
 ```
 
 ---
-
-#### <!-- md:setting config.assets_exclude -->
-
-<!-- md:version 9.7.0 -->
-<!-- md:default none -->
 
 Use this setting to disable downloading of external assets for specific origins, e.g., when using [multiple instances] of the plugin to fine-tune processing of external assets for different origins:
 
@@ -359,11 +307,6 @@ The following settings are available for external links:
 
 ---
 
-#### <!-- md:setting config.links -->
-
-<!-- md:version 9.7.0 -->
-<!-- md:default `true` -->
-
 Use this setting to instruct the plugin to parse and process external links to annotate them for [improved security], or to automatically add additional attributes to external links. If you want to disable processing of external links, use:
 
 ``` yaml
@@ -376,11 +319,6 @@ plugins:
 
 ---
 
-#### <!-- md:setting config.links_attr_map -->
-
-<!-- md:version 9.7.0 -->
-<!-- md:default none -->
-
 Use this setting to specify additional attributes that should be added to external links, for example, to add `target="_blank"` to all external links so they open in a new tab:
 
 ``` yaml
@@ -391,11 +329,6 @@ plugins:
 ```
 
 ---
-
-#### <!-- md:setting config.links_noopener -->
-
-<!-- md:version 9.7.0 -->
-<!-- md:default `true` -->
 
 It is normally not recommended to change this setting, as it will automatically annotate external links that open in a new window with `rel="noopener"` for [improved security]:
 
@@ -409,26 +342,35 @@ plugins:
 
 ### Dynamic URLs
 
-Dynamically created URLs as part of scripts are not detected, and thus cannot be downloaded automatically, as the plugin does not execute scripts – it only detects fully qualified URLs for downloading and replacement. In short, don't do this:
+!!! deep-dive "Dynamic URLs"
 
-``` js
-const host = "https://example.com"
-const path = `${host}/script.js`
-```
-
-Instead, always use fully qualified URLs:
-
-``` js
-const url ="https://example.com/script.js"
-```
-
+    Dynamically created URLs as part of scripts are not detected, and thus cannot be downloaded automatically, as the plugin does not execute scripts – it only detects fully qualified URLs for downloading and replacement. In short, don't do this:
+    
+    ``` js
+    const host = "https://example.com"
+    const path = `${host}/script.js`
+    ```
+    
+    ---
+    
+    - Instead, always use fully qualified URLs:
+    
+    ``` js
+    const url ="https://example.com/script.js"
+    ```
+    
 ### Embedded HTML
 
-By default, embedded HTML files (e.g. in iframes) are not scanned for external assets. This is a limitation of MkDocs, as it considers `.html` files to be templates, which must be explicitly listed under [`extra_templates`][`mkdocs.extra_templates`]. Thus, to self-host external assets of an embedded HTML file:
+!!! desc "Embedded HTML"
 
-``` yaml
-extra_templates:
-  - iframe.html
-```
-
-Note that the path to `iframe.html` is relative to the [`docs_dir`][`mkdocs.docs_dir`] directory.
+    By default, embedded HTML files (e.g. in iframes) are not scanned for external assets. This is a limitation of MkDocs, as it considers `.html` files to be templates, which must be explicitly listed under [`extra_templates`][mkdocs.extra_templates]. Thus, to self-host external assets of an embedded HTML file:
+    
+    ``` yaml
+    extra_templates:
+      - iframe.html
+    ```
+    
+    Note that the path to `iframe.html` is relative to the [`docs_dir`][mkdocs.docs_dir] directory.
+    
+[mkdocs.extra_templates]: https://www.mkdocs.org/user-guide/configuration/#extra_templates
+[mkdocs.docs_dir]: https://www.mkdocs.org/user-guide/configuration/#docs_dir

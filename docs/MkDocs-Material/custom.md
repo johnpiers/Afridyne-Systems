@@ -1,10 +1,6 @@
----
-icon: simple/materialformkdocs
----
-
 ![](imgs/20260406-185004.png){: style="display: block; margin: 0 auto"}
-<H1 style="text-align: center;"><ins>Custom Layouts</ins></H1>
-<H1 style="text-align: center;"><ins>Custom Cards</ins></H1>
+<H1 style="text-align: center;"><ins>Custom Cards/Custom Layouts</ins></H1>
+
 
 !!! quote "Custom Cards"
     - The social plugin allows you to define custom layouts for your social cards to suit your specific needs if the configuration options are not enough.
@@ -19,7 +15,7 @@ icon: simple/materialformkdocs
     
 !!! example "Copy default layout to customize"
 
-    Copy the default social card layout from your installation of Material for MkDocs to a new directory `layouts`. The instructions below assume you are in your project root and have a virtual environment within this. The path on your machine, of course, may differ.
+    Copy the default social card layout from your installation of MaterialX for MkDocs to a new directory `layouts`. The instructions below assume you are in your project root and have a virtual environment within this. The path on your machine, of course, may differ.
     
 
     ```

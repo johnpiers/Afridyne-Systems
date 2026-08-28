@@ -1,7 +1,3 @@
----
-icon: material/newlogo-nav
----
-
 ![](imgs/20260120-092653.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Basic Blogs</H1>
 
@@ -42,7 +38,7 @@ Key Concepts
     
 ## Setting Up Your Blog
 
-The blog plugin is part of Material for MkDocs but you need to configure it in the `mkdocs.yml`.
+The blog plugin is part of MaterialX for MkDocs but you need to configure it in the `mkdocs.yml`.
 
 !!! example "Set up a blog"
 
@@ -55,7 +51,7 @@ The blog plugin is part of Material for MkDocs but you need to configure it in t
     site_url: http://www.example.com
 
     theme:
-      name: material
+      name: materialx
 
     plugins:
       - search

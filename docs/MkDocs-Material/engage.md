@@ -1,7 +1,3 @@
----
-icon: simple/materialformkdocs
----
-
 ![](imgs/20260120-115537.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;">Engagement and Dissemination</H1>
 

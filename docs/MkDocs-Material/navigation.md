@@ -1,7 +1,3 @@
----
-icon: simple/materialformkdocs
----
-
 ![](imgs/20260120-211256.png){: style="display: block; margin: 0 auto"}
 <H3 style="text-align: center;"><u>Navigation, Authors, and Pagination</u></H3>
 
@@ -35,7 +31,7 @@ icon: simple/materialformkdocs
 
     ```yaml hl_lines="3 4"
     theme:
-      name: material
+      name: materialx
       features:
         - navigation.indexes
     ```
@@ -93,9 +89,9 @@ Categories appear in the main navigation, so are directly accessible from there.
 
 !!! tip "Single or Multiple Categories?"
 
-    While it is traditionally the case that a blog post would belong to only one category, Material for MkDocs actually allows you to assign more than one. While this gives you a degree of freedom, you should probably not use this too much, not least because you can use tags to deal with multiple classifications. We will cover them in the next step.
+    While it is traditionally the case that a blog post would belong to only one category, MaterialX for MkDocs actually allows you to assign more than one. While this gives you a degree of freedom, you should probably not use this too much, not least because you can use tags to deal with multiple classifications. We will cover them in the next step.
 
-Material allows you to control which categories blog authors can use. You declare them in the `mkdocs.yml`. This way you can make sure everyone sticks to agreed categories and that the plugin detects typos.
+MaterialX allows you to control which categories blog authors can use. You declare them in the `mkdocs.yml`. This way you can make sure everyone sticks to agreed categories and that the plugin detects typos.
 
 !!! example "Control your Categories"
 
@@ -146,7 +142,7 @@ and reference documentation. Adding the same tag to all three shows that they ar
       created: 2023-12-31
       updated: 2024-01-02
     authors:
-      - material
+      - materialx
     categories:
       - Holidays
     tags:
@@ -158,7 +154,7 @@ and reference documentation. Adding the same tag to all three shows that they ar
 
 You should see the tags that you defined at the top of the post. However, at the moment that is it. While the blog plugin automatically creates an index page for categories, the tags plugin does not do the same for tags. This is because the tags plugin is not specific for blogs. You can use it for any site content, so it is not obvious were the tag index should go.
 
-You can configure a basic tag index using the public version of Material for MkDocs. The Insider Edition supports this as well, of course, but also provides an alternative index mechanism that allows for an arbitrary number of tag indexes, scoped listings, shadow tags, nested tags, and much more.
+You can configure a basic tag index using the public version of MaterialX for MkDocs. The Insider Edition supports this as well, of course, but also provides an alternative index mechanism that allows for an arbitrary number of tag indexes, scoped listings, shadow tags, nested tags, and much more.
 
 !!! example "Adding a Tags Index"
     === "Basic tag index"
@@ -293,7 +289,7 @@ You can create custom author index pages that can highlight the contributions of
     Then create a page `docs/blog/author/team.md`:
 
     ```
-    # The Material Team
+    # The MaterialX Team
 
     A small group of people dedicated to making writing documentation easy, if not
     outright fun! Here are some of the things we have blogged about:
@@ -350,7 +346,7 @@ Another thing you may want to do once you have a large enough number of posts is
 
 ## <u>Custom Slugs</u>
 
-If, for some reason, you are not happy with the way that Material for MkDocs turns headings into slugs, you can create your own slugify function or you can manually define a slug for a specific post.
+If, for some reason, you are not happy with the way that MaterialX for MkDocs turns headings into slugs, you can create your own slugify function or you can manually define a slug for a specific post.
 
 !!! example "Slugify Function"
 

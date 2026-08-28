@@ -214,6 +214,7 @@ nav:
       - Social: MkDocs-Material/social.md
       - Offline: MkDocs-Material/offline.md
       - Optimize: MkDocs-Material/optimize.md
+      - Privacy: MkDocs-Material/privacy.md
       - Group: MkDocs-Material/group.md
       - Info: MkDocs-Material/info.md
     - Requirements:
@@ -239,6 +240,16 @@ nav:
     - Lists: MkDocs-Material/lists.md
     - Math: MkDocs-Material/math.md
     - Tooltips: MkDocs-Material/tooltips.md
+
+  - Tutorials:
+    # - tutorials/index.md
+    - "Blogs":
+      - Basic blogs: MkDocs-Material/basic.md
+      - Navigation, authors, and pagination: MkDocs-Material/navigation.md
+      - Engagement and dissemination: MkDocs-Material/engage.md
+    - "Social cards":
+      - Basic social cards: basic.md
+      - Custom cards: MkDocs-Material/custom.md
 
 
   - System:
