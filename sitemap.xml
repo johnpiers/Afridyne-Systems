@@ -251,6 +251,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://johnpiers.github.io/Afridyne-Systems/basic/</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://johnpiers.github.io/Afridyne-Systems/browser-support/</loc>
         <lastmod>2026-08-28</lastmod>
         <changefreq>daily</changefreq>
