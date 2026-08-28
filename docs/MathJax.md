@@ -21,7 +21,7 @@ created: 2025-01-15 10:30:00
     
 [Go to: Text Colour: UMCS :fontawesome-solid-paper-plane:](Ultimate-Markdown-Cheat-Sheet.md/#text-color){ .md-button .md-button--custom }
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](index.md#advanced-configuration){ .md-button .md-button--custom }
 
 ---
 
@@ -719,7 +719,7 @@ Use these exact Markdown syntax patterns depending on the alignment and sizing g
     
     The right-hand side (RHS) is equivalent to $\prod_{m=1}^{\infty} \frac{1}{(1-q^{5m-2})(1-q^{5m-3})}$, which can be rewritten with an index of $j=0$ to match the product form $\prod_{j=0}^{\infty} \frac{1}{(1-q^{5j+3})(1-q^{5j+2})}$.
     
-[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](index.md#advanced-configuration){ .md-button .md-button--custom }
 
 ### 1. Identify the Formula
 

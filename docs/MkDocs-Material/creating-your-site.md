@@ -46,7 +46,7 @@ icon: material/folder-plus-outline
     └─ mkdocs.yml
     ```
     
-  [installed]: ../MkDocs-Material-Start.md
+  [installed]: ../index.md
 
 ## Configuration
 

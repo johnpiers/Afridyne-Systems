@@ -6,7 +6,7 @@ icon: material/translate
 ![](imgs/20260107-034437.png){ .center-image }
 <H1 style="text-align: center;">Changing the Language</H1>
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 !!! desc ""
 
@@ -230,6 +230,6 @@ the default slug function works. Consider using a [Unicode-aware slug function].
   [list of available languages]: https://github.com/jaywhj/mkdocs-materialx/blob/main/src/templates/partials/languages/
 
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 

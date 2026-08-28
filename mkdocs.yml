@@ -162,12 +162,11 @@ plugins:
 
 nav:
   - MaterialX-MkDocs:
-      - MaterialX-MkDocs: index.md
-      - MkDocs Start Page: MkDocs-Material-Start.md
+      - MkDocs-MaterialX-Start: index.md
+      #- MaterialX-MkDocs: index.md
+      #- MkDocs Start Page: MkDocs-Material-Start.md
       - Get Started-MkDocs: about.md
-      - MkDocsCaption: Caption.md
-      - MkDocstrings: MkDocstrings.md      
-      - Text Colour/MathJax: MathJax.md
+      
 
   - Get started:
     - Differences: differences.md
@@ -210,7 +209,7 @@ nav:
       - Tags: MkDocs-Material/tags.md
       - Blog: MkDocs-Material/blog.md
       - Meta: MkDocs-Material/meta.md
-      - Search: MkDocs-Material/search.md      
+      - Search: MkDocs-Material/search.md
       - Social: MkDocs-Material/social.md
       - Offline: MkDocs-Material/offline.md
       - Optimize: MkDocs-Material/optimize.md
@@ -220,6 +219,21 @@ nav:
     - Requirements:
       - Image processing: MkDocs-Material/image-processing.md
       - Caching: MkDocs-Material/caching.md
+    - Third-party plugins:
+      - MkDocstrings:
+        - MkDocstrings: MkDocstrings.md
+        - Usage: Mkdocstrings/usage.md
+        - Handlers: Mkdocstrings/handlers.md
+        - Theming: Mkdocstrings/theming.md
+      - Caption:
+        - Caption: Caption.md
+        - Overview: MkDocsCaption/index.md
+        - Quick Start: MkDocsCaption/Quick-Start.md
+        - Config: MkDocsCaption/config.md
+        - Custom: MkDocsCaption/custom.md
+        - Image: MkDocsCaption/image.md
+        - Table: MkDocsCaption/table.md
+        - References: MkDocsCaption/references.md
   
   - Authoring:
     - Overview: authoringindex.md
@@ -238,6 +252,7 @@ nav:
     - Buttons: MkDocs-Material/buttons.md
     - Images: MkDocs-Material/images.md
     - Lists: MkDocs-Material/lists.md
+    - Text Colour/MathJax: MathJax.md
     - Math: MkDocs-Material/math.md
     - Tooltips: MkDocs-Material/tooltips.md
 

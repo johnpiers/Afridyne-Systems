@@ -2165,8 +2165,8 @@ graph TD
     If there's insufficient space to render grid items next to each other, the items will stretch to the full width of the viewport, e.g. on mobile viewports. If there's more space available, grids will render in items of 3 and more, e.g. when [hiding both sidebars].
     
   [mkdocs-material]: https://pypistats.org/packages/mkdocs-material
-  [pip]: ../MkDocs-Material-Start.md#with-pip
-  [getting started]: ../MkDocs-Material-Start.md
+  [pip]: ../index.md#with-pip
+  [getting started]: ../index.md
   [customization]: customization.md
   [license]: license.md
   [GitHub]: https://github.com/squidfunk/mkdocs-material
@@ -3198,7 +3198,7 @@ search:
     
 ![](imgs/20260607-111917.png){ .center-image }
 
-[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](index.md#advanced-configuration){ .md-button .md-button--custom }
 
 !!! recommendation "⚖️"
 
@@ -3668,7 +3668,7 @@ Citric Acid Cycle | 2 ATP ||
     |♖|♘|♗|♕|♔|  |  |♖|
     ```
     
-[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](index.md#advanced-configuration){ .md-button .md-button--custom }
 
 ``` markdown hl_lines="2" title="Data table, columns aligned to left"
 | Method      | Description                          |

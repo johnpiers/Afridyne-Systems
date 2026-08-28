@@ -5,7 +5,7 @@ icon: lucide/palette
 ![](imgs/20260106-230709.png){ .center-image }
 <H1 style="text-align: center;">Changing the Colours</H1>
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 
 !!! quote ""
@@ -431,7 +431,7 @@ The `slate` color scheme defines its colors via `hsla` functions and deduces its
 
 
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 [palette.scheme]: #color-scheme
 [palette.primary]: #primary-colour

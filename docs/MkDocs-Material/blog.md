@@ -15,7 +15,7 @@ icon: material/newspaper-variant-outline
   [category]: #categories
   [pagination]: #pagination
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 ## <u>***Objective:***</u>
 
@@ -1478,4 +1478,4 @@ The following settings are available for drafts:
   [change request]: requesting-a-change.md
   [issue tracker]: https://github.com/jaywhj/mkdocs-materialx/issues
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

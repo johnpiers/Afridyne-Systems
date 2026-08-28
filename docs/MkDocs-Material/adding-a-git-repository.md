@@ -5,7 +5,7 @@ icon: material/source-fork
 ![](imgs/20260106-211931.png){ .center-image }
 <H1 style="text-align: center;">Adding a Git Repository</H1>
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 !!! abstract "Adding a Git Repository"
 
@@ -306,4 +306,4 @@ The other configuration options of this extension are not officially supported b
     
   [git-authors]: https://github.com/timvink/mkdocs-git-authors-plugin/
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

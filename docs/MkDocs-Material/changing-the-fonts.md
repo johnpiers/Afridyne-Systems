@@ -5,7 +5,7 @@ icon: material/format-text
 ![](imgs/20260106-230934.png){ .center-image }
 <H1 style="text-align: center;">Changing the Fonts</H1>
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 !!! desc "Changing the Typeface"
 
@@ -123,4 +123,4 @@ icon: material/format-text
 
   [additional style sheet]: customization.md#additional-css
   
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

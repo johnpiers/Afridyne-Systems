@@ -165,8 +165,8 @@ icon: material/view-grid-plus-outline
     If there's insufficient space to render grid items next to each other, the items will stretch to the full width of the viewport, e.g. on mobile viewports. If there's more space available, grids will render in items of 3 and more, e.g. when [hiding both sidebars].
     
   [mkdocs-material]: https://pypistats.org/packages/mkdocs-material
-  [pip]: ../MkDocs-Material-Start.md#with-pip
-  [getting started]: ../MkDocs-Material-Start.md
+  [pip]: ../index.md#with-pip
+  [getting started]: ../index.md
   [customization]: customization.md
   [license]: license.md
   [GitHub]: https://github.com/squidfunk/mkdocs-material

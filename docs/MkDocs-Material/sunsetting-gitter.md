@@ -79,4 +79,4 @@ icon: simple/materialformkdocs
     - We are confident that this streamlined approach will spur more fruitful discussions, innovative ideas, and collective growth. We are excited to continue our journey with the unwavering support and active participation of our community.
 
 
-[👉 Back to: Material-Start #Advanced-Configuration   :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[👉 Back to: Material-Start #Advanced-Configuration   :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

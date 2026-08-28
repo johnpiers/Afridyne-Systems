@@ -9,7 +9,7 @@ icon: simple/materialformkdocs
 
     If you want to ship your documentation together with your product, MkDocs has you covered – with support from themes, [MkDocs] supports building offline-capable documentation. Notably, Material for MkDocs offers offline support for many of its features.
     
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
   [MkDocs]: https://www.mkdocs.org
 
@@ -58,4 +58,4 @@ icon: simple/materialformkdocs
   [Git repository]: adding-a-git-repository.md
   [Comment systems]: adding-a-comment-system.md
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

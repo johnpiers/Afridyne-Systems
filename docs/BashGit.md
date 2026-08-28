@@ -112,7 +112,7 @@ This is a quick reference to getting started with Bash scripting.
 
 -   <span style="color: #ff9800">:material-home-circle:</span> **MaterialX Start Page**
     Go back to the project's (static site) main landing page, Getting Started
-    [:octicons-arrow-right-24: Return to Start Page](MkDocs-Material-Start.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
+    [:octicons-arrow-right-24: Return to Start Page](index.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
 
 -   <span style="color: #009688">:material-arrow-u-left-top:</span> **MkDocs ➻ MaterialX**
     Go back to the root Afridyne Systems™ ➠ MkDocs ➻ MaterialX documentation.
@@ -168,7 +168,7 @@ This is a quick reference to getting started with Bash scripting.
 
 -   <span style="color: #ff9800">:material-home-circle:</span> **MaterialX Start Page**
     Back to the project's main landing page.
-    [:octicons-arrow-right-24: Return to Start Page](MkDocs-Material-Start.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
+    [:octicons-arrow-right-24: Return to Start Page](index.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
 
 -   <span style="color: #009688">:material-arrow-u-left-top:</span> **MkDocs ➻ MaterialX**
     Go back to the root MkDocs documentation.

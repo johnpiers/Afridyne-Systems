@@ -5,7 +5,7 @@ icon: octicons/image-24
 ![](imgs/20260107-035335.png){ .center-image }
 <H1 style="text-align: center;">Changing the Logo and Icons</H1>
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 !!! quote ""
 
@@ -179,4 +179,4 @@ For further notes on icon usage, please consult the [icon reference].
   [Bootstrap]: https://icons.getbootstrap.com/
   [icon reference]: icons-emojis.md#using-icons
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

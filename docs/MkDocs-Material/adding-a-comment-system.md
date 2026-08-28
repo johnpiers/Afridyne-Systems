@@ -5,7 +5,7 @@ icon: material/comment-edit-outline
 ![](imgs/20260106-211524.png){ .center-image }
 <H1 style="text-align: center;">Adding a Comment System</H1>
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 !!! quote "Adding a comment system"
 
@@ -114,4 +114,4 @@ If you wish to enable comments for an entire folder, you can use the [built-in m
   [overriding partials]: customization.md#overriding-partials
   [built-in meta plugin]: meta.md
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

@@ -9,7 +9,7 @@ icon: material/newlogo-nav
 
     Material for MkDocs, by default, allows to build optimized sites that rank great on search engines, load fast (even on slow networks), and work perfectly without JavaScript. Additionally, the [built-in optimize plugin] adds support for further useful automatic optimization techniques.
     
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
   [built-in optimize plugin]: #built-in-optimize-plugin
 
@@ -100,4 +100,4 @@ icon: material/newlogo-nav
     
  [optimize]: optimize.md
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

@@ -12,7 +12,7 @@ icon: octicons/versions-24
     
 [mike]: https://github.com/jimporter/mike
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }}
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }}
 
 ## Configuration
 
@@ -179,4 +179,4 @@ This will render a version warning above the header:
     _docs.example.com_ :octicons-arrow-right-24: _docs.example.com/0.1_
     
     
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

@@ -11,7 +11,7 @@ icon: octicons/share-android-24
     
 ---
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
  [Back to: caching/#prerequisites   :fontawesome-solid-paper-plane:](caching.md/#prerequisites){ .md-button .md-button--custom }
 
@@ -687,7 +687,7 @@ __Are you missing something? Please [open a discussion] and let us know!__
   [Layer icon circles]: ../assets/assets/screenshots/social-cards-layer-icon-circles.png
   [open a discussion]: https://github.com/squidfunk/mkdocs-material/discussions/new
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 ---
 

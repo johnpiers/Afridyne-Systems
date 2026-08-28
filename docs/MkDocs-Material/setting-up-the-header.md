@@ -13,7 +13,7 @@ icon: lucide/panel-top
   [git repository]: adding-a-git-repository.md
     
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 ## Configuration
 
@@ -67,4 +67,4 @@ icon: lucide/panel-top
     
     When the user clicks the button, the current announcement is dismissed and not displayed again until the content of the announcement changes. This is handled automatically.
     
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

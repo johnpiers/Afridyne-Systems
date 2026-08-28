@@ -348,4 +348,4 @@ The following template blocks are provided by the theme:
 
     This triggers the production-level compilation and minification of all style sheets and JavaScript files. After the command exits, the compiled files are located in the `material` directory. When running `mkdocs build`, you should now see your changes to the original theme.
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

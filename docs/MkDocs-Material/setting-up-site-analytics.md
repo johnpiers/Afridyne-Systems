@@ -14,7 +14,7 @@ icon: material/chart-box-outline
   [cookie consent]: ensuring-data-privacy.md#cookie-consent
   [feedback widget]: #was-this-page-helpful
     
-[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 ## Configuration
 
@@ -285,4 +285,4 @@ icon: material/chart-box-outline
 
   [additional JavaScript]: customization.md#additional-javascript
 
-[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

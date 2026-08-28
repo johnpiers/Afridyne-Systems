@@ -20,7 +20,7 @@ icon: lucide/panel-left
 [blog plugin]: blog.md
 
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 
 ## Configuration
@@ -557,7 +557,7 @@ Material for MkDocs includes several keyboard shortcuts that make it possible to
 
   [additional style sheet]: customization.md#additional-css
   
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 
 ## Hover rows

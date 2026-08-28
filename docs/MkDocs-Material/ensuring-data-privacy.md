@@ -5,7 +5,7 @@ icon: octicons/lock-24
 ![](imgs/20260109-183634.png){ .center-image }
 <H1 style="text-align: center;"><u>Ensuring Data Privacy</u></H1>
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 !!! quote "Ensuring data privacy"
 
@@ -292,4 +292,4 @@ When a user first visits your site, a cookie consent form is rendered:
   [additional JavaScript]: customization.md#additional-javascript
   [changes the settings]: #change-cookie-settings
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

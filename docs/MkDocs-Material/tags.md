@@ -12,7 +12,7 @@ icon: material/tag-text-outline
 
     The tags plugin adds first-class support for categorizing pages with the use of tags, adding the possibility to group related pages and make them discoverable via search and dedicated tags indexes. If your documentation is large, tags can help to discover relevant information faster.
     
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 
 ## Objective
@@ -1017,4 +1017,4 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 </div>
 
- [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+ [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

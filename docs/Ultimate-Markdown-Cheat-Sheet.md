@@ -386,7 +386,7 @@ icon: octicons/markdown-16
     Recommended editors and plugins for MD development.
 
 -   <span style="color: #ff9800">:material-home-circle:</span> **MaterialX Start Page**
-    [:octicons-arrow-right-24: Return to](MkDocs-Material-Start.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
+    [:octicons-arrow-right-24: Return to](index.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
 
     Back to the project's main landing page.
 

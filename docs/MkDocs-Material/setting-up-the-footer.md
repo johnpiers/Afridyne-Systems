@@ -10,7 +10,7 @@ icon: lucide/panel-bottom
 
     The footer of your project documentation is a great place to add links to websites or platforms you or your company are using as additional marketing channels, e.g. :fontawesome-brands-mastodon:{ style="color: #5A4CE0" } or :fontawesome-brands-youtube:{ style="color: #EE0F0F" }, which you can easily configure via `mkdocs.yml`.
     
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
 
 ## Configuration
 
@@ -204,4 +204,4 @@ This property must contain a valid path to any icon bundled with the theme, or t
   [overriding partials]: customization.md#overriding-partials
 
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md/#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

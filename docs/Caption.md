@@ -48,7 +48,7 @@ created: 2025-01-15 10:30:00
     Formatting and options for table captions.
 
 -   <span style="color: #ff9800">:material-home-circle:</span> **MaterialX Start Page**
-    [:octicons-arrow-right-24: Return to](MkDocs-Material-Start.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
+    [:octicons-arrow-right-24: Return to](index.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
 
     Back to the project's main landing page.
 

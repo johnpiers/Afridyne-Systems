@@ -76,7 +76,7 @@ icon: octicons/markdown-16
     *   [Phase 2: inline structure](https://spec.commonmark.org/0.31.2/#phase-2-inline-structure)
 
 -   <span style="color: #ff9800">:material-home-circle:</span> **Zensical Start Page**
-    [:octicons-arrow-right-24: Return to](MkDocs-Material-Start.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
+    [:octicons-arrow-right-24: Return to](index.md){ .md-button style="border-color: #ff9800; color: #ff9800" }
 
     Back to the project's main landing page.
 
