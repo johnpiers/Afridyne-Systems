@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/closed-caption
 ---
 
 ![](imgs/20260817-044827.png){ .center-image }

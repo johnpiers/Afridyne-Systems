@@ -2,104 +2,117 @@
 icon: octicons/desktop-download-24
 ---
 
-# Installation
+<H1 style="text-align: center;"><ins>Installation</ins></H1>
 
-MaterialX is a powerful documentation framework:
+!!! decision "MaterialX"
 
-- Born for documents, yet beyond documents
-- Accessible to everyone, extremely easy to use
-- Modern, lightweight, customizable, responsive
+    ***MaterialX is a powerful documentation framework***:
+    
+    - Born for documents, yet beyond documents
+    - Accessible to everyone, extremely easy to use
+    - Modern, lightweight, customizable, responsive
+    
+    **You can install it in the following ways.**
+    
+## With pip or uv
 
-You can install it in the following ways.
+!!! recommendation "With pip or uv"
 
-## with pip
+    MaterialX is published as a [Python package] and can be installed with `pip`, ideally by using a [virtual environment]. 
 
-MaterialX is published as a [Python package] and can be installed with `pip`, ideally by using a [virtual environment]. 
+    Open up a terminal and install MaterialX with:
 
-Open up a terminal and install MaterialX with:
+    === "Latest"
 
-=== "Latest"
+        ```
+        pip install mkdocs-materialx
+        ```
 
-    ```
-    pip install mkdocs-materialx
-    ```
+    === "Pin"
 
-=== "Pin"
+        ```
+        pip install mkdocs-materialx==10.2.0
+        ```
 
-    ```
-    pip install mkdocs-materialx==10.2.0
-    ```
+    === "Upgrade"
 
-=== "Upgrade"
+        ```
+        pip install --upgrade mkdocs-materialx
+        ```
 
-    ```
-    pip install --upgrade mkdocs-materialx
-    ```
+    This will automatically install compatible versions of all dependencies:
+    [MkDocs], [Markdown], [Pygments] and [Python Markdown Extensions]. MaterialX always strives to support the latest versions, so there's no need to install those packages separately.
 
-This will automatically install compatible versions of all dependencies:
-[MkDocs], [Markdown], [Pygments] and [Python Markdown Extensions]. MaterialX always strives to support the latest versions, so there's no need to install those packages separately.
 
   [Python package]: https://pypi.org/project/mkdocs-materialx/
   [virtual environment]: https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment
   [Markdown]: https://python-markdown.github.io/
   [Pygments]: https://pygments.org/
   [Python Markdown Extensions]: https://facelessuser.github.io/pymdown-extensions/
+  [MkDocs]: https://www.mkdocs.org/
 
-## with docker
+## With Docker
 
-### official docker image
+### Official Docker image
 
-The official [Docker image]{target="_blank"} is a great way to get up and running in a few
-minutes, as it comes with all dependencies pre-installed. Open up a terminal
-and pull the image with:
+!!! recommendation "Docker"
 
-=== "Latest"
+    The official [Docker image]{target="_blank"} is a great way to get up and running in a few minutes, as it comes with all dependencies pre-installed. Open up a terminal and pull the image with:
 
-    ```
-    docker pull jaywhj/mkdocs-materialx
-    ```
+    === "Latest"
 
-=== "Pin"
+        ```
+        docker pull jaywhj/mkdocs-materialx
+        ```
 
-    ```
-    docker pull jaywhj/mkdocs-materialx:10.2.0
-    ```
+    === "Pin"
+
+        ```
+        docker pull jaywhj/mkdocs-materialx:10.2.0
+        ```
 
   [Docker image]: https://hub.docker.com/r/jaywhj/mkdocs-materialx
 
-### add more plugins
+### Add more Plugins
 
-MaterialX for MkDocs only bundles selected plugins in order to keep the size of the official image small. If the plugin you want to use is not included, you can add them easily. Create a `Dockerfile` and extend the official image:
+!!! desc "Add more Plugins"
+    MaterialX for MkDocs only bundles selected plugins in order to keep the size of the official image small. If the plugin you want to use is not included, you can add them easily. Create a `Dockerfile` and extend the official image:
+    
+    ``` Dockerfile title="Dockerfile"
+    FROM jaywhj/mkdocs-materialx
+    RUN pip install mkdocs-glightbox
+    ```
+    
+#### Build the image
 
-``` Dockerfile title="Dockerfile"
-FROM jaywhj/mkdocs-materialx
-RUN pip install mkdocs-glightbox
-```
+!!! desc "Build the image"
+    
+    ```
+    docker build -t materialx .
+    ```
+    
+#### Run the container
 
-#### build the image
+!!! desc "Run the container"
+    
+    ```
+    docker run -p 8000:8000 -v ${PWD}:/docs materialx
+    ```
+    
+## With git
 
-```
-docker build -t materialx .
-```
-
-#### run the container
-
-```
-docker run -p 8000:8000 -v ${PWD}:/docs materialx
-```
-
-## with git
-
-You can also clone the source code from a GitHub repo via `git clone` and install it locally:
-
-```
-git clone https://github.com/jaywhj/mkdocs-materialx.git
-```
-
-Next, install it with the following command:
-
-```
-pip install -e mkdocs-materialx
-```
-
+!!! git "With git"
+    
+    You can also clone the source code from a GitHub repo via `git clone` and install it locally:
+    
+    ```
+    git clone https://github.com/jaywhj/mkdocs-materialx.git
+    ```
+    
+    Next, install it with the following command:
+    
+    ```
+    pip install -e mkdocs-materialx
+    ```
+    
   [GitHub]: https://github.com/jaywhj/mkdocs-materialx

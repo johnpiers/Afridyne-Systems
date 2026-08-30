@@ -10,9 +10,7 @@ tags:
 icon: material/newlogo-nav
 ---
 
-<div style="display: none;">
-  <h1>about</h1>
-</div>
+<div style="display: none;"><h1>about</h1></div>
 
 ![](imgs/20260413-161721.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;"> Getting Started with MkDocs</H1>

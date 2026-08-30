@@ -8,7 +8,7 @@ caption:
   custom:
     enable: false
 
-icon: material/newlogo-nav
+icon: material/code-json
 ---
 ![](imgs/20260412-135358.png){ .center-image }
 

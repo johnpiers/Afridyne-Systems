@@ -1,3 +1,5 @@
+<div style="display: none;"><h1>Navigation, authors, and pagination</h1></div>
+
 ![](imgs/20260120-211256.png){: style="display: block; margin: 0 auto"}
 <H3 style="text-align: center;"><u>Navigation, Authors, and Pagination</u></H3>
 

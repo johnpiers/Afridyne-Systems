@@ -195,10 +195,11 @@ nav:
     - Versioning: MkDocs-Material/setting-up-versioning.md
     - Data privacy: MkDocs-Material/ensuring-data-privacy.md
     - Blog: MkDocs-Material/setting-up-a-blog.md
-    - Extensions:
-      - Extensions: extensionsindex.md 
-      - Markdown: MkDocs-Material/python-markdown.md
-      - Markdown Extensions: MkDocs-Material/python-markdown-extensions.md
+    - Reference:
+      - Extensions:
+        - Extensions: extensionsindex.md
+        - Markdown: MkDocs-Material/python-markdown.md
+        - Markdown Extensions: MkDocs-Material/python-markdown-extensions.md
 
 
 

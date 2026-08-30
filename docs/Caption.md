@@ -1,5 +1,5 @@
 ---
-icon: material/newlogo-nav
+icon: material/code-json
 created: 2025-01-15 10:30:00
 ---
 

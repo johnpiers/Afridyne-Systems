@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: material/bike-fast
 ---
 
 ![](imgs/20260309-021514.png){ .center-image }

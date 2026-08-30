@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: octicons/cross-reference-16
 ---
 
 ![](imgs/20260105-101807.png){ .center-image }

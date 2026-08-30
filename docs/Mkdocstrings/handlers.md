@@ -1,5 +1,5 @@
 ---
-icon: material/newlogo-nav
+icon: material/code-json
 ---
 
 <div style="display: none;">

@@ -1,6 +1,5 @@
 ---
-icon: material/newlogo-nav
-created: 2025-01-15 10:30:00
+icon: material/square-root
 ---
 
 ![](imgs/20260413-163945.png){ .center-image }

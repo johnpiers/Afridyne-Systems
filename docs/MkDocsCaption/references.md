@@ -7,7 +7,7 @@ caption:
   custom:
     enable: false
     
-icon: simple/materialformkdocs
+icon: octicons/cross-reference-16
 ---
 
 ![](imgs/20260218-092055.png){: style="display: block; margin: 0 auto"}

@@ -106,132 +106,127 @@ search:
 
 ### Search Boosting
 
-<!-- md:version 8.3.0 -->
-<!-- md:flag metadata -->
+!!! recommendation "Search Boosting"
 
-Pages can be boosted in search with the front matter `search.boost` property,
-which will make them rank higher. Add the following lines at the top of a
-Markdown file:
+    Pages can be boosted in search with the front matter `search.boost` property, which will make them rank higher. Add the following lines at the top of a Markdown file:
 
-=== ":material-arrow-up-circle: Rank up"
+    === ":material-arrow-up-circle: Rank up"
+
+        ``` yaml
+        ---
+        search:
+          boost: 2 # (1)!
+        ---
+
+        # Page title
+        ...
+        ```
+
+        1.  :woman_in_lotus_position: When boosting pages, be gentle and start with
+            __low values__.
+
+    === ":material-arrow-down-circle: Rank down"
+
+        ``` yaml
+        ---
+        search:
+          boost: 0.5
+        ---
+
+        # Page title
+        ...
+        ```
+
+### Search Exclusion
+
+!!! recommendation "Search Exclusion"
+
+    Pages can be excluded from search with the front matter `search.exclude` property, removing them from the index. Add the following lines at the top of a Markdown file:
 
     ``` yaml
     ---
     search:
-      boost: 2 # (1)!
+      exclude: true
     ---
 
     # Page title
     ...
     ```
 
-    1.  :woman_in_lotus_position: When boosting pages, be gentle and start with
-        __low values__.
+#### Excluding Sections
 
-=== ":material-arrow-down-circle: Rank down"
+!!! recommendation "Excluding Sections"
 
-    ``` yaml
-    ---
-    search:
-      boost: 0.5
-    ---
+    When [Attribute Lists] is enabled, specific sections of pages can be excluded
+    from search by adding the `data-search-exclude` pragma after a Markdown
+    heading:
 
-    # Page title
-    ...
-    ```
+    === ":octicons-file-code-16: `docs/page.md`"
 
-### Search exclusion
+        ``` markdown
+        # Page title
 
-<!-- md:version 9.0.0 -->
-<!-- md:flag metadata -->
-<!-- md:flag experimental -->
+        ## Section 1
 
-Pages can be excluded from search with the front matter `search.exclude`
-property, removing them from the index. Add the following lines at the top of a
-Markdown file:
+        The content of this section is included
 
-``` yaml
----
-search:
-  exclude: true
----
+        ## Section 2 { data-search-exclude }
 
-# Page title
-...
-```
+        The content of this section is excluded
+        ```
 
-#### Excluding sections
+    === ":octicons-codescan-16: `search_index.json`"
 
-When [Attribute Lists] is enabled, specific sections of pages can be excluded
-from search by adding the `data-search-exclude` pragma after a Markdown
-heading:
-
-=== ":octicons-file-code-16: `docs/page.md`"
-
-    ``` markdown
-    # Page title
-
-    ## Section 1
-
-    The content of this section is included
-
-    ## Section 2 { data-search-exclude }
-
-    The content of this section is excluded
-    ```
-
-=== ":octicons-codescan-16: `search_index.json`"
-
-    ``` json
-    {
-      ...
-      "docs": [
+        ``` json
         {
-          "location":"page/",
-          "text":"",
-          "title":"Document title"
-        },
-        {
-          "location":"page/#section-1",
-          "text":"<p>The content of this section is included</p>",
-          "title":"Section 1"
+          ...
+          "docs": [
+            {
+              "location":"page/",
+              "text":"",
+              "title":"Document title"
+            },
+            {
+              "location":"page/#section-1",
+              "text":"<p>The content of this section is included</p>",
+              "title":"Section 1"
+            }
+          ]
         }
-      ]
-    }
-    ```
+        ```
 
-  [Attribute Lists]: python-markdown.md#attribute-lists
+      [Attribute Lists]: python-markdown.md#attribute-lists
 
-#### Excluding blocks
+#### Excluding Blocks
 
-When [Attribute Lists] is enabled, specific sections of pages can be excluded
-from search by adding the `data-search-exclude` pragma after a Markdown
-inline- or block-level element:
+!!! recommendation "Excluding Blocks"
 
-=== ":octicons-file-code-16: `docs/page.md`"
+    When [Attribute Lists] is enabled, specific sections of pages can be excluded from search by adding the `data-search-exclude` pragma after a Markdown inline- or block-level element:
 
-    ``` markdown
-    # Page title
+    === ":octicons-file-code-16: `docs/page.md`"
 
-    The content of this block is included
+        ``` markdown
+        # Page title
 
-    The content of this block is excluded
-    { data-search-exclude }
-    ```
+        The content of this block is included
 
-=== ":octicons-codescan-16: `search_index.json`"
+        The content of this block is excluded
+        { data-search-exclude }
+        ```
 
-    ``` json
-    {
-      ...
-      "docs": [
+    === ":octicons-codescan-16: `search_index.json`"
+
+        ``` json
         {
-          "location":"page/",
-          "text":"<p>The content of this block is included</p>",
-          "title":"Document title"
+          ...
+          "docs": [
+            {
+              "location":"page/",
+              "text":"<p>The content of this block is included</p>",
+              "title":"Document title"
+            }
+          ]
         }
-      ]
-    }
-    ```
+        ```
 
 [Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }

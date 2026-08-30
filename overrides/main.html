@@ -10,16 +10,13 @@
     {% elif "AMDgpu-Top" in page.file.src_uri %}
       {# No link on the main page #}
 
-    {# 2. MkDocs-Material Logic - FIXED: Changed 'if' to 'elif' #}
+        {# 2. MkDocs-Material Logic #}
     {% elif "MkDocs-Material/" in page.file.src_uri 
           or page.file.src_uri == "admonitions.md"
           or page.file.src_uri == "MathJax.md"
-          or page.file.src_uri == "rl.md"
-          or page.file.src_uri == "about.md" %}
-      <strong>Return to:</strong> <a href="{{ base_url }}/MkDocs-Material-Start/">MkDocs-Material Start Page</a>
+          or page.file.src_uri == "rl.md" %}
+      <strong>Return to:</strong> <a href="{{ base_url }}/">MkDocs-MaterialX Start Page</a>
       <hr>
-    {% elif "MkDocs-Material-Start" in page.file.src_uri %}
-      {# No link on the start page itself #}
 
     {# 3. Mkdocstrings Logic #}
     {% elif "Mkdocstrings/" in page.file.src_uri %}
