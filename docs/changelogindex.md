@@ -2,7 +2,9 @@
 icon: material/layers-triple-outline
 ---
 
-# Changelog
+![](imgs/changelogindex.png){ .center-image }
+ 
+<H1 style="text-align: center;"><ins>Changelog-MaterialX</ins></H1>
 
 ## MaterialX
 

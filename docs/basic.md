@@ -1,3 +1,5 @@
+![](imgs/basic.png){ .center-image }
+
 <H1 style="text-align: center;">Basic social cards</H1>
 
 !!! recommendation "Basic social cards"

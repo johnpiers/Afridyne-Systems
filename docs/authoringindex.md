@@ -1,26 +1,30 @@
-# Authoring
+![](imgs/20260831-214729.png){: style="display: block; margin: 0 auto"}
 
-MaterialX for MkDocs is packed with many great features that make technical writing a joyful activity. This section of the documentation explains how to set up a page, and showcases all available specimen that can be used directly from within Markdown files.
+<H1 style="text-align: center;">Authoring</H1> 
 
-## Configuration
+!!! recommendation "MaterialX for MkDocs - Feature Rich"
+    MaterialX for MkDocs is packed with many great features that make technical writing a joyful activity. This section of the documentation explains how to set up a page, and showcases all available specimen that can be used directly from within Markdown files.
+    
+<H2 style="text-align: center;">Configuration</H2>
 
 ## Usage
 
 ### Setting the page `title`
 
-Each page has a designated title, which is used in the navigation sidebar, for [social cards] and in other places. While MkDocs attempts to automatically determine the title of a page in a [four step process], the title can also be explicitly set with the front matter `title` property:
-
-``` yaml
----
-title: Lorem ipsum dolor sit amet # (1)!
----
-
-# Page title
-...
-```
-
-1.  This line sets the [`title`][title] inside the HTML document's [`head`][head] for the generated page to the given value. Note that the site title, which is set via [`site_name`][site_name], is appended with a dash.
-
+!!! desc "Setting the page `title`"
+    Each page has a designated title, which is used in the navigation sidebar, for [social cards] and in other places. While MkDocs attempts to automatically determine the title of a page in a [four step process], the title can also be explicitly set with the front matter `title` property:
+    
+    ``` yaml
+    ---
+    title: Lorem ipsum dolor sit amet # (1)!
+    ---
+    
+    # Page title
+    ...
+    ```
+    
+    1.  This line sets the [`title`][title] inside the HTML document's [`head`][head] for the generated page to the given value. Note that the site title, which is set via [`site_name`][site_name], is appended with a dash.
+    
   [social cards]: MkDocs-Material/setting-up-social-cards.md
   [four step process]: https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
   [title]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title

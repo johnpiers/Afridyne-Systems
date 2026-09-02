@@ -2,9 +2,9 @@
 icon: material/view-grid-plus-outline
 ---
 
-![](imgs/20260506-154932.png)
+![](imgs/20260506-154932.png){: style="display: block; margin: 0 auto"}
 
-# Grids
+<H1 style="text-align: center;"><ins>Grids</ins></H1>
 
 !!! tldr "Grids"
 

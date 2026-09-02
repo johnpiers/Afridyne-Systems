@@ -1,6 +1,6 @@
 ![](MkDocs-Material/imgs/20260109-170158.png){ .center-image } 
 
-# Creating a reproduction
+<H1 style="text-align: center;"><ins>Creating a reproduction</ins></H1>
 
 !!! abstract "Reproduction"
 

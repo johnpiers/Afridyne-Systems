@@ -319,18 +319,30 @@ If you want to customize Mermaid.js, e.g. to bring in support for [ELK layouts],
   [ELK layouts]: https://www.npmjs.com/package/@mermaid-js/layout-elk
 
 
----
+!!! desc "Bayes' Theorem"
 
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
-
----
-
-The provided equation is Bayes' Theorem, a fundamental principle in probability theory and statistics used to update the probability of a hypothesis \({(y)}\)
-
-$p(x|y) = \frac{p(y|x)p(x)}{p(y)}$, \(p(x|y) = \frac{p(y|x)p(x)}{p(y)}\).
-
+    #### Bayes' Theorem {.toc-hidden-header}
+    
+    This is Bayes' Rule, the foundation of Bayesian statistics. This specific equation is a general law of probability used across almost all of science and math. It stands alone as its own fundamental concept.
+    
+    Bayes' Rule with two different rendering methods, one:  $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$, and two:  \(p(x|y) = \frac{p(y|x)p(x)}{p(y)}\), see the code below showing the difference.
+    
+    ---
+    
+    The provided equation is Bayes' Theorem, a fundamental principle in probability theory and statistics used to update the probability of a hypothesis \({(y)}\)
+    
+    $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$, \(p(x|y) = \frac{p(y|x)p(x)}{p(y)}\).
+    
+    ---
+    
+    ??? deep-dive "Click to see code"
+    
+        ```math
+        $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$
+        
+        \(p(x|y) = \frac{p(y|x)p(x)}{p(y)}\)
+        ```
+    
 ---
 
 ```mermaid

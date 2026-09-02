@@ -6,9 +6,8 @@ search:
 ---
 
 ![](imgs/20260323-210417.png){: style="display: block; margin: 0 auto"}
+<H1 style="text-align: center;"><ins>Setting Up Site Search</ins></H1>
 
-
-# Setting Up Site Search
 
 !!! quote ""
     MaterialX `10.2.0` fully refactors the search module with a brand-new architecture, greatly improving **search quality** and **indexing efficiency**.

@@ -2,6 +2,8 @@
 icon: octicons/desktop-download-24
 ---
 
+![](imgs/installation.png){: style="display: block; margin: 0 auto"}
+
 <H1 style="text-align: center;"><ins>Installation</ins></H1>
 
 !!! decision "MaterialX"

@@ -3,6 +3,8 @@ status: new
 icon: material/account-clock-outline
 ---
 
+![](imgs/adding-document-dates-authors.png){ .center-image }
+
 <H1 style="text-align: center;"><ins>Add document dates & authors</ins></H1>
 
 !!! desc "Date and Author Information"

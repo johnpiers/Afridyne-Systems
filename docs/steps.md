@@ -3,7 +3,9 @@ icon: lucide/list-ordered
 status: new
 ---
 
-# Steps
+![](imgs/steps.png){: style="display: block; margin: 0 auto"}
+<H1 style="text-align: center;"><ins>Steps</ins></H1>
+
 
 The Steps container visually presents code execution or business workflows, linking related logic coherently to improve readability for readers.
 

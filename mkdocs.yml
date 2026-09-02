@@ -62,6 +62,8 @@ theme:
     - search.suggest
     - content.code.collapse
     - content.code.copy
+    - content.code.select
+    - material.extensions.code_download
     - content.code.annotate
     - content.footnote.tooltips
     - content.action.edit

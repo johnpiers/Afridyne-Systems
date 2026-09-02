@@ -2,7 +2,9 @@
 status: new
 ---
 
-# Plugin recommendation
+![](imgs/plugin-recommendation.png){ .center-image }
+ 
+<H1 style="text-align: center;"><ins>Plugin Recommendation</ins></H1>
 
 MkDocs boasts a rich ecosystem of plugins that can satisfy a wide range of user customization needs, this is also one of the main reasons why the MkDocs is so popular. 
 

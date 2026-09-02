@@ -5,7 +5,7 @@ created: 2025-01-15 10:30:00
 
 ![](imgs/20260412-145600.png){ .center-image }
 
-<H1 style="text-align: center;"> Welcome to MkDocs Caption</H1>
+<H1 style="text-align: center;"> Add Caption to images</H1>
 
 
 ##### Project Metadata

@@ -2,7 +2,8 @@
 icon: material/vector-difference-ab
 ---
 
-<H1 style="text-align: center;"><ins>MaterialX</ins></H1>
+![](imgs/materialx.png){: style="display: block; margin: 0 auto"}
+<H1 style="text-align: center;"><ins>Differences</ins></H1>
 
 !!! recommendation "MaterialX"
     **MaterialX**, the next generation of mkdocs-material, build beautiful sites the way you already know and love, based on `mkdocs-material-9.7.1` and named `X`, it provides ongoing maintenance and updates.

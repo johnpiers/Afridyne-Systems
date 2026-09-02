@@ -3,7 +3,8 @@ status: new
 icon: simple/lastpass
 ---
 
-# Add Recent Updates Module
+![](imgs/adding-recent-updates-module.png){ .center-image }
+<H1 style="text-align: center;"><ins>Add Recent Updates Module</ins></H1> 
 
 !!! desc "Add Recent Updates Module"
     The recent updates module displays site documentation information in a structured way, which is ideal for sites with **a large number of documents or frequent updates**, allowing readers to **quickly see what's new**.

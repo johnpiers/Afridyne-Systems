@@ -3,7 +3,8 @@ title: Extensions
 icon: material/google-circles-extended
 ---
 
-# Extensions
+![](imgs/extensionsindex.png){ .center-image }
+<H1 style="text-align: center;"><ins>Extensions</ins></H1>
 
 Markdown is a very small language with a kind-of reference implementation called [John Gruber's Markdown]. [Python Markdown] and [Python Markdown Extensions] are two packages that enhance the Markdown writing experience, adding useful syntax extensions for technical writing.
 
