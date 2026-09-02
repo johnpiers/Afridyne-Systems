@@ -285,7 +285,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#authoring" class="md-skip">
+        <a href="#usage" class="md-skip">
           Skip to content
         </a>
       
@@ -3123,8 +3123,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -3167,25 +3165,12 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc">
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
@@ -6621,25 +6606,12 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc">
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
@@ -6827,12 +6799,18 @@
   
                   
 
-<h1 id="authoring">Authoring<a class="headerlink" href="#authoring" title="Permanent link">¶</a></h1>
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-30"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-30T04:27:47+00:00">2026-08-30</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-09-02"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-09-02T13:18:17+00:00">2026-09-02</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260831-214729.png" data-desc-position="bottom"><img alt="" src="../imgs/20260831-214729.png" style="display: block; margin: 0 auto"></a></p>
+<h1 style="text-align: center;">Authoring</h1>
+<div class="admonition recommendation">
+<p class="admonition-title">MaterialX for MkDocs - Feature Rich</p>
 <p>MaterialX for MkDocs is packed with many great features that make technical writing a joyful activity. This section of the documentation explains how to set up a page, and showcases all available specimen that can be used directly from within Markdown files.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
+</div>
+<h2 style="text-align: center;">Configuration</h2>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
 <h3 id="setting-the-page-title">Setting the page <code>title</code><a class="headerlink" href="#setting-the-page-title" title="Permanent link">¶</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Setting the page <code>title</code></p>
 <p>Each page has a designated title, which is used in the navigation sidebar, for <a href="../MkDocs-Material/setting-up-social-cards/">social cards</a> and in other places. While MkDocs attempts to automatically determine the title of a page in a <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data">four step process</a>, the title can also be explicitly set with the front matter <code>title</code> property:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nn">---</span>
 </span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lorem ipsum dolor sit amet</span><span class="w"> </span><span class="c1"># (1)!</span>
@@ -6844,6 +6822,7 @@
 <ol>
 <li>This line sets the <a href="#setting-the-page-title"><code>title</code></a> inside the HTML document's <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head"><code>head</code></a> for the generated page to the given value. Note that the site title, which is set via <a href="https://www.mkdocs.org/user-guide/configuration/#site_name"><code>site_name</code></a>, is appended with a dash.</li>
 </ol>
+</div>
 <h3 id="setting-the-page-description">Setting the page <code>description</code><a class="headerlink" href="#setting-the-page-description" title="Permanent link">¶</a></h3>
 <p>A Markdown file can include a description that is added to the <code>meta</code> tags of a page, and is also used for <a href="../MkDocs-Material/setting-up-social-cards/">social cards</a>. It's a good idea to set a <a href="https://www.mkdocs.org/user-guide/configuration/#site_description"><code>site_description</code></a> in <code>mkdocs.yml</code> as a fallback value if the author does not explicitly define a description for a Markdown file:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nn">---</span>
@@ -7121,7 +7100,7 @@
           
           
         
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "navigation.tabs", "search.share", "navigation.path", "navigation.top", "navigation.footer", "navigation.sections", "content.tooltips", "navigation.tracking", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["search.highlight", "navigation.tabs", "search.share", "navigation.path", "navigation.top", "navigation.footer", "navigation.sections", "content.tooltips", "navigation.tracking", "search.suggest", "content.code.collapse", "content.code.copy", "content.code.select", "material.extensions.code_download", "content.code.annotate", "content.footnote.tooltips", "content.action.edit", "content.action.view", "toc.follow", "header.autohide"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0.5"}</script>
     
     
       <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
