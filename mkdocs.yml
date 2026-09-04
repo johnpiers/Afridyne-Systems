@@ -51,6 +51,7 @@ theme:
   features:
     - search.highlight
     - navigation.tabs
+    - navigation.indexes
     - search.share
     - navigation.path
     - navigation.top
@@ -92,6 +93,8 @@ theme:
 
 validation:
   anchors: ignore
+  nav:
+    omitted_files: ignore
 
 plugins:
   - search
@@ -164,11 +167,9 @@ plugins:
 
 nav:
   - MaterialX-MkDocs:
-      - MkDocs-MaterialX-Start: index.md
-      #- MaterialX-MkDocs: index.md
-      #- MkDocs Start Page: MkDocs-Material-Start.md
+      - index.md
+      - MkDocs Start Page: MkDocs-Material-Start.md
       - Get Started-MkDocs: about.md
-      
 
   - Get started:
     - Differences: differences.md
