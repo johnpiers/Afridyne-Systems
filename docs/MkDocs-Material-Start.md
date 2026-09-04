@@ -1,5 +1,5 @@
 ---
-icon: material/newlogo-nav
+icon: octicons/desktop-download-24
 ---
 
 <div style="display: none;"><h1>Afridyne Systems™</h1></div>

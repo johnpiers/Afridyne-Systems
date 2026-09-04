@@ -166,7 +166,7 @@ plugins:
 
 
 nav:
-  - MaterialX-MkDocs:
+  - Home:
       - index.md
       - MkDocs Start Page: MkDocs-Material-Start.md
       - Get Started-MkDocs: about.md

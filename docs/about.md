@@ -7,7 +7,7 @@ tags:
   - About Getting Started
   - Getting Started with MkDocs
 
-icon: material/newlogo-nav
+icon: material/folder-plus-outline
 ---
 
 <div style="display: none;"><h1>about</h1></div>

@@ -1,5 +1,5 @@
 ---
-icon: simple/materialformkdocs
+icon: simple/lua
 ---
 
 <div style="display: none;"><h1>lua-guide</h1></div>

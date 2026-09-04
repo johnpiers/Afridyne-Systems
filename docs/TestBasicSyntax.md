@@ -4849,3 +4849,4 @@ style D fill:#4d964d,stroke:#000,stroke-width:2px
     Varying the IKKT action with respect to the bosonic coordinates yields the classical matrix field equations:
 
     $$\sum_{\nu=0}^9 [\color{#20b2aa}{A^\nu}, [\color{#20b2aa}{A_\mu}, \color{#20b2aa}{A_\nu}]] + \frac{1}{2} \{\color{#dda0dd}{\bar{\Psi}}, \Gamma_\mu \color{#dda0dd}{\Psi}\} = \color{#ff6666}{0}$$
+
