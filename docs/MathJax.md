@@ -20,7 +20,7 @@ icon: material/square-root
     
 [Go to: Text Colour: UMCS :fontawesome-solid-paper-plane:](Ultimate-Markdown-Cheat-Sheet.md/#text-color){ .md-button .md-button--custom }
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](index.md#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](MkDocs-Material-Start.md#advanced-configuration){ .md-button .md-button--custom }
 
 ---
 
@@ -718,7 +718,7 @@ Use these exact Markdown syntax patterns depending on the alignment and sizing g
     
     The right-hand side (RHS) is equivalent to $\prod_{m=1}^{\infty} \frac{1}{(1-q^{5m-2})(1-q^{5m-3})}$, which can be rewritten with an index of $j=0$ to match the product form $\prod_{j=0}^{\infty} \frac{1}{(1-q^{5j+3})(1-q^{5j+2})}$.
     
-[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](index.md#advanced-configuration){ .md-button .md-button--custom }
+[👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](MkDocs-Material-Start.md#advanced-configuration){ .md-button .md-button--custom }
 
 ### 1. Identify the Formula
 
@@ -1483,3 +1483,6 @@ This page breaks down how to calculate the intensity of sunlight both outside Ea
     
     - $\color{#F282B4}{^{210}_{84}\text{Po}} \rightarrow \color{#00B0F0}{^{206}_{82}\text{Pb}} + \color{#00A99A}{^{4}_{2}\text{He}} + \color{magenta}{\text{Energy}}$
     
+<video controls>
+  <source src="../assets/videos/TrigUnitCircle.mp4" type="video/mp4">
+</video>

@@ -15,8 +15,7 @@
           or page.file.src_uri == "admonitions.md"
           or page.file.src_uri == "MathJax.md"
           or page.file.src_uri == "rl.md" %}
-      <strong>Return to:</strong> <a href="{{ base_url }}/">MkDocs-MaterialX Start Page</a>
-      <hr>
+            <strong>Return to:</strong> <a href="{{ base_url }}/MkDocs-Material-Start/">MkDocs-MaterialX Start Page</a>
 
     {# 3. Mkdocstrings Logic #}
     {% elif "Mkdocstrings/" in page.file.src_uri %}
@@ -32,15 +31,6 @@
     {% elif "SimpleWeather" in page.file.src_uri %}
       {# No link on the main page #}
 
-    {# 5. Arch Linux Logic #}
-    {% elif "Arch_OS_Docs/" in page.file.src_uri %}
-      <strong>Return to:</strong> <a href="{{ base_url }}/Arch_OS_Docs/DOCS/">Main Arch OS Index</a>
-      <hr>
-
-    {# 6. Fallback for other 'not_in_nav' pages #}
-    {% elif not page.ancestors and not page.is_homepage %}
-      <strong>Return to:</strong> <a href="{{ nav.homepage.url | url }}">Back to main page</a>
-      <hr>
     {% endif %}
 
   </div>

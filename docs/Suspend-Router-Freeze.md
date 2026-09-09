@@ -31,12 +31,15 @@ icon: material/router-network-wireless
     ### 🔍 The Anatomy of the Bug {.toc-hidden-header}
     
     ***Initial Problem Environment***
-    ### Initial Problem Environment {.toc-hidden-header}
     
-    *   **Host System:** Arch Linux x86_64 (Kernel: 7.1.6-zen1-1-zen)
-    *   **Desktop Environment:** GNOME 50.4 running on Wayland (Mutter)
-    *   **Target Interface:** enp9s0 (Wired Cat 5 Ethernet)
-    *   **Network Infrastructure:** A Reyee EW1200G-PRO router (Firmware: ReyeeOS 1.219.1821) operating as a wireless bridge, connected physically to the host via a Cat 5 cable.
+    - **Host System:** Arch Linux x86_64 (Kernel upgraded to: `7.2.3-zen1-3-zen`)
+    - **Desktop Environment & Interface:** GNOME on Wayland, wired Realtek `r8169` Gigabit Ethernet (`enp9s0`), connected to a Reyee EW1200G-PRO router bridging setup.
+    
+    ***Symptoms & Failure Mode (Phase 2 Recurrence)***
+    
+    1. Automatic suspend stalls or behaves erratically on `notify-send`.
+    2. Wake-up leads to unmanaged network adapters and hard PCI Express lockups requiring system reboots.
+    3. The router's bridging engine may crash under faulty EEE signals, requiring a physical power cycle.
     
 !!! desc "Symptoms & Failure Mode"
 
@@ -65,9 +68,9 @@ icon: material/router-network-wireless
         ⇣
     [Reyee Router Switch Bridge Flooded & Crashes Software Layer] ↴
     
-    *   The OS Choke Point: During suspend, NetworkManager attempted to transition the network adapter into a low-power state. Due to driver constraints on the zen kernel, this triggered an internal daemon freeze, resulting in a 25-second timeout loop.
+    - **The OS Choke Point & ACPI Defect:** Suspend timeouts and ASUS `asus_wmi: failed to register LPS0 sleep handler` errors corrupt the PCIe lane and `r8169` state during power transitions.
     
-    *   The Router Impact: While NetworkManager stalled, the physical ethernet controller fluctuated voltages and sent malformed Energy-Efficient Ethernet (EEE) states down the Cat 5 cable. The Reyee router, processing this as a bridged wireless client, suffered a software panic on its localized switch port, locking up the entire routing engine.
+    - **The Router Impact:** Malformed Energy-Efficient Ethernet (EEE) states corrupt the Cat 5 line and crash the router's broadcast switch engine.
     
 ---
 
@@ -78,7 +81,9 @@ icon: material/router-network-wireless
     🛠️ ***Step-by-Step Remediation Strategy***
     ### 🛠️ Step-by-Step Remediation Strategy {.toc-hidden-header}
     
-    To resolve the issue, the network management logic was altered to bypass the stalled software stack and cut the physical hardware link instantly before the OS enters power management stages.
+    - To mitigate the issue, disable EEE, restrict NetworkManager power management, enforce S3 deep sleep via `mem_sleep_default=deep` in your `systemd-boot` loader configuration, and implement a custom sleep script at `/usr/lib/systemd/system-sleep/disconnect-ethernet.sh` to safely unload and reload the `r8169` module during pre/post suspend phases.
+    
+    - You can find the full configuration snippets and script contents in the referenced web document.
     
 !!! desc "Step 1: Disabling Energy-Efficient Ethernet (EEE)"
 
@@ -116,7 +121,7 @@ icon: material/router-network-wireless
 
     ### Step 3: Engineering the Immediate Hardware Disconnect Script {.toc-hidden-header}
     
-    A custom systemd power management script was designed to step in *ahead* of the OS sleep cycle. Instead of relying on `nmcli` (which times out when NetworkManager hangs), the script executes a raw kernel command (`ip link set ... down`) to cut the physical connection instantly.
+    A custom systemd power management script was designed to step in *ahead* of the OS sleep cycle. Instead of relying on `nmcli` (which times out when NetworkManager hangs), the script executes raw kernel commands to cleanly drop the physical connection and completely unload the `r8169` driver module before the system enters its deep sleep state.
     
     The executable script was generated at `/usr/lib/systemd/system-sleep/disconnect-ethernet.sh`:
     
@@ -125,12 +130,16 @@ icon: material/router-network-wireless
     case $1/$2 in
       pre/*)
         echo "Force killing physical link on enp9s0..."
-        # Drop physical line power instantly to trigger a clean disconnect on the router
         ip link set enp9s0 down
+        sleep 1
+        echo "Unloading kernel ethernet module r8169..."
+        modprobe -r r8169
         ;;
       post/*)
+        echo "Reloading kernel ethernet module r8169..."
+        modprobe r8169
+        sleep 2
         echo "Force waking physical link on enp9s0..."
-        # Re-engage link power and flush the NetworkManager daemon state
         ip link set enp9s0 up
         systemctl restart NetworkManager
         ;;
@@ -142,7 +151,7 @@ icon: material/router-network-wireless
     ```bash
     sudo chmod +x /usr/lib/systemd/system-sleep/disconnect-ethernet.sh
     ```
-    
+
 ---
 
 ![](imgs/20260607-114046.png){ .center-image }
@@ -152,23 +161,25 @@ icon: material/router-network-wireless
 
     ## 📊 Verification & System Health Check {.toc-hidden-header}
     
-    Following a comprehensive service restart via `sudo systemctl restart NetworkManager`, the network stack successfully modernised its state handling:
+    Following the enforcement of traditional S3 deep sleep and the kernel module extraction script, a full system log review verifies that the network adapter and the kernel transition states execute flawlessly without timeouts:
     
     ```text
-    ● NetworkManager.service - Network Manager
-    
-         Active: active (running) since Sun 2026-08-09 07:16:51 SAST; 1min 26s ago
-         
-         ... device (enp9s0): state change: ip-config -> ip-check (managed-type: 'assume')
-         ... manager: NetworkManager state is now CONNECTED_GLOBAL
+    Sep 08 09:51:03 JohnAMD systemd-sleep[30554]: Force killing physical link on enp9s0...
+    Sep 08 09:51:04 JohnAMD systemd-sleep[30554]: Unloading kernel ethernet module r8169...
+    Sep 08 09:51:04 JohnAMD kernel: PM: suspend entry (deep)
+    ...
+    Sep 08 10:30:59 JohnAMD systemd-sleep[30644]: Reloading kernel ethernet module r8169...
+    Sep 08 10:31:01 JohnAMD systemd-sleep[30644]: Force waking physical link on enp9s0...
     ```
-    
+
 !!! version-added "Key Takeaways from Successful State Logs:"
 
     ### Key Takeaways from Successful State Logs: {.toc-hidden-header}
     
-    *   **`managed-type: 'assume'`**: NetworkManager now picking up the pre-existing hardware link cleanly without cycling register power.
+    *   **`PM: suspend entry (deep)`**: Motherboard ACPI is forced into traditional S3 Deep Sleep, completely bypassing the buggy modern standby (`LPS0`) handler that froze the hardware layer.
     
-    *   **Router Isolation**: When sleep cycles hit, the router instantly experiences a clean "Link Down" status rather than 25 seconds of corrupt electrical noise. The router remains online, and the PC reconnects instantly upon waking.
+    *   **Kernel Module Extraction**: Unloading the `r8169` driver right before suspend prevents the hardware adapter from broadcasting malformed electrical noise over the line, keeping the Reyee router perfectly isolated and stable.
     
+    *   **Sub-Second Execution**: The entire link teardown and module removal sequence executes in under a second, eliminating the old 25-second NetworkManager daemon freeze entirely.
+
 ![](imgs/20260607-112326.png){ .center-image }

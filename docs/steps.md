@@ -6,11 +6,12 @@ status: new
 ![](imgs/steps.png){: style="display: block; margin: 0 auto"}
 <H1 style="text-align: center;"><ins>Steps</ins></H1>
 
+!!! desc "The Steps Container"
 
-The Steps container visually presents code execution or business workflows, linking related logic coherently to improve readability for readers.
-
-This container is built into MaterialX with an extremely straightforward usage. Simply wrap ordered lists, unordered lists, or heading blocks with a `<div>` bearing the `steps` class.
-
+    The Steps container visually presents code execution or business workflows, linking related logic coherently to improve readability for readers.
+    
+    This container is built into MaterialX with an extremely straightforward usage. Simply wrap ordered lists, unordered lists, or heading blocks with a `<div>` bearing the `steps` class.
+    
 ## Usage
 
 <!-- md:version 10.2.0 -->

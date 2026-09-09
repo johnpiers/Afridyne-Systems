@@ -605,6 +605,9 @@ icon: octicons/package-dependencies-24
           combine_header_slug: true
     ```
     
+    **`pymdownx.tabbed.slugify`**
+    {: #pymdownx-tabbed-slugify .toc-hidden-header }
+        
     This option allows for customization of the slug function. For some languages, the default may not produce good and readable identifiers – consider using another slug function like for example those from [Python Markdown Extensions][Slugs]:
 
     === "Unicode"
@@ -643,6 +646,7 @@ icon: octicons/package-dependencies-24
   [Grouping other content]: content-tabs.md#grouping-other-content
   [Embedded content]: content-tabs.md#embedded-content
   [Slugs]: https://facelessuser.github.io/pymdown-extensions/extras/slugs/
+
 
 ### Tasklist
 

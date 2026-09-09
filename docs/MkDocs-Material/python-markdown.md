@@ -318,6 +318,6 @@ icon: octicons/package-24
   [Highlight]: https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
   [InlineHilite]: https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md#advanced-configuration){ .md-button .md-button--custom }
 
 :heart-pulse-fill: :heart: :jellyfish:

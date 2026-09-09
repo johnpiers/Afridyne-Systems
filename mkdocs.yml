@@ -328,6 +328,7 @@ nav:
       - Systemd: systemd.md
       - Afridyne: afridyne.md
       - AMD Checklist: checklist.md
+      - Suspend Fix: Suspend-Router-Freeze.md
       - Markdown:
         - Markdown: Markdown.md
         - CommonMarkSpec: CommonMarkSpec.md
@@ -359,6 +360,7 @@ markdown_extensions:
   - footnotes
   - toc:
       permalink: true
+      permalink: ⚓︎
 
   # --- Pymdownx Suite (Optimized & Cleaned) ---
   - pymdown_multimd_table:
@@ -382,9 +384,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true
-      #slugify: !!python/object/apply:pymdownx.slugs.slugify  # TEST SETTING NOT SURE WHAT THIS IS DOING?
-      #  kwds:
-      #    case: lower
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.details
   - pymdownx.snippets
   - md_in_html

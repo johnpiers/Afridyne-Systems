@@ -22,7 +22,7 @@ search:
     
     
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md#advanced-configuration){ .md-button .md-button--custom }
 
 ## Configuration
 
@@ -228,4 +228,4 @@ search:
         }
         ```
 
-[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../index.md#advanced-configuration){ .md-button .md-button--custom }
+[Back to: #Advanced-Configuration  :fontawesome-solid-paper-plane:](../MkDocs-Material-Start.md#advanced-configuration){ .md-button .md-button--custom }

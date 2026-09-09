@@ -53,11 +53,11 @@ You can copy the link of the tab and create a link on the same or any other page
               case: lower
     ```
 
-    Fore more information, please [see the extension guide][slugification].
+    For more information, please [see the extension guide][slugification].
 
-  [tab_1]: https://squidfunk.github.io/mkdocs-material/reference/content-tabs/?h=anchor#anchor-links--or-even-me
+  [tab_1]:#anchor-links--or-even-me
   [Python Markdown Extensions]: https://facelessuser.github.io/pymdown-extensions/
-  [slugification]: https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#+pymdownx.tabbed.slugify
+  [slugification]: python-markdown-extensions.md#pymdownx-tabbed-slugify
 
 ### Linked Content Tabs
 

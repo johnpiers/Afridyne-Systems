@@ -46,7 +46,7 @@ icon: material/fish
 <!-- Ubuntu Box -->
 <div style="display: inline-block; border: 1px solid #444; border-radius: 6px; padding: 15px; margin: 5px; width: 28%; min-width: 200px; vertical-align: top; min-height: 200px;">
   <img src="https://cdn.simpleicons.org/ubuntu/8 8 8 8 8 8" width="70"><br><br>
-  <a href="https://launchpad.net">Subscribe</a> or <a href="https://launchpad.net/+packages">Download</a>
+  <a href="https://launchpad.net">Subscribe</a> or <a href="https://launchpad.net/ubuntu/+source/fish">Download</a>
 </div>
 <!-- Debian Box -->
 <div style="display: inline-block; border: 1px solid #444; border-radius: 6px; padding: 15px; margin: 5px; width: 28%; min-width: 200px; vertical-align: top; min-height: 200px;">
@@ -121,7 +121,7 @@ icon: material/fish
   <img src="https://fishshell.com/assets/img/guix_icon.svg" class="guix-logo-toggle" width="70" alt="GNU Guix">
 
   <br><br>
-  <a href="https://hpc.guix.info/package/fish">Packages</a><br>
+  <a href="https://codeberg.org/guix-science/hpcguix-web">Packages</a><br>
   <code>guix-pkg -i fish</code>
 </div>
 
@@ -132,7 +132,7 @@ icon: material/fish
 </div>
 <div style="display: inline-block; border: 1px solid #444; border-radius: 6px; padding: 15px; margin: 5px; width: 28%; min-width: 200px; vertical-align: top; min-height: 200px;">
   <img src="	https://fishshell.com/assets/img/brew_icon.png" width="70"><br><br>
-  <a href="https://github.com/Homebrew/homebrew-core/blob/master/Formula/f/fish.rb">Homebrew</a><br>
+  <a href="https://formulae.brew.sh/formula/fish#default">Homebrew</a><br>
   <code>brew install fish</code>
 </div>
 

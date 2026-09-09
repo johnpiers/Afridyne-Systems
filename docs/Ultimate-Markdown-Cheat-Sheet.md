@@ -1872,9 +1872,9 @@ Click either the Code (top right) or Raw (top left) option to see the markdown c
 
 <img width="1470" alt="code" src="https://github.com/lifeparticle/Markdown-Cheatsheet/assets/1612112/b70541b0-fce8-4f5e-97f4-6443c20b98ec">
 
-> [!NOTE]
-> Make sure you have clicked the markdown file to see the above view.
-
+!!! info "NOTE!"
+    Make sure you have clicked the markdown file to see the above view.
+    
 <img width="907" alt="file" src="https://github.com/lifeparticle/Markdown-Cheatsheet/assets/1612112/a4423154-69de-43c1-aeb5-5348b9f05088">
 
 # Code in titles
@@ -1921,11 +1921,17 @@ Lorem ipsum dolor sit amet
 
 ```md
 * Asterisk
+
 \ Backslash
+
 ` Backtick
+
 {} Curly braces
+
 . Dot
+
 ! Exclamation mark
+
 # Hash symbol
 
 - Hyphen symbol
@@ -1935,26 +1941,21 @@ Lorem ipsum dolor sit amet
 + Plus symbol
 
 [] Square brackets
+
 _ Underscore`
 ```
 
-* Asterisk <!-- markdownlint-disable-line MD004 -->
-\ Backslash
-` Backtick
-{} Curly braces
-. Dot
-! Exclamation mark
-<!-- omit in toc -->
+* Asterisk \ Backslash ` Backtick {} Curly braces . Dot ! Exclamation mark
+
 # Hash symbol <!-- markdownlint-disable-line MD022 -->
 
 - Hyphen symbol
 
 () Parentheses
 
-+ Plus symbol <!-- markdownlint-disable-line MD004 -->
++ Plus symbol
 
-[] Square brackets
-_ Underscore
+[] Square brackets _ Underscore
 
 - **After escaping**
 
@@ -1973,18 +1974,8 @@ _ Underscore
 \_ Underscore
 ```
 
-\* Asterisk
-\\ Backslash
-\` Backtick
-\{} Curly braces
-\. Dot
-\! Exclamation mark
-\# Hash symbol
-\- Hyphen symbol
-\() Parentheses
-\+ Plus symbol
-\[] Square brackets
-\_ Underscore
+\* Asterisk \\ Backslash \` Backtick \{} Curly braces \. Dot \! Exclamation mark \# Hash symbol \- Hyphen symbol \() Parentheses \+ Plus symbol \[] Square brackets \_ Underscore
+
 
 ## Emojis
 
@@ -1992,7 +1983,7 @@ _ Underscore
 :octocat:
 ```
 
-:octocat:
+![](imgs/20260907-000829.png)
 
 [Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 
