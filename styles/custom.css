@@ -1714,3 +1714,11 @@ code, pre, .codehilite, .highlight {
   border-color: var(--md-primary-bg-color);
   color: #00838f;
 }
+
+.md-typeset video {
+  height: 680px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
