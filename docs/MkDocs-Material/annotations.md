@@ -145,9 +145,9 @@ icon: material/information-outline
     
     
     ``` markdown title="Admonition with annotations"
-    !!! note annotate "Phasellus posuere in sem ut cursus (1)"
+    !!! note annotate "Annotations in admonitions titles. (1)"
     
-        Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+       The titles and bodies, (2) of admonitions can also host annotations by adding the annotate modifier after the type qualifier, which is similar to how inline blocks work:
     
     1.  :man_raising_hand: I'm an annotation!
     2.  :woman_raising_hand: I'm an annotation as well!
@@ -155,9 +155,9 @@ icon: material/information-outline
     
     <div class="result" markdown>
 
-    !!! abstract annotate "Phasellus posuere in sem ut cursus (1)"
+    !!! abstract annotate "Annotations in admonition titles. (1)"
         
-        Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+        The titles and bodies, (2) of admonitions can also host annotations by adding the annotate modifier after the type qualifier, which is similar to how inline blocks work:
         
         
     1.  :man_raising_hand: I'm an annotation!
@@ -213,9 +213,11 @@ icon: material/information-outline
 #### In Everything Else
 
 !!! desc "In Everything Else"
-    The [Attribute Lists] extension is the key ingredient for adding annotations to most elements, but it has some [limitations]. However, it's always possible to leverage the [Markdown in HTML] extension to wrap arbitrary elements with a `div` with the `annotate` class:
 
-    ```html title="HTML with annotations"
+    - The [Attribute Lists] extension is the key ingredient for adding annotations to most elements, but it has some [limitations]. 
+    - However, it's always possible to leverage the [Markdown in HTML] extension to wrap arbitrary elements with a `div` with the `annotate` class:
+
+    ```` html title="HTML with annotations"
     <div class="annotate" markdown>
 
     > Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
@@ -223,22 +225,22 @@ icon: material/information-outline
     </div>
 
     1.  :man_raising_hand: I'm an annotation!
-    ```
+    ````
 
-    <div class="result" markdown>
-      <div class="annotate" markdown>
+    <div class="annotate" markdown>
 
     > Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 
-      </div>
+    </div>
 
     1.  :man_raising_hand: I'm an annotation!
 
-    </div>
-
-
-!!! important ""
-    With this trick, annotations can also be added to blockquotes, lists, and many other elements that are not supported by the [Attribute Lists] extension. Furthermore, note that [code blocks follow different  semantics].
+    !!! git ""
+        - With this trick, annotations can also be added to blockquotes, lists, and many other elements that are not supported by the [Attribute Lists] extension. 
+        
+        - Furthermore, note that [code blocks follow different  semantics].
+        
+---
     
 !!! warning "Known limitations"
 

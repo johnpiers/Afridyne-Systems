@@ -8,6 +8,10 @@ icon: material/alert-outline
 
 <H2 style="text-align: center;"> LunarVim (LVIM) Quickstart & Cheat Sheet.</H2>
 
+!!! important "Update"
+
+     [LunarVim](https://lunarvim.org) is no longer actively maintained by its primary creator, who has moved on to other configurations like AstroNvim and LazyVim. The project is largely abandoned by its main lead, though some community contributions still exist. I thought to leave the page here in the event someone is looking for information or any form of help and if anyone want's to transition to [LazyVim](https://github.com/lazyvim/lazyvim) there is a comprehensive page [here](LazyVim.md#background){data-preview}
+
 !!! desc "LunarVim"
 
     ## 🧭 LunarVim {.toc-hidden-header}

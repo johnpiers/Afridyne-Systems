@@ -1438,6 +1438,18 @@ a.md-button.md-button--custom:hover,
   border: 0 !important;
 }
 
+/* --------------------------------------------------------------------------
+   USAGE — non-heading, TOC-free anchor (e.g. md:option placeholders):
+
+   **`some.option.name`**
+   {: #some-option-name .toc-hidden-header }
+
+   Bold text on its own line, attr_list on the line directly below.
+   Same-line attr_list after a plain paragraph doesn't reliably parse —
+   must be two lines. Not a real heading, so it's excluded from the
+   sidebar TOC automatically; .toc-hidden-header also hides it on-page.
+   -------------------------------------------------------------------------- */
+
 
 /* Dark mode: invert local SVG icons only */
 [data-md-color-scheme="slate"] .mdx-iconsearch-result__item img[src*="local_icons"] {

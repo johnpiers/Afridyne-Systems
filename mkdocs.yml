@@ -316,6 +316,7 @@ nav:
   
   - Various Misc:
       - LunarVim: LunarVim.md
+      - LazyVim.md
       - Lua in Nvim: lua-guide.md
       - Aurdex: Aurdex.md
       - Bash-Git: BashGit.md

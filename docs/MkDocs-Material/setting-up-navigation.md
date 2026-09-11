@@ -395,7 +395,8 @@ icon: lucide/panel-left
         - toc.integrate # (1)!
     ```
 
-    1.  This feature flag is not compatible with [`navigation.indexes`][navigation.indexes], as sections cannot host the table of contents due to missing space.
+    1.  This feature flag is not compatible with [`navigation.indexes`][navigation.indexes], as
+     sections cannot host the table of contents due to missing space.
 
 === "With navigation integration"
 
@@ -512,7 +513,9 @@ Material for MkDocs includes several keyboard shortcuts that make it possible to
         })
         ```
 
-        1.  The call to `key.claim()` will execute `preventDefault()` on the underlying event, so the keypress will not propagate further and touch other event listeners.
+        1.  The call to `key.claim()` will execute `preventDefault()` on the
+         underlying event, so the keypress will not propagate further and
+         touch other event listeners.
 
     === ":octicons-file-code-16: `mkdocs.yml`"
 
@@ -540,7 +543,8 @@ Material for MkDocs includes several keyboard shortcuts that make it possible to
         }
         ```
 
-        1.  If you want the content area to always stretch to the available screen space, reset `max-width` with the following CSS:
+        1.  If you want the content area to always stretch to the available
+          screen space, reset `max-width` with the following CSS:
 
             ``` css
             .md-grid {
@@ -570,5 +574,3 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 | 2 | Jacob | Thornton | @fat |
 | 3 | Larry | the Bird | @twitter |
 
-:phoenix:
-:phoenix:

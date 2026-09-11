@@ -121,8 +121,7 @@ search:
         ...
         ```
 
-        1.  :woman_in_lotus_position: When boosting pages, be gentle and start with
-            __low values__.
+        1.  :woman_in_lotus_position: When boosting pages, be gentle and start with __low values__.
 
     === ":material-arrow-down-circle: Rank down"
 
