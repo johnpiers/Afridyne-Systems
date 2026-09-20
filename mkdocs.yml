@@ -330,14 +330,26 @@ nav:
       - Afridyne: afridyne.md
       - AMD Checklist: checklist.md
       - Suspend Fix: Suspend-Router-Freeze.md
-      - Markdown:
-        - Markdown: Markdown.md
-        - CommonMarkSpec: CommonMarkSpec.md
-        - Ultimate Cheat Sheet: Ultimate-Markdown-Cheat-Sheet.md
-        - Markdown Guide: Markdown-Guide.md
-        - Awesome Markdown: marktext.md
-        - Various Markdown: Various-HTML-Markdown.md
-        - Test Basic Syntax: TestBasicSyntax.md
+      - Guides:
+        - ZSH Guide:
+            - Overview: zshguide/index.md
+            - 1. Introduction: zshguide/01-introduction.md
+            - 2. Startup Files: zshguide/02-startup-files.md
+            - 3. Basic Syntax: zshguide/03-basic-syntax.md
+            - 4. Line Editor: zshguide/04-line-editor.md
+            - 5. Substitutions: zshguide/05-substitutions.md
+            - 6. Completion: zshguide/06-completion.md
+            - 7. Modules: zshguide/07-modules.md
+            - 8. Appendix: zshguide/08-appendix.md
+      - Markdown Guides:
+        - Markdown:
+            - Markdown: Markdown.md
+            - CommonMarkSpec: CommonMarkSpec.md
+            - Ultimate Cheat Sheet: Ultimate-Markdown-Cheat-Sheet.md
+            - Markdown Guide: Markdown-Guide.md
+            - Awesome Markdown: marktext.md
+            - Various Markdown: Various-HTML-Markdown.md
+            - Test Basic Syntax: TestBasicSyntax.md
       - Weather:
         - Stormy: Stormy.md
         - SimpleWeather: SimpleWeather.md

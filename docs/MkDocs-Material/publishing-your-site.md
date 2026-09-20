@@ -175,7 +175,8 @@ This will build your documentation and deploy it to a branch `gh-pages` in your 
         - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     ```
 
-    1.  Some MaterialX for MkDocs plugins use [caching] to speed up repeated builds, and store the results in the `~/.cache` directory.
+    1.  Some MaterialX for MkDocs plugins use [caching] to speed up
+     repeated builds, and store the results in the `~/.cache` directory.
 
 ---
 

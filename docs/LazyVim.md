@@ -24,7 +24,7 @@ icon: material/alert-outline
     <a href="https://github.com/LazyVim/LazyVim/blob/main/LICENSE">
       <img alt="License" src="https://img.shields.io/github/license/LazyVim/LazyVim?style=for-the-badge&logo=starship&color=ee999f&logoColor=D9E0EE&labelColor=595666" />
     </a>
-    <a href="https://github.com/LazyVim/LazyVim/stargazers">
+    <a href="https://github.com/LazyVim/LazyVim">
       <img alt="Stars" src="https://img.shields.io/github/stars/LazyVim/LazyVim?style=for-the-badge&logo=starship&color=c69ff5&logoColor=D9E0EE&labelColor=595666" />
     </a>
     <a href="https://github.com/LazyVim/LazyVim/issues">
