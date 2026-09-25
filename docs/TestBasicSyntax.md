@@ -4153,16 +4153,16 @@ Citric Acid Cycle | 2 ATP ||
 
     ```markdown
     !!! danger "System Failure Point (Red Highlight)"
-        This block indicates critical pipeline errors, broken dependency names, or
-        unresolvable path flags.
+        This block indicates critical pipeline errors, broken dependency names, or unresolvable path flags.
 
-    !!! bug "Visual or Syntax Mismatch (Orange Highlight)"
-        Use this specific container variant to document trailing file-extension typos
-        or formatting glitches.
+    !!! warning "General Warning (Orange Highlight)"
+        Use this specific container variant to document just about any warning or alert to potential pitfalls in your code.  
+    
+    !!! bug "Visual or Syntax Mismatch (Red Highlight)"
+        Use this specific container variant to document trailing file-extension typos or formatting glitches.
 
     !!! quote "System Verbatim Output (Grey Border Accent)"
-        Perfect for framing exact code responses or tracebacks directly from terminal
-        log dumps.
+        Perfect for framing exact code responses or tracebacks directly from terminal log dumps.
     ```
 
 === "🎨 Inline Text Magic"
@@ -4850,3 +4850,15 @@ style D fill:#4d964d,stroke:#000,stroke-width:2px
 
     $$\sum_{\nu=0}^9 [\color{#20b2aa}{A^\nu}, [\color{#20b2aa}{A_\mu}, \color{#20b2aa}{A_\nu}]] + \frac{1}{2} \{\color{#dda0dd}{\bar{\Psi}}, \Gamma_\mu \color{#dda0dd}{\Psi}\} = \color{#ff6666}{0}$$
 
+## Hover rows
+
+Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
+
+| # | First Name | Last Name | Username |
+| --- | --- | --- | --- |
+| 1 | Mark | Otto | @mdo |
+| 2 | Jacob | Thornton | @fat |
+| 3 | Larry | the Bird | @twitter |
+
+!!! bug "Visual or Syntax Mismatch (Red Highlight)"
+    Use this specific container variant to document trailing file-extension typos or formatting glitches.

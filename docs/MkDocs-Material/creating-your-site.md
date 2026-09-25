@@ -70,7 +70,7 @@ icon: material/folder-plus-outline
 
 ???+ tip "Recommended: [configuration validation and auto-complete]"
 
-    In order to minimize friction and maximize productivity, Material for MkDocsprovides its own [schema.json][`^1`] for `mkdocs.yml`. If your editor supports YAML schema validation, it's definitely recommended to set it up:
+    In order to minimize friction and maximize productivity, Material for MkDocsprovides its own [schema.json][^1] for `mkdocs.yml`. If your editor supports YAML schema validation, it's definitely recommended to set it up:
 
     === "Visual Studio Code"
 

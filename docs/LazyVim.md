@@ -4,7 +4,7 @@ icon: material/alert-outline
 
 
 
-![](imgs/20260911-160855.png)
+![](imgs/20260911-160855.png){ .center-image }
 
 <h4 align="center">
   <a href="https://lazyvim.github.io/installation">Install</a>
@@ -322,3 +322,4 @@ LazyVim uses which-key.nvim to help you remember your keymaps. Just press any ke
     create mode 100644 lua/plugins/noice.lua
     ```
    
+![](imgs/20260925-210811.png){ .center-image }

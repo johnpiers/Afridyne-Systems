@@ -116,7 +116,7 @@ The following settings are available:
 
 !!! quote "config.enabled"
 
-    ### `config.enabled`
+    ### `config.enabled` {.toc-hidden-header}
     
     Use this setting to enable or disable the plugin when [building your project]. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable][`mkdocs.env`] in `mkdocs.yml`:
     
@@ -139,7 +139,7 @@ The following settings are available:
 
 !!! quote "config.concurrency"
 
-    ### `config.concurrency`
+    ### `config.concurrency` {.toc-hidden-header}
     
     With more CPUs available, the plugin can do more work in parallel, and thus complete social card generation faster. If you want to disable concurrent processing completely, use:
     
@@ -202,7 +202,7 @@ The following settings are available for caching:
 
 !!! pied-piper "config.cache"
 
-    ### `config.cache`
+    ### `config.cache` {.toc-hidden-header}
     
     - Use this setting to instruct the plugin to bypass the cache, in order to re-generate social cards for all pages, even though the cache may not be stale.
     
@@ -227,7 +227,7 @@ The following settings are available for caching:
 
 !!! pied-piper "Config.cache_dir"
 
-    ### `config.cache_dir`
+    ### `config.cache_dir` {.toc-hidden-header}
     
     - It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where social card images are cached.
     
@@ -256,7 +256,7 @@ The following settings are available for logging:
 
 !!! pied-piper "Config.log"
 
-    ### `config.log`
+    ### `config.log` {.toc-hidden-header}
     
     - Use this setting to control whether the plugin should only log errors when generating social cards without terminating the build, e.g., invalid references to icons.
     
@@ -334,7 +334,7 @@ The following settings are available for social card generation:
 
 !!! pied-piper "Config.cards"
 
-    ### `config.cards`
+    ### `config.cards` {.toc-hidden-header}
     
     - Use this setting to enable or disable social card generation. Currently, the plugin's sole purpose is to generate social cards, so it's equivalent to the [`enabled`][`config.enabled`] setting, but in the future, other features might be added.
     
@@ -355,7 +355,7 @@ The following settings are available for social card generation:
 
 !!! pied-piper "Config.cards_dir"
 
-    ### `config.cards_dir`
+    ### `config.cards_dir` {.toc-hidden-header}
     
     - It is normally not necessary to specify this setting, except for when you want to change the path within the `site` directory [mkdocs.site_dir](https://www.mkdocs.org/user-guide/configuration/#site_dir) where social cards are stored.
     
@@ -380,7 +380,7 @@ The following settings are available for social card generation:
 
 !!! pied-piper "Cards_layout_dir"
 
-    ### `cards_layout_dir`
+    ### `cards_layout_dir` {.toc-hidden-header}
     
     If you want to build a [custom social card layout](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/?h=social#customization), use this setting to change the folder where you store your custom layouts, the default being a folder called `layouts` in your root directory:
     
@@ -416,7 +416,7 @@ The following settings are available for social card generation:
 
 !!! pied-piper "Config.cards_layout"
 
-    ### `conf.cards_layout`
+    ### `conf.cards_layout` {.toc-hidden-header}
     
     The plugin ships a growing list of [`default` layouts][default layouts] for social cards. If you've created a [custom social card layout][custom layouts], you can instruct the plugin to use it exactly as one of the included layouts:
     
@@ -453,7 +453,7 @@ The following settings are available for social card generation:
 
 !!! info "Layout_options"
 
-    ### `layout_options`
+    ### `layout_options` {.toc-hidden-header}
     
     Use setting to set options for the layout specified via [`cards_layout`] [`config.cards_layout`] (if the layout supports it), which allows for making layouts easily and entirely configurable:
     
@@ -494,7 +494,7 @@ The following settings are available for social card generation:
 
 !!! pied-piper "Config.cards_include"
 
-    ### `conf.cards_include`
+    ### `conf.cards_include` {.toc-hidden-header}
     
     Use this setting to enable social card generation for subsections of your project, e.g., when using [multiple instances] of the plugin to generate different social cards for different subsections:
     
@@ -515,7 +515,7 @@ The following settings are available for social card generation:
 
 !!! info "Setting config.cards_exclude"
 
-    ### `conf.cards_exclude`
+    ### `conf.cards_exclude` {.toc-hidden-header}
     
     Use this setting to disable social card generation for subsections of your project, e.g., when using [multiple instances] of the plugin to generate different social cards for different subsections:
     
@@ -542,7 +542,9 @@ The following settings are available for social card generation:
 ---
 
 !!! info "setting config.debug"
-    ### `config.debug`
+    
+    ### `config.debug` {.toc-hidden-header}
+    
     Use this setting to enable a special mode for debugging your layout, which renders each layer with a colored outline and its `x` and `y` offsets, and overlays a dot grid for alignment, so it's easier to understand how the distinct layers of your layout are composed together:
     ```yaml
     plugins:
@@ -553,7 +555,9 @@ The following settings are available for social card generation:
 ---
 
 !!! info "setting config.debug_on_build"
-    ### `config.debug_on_build`
+    
+    ### `config.debug_on_build` {.toc-hidden-header}
+    
     By default, the plugin automatically disables debug mode when building your project, so you can be sure that debug overlays are never deployed to production. If you want to change that, use:
     ```yaml
     plugins:
@@ -566,7 +570,9 @@ The following settings are available for social card generation:
 ---
 
 !!! info "setting config.debug_grid"
-    ### `config.debug_grid`
+    
+    ### `config.debug_grid` {.toc-hidden-header}
+    
     When debug mode is enabled, this setting specifies whether a dot grid is rendered on top of all layers, to allow for better alignment. If you want to switch the grid off, use:
     ```yaml
     plugins:
@@ -577,7 +583,9 @@ The following settings are available for social card generation:
 ---
 
 !!! info "setting config.debug_grid_step"
-    ### `.debug_grid_step`
+    
+    ### `.debug_grid_step` {.toc-hidden-header}
+    
     Use this setting to specify the step size of the dot grid in pixels, if enabled, which can be useful to create perfectly aligned layers for ideal composition. If you want to change it, use:
     ```yaml
     plugins:
@@ -588,7 +596,9 @@ The following settings are available for social card generation:
 ---
 
 !!! info "setting config.debug_color"
-    ### `config.debug_color`
+    
+    ### `config.debug_color` {.toc-hidden-header}
+    
     Use this setting to specify the color of the outlines that are added to each layer and the dot grid that is rendered on top of all layers. If you need to change it, use:
     ```yaml
     plugins:
@@ -615,8 +625,11 @@ The following settings are available for social card generation:
 ---
 
 !!! info "setting meta.social.cards"
+    
     ### `meta.social.cards`
+    
     Use this property to override the cards setting for the given page:
+    
     ```yaml
     ---
     social:
@@ -627,12 +640,14 @@ The following settings are available for social card generation:
     ...
     ```
 
-
 ---
 
 !!! info "meta.social.cards_layout_options"
-    ### `.social.cards_layout`
+    
+    ### `.social.cards_layout` {.toc-hidden-header}
+    
     Use this property to override the cards_layout setting for the given page:
+    
     ```yaml
     ---
     social:
@@ -646,8 +661,11 @@ The following settings are available for social card generation:
 ---
 
 !!! info "meta.social.cards_layout_options"
-    ### `.cards_layout_options`
+    
+    ### `.cards_layout_options` {.toc-hidden-header}
+    
     Use this property to override the cards_layout_options setting for the given page:
+    
     ```yaml
     ---
     social:
@@ -794,7 +812,7 @@ The following settings are available for social card generation:
 
 !!! info "setting option.background_color "
 
-    ###  `.background_color`
+    ###  `.background_color` {.toc-hidden-header}
     
     Use this option to change the background color of the generated social card. The value can be set to a valid color value [supported by pillow], the imaging library used for card generation:
     
@@ -864,7 +882,7 @@ The following settings are available for social card generation:
 
 !!! info "setting option.background_image"
 
-    ### `background_image`
+    ### `background_image` {.toc-hidden-header}
     
     Use this option to define a background image for the generated social card. Note that the image is tinted with the [`background_color`][`option.background_color`], which can also be set to `transparent`:
     
@@ -898,7 +916,7 @@ The following settings are available for social card generation:
 
 !!! info "setting option.color"
 
-    ### `setting option.color`
+    ### `setting option.color` {.toc-hidden-header}
     
     Use this option to change the foreground color of the generated social card. The value can be set to a valid color value [supported by pillow], the imaging library used for card generation:
     
@@ -958,7 +976,7 @@ The following settings are available for social card generation:
 
 !!! info "setting option.font_family"
 
-    ### `font_family`
+    ### `font_family` {.toc-hidden-header}
 
     Use this option to change the font family of the generated social card. The plugin automatically downloads the font from [Google Fonts], so the font must point to an existing Google Font:
 
@@ -980,7 +998,7 @@ The following settings are available for social card generation:
 
 !!! info "setting option.font_variant"
 
-    ### font_variant
+    ### `font_variant` {.toc-hidden-header}
 
     Use this option to change the font variant used to generate the social card. If the downloaded font has variants like `Condensed` or `Expanded`, you can set them with:
 
@@ -999,7 +1017,7 @@ The following settings are available for social card generation:
 
 !!! info "setting option.logo"
 
-    ### `option.logo`
+    ### `option.logo` {.toc-hidden-header}
 
     Use this option to change the logo that is used in the generated social card. By default, the plugin uses the [`theme.logo`][theme.logo] or [`theme.icon.logo`] [theme.icon.logo] setting from `mkdocs.yml`. You can change it with:
 
@@ -1021,7 +1039,7 @@ The following settings are available for social card generation:
 
 !!! info "setting option.title"
 
-    ### `setting option.title`
+    ### `setting option.title` {.toc-hidden-header}
 
     Use this option to change the title of the generated social card. This overrides the computed page title as assigned by MkDocs, as well as the [title](https://jaywhj.github.io/mkdocs-materialx/reference/index.html#setting-the-page-title) metadata property:
 
@@ -1036,7 +1054,7 @@ The following settings are available for social card generation:
 
 !!! info "setting option.description"
 
-    ### `option.description`
+    ### `option.description` {.toc-hidden-header}
 
     Use this option to change the description of the generated social card. This overrides the set [site description](https://www.mkdocs.org/user-guide/configuration/#site_description), if defined, as well as the [`description`](https://jaywhj.github.io/mkdocs-materialx/reference/index.html#setting-the-page-description) metadata property:
 

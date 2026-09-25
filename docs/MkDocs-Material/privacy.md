@@ -93,206 +93,207 @@ Even more interestingly, the plugin can be combined with other built-in plugins 
 
 ## Configuration
 
-As with all [built-in plugins], getting started with the privacy plugin is straightforward. Just add the following lines to `mkdocs.yml`, and start effortlessly self-hosting external assets:
+!!! desc "Configuration"
 
-``` yaml
-plugins:
-  - privacy
-```
-
-The privacy plugin is built into MaterialX for MkDocs and doesn't need to be installed.
-
+    As with all [built-in plugins], getting started with the privacy plugin is straightforward. Just add the following lines to `mkdocs.yml`, and start effortlessly self-hosting external assets:
+    
+    ``` yaml
+    plugins:
+      - privacy
+    ```
+    
+    The privacy plugin is built into MaterialX for MkDocs and doesn't need to be installed.
+    
   [privacy]: privacy.md
-  
 
 ### General
 
-The following settings are available:
+!!! recommendation "General"
 
+    The following settings are available:
+    
+    Use this setting to enable or disable the plugin when [building your project]. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable][`mkdocs.env`] in `mkdocs.yml`:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          enabled: !ENV [CI, false]
+    ```
+    
+    This configuration enables the plugin only during continuous integration (CI).
+    
 ---
 
+!!! recommendation "More CPUs Available"
 
-Use this setting to enable or disable the plugin when [building your project]. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable][`mkdocs.env`] in `mkdocs.yml`:
-
-``` yaml
-plugins:
-  - privacy:
-      enabled: !ENV [CI, false]
-```
-
-This configuration enables the plugin only during continuous integration (CI).
-
----
-
-With more CPUs available, the plugin can do more work in parallel, and thus complete handling of external assets faster. If you want to disable concurrent processing completely, use:
-
-``` yaml
-plugins:
-  - privacy:
-      concurrency: 1
-```
-
-By default, the plugin uses all available CPUs - 1 with a minimum of 1.
-
+    With more CPUs available, the plugin can do more work in parallel, and thus complete handling of external assets faster. If you want to disable concurrent processing completely, use:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          concurrency: 1
+    ```
+    
+    By default, the plugin uses all available CPUs - 1 with a minimum of 1.
+    
 ### Caching
 
-The plugin implements an [intelligent caching] mechanism, ensuring that external assets are only downloaded when they're not already contained in the cache. While the initial build might take some time, it's a good idea to use caching, as it will speed up consecutive builds.
+!!! desc "Caching"
 
-The following settings are available for caching:
-
-  [intelligent caching]: caching.md
-
----
-
-Use this setting to instruct the plugin to bypass the cache, in order to re-schedule downloads for all external assets, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:
-
-``` yaml
-plugins:
-  - privacy:
-      cache: false
-```
-
----
-
-It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where downloaded copies are cached. If you want to change it, use:
-
-``` yaml
-plugins:
-  - privacy:
-      cache_dir: my/custom/dir
-```
-
-If you're using [multiple instances] of the plugin, it can be a good idea to set different cache directories for both instances, so that they don't interfere with each other.
-
- 
-
+    The plugin implements an [intelligent caching] mechanism, ensuring that external assets are only downloaded when they're not already contained in the cache. While the initial build might take some time, it's a good idea to use caching, as it will speed up consecutive builds.
+    
+    The following settings are available for caching:
+    
+   [intelligent caching]: caching.md
+    
+    Use this setting to instruct the plugin to bypass the cache, in order to re-schedule downloads for all external assets, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          cache: false
+    ```
+    
+    It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where downloaded copies are cached. If you want to change it, use:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          cache_dir: my/custom/dir
+    ```
+    
+    If you're using [multiple instances] of the plugin, it can be a good idea to set different cache directories for both instances, so that they don't interfere with each other.
+    
 ### Logging
 
-The following settings are available for logging:
+!!! desc "Logging"
 
+    The following settings are available for logging:
+    
+    Use this setting to control whether the plugin should display log messages when building your site. While not being recommended, you can disable logging with:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          log: false
+    ```
+    
 ---
 
-Use this setting to control whether the plugin should display log messages when building your site. While not being recommended, you can disable logging with:
+!!! desc "Control Log Level"
 
-``` yaml
-plugins:
-  - privacy:
-      log: false
-```
+    Use this setting to control the log level that the plugin should employ when encountering errors, which requires that the [`log`][config.log] setting is enabled. The following log levels are available:
 
----
+    === "`error`"
 
-Use this setting to control the log level that the plugin should employ when encountering errors, which requires that the [`log`][config.log] setting is enabled. The following log levels are available:
+        ``` yaml
+        plugins:
+          - privacy:
+              log_level: error
+        ```
 
-=== "`error`"
+        Only errors are reported.
 
-    ``` yaml
-    plugins:
-      - privacy:
-          log_level: error
-    ```
+    === "`warn`"
 
-    Only errors are reported.
+        ``` yaml
+        plugins:
+          - privacy:
+              log_level: warn
+        ```
 
-=== "`warn`"
+        Errors and warnings are reported, terminating the build in [`strict`][mkdocs.strict] mode. This includes warnings when symlinks cannot be created due to a lack of permissions on Windows systems ([#6550]).
 
-    ``` yaml
-    plugins:
-      - privacy:
-          log_level: warn
-    ```
+    === "`info`"
 
-    Errors and warnings are reported, terminating the build in [`strict`][mkdocs.strict] mode. This includes warnings when symlinks cannot be created due to a lack of permissions on Windows systems ([#6550]).
+        ``` yaml
+        plugins:
+          - privacy:
+              log_level: info
+        ```
 
-=== "`info`"
+        Errors, warnings and informational messages are reported, including which assets were successfully downloaded by the plugin.
 
-    ``` yaml
-    plugins:
-      - privacy:
-          log_level: info
-    ```
+    === "`debug`"
 
-    Errors, warnings and informational messages are reported, including which assets were successfully downloaded by the plugin.
+        ``` yaml
+        plugins:
+          - privacy:
+              log_level: debug
+        ```
 
-=== "`debug`"
+        All messages are reported, including debug messages, if and only if MkDocs was started with the `--verbose` flag. Note that this will print a lot of messages and is only useful for debugging.
 
-    ``` yaml
-    plugins:
-      - privacy:
-          log_level: debug
-    ```
-
-    All messages are reported, including debug messages, if and only if MkDocs was started with the `--verbose` flag. Note that this will print a lot of messages and is only useful for debugging.
 
 [mkdocs.strict]: https://www.mkdocs.org/user-guide/configuration/#strict
 [config.log]: https://jaywhj.github.io/mkdocs-materialx/plugins/privacy.html#config.log
 [#6550]: https://github.com/squidfunk/mkdocs-material/issues/6550
 
-### External assets
+### External Assets
 
-The following settings are available for external assets:
+!!! desc "External Assets"
 
----
-
-Use this setting to control whether the plugin should download external assets. If you only want the plugin to process [external links], you can disable handling of external assets with:
-
-``` yaml
-plugins:
-  - privacy:
-      assets: false
-```
-
+    The following settings are available for external assets:
+    
+    Use this setting to control whether the plugin should download external assets. If you only want the plugin to process [external links], you can disable handling of external assets with:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          assets: false
+    ```
+    
   [external links]: #external-links
-
----
-
-Use this setting to control whether the plugin should downloads or only report external assets when they're encountered. If you already self-host all external assets, this setting can be used as a safety net to detect links to external assets placed by the author in pages:
-
-``` yaml
-plugins:
-  - privacy:
-      assets_fetch: true
-```
-
----
-
-It is normally not necessary to specify this setting, except for when you want to change the path within the [`site` directory][mkdocs.site_dir] where external assets are stored. If you want to change it, use:
-
-``` yaml
-plugins:
-  - privacy:
-      assets_fetch_dir: my/custom/dir
-```
-
-This configuration stores the downloaded copies at `my/custom/dir` in the [`site` directory][mkdocs.site_dir].
-
----
-
-Use this setting to enable downloading of external assets for specific origins, e.g., when using [multiple instances] of the plugin to fine-tune processing of external assets for different origins:
-
-``` yaml
-plugins:
-  - privacy:
-      assets_include:
-        - unsplash.com/*
-```
-
----
-
-Use this setting to disable downloading of external assets for specific origins, e.g., when using [multiple instances] of the plugin to fine-tune processing of external assets for different origins:
-
-``` yaml
-plugins:
-  - privacy:
-      assets_exclude: # (1)!
-        - unpkg.com/mathjax@3/*
-        - giscus.app/*
-```
-
-1.  [MathJax] loads web fonts for typesetting of mathematical content through relative URLs, and thus cannot be automatically bundled by the privacy plugin. [MathJax can be self-hosted].
-
+    
+    ---
+    
+    Use this setting to control whether the plugin should downloads or only report external assets when they're encountered. If you already self-host all external assets, this setting can be used as a safety net to detect links to external assets placed by the author in pages:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          assets_fetch: true
+    ```
+    
+    ---
+    
+    It is normally not necessary to specify this setting, except for when you want to change the path within the [`site` directory][mkdocs.site_dir] where external assets are stored. If you want to change it, use:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          assets_fetch_dir: my/custom/dir
+    ```
+    
+    This configuration stores the downloaded copies at `my/custom/dir` in the [`site` directory][mkdocs.site_dir].
+    
+    ---
+    
+    Use this setting to enable downloading of external assets for specific origins, e.g., when using [multiple instances] of the plugin to fine-tune processing of external assets for different origins:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          assets_include:
+            - unsplash.com/*
+    ```
+    
+    ---
+    
+    Use this setting to disable downloading of external assets for specific origins, e.g., when using [multiple instances] of the plugin to fine-tune processing of external assets for different origins:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          assets_exclude: # (1)!
+            - unpkg.com/mathjax@3/*
+            - giscus.app/*
+    ```
+    
+    1.  [MathJax] loads web fonts for typesetting of mathematical content through relative URLs, and thus cannot be automatically bundled by the privacy plugin. [MathJax can be self-hosted].
+    
     [Giscus], which we recommend to use as a [comment system], uses a technique called code-splitting to load only the code that is necessary, which is implemented via relative URLs. [Giscus can be self-hosted] as well.
-
+    
   [MathJax]: math.md
   [MathJax can be self-hosted]: https://docs.mathjax.org/en/latest/web/hosting.html
   [Giscus]: https://giscus.app/
@@ -301,43 +302,43 @@ plugins:
 
 ---
 
-### External links
+### External Links
 
-The following settings are available for external links:
+!!! recommendation "External Links"
 
----
-
-Use this setting to instruct the plugin to parse and process external links to annotate them for [improved security], or to automatically add additional attributes to external links. If you want to disable processing of external links, use:
-
-``` yaml
-plugins:
-  - privacy:
-      links: false
-```
-
+    The following settings are available for external links:
+    
+    Use this setting to instruct the plugin to parse and process external links to annotate them for [improved security], or to automatically add additional attributes to external links. If you want to disable processing of external links, use:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          links: false
+    ```
+    
   [improved security]: https://developer.chrome.com/en/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/
-
----
-
-Use this setting to specify additional attributes that should be added to external links, for example, to add `target="_blank"` to all external links so they open in a new tab:
-
-``` yaml
-plugins:
-  - privacy:
-      links_attr_map:
-        target: _blank
-```
-
----
-
-It is normally not recommended to change this setting, as it will automatically annotate external links that open in a new window with `rel="noopener"` for [improved security]:
-
-``` yaml
-plugins:
-  - privacy:
-      links_noopener: true
-```
-
+    
+    ---
+    
+    Use this setting to specify additional attributes that should be added to external links, for example, to add `target="_blank"` to all external links so they open in a new tab:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          links_attr_map:
+            target: _blank
+    ```
+    
+    ---
+    
+    It is normally not recommended to change this setting, as it will automatically annotate external links that open in a new window with `rel="noopener"` for [improved security]:
+    
+    ``` yaml
+    plugins:
+      - privacy:
+          links_noopener: true
+    ```
+    
 ## Limitations
 
 ### Dynamic URLs

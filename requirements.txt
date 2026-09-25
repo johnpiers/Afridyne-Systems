@@ -2,7 +2,7 @@ mkdocs-materialx==10.2.0
 mkdocs==1.6.1
 markdown==3.10.2
 jinja2
-pymdown-extensions
+pymdown-extensions>=12.1
 mkdocs-document-dates
 mkdocs-include-markdown-plugin
 mkdocs-autorefs

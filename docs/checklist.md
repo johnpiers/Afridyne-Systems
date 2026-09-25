@@ -379,3 +379,40 @@ search:
 [👉 Advanced-Configuration  :fontawesome-solid-paper-plane:](MkDocs-Material-Start.md#advanced-configuration){ .md-button .md-button--custom }
 
 
+### REMARKABLE SCROLL FIX — SUMMARY
+
+!!! success "What we did"
+
+    - Confirmed you use jamiemcg/Remarkable (GTK, v1.95-3 from AUR), not the JS library
+    - Backed up the original file: ~/RemarkableWindow.py.orig
+    - Took the scrolling fix (only) from GitHub issue #434 — preview now follows your cursor to the line you're editing instead of jumping to the top
+    - Built it into a script: ~/Downloads/remarkablescroll/make_scroll_only.py
+    - Tested it in a throwaway copy (~/remarkable-test) before touching anything real
+    - Installed it into the real app, so your normal icon/double-click already uses it
+    
+    ---
+    
+    What's on your system now:
+    
+    - ~/RemarkableWindow.py.orig            — untouched original, keep this!
+    - ~/RemarkableWindow.py.scroll          — the patched version, currently installed
+    - ~/Downloads/remarkablescroll/make_scroll_only.py  — the script that builds it
+    - ~/remarkable-test/                    — the test copy, safe to delete anytime
+    
+!!! important "If an update ever overwrites the fix."
+
+    **If a Remarkable package update ever overwrites the fix, reapply it with:**
+    
+    ```
+    python3 ~/Downloads/remarkablescroll/make_scroll_only.py ~/RemarkableWindow.py.orig ~/RemarkableWindow.py.scroll
+    ```
+    
+    ```
+    sudo cp ~/RemarkableWindow.py.scroll /usr/share/remarkable/remarkable/RemarkableWindow.py
+    ```
+    
+    !!! info "NOTE"
+        This only works cleanly if the update is still version 1.95. If it's a newer version, the surrounding code may have changed and the script's edits might not match — bring it back to me and I'll check.
+        
+        Not fixed: the whole preview still re-renders on every change, so very long chapters may still feel a bit heavy, just no longer disorienting.
+        

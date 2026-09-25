@@ -88,7 +88,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Setting config.enabled"
 
-    ### `config.enabled`
+    ### `config.enabled` {.toc-hidden-header}
     
         
     ``` { .sh .no-copy }
@@ -114,7 +114,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Setting config.tags"
 
-    ### `Setting config.tags`
+    ### `Setting config.tags` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.3.2 -->
@@ -135,7 +135,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! warning "This Setting is Deprecated"
 
-    ### `Config.tags_file`
+    ### `Config.tags_file` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 8.2.0 -->
@@ -170,7 +170,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.tags_slugify"
 
-    ### `Config.tags_slugify`
+    ### `Config.tags_slugify` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -197,7 +197,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Tags_slugify_separator"
 
-    ### `slugify_separator`
+    ### `slugify_separator` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -214,7 +214,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Tags_slugify_format"
 
-    ### `Tags_slugify_format`
+    ### `Tags_slugify_format` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -237,7 +237,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Config.tags_hierarchy"
 
-    ### `Conf.tags_hierarchy`
+    ### `Conf.tags_hierarchy` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -255,7 +255,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Tags_hierarchy_separator"
 
-    ### `hierarchy_separator`
+    ### `hierarchy_separator` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -273,7 +273,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Config.tags_sort_by"
 
-    ### `Config.tags_sort_by`
+    ### `Config.tags_sort_by` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -294,7 +294,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Config.tags_sort_reverse"
 
-    ### `tags_sort_reverse`
+    ### `tags_sort_reverse` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -311,7 +311,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Tags_name_property"
 
-    ### `Tags_name_property `
+    ### `Tags_name_property ` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -328,7 +328,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Tags_name_variable"
 
-    ### `Tags_name_variable`
+    ### `Tags_name_variable` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -345,7 +345,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Config.tags_allowed"
 
-    ### `Config.tags_allowed`
+    ### `Config.tags_allowed` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -375,7 +375,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Setting config.listings"
 
-    ### `config.listings`
+    ### `config.listings` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -398,7 +398,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.listings_map"
 
-    ### `Config.listings_map`
+    ### `Config.listings_map` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -432,7 +432,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.listings_sort_by"
 
-    ### `listings_sort_by`
+    ### `listings_sort_by` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -463,7 +463,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Conf.listings_sort_reverse"
 
-    ### `listing_sort_reverse`
+    ### `listing_sort_reverse` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -480,7 +480,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Listings_tags_sort_by"
 
-    ### `Listing_tags_sort_by`
+    ### `Listing_tags_sort_by` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -501,7 +501,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Listings_tags_sort_reverse"
 
-    ### `tags_sort_reverse`
+    ### `tags_sort_reverse` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -518,7 +518,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.listings_directive"
 
-    ### `listings_directive`
+    ### `listings_directive` {.toc-hidden-header}
    
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -541,7 +541,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.listings_toc"
 
-    ### `Config.listings_toc`
+    ### `Config.listings_toc` {.toc-hidden-header}
    
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -564,7 +564,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Setting config.shadow"
 
-    ### `config.shadow`
+    ### `config.shadow` {.toc-hidden-header}
    
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -591,7 +591,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.shadow_on_serve"
 
-    ### `shadow_on_serve`
+    ### `shadow_on_serve` {.toc-hidden-header}
    
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -610,7 +610,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.shadow_tags"
 
-    ### `Config.shadow_tags`
+    ### `Config.shadow_tags` {.toc-hidden-header}
    
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -629,7 +629,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.shadow_tags_prefix"
 
-    ### `shadow_tags_prefix`
+    ### `shadow_tags_prefix` {.toc-hidden-header}
    
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -646,7 +646,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.shadow_tags_suffix"
 
-    ### `shadow_tags_suffix`
+    ### `shadow_tags_suffix` {.toc-hidden-header}
    
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -669,7 +669,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Setting config.export"
 
-    ### `config.export`
+    ### `config.export` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -686,7 +686,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Config.export_file"
 
-    ### `Config.export_file`
+    ### `Config.export_file` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -707,7 +707,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Config.export_only"
 
-    ### `Config.export_only`
+    ### `Config.export_only` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -737,7 +737,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Setting meta.tags"
 
-    ### `Setting meta.tags`
+    ### `Setting meta.tags` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 8.2.0 -->
@@ -778,7 +778,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
     
 !!! recommendation "Setting listing.scope"
 
-    ### `listing.scope`
+    ### `listing.scope` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -812,7 +812,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Setting listing.shadow"
 
-    ### `listing.shadow`
+    ### `listing.shadow` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -845,7 +845,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Setting listing.toc"
 
-    ### `Setting listing.toc`
+    ### `Setting listing.toc` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.7.0 -->
@@ -878,7 +878,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Setting listing.include"
 
-    ### `listing.include`
+    ### `listing.include` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->
@@ -919,7 +919,7 @@ If you want to add one or multiple tags indexes to your project, the tags plugin
 
 !!! recommendation "Setting listing.exclude"
 
-    ### `listing.exclude`
+    ### `listing.exclude` {.toc-hidden-header}
     
     ``` { .sh .no-copy }
     <!-- md:version 9.6.0 -->

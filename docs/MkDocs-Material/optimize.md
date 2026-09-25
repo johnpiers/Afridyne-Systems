@@ -21,12 +21,14 @@ icon: material/bike-fast
 
 !!! info "How it Works"
 
-    The plugin scans the [`docs` directory][`mkdocs.docs_dir`] for media files and assets, optimizing them automatically in order to reduce the final size of the [`site` directory][`mkdocs.site_dir`]. This leads to faster loading times as you ship less bytes to your users, as well as a smaller download for [offline-capable documentation].
+    The plugin scans the [`docs` directory][mkdocs.docs_dir] for media files and assets, optimizing them automatically in order to reduce the final size of the [`site` directory][mkdocs.site_dir]. This leads to faster loading times as you ship less bytes to your users, as well as a smaller download for [offline-capable documentation].
     
     Optimized images are [intelligently cached][intelligent caching], which is why the plugin will only optimize media files that changed since the last build. This makes it possible to swap out or update images, without having to worry about optimizing them, or even worse, forgetting to do so.
     
     In order to optimize media files, a few [dependencies] need to be available on your system.
     
+  [mkdocs.docs_dir]: https://www.mkdocs.org/user-guide/configuration/#docs_dir
+  [mkdocs.site_dir]: https://www.mkdocs.org/user-guide/configuration/#site_dir
   [offline-capable documentation]: building-for-offline-usage.md
   [dependencies]: #configuration
 
@@ -45,9 +47,7 @@ icon: material/bike-fast
 
     ---
 
-    The privacy plugin makes it easy to use unoptimized external assets, passing
-    them to the optimize plugin before copying them to the [`site` directory]
-    [`mkdocs.site_dir`].
+    The privacy plugin makes it easy to use unoptimized external assets, passing them to the optimize plugin before copying them to the [site directory] [mkdocs.site_dir].
 
     ---
 
@@ -57,8 +57,7 @@ icon: material/bike-fast
 
     ---
 
-    The offline plugin adds support for building offline-capable documentation,
-    so you can distribute the [`site` directory][`mkdocs.site_dir`] as a `.zip`
+    The offline plugin adds support for building offline-capable documentation, so you can distribute the [site directory][mkdocs.site_dir] as a `.zip`
     file that can be downloaded.
 
     ---
@@ -103,7 +102,7 @@ icon: material/bike-fast
 <!-- md:default `true` -->
 !!! quote "Enable or Disable"
 
-    ### `Config-Enabled`
+    ### `Config-Enabled` {.toc-hidden-header}
     
     Use this setting to enable or disable the plugin when [building your project]. If you want to disable the plugin, e.g., for local builds, you can use [environment-variables] like `mkdocs.env` in `mkdocs.yml`:
     
@@ -127,7 +126,7 @@ icon: material/bike-fast
 
 !!! quote "Concurrency"
 
-    ### `Concurrency`
+    ### `Concurrency` {.toc-hidden-header}
     
     With more CPUs available, the plugin can do more work in parallel, and thus complete media file optimization faster. If you want to disable concurrent processing completely, use:
     
@@ -155,7 +154,7 @@ icon: material/bike-fast
 
 !!! quote "Cache"
 
-    ### `cache`
+    ### `cache` {.toc-hidden-header}
     
     Use this setting to instruct the plugin to bypass the cache, in order to re-optimize all media files, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:
     
@@ -171,7 +170,7 @@ icon: material/bike-fast
 
 !!! quote "cache_dir"
 
-    ### `cache_dir`
+    ### `cache_dir` {.toc-hidden-header}
     
     It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where media files are cached. If you want to change it, use:
     
@@ -193,6 +192,7 @@ icon: material/bike-fast
     
     The following settings are available for optimization:
     
+  [multiple instances]: https://jaywhj.github.io/mkdocs-materialx/plugins/index.html#multiple-instances
   [pngquant]: https://pngquant.org/
   [Pillow]: https://pillow.readthedocs.io/
 
@@ -203,7 +203,7 @@ icon: material/bike-fast
 
 !!! quote "Optimize"
 
-    ### `optimize`
+    ### `optimize` {.toc-hidden-header}
     
     Use this setting to enable or disable media file optimization. Currently, the plugin's sole purpose is to optimize media files, so it's equivalent to the [`enabled`][`config.enabled`] setting, but in the near future, other features might be added. If you want to disable optimization, use:
     
@@ -219,7 +219,7 @@ icon: material/bike-fast
 
 !!! quote "Optimize_png"
 
-    ### `optimize_png`
+    ### `optimize_png` {.toc-hidden-header}
     
     Use this setting to enable or disable the optimization of `.png` files. It's normally not necessary to specify this setting, but if you want to disable the optimization of `.png` files, use:
     
@@ -235,7 +235,7 @@ icon: material/bike-fast
 
 !!! quote "optimize_png_speed"
 
-    ### `optimize_png_speed`
+    ### `optimize_png_speed` {.toc-hidden-header}
 
     Use this setting to specify the speed/quality tradeoff that [pngquant] applies when optimizing `.png` files. The lower the number, the more aggressively [pngquant] will try to optimize:
 
@@ -265,11 +265,9 @@ icon: material/bike-fast
 
 !!! quote "optimize_png_strip"
 
-    ### `optimize_png_strip`
+    ### `optimize_png_strip` {.toc-hidden-header}
 
-    Use this setting to specify whether [pngquant] should strip optional metadata
-    from `.png` files that are not required to display the image, e.g., [EXIF].
-    If you want to preserve metadata, use:
+    Use this setting to specify whether [pngquant] should strip optional metadata from `.png` files that are not required to display the image, e.g., [EXIF]. If you want to preserve metadata, use:
 
     ```yaml
     plugins:
@@ -287,11 +285,9 @@ icon: material/bike-fast
 
 !!! quote "optimize_jpg"
 
-    ### `optimize_jpg`
+    ### `optimize_jpg` {.toc-hidden-header}
 
-    Use this setting to enable or disable the optimization of `.jpg` files. It's
-    normally not necessary to specify this setting, but if you want to disable
-    the optimization of `.jpg` files, use:
+    Use this setting to enable or disable the optimization of `.jpg` files. It's normally not necessary to specify this setting, but if you want to disable the optimization of `.jpg` files, use:
 
     ```yaml
     plugins:
@@ -306,11 +302,9 @@ icon: material/bike-fast
 
 !!! quote "optimize_jpg_quality"
 
-    ### `optimize_jpg_quality`
+    ### `optimize_jpg_quality` {.toc-hidden-header}
 
-    Use this setting to specify the image quality that [Pillow] applies when
-    optimizing `.jpg` files. If the images look blurry, it's a good idea to
-    fine-tune and change this setting:
+    Use this setting to specify the image quality that [Pillow] applies when optimizing `.jpg` files. If the images look blurry, it's a good idea to fine-tune and change this setting:
 
     ```yaml
     plugins:
@@ -325,11 +319,9 @@ icon: material/bike-fast
 
 !!! quote "optimize_jpg_progressive"
 
-    ### `optimize_jpg_progressive`
+    ### `optimize_jpg_progressive` {.toc-hidden-header}
 
-    Use this setting to specify whether [Pillow] should use progressive encoding
-    when optimizing `.jpg` files, rendering faster on slow connections. If you want
-    to disable progressive encoding, use:
+    Use this setting to specify whether [Pillow] should use progressive encoding when optimizing `.jpg` files, rendering faster on slow connections. If you want to disable progressive encoding, use:
 
     ```yaml
     plugins:
@@ -346,11 +338,9 @@ icon: material/bike-fast
 
 !!! quote "optimize_include"
 
-    ### `optimize_include`
+    ### `optimize_include` {.toc-hidden-header}
 
-    Use this setting to enable media file optimization for specific directories
-    of your project, e.g., when using [multiple instances] of the plugin to optimize
-    media files differently:
+    Use this setting to enable media file optimization for specific directories of your project, e.g., when using [multiple instances] of the plugin to optimize media files differently:
 
     ```yaml
     plugins:
@@ -359,9 +349,7 @@ icon: material/bike-fast
             - screenshots/*
     ```
 
-    This configuration enables optimization for all media files that are contained
-    in the `screenshots` folder and its subfolders inside the [`docs` directory]
-    [`mkdocs.docs_dir`].
+    This configuration enables optimization for all media files that are contained in the `screenshots` folder and its subfolders inside the [`docs` directory][mkdocs.docs_dir].
 
 
 ---
@@ -371,11 +359,9 @@ icon: material/bike-fast
 
 !!! quote "optimize_exclude"
 
-    ### `optimize_exclude`
+    ### `optimize_exclude` {.toc-hidden-header}
 
-    Use this setting to disable media file optimization for specific directories
-    of your project, e.g., when using [multiple instances] of the plugin to optimize
-    media files differently:
+    Use this setting to disable media file optimization for specific directories of your project, e.g., when using [multiple instances] of the plugin to optimize media files differently:
 
     ```yaml
     plugins:
@@ -384,10 +370,11 @@ icon: material/bike-fast
             - vendor/*
     ```
 
-    This configuration disables optimization for all media files that are contained
-    in the `vendor` folder and its subfolders inside the [`docs` directory]
-    [`mkdocs.docs_dir`].
+    This configuration disables optimization for all media files that are contained in the `vendor` folder and its subfolders inside the [`docs` directory][mkdocs.docs_dir].
 
+
+  [mkdocs.docs_dir]: https://www.mkdocs.org/user-guide/configuration/#docs_dir
+  [mkdocs.site_dir]: https://www.mkdocs.org/user-guide/configuration/#site_dir
 
 ## Reporting
 
@@ -402,10 +389,9 @@ icon: material/bike-fast
 
 !!! quote "print_gain"
 
-    ### `print_gain`
+    ### `print_gain` {.toc-hidden-header}
 
-    Use this setting to control whether the plugin should print the number of bytes
-    gained after optimizing each file. If you want to disable this behavior, use:
+    Use this setting to control whether the plugin should print the number of bytes gained after optimizing each file. If you want to disable this behavior, use:
 
     ```yaml
     plugins:
@@ -420,10 +406,9 @@ icon: material/bike-fast
 
 !!! quote "print_gain_summary"
 
-    ### `print_gain_summary`
+    ### `print_gain_summary` {.toc-hidden-header}
 
-    Use this setting to control whether the plugin should print the total number of
-    bytes gained after optimizing all files. If you want to disable this behavior,
+    Use this setting to control whether the plugin should print the total number of bytes gained after optimizing all files. If you want to disable this behavior,
     use:
 
     ```yaml
