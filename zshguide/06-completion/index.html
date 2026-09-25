@@ -224,17 +224,17 @@
     
       <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
     
@@ -8596,7 +8596,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-09-20"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-09-20T16:14:28+00:00">2026-09-20</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-09-25"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-09-25T23:40:34+00:00">2026-09-25</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../imgs/06-completion.png" data-desc-position="bottom"><img alt="" class="center-image" src="../../imgs/06-completion.png"></a></p>
 <h1 style="text-align: center;"><ins>Chapter 6: Completion, old and new</ins></h1>
 <div class="admonition desc">
@@ -8637,9 +8637,26 @@
 </span></code></pre></div>
 <p>That's very roughly what the completion system is doing, except that the function is called <code>_main_complete</code> and calls a lot of other functions to do its dirty work based on the context where completion was called (all the things that <code>compctl</code> used to do), and the widgets are just the old completion widgets (<code>expand-or-complete</code> etc.) redefined and still bound to all the original keys. But, in case you hadn't guessed, there's more to it than that.</p>
 <p>Here's a plan for the sections of this chapter.</p>
-<ol>
-<li>A broad description of completion and expansion, applying equally to old and new completion.- How to configure completion using shell options. Most of this section applies to old completion, too, although I won't explicitly flag up any differences. After this, I shall leave the <code>compctl</code> world behind.- How to start up new completion.- The basics of how the new completion system works.- How to configure it using the new <code>zstyle</code> builtin.- Separate commands which do something other than the usual completion system, as well as some other editing widgets that have to do with completion.- Matching control, a powerful way of deciding such things as whether to complete case-insensitively, to allow insertion of extra parts of words before punctuation characters, or to ignore certain characters in the word on the command line.- How to write your own completion functions; you won't need to have too solid an understanding of all the foregoing just to do simple completions, but I will gradually introduce the full baroque splendour of how to make tags and styles work in your own functions, and how to make completion do the work of handling command arguments and options.- Ends the chapter gracefully, on the old `beginning, middle, end' principle.</li>
-</ol>
+<ul>
+<li>
+<p>A broad description of completion and expansion, applying equally to old and new completion.- How to configure completion using shell options. Most of this section applies to old completion, too, although I won't explicitly flag up any differences. After this, I shall leave the <code>compctl</code> world behind.- How to start up new completion.</p>
+</li>
+<li>
+<p>The basics of how the new completion system works.- How to configure it using the new <code>zstyle</code> builtin.</p>
+</li>
+<li>
+<p>Separate commands which do something other than the usual completion system, as well as some other editing widgets that have to do with completion.</p>
+</li>
+<li>
+<p>Matching control, a powerful way of deciding such things as whether to complete case-insensitively, to allow insertion of extra parts of words before punctuation characters, or to ignore certain characters in the word on the command line.</p>
+</li>
+<li>
+<p>How to write your own completion functions; you won't need to have too solid an understanding of all the foregoing just to do simple completions, but I will gradually introduce the full baroque splendour of how to make tags and styles work in your own functions, and how to make completion do the work of handling command arguments and options.</p>
+</li>
+<li>
+<p>Ends the chapter gracefully, on the old `beginning, middle, end' principle.</p>
+</li>
+</ul>
 </div>
 <h2 id="61-completion-and-expansion">6.1: Completion and expansion<a class="headerlink" href="#61-completion-and-expansion" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
@@ -8656,14 +8673,28 @@
 </span><span id="__span-4-9"><a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>          /home/pws/.zshenv /home/pws/.zshrc
 </span></code></pre></div>
 <p>Note that the <code>~</code> also gets expanded in this case.</p>
+<ul>
+<li>
 <p>This is often a good time to remember the <code>undo</code> key, <code>^_</code> or <code>^Xu</code>; typing this will restore what was there before the expansion if you don't like the result. Many keyboards have a quirk that what's described as <code>^_</code> should be typed as control with slash, which you'd write <code>^/</code> except unfortunately that does something else; this is not zsh's fault. There's another half-exception, namely filename generation: paths like <code>~/file</code> don't get expanded, because you usually know what they refer to and it's usually convenient to leave them for use in completion. However, the <code>=cmdname</code> form does get expanded, unless you have <code>NO_EQUALS</code> set.</p>
+</li>
+<li>
 <p>In fact, deciding whether expansion or completion takes place can sometimes be tricky, since things that would be expanded if they were complete, may need to be completed first; for example <code>$PAT</code> should probably be completed to <code>$PATH</code>, but it's quite possible there is a parameter <code>$PAT</code> too. You can decide which, if you prefer. First, the commands <code>expand-word</code>, bound to <code>^X*</code>, and the corresponding command for listing what would be expanded, <code>list-expand</code>, bound to <code>^Xg</code>, do expansion only --- all possible forms except alias expansion, including turning <code>~/file</code> into a full path.</p>
+</li>
+<li>
 <p>From the other point of view, you can use commands other than <code>expand-or-complete</code>, the one bound by default to <code>&lt;TAB&gt;</code>, to perform only completion. The basic command for this is <code>complete-word</code>, which is not bound by default. It is quite sensible to bind this to <code>^I</code> (i.e. <code>&lt;TAB&gt;</code>) if you are happy to use the separate commands for expansion, i.e.</p>
+</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>  # Now tab does only completion, not expansion
 </span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>  bindkey '^i' complete-word
 </span></code></pre></div>
+<ul>
+<li>
 <p>Furthermore, if you do this and use the new completion system, then as we shall see there is a way of making the completion system perform expansion --- see the description of the <code>_expand</code> completer below. In this case you have much more control over what forms of expansion are tried, and at what point, but you have to make sure you use <code>complete-word</code>, not <code>expand-or complete</code>, else the standard expansion system will take over.</p>
+</li>
+<li>
 <p>There's a close relative of <code>expand-or-complete</code>, <code>expand-or-complete-prefix</code>, not bound by default. The only difference is that it will ignore everything under and to the right of the cursor when completing. It's as if there was a space where the cursor was, with everything to be ignored shifted to the right (guess how it's implemented). Use this if you habitually type new words in the line before other words, and expect them to complete or expand on their own even before you've typed the space after them. Some other shells work this way all the time. To be more explicit:</p>
+</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>  % ls
 </span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>  filename1
 </span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>  % ls filex
@@ -8672,22 +8703,40 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>  bindkey '^i' expand-or-complete-prefix
 </span></code></pre></div>
 <p>and try the same experiment, you will find the whole thing is completed to <code>filename1x</code>, so that the <code>x</code> was ignored, but not removed.</p>
+<ul>
+<li>
 <p>One possible trap is that the listing commands, both <code>delete-char-or-list</code>, bound by default to <code>^D</code> in emacs mode, and <code>list-options</code>, bound by default to <code>^D</code> in vi insert mode and the basic command for listing completions as it doesn't have the delete-character behaviour, do not show possible expansions, so with the default bindings you can use <code>^D</code> to list, then hit <code>&lt;TAB&gt;</code> and find that the line has been completely rewritten by some expansion. Using <code>complete-word</code> instead of <code>expand-or-complete</code> will of course fix this. If you know how to write new editor widgets (<a href="../04-line-editor/#chapter-4-the-z-shell-line-editor">chapter 4</a>), you can make up a function which tries <code>list-expand</code>, and if that fails tries <code>list-options</code>.</p>
+</li>
+<li>
 <p>There are four completion commands I haven't mentioned yet: three are <code>menu-complete</code>, <code>menu-expand-or-complete</code> and <code>reverse menu-complete</code>, which perform menu completion, where you can cycle through all possible completions by hitting the same key. The first two correspond to <code>complete-word</code> and <code>expand-or-complete</code> respectively, while the third has no real equivalent as it takes you backwards through a completion list. The effect of the third can't be reached just by setting options for menu completion, so it's a useful one to bind separately. I have it bound to <code>\M-\C-i</code>, i.e. tab with the Meta key pressed down, but it's not bound by default.</p>
+</li>
+<li>
 <p>The fourth is <code>menu-select</code>, which performs an enhanced form of menu completion called <code>menu selection</code> which I'll describe below when I talk about options. You have to make sure the <code>zsh/complist</code> module is loaded to use this zle command. If you use the style, zsh should be able to load this automatically when needed, as long as you have dynamic loading, which you probably do these days.</p>
+</li>
+</ul>
 </div>
 <h2 id="62-configuring-completion-using-shell-options">6.2: Configuring completion using shell options<a class="headerlink" href="#62-configuring-completion-using-shell-options" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">6.2: Configuring completion using shell options</p>
+<ul>
+<li>
 <p>There are two main ways of altering the behaviour of completion without writing or rewriting shell functions: shell options, as introduced in <a href="../02-startup-files/#chapter-2-what-to-put-in-your-startup-files">chapter 2</a>, and styles, as introduced above. I shall first discuss the shell options, although as you will see some of these refer to the styles mechanism. Setting shell options affects every single completion, unless special care has been taken (using a corresponding style for the context, or setting an option locally) to avoid that.</p>
+</li>
+<li>
 <p>In addition to the options which directly affect the completion system, completion is sensitive to various other options which describe shell behaviour. For example, if the option <code>MAGIC_EQUAL_SUBST</code> is set, so that arguments of all commands looking like <code>foo=~/file</code> have the <code>~</code> expanded as if it was at the start of an argument, then the default completion for arguments of commands not specially handled will try to complete filenames after the <code>=</code>.</p>
+</li>
+<li>
 <p>Needless to say, if you write completion functions you will need to worry about a lot of other options which can affect shell syntax. The main starting point for completion chosen by context (everything except the commands for particular completions bound separately to keystrokes) is the function <code>_main_complete</code>, which includes the effect of the following lines to make sure that at least the basic options are set up within completion functions:</p>
+</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>  setopt glob bareglobqual nullglob rcexpandparam extendedglob unset
 </span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>  unsetopt markdirs globsubst shwordsplit shglob ksharrays cshnullglob
 </span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>  unsetopt allexport aliases errexit octalzeroes
 </span></code></pre></div>
 <p>but that by no means exhausts the possibilities. Actually, it doesn't include those lines: the options to set are stored in the array <code>$_comp_options</code>, with <code>NO_</code> in front if they are to be turned off. You can modify this if you find you need to (and maybe tell the maintainers, too).</p>
-<p>By the way, if you are wondering whether you can re-use the function <code>_main_complete</code>, by binding it to a different key with slightly different completion definitions, look instead at the description of the <code>_generic</code> command widget below. It's just a front-end to <code>_main_complete</code> which allows you to have a different set of styles in effect.</p>
+<ul>
+<li>By the way, if you are wondering whether you can re-use the function <code>_main_complete</code>, by binding it to a different key with slightly different completion definitions, look instead at the description of the <code>_generic</code> command widget below. It's just a front-end to <code>_main_complete</code> which allows you to have a different set of styles in effect.</li>
+</ul>
 </div>
 <div class="admonition desc">
 <p class="admonition-title">6.2.1: Ambiguous completions</p>
@@ -9853,9 +9902,21 @@
 <p class="admonition-title">6.9.4: The <code>zsh/parameter</code> module</p>
 <p>The new completion system automatically makes the <code>zsh/parameter</code> module available for use. This provides an easy way of generating arguments for <code>compadd</code>. To get the maximum use out of this, you should be familiar with zsh's rather self-willed syntax for extracting bits out of associative arrays. Note in particular <code>${(k)assoc}</code>, which expands to a list of the keys of the associative array <code>$assoc</code>, <code>${(v)assoc}</code>, which expands to just its values (actually, so does <code>$assoc</code> on its own), and <code>${(kv)assoc}</code> which produces key/value pairs. For all intents and purposes, the keys and values, or the pairs of them, are in a random order, but as the completion system does it's own sorting that shouldn't be a problem. Mostly, the important parts for completion are in the keys, i.e. to add all aliases as possible completions, you need <code>compadd ${(k)aliases}</code>.</p>
 <p>Here's a list of associative and ordinary arrays provided; for more information on the values of the associative arrays, which could be useful in some cases, consult the section <strong>The zsh/parameter Module</strong> in the <code>zshmodules(1)</code> manual page or the corresponding info node. First, the associative arrays.</p>
-<p><strong><code>$aliases</code>, <code>$dis_aliases</code>, <code>$galiases</code></strong>: The keys of these arrays give ordinary aliases, disabled ordinary aliases for those where you have done <code>disable -a &lt;alias&gt;</code> to turn them off temporarily, and global aliases as defined with <code>alias -g</code>. <strong><code>$builtins</code>, <code>$dis_builtins</code></strong>: The keys give active and disabled shell builtin commands. <strong><code>$commands</code></strong>: The keys are all external commands stored in the shells internal tables; it does this both for the purposes of fast completion, and to avoid having to search each time a command is executed. It's possible that a command is missing or incorrectly stored if the contents of your <code>$path</code> directories has changed since the shell last updated its tables; the <code>rehash</code> command fixes it. <strong><code>$functions</code>, <code>$dis_functions</code></strong>: The keys are active and disabled shell functions. <strong><code>$history</code></strong>: Here, the <em>values</em> are complete lines stored in the internal history. The keys are the numbers of the history line; it's an associative, rather than an ordinary, array because they don't necessarily start at line 1. However, see the <code>historywords</code> ordinary array below. <strong><code>$jobtexts</code>, <code>$jobdirs</code>, <code>$jobstates</code></strong>: These give you information about jobs; the keys are the job numbers, as presented by the <code>jobs</code> command, and the values give you the other information from jobs: <code>$jobtexts</code> tells you what the job is executing, <code>$jobdirs</code> its working directory, and <code>$jobstates</code> its state, where the bit before the colon is the most useful as it refers to the whole job. The remainder describes the state of individual processes in the job. <strong><code>$modules</code></strong>: The keys give the names of modules which are currently available to the shell, i.e. loaded or to be autoloaded, essentially the same principle as with functions. <strong><code>$nameddirs</code></strong>: If you have named directories, either explicitly (e.g. assigning <code>foo=/mydir</code> and using <code>~foo</code>) or via the <code>AUTO_NAME_DIRS</code> option, the keys of this associative array give the names and the values the expanded directories. <strong><code>$options</code>, <code>$parameters</code></strong>: The keys give shell options and parameters, and are used by the functions <code>_options</code> and <code>_parameters</code> for completion, so you will mostly not need to refer to them directly. <strong><code>$userdirs</code></strong>: The keys give all the users on the system. The values give the corresponding home directory, so <code>${userdirs[juser]}</code> is equivalent to having <code>~juser</code> expanded and is thus not all that interesting, except that by doing it this way you can test whether the expansion exists without causing an error.</p>
+<p><em><strong><code>$aliases</code>, <code>$dis_aliases</code>, <code>$galiases</code></strong></em>: The keys of these arrays give ordinary aliases, disabled ordinary aliases for those where you have done <code>disable -a &lt;alias&gt;</code> to turn them off temporarily, and global aliases as defined with <code>alias -g</code>. </p>
+<p><em><strong><code>$builtins</code>, <code>$dis_builtins</code></strong></em>: The keys give active and disabled shell builtin commands.</p>
+<p><em><strong><code>$commands</code></strong></em>: The keys are all external commands stored in the shells internal tables; it does this both for the purposes of fast completion, and to avoid having to search each time a command is executed. It's possible that a command is missing or incorrectly stored if the contents of your <code>$path</code> directories has changed since the shell last updated its tables; the <code>rehash</code> command fixes it.</p>
+<p><em><strong><code>$functions</code>, <code>$dis_functions</code></strong></em>: The keys are active and disabled shell functions.</p>
+<p><em><strong><code>$history</code></strong></em>: Here, the <em>values</em> are complete lines stored in the internal history. The keys are the numbers of the history line; it's an associative, rather than an ordinary, array because they don't necessarily start at line 1. However, see the <code>historywords</code> ordinary array below.</p>
+<p><em><strong><code>$jobtexts</code>, <code>$jobdirs</code>, <code>$jobstates</code></strong></em>: These give you information about jobs; the keys are the job numbers, as presented by the <code>jobs</code> command, and the values give you the other information from jobs: <code>$jobtexts</code> tells you what the job is executing, <code>$jobdirs</code> its working directory, and <code>$jobstates</code> its state, where the bit before the colon is the most useful as it refers to the whole job. The remainder describes the state of individual processes in the job.</p>
+<p><em><strong><code>$modules</code></strong></em>: The keys give the names of modules which are currently available to the shell, i.e. loaded or to be autoloaded, essentially the same principle as with functions.</p>
+<p><em><strong><code>$nameddirs</code></strong></em>: If you have named directories, either explicitly (e.g. assigning <code>foo=/mydir</code> and using <code>~foo</code>) or via the <code>AUTO_NAME_DIRS</code> option, the keys of this associative array give the names and the values the expanded directories.</p>
+<p><em><strong><code>$options</code>, <code>$parameters</code></strong></em>: The keys give shell options and parameters, and are used by the functions <code>_options</code> and <code>_parameters</code> for completion, so you will mostly not need to refer to them directly.</p>
+<p><em><strong><code>$userdirs</code></strong></em>: The keys give all the users on the system. The values give the corresponding home directory, so <code>${userdirs[juser]}</code> is equivalent to having <code>~juser</code> expanded and is thus not all that interesting, except that by doing it this way you can test whether the expansion exists without causing an error.</p>
 <p>Now here are the ordinary arrays, which you would therefore refer to simply as <code>${reswords}</code> etc.</p>
-<p><strong><code>$dirstack</code></strong>: This contains your directory stack, what you see with <code>dirs -v</code>. Note, however that the current directory, which appears as number 0 with that command, doesn't appear in <code>dirstack</code>. Of course it's easy to add it to a completion if you want. <strong><code>$funcstack</code></strong>: This is the call stack of functions, i.e. all the functions which are active at the time the array was referenced. <code>^Xh</code> uses this to display which functions have been called for completion. <strong><code>$historywords</code></strong>: Unlike <code>$history</code>, this contains just the individual words of the shell's command line history, and is therefore likely to be more useful for completion purposes. <strong><code>$reswords</code>, <code>$dis_reswords</code></strong>: The active and disabled reserved words (effectively syntactically special commands) understood by the shell.</p>
+<p><em><strong><code>$dirstack</code></strong></em>: This contains your directory stack, what you see with <code>dirs -v</code>. Note, however that the current directory, which appears as number 0 with that command, doesn't appear in <code>dirstack</code>. Of course it's easy to add it to a completion if you want.</p>
+<p><em><strong><code>$funcstack</code></strong></em>: This is the call stack of functions, i.e. all the functions which are active at the time the array was referenced. <code>^Xh</code> uses this to display which functions have been called for completion.</p>
+<p><em><strong><code>$historywords</code></strong></em>: Unlike <code>$history</code>, this contains just the individual words of the shell's command line history, and is therefore likely to be more useful for completion purposes.</p>
+<p><em><strong><code>$reswords</code>, <code>$dis_reswords</code></strong></em>: The active and disabled reserved words (effectively syntactically special commands) understood by the shell.</p>
 <p><strong>Other ways of getting at information</strong></p>
 <p>Since the arguments to <code>compadd</code> undergo all the usual shell expansions, it's easy to get words from other sources for completion, and you can look in the existing completion functions for many examples. A good understanding of zsh's parameter and command expansion mechanisms and a strong stomach will be useful here.</p>
 <p>For example, here is the expansion used by the <code>_limits</code> function to retrieve the names of resource limits from the <code>limit</code> command itself:</p>
@@ -9867,11 +9928,23 @@
 <h3 id="695-special-completion-parameters-and-compset">6.9.5: Special completion parameters and <code>compset</code><a class="headerlink" href="#695-special-completion-parameters-and-compset" title="Permanent link">⚓︎</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">6.9.5: Special completion parameters and <code>compset</code></p>
+<ul>
+<li>
 <p>Up to now, I've assumed that at the start of your completion function you already know what to complete. In more complicated cases that won't be the case: different things may need completing in different arguments of a command, or even some part of a word may need to be handled differently from another part, or you need to look for a word following a particular option. I will first describe some of the lower level facilities which allow you to manipulate this; see the manual page <code>zshcompwid(1)</code> or the info node <strong>Completion Widgets</strong> for the details of these. Later, I will show how you can actually skip a lot of this for ordinary commands with options and arguments by using such functions as <code>_arguments</code>, where you simply specify what arguments and options the function takes and what sort of completion they need.</p>
+</li>
+<li>
 <p>The heart of this is the special parameters made available in completion for testing what has already been typed. It doesn't matter if there are parameters of that name outside the completion system; they will be safely hidden, the special values used, and the original values restored when completion is over.</p>
+</li>
+<li>
 <p><code>$words</code> is an array corresponding to the words on the command line --- where by a <code>word</code> I mean as always a single argument to the command, which may include quoted whitespace. <code>$CURRENT</code> is the index into that array of the current word. Note that to avoid confusion the ksh-like array behaviour is explicitly turned off in <code>_main_complete</code>, so the command itself is <code>$words[1]</code>, and so on.</p>
+</li>
+<li>
 <p>The word being completed is treated specially. The reason is that you may only want to complete some of it. An obvious example is a file with a path: if you are completing at <code>foo/bar</code>, you don't want to have to check the entire file system; you want the directory <code>foo</code> to be fixed, and completion just for files in that. There are actually two parts to this. First, when completion is entered, <code>$PREFIX</code> and <code>$SUFFIX</code> give you the part of the current word before the cursor, and the remainder, respectively. It's done like this to make it possible to write functions for completing inside a word, not just at the end. The simplest possible way of completing a file is then to find everything that matches <code>$PREFIX*$SUFFIX</code>.</p>
+</li>
+<li>
 <p>But there's more to it than that: you need to separate off the directory, hence the second part. The parameters <code>$IPREFIX</code> and <code>$ISUFFIX</code> contain a part of the string which will be ignored for completion. It's up to you to decide what that is, then to move the bit you want to be ignored from <code>$PREFIX</code> to <code>$IPREFIX</code> (that's the usual case) or from <code>$SUFFIX</code> to <code>$ISUFFIX</code>, making sure that the word so far typed is still given by <code>$IPREFIX$PREFIX$SUFFIX$ISUFFIX</code>. Thus in completing <code>foo/bar</code>, you would strip <code>foo/</code> from the start of <code>$PREFIX</code> and tack it onto the end of <code>$IPREFIX</code> --- after recording the fact that you need to move to directory <code>foo</code>, of course. Then you generate files in <code>foo</code>, and the completion system will happily accept <code>barrack</code> or <code>barbarous</code> as completions because it doesn't care about the <code>foo</code> any more.</p>
+</li>
+</ul>
 <p>Actually, this is already done by the the <code>_files</code> and <code>_path_files</code> functions for filename completion. Also, you can get some help using the <code>compset</code> builtin command. In this case, the incantation is</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-125-1"><a href="#__codelineno-125-1" id="__codelineno-125-1" name="__codelineno-125-1"></a>  if compset -P "*/"; then
 </span><span id="__span-125-2"><a href="#__codelineno-125-2" id="__codelineno-125-2" name="__codelineno-125-2"></a>    # do whatever you need to with the leading

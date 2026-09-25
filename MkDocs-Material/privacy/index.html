@@ -224,17 +224,17 @@
     
       <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
     
@@ -2581,7 +2581,7 @@
   <a href="#external-assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        External assets
+        External Assets
       
     </span>
   </a>
@@ -2592,7 +2592,7 @@
   <a href="#external-links" class="md-nav__link">
     <span class="md-ellipsis">
       
-        External links
+        External Links
       
     </span>
   </a>
@@ -7590,7 +7590,7 @@
   <a href="#external-assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        External assets
+        External Assets
       
     </span>
   </a>
@@ -7601,7 +7601,7 @@
   <a href="#external-links" class="md-nav__link">
     <span class="md-ellipsis">
       
-        External links
+        External Links
       
     </span>
   </a>
@@ -7729,7 +7729,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-09-20"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-09-20T16:14:28+00:00">2026-09-20</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-09-25"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-09-25T23:40:34+00:00">2026-09-25</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260413-163051.png" data-desc-position="bottom"><img alt="" src="../imgs/20260413-163051.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;">Built-in Privacy Plugin</h1>
 <div class="admonition abstract">
@@ -7795,52 +7795,65 @@ file that can be downloaded.</p>
 </ul>
 </div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">⚓︎</a></h2>
+<div class="admonition desc">
+<p class="admonition-title">Configuration</p>
 <p>As with all [built-in plugins], getting started with the privacy plugin is straightforward. Just add the following lines to <code>mkdocs.yml</code>, and start effortlessly self-hosting external assets:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">privacy</span>
 </span></code></pre></div>
 <p>The privacy plugin is built into MaterialX for MkDocs and doesn't need to be installed.</p>
+</div>
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">⚓︎</a></h3>
+<div class="admonition recommendation">
+<p class="admonition-title">General</p>
 <p>The following settings are available:</p>
-<hr>
 <p>Use this setting to enable or disable the plugin when <a href="../creating-your-site/#building-your-site">building your project</a>. If you want to disable the plugin, e.g., for local builds, you can use an [environment variable][<code>mkdocs.env</code>] in <code>mkdocs.yml</code>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
 </span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CI</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
 </span></code></pre></div>
 <p>This configuration enables the plugin only during continuous integration (CI).</p>
+</div>
 <hr>
+<div class="admonition recommendation">
+<p class="admonition-title">More CPUs Available</p>
 <p>With more CPUs available, the plugin can do more work in parallel, and thus complete handling of external assets faster. If you want to disable concurrent processing completely, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
 </span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">      </span><span class="nt">concurrency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </span></code></pre></div>
 <p>By default, the plugin uses all available CPUs - 1 with a minimum of 1.</p>
+</div>
 <h3 id="caching">Caching<a class="headerlink" href="#caching" title="Permanent link">⚓︎</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Caching</p>
 <p>The plugin implements an <a href="../caching/">intelligent caching</a> mechanism, ensuring that external assets are only downloaded when they're not already contained in the cache. While the initial build might take some time, it's a good idea to use caching, as it will speed up consecutive builds.</p>
 <p>The following settings are available for caching:</p>
-<hr>
 <p>Use this setting to instruct the plugin to bypass the cache, in order to re-schedule downloads for all external assets, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
 </span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">      </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </span></code></pre></div>
-<hr>
 <p>It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where downloaded copies are cached. If you want to change it, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
 </span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">      </span><span class="nt">cache_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my/custom/dir</span>
 </span></code></pre></div>
 <p>If you're using [multiple instances] of the plugin, it can be a good idea to set different cache directories for both instances, so that they don't interfere with each other.</p>
+</div>
 <h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">⚓︎</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">Logging</p>
 <p>The following settings are available for logging:</p>
-<hr>
 <p>Use this setting to control whether the plugin should display log messages when building your site. While not being recommended, you can disable logging with:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
 </span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">      </span><span class="nt">log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </span></code></pre></div>
+</div>
 <hr>
+<div class="admonition desc">
+<p class="admonition-title">Control Log Level</p>
 <p>Use this setting to control the log level that the plugin should employ when encountering errors, which requires that the <a href="https://jaywhj.github.io/mkdocs-materialx/plugins/privacy.html#config.log"><code>log</code></a> setting is enabled. The following log levels are available:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="" id="logging-error" name="__tabbed_1" type="radio"><input id="logging-warn" name="__tabbed_1" type="radio"><input id="logging-info" name="__tabbed_1" type="radio"><input id="logging-debug" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="logging-error"><code>error</code></label><label for="logging-warn"><code>warn</code></label><label for="logging-info"><code>info</code></label><label for="logging-debug"><code>debug</code></label></div>
 <div class="tabbed-content">
@@ -7874,9 +7887,11 @@ file that can be downloaded.</p>
 </div>
 </div>
 </div>
-<h3 id="external-assets">External assets<a class="headerlink" href="#external-assets" title="Permanent link">⚓︎</a></h3>
+</div>
+<h3 id="external-assets">External Assets<a class="headerlink" href="#external-assets" title="Permanent link">⚓︎</a></h3>
+<div class="admonition desc">
+<p class="admonition-title">External Assets</p>
 <p>The following settings are available for external assets:</p>
-<hr>
 <p>Use this setting to control whether the plugin should download external assets. If you only want the plugin to process <a href="#external-links">external links</a>, you can disable handling of external assets with:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
@@ -7911,15 +7926,15 @@ file that can be downloaded.</p>
 </span><span id="__span-16-5"><a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">giscus.app/*</span>
 </span></code></pre></div>
 <ol>
-<li>
-<p><a href="../math/">MathJax</a> loads web fonts for typesetting of mathematical content through relative URLs, and thus cannot be automatically bundled by the privacy plugin. <a href="https://docs.mathjax.org/en/latest/web/hosting.html">MathJax can be self-hosted</a>.</p>
-<p><a href="https://giscus.app/">Giscus</a>, which we recommend to use as a <a href="../adding-a-comment-system/">comment system</a>, uses a technique called code-splitting to load only the code that is necessary, which is implemented via relative URLs. <a href="https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md">Giscus can be self-hosted</a> as well.</p>
-</li>
+<li><a href="../math/">MathJax</a> loads web fonts for typesetting of mathematical content through relative URLs, and thus cannot be automatically bundled by the privacy plugin. <a href="https://docs.mathjax.org/en/latest/web/hosting.html">MathJax can be self-hosted</a>.</li>
 </ol>
+<p><a href="https://giscus.app/">Giscus</a>, which we recommend to use as a <a href="../adding-a-comment-system/">comment system</a>, uses a technique called code-splitting to load only the code that is necessary, which is implemented via relative URLs. <a href="https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md">Giscus can be self-hosted</a> as well.</p>
+</div>
 <hr>
-<h3 id="external-links">External links<a class="headerlink" href="#external-links" title="Permanent link">⚓︎</a></h3>
+<h3 id="external-links">External Links<a class="headerlink" href="#external-links" title="Permanent link">⚓︎</a></h3>
+<div class="admonition recommendation">
+<p class="admonition-title">External Links</p>
 <p>The following settings are available for external links:</p>
-<hr>
 <p>Use this setting to instruct the plugin to parse and process external links to annotate them for <a href="https://developer.chrome.com/en/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/">improved security</a>, or to automatically add additional attributes to external links. If you want to disable processing of external links, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
@@ -7938,6 +7953,7 @@ file that can be downloaded.</p>
 </span><span id="__span-19-2"><a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">privacy</span><span class="p">:</span>
 </span><span id="__span-19-3"><a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">      </span><span class="nt">links_noopener</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </span></code></pre></div>
+</div>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">⚓︎</a></h2>
 <h3 id="dynamic-urls">Dynamic URLs<a class="headerlink" href="#dynamic-urls" title="Permanent link">⚓︎</a></h3>
 <div class="admonition deep-dive">

@@ -224,17 +224,17 @@
     
       <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
     
@@ -7995,7 +7995,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-09-20"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-09-20T16:14:28+00:00">2026-09-20</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-09-25"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-09-25T23:40:34+00:00">2026-09-25</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20260125-183325.png" data-desc-position="bottom"><img alt="" src="../imgs/20260125-183325.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;">Built-in Optimize Plugin</h1>
 <div class="admonition quote">
@@ -8013,7 +8013,7 @@
 <h3 id="how-it-works">How it Works<a class="headerlink" href="#how-it-works" title="Permanent link">⚓︎</a></h3>
 <div class="admonition info">
 <p class="admonition-title">How it Works</p>
-<p>The plugin scans the [<code>docs</code> directory][<code>mkdocs.docs_dir</code>] for media files and assets, optimizing them automatically in order to reduce the final size of the [<code>site</code> directory][<code>mkdocs.site_dir</code>]. This leads to faster loading times as you ship less bytes to your users, as well as a smaller download for <a href="../building-for-offline-usage/">offline-capable documentation</a>.</p>
+<p>The plugin scans the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir"><code>docs</code> directory</a> for media files and assets, optimizing them automatically in order to reduce the final size of the <a href="https://www.mkdocs.org/user-guide/configuration/#site_dir"><code>site</code> directory</a>. This leads to faster loading times as you ship less bytes to your users, as well as a smaller download for <a href="../building-for-offline-usage/">offline-capable documentation</a>.</p>
 <p>Optimized images are <a href="../caching/">intelligently cached</a>, which is why the plugin will only optimize media files that changed since the last build. This makes it possible to swap out or update images, without having to worry about optimizing them, or even worse, forgetting to do so.</p>
 <p>In order to optimize media files, a few <a href="#configuration">dependencies</a> need to be available on your system.</p>
 </div>
@@ -8028,17 +8028,14 @@
 <li>
 <p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5zm0 4a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m5.13 12A9.7 9.7 0 0 1 12 20.92 9.7 9.7 0 0 1 6.87 17c-.34-.5-.63-1-.87-1.53 0-1.65 2.71-3 6-3s6 1.32 6 3c-.24.53-.53 1.03-.87 1.53"></path></svg></span> &nbsp; <strong><a href="../privacy/">Built-in privacy plugin</a></strong></p>
 <hr>
-<p>The privacy plugin makes it easy to use unoptimized external assets, passing<br>
-them to the optimize plugin before copying them to the [<code>site</code> directory]<br>
-[<code>mkdocs.site_dir</code>].</p>
+<p>The privacy plugin makes it easy to use unoptimized external assets, passing them to the optimize plugin before copying them to the <a href="https://www.mkdocs.org/user-guide/configuration/#site_dir">site directory</a>.</p>
 <hr>
 <p><strong>External media files can be automatically downloaded and optimized</strong></p>
 </li>
 <li>
 <p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4 7.5c.8.8.8 2.1 0 2.8l-2.8 2.8-7.8-7.8 2.8-2.8c.8-.8 2.1-.8 2.8 0l1.8 1.8 3-3 1.4 1.4-3 3zm-5.8 5.8-1.4-1.4-2.8 2.8-2.1-2.1 2.8-2.8-1.4-1.4-2.8 2.8-1.5-1.4-2.8 2.8c-.8.8-.8 2.1 0 2.8l1.8 1.8-4 4 1.4 1.4 4-4 1.8 1.8c.8.8 2.1.8 2.8 0l2.8-2.8-1.4-1.4z"></path></svg></span> &nbsp; <strong><a href="../offline/">Built-in offline plugin</a></strong></p>
 <hr>
-<p>The offline plugin adds support for building offline-capable documentation,<br>
-so you can distribute the [<code>site</code> directory][<code>mkdocs.site_dir</code>] as a <code>.zip</code><br>
+<p>The offline plugin adds support for building offline-capable documentation, so you can distribute the <a href="https://www.mkdocs.org/user-guide/configuration/#site_dir">site directory</a> as a <code>.zip</code><br>
 file that can be downloaded.</p>
 <hr>
 <p><strong>Your documentation can be distributed as a smaller <code>.zip</code> download</strong></p>
@@ -8066,7 +8063,7 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">Enable or Disable</p>
-<h3 id="config-enabled"><code>Config-Enabled</code><a class="headerlink" href="#config-enabled" title="Permanent link">⚓︎</a></h3>
+<h3 class="toc-hidden-header" id="config-enabled"><code>Config-Enabled</code><a class="headerlink" href="#config-enabled" title="Permanent link">⚓︎</a></h3>
 <p>Use this setting to enable or disable the plugin when <a href="../creating-your-site/#building-your-site">building your project</a>. If you want to disable the plugin, e.g., for local builds, you can use <a href="https://www.mkdocs.org/user-guide/configuration/#environment-variables">environment-variables</a> like <code>mkdocs.env</code> in <code>mkdocs.yml</code>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
@@ -8079,7 +8076,7 @@ file that can be downloaded.</p>
 <!-- md:default available CPUs - 1 -->
 <div class="admonition quote">
 <p class="admonition-title">Concurrency</p>
-<h3 id="concurrency"><code>Concurrency</code><a class="headerlink" href="#concurrency" title="Permanent link">⚓︎</a></h3>
+<h3 class="toc-hidden-header" id="concurrency"><code>Concurrency</code><a class="headerlink" href="#concurrency" title="Permanent link">⚓︎</a></h3>
 <p>With more CPUs available, the plugin can do more work in parallel, and thus complete media file optimization faster. If you want to disable concurrent processing completely, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
@@ -8097,7 +8094,7 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">Cache</p>
-<h3 id="cache"><code>cache</code><a class="headerlink" href="#cache" title="Permanent link">⚓︎</a></h3>
+<h3 class="toc-hidden-header" id="cache"><code>cache</code><a class="headerlink" href="#cache" title="Permanent link">⚓︎</a></h3>
 <p>Use this setting to instruct the plugin to bypass the cache, in order to re-optimize all media files, even though the cache may not be stale. It's normally not necessary to specify this setting, except for when debugging the plugin itself. Caching can be disabled with:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
@@ -8109,14 +8106,14 @@ file that can be downloaded.</p>
 <!-- md:default `.cache/plugin/optimize` -->
 <div class="admonition quote">
 <p class="admonition-title">cache_dir</p>
-<h3 id="cache_dir"><code>cache_dir</code><a class="headerlink" href="#cache_dir" title="Permanent link">⚓︎</a></h3>
+<h3 class="toc-hidden-header" id="cache_dir"><code>cache_dir</code><a class="headerlink" href="#cache_dir" title="Permanent link">⚓︎</a></h3>
 <p>It is normally not necessary to specify this setting, except for when you want to change the path within your root directory where media files are cached. If you want to change it, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
 </span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">      </span><span class="nt">cache_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my/custom/dir</span>
 </span></code></pre></div>
 <hr>
-<p>If you're using [multiple instances] of the plugin, it can be a good idea to set different cache directories for both instances, so that they don't interfere with each other.</p>
+<p>If you're using <a href="https://jaywhj.github.io/mkdocs-materialx/plugins/index.html#multiple-instances">multiple instances</a> of the plugin, it can be a good idea to set different cache directories for both instances, so that they don't interfere with each other.</p>
 </div>
 <h2 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">⚓︎</a></h2>
 <div class="admonition quote">
@@ -8129,7 +8126,7 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">Optimize</p>
-<h3 id="optimize"><code>optimize</code><a class="headerlink" href="#optimize" title="Permanent link">⚓︎</a></h3>
+<h3 class="toc-hidden-header" id="optimize"><code>optimize</code><a class="headerlink" href="#optimize" title="Permanent link">⚓︎</a></h3>
 <p>Use this setting to enable or disable media file optimization. Currently, the plugin's sole purpose is to optimize media files, so it's equivalent to the [<code>enabled</code>][<code>config.enabled</code>] setting, but in the near future, other features might be added. If you want to disable optimization, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
@@ -8141,7 +8138,7 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">Optimize_png</p>
-<h3 id="optimize_png"><code>optimize_png</code><a class="headerlink" href="#optimize_png" title="Permanent link">⚓︎</a></h3>
+<h3 class="toc-hidden-header" id="optimize_png"><code>optimize_png</code><a class="headerlink" href="#optimize_png" title="Permanent link">⚓︎</a></h3>
 <p>Use this setting to enable or disable the optimization of <code>.png</code> files. It's normally not necessary to specify this setting, but if you want to disable the optimization of <code>.png</code> files, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
@@ -8153,7 +8150,7 @@ file that can be downloaded.</p>
 <!-- md:default `3` of `1-10` -->
 <div class="admonition quote">
 <p class="admonition-title">optimize_png_speed</p>
-<h3 id="optimize_png_speed"><code>optimize_png_speed</code><a class="headerlink" href="#optimize_png_speed" title="Permanent link">⚓︎</a></h3>
+<h3 class="toc-hidden-header" id="optimize_png_speed"><code>optimize_png_speed</code><a class="headerlink" href="#optimize_png_speed" title="Permanent link">⚓︎</a></h3>
 <p>Use this setting to specify the speed/quality tradeoff that <a href="https://pngquant.org/">pngquant</a> applies when optimizing <code>.png</code> files. The lower the number, the more aggressively <a href="https://pngquant.org/">pngquant</a> will try to optimize:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="optimize_png_speed-slower-smaller" name="__tabbed_1" type="radio"><input id="optimize_png_speed-faster-larger" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="optimize_png_speed-slower-smaller">Slower <small>smaller</small></label><label for="optimize_png_speed-faster-larger">Faster <small>larger</small></label></div>
 <div class="tabbed-content">
@@ -8178,10 +8175,8 @@ file that can be downloaded.</p>
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">optimize_png_strip</p>
-<h3 id="optimize_png_strip"><code>optimize_png_strip</code><a class="headerlink" href="#optimize_png_strip" title="Permanent link">⚓︎</a></h3>
-<p>Use this setting to specify whether <a href="https://pngquant.org/">pngquant</a> should strip optional metadata<br>
-from <code>.png</code> files that are not required to display the image, e.g., <a href="https://en.wikipedia.org/wiki/Exif">EXIF</a>.<br>
-If you want to preserve metadata, use:</p>
+<h3 class="toc-hidden-header" id="optimize_png_strip"><code>optimize_png_strip</code><a class="headerlink" href="#optimize_png_strip" title="Permanent link">⚓︎</a></h3>
+<p>Use this setting to specify whether <a href="https://pngquant.org/">pngquant</a> should strip optional metadata from <code>.png</code> files that are not required to display the image, e.g., <a href="https://en.wikipedia.org/wiki/Exif">EXIF</a>. If you want to preserve metadata, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
 </span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">      </span><span class="nt">optimize_png_strip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
@@ -8192,10 +8187,8 @@ If you want to preserve metadata, use:</p>
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">optimize_jpg</p>
-<h3 id="optimize_jpg"><code>optimize_jpg</code><a class="headerlink" href="#optimize_jpg" title="Permanent link">⚓︎</a></h3>
-<p>Use this setting to enable or disable the optimization of <code>.jpg</code> files. It's<br>
-normally not necessary to specify this setting, but if you want to disable<br>
-the optimization of <code>.jpg</code> files, use:</p>
+<h3 class="toc-hidden-header" id="optimize_jpg"><code>optimize_jpg</code><a class="headerlink" href="#optimize_jpg" title="Permanent link">⚓︎</a></h3>
+<p>Use this setting to enable or disable the optimization of <code>.jpg</code> files. It's normally not necessary to specify this setting, but if you want to disable the optimization of <code>.jpg</code> files, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
 </span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">      </span><span class="nt">optimize_jpg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
@@ -8206,10 +8199,8 @@ the optimization of <code>.jpg</code> files, use:</p>
 <!-- md:default `60` of `0-100` -->
 <div class="admonition quote">
 <p class="admonition-title">optimize_jpg_quality</p>
-<h3 id="optimize_jpg_quality"><code>optimize_jpg_quality</code><a class="headerlink" href="#optimize_jpg_quality" title="Permanent link">⚓︎</a></h3>
-<p>Use this setting to specify the image quality that <a href="https://pillow.readthedocs.io/">Pillow</a> applies when<br>
-optimizing <code>.jpg</code> files. If the images look blurry, it's a good idea to<br>
-fine-tune and change this setting:</p>
+<h3 class="toc-hidden-header" id="optimize_jpg_quality"><code>optimize_jpg_quality</code><a class="headerlink" href="#optimize_jpg_quality" title="Permanent link">⚓︎</a></h3>
+<p>Use this setting to specify the image quality that <a href="https://pillow.readthedocs.io/">Pillow</a> applies when optimizing <code>.jpg</code> files. If the images look blurry, it's a good idea to fine-tune and change this setting:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
 </span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">      </span><span class="nt">optimize_jpg_quality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">75</span>
@@ -8220,10 +8211,8 @@ fine-tune and change this setting:</p>
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">optimize_jpg_progressive</p>
-<h3 id="optimize_jpg_progressive"><code>optimize_jpg_progressive</code><a class="headerlink" href="#optimize_jpg_progressive" title="Permanent link">⚓︎</a></h3>
-<p>Use this setting to specify whether <a href="https://pillow.readthedocs.io/">Pillow</a> should use progressive encoding<br>
-when optimizing <code>.jpg</code> files, rendering faster on slow connections. If you want<br>
-to disable progressive encoding, use:</p>
+<h3 class="toc-hidden-header" id="optimize_jpg_progressive"><code>optimize_jpg_progressive</code><a class="headerlink" href="#optimize_jpg_progressive" title="Permanent link">⚓︎</a></h3>
+<p>Use this setting to specify whether <a href="https://pillow.readthedocs.io/">Pillow</a> should use progressive encoding when optimizing <code>.jpg</code> files, rendering faster on slow connections. If you want to disable progressive encoding, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
 </span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">      </span><span class="nt">optimize_jpg_progressive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
@@ -8234,36 +8223,28 @@ to disable progressive encoding, use:</p>
 <!-- md:default none -->
 <div class="admonition quote">
 <p class="admonition-title">optimize_include</p>
-<h3 id="optimize_include"><code>optimize_include</code><a class="headerlink" href="#optimize_include" title="Permanent link">⚓︎</a></h3>
-<p>Use this setting to enable media file optimization for specific directories<br>
-of your project, e.g., when using [multiple instances] of the plugin to optimize<br>
-media files differently:</p>
+<h3 class="toc-hidden-header" id="optimize_include"><code>optimize_include</code><a class="headerlink" href="#optimize_include" title="Permanent link">⚓︎</a></h3>
+<p>Use this setting to enable media file optimization for specific directories of your project, e.g., when using <a href="https://jaywhj.github.io/mkdocs-materialx/plugins/index.html#multiple-instances">multiple instances</a> of the plugin to optimize media files differently:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
 </span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">      </span><span class="nt">optimize_include</span><span class="p">:</span>
 </span><span id="__span-13-4"><a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">screenshots/*</span>
 </span></code></pre></div>
-<p>This configuration enables optimization for all media files that are contained<br>
-in the <code>screenshots</code> folder and its subfolders inside the [<code>docs</code> directory]<br>
-[<code>mkdocs.docs_dir</code>].</p>
+<p>This configuration enables optimization for all media files that are contained in the <code>screenshots</code> folder and its subfolders inside the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir"><code>docs</code> directory</a>.</p>
 </div>
 <hr>
 <!-- md:version 9.7.0 -->
 <!-- md:default none -->
 <div class="admonition quote">
 <p class="admonition-title">optimize_exclude</p>
-<h3 id="optimize_exclude"><code>optimize_exclude</code><a class="headerlink" href="#optimize_exclude" title="Permanent link">⚓︎</a></h3>
-<p>Use this setting to disable media file optimization for specific directories<br>
-of your project, e.g., when using [multiple instances] of the plugin to optimize<br>
-media files differently:</p>
+<h3 class="toc-hidden-header" id="optimize_exclude"><code>optimize_exclude</code><a class="headerlink" href="#optimize_exclude" title="Permanent link">⚓︎</a></h3>
+<p>Use this setting to disable media file optimization for specific directories of your project, e.g., when using <a href="https://jaywhj.github.io/mkdocs-materialx/plugins/index.html#multiple-instances">multiple instances</a> of the plugin to optimize media files differently:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">social</span><span class="p">:</span>
 </span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">      </span><span class="nt">optimize_exclude</span><span class="p">:</span>
 </span><span id="__span-14-4"><a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vendor/*</span>
 </span></code></pre></div>
-<p>This configuration disables optimization for all media files that are contained<br>
-in the <code>vendor</code> folder and its subfolders inside the [<code>docs</code> directory]<br>
-[<code>mkdocs.docs_dir</code>].</p>
+<p>This configuration disables optimization for all media files that are contained in the <code>vendor</code> folder and its subfolders inside the <a href="https://www.mkdocs.org/user-guide/configuration/#docs_dir"><code>docs</code> directory</a>.</p>
 </div>
 <h2 id="reporting">Reporting<a class="headerlink" href="#reporting" title="Permanent link">⚓︎</a></h2>
 <div class="admonition quote">
@@ -8275,9 +8256,8 @@ in the <code>vendor</code> folder and its subfolders inside the [<code>docs</cod
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">print_gain</p>
-<h3 id="print_gain"><code>print_gain</code><a class="headerlink" href="#print_gain" title="Permanent link">⚓︎</a></h3>
-<p>Use this setting to control whether the plugin should print the number of bytes<br>
-gained after optimizing each file. If you want to disable this behavior, use:</p>
+<h3 class="toc-hidden-header" id="print_gain"><code>print_gain</code><a class="headerlink" href="#print_gain" title="Permanent link">⚓︎</a></h3>
+<p>Use this setting to control whether the plugin should print the number of bytes gained after optimizing each file. If you want to disable this behavior, use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
 </span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">      </span><span class="nt">print_gain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
@@ -8288,9 +8268,8 @@ gained after optimizing each file. If you want to disable this behavior, use:</p
 <!-- md:default `true` -->
 <div class="admonition quote">
 <p class="admonition-title">print_gain_summary</p>
-<h3 id="print_gain_summary"><code>print_gain_summary</code><a class="headerlink" href="#print_gain_summary" title="Permanent link">⚓︎</a></h3>
-<p>Use this setting to control whether the plugin should print the total number of<br>
-bytes gained after optimizing all files. If you want to disable this behavior,<br>
+<h3 class="toc-hidden-header" id="print_gain_summary"><code>print_gain_summary</code><a class="headerlink" href="#print_gain_summary" title="Permanent link">⚓︎</a></h3>
+<p>Use this setting to control whether the plugin should print the total number of bytes gained after optimizing all files. If you want to disable this behavior,<br>
 use:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">optimize</span><span class="p">:</span>
