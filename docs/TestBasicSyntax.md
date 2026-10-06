@@ -2701,64 +2701,124 @@ s3}
 
 ---
 
-### 🖋️ Playwrite AR Guides (Arch Linux System Integration)
+## <font style="color:pink"> 🖋️ Playwrite AR Guides (<font style="color:cornflowerblue">Arch Linux System Integration</font>) </font> { .centered }
 
-A summary documentation page tracking the installation, filesystem diagnostics, and OpenType rendering features for the **Playwrite AR Guides** typeface.
+!!! git ""
+    A summary documentation page tracking the installation, filesystem diagnostics, and OpenType rendering features for the **Playwrite AR Guides** typeface.
+    
+### <font style="color:cornflowerblue">📋 <b>Quick Status Summary</b></font> { .centered }
 
-### 📋 Quick Status Summary
-* **Package Source:** Upstream Google Fonts / TypeTogether GitHub repository.
-* **Installation Scope:** Local User (`~/.local/share/fonts/PlaywriteARGuides-Regular.ttf`).
-* **System Integrity:** Verified. System-wide `fc-cache` anomalies (`looped directory detected`) are identified as safe, superficial Fontconfig engine duplication warnings. Fonts are caching successfully.
+!!! recommendation ""
 
+    * **Package Source:** Upstream Google Fonts / TypeTogether GitHub repository.
+    * **Installation Scope:** Local User (`~/.local/share/fonts/PlaywriteARGuides-Regular.ttf`).
+    * **System Integrity:** Verified. System-wide `fc-cache` anomalies (`looped directory detected`) are identified as safe, superficial Fontconfig engine duplication warnings. Fonts are caching successfully.
+    
 ---
 
 ###  🔍 System Verification & Diagnostics
 
-### 1. Confirm Font Recognition
-To verify that the system successfully registers and indexes the font family, run:
-```bash
-fc-list : family | grep -i "Playwrite"
-```
-**Expected Output:** `Playwrite AR Guides`
+!!! recommendation " 1. Confirm Font Recognition"
 
-### 2. Suppress/Ignore Fontconfig Cache Artifacts
-If `fc-cache -fv` outputs `skipping, looped directory detected` errors for `/usr/share/fonts/` subdirectories, it can be safely ignored. 
-* **The Cause:** Fontconfig triggers a false-positive tracking flag during its second-pass explicit array check after completing its initial recursive filesystem scan.
-* **The Proof:** Ensure the final engine line outputs: `fc-cache: succeeded`.
+    ### 1. Confirm Font Recognition {.toc-hidden-header}
+    
+    To verify that the system successfully registers and indexes the font family, run:
+    
+    ```bash
+    fc-list : family | grep -i "Playwrite"
+    ```
+    **Expected Output:** `Playwrite AR Guides`
+    
+!!! recommendation " 2. Suppress/Ignore Fontconfig Cache Artifacts"
 
+    ### 2. Suppress/Ignore Fontconfig Cache Artifacts {.toc-hidden-header}
+    
+    If `fc-cache -fv` outputs `skipping, looped directory detected` errors for `/usr/share/fonts/` subdirectories, it can be safely ignored.
+     
+    * **The Cause:** Fontconfig triggers a false-positive tracking flag during its second-pass explicit array check after completing its initial recursive filesystem scan.
+    
+    * **The Proof:** Ensure the final engine line outputs: `fc-cache: succeeded`.
+    
 ---
 
 ### 🛠️ Enabling Cursive Connections (OpenType Features)
 
-Because Playwrite is a highly specialized primary school education font, it relies heavily on **OpenType feature tags** to dynamically link letters together into seamless cursive scripts. Without these features enabled, letters will appear disconnected.
+!!! instruction "🛠️ Enabling Cursive Connections (OpenType Features)"
 
+    Because Playwrite is a highly specialized primary school education font, it relies heavily on **OpenType feature tags** to dynamically link letters together into seamless cursive scripts. Without these features enabled, letters will appear disconnected.
+    
 ### 🌐 Web & MkDocs Custom CSS
-To use this font natively on a website or custom MkDocs theme, ensure you load the local file or standard web font, and explicitly declare the standard ligatures layout:
 
-```css
-.playwrite-cursive {
-    font-family: 'Playwrite AR Guides', sans-serif;
-    
-    /* Mandatory properties for cursive script linking */
-    font-feature-settings: "liga" 1, "calt" 1;
-    font-variant-ligatures: common-ligatures contextual;
-    
-    /* Optional: Optimizes rendering speed vs legibility */
-    text-rendering: optimizeLegibility;
-}
-```
+!!! decision "🌐 Web & MkDocs Custom CSS"
 
+    To use this font natively on a website or custom MkDocs theme, ensure you load the local file or standard web font, and explicitly declare the standard ligatures layout:
+
+    ```css
+    .playwrite-cursive {
+        font-family: 'Playwrite AR Guides', sans-serif;
+        
+        /* Mandatory properties for cursive script linking */
+        font-feature-settings: "liga" 1, "calt" 1;
+        font-variant-ligatures: common-ligatures contextual;
+        
+        /* Optional: Optimizes rendering speed vs legibility */
+        text-rendering: optimizeLegibility;
+    }
+    ```
+    
 ### 📄 LibreOffice / OpenOffice
-To use the font inside office suites with proper connecting lines, append the mandatory feature tags directly inside the **Font Name** selector box:
 
-1. Click on the Font Name drop-down menu.
-2. Type or change the string to exactly match this syntax:
-   `Playwrite AR Guides:liga=1&calt=1`
-3. Press **Enter**. The system will now actively link the characters as you type.
+!!! instruction "📄 LibreOffice / OpenOffice"
 
+    To use the font inside office suites with proper connecting lines, append the mandatory feature tags directly inside the **Font Name** selector box:
+    
+    1. Click on the Font Name drop-down menu.
+    
+    2. Type or change the string to exactly match this syntax:
+       `Playwrite AR Guides:liga=1&calt=1`
+
+    3. Press **Enter**. The system will now actively link the characters as you type.
+    
 ### 🎨 Graphic Design Tools (Inkscape / GIMP)
-* **Inkscape:** Open the **Text and Font** sidebar (`Ctrl+Shift+T`), click the **Features** tab, and ensure **Standard Ligatures** (`liga`) and **Contextual Alternates** (`calt`) are ticked.
-* **GIMP:** Standard ligatures are turned on by default in the text tool layer options.
+
+!!! recommendation "🎨 Graphic Design Tools (Inkscape / GIMP)"
+
+    * **Inkscape:** Open the **Text and Font** sidebar (`Ctrl+Shift+T`), click the **Features** tab, and ensure **Standard Ligatures** (`liga`) and **Contextual Alternates** (`calt`) are ticked.
+
+    * **GIMP:** Standard ligatures are turned on by default in the text tool layer options.
+    
+---
+
+!!! instruction "Produces `{ .centered }`Text Plus Colour"
+
+    ## Text `{. centered`} {.toc-hidden-header}
+    
+    This pertains to "Remarkable" and MkDocs-MaterialX using 'GFM'
+    
+    OK so with this example heading:
+    
+    ```css
+    ### <font style="color:pink"> 🖋️ Playwrite AR Guides (<font style="color:cornflowerblue">Arch Linux System Integration</font>) </font> { .centered }
+    ```
+    
+    With the added custom css below, { .centered } works on any heading level, # through ######, and it's the same one-word class each time:
+    
+    ```css
+    .md-typeset .admonition pre > code,
+    .md-typeset details pre > code {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      padding-right: 3.5rem;
+    }
+    
+    .md-typeset .admonition pre > code > span,
+    .md-typeset details pre > code > span {
+      min-width: 0 !important;
+    }
+    ```
+    
+    Is the working solution!
+    
 
 ## Blogs
 
@@ -4850,7 +4910,7 @@ style D fill:#4d964d,stroke:#000,stroke-width:2px
 
     $$\sum_{\nu=0}^9 [\color{#20b2aa}{A^\nu}, [\color{#20b2aa}{A_\mu}, \color{#20b2aa}{A_\nu}]] + \frac{1}{2} \{\color{#dda0dd}{\bar{\Psi}}, \Gamma_\mu \color{#dda0dd}{\Psi}\} = \color{#ff6666}{0}$$
 
-## Hover rows
+#### Hover rows
 
 Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 
@@ -4862,3 +4922,75 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 
 !!! bug "Visual or Syntax Mismatch (Red Highlight)"
     Use this specific container variant to document trailing file-extension typos or formatting glitches.
+    
+### Sublime Text 4 Build 4215
+
+!!! recommendation "Build 4215"
+
+    Sublime Text 4 Build 4215 can be patched using hex modifications widely documented in GitHub Gists, as shared license keys are frequently blocked by network verification.
+    
+    - Update / Install Build 4215 on Arch Linux
+    
+    `Add GPG Key`
+    
+    ```zsh
+    curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+    ```
+    
+    Ensure stable channel is configured in `/etc/pacman.conf`
+    
+    ```zsh
+    echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+    ```
+    
+    `Synchronize and update`
+    
+    ```zsh
+    sudo pacman -Syu sublime-text
+    ```
+    
+    ---
+    
+    - Apply Build 4215 Linux Hex Patch
+    
+    The active hex signature shared in GitHub Gists leverages a regex substitution targeting the licensing state evaluation machine inside the executable binary.
+    
+    Open your terminal and run the following commands to create a backup copy and rewrite the active byte sequences:
+    
+    Navigate to the Sublime Text binary directory
+    
+    ```zsh
+    cd /opt/sublime_text/
+    ```
+    
+    Create a safe backup clone of the build binary
+    
+    
+    ```zsh
+    sudo cp sublime_text sublime_text.bak
+    ```
+    
+    Substitute the 4213 / 4215 instruction signature using perl inline
+    
+    ```zsh
+    sudo perl -pi -e 's/\x0F\xB6\x51\x0C\x83\xF2\x01/\xC6\x41\x0C\x01\x31\xD2\x90/' sublime_text
+    ```
+    
+    ---
+    
+    - Alternative: Multi-Build Method (Gsed)
+    
+    If your environment lacks an initialized perl runtime profile, you can accomplish the exact same binary adjustment using sed matching the build 4215 specific array offset:
+    
+    ```zsh
+    sudo sed -i 's/\x0f\xb6\x51\x0c\x83\xf2\x01/\xc6\x41\x0c\x01\x31\xd2\x90/g' /opt/sublime_text/sublime_text
+    ```
+    
+### Copy iso to flash-drive with dd
+
+!!! warning "dd"
+
+    ```
+    sudo dd if=/home/johnpc/Downloads/garuda-gnome-linux-garuda-260819.iso of=/dev/sdd bs=4M status=progress oflag=sync
+    ```
+    

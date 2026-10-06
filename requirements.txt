@@ -22,3 +22,7 @@ cairosvg
 mkdocs-caption
 mkdocs-drawio==1.16.3
 mkdocs-markmap==2.5.2
+
+mkdocstrings-python
+properdocs==1.6.7
+ruff

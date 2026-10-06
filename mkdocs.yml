@@ -170,6 +170,30 @@ nav:
       - index.md
       - MkDocs Start Page: MkDocs-Material-Start.md
       - Get Started-MkDocs: about.md
+      - ProperDocs:
+        - Home: properdocs/index.md
+        - Getting Started: properdocs/getting-started.md
+        - User Guide:
+          - Overview: properdocs/user-guide/README.md
+          - Installation: properdocs/user-guide/installation.md
+          - Writing Your Docs: properdocs/user-guide/writing-your-docs.md
+          - Choosing Your Theme: properdocs/user-guide/choosing-your-theme.md
+          - Customizing Your Theme: properdocs/user-guide/customizing-your-theme.md
+          - Localizing Your Theme: properdocs/user-guide/localizing-your-theme.md
+          - Configuration: properdocs/user-guide/configuration.md
+          - Command Line Interface: properdocs/user-guide/cli.md
+          - Deploying Your Docs: properdocs/user-guide/deploying-your-docs.md
+        - Developer Guide:
+          - Overview: properdocs/dev-guide/README.md
+          - Themes: properdocs/dev-guide/themes.md
+          - Translations: properdocs/dev-guide/translations.md
+          - Plugins: properdocs/dev-guide/plugins.md
+          - API Reference: properdocs/dev-guide/api.md
+        - About:
+          - Release Notes: properdocs/about/release-notes.md
+          - Contributing: properdocs/about/contributing.md
+          - License: properdocs/about/license.md
+          - Who We Are: properdocs/about/who-we-are.md
 
   - Get started:
     - Differences: differences.md
