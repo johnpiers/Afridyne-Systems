@@ -1734,3 +1734,25 @@ code, pre, .codehilite, .highlight {
   display: block;
   margin: 0 auto;
 }
+
+.md-typeset .centered {
+  text-align: center;
+}
+
+.md-typeset .centered .headerlink {
+  display: inline;
+  position: static;
+}
+
+.md-typeset .admonition pre > code,
+.md-typeset details pre > code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding-right: 3.5rem;
+}
+
+.md-typeset .admonition pre > code > span,
+.md-typeset details pre > code > span {
+  min-width: 0 !important;
+}
+
