@@ -1,253 +1,237 @@
-# ProperDocs Plugins
+---
+icon: octicons/desktop-download-24
+---
 
-A Guide to installing, using and creating ProperDocs Plugins
+<div style="display: none;"><h1>ProperDocs Plugins</h1></div>
+
+![](../../imgs/properdocs-plugins.png){: style="display: block; margin: 0 auto"}
+
+# ProperDocs Plugins { .centered }
+
+## A Guide to installing, using and creating ProperDocs Plugins { .centered }
 
 ---
 
 ## Installing Plugins
 
-Before a plugin can be used, it must be installed on the system. If you are
-using a plugin which comes with ProperDocs, then it was installed when you installed
-ProperDocs. However, to install third party plugins, you need to determine the
-appropriate package name and install it using `pip`:
+!!! desc "Installing Plugins"
 
-```bash
-pip install properdocs-foo-plugin
-```
-
-WARNING: Installing a ProperDocs plugin means installing a Python package and executing any code that the author has put in there. So, exercise the usual caution; there's no attempt at sandboxing.
-
-Once a plugin has been successfully installed, it is ready to use. It just needs
-to be [enabled](#using-plugins) in the configuration file. The [Catalog]
-repository has a large ranked list of plugins that you can install and use.
-
+    Before a plugin can be used, it must be installed on the system. If you are using a plugin which comes with ProperDocs, then it was installed when you installed ProperDocs. However, to install third party plugins, you need to determine the appropriate package name and install it using `uv` or `pip`:
+    
+    ```bash
+    uv pip install properdocs-foo-plugin
+    ```
+    
+    !!! warning "WARNING:"
+    
+    Installing a ProperDocs plugin means installing a Python package and executing any code that the author has put in there. So, exercise the usual caution; there's no attempt at sandboxing.
+    
+    Once a plugin has been successfully installed, it is ready to use. It just needs to be [enabled](#using-plugins) in the configuration file. The [Catalog] repository has a large ranked list of plugins that you can install and use.
+    
 ## Using Plugins
 
-The [`plugins`][config] configuration option should contain a list of plugins to
-use when building the site. Each "plugin" must be a string name assigned to the
-plugin (see the documentation for a given plugin to determine its "name"). A
-plugin listed here must already be [installed](#installing-plugins).
+!!! desc "Using Plugins"
 
-```yaml
-plugins:
-  - search
-```
-
-Some plugins may provide configuration options of their own. If you would like
-to set any configuration options, then you can nest a key/value mapping
-(`option_name: option value`) of any options that a given plugin supports. Note
-that a colon (`:`) must follow the plugin name and then on a new line the option
-name and value must be indented and separated by a colon. If you would like to
-define multiple options for a single plugin, each option must be defined on a
-separate line.
-
-```yaml
-plugins:
-  - search:
-      lang: en
-      foo: bar
-```
-
-For information regarding the configuration options available for a given plugin,
-see that plugin's documentation.
-
-For a list of default plugins and how to override them, see the
-[configuration][config] documentation.
-
+    The [`plugins`][config] configuration option should contain a list of plugins to use when building the site. Each "plugin" must be a string name assigned to the plugin (see the documentation for a given plugin to determine its "name").
+    
+    A plugin listed here must already be [installed](#installing-plugins).
+    
+    ```yaml
+    plugins:
+      - search
+    ```
+    
+    Some plugins may provide configuration options of their own. If you would like to set any configuration options, then you can nest a key/value mapping (`option_name: option value`) of any options that a given plugin supports. Note that a colon (`:`) must follow the plugin name and then on a new line the option name and value must be indented and separated by a colon. If you would like to define multiple options for a single plugin, each option must be defined on a separate line.
+    
+    ```yaml
+    plugins:
+      - search:
+          lang: en
+          foo: bar
+    ```
+    
+    For information regarding the configuration options available for a given plugin, see that plugin's documentation.
+    
+    For a list of default plugins and how to override them, see the [configuration][config] documentation.
+    
 ## Developing Plugins
 
-Like ProperDocs, plugins must be written in Python. It is generally expected that
-each plugin would be distributed as a separate Python module, although it is
-possible to define multiple plugins in the same module. At a minimum, a ProperDocs
-Plugin must consist of a [BasePlugin] subclass and an [entry point] which
-points to it.
+!!! desc "Developing Plugins"
 
-### BasePlugin
+    Like ProperDocs, plugins must be written in Python. It is generally expected that each plugin would be distributed as a separate Python module, although it is possible to define multiple plugins in the same module. At a minimum, a ProperDocs Plugin must consist of a [BasePlugin] subclass and an [entry point] which points to it.
+    
+### Base Plugin
 
-A subclass of `properdocs.plugins.BasePlugin` should define the behavior of the plugin.
-The class generally consists of actions to perform on specific events in the build
-process as well as a configuration scheme for the plugin.
-
-All `BasePlugin` subclasses contain the following attributes:
-
+!!! desc "Base Plugin"
+    A subclass of `properdocs.plugins.BasePlugin` should define the behavior of the plugin. The class generally consists of actions to perform on specific events in the build process as well as a configuration scheme for the plugin.
+    
+    All `BasePlugin` subclasses contain the following attributes:
+    
 #### config_scheme
 
-A tuple of configuration validation instances. Each item must consist of a
-two item tuple in which the first item is the string name of the
-configuration option and the second item is an instance of
-`properdocs.config.config_options.BaseConfigOption` or any of its subclasses.
+!!! desc "config_scheme"
 
-For example, the following `config_scheme` defines three configuration options: `foo`, which accepts a string; `bar`, which accepts an integer; and `baz`, which accepts a boolean value.
+    A tuple of configuration validation instances. Each item must consist of a two item tuple in which the first item is the string name of the configuration option and the second item is an instance of `properdocs.config.config_options.BaseConfigOption` or any of its subclasses.
+    
+    For example, the following `config_scheme` defines three configuration options: `foo`, which accepts a string; `bar`, which accepts an integer; and `baz`, which accepts a boolean value.
+    
+    ```python
+    class MyPlugin(properdocs.plugins.BasePlugin):
+        config_scheme = (
+            ('foo', properdocs.config.config_options.Type(str, default='a default value')),
+            ('bar', properdocs.config.config_options.Type(int, default=0)),
+            ('baz', properdocs.config.config_options.Type(bool, default=True))
+        )
+    ```
+    
+     NEW: **New in version 1.4.**
+     
+    !!! info ""
 
-```python
-class MyPlugin(properdocs.plugins.BasePlugin):
-    config_scheme = (
-        ('foo', properdocs.config.config_options.Type(str, default='a default value')),
-        ('bar', properdocs.config.config_options.Type(int, default=0)),
-        ('baz', properdocs.config.config_options.Type(bool, default=True))
-    )
-```
+        ##### Subclassing `Config` to specify the config schema
+        
+        To get type safety benefits, if you're targeting only MkDocs 1.4+, define the config schema as a class instead:
+        
+        ```python
+        class MyPluginConfig(properdocs.config.base.Config):
+            foo = properdocs.config.config_options.Type(str, default='a default value')
+            bar = properdocs.config.config_options.Type(int, default=0)
+            baz = properdocs.config.config_options.Type(bool, default=True)
+            
+        class MyPlugin(properdocs.plugins.BasePlugin[MyPluginConfig]):
+            ...
+        ```
+        
+##### Examples of Config Definitions
 
-> NEW: **New in version 1.4.**
->
-> ##### Subclassing `Config` to specify the config schema
->
-> To get type safety benefits, if you're targeting only MkDocs 1.4+, define the config schema as a class instead:
->
-> ```python
-> class MyPluginConfig(properdocs.config.base.Config):
->     foo = properdocs.config.config_options.Type(str, default='a default value')
->     bar = properdocs.config.config_options.Type(int, default=0)
->     baz = properdocs.config.config_options.Type(bool, default=True)
->
-> class MyPlugin(properdocs.plugins.BasePlugin[MyPluginConfig]):
->     ...
-> ```
+!!! abstract "! EXAMPLE: Backwards-compatible custom configuration scheme"
 
-##### Examples of config definitions
+    ```python
+    from properdocs.config import base, config_options as c
 
->! EXAMPLE:
->
-> ```python
-> from properdocs.config import base, config_options as c
->
-> class _ValidationOptions(base.Config):
->     enabled = c.Type(bool, default=True)
->     verbose = c.Type(bool, default=False)
->     skip_checks = c.ListOfItems(c.Choice(('foo', 'bar', 'baz')), default=[])
->
-> class MyPluginConfig(base.Config):
->     definition_file = c.File(exists=True)  # required
->     checksum_file = c.Optional(c.File(exists=True))  # can be None but must exist if specified
->     validation = c.SubConfig(_ValidationOptions)
-> ```
->
-> From the user's point of view `SubConfig` is similar to `Type(dict)`, it's just that it also retains full ability for validation: you define all valid keys and what each value should adhere to.
->
-> And `ListOfItems` is similar to `Type(list)`, but again, we define the constraint that each value must adhere to.
->
-> This accepts a config as follows:
->
-> ```yaml
-> my_plugin:
->   definition_file: configs/test.ini  # relative to properdocs.yml
->   validation:
->     enabled: !ENV [CI, false]
->     verbose: true
->     skip_checks:
->       - foo
->       - baz
-> ```
-<!-- -->
->? EXAMPLE:
->
-> ```python
-> import numbers
-> from properdocs.config import base, config_options as c
->
-> class _Rectangle(base.Config):
->     width = c.Type(numbers.Real)  # required
->     height = c.Type(numbers.Real)  # required
->
-> class MyPluginConfig(base.Config):
->     add_rectangles = c.ListOfItems(c.SubConfig(_Rectangle))  # required
-> ```
->
-> In this example we define a list of complex items, and that's achieved by passing a concrete `SubConfig` to `ListOfItems`.
->
-> This accepts a config as follows:
->
-> ```yaml
-> my_plugin:
->   add_rectangles:
->     - width: 5
->       height: 7
->     - width: 12
->       height: 2
-> ```
+    class _ValidationOptions(base.Config):
+        enabled = c.Type(bool, default=True)
+        verbose = c.Type(bool, default=False)
+        skip_checks = c.ListOfItems(c.Choice(('foo', 'bar', 'baz')), default=[])
 
-When the user's configuration is loaded, the above scheme will be used to
-validate the configuration and fill in any defaults for settings not
-provided by the user. The validation classes may be any of the classes
-provided in `properdocs.config.config_options` or a third party subclass defined
-in the plugin.
+    class MyPluginConfig(base.Config):
+        definition_file = c.File(exists=True)  # required
+        checksum_file = c.Optional(c.File(exists=True))  # can be None but must exist if specified
+        validation = c.SubConfig(_ValidationOptions)
+    ```
 
-Any settings provided by the user which fail validation or are not defined
-in the `config_scheme` will raise a `properdocs.config.base.ValidationError`.
+    From the user's point of view `SubConfig` is similar to `Type(dict)`, it's just that it also retains full ability for validation: you define all valid keys and what each value should adhere to.
 
-#### config
+    And `ListOfItems` is similar to `Type(list)`, but again, we define the constraint that each value must adhere to.
 
-A dictionary of configuration options for the plugin, which is populated by
-the `load_config` method after configuration validation has completed. Use
-this attribute to access options provided by the user.
+    This accepts a config as follows:
 
-```python
-def on_pre_build(self, config, **kwargs):
-    if self.config['baz']:
-        # implement "baz" functionality here...
-```
+    ```yaml
+    my_plugin:
+      definition_file: configs/test.ini  # relative to properdocs.yml
+      validation:
+        enabled: !ENV [CI, false]
+        verbose: true
+        skip_checks:
+          - foo
+          - baz
+    ```
 
-> NEW: **New in version 1.4.**
->
-> ##### Safe attribute-based access
->
-> To get type safety benefits, if you're targeting only MkDocs 1.4+, access options as attributes instead:
->
-> ```python
-> def on_pre_build(self, config, **kwargs):
->     if self.config.baz:
->         print(self.config.bar ** 2)  # OK, `int ** 2` is valid.
-> ```
+    !!! decision "? EXAMPLE: List of sub-configurations"
 
-All `BasePlugin` subclasses contain the following method(s):
+        ```python
+        import numbers
+        from properdocs.config import base, config_options as c
+
+        class _Rectangle(base.Config):
+            width = c.Type(numbers.Real)  # required
+            height = c.Type(numbers.Real)  # required
+
+        class MyPluginConfig(base.Config):
+            add_rectangles = c.ListOfItems(c.SubConfig(_Rectangle))  # required
+        ```
+
+        In this example we define a list of complex items, and that's achieved by passing a concrete `SubConfig` to `ListOfItems`.
+
+        This accepts a config as follows:
+
+        ```yaml
+        my_plugin:
+          add_rectangles:
+            - width: 5
+              height: 7
+            - width: 12
+              height: 2
+        ```
+
+When the user's configuration is loaded, the above scheme will be used to validate the configuration and fill in any defaults for settings not provided by the user. The validation classes may be any of the classes provided in `properdocs.config.config_options` or a third party subclass defined in the plugin.
+
+Any settings provided by the user which fail validation or are not defined in the `config_scheme` will raise a `properdocs.config.base.ValidationError`.
+
+#### Config
+
+!!! desc "Config"
+
+    A dictionary of configuration options for the plugin, which is populated by the `load_config` method after configuration validation has completed. Use this attribute to access options provided by the user.
+
+    ```python
+    def on_pre_build(self, config, **kwargs):
+        if self.config['baz']:
+            # implement "baz" functionality here...
+    ```
+
+    !!! abstract "NEW:"
+
+        NEW: **New in version 1.4.**
+
+        ##### Safe attribute-based access
+
+        To get type safety benefits, if you're targeting only MkDocs 1.4+, access options as attributes instead:
+
+        ```python
+        def on_pre_build(self, config, **kwargs):
+            if self.config.baz:
+                print(self.config.bar ** 2)  # OK, `int ** 2` is valid.
+        ```
+
+    All `BasePlugin` subclasses contain the following method(s):
 
 #### load_config(options)
 
-Loads configuration from a dictionary of options. Returns a tuple of
-`(errors, warnings)`. This method is called by ProperDocs during configuration
-validation and should not need to be called by the plugin.
+!!! desc "load_config(options)"
 
-#### on_&lt;event_name&gt;()
+    Loads configuration from a dictionary of options. Returns a tuple of `(errors, warnings)`. This method is called by ProperDocs during configuration validation and should not need to be called by the plugin.
 
-Optional methods which define the behavior for specific [events]. The plugin
-should define its behavior within these methods. Replace `<event_name>` with
-the actual name of the event. For example, the `pre_build` event would be
-defined in the `on_pre_build` method.
+    #### on_&lt;event_name&gt;()
+    
+    Optional methods which define the behavior for specific [events]. The plugin should define its behavior within these methods. Replace `<event_name>` with the actual name of the event. For example, the `pre_build` event would be defined in the `on_pre_build` method.
+    
+    Most events accept one positional argument and various keyword arguments. It is generally expected that the positional argument would be modified (or replaced) by the plugin and returned. If nothing is returned (the method returns `None`), then the original, unmodified object is used. The keyword arguments are simply provided to give context and/or supply data which may be used to determine how the positional argument should be modified. It is good practice to accept keyword arguments as `**kwargs`. In the event that additional keywords are provided to an event in a future version of ProperDocs,there will be no need to alter your plugin.
 
-Most events accept one positional argument and various keyword arguments. It
-is generally expected that the positional argument would be modified (or
-replaced) by the plugin and returned. If nothing is returned (the method
-returns `None`), then the original, unmodified object is used. The keyword
-arguments are simply provided to give context and/or supply data which may
-be used to determine how the positional argument should be modified. It is
-good practice to accept keyword arguments as `**kwargs`. In the event that
-additional keywords are provided to an event in a future version of ProperDocs,
-there will be no need to alter your plugin.
+    For example, the following event would add an additional static_template to the theme config:
+    
+    ```python
+    class MyPlugin(BasePlugin):
+        def on_config(self, config, **kwargs):
+            config['theme'].static_templates.add('my_template.html')
+            return config
+    ```
+    
+    !!! abstract "NEW:"
 
-For example, the following event would add an additional static_template to
-the theme config:
+        NEW: **New in version 1.4.**
+        
+        To get type safety benefits, if you're targeting only MkDocs 1.4+, access config options as attributes instead:
 
-```python
-class MyPlugin(BasePlugin):
-    def on_config(self, config, **kwargs):
-        config['theme'].static_templates.add('my_template.html')
-        return config
-```
-
-> NEW: **New in version 1.4.**
->
-> To get type safety benefits, if you're targeting only MkDocs 1.4+, access config options as attributes instead:
->
-> ```python
-> def on_config(self, config: ProperDocsConfig):
->     config.theme.static_templates.add('my_template.html')
->     return config
-> ```
-
+        ```python
+        def on_config(self, config: ProperDocsConfig):
+            config.theme.static_templates.add('my_template.html')
+            return config
+        ```
+        
 ### Events
 
-There are three kinds of events: [Global Events], [Page Events] and
-[Template Events].
+There are three kinds of events: [Global Events], [Page Events] and [Template Events].
 
 <details class="card">
   <summary>
@@ -269,286 +253,279 @@ There are three kinds of events: [Global Events], [Page Events] and
 
 #### One-time Events
 
-One-time events run once per `properdocs` invocation. The only case where these tangibly differ from [global events](#global-events) is for `properdocs serve`: global events, unlike these, will run multiple times -- once per *build*.
-
-##### on_startup
-
-::: properdocs.plugins.BasePlugin.on_startup
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_shutdown
-
-::: properdocs.plugins.BasePlugin.on_shutdown
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_serve
-
-::: properdocs.plugins.BasePlugin.on_serve
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
+!!! git "One-time Events"
+    One-time events run once per `properdocs` invocation. The only case where these tangibly differ from [global events](#global-events) is for `properdocs serve`: global events, unlike these, will run multiple times -- once per *build*.
+    
+    ##### on_startup
+    
+    ::: properdocs.plugins.BasePlugin.on_startup
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_shutdown
+    
+    ::: properdocs.plugins.BasePlugin.on_shutdown
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_serve
+    
+    ::: properdocs.plugins.BasePlugin.on_serve
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
 
 #### Global Events
 
-Global events are called once per build at either the beginning or end of the
-build process. Any changes made in these events will have a global effect on the
-entire site.
-
-##### on_config
-
-::: properdocs.plugins.BasePlugin.on_config
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_pre_build
-
-::: properdocs.plugins.BasePlugin.on_pre_build
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_files
-
-::: properdocs.plugins.BasePlugin.on_files
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_nav
-
-::: properdocs.plugins.BasePlugin.on_nav
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_env
-
-::: properdocs.plugins.BasePlugin.on_env
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_post_build
-
-::: properdocs.plugins.BasePlugin.on_post_build
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_build_error
-
-::: properdocs.plugins.BasePlugin.on_build_error
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
+!!! git "Global Events"
+    Global events are called once per build at either the beginning or end of the build process. Any changes made in these events will have a global effect on the entire site.
+    
+    ##### on_config
+    
+    ::: properdocs.plugins.BasePlugin.on_config
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_pre_build
+    
+    ::: properdocs.plugins.BasePlugin.on_pre_build
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_files
+    
+    ::: properdocs.plugins.BasePlugin.on_files
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_nav
+    
+    ::: properdocs.plugins.BasePlugin.on_nav
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_env
+    
+    ::: properdocs.plugins.BasePlugin.on_env
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_post_build
+    
+    ::: properdocs.plugins.BasePlugin.on_post_build
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_build_error
+    
+    ::: properdocs.plugins.BasePlugin.on_build_error
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
 #### Template Events
 
-Template events are called once for each non-page template. Each template event
-will be called for each template defined in the [extra_templates] config setting
-as well as any [static_templates] defined in the theme. All template events are
-called after the [env] event and before any [page events].
-
-##### on_pre_template
-
-::: properdocs.plugins.BasePlugin.on_pre_template
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_template_context
-
-::: properdocs.plugins.BasePlugin.on_template_context
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_post_template
-
-::: properdocs.plugins.BasePlugin.on_post_template
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
+!!! git "Template Events"
+    Template events are called once for each non-page template. Each template event will be called for each template defined in the [extra_templates] config setting as well as any [static_templates] defined in the theme. All template events are called after the [env] event and before any [page events].
+    
+    ##### on_pre_template
+    
+    ::: properdocs.plugins.BasePlugin.on_pre_template
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_template_context
+    
+    ::: properdocs.plugins.BasePlugin.on_template_context
+         options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_post_template
+    
+    ::: properdocs.plugins.BasePlugin.on_post_template
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
 #### Page Events
 
-Page events are called once for each Markdown page included in the site. All
-page events are called after the [post_template] event and before the
-[post_build] event.
-
-##### on_pre_page
-
-::: properdocs.plugins.BasePlugin.on_pre_page
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_page_read_source
-
-::: properdocs.plugins.BasePlugin.on_page_read_source
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_page_markdown
-
-::: properdocs.plugins.BasePlugin.on_page_markdown
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_page_content
-
-::: properdocs.plugins.BasePlugin.on_page_content
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_page_context
-
-::: properdocs.plugins.BasePlugin.on_page_context
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
-##### on_post_page
-
-::: properdocs.plugins.BasePlugin.on_post_page
-    options:
-        show_root_heading: false
-        show_root_toc_entry: false
-
+!!! git "Page Events"
+    Page events are called once for each Markdown page included in the site. All page events are called after the [post_template] event and before the [post_build] event.
+    
+    ##### on_pre_page
+    
+    ::: properdocs.plugins.BasePlugin.on_pre_page
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_page_read_source
+    
+    ::: properdocs.plugins.BasePlugin.on_page_read_source
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_page_markdown
+    
+    ::: properdocs.plugins.BasePlugin.on_page_markdown
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_page_content
+    
+    ::: properdocs.plugins.BasePlugin.on_page_content
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_page_context
+    
+    ::: properdocs.plugins.BasePlugin.on_page_context
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
+    ##### on_post_page
+    
+    ::: properdocs.plugins.BasePlugin.on_post_page
+        options:
+            show_root_heading: false
+            show_root_toc_entry: false
+    
 ### Event Priorities
 
-For each event type, corresponding methods of plugins are called in the order that the plugins appear in the `plugins` [config][].
+!!! desc "Event Priorities"
+    For each event type, corresponding methods of plugins are called in the order that the plugins appear in the `plugins` [config][].
+    
+    Since MkDocs 1.4, plugins can choose to set a priority value for their events. Events with higher priority are called first. Events without a chosen priority get a default of 0. Events that have the same priority are ordered as they appear in the config.
+    
+!!! git "properdocs.plugins.event_priority"
+    #### ::: properdocs.plugins.event_priority
+    
+!!! abstract "NEW:"
 
-Since MkDocs 1.4, plugins can choose to set a priority value for their events. Events with higher priority are called first. Events without a chosen priority get a default of 0. Events that have the same priority are ordered as they appear in the config.
-
-#### ::: properdocs.plugins.event_priority
-
-> NEW: **New in version 1.6**
->
-> There may also arise a need to register a handler for the same event at multiple different priorities.
->
-> `CombinedEvent` makes this possible.
->
-> #### ::: properdocs.plugins.CombinedEvent
-
+    NEW: **New in version 1.6**
+    
+    There may also arise a need to register a handler for the same event at multiple different priorities.
+    
+    `CombinedEvent` makes this possible.
+    
+    #### ::: properdocs.plugins.CombinedEvent
+    
 ### Handling Errors
 
-ProperDocs defines four error types:
+!!! git "Handling Errors"
 
-#### ::: properdocs.exceptions.ProperDocsException
+    ProperDocs defines four error types:
 
-#### ::: properdocs.exceptions.ConfigurationError
+    #### ::: properdocs.exceptions.ProperDocsException
 
-#### ::: properdocs.exceptions.BuildError
+    #### ::: properdocs.exceptions.ConfigurationError
 
-#### ::: properdocs.exceptions.PluginError
+    #### ::: properdocs.exceptions.BuildError
 
-Unexpected and uncaught exceptions will interrupt the build process and produce
-typical Python tracebacks, which are useful for debugging your code. However,
-users generally find tracebacks overwhelming and often miss the helpful error
-message. Therefore, ProperDocs will catch any of the errors listed above, retrieve
-the error message, and exit immediately with only the helpful message displayed
-to the user.
-
-Therefore, you might want to catch any exceptions within your plugin and raise a
-`PluginError`, passing in your own custom-crafted message, so that the build
-process is aborted with a helpful message.
-
-The [on_build_error] event will be triggered for any exception.
-
-For example:
-
-```python
-from properdocs.exceptions import PluginError
-from properdocs.plugins import BasePlugin
-
-
-class MyPlugin(BasePlugin):
-    def on_post_page(self, output, page, config, **kwargs):
-        try:
-            # some code that could throw a KeyError
+    #### ::: properdocs.exceptions.PluginError
+    
+!!! desc "Catching Exceptions"
+    Unexpected and uncaught exceptions will interrupt the build process and produce typical Python tracebacks, which are useful for debugging your code. However, users generally find tracebacks overwhelming and often miss the helpful error message. Therefore, ProperDocs will catch any of the errors listed above, retrieve the error message, and exit immediately with only the helpful message displayed to the user.
+    
+    Therefore, you might want to catch any exceptions within your plugin and raise a `PluginError`, passing in your own custom-crafted message, so that the build process is aborted with a helpful message. The [on_build_error] event will be triggered for any exception.
+    
+    For example:
+    
+    ```python
+    from properdocs.exceptions import PluginError
+    from properdocs.plugins import BasePlugin
+    
+    
+    class MyPlugin(BasePlugin):
+        def on_post_page(self, output, page, config, **kwargs):
+            try:
+                # some code that could throw a KeyError
+                ...
+            except KeyError as error:
+                raise PluginError(f"Failed to find the item by key: '{error}'")
+    
+        def on_build_error(self, error, **kwargs):
+            # some code to clean things up
             ...
-        except KeyError as error:
-            raise PluginError(f"Failed to find the item by key: '{error}'")
+    ```
 
-    def on_build_error(self, error, **kwargs):
-        # some code to clean things up
-        ...
-```
+### Logging in Plugins
 
-### Logging in plugins
+!!! ex "Logging in Plugins"
 
-To ensure that your plugins' log messages adhere with ProperDocs' formatting and `--verbose`/`--debug` flags, please write the logs to a logger under the `properdocs.plugins.` namespace.
+    To ensure that your plugins' log messages adhere with ProperDocs' formatting and `--verbose`/`--debug` flags, please write the logs to a logger under the `properdocs.plugins.` namespace.
 
-> EXAMPLE:
->
-> ```python
-> import logging
->
-> log = logging.getLogger(f"properdocs.plugins.{__name__}")
->
-> log.warning("File '%s' not found. Breaks the build if --strict is passed", my_file_name)
-> log.info("Shown normally")
-> log.debug("Shown only with `--verbose`")
->
-> if log.getEffectiveLevel() <= logging.DEBUG:
->     log.debug("Very expensive calculation only for debugging: %s", get_my_diagnostics())
-> ```
+    EXAMPLE:
+    
+    ```python
+    import logging
+    
+    log = logging.getLogger(f"properdocs.plugins.{__name__}")
+    
+    log.warning("File '%s' not found. Breaks the build if --strict is passed", my_file_name)
+    log.info("Shown normally")
+    log.debug("Shown only with `--verbose`")
+    
+    if log.getEffectiveLevel() <= logging.DEBUG:
+        log.debug("Very expensive calculation only for debugging: %s", get_my_diagnostics())
+    ```
+    
+    `log.error()` is another logging level that is differentiated by its look, but in all other ways it functions the same as `warning`, so it's strange to use it. If your plugin encounters an actual error, it is best to just interrupt the build by raising [`properdocs.exceptions.PluginError`][] (which will also log an ERROR message).
 
-`log.error()` is another logging level that is differentiated by its look, but in all other ways it functions the same as `warning`, so it's strange to use it. If your plugin encounters an actual error, it is best to just interrupt the build by raising [`properdocs.exceptions.PluginError`][] (which will also log an ERROR message).
+    !!! git "NEW:"
 
-<!-- -->
-> NEW: **New in version 1.5**
->
-> ProperDocs now provides a `get_plugin_logger()` convenience function that returns a logger like the above that is also prefixed with the plugin's name.
->
-> #### ::: properdocs.plugins.get_plugin_logger
+        NEW: **New in version 1.5**
+
+        ProperDocs now provides a `get_plugin_logger()` convenience function that returns a logger like the above that is also prefixed with the plugin's name.
+
+        #### ::: properdocs.plugins.get_plugin_logger
 
 ### Entry Point
 
-Plugins need to be packaged as Python libraries (distributed on PyPI separate
-from ProperDocs) and each must register as a Plugin via a setuptools `entry_points`.
-Add the following to your `setup.py` script:
-
-```python
-entry_points={
-    'properdocs.plugins': [
-        'pluginname = path.to.some_plugin:SomePluginClass',
-    ]
-}
-```
-
-The `pluginname` would be the name used by users (in the config file) and
-`path.to.some_plugin:SomePluginClass` would be the importable plugin itself
-(`from path.to.some_plugin import SomePluginClass`) where `SomePluginClass` is a
-subclass of [BasePlugin] which defines the plugin behavior. Naturally, multiple
-Plugin classes could exist in the same module. Simply define each as a separate
-entry point.
-
-```python
-entry_points={
-    'properdocs.plugins': [
-        'featureA = path.to.my_plugins:PluginA',
-        'featureB = path.to.my_plugins:PluginB'
-    ]
-}
-```
-
-Note that registering a plugin does not activate it. The user still needs to
-tell ProperDocs to use it via the config.
-
+!!! desc "Entry Point"
+    Plugins need to be packaged as Python libraries (distributed on PyPI separate from ProperDocs) and each must register as a Plugin via a setuptools `entry_points`. Add the following to your `setup.py` script:
+        
+    ```python
+    entry_points={
+        'properdocs.plugins': [
+            'pluginname = path.to.some_plugin:SomePluginClass',
+        ]
+    }
+    ```
+    
+    The `pluginname` would be the name used by users (in the config file) and `path.to.some_plugin:SomePluginClass` would be the importable plugin itself (`from path.to.some_plugin import SomePluginClass`) where `SomePluginClass` is a subclass of [BasePlugin] which defines the plugin behavior. Naturally, multiple Plugin classes could exist in the same module. Simply define each as a separate entry point.
+    
+    ```python
+    entry_points={
+        'properdocs.plugins': [
+            'featureA = path.to.my_plugins:PluginA',
+            'featureB = path.to.my_plugins:PluginB'
+        ]
+    }
+    ```
+    
+    Note that registering a plugin does not activate it. The user still needs to tell ProperDocs to use it via the config.
+    
 ### Publishing a Plugin
 
-You should publish a package on [PyPI], then add it to the [Catalog] for discoverability. Plugins are strongly recommended to have a unique plugin name (entry point name) according to the catalog.
-
+!!! important " Publishing a Plugin"
+    You should publish a package on [PyPI], then add it to the [Catalog] for discoverability. Plugins are strongly recommended to have a unique plugin name (entry point name) according to the catalog.
+    
 [BasePlugin]:#baseplugin
 [config]: ../user-guide/configuration.md#plugins
 [entry point]: #entry-point

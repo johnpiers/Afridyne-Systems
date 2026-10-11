@@ -1,18 +1,24 @@
-# Developer Guide
+---
+icon: octicons/desktop-download-24
+---
 
-Extending ProperDocs
+<div style="display: none;"><h1>Developer Guide</h1></div>
+
+![](../../imgs/properdocs-dev-guide.png){: style="display: block; margin: 0 auto"}
+
+# Developer Guide { .centered }
+
+## Extending ProperDocs { .centered }
 
 ---
 
-The ProperDocs Developer Guide provides documentation for developers of third
-party themes and plugins. Please see the [Contributing Guide] for information
-on contributing to ProperDocs itself. You can jump directly to a page listed
-below, or use the *next* and *previous* buttons in the navigation bar at the
-top of the page to move through the documentation in order.
+!!! abstract "Extending ProperDocs"
 
-- [Themes](themes.md)
-- [Translations](translations.md)
-- [Plugins](plugins.md)
-- [API Reference](api.md)
-
+    The ProperDocs Developer Guide provides documentation for developers of third party themes and plugins. Please see the [Contributing Guide] for information on contributing to ProperDocs itself. You can jump directly to a page listed below, or use the *next* and *previous* buttons in the navigation bar at the top of the page to move through the documentation in order.
+    
+    - [Themes](themes.md)
+    - [Translations](translations.md)
+    - [Plugins](plugins.md)
+    - [API Reference](api.md)
+    
 [Contributing Guide]: ../about/contributing.md
