@@ -8777,7 +8777,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-11"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-11T02:33:07+00:00">2026-10-11</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-12"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-12T08:55:27+00:00">2026-10-12</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-12"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-12T08:55:27+00:00">2026-10-12</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20251228-161316.png" data-desc-position="bottom"><img alt="" src="../imgs/20251228-161316.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;">Various Markdown / HTML</h1>
 <p>Nearly all Markdown applications support the basic syntax outlined in the original Markdown design document. There are minor variations and discrepancies between Markdown processors — those are noted inline wherever possible.</p>
@@ -11146,6 +11146,37 @@ and running in minutes</p>
     "Magnesium" : 10.01
     "Iron" :  5</code></pre>
 <hr>
+<details class="desc">
+<summary>Click to see Code</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-106-1"><a href="#__codelineno-106-1" id="__codelineno-106-1" name="__codelineno-106-1"></a>``` py linenums="1"
+</span><span id="__span-106-2"><a href="#__codelineno-106-2" id="__codelineno-106-2" name="__codelineno-106-2"></a>def bubble_sort(items):
+</span><span id="__span-106-3"><a href="#__codelineno-106-3" id="__codelineno-106-3" name="__codelineno-106-3"></a>    for i in range(len(items)):
+</span><span id="__span-106-4"><a href="#__codelineno-106-4" id="__codelineno-106-4" name="__codelineno-106-4"></a>        for j in range(len(items) - 1 - i):
+</span><span id="__span-106-5"><a href="#__codelineno-106-5" id="__codelineno-106-5" name="__codelineno-106-5"></a>            if items[j] &gt; items[j + 1]:
+</span><span id="__span-106-6"><a href="#__codelineno-106-6" id="__codelineno-106-6" name="__codelineno-106-6"></a>                items[j], items[j + 1] = items[j + 1], items[j]
+</span><span id="__span-106-7"><a href="#__codelineno-106-7" id="__codelineno-106-7" name="__codelineno-106-7"></a>```
+</span></code></pre></div>
+</details>
+<div class="language-py highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-107-1">1</a></span>
+<span class="normal"><a href="#__codelineno-107-2">2</a></span>
+<span class="normal"><a href="#__codelineno-107-3">3</a></span>
+<span class="normal"><a href="#__codelineno-107-4">4</a></span>
+<span class="normal"><a href="#__codelineno-107-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+</span><span id="__span-107-2"><a id="__codelineno-107-2" name="__codelineno-107-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+</span><span id="__span-107-3"><a id="__codelineno-107-3" name="__codelineno-107-3"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
+</span><span id="__span-107-4"><a id="__codelineno-107-4" name="__codelineno-107-4"></a>            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-107-5"><a id="__codelineno-107-5" name="__codelineno-107-5"></a>                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-py highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-108-1">1</a></span>
+<span class="normal"><a href="#__codelineno-108-2">2</a></span>
+<span class="normal"><a href="#__codelineno-108-3">3</a></span>
+<span class="normal"><a href="#__codelineno-108-4">4</a></span>
+<span class="normal"><a href="#__codelineno-108-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+</span><span id="__span-108-2"><a id="__codelineno-108-2" name="__codelineno-108-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+</span><span id="__span-108-3"><a id="__codelineno-108-3" name="__codelineno-108-3"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
+</span><span id="__span-108-4"><a id="__codelineno-108-4" name="__codelineno-108-4"></a>            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-108-5"><a id="__codelineno-108-5" name="__codelineno-108-5"></a>                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span></code></pre></div></td></tr></tbody></table></div>
 
 
 
@@ -11238,7 +11269,7 @@ and running in minutes</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright © 2016 - 2026 JP Cillliers
+      Copyright © 2024 - 2026 JP Cillliers
     </div>
   
   
