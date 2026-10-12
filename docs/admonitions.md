@@ -758,7 +758,7 @@ After applying the customization, you can use the custom admonition type:
 
     Code coverage for unit tests, doc tests and integration tests is calculated using [`cargo-llvm-cov`].
     
-!!! tldr "The Quick Version"
+!!! tldr "The Quick Version (tldr)"
     This article explores how custom CSS can transform boring documentation into a high-end user interface.
     
     * Save 50% more time

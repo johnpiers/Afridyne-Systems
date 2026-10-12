@@ -1756,3 +1756,19 @@ code, pre, .codehilite, .highlight {
   min-width: 0 !important;
 }
 
+/* Softer light mode: off-white page, code boxes slightly darker */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f3f0e8;
+  --md-code-bg-color: #e9e5db;
+}
+
+/* Light mode: deeper tints so custom admonitions still stand out on the cream page */
+[data-md-color-scheme="default"] .md-typeset .admonition.tldr,
+[data-md-color-scheme="default"] .md-typeset details.tldr {
+  background-color: #ece8f6;
+}
+
+[data-md-color-scheme="default"] .md-typeset .admonition.deep-dive,
+[data-md-color-scheme="default"] .md-typeset details.deep-dive {
+  background-color: #e3e7ea;
+}

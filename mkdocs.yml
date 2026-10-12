@@ -6,7 +6,7 @@ site_description: >-
   Accessible to everyone, extremely easy to use. 
   Modern, lightweight, customizable, responsive.
 
-copyright: Copyright &copy; 2016 - 2026 JP Cillliers
+copyright: Copyright &copy; 2024 - 2026 JP Cillliers
 
 theme:
   admonition:
@@ -105,7 +105,7 @@ plugins:
   - drawio:
       darkmode: true
   - document-dates:
-      show_created: false
+      show_created: true
       show_updated: true
       position: top            # Display position: top(after title) bottom(end of document), default: top
       type: date               # Date type: date datetime timeago, default: date
