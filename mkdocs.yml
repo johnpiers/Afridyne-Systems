@@ -373,6 +373,10 @@ nav:
             - 6. Completion: zshguide/06-completion.md
             - 7. Modules: zshguide/07-modules.md
             - 8. Appendix: zshguide/08-appendix.md
+        - ProperDocs Guide: 
+            - 1. Setup: properdocs-guide/ProperDocs-Part1-Setup.md
+            - 2. Build and Fixes: properdocs-guide/ProperDocs-Part2-Build-and-Fixes.md
+            - 3. Social Cards/Banners: properdocs-guide/ProperDocs-Part3-Social-Cards-and-Banners.md
       - Markdown Guides:
         - Markdown:
             - Markdown: Markdown.md
