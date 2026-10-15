@@ -4,11 +4,17 @@ icon: octicons/desktop-download-24
 
 <div style="display: none;"><h1>ProperDocs-Part3-Social-Cards-and-Banners</h1></div>
 
-![](../imgs/properdocs-index.png){: style="display: block; margin: 0 auto"}
+![](../imgs/properdocs-part3.png){: style="display: block; margin: 0 auto"}
 
-## ProperDocs - Part 3, Social Cards and Banners. { .centered }
+## ProperDocs - Part 3 - Social Cards and Banners. { .centered }
 
 ### Adding ProperDocs to the Afridyne Systems site. { .centered }
+
+---
+
+[Back to: Part 1  :fontawesome-solid-paper-plane:](ProperDocs-Part1-Setup.md){ .md-button .md-button--custom }
+
+---
 
 !!! desc "Banner Cards"
 
@@ -427,3 +433,4 @@ icon: octicons/desktop-download-24
     
     **To rebuild the cards later** (a different green, a new title, a new description): change `NEW`, the `CARDS` list or `DESC` in the generator script, run it again, and copy the results over with `cp` instead of `cp -n`.
     
+[Back to: Part 1  :fontawesome-solid-paper-plane:](ProperDocs-Part1-Setup.md){ .md-button .md-button--custom }

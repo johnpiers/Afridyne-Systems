@@ -4,11 +4,17 @@ icon: octicons/desktop-download-24
 
 <div style="display: none;"><h1>ProperDocs-Part2-Build-and-Fixes</h1></div>
 
-![](../imgs/properdocs-index.png){: style="display: block; margin: 0 auto"}
+![](../imgs/properdocs-part2.png){: style="display: block; margin: 0 auto"}
 
-## ProperDocs - Part 2, Build and Fixes. { .centered }
+## ProperDocs - Part 2 - Build and Fixes. { .centered }
 
 ### Adding ProperDocs to the Afridyne Systems site. { .centered }
+
+---
+
+[Back to: Part 1  :fontawesome-solid-paper-plane:](ProperDocs-Part1-Setup.md){ .md-button .md-button--custom }
+
+---
 
 !!! pied-piper "Adding ProperDocs to the Afridyne Systems site"
     [Part 1](ProperDocs-Part1-Setup.md) ended with the files copied and the nav entry added. This part covers the first build and clearing every message, the visual checks, the deploy routine, and some fixes found later.
@@ -291,3 +297,4 @@ icon: octicons/desktop-download-24
     
     [**Next:**](ProperDocs-Part3-Social-Cards-and-Banners.md) Part 3 covers the green social cards and the banner on every page.
     
+[Back to: Part 1  :fontawesome-solid-paper-plane:](ProperDocs-Part1-Setup.md){ .md-button .md-button--custom }

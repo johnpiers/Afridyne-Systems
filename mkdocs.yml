@@ -377,6 +377,8 @@ nav:
             - 1. Setup: properdocs-guide/ProperDocs-Part1-Setup.md
             - 2. Build and Fixes: properdocs-guide/ProperDocs-Part2-Build-and-Fixes.md
             - 3. Social Cards/Banners: properdocs-guide/ProperDocs-Part3-Social-Cards-and-Banners.md
+        - Nginx Guide:
+            - Nginx: nginx-guide/nginx-guide.md
       - Markdown Guides:
         - Markdown:
             - Markdown: Markdown.md

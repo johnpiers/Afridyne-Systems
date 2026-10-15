@@ -4,12 +4,12 @@ icon: octicons/desktop-download-24
 
 <div style="display: none;"><h1>ProperDocs-Part1-Setup</h1></div>
 
-![](../imgs/properdocs-index.png){: style="display: block; margin: 0 auto"}
+![](../imgs/properdocs-part1.png){: style="display: block; margin: 0 auto"}
 
-# ProperDocs-Part1-Setup. { .centered }
+## ProperDocs - Part1 - Setup and Copy. { .centered }
 
 
-##  Adding ProperDocs to the Afridyne Systems site: Part 1, Setup and Copy { .centered }
+###  Adding ProperDocs to the Afridyne Systems site. { .centered }
 
 !!! deep-dive "Adding ProperDocs"
 
@@ -294,10 +294,9 @@ icon: octicons/desktop-download-24
     diff mkdocs.yml.bak mkdocs.yml
     ```
     
-    The diff should show only the 22 new lines. Once you're happy, delete `mkdocs.yml.bak`. The Deploy script syncs the whole folder, so a leftover backup would be committed.
+    The diff should show only the 22 new lines. Once you're happy, delete `mkdocs.yml.bak`{.red}. The Deploy script syncs the whole folder, so a leftover backup would be committed.
     
-    **Note:** a `README.md` page named in the nav (the two "Overview" entries) is treated as its section's own landing page. In the sidebar, clicking "User Guide" opens that page, and there is no separate "Overview" item. That's the tidier result.
+    *📝 NOTE:*{.green} a `README.md`{.skyblue} page named in the nav (the two "Overview" entries) is treated as its section's own landing page. In the sidebar, clicking "User Guide" opens that page, and there is no separate "Overview" item. That's the tidier result.
+            
+    [ **Next:**](ProperDocs-Part2-Build-and-Fixes.md) Part 2 covers the first build and clearing every warning.
     
-    **Next:** Part 2 covers the first build and clearing every warning.
-    
-[Part 2](ProperDocs-Part2-Build-and-Fixes.md)
