@@ -1772,3 +1772,18 @@ code, pre, .codehilite, .highlight {
 [data-md-color-scheme="default"] .md-typeset details.deep-dive {
   background-color: #e3e7ea;
 }
+
+.green {
+  background-color: green;
+  border: 1px solid lightgreen;
+}
+
+.red {
+  background-color: red;
+  border: 1px solid #FF474C;
+}
+
+.skyblue {
+  background-color: skyblue;
+  border: 1px solid blue;
+}
