@@ -77,7 +77,7 @@ theme:
       primary: cyan
       accent: cyan
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
 
     # Dark mode: Cyan primary

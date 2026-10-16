@@ -96,17 +96,30 @@ icon: simple/nginx
     
     To undo that later: `sudo systemctl disable nginx`.
     
+    ```
+    sudo systemctl disable nginx
+    ```
+    
 ### The golden habit: edit, test, reload
 
 !!! desc "Edit, Test, Reload"
 
     Whenever you change a config file, do these three things in this order:
+        
+    **1. Edit** the file.
+        
+    **2. Test** it with `sudo nginx -t`. This checks for mistakes without touching the running server.
+        
+    ```
+    sudo nginx -t
+    ```
+        
+    **3. Reload** with `sudo systemctl reload nginx`. This applies the change without dropping connections.
+        
+    ```
+    sudo systemctl reload nginx
+    ```
     
-    1. **Edit** the file.
-    2. **Test** it with `sudo nginx -t`. This checks for mistakes without touching the running server.
-    3. **Reload** with `sudo systemctl reload nginx`. This applies the change without dropping connections.
-    
-  
 !!! warning "Never skip the test"
     If the test reports an error, the running server is not affected. NGINX keeps using the old, working settings until you fix the file and reload.
 
@@ -292,12 +305,22 @@ icon: simple/nginx
 !!! desc "Where things live"
 
     | What | Where |
-    |------|-------|
-    | Main config | `/etc/nginx/nginx.conf` |
-    | Your per-site configs | `/etc/nginx/conf.d/*.conf` |
-    | Test site files | `/srv/www/` |
-    | Name-to-address book | `/etc/hosts` |
-    | Error log | `sudo journalctl -u nginx` |
+    |------|---------|
+    | Main config | ``` \
+    |  | /etc/nginx/nginx.conf \
+    |  | ``` |
+    | Your per-site configs | ``` \
+    |  | /etc/nginx/conf.d/*.conf \
+    |  | ``` |
+    | Test site files | ``` \
+    |  | /srv/www/ \
+    |  | ``` |
+    | Name-to-address book | ``` \
+    |  | /etc/hosts \
+    |  | ``` |
+    | Error log | ``` \
+    |  | sudo journalctl -u nginx \
+    |  | ``` |
     
 ### Everyday commands
 
@@ -305,20 +328,43 @@ icon: simple/nginx
 
     | Task | Command |
     |------|---------|
-    | Check config for mistakes | `sudo nginx -t` |
-    | Apply config changes | `sudo systemctl reload nginx` |
-    | Start / stop / restart | `sudo systemctl start nginx` / `stop` / `restart` |
-    | Is it running? | `systemctl status nginx --no-pager` |
-    | Start at boot / don't | `sudo systemctl enable nginx` / `disable` |
-    | See what is using a port | `sudo ss -tlnp \| grep ':80 '` |
-    | Show the full merged config | `sudo nginx -T` |
+    | Check config for mistakes | ``` \
+    |  | sudo nginx -t \
+    |  | ``` |
+    | Apply config changes | ``` \
+    |  | sudo systemctl reload nginx \
+    |  | ``` |
+    | Start nginx | ``` \
+    |  | sudo systemctl start nginx \
+    |  | ``` |
+    | Stop nginx | ``` \
+    |  | sudo systemctl stop nginx \
+    |  | ``` |
+    | Restart nginx | ``` \
+    |  | sudo systemctl restart nginx \
+    |  | ``` |
+    | Is it running? | ``` \
+    |  | systemctl status nginx --no-pager \
+    |  | ``` |
+    | Start at boot | ``` \
+    |  | sudo systemctl enable nginx \
+    |  | ``` |
+    | Don't start at boot | ``` \
+    |  | sudo systemctl disable nginx \
+    |  | ``` |
+    | See what is using a port | ``` \
+    |  | sudo ss -tlnp 'sport = :80' \
+    |  | ``` |
+    | Show the full merged config | ``` \
+    |  | sudo nginx -T \
+    |  | ``` |
     
 ### Troubleshooting
 
 !!! ex "Troubleshooting"
 
     **"bind() to 0.0.0.0:80 failed (98: Address already in use)"**
-    Another program is using port 80. Find it with `sudo ss -tlnp | grep ':80 '`. If it is Apache and you do not need it, see Step 2.
+    Another program is using port 80. Find it with `sudo ss -tlnp | grep ':80 '`. If it is Apache and you do not need it, see [Step 2](nginx-guide.md#step-2-make-sure-nothing-else-is-using-port-80). 
     
     ---
     
@@ -328,7 +374,7 @@ icon: simple/nginx
     ---
     
     **"could not build optimal types_hash"**
-    A harmless warning. The fix is in Step 4.
+    A harmless warning. The fix is in [Step 4](nginx-guide.md#step-4-tidy-up-the-main-config).
     
     ---
     
@@ -370,8 +416,8 @@ icon: simple/nginx
 
 !!! info "Where to go next"
 
-    - Add more test sites by repeating Step 5 with a new name and folder.
-    - Proxy more apps by repeating Step 6 with a new name and port.
+    - Add more test sites by repeating [Step 5](nginx-guide.md#step-5-a-local-test-site) with a new name and folder.
+    - Proxy more apps by repeating [Step 6](nginx-guide.md#step-6-a-reverse-proxy) with a new name and port.
     
     - Read the official documentation at [nginx.org](https://nginx.org/en/docs/).
     

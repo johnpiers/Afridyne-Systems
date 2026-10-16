@@ -1787,3 +1787,12 @@ code, pre, .codehilite, .highlight {
   background-color: skyblue;
   border: 1px solid blue;
 }
+
+
+.md-typeset table:not([class]) td {
+  vertical-align: middle;
+}
+
+.md-typeset table:not([class]) td pre {
+  margin: 0;
+}
