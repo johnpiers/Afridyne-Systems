@@ -8979,7 +8979,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-15"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-15T22:51:00+00:00">2026-10-15</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-15"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-15T22:51:00+00:00">2026-10-15</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-16"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-16T10:25:33+00:00">2026-10-16</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-16"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-16T10:25:33+00:00">2026-10-16</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <div style="display: none;"><h1>nginx-guide</h1></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../imgs/nginx-guide.png" data-desc-position="bottom"><img alt="" src="../../imgs/nginx-guide.png" style="display: block; margin: 0 auto"></a></p>
 <h2 class="centered" id="nginx-on-arch-linux-a-plain-english-guide">NGINX on Arch Linux: A Plain-English Guide<a class="headerlink" href="#nginx-on-arch-linux-a-plain-english-guide" title="Permanent link">⚓︎</a></h2>
@@ -9066,16 +9066,20 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo systemctl enable nginx
 </span></code></pre></div>
 <p>To undo that later: <code>sudo systemctl disable nginx</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo systemctl disable nginx
+</span></code></pre></div>
 </div>
 <h3 id="the-golden-habit-edit-test-reload">The golden habit: edit, test, reload<a class="headerlink" href="#the-golden-habit-edit-test-reload" title="Permanent link">⚓︎</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">Edit, Test, Reload</p>
 <p>Whenever you change a config file, do these three things in this order:</p>
-<ol>
-<li><strong>Edit</strong> the file.</li>
-<li><strong>Test</strong> it with <code>sudo nginx -t</code>. This checks for mistakes without touching the running server.</li>
-<li><strong>Reload</strong> with <code>sudo systemctl reload nginx</code>. This applies the change without dropping connections.</li>
-</ol>
+<p><strong>1. Edit</strong> the file.</p>
+<p><strong>2. Test</strong> it with <code>sudo nginx -t</code>. This checks for mistakes without touching the running server.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo nginx -t
+</span></code></pre></div>
+<p><strong>3. Reload</strong> with <code>sudo systemctl reload nginx</code>. This applies the change without dropping connections.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo systemctl reload nginx
+</span></code></pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Never skip the test</p>
@@ -9085,32 +9089,32 @@
 <div class="admonition deep-dive">
 <p class="admonition-title">Tidy up the main config</p>
 <p>The main config file is <code>/etc/nginx/nginx.conf</code>. Back it up first:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 </span></code></pre></div>
 </div>
 <h3 id="fix-the-types_hash-warning">Fix the "types_hash" warning<a class="headerlink" href="#fix-the-types_hash-warning" title="Permanent link">⚓︎</a></h3>
 <div class="admonition deep-dive">
 <p class="admonition-title">Fix the "types_hash" warning</p>
 <p>On a fresh Arch install, <code>sudo nginx -t</code> prints a harmless warning about <code>types_hash</code>. To remove it, add one line inside the <code>http { ... }</code> block, right after the <code>default_type</code> line:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>types_hash_max_size 4096;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>types_hash_max_size 4096;
 </span></code></pre></div>
 </div>
 <h3 id="let-nginx-read-small-per-site-files">Let NGINX read small per-site files<a class="headerlink" href="#let-nginx-read-small-per-site-files" title="Permanent link">⚓︎</a></h3>
 <div class="admonition decision">
 <p class="admonition-title">Let NGINX read small per-site files</p>
 <p>It is much tidier to keep each site in its own small file than to pile everything into <code>nginx.conf</code>. Create a folder for them and add one more line, directly under the line you just added:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo mkdir -p /etc/nginx/conf.d
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>sudo mkdir -p /etc/nginx/conf.d
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>include /etc/nginx/conf.d/*.conf;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>include /etc/nginx/conf.d/*.conf;
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Making these edits</p>
 <p>Use any editor with <code>sudo</code>, for example <code>sudo nano /etc/nginx/nginx.conf</code>. The surrounding lines should look like this when you are done:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>http {
-</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>    include       mime.types;
-</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>    default_type  application/octet-stream;
-</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>    types_hash_max_size 4096;
-</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>    include /etc/nginx/conf.d/*.conf;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>http {
+</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>    include       mime.types;
+</span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>    default_type  application/octet-stream;
+</span><span id="__span-12-4"><a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>    types_hash_max_size 4096;
+</span><span id="__span-12-5"><a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>    include /etc/nginx/conf.d/*.conf;
 </span></code></pre></div>
 </div>
 </div>
@@ -9118,14 +9122,14 @@
 <div class="admonition assumption">
 <p class="admonition-title">Choose what answers unknown names</p>
 <p>When a request arrives for a name that matches none of your sites, NGINX has to pick one to answer it. Rather than leave that to chance, tell it which. In the <code>server { ... }</code> block for <code>localhost</code>, change:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>        listen       80;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>        listen       80;
 </span></code></pre></div>
 <p>to:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>        listen       80 default_server;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>        listen       80 default_server;
 </span></code></pre></div>
 <p>Now test and reload:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>sudo nginx -t
-</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>sudo systemctl reload nginx
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>sudo nginx -t
+</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>sudo systemctl reload nginx
 </span></code></pre></div>
 <p>You should see <code>syntax is ok</code> and <code>test is successful</code>, with no warnings.</p>
 </div>
@@ -9134,31 +9138,31 @@
 <p class="admonition-title">A local test site</p>
 <p>Goal: open <code>http://mysite.test</code> in your browser and see your own page.</p>
 <p><strong>1. Make a folder and a page.</strong> We use <code>/srv/www</code> rather than your home folder, because NGINX often cannot read inside home folders and shows a confusing "403 Forbidden" error.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>sudo mkdir -p /srv/www/mysite
-</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>sudo chown $USER: /srv/www/mysite
-</span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>echo '&lt;h1&gt;mysite.test is working&lt;/h1&gt;' &gt; /srv/www/mysite/index.html
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>sudo mkdir -p /srv/www/mysite
+</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>sudo chown $USER: /srv/www/mysite
+</span><span id="__span-16-3"><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>echo '&lt;h1&gt;mysite.test is working&lt;/h1&gt;' &gt; /srv/www/mysite/index.html
 </span></code></pre></div>
 <p><strong>2. Create the site's config file:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>sudo tee /etc/nginx/conf.d/mysite.conf &gt; /dev/null &lt;&lt;'EOF'
-</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>server {
-</span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>    listen 80;
-</span><span id="__span-14-4"><a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>    server_name mysite.test;
-</span><span id="__span-14-5"><a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a>    root /srv/www/mysite;
-</span><span id="__span-14-6"><a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a>    index index.html;
-</span><span id="__span-14-7"><a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a>}
-</span><span id="__span-14-8"><a href="#__codelineno-14-8" id="__codelineno-14-8" name="__codelineno-14-8"></a>EOF
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>sudo tee /etc/nginx/conf.d/mysite.conf &gt; /dev/null &lt;&lt;'EOF'
+</span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>server {
+</span><span id="__span-17-3"><a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>    listen 80;
+</span><span id="__span-17-4"><a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>    server_name mysite.test;
+</span><span id="__span-17-5"><a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>    root /srv/www/mysite;
+</span><span id="__span-17-6"><a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>    index index.html;
+</span><span id="__span-17-7"><a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>}
+</span><span id="__span-17-8"><a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a>EOF
 </span></code></pre></div>
 <p>This says: when someone asks for <code>mysite.test</code>, serve the files from that folder.</p>
 <p><strong>3. Point the name at your own computer.</strong> The file <code>/etc/hosts</code> is your computer's private address book:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>echo '127.0.0.1 mysite.test' | sudo tee -a /etc/hosts
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>echo '127.0.0.1 mysite.test' | sudo tee -a /etc/hosts
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Why <code>.test</code> ?</p>
 <p>The ending <code>.test</code> is reserved for testing and can never clash with a real website. Avoid endings like <code>.com</code> for fake local names.</p>
 <p><strong>4. Test, reload, and check:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>sudo nginx -t
-</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>sudo systemctl reload nginx
-</span><span id="__span-16-3"><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>curl http://mysite.test
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>sudo nginx -t
+</span><span id="__span-19-2"><a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>sudo systemctl reload nginx
+</span><span id="__span-19-3"><a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>curl http://mysite.test
 </span></code></pre></div>
 <p>You should see your heading. Open <code>http://mysite.test</code> in a browser too. The "Not secure" label is normal because this is plain HTTP on your own machine.</p>
 </div>
@@ -9168,28 +9172,28 @@
 <p class="admonition-title">A reverse proxy</p>
 <p>Goal: open <code>http://docs.test</code> and have NGINX pass the request to an app running on your computer. The example uses a documentation site served by <code>mkdocs serve</code> on port 8000, but any app on any port works the same way.</p>
 <p><strong>1. Start your app</strong> and note its port. Check that it answers directly:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>curl -I http://127.0.0.1:8000
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>curl -I http://127.0.0.1:8000
 </span></code></pre></div>
 <p><strong>2. Create the proxy config.</strong> Change <code>8000</code> to your app's port:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>sudo tee /etc/nginx/conf.d/docs.conf &gt; /dev/null &lt;&lt;'EOF'
-</span><span id="__span-18-2"><a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>server {
-</span><span id="__span-18-3"><a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>    listen 80;
-</span><span id="__span-18-4"><a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>    server_name docs.test;
-</span><span id="__span-18-5"><a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>
-</span><span id="__span-18-6"><a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a>    location / {
-</span><span id="__span-18-7"><a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a>        proxy_pass http://127.0.0.1:8000;
-</span><span id="__span-18-8"><a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a>        proxy_set_header Host $host;
-</span><span id="__span-18-9"><a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a>        proxy_set_header X-Real-IP $remote_addr;
-</span><span id="__span-18-10"><a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a>        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-</span><span id="__span-18-11"><a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a>        proxy_set_header X-Forwarded-Proto $scheme;
-</span><span id="__span-18-12"><a href="#__codelineno-18-12" id="__codelineno-18-12" name="__codelineno-18-12"></a>
-</span><span id="__span-18-13"><a href="#__codelineno-18-13" id="__codelineno-18-13" name="__codelineno-18-13"></a>        # keeps live-reload style connections from being cut off
-</span><span id="__span-18-14"><a href="#__codelineno-18-14" id="__codelineno-18-14" name="__codelineno-18-14"></a>        proxy_http_version 1.1;
-</span><span id="__span-18-15"><a href="#__codelineno-18-15" id="__codelineno-18-15" name="__codelineno-18-15"></a>        proxy_buffering off;
-</span><span id="__span-18-16"><a href="#__codelineno-18-16" id="__codelineno-18-16" name="__codelineno-18-16"></a>        proxy_read_timeout 1h;
-</span><span id="__span-18-17"><a href="#__codelineno-18-17" id="__codelineno-18-17" name="__codelineno-18-17"></a>    }
-</span><span id="__span-18-18"><a href="#__codelineno-18-18" id="__codelineno-18-18" name="__codelineno-18-18"></a>}
-</span><span id="__span-18-19"><a href="#__codelineno-18-19" id="__codelineno-18-19" name="__codelineno-18-19"></a>EOF
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>sudo tee /etc/nginx/conf.d/docs.conf &gt; /dev/null &lt;&lt;'EOF'
+</span><span id="__span-21-2"><a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>server {
+</span><span id="__span-21-3"><a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>    listen 80;
+</span><span id="__span-21-4"><a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a>    server_name docs.test;
+</span><span id="__span-21-5"><a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a href="#__codelineno-21-6" id="__codelineno-21-6" name="__codelineno-21-6"></a>    location / {
+</span><span id="__span-21-7"><a href="#__codelineno-21-7" id="__codelineno-21-7" name="__codelineno-21-7"></a>        proxy_pass http://127.0.0.1:8000;
+</span><span id="__span-21-8"><a href="#__codelineno-21-8" id="__codelineno-21-8" name="__codelineno-21-8"></a>        proxy_set_header Host $host;
+</span><span id="__span-21-9"><a href="#__codelineno-21-9" id="__codelineno-21-9" name="__codelineno-21-9"></a>        proxy_set_header X-Real-IP $remote_addr;
+</span><span id="__span-21-10"><a href="#__codelineno-21-10" id="__codelineno-21-10" name="__codelineno-21-10"></a>        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+</span><span id="__span-21-11"><a href="#__codelineno-21-11" id="__codelineno-21-11" name="__codelineno-21-11"></a>        proxy_set_header X-Forwarded-Proto $scheme;
+</span><span id="__span-21-12"><a href="#__codelineno-21-12" id="__codelineno-21-12" name="__codelineno-21-12"></a>
+</span><span id="__span-21-13"><a href="#__codelineno-21-13" id="__codelineno-21-13" name="__codelineno-21-13"></a>        # keeps live-reload style connections from being cut off
+</span><span id="__span-21-14"><a href="#__codelineno-21-14" id="__codelineno-21-14" name="__codelineno-21-14"></a>        proxy_http_version 1.1;
+</span><span id="__span-21-15"><a href="#__codelineno-21-15" id="__codelineno-21-15" name="__codelineno-21-15"></a>        proxy_buffering off;
+</span><span id="__span-21-16"><a href="#__codelineno-21-16" id="__codelineno-21-16" name="__codelineno-21-16"></a>        proxy_read_timeout 1h;
+</span><span id="__span-21-17"><a href="#__codelineno-21-17" id="__codelineno-21-17" name="__codelineno-21-17"></a>    }
+</span><span id="__span-21-18"><a href="#__codelineno-21-18" id="__codelineno-21-18" name="__codelineno-21-18"></a>}
+</span><span id="__span-21-19"><a href="#__codelineno-21-19" id="__codelineno-21-19" name="__codelineno-21-19"></a>EOF
 </span></code></pre></div>
 <p>What the main lines do:</p>
 <table>
@@ -9215,10 +9219,10 @@
 </tbody>
 </table>
 <p><strong>3. Add the name to your address book, then test and reload:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>echo '127.0.0.1 docs.test' | sudo tee -a /etc/hosts
-</span><span id="__span-19-2"><a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>sudo nginx -t
-</span><span id="__span-19-3"><a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>sudo systemctl reload nginx
-</span><span id="__span-19-4"><a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a>curl -I http://docs.test
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>echo '127.0.0.1 docs.test' | sudo tee -a /etc/hosts
+</span><span id="__span-22-2"><a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>sudo nginx -t
+</span><span id="__span-22-3"><a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a>sudo systemctl reload nginx
+</span><span id="__span-22-4"><a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a>curl -I http://docs.test
 </span></code></pre></div>
 <p>You should get a normal response, with <code>Server: nginx</code> in it, showing that NGINX is relaying your app's answer. Open <code>http://docs.test</code> in a browser.</p>
 <div class="admonition tip">
@@ -9238,24 +9242,49 @@
 </thead>
 <tbody>
 <tr>
-<td>Main config</td>
-<td><code>/etc/nginx/nginx.conf</code></td>
+<td>
+<p>Main config</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>/etc/nginx/nginx.conf
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Your per-site configs</td>
-<td><code>/etc/nginx/conf.d/*.conf</code></td>
+<td>
+<p>Your per-site configs</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>/etc/nginx/conf.d/*.conf
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Test site files</td>
-<td><code>/srv/www/</code></td>
+<td>
+<p>Test site files</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a>/srv/www/
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Name-to-address book</td>
-<td><code>/etc/hosts</code></td>
+<td>
+<p>Name-to-address book</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a>/etc/hosts
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Error log</td>
-<td><code>sudo journalctl -u nginx</code></td>
+<td>
+<p>Error log</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a>sudo journalctl -u nginx
+</span></code></pre></div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -9272,32 +9301,94 @@
 </thead>
 <tbody>
 <tr>
-<td>Check config for mistakes</td>
-<td><code>sudo nginx -t</code></td>
+<td>
+<p>Check config for mistakes</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a>sudo nginx -t
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Apply config changes</td>
-<td><code>sudo systemctl reload nginx</code></td>
+<td>
+<p>Apply config changes</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a>sudo systemctl reload nginx
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Start / stop / restart</td>
-<td><code>sudo systemctl start nginx</code> / <code>stop</code> / <code>restart</code></td>
+<td>
+<p>Start nginx</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a>sudo systemctl start nginx
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Is it running?</td>
-<td><code>systemctl status nginx --no-pager</code></td>
+<td>
+<p>Stop nginx</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a>sudo systemctl stop nginx
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Start at boot / don't</td>
-<td><code>sudo systemctl enable nginx</code> / <code>disable</code></td>
+<td>
+<p>Restart nginx</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a>sudo systemctl restart nginx
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>See what is using a port</td>
-<td><code>sudo ss -tlnp \| grep ':80 '</code></td>
+<td>
+<p>Is it running?</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a>systemctl status nginx --no-pager
+</span></code></pre></div>
+</td>
 </tr>
 <tr>
-<td>Show the full merged config</td>
-<td><code>sudo nginx -T</code></td>
+<td>
+<p>Start at boot</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a>sudo systemctl enable nginx
+</span></code></pre></div>
+</td>
+</tr>
+<tr>
+<td>
+<p>Don't start at boot</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a href="#__codelineno-36-1" id="__codelineno-36-1" name="__codelineno-36-1"></a>sudo systemctl disable nginx
+</span></code></pre></div>
+</td>
+</tr>
+<tr>
+<td>
+<p>See what is using a port</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a href="#__codelineno-37-1" id="__codelineno-37-1" name="__codelineno-37-1"></a>sudo ss -tlnp 'sport = :80'
+</span></code></pre></div>
+</td>
+</tr>
+<tr>
+<td>
+<p>Show the full merged config</p>
+</td>
+<td>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a href="#__codelineno-38-1" id="__codelineno-38-1" name="__codelineno-38-1"></a>sudo nginx -T
+</span></code></pre></div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -9306,13 +9397,13 @@
 <div class="admonition ex">
 <p class="admonition-title">Troubleshooting</p>
 <p><strong>"bind() to 0.0.0.0:80 failed (98: Address already in use)"</strong><br>
-Another program is using port 80. Find it with <code>sudo ss -tlnp | grep ':80 '</code>. If it is Apache and you do not need it, see Step 2.</p>
+Another program is using port 80. Find it with <code>sudo ss -tlnp | grep ':80 '</code>. If it is Apache and you do not need it, see <a href="./#step-2-make-sure-nothing-else-is-using-port-80">Step 2</a>. </p>
 <hr>
 <p><strong>"mkdir() /var/lib/nginx/client-body failed (13: Permission denied)"</strong><br>
 You ran <code>nginx</code> as a normal user. Do not start it by hand. Use <code>sudo systemctl start nginx</code>.</p>
 <hr>
 <p><strong>"could not build optimal types_hash"</strong><br>
-A harmless warning. The fix is in Step 4.</p>
+A harmless warning. The fix is in <a href="./#step-4-tidy-up-the-main-config">Step 4</a>.</p>
 <hr>
 <p><strong>"invalid number of arguments in proxy_pass directive"</strong><br>
 A typo in the config file, often a stray character such as a backslash before the semicolon. Run <code>grep proxy_pass /etc/nginx/conf.d/*.conf</code> and look at the line.</p>
@@ -9331,18 +9422,18 @@ Run <code>sudo nginx -t</code>, then <code>sudo systemctl reload nginx</code>. E
 <hr>
 <p><strong>Something broke and you want to go back</strong><br>
 Restore your backup, then test and reload:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>sudo cp /etc/nginx/nginx.conf.bak /etc/nginx/nginx.conf
-</span><span id="__span-20-2"><a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>sudo nginx -t
-</span><span id="__span-20-3"><a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a>sudo systemctl reload nginx
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>sudo cp /etc/nginx/nginx.conf.bak /etc/nginx/nginx.conf
+</span><span id="__span-23-2"><a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a>sudo nginx -t
+</span><span id="__span-23-3"><a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a>sudo systemctl reload nginx
 </span></code></pre></div>
 </div>
 <h3 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">⚓︎</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Where to go next</p>
 <ul>
-<li>Add more test sites by repeating Step 5 with a new name and folder.</li>
+<li>Add more test sites by repeating <a href="./#step-5-a-local-test-site">Step 5</a> with a new name and folder.</li>
 <li>
-<p>Proxy more apps by repeating Step 6 with a new name and port.</p>
+<p>Proxy more apps by repeating <a href="./#step-6-a-reverse-proxy">Step 6</a> with a new name and port.</p>
 </li>
 <li>
 <p>Read the official documentation at <a href="https://nginx.org/en/docs/">nginx.org</a>.</p>
