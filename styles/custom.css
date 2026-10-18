@@ -1773,22 +1773,33 @@ code, pre, .codehilite, .highlight {
   background-color: #e3e7ea;
 }
 
-.green {
-  background-color: green;
-  border: 1px solid lightgreen;
+/* ==========================================================================
+   🎨 INLINE TEXT HIGHLIGHTS (.green / .red / .skyblue)
+   ========================================================================== */
+
+.md-typeset .green { --hl: 46, 160, 67; }
+.md-typeset .red { --hl: 229, 57, 53; }
+.md-typeset .skyblue { --hl: 30, 136, 229; }
+
+.md-typeset :is(.green, .red, .skyblue) {
+  background-color: rgba(var(--hl), 0.18);
+  border: 1px solid rgba(var(--hl), 0.7);
+  border-radius: 0.2rem;
+  padding: 0 0.3em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
-.red {
-  background-color: red;
-  border: 1px solid #FF474C;
-}
+/* --------------------------------------------------------------------------
+   USAGE — on inline code or text, attr_list directly after the element:
 
-.skyblue {
-  background-color: skyblue;
-  border: 1px solid blue;
-}
+   `mkdocs.yml.bak`{.red}     *📝 NOTE:*{.green}     `README.md`{.skyblue}
+   -------------------------------------------------------------------------- */
 
 
+/* ==========================================================================
+   📋 TABLE CELLS WITH CODE BLOCKS (Centres text beside copy-button commands)
+   ========================================================================== */
 .md-typeset table:not([class]) td {
   vertical-align: middle;
 }
@@ -1796,3 +1807,23 @@ code, pre, .codehilite, .highlight {
 .md-typeset table:not([class]) td pre {
   margin: 0;
 }
+
+
+/* ==========================================================================
+   🔤 PSEUDO-HEADING (Heading-sized text that stays out of the TOC)
+   ========================================================================== */
+.md-typeset .pseudo-heading {
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 1.5em 0 0.8em;
+}
+
+/* --------------------------------------------------------------------------
+   USAGE — bold text on its own line, attr_list on the line directly below:
+
+   **Your heading text**
+   { .centered .pseudo-heading }
+
+   Not a real heading, so it never appears in the sidebar TOC.
+   -------------------------------------------------------------------------- */
