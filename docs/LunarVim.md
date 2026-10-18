@@ -12,13 +12,13 @@ icon: material/alert-outline
 
      [LunarVim](https://github.com/LunarVim/LunarVim) is no longer actively maintained by its primary creator, who has moved on to other configurations like AstroNvim and LazyVim. The project is largely abandoned by its main lead, though some community contributions still exist. I thought to leave the page here in the event someone is looking for information or any form of help and if anyone want's to transition to [LazyVim](https://github.com/lazyvim/lazyvim) there is a comprehensive page [here](LazyVim.md#background){data-preview}
      
-    Recent update 16/10/2026
+    `Recent update 16/10/2026`{.red}
     
-    - Official Domain Lapsed: Note that lunarvim.org is completely dead and yields a 404 error.
+    - Official Domain Lapsed: `Note`{.red} that lunarvim.org is completely dead and yields a 404 error.
     
-    - Installation Scripts Broken: Explicitly warn users that the universal curl installation script (bash <(curl -s https://lunarvim.org/install.sh)) is broken and will fail immediately because the source file no longer exists.
+    - Installation Scripts Broken: Explicitly warn users that the universal curl installation script `(bash <(curl -s https://lunarvim.org/install.sh))`{.green} is broken and will fail immediately because the source file no longer exists.
     
-    - Point to GitHub & Wayback Machine: Under your "Useful Documentation Links" section, you might want to swap out the dead lunarvim.org links to point directly to the LunarVim GitHub Repository (which is still up as a read-only archive) or to an Internet Archive Wayback Machine link so people can still read the original docs if they are stuck.
+    - [LunarVim](https://github.com/LunarVim/LunarVim) now points to GitHub & the [Official LunarVim Documentation](https://web.archive.org/web/20260207013738/https://www.lunarvim.org/docs/installation) — The core manual for custom configuration profiles can be found at the`Internet Archive WayBack Machine` At the following `URL`. [Internet Archive WayBack Machine](https://archive.org/) — [Snapshot of LunarVim](https://web.archive.org/web/20260131182344/https://www.lunarvim.org/). Under the [Useful Documentation Links](LunarVim.md/#useful-documentation-links) section, I have also modified the dead lunarvim.org links to point directly to the LunarVim snapshot on the `Internet Archive Wayback Machine`so people can still read the original docs if they are stuck.
       
 
 !!! desc "LunarVim"

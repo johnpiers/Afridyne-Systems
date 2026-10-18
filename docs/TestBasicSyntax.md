@@ -2791,7 +2791,7 @@ s3}
 
 !!! instruction "Produces `{ .centered }`Text Plus Colour"
 
-    ## Text `{. centered`} {.toc-hidden-header}
+    ## Text `{. centered}` {.toc-hidden-header}
     
     This pertains to "Remarkable" and MkDocs-MaterialX using 'GFM'
     
