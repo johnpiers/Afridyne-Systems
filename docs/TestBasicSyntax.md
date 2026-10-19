@@ -97,181 +97,47 @@ An extremely fast Python package and project manager, written in Rust.
         
         Looking at the colours of the icons as you switch a theme from dark to light several times can create optical illusions in which the colours appear to be different on different themes.
 
-### Systemctl Table
+###### Table Reference: systemctl
 
-<!-- Block 3 Container - WRAPPED -->
-<div markdown="1">
+<div class="systemctl-table" markdown>
 
-<div class="isolated-table-container">
-  <style>
-    .isolated-table-container .wikitable {
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 800px;
-      margin: 20px auto;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-    .isolated-table-container .wikitable th,
-    .isolated-table-container .wikitable td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-    }
-    .isolated-table-container .wikitable th {
-      background-color: #FFFFFF;
-      font-weight: bold;
-      color: #333333;
-    }
-    .isolated-table-container .wikitable a {
-      color: #0064d2;
-      text-decoration: underline;
-    }
-    @media (prefers-color-scheme: dark) {
-      .isolated-table-container .wikitable {
-        border-color: #F0F0F0;
-      }
-      .isolated-table-container .wikitable th,
-      .isolated-table-container .wikitable td {
-        border-color: #D0D0D0;
-      }
-      .isolated-table-container .wikitable th {
-        background-color: #006C3B;
-        color: #e0e0e0;
-      }
-      .isolated-table-container .wikitable a {
-        color: #6BDDEA;
-      }
-      .isolated-table-container .wikitable td {
-        color: #008B72;
-      }
-      .isolated-table-container .wikitable td.note a {
-        color: #fff;
-      }
-    }
-  </style>
-  <table class="wikitable">
-    <tbody>
-      <tr>
-        <th>Action</th>
-        <th>Command</th>
-        <th>Note</th>
-      </tr>
-      <tr>
-        <th colspan="3">Analyzing JohnPC's System State</th>
-      </tr>
-      <tr>
-        <td class="action"><b>Show system status</b></td>
-        <td><code>systemctl status</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>List running</b> units</td>
-        <td><code>systemctl</code> or<br><code>systemctl list-units</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>List failed</b> units</td>
-        <td><code>systemctl --failed</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>List installed</b> unit files<sup>1</sup></td>
-        <td><code>systemctl list-unit-files</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Show process status</b> for a PID</td>
-        <td><code>systemctl status <i>pid</i></code></td>
-        <td><a href="https://wiki.archlinux.org/title/Cgroups" title="Cgroups">cgroup slice</a>, memory and parent</td>
-      </tr>
-      <tr>
-        <th colspan="3">Checking the unit status</th>
-      </tr>
-      <tr>
-        <td class="action"><b>Show a manual page</b> associated with a unit</td>
-        <td><code>systemctl help <i>unit</i></code></td>
-        <td>as supported by the unit</td>
-      </tr>
-      <tr>
-        <td class="action"><b>Status</b> of a unit</td>
-        <td><code>systemctl status <i>unit</i></code></td>
-        <td>including whether it is running or not</td>
-      </tr>
-      <tr>
-        <td class="action"><b>Check</b> whether a unit is enabled</td>
-        <td><code>systemctl is-enabled <i>unit</i></code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="3">Starting, restarting, reloading a unit</th>
-      </tr>
-      <tr>
-        <td class="action"><b>Start</b> a unit immediately</td>
-        <td><code>systemctl start <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Stop</b> a unit immediately</td>
-        <td><code>systemctl stop <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Restart</b> a unit</td>
-        <td><code>systemctl restart <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Reload</b> a unit and its configuration</td>
-        <td><code>systemctl reload <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Reload systemd manager</b> configuration<sup>2</sup></td>
-        <td><code>systemctl daemon-reload</code> as root</td>
-        <td>scan for new or changed units</td>
-      </tr>
-      <tr>
-        <th colspan="3">Enabling a unit</th>
-      </tr>
-      <tr>
-        <td class="action"><b>Enable</b> a unit to start automatically at boot</td>
-        <td><code>systemctl enable <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Enable</b> a unit to start automatically at boot and <b>start</b> it immediately</td>
-        <td><code>systemctl enable --now <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Disable</b> a unit to no longer start at boot</td>
-        <td><code>systemctl disable <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Reenable</b> a unit<sup>3</sup></td>
-        <td><code>systemctl reenable <i>unit</i></code> as root</td>
-        <td>i.e. disable and enable anew</td>
-      </tr>
-      <tr>
-        <th colspan="3">Masking a unit</th>
-      </tr>
-      <tr>
-        <td class="action"><b>Mask</b> a unit to make it impossible to start<sup>4</sup></td>
-        <td><code>systemctl mask <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="action"><b>Unmask</b> a unit</td>
-        <td><code>systemctl unmask <i>unit</i></code> as root</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+| Action | Command | Note |
+|--------|---------|------|
+| Analyzing the system state |||
+| **Show system status** | `systemctl status` | |
+| **List running** units | `systemctl` or `systemctl list-units` | |
+| **List failed** units | `systemctl --failed` | |
+| **List installed** unit files[^sc1] | `systemctl list-unit-files` | |
+| **Show process status** for a PID | <code>systemctl status <i>pid</i></code> | [cgroup slice](https://wiki.archlinux.org/title/Cgroups "Cgroups"), memory and parent |
+
+| Checking the unit status |||
+| **Show a manual page** associated with a unit | <code>systemctl help <i>unit</i></code> | as supported by the unit |
+| **Status** of a unit | <code>systemctl status <i>unit</i></code> | including whether it is running or not |
+| **Check** whether a unit is enabled | <code>systemctl is-enabled <i>unit</i></code> | |
+
+| Starting, restarting, reloading a unit |||
+| **Start** a unit immediately | <code>systemctl start <i>unit</i></code> as root | |
+| **Stop** a unit immediately | <code>systemctl stop <i>unit</i></code> as root | |
+| **Restart** a unit | <code>systemctl restart <i>unit</i></code> as root | |
+| **Reload** a unit and its configuration | <code>systemctl reload <i>unit</i></code> as root | |
+| **Reload systemd manager** configuration[^sc2] | `systemctl daemon-reload` as root | scan for new or changed units |
+
+| Enabling a unit |||
+| **Enable** a unit to start automatically at boot | <code>systemctl enable <i>unit</i></code> as root | |
+| **Enable** a unit to start automatically at boot and **start** it immediately | <code>systemctl enable --now <i>unit</i></code> as root | |
+| **Disable** a unit to no longer start at boot | <code>systemctl disable <i>unit</i></code> as root | |
+| **Reenable** a unit[^sc3] | <code>systemctl reenable <i>unit</i></code> as root | i.e. disable and enable anew |
+
+| Masking a unit |||
+| **Mask** a unit to make it impossible to start[^sc4] | <code>systemctl mask <i>unit</i></code> as root | |
+| **Unmask** a unit | <code>systemctl unmask <i>unit</i></code> as root | |
 
 </div>
+
+[^sc1]: Lists every unit file installed on disk with its enabled state, including units that are not currently loaded. `systemctl list-units` only shows units that are loaded in memory.
+[^sc2]: Run this after creating or editing unit files or drop-ins so systemd re-reads them. It does not restart services that are already running.
+[^sc3]: Equivalent to a disable followed by an enable. It recreates the unit's symlinks from its current `[Install]` section, which is useful after that section has changed.
+[^sc4]: Masking links the unit to `/dev/null`, so it cannot be started manually or pulled in as a dependency. This is stronger than disabling, and `unmask` reverses it.
 
 ### Various Misc
 

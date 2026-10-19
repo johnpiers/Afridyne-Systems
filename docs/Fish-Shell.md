@@ -51,7 +51,7 @@ icon: material/fish
 <!-- Debian Box -->
 <div style="display: inline-block; border: 1px solid #444; border-radius: 6px; padding: 15px; margin: 5px; width: 28%; min-width: 200px; vertical-align: top; min-height: 200px;">
   <img src="https://cdn.simpleicons.org/debian/8 8 8 8 8 8" width="70"><br><br>
-  <a href="https://www.debian.org/">Subscribe</a> or <a href="https://download.opensuse.org/repositories/shells:/fish/">Download</a>
+  <a href="https://www.debian.org/">Subscribe</a> or <a href="https://software.opensuse.org/download.html?project=shells%3Afish%3Arelease%3A4&package=fish">Download</a>
 </div>
 <div style="display: inline-block; border: 1px solid #444; border-radius: 6px; padding: 15px; margin: 5px; width: 28%; min-width: 200px; vertical-align: top; min-height: 200px;">
   <img src="https://fishshell.com/assets/img/fed_icon.png" width="130"><br><br>
@@ -62,7 +62,7 @@ icon: material/fish
 <!-- Row 2 -->
 <div style="display: inline-block; border: 1px solid #444; border-radius: 6px; padding: 15px; margin: 5px; width: 28%; min-width: 200px; vertical-align: top; min-height: 200px;">
   <img src="https://fishshell.com/assets/img/opensuse.svg" width="110"><br><br>
-  <a href="https://software.opensuse.org/download.html?project=shells%3Afish%3Arelease%3A4&package=fish">Subscribe or Download</a>
+  <a href="https://download.opensuse.org/repositories/shells:/fish/">Subscribe or Download</a>
 </div>
 <div style="display: inline-block; border: 1px solid #444; border-radius: 6px; padding: 15px; margin: 5px; width: 28%; min-width: 200px; vertical-align: top; min-height: 200px;" align="center">
   

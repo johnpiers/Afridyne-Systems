@@ -1827,3 +1827,65 @@ code, pre, .codehilite, .highlight {
 
    Not a real heading, so it never appears in the sidebar TOC.
    -------------------------------------------------------------------------- */
+   
+/* systemctl table: add once to styles/custom.css */
+.md-typeset div.systemctl-table table {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.md-typeset div.systemctl-table table th,
+.md-typeset div.systemctl-table table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+.md-typeset div.systemctl-table table th {
+  background-color: #FFFFFF;
+  color: #333333;
+  font-weight: bold;
+}
+/* column widths: Command widest so "as root" stays on one line */
+.md-typeset div.systemctl-table table thead th:nth-child(1) {
+  width: 35%;
+}
+.md-typeset div.systemctl-table table thead th:nth-child(2) {
+  width: 40%;
+}
+.md-typeset div.systemctl-table table thead th:nth-child(3) {
+  width: 25%;
+}
+/* the five full-width section rows */
+.md-typeset div.systemctl-table table td[colspan] {
+  background-color: #E6F2EC;
+  color: #333333;
+  font-weight: bold;
+}
+.md-typeset div.systemctl-table table a {
+  color: #0064d2;
+  text-decoration: underline;
+}
+@media (prefers-color-scheme: dark) {
+  .md-typeset div.systemctl-table table {
+    border-color: #F0F0F0;
+  }
+  .md-typeset div.systemctl-table table th,
+  .md-typeset div.systemctl-table table td {
+    border-color: #D0D0D0;
+    color: #2FB89A;
+  }
+  .md-typeset div.systemctl-table table th {
+    background-color: #006C3B;
+    color: #e0e0e0;
+  }
+  .md-typeset div.systemctl-table table td[colspan] {
+    background-color: #004D2A;
+    color: #e0e0e0;
+  }
+  .md-typeset div.systemctl-table table a {
+    color: #6BDDEA;
+  }
+}

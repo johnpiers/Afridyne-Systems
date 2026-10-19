@@ -291,6 +291,8 @@ LazyVim uses which-key.nvim to help you remember your keymaps. Just press any ke
 | `<leader><tab>[` | Previous Tab | n |
 
 
+### Backing-up Your config
+
 !!! git " Backing-up Your config When making Changes"
 
     To reset the LazyVim CmdLine to the bottom left hand corner:
@@ -322,4 +324,126 @@ LazyVim uses which-key.nvim to help you remember your keymaps. Just press any ke
     create mode 100644 lua/plugins/noice.lua
     ```
    
+## Rendering Mermaid diagrams inline in LazyVim
+
+!!! desc "Rendering Mermaid diagrams inline"
+
+    How to get Mermaid diagrams ( ` ```mermaid `{.red} blocks ) to render as images inside LazyVim when editing Markdown files. Based on a working setup on Arch Linux with Ghostty. The steps were put together from a troubleshooting session, not tested as a clean install from scratch.
+    
+### 1. Prerequisites
+
+!!! desc "Prerequisites"
+
+    - A terminal that supports the Kitty graphics protocol ( `Ghostty`{.green} does ).
+    - ImageMagick ( `magick`{.skyblue} ). Snacks needs it to convert images.
+    - Node and npm.
+    - Optional: `Ghostscript`{.green} and a `LaTeX`{.skyblue} install. These are only for PDFs and math in Markdown, and Mermaid does not need them.
+    
+### 2. Install `mmdc` with npm
+
+!!! recommendation "Install `mmdc`{.red} with npm"
+
+    ```bash
+    npm config set prefix ~/.npm-global
+    npm install -g @mermaid-js/mermaid-cli
+    ```
+    
+    Make sure `~/.npm-global/bin`{.green} is on your `PATH`{.skyblue}, in whichever file your interactive shell reads (for zsh, `~/.zshrc`{.green} or `~/.zshenv`{.skyblue} ).
+    
+    Do `not`{.red} set `PUPPETEER_SKIP_DOWNLOAD=true`{.red} on a fresh install. Let Puppeteer download its own browser, so `mmdc`{.green} does not need your everyday Chrome or any other browser for that matter.
+    
+### 3. Test `mmdc` in a plain terminal first
+
+!!! recommendation "Test `mmdc`{.green} in a plain terminal first"
+
+    ```bash
+    printf 'graph TD\n  A-->B\n' > /tmp/test.mmd
+    mmdc -i /tmp/test.mmd -o /tmp/test.png
+    ls -l /tmp/test.png
+    ```
+    
+    If the PNG appears, `mmdc`{.green} works.
+    
+    Do `not`{.red} add a `-p`{.green} flag or a `~/.mermaid-puppeteer.json`{.skyblue} that points at `/usr/bin/google-chrome stable`{.red}. That makes every render launch a second copy of your real Chrome. It was the best guess for the Chrome misbehaviour seen during this setup, though that was never proven.
+    
+### 4. Create `~/.config/nvim/lua/plugins/snacks.lua`
+
+!!! desc "Create `~/.config/nvim/lua/plugins/snacks.lua`"
+
+    ```lua
+    return {
+      {
+        "folke/snacks.nvim",
+        opts = {
+          image = {
+            enabled = true,
+            convert = {
+              mermaid = function()
+                local theme = vim.o.background == "light" and "neutral" or "dark"
+                return {
+                  "-i", "{src}",
+                  "-o", "{file}",
+                  "-b", "transparent",
+                  "-t", theme,
+                  "-s", "{scale}",
+                }
+              end,
+            },
+          },
+        },
+      },
+    }
+    ```
+    
+    `Notes:`{.skyblue}
+    
+    - Do `not`{.red} put `"mmdc",`{.green} in the argument list. Snacks adds the command itself.
+    
+    - The `convert`{.green} block matches the snacks default for Mermaid, so `enabled = true`{.green} may be all that is needed. Only the full version above was tested.
+    
+    - A plugin file must return a table. An empty file causes `Invalid spec module ... a nil was returned`{.red}. If you need an empty file, put `return {}`{.green} in it.
+    
+### 5. If you start LazyVim from a desktop launcher
+
+!!! desc "If you start LazyVim from a desktop launcher"
+
+    Launchers do not read your shell setup, so Neovim gets a minimal `PATH` and cannot find `mmdc`. Use an interactive shell in the `Exec=` line of the `.desktop` file:
+    
+    ```
+    Exec=ghostty -e zsh -ic "cd /home/johnpc && nvim"
+    ```
+    
+### 6. Verify
+
+!!! instruction "Verify"
+
+    1. Run `:checkhealth snacks`{.green}. Under `Snacks.image`{.skyblue}, `mmdc`{.green} and `Mermaid`{.green} support should show ✅.
+    
+    2. Open a `.md`{.green} file containing a ` ```mermaid `{.red} block. The diagram should appear inline under the block.
+    
+### Troubleshooting
+
+!!! important "Troubleshooting"
+  
+    | Symptom | Cause | Fix |
+    |---|---|---|
+    | `Invalid spec module ... nil was returned` | Empty `snacks.lua` | The file must at least `return {}` |
+    | `Tool not found: 'mmdc'`{.green} only when started from the launcher | Launcher gave Neovim a minimal `PATH` | Use `zsh -ic`{.green} in the `Exec=`{.green} line |
+    | No image and no message | Conversion errors are silent by default | Temporarily add `notify = true,` inside `convert` and `debug = { convert = true },` inside `image` |
+    | `too many arguments`{.green}, with `mmdc mmdc -i ...`{.green} in the error | A stray `"mmdc",`{.green} in the argument list | Delete that line |
+    
+    Remove the two debug options once everything works.
+    
+    Useful checks inside Neovim:
+    
+    ```
+    :echo executable('mmdc')
+    :echo $PATH
+    :checkhealth snacks
+    :lua Snacks.image.hover()
+    :lua Snacks.notifier.show_history()
+    ```
+    
+    `executable('mmdc')`{.skyblue} should print `1`{.green}. If it prints `0`{.red}, Neovim's `PATH`{.green} is missing the npm global bin directory.
+    
 ![](imgs/20260925-210811.png){ .center-image }

@@ -2280,3 +2280,45 @@ def bubble_sort(items):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j]
 ```
+
+###### Table Reference: systemctl
+
+<div class="systemctl-table" markdown>
+
+| Action | Command | Note |
+|--------|---------|------|
+| Analyzing the system state |||
+| **Show system status** | `systemctl status` | |
+| **List running** units | `systemctl` or `systemctl list-units` | |
+| **List failed** units | `systemctl --failed` | |
+| **List installed** unit files[^sc1] | `systemctl list-unit-files` | |
+| **Show process status** for a PID | <code>systemctl status <i>pid</i></code> | [cgroup slice](https://wiki.archlinux.org/title/Cgroups "Cgroups"), memory and parent |
+
+| Checking the unit status |||
+| **Show a manual page** associated with a unit | <code>systemctl help <i>unit</i></code> | as supported by the unit |
+| **Status** of a unit | <code>systemctl status <i>unit</i></code> | including whether it is running or not |
+| **Check** whether a unit is enabled | <code>systemctl is-enabled <i>unit</i></code> | |
+
+| Starting, restarting, reloading a unit |||
+| **Start** a unit immediately | <code>systemctl start <i>unit</i></code> as root | |
+| **Stop** a unit immediately | <code>systemctl stop <i>unit</i></code> as root | |
+| **Restart** a unit | <code>systemctl restart <i>unit</i></code> as root | |
+| **Reload** a unit and its configuration | <code>systemctl reload <i>unit</i></code> as root | |
+| **Reload systemd manager** configuration[^sc2] | `systemctl daemon-reload` as root | scan for new or changed units |
+
+| Enabling a unit |||
+| **Enable** a unit to start automatically at boot | <code>systemctl enable <i>unit</i></code> as root | |
+| **Enable** a unit to start automatically at boot and **start** it immediately | <code>systemctl enable --now <i>unit</i></code> as root | |
+| **Disable** a unit to no longer start at boot | <code>systemctl disable <i>unit</i></code> as root | |
+| **Reenable** a unit[^sc3] | <code>systemctl reenable <i>unit</i></code> as root | i.e. disable and enable anew |
+
+| Masking a unit |||
+| **Mask** a unit to make it impossible to start[^sc4] | <code>systemctl mask <i>unit</i></code> as root | |
+| **Unmask** a unit | <code>systemctl unmask <i>unit</i></code> as root | |
+
+</div>
+
+[^sc1]: Lists every unit file installed on disk with its enabled state, including units that are not currently loaded. `systemctl list-units` only shows units that are loaded in memory.
+[^sc2]: Run this after creating or editing unit files or drop-ins so systemd re-reads them. It does not restart services that are already running.
+[^sc3]: Equivalent to a disable followed by an enable. It recreates the unit's symlinks from its current `[Install]` section, which is useful after that section has changed.
+[^sc4]: Masking links the unit to `/dev/null`, so it cannot be started manually or pulled in as a dependency. This is stronger than disabling, and `unmask` reverses it.
