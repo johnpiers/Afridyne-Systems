@@ -8960,7 +8960,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-19"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-19T21:28:40+00:00">2026-10-19</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-19"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-19T21:28:40+00:00">2026-10-19</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-20"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-20T21:50:49+00:00">2026-10-20</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-20"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-20T21:50:49+00:00">2026-10-20</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span></div></div></div></div></div>
 <p></p>
 <h4 align="center">
 <a href="https://lazyvim.github.io/installation">Install</a>
@@ -9105,11 +9105,11 @@
 </div>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/N93cTbtLCIM?si=CRET8OIWIkiDQD2f" title="YouTube video player" width="560"></iframe>
 <p>⌨️ Keymaps</p>
-<p>LazyVim uses which-key.nvim to help you remember your keymaps. Just press any key like <space> and you'll see a popup with all possible keymaps starting with <space>.</space></space></p>
+<p>LazyVim uses which-key.nvim to help you remember your keymaps. Just press any key like <code>&lt;space&gt;</code> and you'll see a popup with all possible keymaps starting with <code>&lt;space&gt;</code>.</p>
 <p></p>
 <ul>
-<li>default <leader> is <space></space></leader></li>
-<li>default <localleader> is \</localleader></li>
+<li>default <code>&lt;leader&gt;</code> is <code>&lt;space&gt;</code></li>
+<li>default <code>&lt;localleader&gt;</code> is <code>\</code></li>
 </ul>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">⚓︎</a></h2>
 <table>
@@ -9682,7 +9682,7 @@
 <h3 id="5-if-you-start-lazyvim-from-a-desktop-launcher">5. If you start LazyVim from a desktop launcher<a class="headerlink" href="#5-if-you-start-lazyvim-from-a-desktop-launcher" title="Permanent link">⚓︎</a></h3>
 <div class="admonition desc">
 <p class="admonition-title">If you start LazyVim from a desktop launcher</p>
-<p>Launchers do not read your shell setup, so Neovim gets a minimal <code>PATH</code> and cannot find <code>mmdc</code>. Use an interactive shell in the <code>Exec=</code> line of the <code>.desktop</code> file:</p>
+<p>Launchers do not read your shell setup, so Neovim gets a minimal <code class="green">PATH</code> and cannot find <code class="green">mmdc</code>. Use an interactive shell in the <code class="green">Exec=</code> line of the <code class="green">.desktop</code> file:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>Exec=ghostty -e zsh -ic "cd /home/johnpc &amp;&amp; nvim"
 </span></code></pre></div>
 </div>
@@ -9711,22 +9711,22 @@
 </thead>
 <tbody>
 <tr>
-<td><code>Invalid spec module ... nil was returned</code></td>
-<td>Empty <code>snacks.lua</code></td>
-<td>The file must at least <code>return {}</code></td>
+<td><code class="green">Invalid spec module ... nil was returned</code><!-- --></td>
+<td>Empty <code class="green">snacks.lua</code><!-- --></td>
+<td>The file must at least <code class="green">return {}</code><!-- --></td>
 </tr>
 <tr>
 <td><code class="green">Tool not found: 'mmdc'</code> only when started from the launcher</td>
-<td>Launcher gave Neovim a minimal <code>PATH</code></td>
+<td>Launcher gave Neovim a minimal <code class="green">PATH</code><!-- --></td>
 <td>Use <code class="green">zsh -ic</code> in the <code class="green">Exec=</code> line</td>
 </tr>
 <tr>
 <td>No image and no message</td>
 <td>Conversion errors are silent by default</td>
-<td>Temporarily add <code>notify = true,</code> inside <code>convert</code> and <code>debug = { convert = true },</code> inside <code>image</code></td>
+<td>Temporarily add <code class="skyblue">notify = true,</code> inside <code class="green">convert</code><!-- --> and <code class="skyblue">debug = { convert = true },</code> inside the <code class="green">image</code><!-- --></td>
 </tr>
 <tr>
-<td><code class="green">too many arguments</code>, with <code class="green">mmdc mmdc -i ...</code> in the error</td>
+<td><code class="green">too many arguments,</code> with <code class="green">mmdc mmdc -i ...</code> in the error</td>
 <td>A stray <code class="green">"mmdc",</code> in the argument list</td>
 <td>Delete that line</td>
 </tr>
