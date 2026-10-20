@@ -188,7 +188,7 @@ icon: material/alert-outline
 
 LazyVim uses which-key.nvim to help you remember your keymaps. Just press any key like `<space>` and you'll see a popup with all possible keymaps starting with `<space>`.
 
-![](imgs/20260911-204253.png)
+![](imgs/20261021-011339.png)
 
 - default `<leader>` is `<space>`
 - default `<localleader>` is `\`
