@@ -186,12 +186,13 @@ icon: material/alert-outline
 
 ⌨️ Keymaps
 
-LazyVim uses which-key.nvim to help you remember your keymaps. Just press any key like <space> and you'll see a popup with all possible keymaps starting with <space>.
+LazyVim uses which-key.nvim to help you remember your keymaps. Just press any key like `<space>` and you'll see a popup with all possible keymaps starting with `<space>`.
 
 ![](imgs/20260911-204253.png)
 
-- default <leader> is <space>
-- default <localleader> is \
+- default `<leader>` is `<space>`
+- default `<localleader>` is `\`
+
 
 ## General
 
@@ -407,7 +408,7 @@ LazyVim uses which-key.nvim to help you remember your keymaps. Just press any ke
 
 !!! desc "If you start LazyVim from a desktop launcher"
 
-    Launchers do not read your shell setup, so Neovim gets a minimal `PATH` and cannot find `mmdc`. Use an interactive shell in the `Exec=` line of the `.desktop` file:
+    Launchers do not read your shell setup, so Neovim gets a minimal `PATH`{.green} and cannot find `mmdc`{.green}. Use an interactive shell in the `Exec=`{.green} line of the `.desktop`{.green} file:
     
     ```
     Exec=ghostty -e zsh -ic "cd /home/johnpc && nvim"
@@ -427,10 +428,10 @@ LazyVim uses which-key.nvim to help you remember your keymaps. Just press any ke
   
     | Symptom | Cause | Fix |
     |---|---|---|
-    | `Invalid spec module ... nil was returned` | Empty `snacks.lua` | The file must at least `return {}` |
-    | `Tool not found: 'mmdc'`{.green} only when started from the launcher | Launcher gave Neovim a minimal `PATH` | Use `zsh -ic`{.green} in the `Exec=`{.green} line |
-    | No image and no message | Conversion errors are silent by default | Temporarily add `notify = true,` inside `convert` and `debug = { convert = true },` inside `image` |
-    | `too many arguments`{.green}, with `mmdc mmdc -i ...`{.green} in the error | A stray `"mmdc",`{.green} in the argument list | Delete that line |
+    | `Invalid spec module ... nil was returned`{.green}<!-- --> | Empty `snacks.lua`{.green}<!-- --> | The file must at least `return {}`{.green}<!-- --> |
+    | `Tool not found: 'mmdc'`{.green} only when started from the launcher | Launcher gave Neovim a minimal `PATH`{.green}<!-- --> | Use `zsh -ic`{.green} in the `Exec=`{.green} line |
+    | No image and no message | Conversion errors are silent by default | Temporarily add `notify = true,`{.skyblue} inside `convert`{.green}<!-- --> and `debug = { convert = true },`{.skyblue} inside the `image`{.green}<!-- --> |
+    | `too many arguments,`{.green} with `mmdc mmdc -i ...`{.green} in the error | A stray `"mmdc",`{.green} in the argument list | Delete that line |
     
     Remove the two debug options once everything works.
     
