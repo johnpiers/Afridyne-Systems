@@ -184,18 +184,17 @@ icon: material/alert-outline
     
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N93cTbtLCIM?si=CRET8OIWIkiDQD2f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-⌨️ Keymaps
-!!! heart ""
+## ⌨️ Keymaps
+
+!!! heart "Keymaps"
 
     ![](imgs/20261021-011339.png)
     
-LazyVim uses which-key.nvim to help you remember your keymaps. Just press any key like `<space>` and you'll see a popup with all possible keymaps starting with `<space>`.
-
-- default `<leader>` is `<space>`
-- default `<localleader>` is `\`
-
-![](imgs/20261021-011339.png)
-
+    LazyVim uses which-key.nvim to help you remember your keymaps. Just press any key like `<space>` and you'll see a popup with all possible keymaps starting with `<space>`.
+    
+    - default `<leader>` is `<space>`
+    - default `<localleader>` is `\`
+    
 ## General
 
 
