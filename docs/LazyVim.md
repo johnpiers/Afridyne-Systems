@@ -194,6 +194,7 @@ LazyVim uses which-key.nvim to help you remember your keymaps. Just press any ke
 - default `<leader>` is `<space>`
 - default `<localleader>` is `\`
 
+![](imgs/20261021-011339.png)
 
 ## General
 
