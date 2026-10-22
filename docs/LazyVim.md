@@ -2,8 +2,6 @@
 icon: material/alert-outline
 ---
 
-
-
 ![](imgs/20260911-160855.png){ .center-image }
 
 <h4 align="center">

@@ -326,6 +326,8 @@ icon: simple/nginx
 
 !!! desc "Everyday commands"
 
+    <div class="no-sort" markdown>
+    
     | Task | Command |
     |------|---------|
     | Check config for mistakes | ``` \
@@ -358,6 +360,8 @@ icon: simple/nginx
     | Show the full merged config | ``` \
     |  | sudo nginx -T \
     |  | ``` |
+    
+    </div>
     
 ### Troubleshooting
 

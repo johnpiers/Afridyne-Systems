@@ -4860,3 +4860,186 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
     sudo dd if=/home/johnpc/Downloads/garuda-gnome-linux-garuda-260819.iso of=/dev/sdd bs=4M status=progress oflag=sync
     ```
     
+---
+
+### Live site missing Images, Cards and Markmaps: what happened and what changed? { data-toc-label="Live site missing Images, Cards and Markmaps" }
+
+!!! desc "Live site missing Images, Cards and Markmaps:"
+
+    Date: 2026-10-21 (updated 2026-10-22). Site: Afridyne Systems (MaterialX for MkDocs), built by GitHub Actions and published to gh-pages. Local `mkdocs serve` was fine the whole time.
+    
+#### 1. The trigger
+
+!!! ex "The trigger"
+
+    One image (`imgs/20260911-204253.png`) under the Keymaps section of `docs/LazyVim.md` would not show on the live site, though it showed locally. The file was present on disk and tracked in git, and the page source was correct. After a few redeploys, **every** image and card on the live site disappeared, and later the markmap diagrams turned into plain code blocks.
+    
+#### 2. Root causes ( 3 Separate Problems)
+
+!!! deep-dive "Root causes ( 3 Separate Problems)"
+    | # | Symptom | Cause | Fix |
+    |---|---|---|---|
+    | 1 | `<img>` tags missing site-wide in the CI build | `mkdocs-glightbox` 0.5.2 breaks with `selectolax` **1.0.1** (a fresh unpinned install in CI): `insert_child()` moves the node in 1.0.1 but copies it in 0.4.6 and 1.0.0, so the images are removed. | Fixed upstream in `selectolax` **1.0.2**. `requirements.txt` now has `selectolax>=1.0.2` (it was `==0.4.6` as a stopgap). |
+    | 2 | Markmap blocks rendered as plain code | `pymdown-extensions` 12.1+ changed `extend_super_fences()` to need a 4th argument (`reset`). `mkdocs-markmap` 2.5.2 only passes 3, so its fence handler fails in a clean install. | Patched `extension.py` copied over the package in CI |
+    | 3 | Table sorting never worked | The Tablesort library was never loaded. Only the small `tablesort.js` was. | Added the library to `extra_javascript` |
+    
+    NB: Row 3 above:  (Tablesort): Note that headers can now cycle ascending, descending, original order, and that wrapping a table in `<div class="no-sort" markdown>`{.skyblue} excludes it from sorting.
+    
+    The local `.venv`{.green} hid problems 1 and 2 because it still had older versions (selectolax 0.4.6 and a hand-patched markmap). CI installs fresh every run, so it got the newest of everything.
+    
+#### 3. Troubleshooting Steps
+
+!!! desc "Troubleshooting Steps"
+
+    1. Confirmed the file, git state and page source were all correct. The problem was in the build, not the content.
+    2. Built a copy of the site in a clean virtual environment with `CI=true`{.green} (CI mode turns on the `optimize`{.green} and `social`{.green} plugins). It reproduced the problem: **239** `<img>`{.green} tags versus **933** locally.
+    3. Compared the package lists of the two environments and bisected them one variable at a time.
+    4. Isolated `selectolax`{.green}, then tested it again with a clean `.cache`{.green} folder to rule out stale cache effects.
+    5. `uv pip show selectolax`{.green} showed `Required-by: mkdocs-glightbox`{.green}. Rebuilding with the glightbox plugin disabled brought the images back (933), so glightbox was the code path.
+    6. Read the plugin source and found `img_clone = img`{.green} (an alias, not a copy). Reproduced it in a short stand-alone script, and confirmed that changing it to `img.clone()`{.green} gives 933 images in a full build.
+    7. Found the same problem already reported against glightbox (#74). The `selectolax`{.green} maintainer fixed it in 1.0.2. A clean build with `selectolax>=1.0.2`{.green} and an unmodified glightbox 0.5.2 gave 933 images and no errors.
+    8. Separately fixed markmap and Tablesort once the image problem was solved.
+    
+### Theories that were Tested and Disproven
+
+!!! desc "Theories that were Tested and Disproven"
+
+    - File or git state (file present, tracked and pushed).
+    
+    - Minify, or `CI=true`{.skyblue} / `DEPLOY=true`{.skyblue} on their own.
+    
+    - Python-Markdown version.
+    
+    - Single swaps of pillow, materialx 10.2.1, markdown, table-reader, markdown-exec and mkdocstrings.
+    
+    - `soupsieve`{.skyblue} 2.8.3 versus 3.0.3: both gave 239 on a cold cache.
+    
+    - Build cache (cold versus warm): no difference.
+    
+    - The markmap `reset`{.skyblue} error as the cause of the image loss: patching it removed 224 errors but the images were still dropped. It was a separate bug.
+    
+    - "It broke in selectolax 1.0.x" or "1.0 changed `insert_child`{.skyblue} on purpose": wrong. Only **1.0.1** is broken. 1.0.0 behaves like 0.4.6 (tested, and other users report the same).
+    
+    - A plugin-independent cause: with glightbox disabled, 1.0.1 builds fine (933).
+    
+    One thing was never explained: the clean replica logged 224 markmap errors, but the live Actions log search found none.
+    
+#### 4. The test method (Reuse this before any update!)
+
+!!! ex "The test method (reuse this before any update)"
+
+    Build in a throwaway environment and count images:
+    
+    ```bash
+    rsync -a --exclude .git --exclude .cache /mnt/sdb/AfridyneSystems/ /tmp/test-src/
+    cd /tmp/test-src
+    uv venv /tmp/test-venv
+    uv pip install --python /tmp/test-venv/bin/python -r requirements.txt
+    # apply the two markmap patches (same as deploy.yml)
+    PKG=$(/tmp/test-venv/bin/python -c "import mkdocs_markmap,os;print(os.path.dirname(mkdocs_markmap.__file__))")
+    cp patches/mkdocs-markmap.js "$PKG/static_files/mkdocs-markmap.js"
+    cp patches/mkdocs-markmap-extension.py "$PKG/extension.py"
+    CI=true /tmp/test-venv/bin/mkdocs build -q -d /tmp/test-site 2> /tmp/test.log
+    grep -c 'unexpected error' /tmp/test.log
+    grep -rho '<img' /tmp/test-site --include=index.html | wc -l
+    ```
+    
+    Reference numbers: **933** images is healthy (934 while a duplicate image sat on the LazyVim page). A figure around **239** means the images are being dropped. Any `unexpected error`{.red} lines mean a plugin is failing.
+    
+#### 5. What is Pinned, Patched and Changed
+
+### `requirements.txt`
+
+!!! desc "requirements.txt"
+
+    | Package | State |
+    |---|---|
+    | `mkdocs-materialx` | `==10.2.0` |
+    | `mkdocs` | `==1.6.1` |
+    | `markdown` | `==3.11.2` (was `3.10.2`; bumped to match local, tested in a clean build first) |
+    | `mkdocs-drawio` | `==1.16.3` |
+    | `mkdocs-markmap` | `==2.5.2` |
+    | `properdocs` | `==1.6.7` |
+    | `selectolax` | `>=1.0.2` (was `==0.4.6` as a stopgap; the floor keeps the broken 1.0.1 out) |
+    | `pymdown-extensions` | `>=12.1` (floor only, no ceiling) |
+    | everything else | unpinned (installs the newest on every CI run) |
+    
+### `deploy.yml`, markmap patch step
+
+!!! ex "`deploy.yml`, markmap patch step"
+
+    ```yaml
+    - name: Apply mkdocs-markmap patch (click-to-expand, scroll-zoom fix)
+      run: |
+        PKG_DIR=$(python3 -c "import mkdocs_markmap, os; print(os.path.dirname(mkdocs_markmap.__file__))")
+        cp patches/mkdocs-markmap.js "$PKG_DIR/static_files/mkdocs-markmap.js"
+        cp patches/mkdocs-markmap-extension.py "$PKG_DIR/extension.py"
+    ```
+    
+    - `patches/mkdocs-markmap.js`: click-to-expand and scroll-zoom fix (older patch).
+    - `patches/mkdocs-markmap-extension.py`: the `reset` fix (new). It tries the 4-argument call and falls back to the 3-argument call on older `pymdown-extensions`, so it works with both.
+    
+### `mkdocs.yml`
+
+!!! desc "`mkdocs.yml`"
+
+    Added above `javascripts/tablesort.js` in `extra_javascript`:
+    
+    ```yaml
+    - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+    ```
+    
+#### 6. When you run updates
+
+!!! ex "When you run updates"
+
+    - **Bump one thing at a time**, build with the test method above, and compare the image count and error count before and after.
+    - **`selectolax`:** `>=1.0.2`{.green} keeps 1.0.1 out. If a later release changes the image count, pin it back below that release and compare using the test method.
+    - **Isolating a plugin:** if images or pages go missing with no errors, rebuild with one plugin disabled at a time and compare the counts. That is how glightbox was found.
+    - **`mkdocs-markmap`:** the patch overwrites the package's own `extension.py`{.green}. Before bumping past 2.5.2, check whether upstream fixed `reset`{.green}. If it did, remove the `extension.py`{.green} line from `deploy.yml`{.green}, or the old copy will overwrite their newer file.
+    - **`pymdown-extensions`:** the patch covers 12.0.1 and 12.1+. If markmap fences turn into plain code blocks again, suspect this first.
+    - **`markdown`:** watch table cells where a `{.class}`{.green} ends the cell (use a trailing `<!-- -->`{.skyblue} after it) and backtick handling.
+    - **Unpinned packages** are the usual source of surprises. If something breaks after no change on your side, compare `uv pip freeze`{.green} from a fresh install with your local one.
+    
+    Check what is installed locally:
+    
+    ```bash
+    uv pip list
+    uv pip freeze | grep -i -E "^(markdown|mkdocs|mkdocs-materialx|pymdown-extensions|mkdocs-markmap|selectolax)=="
+    ```
+    
+#### 7. Root Cause and Upstream Status
+
+!!! deep-dive "Root cause and upstream status"
+
+    In `mkdocs-glightbox`{.green} 0.5.2, `wrap_img_with_anchor_selectolax`{.green} does this for every image:
+
+    ```python
+    img_clone = img                      # alias, not a copy
+    a_node.insert_child(img_clone)
+    img.replace_with(a_node)
+    ```
+    
+    ---
+    
+    - In `selectolax`{.green} 0.4.6 and 1.0.0, `insert_child`{.green} leaves the original in the tree (it copies), so this works.
+    - In `selectolax`{.green} 1.0.1 it moves the node, so `replace_with`{.green} has nothing left to replace and the image is lost silently.
+    - Stand-alone test (two images): 0.4.6 keeps 2, 1.0.0 keeps 2, 1.0.1 keeps 0, 1.0.2 keeps 2. With `img.clone()`{.green} all of them keep 2.
+    - Full-site builds: 933 (0.4.6), 239 (1.0.1), 933 (1.0.1 with glightbox off), 933 (1.0.1 with the `.clone()`{.green} fix), 933 (1.0.2, unmodified glightbox).
+    
+    ---
+    
+    Fixed upstream: the `selectolax`{.green} maintainer confirmed the 1.0.1 behaviour was a bug and not intended, and released **1.0.2**, which restores the copy behaviour. Full-site check with `selectolax`{.green} 1.0.2 and an unmodified glightbox 0.5.2: 933 images, no errors.
+
+    Related glightbox issues and pull requests (**#74**, **#76**, **#75**, **#77**) were open on 2026-10-22. Other users reported that pinning `selectolax<1.0.1`{.green} or `==1.0.0`{.green} worked until the fix.
+
+#### 8. Still Open
+
+!!! desc "Still Open"
+
+    Update: The two `"issues"`{.red} below can be considered completed: Note that headers can now cycle ascending, descending, original order, and that wrapping a table in `<div class="no-sort" markdown>`{.skyblue} excludes it from sorting.
+    
+    - Excluding some tables from sorting (for example the Nginx "Everyday commands" table, where row order matters). `Done`{.green}
+    
+    - Tablesort only toggles ascending and descending. It has no way back to the original order. `Done`{.green}
+    

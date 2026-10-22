@@ -26,4 +26,4 @@ mkdocs-markmap==2.5.2
 mkdocstrings-python
 properdocs==1.6.7
 ruff
-selectolax==0.4.6
+selectolax>=1.0.2
