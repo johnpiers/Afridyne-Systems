@@ -53,7 +53,7 @@ icon: material/tools
 
 !!! desc "Descriptions from the man page database"
 
-    `whatis` gives a one-line description for each command, but the first attempt returned the wrong pages for three of them:
+    - `whatis`{.green} gives a one-line description for each command, but the first attempt returned the wrong pages for three of them:
     
     | Command | Wrong page picked | Why |
     |---------|-------------------|-----|
@@ -63,8 +63,10 @@ icon: material/tools
     
     Two rules fixed it:
     
+    <div class="steps" markdown>
+    
     1. Accept only an **exact name match** in **section 1 or 8** (the command sections).
-    2. If a command has no page of its own, look up the page under the name its symlink points to. `awk` is a link to `/usr/bin/gawk`, so it uses gawk's description.
+    2. If a command has no page of its own, look up the page under the name its symlink points to. `awk`{.green} is a link to `/usr/bin/gawk`{.green}, so it uses gawk's description.
     
     ```bash
     #!/bin/bash
@@ -80,13 +82,15 @@ icon: material/tools
     done
     ```
     
-    Each line comes out as `name<TAB>[admin] description`. The `[admin]` tag is part of the description, so you can type `admin` in `tools` to see just this group.
+    - Each line comes out as `name<TAB>[admin] description`{.green}. The `[admin]`{.green} tag is part of the description, so you can type `admin`{.green} in `tools`{.green} to see just this group.
+    
+    </div>
     
 ## Merging the lists.
 
 !!! desc "Merging the lists"
 
-    `mytools` adds the extras to the package list and removes duplicates by name (`awk -F'\t' '!seen[$1]++'`), so a command that is also an installed package appears once. This is the final `mytools`, including the Esc behaviour described below:
+    - `mytools`{.green} adds the extras to the package list and removes duplicates by name ( `awk -F'\t' '!seen[$1]++'`{.green} ), so a command that is also an installed package appears once. This is the final `mytools`{.green}, including the Esc behaviour described below:
     
     ```bash
     #!/bin/bash
@@ -109,7 +113,9 @@ icon: material/tools
 
 !!! desc "The preview pane"
 
-    The original preview asked pacman about a package called `ip`, which does not exist (the command belongs to `iproute2`), so almost every `[admin]` entry showed a pacman error. A small helper now decides what to show:
+    <div class="steps" markdown>
+    
+    - The original preview asked pacman about a package called `ip`{.green}, which does not exist (the command belongs to `iproute2`{.green} ), so almost every `admin`{.green} entry showed a pacman error. A small helper now decides what to show:
     
     - **A package:** install size, install date and the commands it installs.
     - **A plain command:** where it lives, where a symlink leads, and which package owns it.
@@ -133,35 +139,45 @@ icon: material/tools
     fi
     ```
     
-    For example `ip` shows `Command: /bin/ip`, `Links to: /usr/bin/ip` and `Package: iproute2`.
+    - For example `ip`{.green} shows `Command: /bin/ip`{.green}, `Links to: /usr/bin/ip`{.green} and `Package: iproute2`{.green}.
+    
+    </div>
     
 ## Esc: Clear first, then quit.
 
 !!! desc "Clear first, then quit"
 
-    In the main list, Esc used to leave `tools` straight away, even in the middle of typing a search. In the multi-command picker it only closes the picker, which is why the two felt different. They are different windows: the picker is a second fzf on top of the main list, while typing a filter never opens anything.
+    <div class="steps" markdown>
     
-    Since Esc is muscle memory, the main list now uses fzf's `transform` action:
+    - In the main list, Esc used to leave `tools` straight away, even in the middle of typing a search. In the multi-command picker it only closes the picker, which is why the two felt different. They are different windows: the picker is a second fzf on top of the main list, while typing a filter never opens anything.
+    
+    - Since Esc is muscle memory, the main list now uses fzf's `transform` action:
     
     ```bash
     --bind 'esc:transform:[[ -n $FZF_QUERY ]] && echo clear-query || echo abort'
     ```
     
-    If there is text in the search box, Esc clears it. If the box is already empty, Esc quits. This needs a reasonably recent fzf (0.74.5 here).
+    - If there is text in the search box, Esc clears it. If the box is already empty, Esc quits. This needs a reasonably recent fzf (0.74.5 here).
     
-## Making the keys work on admin commands.
+    </div>
+    
+## Making the Keys work on admin commands.
 
 !!! desc "Making the keys work on admin commands"
 
-    After the extras were added, pressing Ctrl+T on `dig` flashed the screen and returned to the list with nothing shown. The helper's first line asks `mytools-bin` which command to use. `mytools-bin` asked pacman for a package called `dig`. There is no such package (the command comes from `bind`), so it printed an empty line and the helper quietly exited.
+    <div class="steps" markdown>
     
-    The fix is one line near the top of `mytools-bin`: if pacman knows no package of that name but the name is a command you can run, use the name itself.
+    - After the extras were added, pressing Ctrl+T on `dig` flashed the screen and returned to the list with nothing shown. The helper's first line asks `mytools-bin` which command to use. `mytools-bin` asked pacman for a package called `dig`. There is no such package (the command comes from `bind`), so it printed an empty line and the helper quietly exited.
+    
+    - The fix is one line near the top of `mytools-bin`: if pacman knows no package of that name but the name is a command you can run, use the name itself.
     
     ```bash
     if [ -z "$bins" ] && command -v "$pkg" >/dev/null 2>&1; then echo "$pkg"; exit 0; fi
     ```
     
-    It was added with `sed -i.bak '/^bins=/a ...'`, which keeps the old version as `mytools-bin.bak`. After that, Ctrl+T, Ctrl+E and Ctrl+O all work on the admin entries.
+    - It was added with `sed -i.bak '/^bins=/a ...'`, which keeps the old version as `mytools-bin.bak`. After that, Ctrl+T, Ctrl+E and Ctrl+O all work on the admin entries.
+    
+    </div>
     
 !!! tip "How it was found"
 

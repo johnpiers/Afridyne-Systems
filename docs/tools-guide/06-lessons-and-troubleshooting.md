@@ -21,9 +21,9 @@ icon: material/tools
 
     <div class="steps" markdown>
     
-    - **Ask the package manager, not the filesystem.** `pacman -Qe` plus a few filters knows exactly what you chose. Scanning `/usr/bin` can't.
-    - **Hand off to a specialist.** Mandible already parses help text better than a shell script could. `tools` only finds the tool; mandible shows it.
-    - **Run the pieces by hand.** Every helper can be run on its own (`mytools-bin bind`, `mytools-help tldr dig`, `mytools-preview ip`). When something broke, running the small piece outside fzf found the fault in one step.
+    - **Ask the package manager, not the filesystem.** `pacman -Qe`{.green} plus a few filters knows exactly what you chose. Scanning `/usr/bin`{.green} can't.
+    - **Hand off to a specialist.** Mandible already parses help text better than a shell script could. `tools`{.green} only finds the tool; mandible shows it.
+    - **Run the pieces by hand.** Every helper can be run on its own ( `mytools-bin bind`{.green}, `mytools-help tldr dig`{.green}, `mytools-preview ip`{.green} ). When something broke, running the small piece outside fzf found the fault in one step.
     - **Change one thing, then test.** The keys were connected one at a time. Rewriting several things at once cost more time than it saved.
     - **Generate content from the tool's real help.** It keeps sheets accurate, and the audit shows what is still missing.
     
@@ -54,10 +54,10 @@ icon: material/tools
     <div class="steps" markdown>
     
     - Nothing was run that could start a service, and nothing destructive ran without a visible warning.
-    - `.zshrc` aliases were commented out with `#`, not deleted.
-    - The safe writer `w()` and the "never overwrite" rule in `mk-tldr.sh` make every generating script safe to run twice.
-    - Helper edits that change an existing file use `sed -i.bak`, which keeps the previous version beside it.
-    - `ls` is aliased to `colorls` on this machine, so commands in these pages avoid it.
+    - `.zshrc`{.green} aliases were commented out with `#`{.green}, not deleted.
+    - The safe writer `w()`{.green} and the "never overwrite" rule in `mk-tldr.sh`{.green} make every generating script safe to run twice.
+    - Helper edits that change an existing file use `sed -i.bak`{.green}, which keeps the previous version beside it.
+    - `ls`{.green} is aliased to `colorls`{.green} on this machine, so commands in these pages avoid it.
     
     </div>
     
@@ -67,11 +67,11 @@ icon: material/tools
 
     <div class="steps" markdown>
     
-    1. Run the helper directly: `mytools-help tldr <name>`. If that prints nothing and returns to the prompt, the command lookup failed.
-    2. Run `mytools-bin <name>`. It should print one command name, or open the picker.
-    3. Run the underlying tool by hand: `tldr <command>`, `cheat <command>`, `man <command>`.
-    4. If a page flashes and disappears, it was shorter than the terminal; check the `pause` logic in `mytools-help`.
-    5. If the list is empty or slow, run the first lines of `mytools` on their own. Each step prints something you can check.
+    1. Run the helper directly: `mytools-help tldr <name>`{.green}. If that prints nothing and returns to the prompt, the command lookup failed.
+    2. Run `mytools-bin <name>`{.green}. It should print one command name, or open the picker.
+    3. Run the underlying tool by hand: `tldr <command>`{.green}, `cheat <command>`{.green}, `man <command>`{.green}.
+    4. If a page flashes and disappears, it was shorter than the terminal; check the `pause`{.green} logic in `mytools-help`{.green}.
+    5. If the list is empty or slow, run the first lines of `mytools`{.green} on their own. Each step prints something you can check.
     
     </div>
     
@@ -81,10 +81,10 @@ icon: material/tools
 
     <div class="steps" markdown>
     
-    - **Add or remove admin commands:** edit `~/.config/mytools/extras.txt`. It is read every time `tools` starts.
-    - **Check coverage:** run `mytools-audit`. It is read-only.
-    - **New tool installed:** it appears in the list on its own. To give it a sheet, write one in `~/cheat/personal/` and, optionally, run `bash ~/mk-tldr.sh --show <command>` to see a tldr page built from it.
-    - **Mandible oddities:** `mandible --report <tool>` prints a ready-made bug report for the project.
+    - **Add or remove admin commands:** edit `~/.config/mytools/extras.txt`{.green}. It is read every time `tools`{.green} starts.
+    - **Check coverage:** run `mytools-audit`{.green}. It is read-only.
+    - **New tool installed:** it appears in the list on its own. To give it a sheet, write one in `~/cheat/personal/`{.green} and, optionally, run `bash ~/mk-tldr.sh --show <command>`{.green} to see a tldr page built from it.
+    - **Mandible oddities:** `mandible --report <tool>`{.green} prints a ready-made bug report for the project.
     
     </div>
     

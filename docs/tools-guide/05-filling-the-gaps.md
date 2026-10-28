@@ -69,10 +69,10 @@ icon: material/tools
     | No cheat sheet | about 150 | 4 |
     | All three present | not counted | **156** |
     
-!!! note "Where the tldr pages are looked up"
-    The audit searches tldr's own cache (`~/.cache/tldr/pages/common` and `/linux`) **and** `~/.local/share/mytools/tldr`. The second folder was added to the audit after the custom pages were created, which is why "No tldr page" first still read 63 and then dropped to 8. The pages existed; the audit just wasn't looking there.
+!!! info "Where the tldr pages are looked up"
+    - The audit searches tldr's own cache (`~/.cache/tldr/pages/common` and `/linux`) **and** `~/.local/share/mytools/tldr`. The second folder was added to the audit after the custom pages were created, which is why "No tldr page" first still read 63 and then dropped to 8. The pages existed; the audit just wasn't looking there.
     
-    The 42 with no man page are not a problem: `Ctrl+O` shows the tool's colour `--help` for them instead.
+    - The 42 with no man page are not a problem: `Ctrl+O` shows the tool's colour `--help` for them instead.
     
 ## Where each kind of page lives.
 
@@ -92,7 +92,7 @@ icon: material/tools
 
 !!! desc "Cheat sheets, generated from real help output"
 
-    A cheat sheet is a short file: a small header, then a `#` comment line followed by the command it describes. Placeholders sit in `<angle brackets>`. For example `~/cheat/personal/dig`:
+    - A cheat sheet is a short file: a small header, then a `#`{.green} comment line followed by the command it describes. Placeholders sit in `<angle brackets>`{.green}. For example `~/cheat/personal/dig`{.green}:
         
     ```text
     ---
@@ -114,11 +114,15 @@ icon: material/tools
     
     ---
     
-    The rule for content was: **only what the tool's own help says**. Writing flags from memory invites invented options. The workflow ran in batches of about ten tools:
+    - The rule for content was: **only what the tool's own help says**. Writing flags from memory invites invented options. The workflow ran in batches of about ten tools:
     
-    1. A command on the machine picks the next ten tools that still have no cheat sheet and saves each one's `--help` to a text file.
+    <div class="steps" markdown>
+    
+    1. A command on the machine picks the next ten tools that still have no cheat sheet and saves each one's `--help`{.green} to a text file.
     2. That file was attached to the chat, and the sheets were written from it.
-    3. The sheets arrived as one script, `batchN.sh`, run with `bash`, which wrote the files and then printed `cheat -l` for those names so each batch could be confirmed.
+    3. The sheets arrived as one script, `batchN.sh`{.green}, run with `bash`{.green}, which wrote the files and then printed `cheat -l`{.green} for those names so each batch could be confirmed.
+    
+    </div>
     
     The command that picked the batch:
     
@@ -132,7 +136,7 @@ icon: material/tools
     cat ~/next10.txt
     ```
     
-    `timeout 5` stops anything that waits for input, `</dev/null` stops it reading the terminal, and the `sed` removes colour codes so the file stays readable. Names in the `$2!~` list were skipped on purpose (see below).
+    - `timeout 5`{.green} stops anything that waits for input, `</dev/null`{.green} stops it reading the terminal, and the `sed`{.skyblue} removes colour codes so the file stays readable. Names in the `$2!~`{.green} list were skipped on purpose (see below).
     
 ### The safe writer.
 
@@ -174,10 +178,14 @@ icon: material/tools
 
     Rather than repeat the whole process for tldr, a small script builds each missing page **from the cheat sheet that already exists**. Each page gets:
     
-    - a one-line description from `whatis` (or the sheet's first comment if there is none);
+    <div class="steps" markdown>
+    
+    - a one-line description from `whatis`{.green} (or the sheet's first comment if there is none);
     - up to eight examples, one command per comment;
-    - `<placeholder>` rewritten as `{{placeholder}}`, which is tldr's format;
-    - nothing from a `WARNING` block, so destructive commands never become examples.
+    - `<placeholder>`{.green} rewritten as `{{placeholder}}`{.green}, which is tldr's format;
+    - nothing from a `WARNING`{.red} block, so destructive commands never become examples.
+    
+    </div>
     
     Run `bash ~/mk-tldr.sh --show dig` to print one page without writing anything. Run `bash ~/mk-tldr.sh` to write all the pages that are missing. It never overwrites an existing page.
     

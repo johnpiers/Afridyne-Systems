@@ -49,14 +49,18 @@ icon: material/tools
     | To search across all my tools | Search works inside the tool you opened. The README describes two modes (`/` toggles between searching command **names** and searching **everything**), but both are scoped to that one tool. Searching for `git` while viewing `bat` finds nothing, by design. |
     | A way to remember what exists | It cannot help if you can't remember the name to give it. |
     
-!!! note "A search misunderstanding, corrected"
+!!! info "A search misunderstanding, corrected"
 
     During testing I assumed Mandible's search only filtered the list on the left. It actually searches the loaded tool's own documentation in the right-hand pane. Neither guess was a fault: it simply has no cross-tool search.
     
     Two cosmetic quirks turned up too. Both are mandible's parser meeting an unusual help layout, not anything in the setup built here:
     
+    <div class="steps" markdown>
+    
     - **7-Zip** (`7z`): the help is laid out as `a : Add files to archive`, so mandible found the command letters but not their descriptions, and the left pane looked bare.
     - **`ddns-confgen`**: it does not accept `--help`. It prints an error followed by its usage, and mandible took that first error line as the description.
+   
+   </div>
     
     If either bothers you, `mandible --report <tool>` prints a paste-ready bug report for the project.
     
