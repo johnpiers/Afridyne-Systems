@@ -224,17 +224,17 @@
     
       <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
-    
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
     
@@ -9093,7 +9093,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-28T01:34:04+00:00">2026-10-28</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-28T01:34:04+00:00">2026-10-28</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-28T18:01:09+00:00">2026-10-28</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-28T18:01:09+00:00">2026-10-28</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <div align="center">
 <div class="language-text tools-banner highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>▀▀▀▀██▀▀▀▀   ▄▄▀▀▀▀▀▀▄▄   ▄▄▀▀▀▀▀▀▄▄   ██           ▄▄▀▀▀▀▀▀▀▀
 </span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    ██       ██      ██   ██      ██   ██             ▀▀▀▀▀▀▄▄
@@ -9186,10 +9186,16 @@
 </tbody>
 </table>
 </div>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Where the tldr pages are looked up</p>
+<ul>
+<li>
 <p>The audit searches tldr's own cache (<code>~/.cache/tldr/pages/common</code> and <code>/linux</code>) <strong>and</strong> <code>~/.local/share/mytools/tldr</code>. The second folder was added to the audit after the custom pages were created, which is why "No tldr page" first still read 63 and then dropped to 8. The pages existed; the audit just wasn't looking there.</p>
+</li>
+<li>
 <p>The 42 with no man page are not a problem: <code>Ctrl+O</code> shows the tool's colour <code>--help</code> for them instead.</p>
+</li>
+</ul>
 </div>
 <h2 id="where-each-kind-of-page-lives">Where each kind of page lives.<a class="headerlink" href="#where-each-kind-of-page-lives" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
@@ -9228,7 +9234,9 @@
 <h2 id="step-2-cheat-sheets-generated-from-real-help-output">Step 2: Cheat sheets, generated from real help output.<a class="headerlink" href="#step-2-cheat-sheets-generated-from-real-help-output" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">Cheat sheets, generated from real help output</p>
-<p>A cheat sheet is a short file: a small header, then a <code>#</code> comment line followed by the command it describes. Placeholders sit in <code>&lt;angle brackets&gt;</code>. For example <code>~/cheat/personal/dig</code>:</p>
+<ul>
+<li>A cheat sheet is a short file: a small header, then a <code class="green">#</code> comment line followed by the command it describes. Placeholders sit in <code class="green">&lt;angle brackets&gt;</code>. For example <code class="green">~/cheat/personal/dig</code>:</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>---
 </span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>syntax: bash
 </span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>tags: [ linux, dns, network ]
@@ -9246,12 +9254,16 @@
 </span><span id="__span-2-15"><a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a>dig &lt;domain&gt; &lt;MX&gt;
 </span></code></pre></div>
 <hr>
-<p>The rule for content was: <strong>only what the tool's own help says</strong>. Writing flags from memory invites invented options. The workflow ran in batches of about ten tools:</p>
+<ul>
+<li>The rule for content was: <strong>only what the tool's own help says</strong>. Writing flags from memory invites invented options. The workflow ran in batches of about ten tools:</li>
+</ul>
+<div class="steps" markdown="">
 <ol>
-<li>A command on the machine picks the next ten tools that still have no cheat sheet and saves each one's <code>--help</code> to a text file.</li>
+<li>A command on the machine picks the next ten tools that still have no cheat sheet and saves each one's <code class="green">--help</code> to a text file.</li>
 <li>That file was attached to the chat, and the sheets were written from it.</li>
-<li>The sheets arrived as one script, <code>batchN.sh</code>, run with <code>bash</code>, which wrote the files and then printed <code>cheat -l</code> for those names so each batch could be confirmed.</li>
+<li>The sheets arrived as one script, <code class="green">batchN.sh</code>, run with <code class="green">bash</code>, which wrote the files and then printed <code class="green">cheat -l</code> for those names so each batch could be confirmed.</li>
 </ol>
+</div>
 <p>The command that picked the batch:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>mytools-audit<span class="w"> </span>&gt;/dev/null
 </span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>awk<span class="w"> </span>-F<span class="s1">'\t'</span><span class="w"> </span><span class="s1">'$5=="n" &amp;&amp; $2!="MULTI" &amp;&amp; $2!~/aarch64|^(aur|expect|gpm|audispd-zos-remote|clonezilla|iptraf-ng|inxi|mpc|os-prober|qbootctl)$/ {print $2}'</span><span class="w"> </span>~/.cache/mytools/audit.tsv<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10<span class="w"> </span>&gt;<span class="w"> </span>~/next10.txt
@@ -9261,7 +9273,9 @@
 </span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="k">done</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/\x1b\[[0-9;]*m//g'</span><span class="w"> </span>&gt;<span class="w"> </span>~/sheets.txt
 </span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>cat<span class="w"> </span>~/next10.txt
 </span></code></pre></div>
-<p><code>timeout 5</code> stops anything that waits for input, <code>&lt;/dev/null</code> stops it reading the terminal, and the <code>sed</code> removes colour codes so the file stays readable. Names in the <code>$2!~</code> list were skipped on purpose (see below).</p>
+<ul>
+<li><code class="green">timeout 5</code> stops anything that waits for input, <code class="green">&lt;/dev/null</code> stops it reading the terminal, and the <code class="skyblue">sed</code> removes colour codes so the file stays readable. Names in the <code class="green">$2!~</code> list were skipped on purpose (see below).</li>
+</ul>
 </div>
 <h3 id="the-safe-writer">The safe writer.<a class="headerlink" href="#the-safe-writer" title="Permanent link">⚓︎</a></h3>
 <div class="admonition desc">
@@ -9320,12 +9334,14 @@
 <div class="admonition desc">
 <p class="admonition-title">tldr pages, generated from the cheat sheets</p>
 <p>Rather than repeat the whole process for tldr, a small script builds each missing page <strong>from the cheat sheet that already exists</strong>. Each page gets:</p>
+<div class="steps" markdown="">
 <ul>
-<li>a one-line description from <code>whatis</code> (or the sheet's first comment if there is none);</li>
+<li>a one-line description from <code class="green">whatis</code> (or the sheet's first comment if there is none);</li>
 <li>up to eight examples, one command per comment;</li>
-<li><code>&lt;placeholder&gt;</code> rewritten as <code>{{placeholder}}</code>, which is tldr's format;</li>
-<li>nothing from a <code>WARNING</code> block, so destructive commands never become examples.</li>
+<li><code class="green">&lt;placeholder&gt;</code> rewritten as <code class="green">{{placeholder}}</code>, which is tldr's format;</li>
+<li>nothing from a <code class="red">WARNING</code> block, so destructive commands never become examples.</li>
 </ul>
+</div>
 <p>Run <code>bash ~/mk-tldr.sh --show dig</code> to print one page without writing anything. Run <code>bash ~/mk-tldr.sh</code> to write all the pages that are missing. It never overwrites an existing page.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1"># mk-tldr.sh - builds short tldr-style pages from your cheat sheets</span>
@@ -9525,7 +9541,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright © 2024 - 2026 JP Cillliers
+      Copyright © 2024 - 2026 JP Cilliers
     </div>
   
   

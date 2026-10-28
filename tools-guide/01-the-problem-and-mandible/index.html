@@ -224,17 +224,17 @@
     
       <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
-    
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
     
@@ -9009,7 +9009,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-28T01:34:04+00:00">2026-10-28</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-28T01:34:04+00:00">2026-10-28</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-28T18:01:09+00:00">2026-10-28</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-28T18:01:09+00:00">2026-10-28</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <div style="display: none;"><h1>1. Problem and Mandible</h1></div>
 <div align="center">
 <div class="language-text tools-banner highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>▀▀▀▀██▀▀▀▀   ▄▄▀▀▀▀▀▀▄▄   ▄▄▀▀▀▀▀▀▄▄   ██           ▄▄▀▀▀▀▀▀▀▀
@@ -9073,16 +9073,19 @@
 </tbody>
 </table>
 </div>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">A search misunderstanding, corrected</p>
 <p>During testing I assumed Mandible's search only filtered the list on the left. It actually searches the loaded tool's own documentation in the right-hand pane. Neither guess was a fault: it simply has no cross-tool search.</p>
 <p>Two cosmetic quirks turned up too. Both are mandible's parser meeting an unusual help layout, not anything in the setup built here:</p>
+<div class="steps" markdown="">
 <ul>
 <li><strong>7-Zip</strong> (<code>7z</code>): the help is laid out as <code>a : Add files to archive</code>, so mandible found the command letters but not their descriptions, and the left pane looked bare.</li>
 <li><strong><code>ddns-confgen</code></strong>: it does not accept <code>--help</code>. It prints an error followed by its usage, and mandible took that first error line as the description.</li>
 </ul>
-<p>If either bothers you, <code>mandible --report &lt;tool&gt;</code> prints a paste-ready bug report for the project.</p>
 </div>
+</div>
+<div class="language-text highlight"><pre><span></span><code>If either bothers you, `mandible --report &lt;tool&gt;` prints a paste-ready bug report for the project.
+</code></pre></div>
 <h2 id="a-first-attempt-with-the-tools-at-hand">A first attempt with the tools at hand.<a class="headerlink" href="#a-first-attempt-with-the-tools-at-hand" title="Permanent link">⚓︎</a></h2>
 <div class="admonition ex">
 <p class="admonition-title"> A first attempt with the tools at hand</p>
@@ -9197,7 +9200,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright © 2024 - 2026 JP Cillliers
+      Copyright © 2024 - 2026 JP Cilliers
     </div>
   
   

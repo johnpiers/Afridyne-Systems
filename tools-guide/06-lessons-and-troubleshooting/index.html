@@ -224,17 +224,17 @@
     
       <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
-    
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
     
@@ -8993,7 +8993,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-28T01:34:04+00:00">2026-10-28</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-28T01:34:04+00:00">2026-10-28</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-28T18:01:09+00:00">2026-10-28</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-28T18:01:09+00:00">2026-10-28</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <div align="center">
 <div class="language-text tools-banner highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>▀▀▀▀██▀▀▀▀   ▄▄▀▀▀▀▀▀▄▄   ▄▄▀▀▀▀▀▀▄▄   ██           ▄▄▀▀▀▀▀▀▀▀
 </span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    ██       ██      ██   ██      ██   ██             ▀▀▀▀▀▀▄▄
@@ -9006,9 +9006,9 @@
 <p class="admonition-title">What worked</p>
 <div class="steps" markdown="">
 <ul>
-<li><strong>Ask the package manager, not the filesystem.</strong> <code>pacman -Qe</code> plus a few filters knows exactly what you chose. Scanning <code>/usr/bin</code> can't.</li>
-<li><strong>Hand off to a specialist.</strong> Mandible already parses help text better than a shell script could. <code>tools</code> only finds the tool; mandible shows it.</li>
-<li><strong>Run the pieces by hand.</strong> Every helper can be run on its own (<code>mytools-bin bind</code>, <code>mytools-help tldr dig</code>, <code>mytools-preview ip</code>). When something broke, running the small piece outside fzf found the fault in one step.</li>
+<li><strong>Ask the package manager, not the filesystem.</strong> <code class="green">pacman -Qe</code> plus a few filters knows exactly what you chose. Scanning <code class="green">/usr/bin</code> can't.</li>
+<li><strong>Hand off to a specialist.</strong> Mandible already parses help text better than a shell script could. <code class="green">tools</code> only finds the tool; mandible shows it.</li>
+<li><strong>Run the pieces by hand.</strong> Every helper can be run on its own ( <code class="green">mytools-bin bind</code>, <code class="green">mytools-help tldr dig</code>, <code class="green">mytools-preview ip</code> ). When something broke, running the small piece outside fzf found the fault in one step.</li>
 <li><strong>Change one thing, then test.</strong> The keys were connected one at a time. Rewriting several things at once cost more time than it saved.</li>
 <li><strong>Generate content from the tool's real help.</strong> It keeps sheets accurate, and the audit shows what is still missing.</li>
 </ul>
@@ -9097,10 +9097,10 @@
 <div class="steps" markdown="">
 <ul>
 <li>Nothing was run that could start a service, and nothing destructive ran without a visible warning.</li>
-<li><code>.zshrc</code> aliases were commented out with <code>#</code>, not deleted.</li>
-<li>The safe writer <code>w()</code> and the "never overwrite" rule in <code>mk-tldr.sh</code> make every generating script safe to run twice.</li>
-<li>Helper edits that change an existing file use <code>sed -i.bak</code>, which keeps the previous version beside it.</li>
-<li><code>ls</code> is aliased to <code>colorls</code> on this machine, so commands in these pages avoid it.</li>
+<li><code class="green">.zshrc</code> aliases were commented out with <code class="green">#</code>, not deleted.</li>
+<li>The safe writer <code class="green">w()</code> and the "never overwrite" rule in <code class="green">mk-tldr.sh</code> make every generating script safe to run twice.</li>
+<li>Helper edits that change an existing file use <code class="green">sed -i.bak</code>, which keeps the previous version beside it.</li>
+<li><code class="green">ls</code> is aliased to <code class="green">colorls</code> on this machine, so commands in these pages avoid it.</li>
 </ul>
 </div>
 </div>
@@ -9109,11 +9109,11 @@
 <p class="admonition-title">Troubleshooting a key that does nothing</p>
 <div class="steps" markdown="">
 <ol>
-<li>Run the helper directly: <code>mytools-help tldr &lt;name&gt;</code>. If that prints nothing and returns to the prompt, the command lookup failed.</li>
-<li>Run <code>mytools-bin &lt;name&gt;</code>. It should print one command name, or open the picker.</li>
-<li>Run the underlying tool by hand: <code>tldr &lt;command&gt;</code>, <code>cheat &lt;command&gt;</code>, <code>man &lt;command&gt;</code>.</li>
-<li>If a page flashes and disappears, it was shorter than the terminal; check the <code>pause</code> logic in <code>mytools-help</code>.</li>
-<li>If the list is empty or slow, run the first lines of <code>mytools</code> on their own. Each step prints something you can check.</li>
+<li>Run the helper directly: <code class="green">mytools-help tldr &lt;name&gt;</code>. If that prints nothing and returns to the prompt, the command lookup failed.</li>
+<li>Run <code class="green">mytools-bin &lt;name&gt;</code>. It should print one command name, or open the picker.</li>
+<li>Run the underlying tool by hand: <code class="green">tldr &lt;command&gt;</code>, <code class="green">cheat &lt;command&gt;</code>, <code class="green">man &lt;command&gt;</code>.</li>
+<li>If a page flashes and disappears, it was shorter than the terminal; check the <code class="green">pause</code> logic in <code class="green">mytools-help</code>.</li>
+<li>If the list is empty or slow, run the first lines of <code class="green">mytools</code> on their own. Each step prints something you can check.</li>
 </ol>
 </div>
 </div>
@@ -9122,10 +9122,10 @@
 <p class="admonition-title">Maintenance</p>
 <div class="steps" markdown="">
 <ul>
-<li><strong>Add or remove admin commands:</strong> edit <code>~/.config/mytools/extras.txt</code>. It is read every time <code>tools</code> starts.</li>
-<li><strong>Check coverage:</strong> run <code>mytools-audit</code>. It is read-only.</li>
-<li><strong>New tool installed:</strong> it appears in the list on its own. To give it a sheet, write one in <code>~/cheat/personal/</code> and, optionally, run <code>bash ~/mk-tldr.sh --show &lt;command&gt;</code> to see a tldr page built from it.</li>
-<li><strong>Mandible oddities:</strong> <code>mandible --report &lt;tool&gt;</code> prints a ready-made bug report for the project.</li>
+<li><strong>Add or remove admin commands:</strong> edit <code class="green">~/.config/mytools/extras.txt</code>. It is read every time <code class="green">tools</code> starts.</li>
+<li><strong>Check coverage:</strong> run <code class="green">mytools-audit</code>. It is read-only.</li>
+<li><strong>New tool installed:</strong> it appears in the list on its own. To give it a sheet, write one in <code class="green">~/cheat/personal/</code> and, optionally, run <code class="green">bash ~/mk-tldr.sh --show &lt;command&gt;</code> to see a tldr page built from it.</li>
+<li><strong>Mandible oddities:</strong> <code class="green">mandible --report &lt;tool&gt;</code> prints a ready-made bug report for the project.</li>
 </ul>
 </div>
 </div>
@@ -9221,7 +9221,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright © 2024 - 2026 JP Cillliers
+      Copyright © 2024 - 2026 JP Cilliers
     </div>
   
   

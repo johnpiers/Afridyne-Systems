@@ -224,17 +224,17 @@
     
       <link rel="stylesheet" href="../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
-    
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/tippy/backdrop.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/tippy.css">
     
-      <link rel="stylesheet" href="../../assets/document_dates/tippy/light.css">
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../assets/document_dates/tippy/scale.css">
     
       <link rel="stylesheet" href="../../assets/document_dates/core/core.css">
     
@@ -8100,7 +8100,7 @@
   <a href="#making-the-keys-work-on-admin-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Making the keys work on admin commands.
+        Making the Keys work on admin commands.
       
     </span>
   </a>
@@ -8909,7 +8909,7 @@
   <a href="#making-the-keys-work-on-admin-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Making the keys work on admin commands.
+        Making the Keys work on admin commands.
       
     </span>
   </a>
@@ -9015,7 +9015,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-28T01:34:04+00:00">2026-10-28</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-28T01:34:04+00:00">2026-10-28</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-10-28T18:01:09+00:00">2026-10-28</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-10-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-10-28T18:01:09+00:00">2026-10-28</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <div align="center">
 <div class="language-text tools-banner highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>▀▀▀▀██▀▀▀▀   ▄▄▀▀▀▀▀▀▄▄   ▄▄▀▀▀▀▀▀▄▄   ██           ▄▄▀▀▀▀▀▀▀▀
 </span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    ██       ██      ██   ██      ██   ██             ▀▀▀▀▀▀▄▄
@@ -9074,7 +9074,9 @@
 <h2 id="descriptions-from-the-man-page-database">Descriptions from the man page database.<a class="headerlink" href="#descriptions-from-the-man-page-database" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">Descriptions from the man page database</p>
-<p><code>whatis</code> gives a one-line description for each command, but the first attempt returned the wrong pages for three of them:</p>
+<ul>
+<li><code class="green">whatis</code> gives a one-line description for each command, but the first attempt returned the wrong pages for three of them:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -9102,9 +9104,10 @@
 </tbody>
 </table>
 <p>Two rules fixed it:</p>
+<div class="steps" markdown="">
 <ol>
 <li>Accept only an <strong>exact name match</strong> in <strong>section 1 or 8</strong> (the command sections).</li>
-<li>If a command has no page of its own, look up the page under the name its symlink points to. <code>awk</code> is a link to <code>/usr/bin/gawk</code>, so it uses gawk's description.</li>
+<li>If a command has no page of its own, look up the page under the name its symlink points to. <code class="green">awk</code> is a link to <code class="green">/usr/bin/gawk</code>, so it uses gawk's description.</li>
 </ol>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># mytools-extras - print "name&lt;TAB&gt;description" for each command in ~/.config/mytools/extras.txt</span>
@@ -9118,12 +9121,17 @@
 </span><span id="__span-2-10"><a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">  </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%s\t%s\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="s2">"[admin] </span><span class="si">${</span><span class="nv">d</span><span class="k">:-</span><span class="nv">everyday</span><span class="p"> command</span><span class="si">}</span><span class="s2">"</span>
 </span><span id="__span-2-11"><a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="k">done</span>
 </span></code></pre></div>
-<p>Each line comes out as <code>name&lt;TAB&gt;[admin] description</code>. The <code>[admin]</code> tag is part of the description, so you can type <code>admin</code> in <code>tools</code> to see just this group.</p>
+<ul>
+<li>Each line comes out as <code class="green">name&lt;TAB&gt;[admin] description</code>. The <code class="green">[admin]</code> tag is part of the description, so you can type <code class="green">admin</code> in <code class="green">tools</code> to see just this group.</li>
+</ul>
+</div>
 </div>
 <h2 id="merging-the-lists">Merging the lists.<a class="headerlink" href="#merging-the-lists" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">Merging the lists</p>
-<p><code>mytools</code> adds the extras to the package list and removes duplicates by name (<code>awk -F'\t' '!seen[$1]++'</code>), so a command that is also an installed package appears once. This is the final <code>mytools</code>, including the Esc behaviour described below:</p>
+<ul>
+<li><code class="green">mytools</code> adds the extras to the package list and removes duplicates by name ( <code class="green">awk -F'\t' '!seen[$1]++'</code> ), so a command that is also an installed package appears once. This is the final <code class="green">mytools</code>, including the Esc behaviour described below:</li>
+</ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nv">explicit</span><span class="o">=</span><span class="k">$(</span>comm<span class="w"> </span>-23<span class="w"> </span>&lt;<span class="o">(</span>pacman<span class="w"> </span>-Qeq<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="k">)</span><span class="w"> </span>&lt;<span class="o">(</span>pacman<span class="w"> </span>-Qg<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $2}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u<span class="o">)</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-Ev<span class="w"> </span><span class="s1">'^(lib|lib32-|python-|perl-|ruby-|ttf-|otf-|xorg-|gst-|qt[0-9]|gtk[0-9]?-)|-libs$|-docs?$'</span><span class="o">)</span>
@@ -9143,9 +9151,14 @@
 <h2 id="the-preview-pane">The preview pane.<a class="headerlink" href="#the-preview-pane" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">The preview pane</p>
-<p>The original preview asked pacman about a package called <code>ip</code>, which does not exist (the command belongs to <code>iproute2</code>), so almost every <code>[admin]</code> entry showed a pacman error. A small helper now decides what to show:</p>
+<div class="steps" markdown="">
 <ul>
-<li><strong>A package:</strong> install size, install date and the commands it installs.</li>
+<li>
+<p>The original preview asked pacman about a package called <code class="green">ip</code>, which does not exist (the command belongs to <code class="green">iproute2</code> ), so almost every <code class="green">admin</code> entry showed a pacman error. A small helper now decides what to show:</p>
+</li>
+<li>
+<p><strong>A package:</strong> install size, install date and the commands it installs.</p>
+</li>
 <li><strong>A plain command:</strong> where it lives, where a symlink leads, and which package owns it.</li>
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
@@ -9165,25 +9178,48 @@
 </span><span id="__span-4-15"><a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">  </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$owner</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Package: </span><span class="nv">$owner</span><span class="s2">"</span>
 </span><span id="__span-4-16"><a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="k">fi</span>
 </span></code></pre></div>
-<p>For example <code>ip</code> shows <code>Command: /bin/ip</code>, <code>Links to: /usr/bin/ip</code> and <code>Package: iproute2</code>.</p>
+<ul>
+<li>For example <code class="green">ip</code> shows <code class="green">Command: /bin/ip</code>, <code class="green">Links to: /usr/bin/ip</code> and <code class="green">Package: iproute2</code>.</li>
+</ul>
+</div>
 </div>
 <h2 id="esc-clear-first-then-quit">Esc: Clear first, then quit.<a class="headerlink" href="#esc-clear-first-then-quit" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">Clear first, then quit</p>
+<div class="steps" markdown="">
+<ul>
+<li>
 <p>In the main list, Esc used to leave <code>tools</code> straight away, even in the middle of typing a search. In the multi-command picker it only closes the picker, which is why the two felt different. They are different windows: the picker is a second fzf on top of the main list, while typing a filter never opens anything.</p>
+</li>
+<li>
 <p>Since Esc is muscle memory, the main list now uses fzf's <code>transform</code> action:</p>
+</li>
+</ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>--bind<span class="w"> </span><span class="s1">'esc:transform:[[ -n $FZF_QUERY ]] &amp;&amp; echo clear-query || echo abort'</span>
 </span></code></pre></div>
-<p>If there is text in the search box, Esc clears it. If the box is already empty, Esc quits. This needs a reasonably recent fzf (0.74.5 here).</p>
+<ul>
+<li>If there is text in the search box, Esc clears it. If the box is already empty, Esc quits. This needs a reasonably recent fzf (0.74.5 here).</li>
+</ul>
 </div>
-<h2 id="making-the-keys-work-on-admin-commands">Making the keys work on admin commands.<a class="headerlink" href="#making-the-keys-work-on-admin-commands" title="Permanent link">⚓︎</a></h2>
+</div>
+<h2 id="making-the-keys-work-on-admin-commands">Making the Keys work on admin commands.<a class="headerlink" href="#making-the-keys-work-on-admin-commands" title="Permanent link">⚓︎</a></h2>
 <div class="admonition desc">
 <p class="admonition-title">Making the keys work on admin commands</p>
+<div class="steps" markdown="">
+<ul>
+<li>
 <p>After the extras were added, pressing Ctrl+T on <code>dig</code> flashed the screen and returned to the list with nothing shown. The helper's first line asks <code>mytools-bin</code> which command to use. <code>mytools-bin</code> asked pacman for a package called <code>dig</code>. There is no such package (the command comes from <code>bind</code>), so it printed an empty line and the helper quietly exited.</p>
+</li>
+<li>
 <p>The fix is one line near the top of <code>mytools-bin</code>: if pacman knows no package of that name but the name is a command you can run, use the name itself.</p>
+</li>
+</ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$bins</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$pkg</span><span class="s2">"</span><span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$pkg</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
 </span></code></pre></div>
-<p>It was added with <code>sed -i.bak '/^bins=/a ...'</code>, which keeps the old version as <code>mytools-bin.bak</code>. After that, Ctrl+T, Ctrl+E and Ctrl+O all work on the admin entries.</p>
+<ul>
+<li>It was added with <code>sed -i.bak '/^bins=/a ...'</code>, which keeps the old version as <code>mytools-bin.bak</code>. After that, Ctrl+T, Ctrl+E and Ctrl+O all work on the admin entries.</li>
+</ul>
+</div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">How it was found</p>
@@ -9282,7 +9318,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright © 2024 - 2026 JP Cillliers
+      Copyright © 2024 - 2026 JP Cilliers
     </div>
   
   
