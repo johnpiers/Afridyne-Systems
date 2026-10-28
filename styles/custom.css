@@ -1889,3 +1889,23 @@ code, pre, .codehilite, .highlight {
     color: #6BDDEA;
   }
 }
+/* Tools Guide banner: green, tight lines, no copy buttons */
+.md-typeset .tools-banner {
+  background: none;
+  box-shadow: none;
+}
+.md-typeset .tools-banner pre,
+.md-typeset .tools-banner pre > code {
+  background: none;
+  line-height: 1;
+  letter-spacing: 0;
+  font-family: "DejaVu Sans Mono", "Noto Sans Mono", monospace;
+  white-space: pre;
+}
+.md-typeset .tools-banner code,
+.md-typeset .tools-banner code span {
+  color: #00aa78 !important;
+}
+.md-typeset .tools-banner .md-code__nav {
+  display: none;
+}
