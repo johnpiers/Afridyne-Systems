@@ -4877,11 +4877,16 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 #### 2. Root causes ( 3 Separate Problems)
 
 !!! deep-dive "Root causes ( 3 Separate Problems)"
+    
+    <div class="no-sort" markdown>
+    
     | # | Symptom | Cause | Fix |
     |---|---|---|---|
     | 1 | `<img>` tags missing site-wide in the CI build | `mkdocs-glightbox` 0.5.2 breaks with `selectolax` **1.0.1** (a fresh unpinned install in CI): `insert_child()` moves the node in 1.0.1 but copies it in 0.4.6 and 1.0.0, so the images are removed. | Fixed upstream in `selectolax` **1.0.2**. `requirements.txt` now has `selectolax>=1.0.2` (it was `==0.4.6` as a stopgap). |
     | 2 | Markmap blocks rendered as plain code | `pymdown-extensions` 12.1+ changed `extend_super_fences()` to need a 4th argument (`reset`). `mkdocs-markmap` 2.5.2 only passes 3, so its fence handler fails in a clean install. | Patched `extension.py` copied over the package in CI |
     | 3 | Table sorting never worked | The Tablesort library was never loaded. Only the small `tablesort.js` was. | Added the library to `extra_javascript` |
+    
+    </div>
     
     NB: Row 3 above:  (Tablesort): Note that headers can now cycle ascending, descending, original order, and that wrapping a table in `<div class="no-sort" markdown>`{.skyblue} excludes it from sorting.
     

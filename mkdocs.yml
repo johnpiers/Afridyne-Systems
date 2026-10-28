@@ -379,6 +379,14 @@ nav:
             - 3. Social Cards/Banners: properdocs-guide/ProperDocs-Part3-Social-Cards-and-Banners.md
         - Nginx Guide:
             - Nginx: nginx-guide/nginx-guide.md
+        - Tools Guide:
+            - Overview: tools-guide/index.md
+            - 1. Problem and Mandible: tools-guide/01-the-problem-and-mandible.md
+            - 2. Building the List: tools-guide/02-building-the-list.md
+            - 3. Wiring in the Help Keys: tools-guide/03-wiring-in-the-help-keys.md
+            - 4. Admin Commands and Polish: tools-guide/04-admin-commands-and-polish.md
+            - 5. Filling the Gaps: tools-guide/05-filling-the-gaps.md
+            - 6. Lessons and Troubleshooting: tools-guide/06-lessons-and-troubleshooting.md      
       - Markdown Guides:
         - Markdown:
             - Markdown: Markdown.md
