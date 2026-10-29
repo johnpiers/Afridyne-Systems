@@ -5048,3 +5048,129 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
     
     - Tablesort only toggles ascending and descending. It has no way back to the original order. `Done`{.green}
     
+---
+
+## Comprehensive Disk I/O Bottleneck Resolution Notes
+
+### Initial Issue & Diagnostic
+
+!!! desc "Initial Issue & Diagnostic"
+
+    The system was experiencing extreme performance degradation, causing applications to stall and freeze. Diagnostics via `atop` revealed a critical storage bottleneck:
+    
+    * **PSI Metrics:** `iosome` at 97% and `iofull` at 96%, indicating the system was completely blocked waiting on disk storage.
+    
+    * **Storage Latency:** High delay times (`is` and `if` metrics) averaging over 80 milliseconds out of every second.
+    
+    * **Primary Culprit:** Google Chrome (specifically the core Browser process, PID 1684525) hogging 96% of the total disk bandwidth via relentless, small background write operations.
+    
+---
+
+### Strategy Comparison: Option A vs. Option B
+
+| Feature / Attribute | Option A: Browser-Level Optimization | Option B: Root-Level Infrastructure Fix |
+| :--- | :--- | :--- |
+| **Primary Target** | **Google Chrome application** | **Linux Kernel & `ext4` filesystem** |
+| **Where It's Configured** | Chrome Settings, Flags (`chrome://flags`), and Cache | The system storage configuration file (`/etc/fstab`) |
+| **Core Mechanism** | Stops the browser from generating unnecessary background read/write traffic. | Changes how Linux packages and commits raw data to the physical hardware. |
+| **Key Actions Taken** | Disabled *Preload Pages*, set *Memory Saver* to Maximum, turned off *Hardware Media Keys*. | Appended `commit=60` to the root entry to delay filesystem journal flushes. |
+| **Flush Interval** | Immediate / On-demand based on website activity. | **Delayed to every 60 seconds** (instead of the stock 5 seconds). |
+| **Scope of Protection** | **Chrome only.** Only stops storage thrashing caused by browser tabs/extensions. | **System-wide.** Neutralizes disk bottlenecks for *any* application on the drive. |
+| **Update Resilience** | **Low.** Major Chrome updates frequently overwrite these settings back to default. | **High.** Remains permanently locked in place across OS updates and reboots. |
+| **Risk / Trade-off** | Pages might take a fraction of a second longer to load since they aren't pre-cached. | Up to 60 seconds of recent file metadata could be lost if the machine suddenly loses power. |
+
+---
+
+### Step-by-Step Resolution Steps
+
+#### Option A: Browser-Level Optimization (Google Chrome)
+
+!!! desc "Browser-Level Optimization"
+
+    <div class="steps" markdown>
+    
+    1. **Disabling Tab Preloading:** Navigated to Chrome **Settings > Performance > Speed** and turned **Preload pages** completely **OFF** to stop unsolicited background disk reads and writes.
+    2. **Maximizing Tab Discarding (Memory Saver):** Navigated to **Settings > Performance > Memory** and turned **Memory Saver** to **Maximum** to ensure inactive background tabs are aggressively suspended.
+    3. **Silencing the Hardware Media Key Flag:** Opened a new tab to `chrome://flags/#hardware-media-key-handling` and switched it to **Disabled** to halt a Linux-specific media sync write loop.
+    4. **Clearing Cached Database Indexes:** Pressed `Ctrl + Shift + Delete`, selected **Cached images and files** (Time range: All time), and cleared them to wipe corrupted, looping cache indexes.
+    5. **Clean Restart:** Completely restarted the browser via `chrome://restart` to wipe the active application write queue.
+    
+    </div>
+    
+#### Option B: Root-Level Infrastructure Fix (Filesystem Mount)
+
+!!! desc "Root-Level Infrastructure Fix"
+
+    <div class="steps" markdown>
+    
+    1. Opened the system mount configuration file:
+    
+    ```bash
+    sudo nano /etc/fstab
+    ```
+    
+    2. Preserved the active configurations by commenting out the original root partition entry with a `#`.
+    
+    3. Created a new entry for the root (`/`) partition, extending the ext4 journal commit window from 5 seconds to 60 seconds by appending `commit=60` to the options string:
+    
+    ```text
+    UUID=84dd4ddd-b24b-4471-bdf8-b5c0d8c02d96 / ext4 defaults,noatime,commit=60 0 1
+    ```
+    
+    4. Instantly applied the new filesystem parameters to the live kernel without rebooting the machine:
+    
+    ```bash
+    sudo mount -o remount /
+    ```
+    
+    5. Verified the kernel successfully bound the new configuration parameters:
+    
+    ```bash
+    mount | grep " / "
+    ```
+    
+    </div>
+    
+---
+
+### Final Result
+
+!!! desc "Final Result"
+
+    After implementing these modifications, `atop` monitored metrics confirmed a total resolution:
+    
+    * Both **`iosome`** and **`iofull`** stall pressure completely dropped to **0%**.
+    
+    * Physical disk utilization (`sda busy`) dropped from over 90% down to **0%** at idle.
+    
+    * Storage write amplification was completely eliminated, restoring full system responsiveness.
+    
+!!! desc "`check-chrome()`{.green} script"
+
+    Added the `check-chrome()`{.green} script below to my `zshrc`{.green}(right at the bottom) file and all one needs to do is run, `check-chrome`{.green} from a terminal and you should see something similar to this:
+        
+    check-chrome
+    
+    | PID | Written | Proc: |
+    | :--- | :--- | :--- |
+    |PID: 1924468 | Written: 1188  MB | Proc: chrome |
+    |PID: 1925087 | Written: 331   MB | Proc: chrome |
+    |PID: 1925258 | Written: 2     MB | Proc: chrome |
+    |PID: 1925072 | Written: 0     MB | Proc: chrome |
+    
+    
+    ```bash
+    check-chrome() {
+      for pid in $(pidof chrome); do
+        if [ -f /proc/$pid/io ]; then
+          write_bytes=$(grep "^write_bytes:" /proc/$pid/io | awk '{print $2}')
+          if [ ! -z "$write_bytes" ] && [ "$write_bytes" -gt 0 ]; then
+            mb=$(( write_bytes / 1024 / 1024 ))
+            name=$(cat /proc/$pid/comm)
+            printf "PID: %-7s | Written: %-5s MB | Proc: %s\n" "$pid" "$mb" "$name"
+          fi
+        fi
+      done | sort -rn -k5
+    }
+    ```
+    
