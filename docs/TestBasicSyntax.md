@@ -5129,6 +5129,12 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
     mount | grep " / "
     ```
     
+    6. To avoid a reboot you can run this:
+    
+    ```bash
+    systemctl daemon-reload
+    ```
+    
     </div>
     
 ---
