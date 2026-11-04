@@ -285,7 +285,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#materialx" class="md-skip">
+        <a href="#changelog" class="md-skip">
           Skip to content
         </a>
       
@@ -8714,6 +8714,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -8732,6 +8734,28 @@
   
     <nav class="md-nav" aria-label="MaterialX">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10.2.2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Oct 24, 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10.2.1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Oct 16, 2026
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#10.2.0" class="md-nav__link">
@@ -13493,10 +13517,34 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-11-01"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-11-01T12:53:22+00:00">2026-11-01</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-11-01"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-11-01T12:53:22+00:00">2026-11-01</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-11-04"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-11-04T10:35:40+00:00">2026-11-04</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-11-04"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-11-04T10:35:40+00:00">2026-11-04</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/changelogindex.png" data-desc-position="bottom"><img alt="" class="center-image" src="../imgs/changelogindex.png"></a></p>
 <h1 style="text-align: center;"><ins>Changelog-MaterialX</ins></h1>
+<h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">⚓︎</a></h1>
 <h2 id="materialx">MaterialX<a class="headerlink" href="#materialx" title="Permanent link">⚓︎</a></h2>
+<h3 id="10.2.2">10.2.2 <small>Oct 24, 2026</small><a class="headerlink" href="#10.2.2" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>Enhanced <code>blog</code> functionality:<ul>
+<li>Major performance boost via new architecture: <strong>4x</strong> higher build efficiency and significantly reduced build time</li>
+<li>Improved reading time estimation: supports all major &amp; mixed languages (new <strong>CJK</strong> support), and covers all Markdown content blocks, see <a href="../MkDocs-Material/blog/#new-features" target="_blank">post_readtime</a></li>
+<li>Added sharing module with one-click social sharing (Mastodon/Bluesky/SinaWeibo/QQ/Douban), see <a href="../MkDocs-Material/blog/#config.share_links" target="_blank">share_links</a></li>
+</ul>
+</li>
+<li>Fixed page rendering efficiency issues caused by the CSS <code>:has()</code> selector</li>
+<li>Fixed incorrect sitemap handling of non-language alternate links</li>
+<li>Fixed date formatting when no locale is available</li>
+<li>Fixed inline code rendering in Lunr search result titles</li>
+</ul>
+<h3 id="10.2.1">10.2.1 <small>Oct 16, 2026</small><a class="headerlink" href="#10.2.1" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>Refactored the search functionality with a brand-new architecture, supporting the <strong>Pagefind</strong> framework, and greatly improving search quality and indexing efficiency. It supports chunked indexing, on-demand loading, index compression, and more, see <a href="../MkDocs-Material/search/" target="_blank">Search</a></li>
+<li>Added <code>Co-Authored-By</code> support for Git authors</li>
+<li>Added aggregation support for Git <code>Co-Authored-By</code> entries. You can consolidate <code>Co-Authored-By</code> authors in the <code>.mailmap</code> file. See <a href="../MkDocs-Material/date-author/#git-author-aggregation" target="_blank">Git author aggregation</a></li>
+<li>Enhanced author configuration — <code>authors.yml</code> now supports author exclusion. See <a href="../MkDocs-Material/date-author/#enhanced-author-configuration" target="_blank">Enhanced author configuration</a></li>
+<li>Fixed styling issues with the Steps component</li>
+<li>Fixed bugs related to the code folding feature</li>
+<li>Fixed escaping issues in summaries of the recent update module</li>
+</ul>
 <h3 id="10.2.0">10.2.0 <small>July 25, 2026</small><a class="headerlink" href="#10.2.0" title="Permanent link">⚓︎</a></h3>
 <ul>
 <li>Refactored the search functionality with a brand-new architecture design, drastically improving search quality and indexing efficiency. It supports 100,000+ pages, chunked indexing, on-demand loading, index compression, multi-language capability, multiple search providers, and more, see <a href="../MkDocs-Material/search/" target="_blank">Search</a></li>
