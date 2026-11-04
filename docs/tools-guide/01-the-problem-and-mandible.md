@@ -93,3 +93,4 @@ icon: material/tools
     
     The [**next**](02-building-the-list.md) page covers steps [1](02-building-the-list.md/#step-1-what-did-i-install-on-purpose), [2](02-building-the-list.md/#step-2-keep-only-terminal-tools) and [3](02-building-the-list.md/#step-3-a-first-script).
     
+![](imgs/20261101-201023.png)

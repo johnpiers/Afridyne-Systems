@@ -110,6 +110,7 @@ icon: material/tools
     # mytools-help <tldr|cheat|man|mandible> <package> - show help for a package's main command
     cmd=$(mytools-bin "$2")
     [ -z "$cmd" ] && exit 0
+    clear
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
     pause() { read -n1 -s -r -p $'\n[press any key to return]'; }
     case "$1" in
@@ -135,7 +136,12 @@ icon: material/tools
       cheat)    cheat "$cmd"; pause ;;
       mandible) mandible "$cmd" ;;
     esac
+    clear
     ```
+    
+    ---
+    
+    The two `clear`{.red} lines keep each page on a clean screen. One runs before the page is shown and one after you return, so pages don’t pile up behind the list when you look at several in a row.
     
 ## The main script, wired to the helper.
 
