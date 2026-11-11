@@ -2322,3 +2322,59 @@ def bubble_sort(items):
 [^sc2]: Run this after creating or editing unit files or drop-ins so systemd re-reads them. It does not restart services that are already running.
 [^sc3]: Equivalent to a disable followed by an enable. It recreates the unit's symlinks from its current `[Install]` section, which is useful after that section has changed.
 [^sc4]: Masking links the unit to `/dev/null`, so it cannot be started manually or pulled in as a dependency. This is stronger than disabling, and `unmask` reverses it.
+
+
+!!! desc "Mermaid Blocks"
+
+    === "Block1"
+
+        ```mermaid
+        graph TD
+        A[Test A] --> B((Test B)) --> C[Test C] --> D((Test D))
+        ```
+
+    === "Block2"
+
+        ```mermaid
+        graph TD
+        E --> F --> G --> H
+        ```
+        
+    === "Block3"
+
+        ```mermaid
+        %%{init: {"securityLevel": "loose"}}%%
+        flowchart TD
+            Start((Start)) --> Q1{Condition A?}
+            Q1 -- No --> OutA([Outcome A])
+
+            %% THE TOOLTIP LAYER
+            %% You need a '#' (placeholder link) for the tooltip to trigger
+            click Start "#" "This is the start of the journey!"
+            click Q1 "#" "Check logs for Condition A."
+            click OutA "#" "This is a failure path."
+        ```
+
+!!! desc "Mermaid Blocks"
+
+    === "Block1"
+
+        ```mermaid
+        graph TD
+        Q1{Condition A?} --> A --> B
+        ```
+        
+    === "Block2"
+
+        ```mermaid
+        graph TD
+        Start((🚀 Project Launch)) --> OutD([Outcome D])
+        ```
+       
+    === "Block3"
+
+        ```mermaid
+        graph TD
+        Q1{Condition A?} --> OutB([🎉 DEPLOY <br/>Live to Prod]) --> OutC([⏳ QUEUE <br/>Wait for Sprint])
+        ```
+        

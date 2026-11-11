@@ -246,7 +246,7 @@ icon: octicons/desktop-download-24
     Everyone interacting in the ProperDocs project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the [PSF Code of Conduct](https://www.python.org/psf/conduct/).
     
 
-[virtualenv]: https://virtualenv.pypa.io/en/latest/user_guide.html
+[virtualenv]: https://virtualenv.pypa.io/en/latest/
 [Hatch]: https://hatch.pypa.io/
 [GitHub Actions]: https://docs.github.com/actions
 [Translating Themes]: https://properdocs.org/dev-guide/translations/

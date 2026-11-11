@@ -5180,3 +5180,44 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
     }
     ```
     
+---
+
+### The `Steinhardt–Turok`{.green} `Cyclic Model`{.skyblue}
+
+!!! desc "Main article"
+
+    Ekpyrotic universe In this cyclic model, two parallel orbifold planes or M-branes collide periodically in a higher-dimensional space. The visible four-dimensional universe lies on one of these branes. The collisions correspond to a reversal  from contraction to expansion, or a Big Crunch followed immediately by a Big Bang. The matter and radiation we see today were generated during the most recent collision in a pattern dictated by quantum fluctuations created before the branes.
+    
+    ---
+    
+    After billions of years the universe reached the state we observe today; after additional billions of years it will ultimately begin to contract again. Dark energy corresponds to a force between the branes, and serves the crucial role of solving the monopole, horizon, and flatness problems. Moreover, the cycles can continue indefinitely into the past and the future, and the solution is an attractor, so it can provide a complete history of the universe.
+    
+    ---
+    
+    As Richard C. Tolman showed, the earlier cyclic model failed because the universe would undergo inevitable thermodynamic heat death. However, the newer cyclic model evades this by having a net expansion each cycle, preventing entropy from building up. However, there remain major open issues in the model. Foremost among them is that colliding branes are not understood by string theorists, and nobody knows if the scale invariant spectrum will be destroyed by the big crunch. Moreover, as with cosmic inflation, while the general character of the forces (in the ekpyrotic scenario, a force between branes) required to create the vacuum fluctuations is known, there is no candidate from particle physics.
+    
+As in inﬂationary cosmology, the cyclic scenario can be described in terms of the evolution of a scalar ﬁeld $\color{#4da6ff}φ$ in a potential $\color{#4da6ff}V (φ)$ according to a conventional four-dimensional quantum ﬁeld theory. The essential diﬀerences is in the form of the potential and the couplings between the scalar ﬁeld, matter and radiation.
+
+The analysis of the cyclic model follows from the action $\color{#228B22}S$ describing gravity, the scalar ﬁeld $\color{#4da6ff}φ$, and the matter and radiation ﬂuids:
+
+$${\color{#228B22}S} = \int d^4x \sqrt{-g} \left( {\color{#4da6ff}\frac{1}{16\pi G} \mathcal{R}} - {\color{#e67e22}\frac{1}{2}(\partial\phi)^2 - V(\phi)} + {\color{#9b59b6}\beta^4(\phi)(\rho_M + \rho_R)} \right)$$
+
+where $\color{#4da6ff}g$ is the determinant of the metric $\color{#4da6ff}gµν$, $\color{#4da6ff}G$ is Newton’s constant and $\color{#4da6ff}R$ is the Ricci scalar. The coupling $\color{#4da6ff}β(φ)$ between $\color{#4da6ff}φ$ and the matter $\color{#4da6ff}(ρM)$ and radiation $\color{#4da6ff}(ρR)$ densities is crucial because it allows the densities to remain ﬁnite at the big crunch/big bang transition.
+
+The line element for a flat, homogeneous universe is $ds^2 = -dt^2 + {\color{#4da6ff}a^2}d\mathbf{x}^2$, where $\color{#4da6ff}a$ is the Robertson-Walker scale factor. The equations of motion following from Eq. (1) are,
+
+$${\color{#4da6ff}H^2} = {\color{#4da6ff}\frac{8\pi G}{3}} \left( {\color{#e67e22}\frac{1}{2}\dot{\phi}^2 + V} + {\color{#9b59b6}\beta^4\rho_R + \beta^4\rho_M} \right)$$
+
+$${\color{#4da6ff}\frac{\ddot{a}}{a}} = {\color{#4da6ff}-\frac{8\pi G}{3}} \left( {\color{#e67e22}\dot{\phi}^2 - V} + {\color{#9b59b6}\beta^4\rho_R + \frac{1}{2}\beta^4\rho_M} \right)$$
+
+where a dot denotes a derivative with respect to ${\color{#4da6ff}t}$ and ${\color{#4da6ff}H \equiv \dot{a}/a}$ is the Hubble parameter.
+
+The equation of motion for $\color{#4da6ff}φ$ is
+
+$${\color{#e67e22}\ddot{\phi}} + 3{\color{#4da6ff}H}{\color{#e67e22}\dot{\phi}} = {\color{#e67e22}-V_{,\phi}} - {\color{#9b59b6}\beta_{,\phi}\beta^3\rho_M}$$
+
+and the fluid equation of motion for matter $\color{#4da6ff}(M)$ or radiation (R) is
+
+$${\color{#4da6ff}\hat{a}}\frac{d{\color{#9b59b6}\rho_i}}{d{\color{#4da6ff}\hat{a}}} = {\color{#4da6ff}a}\frac{\partial{\color{#9b59b6}\rho_i}}{\partial{\color{#4da6ff}a}} + {\color{#9b59b6}\frac{\beta}{\beta'}}\frac{\partial{\color{#9b59b6}\rho_i}}{\partial{\color{#e67e22}\phi_i}} = -3({\color{#9b59b6}\rho_i + p_i}), \qquad i = \mathrm{M, R}$$
+
+
