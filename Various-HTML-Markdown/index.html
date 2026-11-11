@@ -224,17 +224,17 @@
     
       <link rel="stylesheet" href="../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../assets/document_dates/tippy/light.css">
-    
-      <link rel="stylesheet" href="../assets/document_dates/tippy/material.css">
+      <link rel="stylesheet" href="../assets/document_dates/tippy/shift-away.css">
     
       <link rel="stylesheet" href="../assets/document_dates/tippy/backdrop.css">
     
       <link rel="stylesheet" href="../assets/document_dates/tippy/tippy.css">
     
-      <link rel="stylesheet" href="../assets/document_dates/tippy/shift-away.css">
-    
       <link rel="stylesheet" href="../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../assets/document_dates/core/core.css">
     
@@ -9380,7 +9380,7 @@
   
                   
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-11-04"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-11-04T10:35:40+00:00">2026-11-04</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-11-04"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-11-04T10:35:40+00:00">2026-11-04</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-11-11"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-11-11T09:09:20+00:00">2026-11-11</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-11-11"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-11-11T09:09:20+00:00">2026-11-11</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="johnpiers" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:johnpiers@gmail.com&quot;&gt;johnpiers&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-email="johnpiers@gmail.com" data-src=""></a></div></div></div></div></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/20251228-161316.png" data-desc-position="bottom"><img alt="" src="../imgs/20251228-161316.png" style="display: block; margin: 0 auto"></a></p>
 <h1 style="text-align: center;">Various Markdown / HTML</h1>
 <p>Nearly all Markdown applications support the basic syntax outlined in the original Markdown design document. There are minor variations and discrepancies between Markdown processors — those are noted inline wherever possible.</p>
@@ -11911,6 +11911,52 @@ and running in minutes</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Mermaid Blocks</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="" id="table-reference-systemctl-block1" name="__tabbed_12" type="radio"><input id="table-reference-systemctl-block2" name="__tabbed_12" type="radio"><input id="table-reference-systemctl-block3" name="__tabbed_12" type="radio"><div class="tabbed-labels"><label for="table-reference-systemctl-block1">Block1</label><label for="table-reference-systemctl-block2">Block2</label><label for="table-reference-systemctl-block3">Block3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph TD
+A[Test A] --&gt; B((Test B)) --&gt; C[Test C] --&gt; D((Test D))</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph TD
+E --&gt; F --&gt; G --&gt; H</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>%%{init: {"securityLevel": "loose"}}%%
+flowchart TD
+    Start((Start)) --&gt; Q1{Condition A?}
+    Q1 -- No --&gt; OutA([Outcome A])
+
+    %% THE TOOLTIP LAYER
+    %% You need a '#' (placeholder link) for the tooltip to trigger
+    click Start "#" "This is the start of the journey!"
+    click Q1 "#" "Check logs for Condition A."
+    click OutA "#" "This is a failure path."</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition desc">
+<p class="admonition-title">Mermaid Blocks</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="" id="table-reference-systemctl-block1_1" name="__tabbed_13" type="radio"><input id="table-reference-systemctl-block2_1" name="__tabbed_13" type="radio"><input id="table-reference-systemctl-block3_1" name="__tabbed_13" type="radio"><div class="tabbed-labels"><label for="table-reference-systemctl-block1_1">Block1</label><label for="table-reference-systemctl-block2_1">Block2</label><label for="table-reference-systemctl-block3_1">Block3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph TD
+Q1{Condition A?} --&gt; A --&gt; B</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph TD
+Start((🚀 Project Launch)) --&gt; OutD([Outcome D])</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph TD
+Q1{Condition A?} --&gt; OutB([🎉 DEPLOY &lt;br/&gt;Live to Prod]) --&gt; OutC([⏳ QUEUE &lt;br/&gt;Wait for Sprint])</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="footnote">
 <hr>
